@@ -1,7 +1,7 @@
 'use strict'
 
-import DOM from 'domql'
+import Button from './button'
 
-DOM.create({
-  text: `domql version ${DOM.about.version}`
-})
+export {
+  Button
+}
