@@ -1,0 +1,19 @@
+{
+  "name": "domql-example",
+  "description": "",
+  "private": true,
+  "author": "",
+  "version": "0.0.1",
+  "repository": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "domql": "rackai/domql"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}
