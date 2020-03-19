@@ -1,7 +1,15 @@
 'use strict'
 
-import DOM from 'domql'
+import color from './color'
+import size from './size'
+import shape from './size'
+import sequence from './sequence'
+import typography from './typography'
 
-DOM.create({
-  text: `domql version ${DOM.about.version}`
-})
+export {
+  color,
+  size,
+  shape,
+  sequence,
+  typography
+}
