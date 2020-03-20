@@ -1,7 +1,6 @@
 'use strict'
 
-// import classify from 'scratch'
-import { css } from 'astroturf'
+import { css } from 'emotion'
 
 export default css`
   padding: 0 2em;

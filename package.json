@@ -1,5 +1,5 @@
 {
-  "name": "domql-example",
+  "name": "@scratch-css/uikit",
   "description": "",
   "private": true,
   "author": "",
@@ -15,6 +15,7 @@
     "scratch": "git+https://git@github.com/rackai/scratch"
   },
   "devDependencies": {
+    "emotion": "^10.0.27",
     "parcel-bundler": "^1.12.3"
   }
 }

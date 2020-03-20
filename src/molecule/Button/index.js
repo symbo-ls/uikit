@@ -1,20 +1,14 @@
 'use strict'
 
 // import { method, font, sizing } from 'scratch'
-// import { font, color, shape } from '../config'
-var func = param => param
+import { font, color, shape } from '../config'
 
-var style = func`
-  padding: 0 2em;
-  border-radius: 4px;
-  line-height: 1;
-`
-console.log(style)
+import styles from './styles'
 
 var Button = {
   tag: 'button',
   class: {
-    default: style,
+    default: styles,
     theme: element => element.theme,
     shape: element => element.shape,
     interactive: element => element.interactive
@@ -26,8 +20,8 @@ var Button = {
     interactive: param => (param || param === undefined) ? 'interactive' : ''
   },
 
-  // theme: color.schemeA,
-  // shape: shape.circular,
+  theme: color.schemeA,
+  shape: shape.circular,
   interactive: true
 }
 
