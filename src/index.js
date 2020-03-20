@@ -1,15 +1,7 @@
 'use strict'
 
-import color from './color'
-import size from './size'
-import shape from './size'
-import sequence from './sequence'
-import typography from './typography'
+import method from './methods/create'
+import config from './config'
+import base from './base'
 
-export {
-  color,
-  size,
-  shape,
-  sequence,
-  typography
-}
+export default { ...base, ...method, ...config }
