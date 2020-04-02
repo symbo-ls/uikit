@@ -1,8 +1,5 @@
 'use strict'
 
-// import { method, font, sizing } from 'scratch'
-import { theme, box } from 'scratch'
-
 import styles from './styles'
 
 var Button = {
@@ -19,11 +16,7 @@ var Button = {
     theme: param => param || '',
     box: param => param || '',
     interactive: param => (param || param === undefined) ? 'interactive' : ''
-  },
-
-  theme: theme.schemeA,
-  box: box.circular,
-  interactive: true
+  }
 }
 
 export default Button
