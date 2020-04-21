@@ -45,7 +45,7 @@ export default css`
     background: white;
     max-width: 727px;
     border-radius: 10px;
-    margin: 1rem;
+    margin: 1.2rem 0;
 
     > div {
       margin: 3rem 3rem 0 0;

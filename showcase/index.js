@@ -22,6 +22,14 @@ DOM.create({
     h1: 'Shapes',
     container: { }
   },
+  icons: {
+    h1: 'Icons',
+    container: { }
+  },
+  grid: {
+    h1: 'Grid',
+    container: { }
+  },
   buttons: {
     h1: 'Buttons',
     container: {
