@@ -1,5 +1,7 @@
 'use strict'
 
+// import Scratch from 'scratch'
+// import { theme, size } from 'scratch'
 import styles from './styles'
 
 var Button = {
@@ -8,13 +10,13 @@ var Button = {
   class: {
     default: styles,
     theme: element => element.theme,
-    box: element => element.box,
+    size: element => element.size,
     interactive: element => element.interactive
   },
 
   define: {
     theme: param => param || '',
-    box: param => param || '',
+    size: param => param || '',
     interactive: param => (param || param === undefined) ? 'interactive' : ''
   }
 }

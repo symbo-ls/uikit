@@ -13,10 +13,11 @@
   },
   "dependencies": {
     "domql": "git+https://git@github.com/rackai/domql",
-    "scratch": "git+https://git@github.com/rackai/scratch"
+    "scratch": "^0.0.0"
   },
   "devDependencies": {
     "emotion": "^10.0.27",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-svg-sprite": "^1.4.1"
   }
 }
