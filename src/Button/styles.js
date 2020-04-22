@@ -1,9 +1,7 @@
 'use strict'
 
-import { css } from 'emotion'
-
-export default css`
+export default `
   padding: 0 2em;
-  border-radius: 4px;
+  border-radius: 10px;
   line-height: 1;
 `

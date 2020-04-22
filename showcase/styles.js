@@ -44,8 +44,7 @@ export default css`
     border: 2px solid currentColor;
     background: white;
     max-width: 727px;
-    border-radius: 10px;
-    margin: 1.2rem 0;
+    border-radius: 6px;
 
     > div {
       margin: 3rem 3rem 0 0;

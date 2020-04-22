@@ -1,5 +1,6 @@
 'use strict'
 
+import './config'
 import DOM from 'domql'
 import styles from './styles'
 
@@ -10,7 +11,7 @@ DOM.create({
   class: styles,
   h4: {
     a: {
-      text: 'Scratch yo!',
+      text: 'symbols yo!',
       attr: { href: '/' }
     }
   },
@@ -34,6 +35,11 @@ DOM.create({
     h1: 'Buttons',
     container: {
       button0: {
+        proto: Button,
+        text: 'Avoe',
+        theme: 'primary'
+      },
+      button1: {
         proto: Button,
         text: 'Avoe',
         theme: 'primary'

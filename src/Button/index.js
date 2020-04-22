@@ -1,22 +1,24 @@
 'use strict'
 
-// import Scratch from 'scratch'
-// import { theme, size } from 'scratch'
-import styles from './styles'
+import scratch from 'scratch'
+import { css } from 'emotion'
+import style from './styles'
 
 var Button = {
   tag: 'button',
+  style,
 
   class: {
-    default: styles,
-    theme: element => element.theme,
-    size: element => element.size,
+    theme: element => css(scratch['theme'][element.theme]),
+    size: element => css(scratch['size'][element.size]),
+    shape: element => css(scratch['shape'][element.shape]),
     interactive: element => element.interactive
   },
 
   define: {
     theme: param => param || '',
     size: param => param || '',
+    shape: param => param || '',
     interactive: param => (param || param === undefined) ? 'interactive' : ''
   }
 }
