@@ -1,13 +1,16 @@
 'use strict'
 
-import method from './methods'
-import config from './config'
+import { register } from './methods'
 
-export default {
-  color: {},
-  theme: {},
-  size: {},
-  shape: {},
-  ...method,
-  ...config
+import {
+  color,
+  theme,
+  size
+} from './config'
+
+export {
+  color,
+  theme,
+  size,
+  register
 }

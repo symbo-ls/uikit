@@ -1,6 +1,10 @@
 'use strict'
 
-import { themeMap } from '../config/theme'
+var themeMap = {
+  text: 'color',
+  background: 'backgroundColor',
+  border: 'border-color'
+}
 
 export default scheme => {
   var obj = {}

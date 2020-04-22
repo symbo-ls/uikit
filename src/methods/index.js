@@ -2,6 +2,6 @@
 
 import register from './register'
 
-export default {
+export {
   register
 }

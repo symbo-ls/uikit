@@ -16,12 +16,4 @@ var colors = {
   black, blue, green, cyan, yellow, orange, purple, red, peach, pink, white
 }
 
-var themeA = {
-  text: 'blue',
-  background: 'white',
-  border: 'black', // .opacity(0.2),
-  helpers: [],
-  inverse: {} // schemeAInverse
-}
-
-export default { colors }
+export default { }

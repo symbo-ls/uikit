@@ -1,16 +1,19 @@
 'use strict'
 
-import root from '..'
-import mapTheme from '../methods/mapTheme'
+import { color, theme } from '../config'
+import mapTheme from './mapTheme'
 
 var register = (kind, ...props) => {
   if (kind === 'color') {
-    root['color'] = props[0]
+    var colors = props[0]
+    for (let c in colors) {
+      color[c] = colors[c]
+    }
   } else if (kind === 'theme') {
-    props.map((theme, key) => {
-      var { name } = theme
+    props.map((value, key) => {
+      var { name } = value
       if (!name) name = key
-      root['theme'][name] = mapTheme(theme)
+      theme[name] = mapTheme(value)
     })
   }
 }
