@@ -1,9 +1,7 @@
 'use strict'
 
-import create from './create'
-import generate from './generate'
+import register from './register'
 
-export {
-  create,
-  generate
+export default {
+  register
 }

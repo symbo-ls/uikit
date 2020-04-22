@@ -6,4 +6,4 @@ var themeMap = {
   border: 'border-color'
 }
 
-export default { themeMap }
+export { themeMap }

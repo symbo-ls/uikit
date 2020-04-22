@@ -4,7 +4,7 @@ import { themeMap } from '../config/theme'
 
 // var pairAsInvert = (scheme, referenced) => cx(scheme, referenced)
 
-var mapTheme = scheme => {
+var mapThemeCSS = scheme => {
   var str = ''
   for (let prop in scheme) {
     var mappedProp = themeMap[prop]

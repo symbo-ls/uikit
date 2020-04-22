@@ -1,7 +1,13 @@
 'use strict'
 
-import method from './methods/create'
+import method from './methods'
 import config from './config'
-import base from './base'
 
-export default { ...base, ...method, ...config }
+export default {
+  color: {},
+  theme: {},
+  size: {},
+  shape: {},
+  ...method,
+  ...config
+}
