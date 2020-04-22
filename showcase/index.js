@@ -4,8 +4,11 @@ import './config'
 import DOM from 'domql'
 import styles from './styles'
 
+import colors from './colors'
+import buttons from './buttons'
+
 // Symbols
-import { Button } from '../src'
+import { Shape } from '../src'
 
 DOM.create({
   class: styles,
@@ -17,33 +20,25 @@ DOM.create({
   },
   colors: {
     h1: 'Colors',
-    container: { }
+    container: colors
   },
   shapes: {
     h1: 'Shapes',
-    container: { }
-  },
-  icons: {
-    h1: 'Icons',
-    container: { }
-  },
-  grid: {
-    h1: 'Grid',
-    container: { }
+    container: {
+      childProto: {
+        proto: Shape,
+        style: { width: 42, height: 42 }
+      },
+      shape: {
+        theme: 'secondary',
+        depth: 16,
+        shape: 'rounded',
+        round: 6
+      }
+    }
   },
   buttons: {
     h1: 'Buttons',
-    container: {
-      button0: {
-        proto: Button,
-        text: 'Avoe',
-        theme: 'primary'
-      },
-      button1: {
-        proto: Button,
-        text: 'Avoe',
-        theme: 'primary'
-      }
-    }
+    container: buttons
   }
 })

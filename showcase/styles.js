@@ -7,19 +7,19 @@ injectGlobal`
     font-family: 'Europa';
     font-style: normal;
     font-weight: 200;
-    src: url(https://github.com/limbforge/website/raw/master/app/assets/fonts/europa-light-webfont.woff2) format('woff2');
+    src: url(/assets/fonts/europa-light-webfont.woff2) format('woff2');
   }
   @font-face {
     font-family: 'Europa';
     font-style: normal;
     font-weight: 400;
-    src: url(https://github.com/limbforge/website/raw/master/app/assets/fonts/europa-regular-webfont.woff2) format('woff2');
+    src: url(/assets/fonts/europa-regular-webfont.woff2) format('woff2');
   }
   @font-face {
     font-family: 'Europa';
     font-style: normal;
     font-weight: 600;
-    src: url(https://github.com/limbforge/website/raw/master/app/assets/fonts/europa-bold-webfont.woff2) format('woff2');
+    src: url(/assets/fonts/europa-bold-webfont.woff2) format('woff2');
   }
   
   body { 

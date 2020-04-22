@@ -1,8 +1,8 @@
 'use strict'
 
-import scratch from 'scratch'
+import { register } from 'scratch'
 
-scratch.register('color', {
+register('color', {
   black: '#000',
   blue: '#0079FD',
   indigo: '#50E1FF',
@@ -15,5 +15,3 @@ scratch.register('color', {
   purple: '#7345AF',
   white: '#fff'
 })
-
-window.scratch = scratch

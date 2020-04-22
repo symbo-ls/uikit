@@ -1,9 +1,17 @@
 'use strict'
 
-import scratch from 'scratch'
+import { register, color } from 'scratch'
 
-scratch.register('theme', {
+register('theme', {
   name: 'primary',
-  text: scratch.color['white'],
-  background: scratch.color['blue']
+  text: color['white'],
+  background: color['blue']
+}, {
+  name: 'secondary',
+  text: color['white'],
+  background: color['red']
+}, {
+  name: 'tertiary',
+  text: color['white'],
+  background: color['pink']
 })
