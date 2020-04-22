@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "domql": "git+https://git@github.com/rackai/domql",
-    "scratch": "^0.0.0"
+    "scratch": "git+https://git@github.com/rackai/scratch"
   },
   "devDependencies": {
     "emotion": "^10.0.27",
