@@ -1,4 +1,4 @@
-# domql-example
+# Symbols
 Example dev setup (boilerplate) to use `domql`
 
 ### Setup
