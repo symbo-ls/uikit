@@ -14,4 +14,20 @@ register('theme', {
   name: 'tertiary',
   text: color['white'],
   background: color['pink']
+}, {
+  name: 'quo',
+  text: color['white'],
+  background: color['yellow']
+}, {
+  name: 'qui',
+  text: color['white'],
+  background: color['indigo']
+}, {
+  name: 'six',
+  text: color['white'],
+  background: color['green']
+}, {
+  name: 'seq',
+  text: color['white'],
+  background: color['purple']
 })

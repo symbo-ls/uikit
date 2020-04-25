@@ -8,9 +8,6 @@ import colors from './colors'
 import buttons from './buttons'
 import shapes from './shapes'
 
-// Symbols
-import { Shape } from '../src'
-
 DOM.create({
   class: styles,
   h4: {
