@@ -27,7 +27,6 @@ var depth = {
 
 var shape = {
   rectangle: {},
-  rounded: {},
   circle: { borderRadius: '100%' },
   bubble: {},
   tooltip: {}

@@ -18,5 +18,12 @@ export default {
     text: 'Avoe',
     theme: 'secondary',
     round: 26
+  },
+  button2: {
+    proto: Button,
+    text: 'Avoe',
+    shape: 'rectangle',
+    theme: 'tertiary',
+    round: 0
   }
 }

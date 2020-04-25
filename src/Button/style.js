@@ -2,5 +2,6 @@
 
 export default {
   appearance: 'none',
-  outline: 0
+  outline: 0,
+  cursor: 'pointer'
 }

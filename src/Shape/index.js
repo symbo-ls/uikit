@@ -16,11 +16,11 @@ var Shape = {
     theme: element => css(theme[element.theme])
   },
   define: {
-    shape: param => param || 'round',
-    depth: param => param || 10,
-    round: param => param || 6,
+    shape: param => param || 'rectangle',
+    depth: param => param !== undefined ? param : 10,
+    round: param => param !== undefined ? param : 6,
     size: param => param || 'default',
-    theme: param => param || theme.keys[0] || ''
+    theme: param => param || Object.keys(theme)[0] || ''
   }
 }
 

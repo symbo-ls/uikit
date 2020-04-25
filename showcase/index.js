@@ -27,7 +27,7 @@ DOM.create({
     container: {
       childProto: {
         proto: Shape,
-        style: { width: 42, height: 42 }
+        style: { width: 42, height: 42, padding: '0 !important' }
       },
       shape: {
         theme: 'secondary',
