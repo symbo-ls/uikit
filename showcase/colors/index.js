@@ -4,21 +4,12 @@ import { theme } from 'scratch'
 import { css } from 'emotion'
 
 var colors = {
-  style: {
-    display: 'flex'
-  },
+  style: { display: 'flex' },
   class: {},
   childProto: {
-    style: {
-      padding: '16 26',
-      marginRight: 26
-    },
-    class: {
-      theme: element => css(theme[element.theme])
-    },
-    define: {
-      theme: param => param || ''
-    },
+    style: { padding: '16 26', marginRight: 26 },
+    class: { theme: element => css(theme[element.theme]) },
+    define: { theme: param => param || '' },
     text: element => element.key
   }
 }

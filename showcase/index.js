@@ -6,6 +6,7 @@ import styles from './styles'
 
 import colors from './colors'
 import buttons from './buttons'
+import shapes from './shapes'
 
 // Symbols
 import { Shape } from '../src'
@@ -24,18 +25,7 @@ DOM.create({
   },
   shapes: {
     h1: 'Shapes',
-    container: {
-      childProto: {
-        proto: Shape,
-        style: { width: 42, height: 42, padding: '0 !important' }
-      },
-      shape: {
-        theme: 'secondary',
-        depth: 16,
-        shape: 'rounded',
-        round: 6
-      }
-    }
+    container: shapes
   },
   buttons: {
     h1: 'Buttons',
