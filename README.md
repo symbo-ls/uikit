@@ -1,6 +1,8 @@
 # Symbols
 Example dev setup (boilerplate) to use `domql`
 
+UI Library built on [Scratch](/rackai/scratch) and [DOMQL](/rackai/domql)
+
 ### Setup
 
 1. Clone the repo
