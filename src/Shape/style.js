@@ -1,6 +1,6 @@
 'use strict'
 
-import { size as sizing } from 'scratch'
+import { size as sizing, unit } from 'scratch'
 
 var style = {
   border: `1px solid transparent`,
@@ -17,12 +17,12 @@ var round = {
 }
 
 var depth = {
-  4: { boxShadow: 'rgba(0,0,0,.10) 0 2px 4px' },
-  6: { boxShadow: 'rgba(0,0,0,.10) 0 3px 6px' },
-  10: { boxShadow: 'rgba(0,0,0,.10) 0 4px 10px' },
-  16: { boxShadow: 'rgba(0,0,0,.10) 0 8px 16px' },
-  26: { boxShadow: 'rgba(0,0,0,.10) 0 14px 26px' },
-  42: { boxShadow: 'rgba(0,0,0,.10) 0 20px 42px' }
+  4: { boxShadow: `rgba(0,0,0,.10) 0 2${unit} 4${unit}` },
+  6: { boxShadow: `rgba(0,0,0,.10) 0 3${unit} 6${unit}` },
+  10: { boxShadow: `rgba(0,0,0,.10) 0 4${unit} 10${unit}` },
+  16: { boxShadow: `rgba(0,0,0,.10) 0 8${unit} 16${unit}` },
+  26: { boxShadow: `rgba(0,0,0,.10) 0 14${unit} 26${unit}` },
+  42: { boxShadow: `rgba(0,0,0,.10) 0 20${unit} 42${unit}` }
 }
 
 var shape = {
@@ -36,8 +36,8 @@ var size = {
   default: {
     height: `${Math.pow(sizing.ratio, 2)}em`,
     padding: `0 ${sizing.ratio}em`,
-    fontSize: `${sizing.base}px`,
-    lineHeight: `${sizing.base}px`
+    fontSize: `${sizing.base}${unit}`,
+    lineHeight: `${sizing.base}${unit}`
   }
 }
 

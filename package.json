@@ -8,7 +8,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "parcel showcase/index.html",
-    "build": "parcel build showcase/index.html",
+    "build": "parcel build showcase/index.html --public-url .",
     "deploy": "yarn build && gh-pages -d dist",
     "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn"
   },
