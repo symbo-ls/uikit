@@ -8,6 +8,7 @@ var style = {
 }
 
 var round = {
+  0: { borderRadius: 0 },
   4: { borderRadius: 4 },
   6: { borderRadius: 6 },
   10: { borderRadius: 10 },

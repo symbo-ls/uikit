@@ -8,6 +8,7 @@ import colors from './colors'
 import buttons from './buttons'
 import shapes from './shapes'
 import icons from './icons'
+import iconText from './icons/iconText'
 
 DOM.create({
   class: styles,
@@ -19,18 +20,19 @@ DOM.create({
   },
   colors: {
     h1: 'Colors',
-    container: colors
+    colors
   },
   shapes: {
     h1: 'Shapes',
-    container: shapes
+    shapes
   },
   icons: {
     h1: 'Icons',
-    container: icons
+    icons,
+    iconText
   },
   buttons: {
     h1: 'Buttons',
-    container: buttons
+    buttons
   }
 })

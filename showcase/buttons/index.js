@@ -1,6 +1,6 @@
 'use strict'
 
-import { Button } from '../../src'
+import { Button, IconText } from '../../src'
 
 export default {
   childProto: {
@@ -14,14 +14,19 @@ export default {
     theme: 'primary'
   },
   button1: {
-    text: 'Avoe',
     theme: 'secondary',
-    round: 26
+    round: 26,
+    icontext: {
+      proto: IconText,
+      icon: element => 'down',
+      _icon: {},
+      text: element => 'Download'
+    }
   },
   button2: {
     text: 'Avoe',
     shape: 'rectangle',
     theme: 'tertiary',
-    round: 0
+    round: 26
   }
 }

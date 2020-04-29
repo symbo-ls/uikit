@@ -1,6 +1,6 @@
 'use strict'
 
-import { Icon } from '../../src'
+import { IconText } from '../../src'
 
 export default {
   style: {
@@ -8,12 +8,14 @@ export default {
   },
   class: {},
   childProto: {
-    proto: Icon,
-    name: element => element.key,
+    proto: IconText,
     style: {
       margin: 16,
       color: 'black'
-    }
+    },
+    icon: element => element.key,
+    _icon: {},
+    text: element => element.key
   },
   left: {},
   right: {},
