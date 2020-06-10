@@ -1,5 +1,3 @@
 'use strict'
 
-export default {
-  base: 16
-}
+export default 'px'
