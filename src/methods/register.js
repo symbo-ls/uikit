@@ -10,14 +10,15 @@ var register = (kind, ...props) => {
       color[c] = colors[c]
     }
   } else if (kind === 'theme') {
-    props.map((value, key) => {
+    props.map(value => {
       var { name } = value
-      if (!name) name = key
       theme[name] = mapTheme(value)
     })
   } else if (kind === 'typography') {
-    props.map((value, key) => {
-      console.log(value)
+    props.map(value => {
+      var { name } = value
+      delete value.name
+      type[name] = value
     })
   }
 }

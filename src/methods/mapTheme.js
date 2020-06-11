@@ -3,7 +3,7 @@
 var themeMap = {
   text: 'color',
   background: 'backgroundColor',
-  border: 'border-color'
+  border: 'borderColor'
 }
 
 export default scheme => {

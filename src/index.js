@@ -7,13 +7,15 @@ import {
   theme,
   size,
   unit,
+  type,
   sequence
 } from './config'
 
 import {
   hexToRGBA,
   mixTwoRGB,
-  mixTwoRGBA
+  mixTwoRGBA,
+  setCustomFont
 } from './utils'
 
 export {
@@ -21,9 +23,11 @@ export {
   theme,
   size,
   unit,
+  type,
   sequence,
   register,
   hexToRGBA,
   mixTwoRGB,
-  mixTwoRGBA
+  mixTwoRGBA,
+  setCustomFont
 }
