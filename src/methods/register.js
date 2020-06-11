@@ -1,6 +1,6 @@
 'use strict'
 
-import { color, theme } from '../config'
+import { color, theme, type } from '../config'
 import mapTheme from './mapTheme'
 
 var register = (kind, ...props) => {
@@ -14,6 +14,10 @@ var register = (kind, ...props) => {
       var { name } = value
       if (!name) name = key
       theme[name] = mapTheme(value)
+    })
+  } else if (kind === 'typography') {
+    props.map((value, key) => {
+      console.log(value)
     })
   }
 }

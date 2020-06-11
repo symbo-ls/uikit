@@ -5,6 +5,7 @@ import color from './color'
 import theme from './theme'
 import box from './box'
 import size from './size'
+import type from './type'
 import unit from './unit'
 
 export {
@@ -13,5 +14,6 @@ export {
   theme,
   box,
   size,
+  type,
   unit
 }

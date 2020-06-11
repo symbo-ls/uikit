@@ -16,4 +16,4 @@ var colors = {
   black, blue, green, cyan, yellow, orange, purple, red, peach, pink, white
 }
 
-export default { }
+export default {}
