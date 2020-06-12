@@ -2,7 +2,8 @@
 
 import './config'
 import DOM from 'domql'
-import styles from './styles'
+import './define'
+import style from './style'
 
 import colors from './colors'
 import buttons from './buttons'
@@ -11,7 +12,8 @@ import icons from './icons'
 import iconText from './icons/iconText'
 
 DOM.create({
-  class: styles,
+  style,
+
   h4: {
     a: {
       text: 'symbols yo!',
