@@ -1,7 +1,7 @@
 'use strict'
 
-import register from './register'
+import set from './set'
 
 export {
-  register
+  set
 }

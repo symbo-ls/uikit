@@ -1,19 +1,19 @@
 'use strict'
 
-import sequence from './sequence'
-import color from './color'
-import theme from './theme'
-import box from './box'
-import size from './size'
-import type from './type'
-import unit from './unit'
+import Sequence from './sequence'
+import Color from './color'
+import Theme from './theme'
+import Box from './box'
+import Size from './size'
+import Typography from './typography'
+import Unit from './unit'
 
 export {
-  sequence,
-  color,
-  theme,
-  box,
-  size,
-  type,
-  unit
+  Sequence,
+  Color,
+  Theme,
+  Box,
+  Size,
+  Typography,
+  Unit
 }

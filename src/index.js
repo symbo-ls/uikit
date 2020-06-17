@@ -1,14 +1,15 @@
 'use strict'
 
-import { register } from './methods'
+import { set } from './methods'
 
 import {
-  color,
-  theme,
-  size,
-  unit,
-  type,
-  sequence
+  Sequence,
+  Color,
+  Theme,
+  Box,
+  Size,
+  Typography,
+  Unit
 } from './config'
 
 import {
@@ -19,13 +20,15 @@ import {
 } from './utils'
 
 export {
-  color,
-  theme,
-  size,
-  unit,
-  type,
-  sequence,
-  register,
+  Sequence,
+  Color,
+  Theme,
+  Box,
+  Size,
+  Typography,
+  Unit,
+
+  set,
   hexToRGBA,
   mixTwoRGB,
   mixTwoRGBA,
