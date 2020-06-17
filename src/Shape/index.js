@@ -1,6 +1,6 @@
 'use strict'
 
-import { theme } from 'scratch'
+import { Theme } from 'scratch'
 import { style, shape, depth, round, size } from './style'
 
 var Shape = {
@@ -11,7 +11,7 @@ var Shape = {
     depth: element => depth[element.depth],
     round: element => round[element.round],
     size: element => size[element.size],
-    theme: element => theme[element.theme]
+    theme: element => Theme[element.theme]
   },
 
   define: {
@@ -19,7 +19,7 @@ var Shape = {
     depth: param => param !== undefined ? param : 10,
     round: param => param !== undefined ? param : 6,
     size: param => param || 'default',
-    theme: param => param || Object.keys(theme)[0] || ''
+    theme: param => param || Object.keys(Theme)[0] || ''
   }
 }
 

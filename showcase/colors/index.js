@@ -1,19 +1,19 @@
 'use strict'
 
-import { theme } from 'scratch'
+import { Theme } from 'scratch'
 
 var colors = {
   style: { display: 'flex', flexWrap: 'wrap' },
   class: {},
   childProto: {
     style: { padding: '16 26', marginRight: 26, marginBottom: 26 },
-    class: { theme: element => theme[element.theme] },
+    class: { theme: element => Theme[element.theme] },
     define: { theme: param => param || '' },
     text: element => element.key
   }
 }
 
-for (let th in theme) {
+for (let th in Theme) {
   colors[th] = { theme: th }
 }
 

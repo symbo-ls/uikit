@@ -1,33 +1,33 @@
 'use strict'
 
-import { register, color } from 'scratch'
+import { set, Color } from 'scratch'
 
-register('theme', {
+set('theme', {
   name: 'primary',
-  text: color['white'],
-  background: color['red']
+  text: Color['white'],
+  background: Color['red']
 }, {
   name: 'secondary',
-  text: color['white'],
-  background: color['blue']
+  text: Color['white'],
+  background: Color['blue']
 }, {
   name: 'tertiary',
-  text: color['white'],
-  background: color['pink']
+  text: Color['white'],
+  background: Color['pink']
 }, {
   name: 'quo',
-  text: color['white'],
-  background: color['yellow']
+  text: Color['white'],
+  background: Color['yellow']
 }, {
   name: 'qui',
-  text: color['white'],
-  background: color['indigo']
+  text: Color['white'],
+  background: Color['indigo']
 }, {
   name: 'six',
-  text: color['white'],
-  background: color['green']
+  text: Color['white'],
+  background: Color['green']
 }, {
   name: 'seq',
-  text: color['white'],
-  background: color['purple']
+  text: Color['white'],
+  background: Color['purple']
 })

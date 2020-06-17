@@ -1,6 +1,6 @@
 'use strict'
 
-import { sequence, size, unit } from 'scratch'
+// import { Sequence, Size, Unit } from 'scratch'
 
 export default {
   display: 'flex',

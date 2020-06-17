@@ -1,8 +1,8 @@
 'use strict'
 
-import { register } from 'scratch'
+import { set } from 'scratch'
 
-register('color', {
+set('color', {
   black: '#000',
   blue: '#0079FD',
   indigo: '#50E1FF',
