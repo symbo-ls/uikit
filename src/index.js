@@ -13,6 +13,10 @@ import {
 } from './config'
 
 import {
+  colorStringToRGBAArray,
+  opacify,
+  mixTwoColors,
+  hexToRGB,
   hexToRGBA,
   mixTwoRGB,
   mixTwoRGBA,
@@ -32,6 +36,11 @@ export {
   Unit,
 
   set,
+
+  colorStringToRGBAArray,
+  opacify,
+  mixTwoColors,
+  hexToRGB,
   hexToRGBA,
   mixTwoRGB,
   mixTwoRGBA,
