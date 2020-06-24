@@ -16,7 +16,10 @@ import {
   hexToRGBA,
   mixTwoRGB,
   mixTwoRGBA,
-  setCustomFont
+
+  getFontFormat,
+  setCustomFont,
+  getFontFace
 } from './utils'
 
 export {
@@ -32,5 +35,8 @@ export {
   hexToRGBA,
   mixTwoRGB,
   mixTwoRGBA,
-  setCustomFont
+
+  getFontFormat,
+  setCustomFont,
+  getFontFace
 }
