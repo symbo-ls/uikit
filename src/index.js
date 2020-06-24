@@ -10,6 +10,11 @@ import {
   Unit,
 
   set,
+
+  colorStringToRGBAArray,
+  opacify,
+  mixTwoColors,
+  hexToRGB,
   hexToRGBA,
   mixTwoRGB,
   mixTwoRGBA,
@@ -44,9 +49,15 @@ export {
 
   // scratch utils
   set,
+
+  colorStringToRGBAArray,
+  opacify,
+  mixTwoColors,
+  hexToRGB,
   hexToRGBA,
   mixTwoRGB,
   mixTwoRGBA,
+
   getFontFormat,
   setCustomFont,
   getFontFace
