@@ -20,6 +20,7 @@ import {
 } from 'scratch'
 
 import Shape from './Shape'
+import SVG from './SVG'
 import Icon from './Icon'
 import IconText from './IconText'
 import Button from './Button'
@@ -36,6 +37,7 @@ export {
 
   // symbols
   Shape,
+  SVG,
   Icon,
   IconText,
   Button,
