@@ -10,4 +10,11 @@ var Button = {
   style
 }
 
+var search = {
+  proto: Button,
+  style: {},
+  shape: 'round',
+  theme: 'primary'
+}
+
 export default Button

@@ -13,7 +13,10 @@ import {
   hexToRGBA,
   mixTwoRGB,
   mixTwoRGBA,
-  setCustomFont
+
+  getFontFormat,
+  setCustomFont,
+  getFontFace
 } from 'scratch'
 
 import Shape from './Shape'
@@ -42,5 +45,7 @@ export {
   hexToRGBA,
   mixTwoRGB,
   mixTwoRGBA,
-  setCustomFont
+  getFontFormat,
+  setCustomFont,
+  getFontFace
 }
