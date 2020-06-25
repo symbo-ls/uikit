@@ -9,5 +9,5 @@ export default {
   appearance: 'none',
   outline: 0,
   cursor: 'pointer',
-  font: 'inherit'
+  fontFamily: 'inherit'
 }
