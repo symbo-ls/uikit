@@ -3,11 +3,9 @@
 import style from './style'
 import { Shape } from '..'
 
-var Button = {
+export default {
   proto: Shape,
 
   tag: 'button',
   style
 }
-
-export default Button

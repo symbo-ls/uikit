@@ -8,7 +8,7 @@ export default {
   alignContent: 'center',
   lineHeight: 1,
 
-  '& > svg': {
-    marginRight: `${0.35}em`
+  '> svg': {
+    marginInlineEnd: `${0.35}em`
   }
 }
