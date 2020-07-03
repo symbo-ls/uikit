@@ -4,30 +4,30 @@ import { set, Color } from 'scratch'
 
 set('theme', {
   name: 'primary',
-  text: Color['white'],
-  background: Color['red']
+  color: Color['white'],
+  backgroundColor: Color['red']
 }, {
   name: 'secondary',
-  text: Color['white'],
-  background: Color['blue']
+  color: Color['white'],
+  backgroundColor: Color['blue']
 }, {
   name: 'tertiary',
-  text: Color['white'],
-  background: Color['pink']
+  color: Color['white'],
+  backgroundColor: Color['pink']
 }, {
   name: 'quo',
-  text: Color['white'],
-  background: Color['yellow']
+  color: Color['white'],
+  backgroundColor: Color['yellow']
 }, {
   name: 'qui',
-  text: Color['white'],
-  background: Color['indigo']
+  color: Color['white'],
+  backgroundColor: Color['indigo']
 }, {
   name: 'six',
-  text: Color['white'],
-  background: Color['green']
+  color: Color['white'],
+  backgroundColor: Color['green']
 }, {
   name: 'seq',
-  text: Color['white'],
-  background: Color['purple']
+  color: Color['white'],
+  backgroundColor: Color['purple']
 })
