@@ -43,7 +43,7 @@ export const colorStringToRGBAArray = color => {
   // convert 'rgb(R,G,B)' to 'rgb(R,G,B)A' which looks awful but will pass the regxep below
   if (color.indexOf('rgb') === 0) {
     if (color.indexOf('rgba') === -1) color = `${color}, 1`
-    return color.match(/[\.\d]+/g).map(a => +a)
+    return color.match(/[\.\d]+/g).map(a => +a) // eslint-disable-line
   }
 }
 
