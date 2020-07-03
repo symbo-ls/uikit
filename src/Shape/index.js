@@ -21,6 +21,27 @@ var Shape = {
     size: param => param || 'default',
     theme: param => param || Object.keys(Theme)[0] || ''
   }
+
+  // mode: {
+  //   dark: {
+  //     theme: 'white'
+  //   }
+  // }
+
+  // theme: {
+  //   default: 'primary',
+  //   dark: 'whiteish'
+  // }
+
+  // size: {
+  //   default: 'auto',
+  //   mobile: 'fit'
+  // }
+
+  // spacing: {
+  //   default: ratio.phi,
+  //   mobile: ratio.perfect
+  // }
 }
 
 export default Shape

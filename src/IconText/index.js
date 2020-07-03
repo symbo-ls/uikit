@@ -3,9 +3,8 @@
 import style from './style'
 import { Icon } from '..'
 
-var IconText = {
+export default {
   style,
-  class: {},
 
   define: {
     icon: param => param || 'left'
@@ -18,5 +17,3 @@ var IconText = {
 
   text: ''
 }
-
-export default IconText

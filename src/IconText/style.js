@@ -4,6 +4,7 @@
 
 export default {
   display: 'flex',
+  alignItems: 'center',
   alignContent: 'center',
   lineHeight: 1,
 

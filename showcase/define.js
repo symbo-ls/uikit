@@ -1,8 +1,8 @@
 'use strict'
 
 import DOM from 'domql'
-import { isObject } from 'domql/src/utils'
-import { classList, exec } from 'domql/src/element/params'
+import { isObject, exec } from 'domql/src/utils'
+import { classList } from 'domql/src/element/params'
 
 import { css } from 'emotion'
 
