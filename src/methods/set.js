@@ -1,7 +1,6 @@
 'use strict'
 
 import { Color, Theme, Typography } from '../config'
-import mapTheme from './mapTheme'
 import { getFontFace } from '../utils'
 
 var set = (kind, ...props) => {
@@ -14,7 +13,7 @@ var set = (kind, ...props) => {
   } else if (kind === 'theme') {
     props.map(value => {
       var { name } = value
-      Theme[name] = mapTheme(value)
+      Theme[name] = value
     })
     return Theme
   } else if (kind === 'typography') {

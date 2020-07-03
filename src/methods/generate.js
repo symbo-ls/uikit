@@ -20,7 +20,7 @@ var generateTheme = scheme => {
   var { helpers, inverse } = scheme
 
   var rule = `
-    ${mapTheme(scheme)}
+    ${mapThemeCSS(scheme)}
   `
 
   if (inverse) {
