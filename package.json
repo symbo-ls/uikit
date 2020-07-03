@@ -13,7 +13,7 @@
     "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn"
   },
   "dependencies": {
-    "domql": "git+https://git@github.com/rackai/domql#feature/emotion",
+    "domql": "git+https://git@github.com/rackai/domql",
     "scratch": "git+https://git@github.com/rackai/scratch"
   },
   "devDependencies": {
