@@ -1,10 +1,10 @@
 {
-  "name": "symbols",
-  "description": "",
-  "private": true,
-  "author": "",
+  "name": "@rackai/symbols",
+  "description": "UI Library built on Scratch and DOMQL",
+  "private": false,
+  "author": "rackai",
   "version": "0.0.1",
-  "repository": "",
+  "repository": "https://github.com/rackai/symbols",
   "main": "src/index.js",
   "scripts": {
     "start": "parcel showcase/index.html",
