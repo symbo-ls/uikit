@@ -1,19 +1,2 @@
-# domql-example
-Example dev setup (boilerplate) to use `domql`
-
-### Setup
-
-1. Clone the repo
-```
-git clone git@github.com:rackai/domql-example.git
-```
-
-2. Install scripts
-```
-yarn
-```
-
-3. Run the project
-```
-yarn start
-```
+# Φ / Scratch framework
+Scratch is CSS framework and methodology to build web, mobile and TV applications with one code base. Using it means to follow some practices to manage design system and make everything configure based.

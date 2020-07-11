@@ -1,10 +1,10 @@
 {
-  "name": "scratch",
-  "description": "",
-  "private": true,
-  "author": "",
+  "name": "@rackai/scratch",
+  "description": "Φ / CSS framework and methodology.",
+  "private": false,
+  "author": "rackai",
   "version": "0.0.1",
-  "repository": "",
+  "repository": "https://github.com/rackai/scratch",
   "main": "src/index.js",
   "scripts": {},
   "devDependencies": {}
