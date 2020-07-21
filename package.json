@@ -21,5 +21,6 @@
     "gh-pages": "^2.2.0",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-svg-sprite": "^1.4.1"
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
