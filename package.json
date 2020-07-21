@@ -7,5 +7,6 @@
   "repository": "https://github.com/rackai/scratch",
   "main": "src/index.js",
   "scripts": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
