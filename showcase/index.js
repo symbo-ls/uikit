@@ -1,9 +1,9 @@
 'use strict'
 
-import './config'
 import DOM from '@rackai/domql'
-import './define'
 import style from './style'
+import './config'
+import './define'
 
 import colors from './colors'
 import buttons from './buttons'

@@ -29,7 +29,7 @@ injectGlobal`
   }
 `
 
-export default css`
+export default `
   > h4 {
     margin-bottom: 2%;
 
