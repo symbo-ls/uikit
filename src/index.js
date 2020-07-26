@@ -29,6 +29,7 @@ import SVG from './SVG'
 import Icon from './Icon'
 import IconText from './IconText'
 import Button from './Button'
+import Field from './Field'
 
 export {
   // scratch library
@@ -46,6 +47,7 @@ export {
   Icon,
   IconText,
   Button,
+  Field,
 
   // scratch utils
   set,

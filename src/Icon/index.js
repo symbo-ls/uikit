@@ -8,6 +8,6 @@ export default {
   proto: SVG,
   style,
   define: { name: param => param },
-  file: element => sprite[element.name || element.key],
+  src: element => sprite[element.name || element.key],
   attr: { viewBox: '0 0 16 16' }
 }
