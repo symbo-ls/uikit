@@ -27,6 +27,7 @@ import {
 import Shape from './Shape'
 import SVG from './SVG'
 import Icon from './Icon'
+import Img from './Img'
 import IconText from './IconText'
 import Button from './Button'
 import Field from './Field'
@@ -44,6 +45,7 @@ export {
   // symbols
   Shape,
   SVG,
+  Img,
   Icon,
   IconText,
   Button,
