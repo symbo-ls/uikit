@@ -13,8 +13,8 @@ var colors = {
   }
 }
 
-for (let th in Theme) {
-  colors[th] = { theme: th }
+for (let t in Theme) {
+  colors[t] = { theme: t }
 }
 
 export default colors
