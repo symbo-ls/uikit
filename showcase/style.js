@@ -2,27 +2,31 @@
 
 import { injectGlobal, css } from 'emotion'
 
+import EuropaLight from '../assets/fonts/europa-light-webfont.woff2'
+import EuropaRegular from '../assets/fonts/europa-regular-webfont.woff2'
+import EuropaBold from '../assets/fonts/europa-bold-webfont.woff2'
+
 injectGlobal`
   @font-face {
     font-family: 'Europa';
     font-style: normal;
     font-weight: 200;
-    src: url(/assets/fonts/europa-light-webfont.woff2) format('woff2');
+    src: url('${EuropaLight}') format('woff2');
   }
   @font-face {
     font-family: 'Europa';
     font-style: normal;
     font-weight: 400;
-    src: url(/assets/fonts/europa-regular-webfont.woff2) format('woff2');
+    src: url('${EuropaRegular}') format('woff2');
   }
   @font-face {
     font-family: 'Europa';
     font-style: normal;
     font-weight: 600;
-    src: url(/assets/fonts/europa-bold-webfont.woff2) format('woff2');
+    src: url('${EuropaBold}') format('woff2');
   }
   
-  body { 
+  body {
     font-family: 'Europa';
     background: currentColor;
     padding: 2%
