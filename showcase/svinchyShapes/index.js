@@ -16,5 +16,5 @@ export default {
     one: {}
   },
 
-  text: 'make some noise'
+  text: '☆ make some noise'
 }

@@ -30,7 +30,7 @@ DOM.create({
     shapes
   },
   svinchyShapes: {
-    h1: '☆ Svinchy Shapes',
+    h1: 'Svinchy Shapes',
     svinchyShapes
   },
   icons: {
