@@ -8,6 +8,7 @@ import './define'
 import colors from './colors'
 import buttons from './buttons'
 import shapes from './shapes'
+import svinchyShapes from './svinchyShapes'
 import icons from './icons'
 import iconText from './icons/iconText'
 
@@ -27,6 +28,10 @@ DOM.create({
   shapes: {
     h1: 'Shapes',
     shapes
+  },
+  svinchyShapes: {
+    h1: 'Svinchy Shapes',
+    svinchyShapes
   },
   icons: {
     h1: 'Icons',
