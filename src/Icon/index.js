@@ -7,7 +7,8 @@ import SVG from '../SVG'
 export default {
   proto: SVG,
   style,
-  define: { name: param => param },
-  src: element => sprite[element.name || element.key],
+  define: { sprite: param => param, name: param => param },
+  sprite,
+  src: element => element.sprite[element.name || element.key],
   attr: { viewBox: '0 0 16 16' }
 }
