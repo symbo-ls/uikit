@@ -1,6 +1,6 @@
 'use strict'
 
-import { Typography } from 'scratch'
+import { Typography } from '@rackai/scratch'
 
 var primaryFont = Object.keys(Typography)[0]
 var defaultFont = primaryFont || '--system-default'

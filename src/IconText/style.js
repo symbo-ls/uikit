@@ -1,6 +1,6 @@
 'use strict'
 
-// import { Sequence, Size, Unit } from 'scratch'
+// import { Sequence, Size, Unit } from '@rackai/scratch'
 
 export default {
   display: 'flex',

@@ -1,6 +1,6 @@
 'use strict'
 
-import { Size, Unit } from 'scratch'
+import { Size, Unit } from '@rackai/scratch'
 
 export default {
   border: `1px solid transparent`,
