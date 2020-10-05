@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, IconText } from '^'
+import { Shape, IconText } from '../'
 import style from './style'
 
 export default {

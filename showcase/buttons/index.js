@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, Button, IconText } from '^'
+import { Shape, Button, IconText } from '../../src/'
 
 export default {
   childProto: {

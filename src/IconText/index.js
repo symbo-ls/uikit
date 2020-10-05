@@ -1,6 +1,6 @@
 'use strict'
 
-import { Icon } from '^'
+import { Icon } from '../'
 import style from './style'
 
 export default {

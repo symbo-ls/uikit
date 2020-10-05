@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape } from '^'
+import { Shape } from '../'
 import { style } from './style'
 
 export default {
