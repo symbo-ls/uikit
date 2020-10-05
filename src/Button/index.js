@@ -1,11 +1,10 @@
 'use strict'
 
+import { Shape, IconText } from '^'
 import style from './style'
-import { Shape } from '..'
 
 export default {
-  proto: Shape,
-
+  proto: [Shape, IconText],
   tag: 'button',
   style
 }

@@ -1,6 +1,6 @@
 'use strict'
 
-import { set, Color } from '@rackai/scratch'
+import { set, Color } from 'scratch'
 
 set('theme', {
   name: 'primary',

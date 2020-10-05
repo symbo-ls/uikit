@@ -13,8 +13,13 @@
     "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn"
   },
   "dependencies": {
-    "@rackai/domql": "rackai/domql",
-    "@rackai/scratch": "rackai/scratch"
+    "@rackai/domql": "git+https://git@github.com/rackai/domql#feature/update-iteration-on-params",
+    "@rackai/scratch": "git+https://git@github.com/rackai/scratch"
+  },
+  "alias": {
+    "domql": "./node_modules/@rackai/domql",
+    "scratch": "./node_modules/@rackai/scratch",
+    "^": "./src"
   },
   "devDependencies": {
     "emotion": "^10.0.27",
@@ -22,5 +27,7 @@
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-svg-sprite": "^1.4.1"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }

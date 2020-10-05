@@ -1,6 +1,6 @@
 'use strict'
 
-import { Theme } from '@rackai/scratch'
+import { Theme } from 'scratch'
 
 var colors = {
   style: { display: 'flex', flexWrap: 'wrap' },

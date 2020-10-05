@@ -1,8 +1,8 @@
 'use strict'
 
-import DOM from '@rackai/domql'
-import { isObject, exec } from '@rackai/domql/src/utils'
-import { classList } from '@rackai/domql/src/element/params'
+import DOM from 'domql'
+import { isObject, exec } from 'domql/src/utils'
+import { classList } from 'domql/src/element/params'
 
 import { css } from 'emotion'
 

@@ -1,6 +1,7 @@
 'use strict'
+
+import { Shape } from '^'
 import { style } from './style'
-import { Shape } from '../Shape'
 
 export default {
   proto: Shape,

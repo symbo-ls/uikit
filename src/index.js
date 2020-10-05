@@ -22,7 +22,7 @@ import {
   getFontFormat,
   setCustomFont,
   getFontFace
-} from '@rackai/scratch'
+} from 'scratch'
 
 import Shape from './Shape'
 import SVG from './SVG'

@@ -1,7 +1,7 @@
 'use strict'
 
+import { Icon } from '^'
 import style from './style'
-import { Icon } from '..'
 
 export default {
   style,
