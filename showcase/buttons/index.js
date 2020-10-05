@@ -1,6 +1,6 @@
 'use strict'
 
-import { Button, IconText } from '^'
+import { Shape, Button, IconText } from '^'
 
 export default {
   childProto: {
@@ -12,7 +12,12 @@ export default {
   button0: {
     _icon: {},
     text: 'Avoe',
-    theme: 'primary'
+    theme: 'primary',
+    on: {
+      click: (e, el) => el.update({ 
+        theme: 'quo',
+      }, true)
+    }
   },
   button1: {
     theme: 'secondary',
@@ -21,7 +26,6 @@ export default {
     text: 'avoes'
   },
   button2: {
-    proto: Button,
     _icon: {},
     text: 'Avoe',
     shape: 'rectangle',

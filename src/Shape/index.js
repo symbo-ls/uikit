@@ -19,7 +19,10 @@ var Shape = {
     depth: param => param !== undefined ? param : 10,
     round: param => param !== undefined ? param : 6,
     size: param => param || 'default',
-    theme: param => param || Object.keys(Theme)[0] || ''
+    theme: param => {
+      var themes = Object.keys(Theme)
+      return (themes.indexOf(param) >= 0) ? param : themes[0]
+    }
   }
 
   // mode: {

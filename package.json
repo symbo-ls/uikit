@@ -13,8 +13,8 @@
     "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn"
   },
   "dependencies": {
-    "@rackai/domql": "git+https://git@github.com/rackai/domql#feature/update-iteration-on-params",
-    "@rackai/scratch": "git+https://git@github.com/rackai/scratch"
+    "@rackai/domql": "0.0.4",
+    "@rackai/scratch": "0.0.1"
   },
   "alias": {
     "domql": "./node_modules/@rackai/domql",
