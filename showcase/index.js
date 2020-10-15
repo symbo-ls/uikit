@@ -1,6 +1,6 @@
 'use strict'
 
-import DOM from 'domql'
+import DOM from '@rackai/domql'
 import style from './style'
 import './config'
 import './define'
