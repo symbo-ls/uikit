@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@rackai/domql": "0.0.14",
-    "@rackai/scratch": "0.0.1"
+    "@rackai/scratch": "0.0.2"
   },
   "devDependencies": {
     "emotion": "^10.0.27",
