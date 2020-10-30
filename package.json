@@ -13,13 +13,8 @@
     "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn"
   },
   "dependencies": {
-    "@rackai/domql": "0.0.12",
+    "@rackai/domql": "0.0.14",
     "@rackai/scratch": "0.0.1"
-  },
-  "alias": {
-    "domql": "~/node_modules/@rackai/domql",
-    "scratch": "~/node_modules/@rackai/scratch",
-    "^": "~/src"
   },
   "devDependencies": {
     "emotion": "^10.0.27",
