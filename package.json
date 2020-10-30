@@ -6,7 +6,9 @@
   "version": "0.0.1",
   "repository": "https://github.com/rackai/scratch",
   "main": "src/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {},
-  "devDependencies": {},
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "devDependencies": {}
 }
