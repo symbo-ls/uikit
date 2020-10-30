@@ -6,6 +6,9 @@
   "version": "0.0.13",
   "repository": "https://github.com/rackai/symbols",
   "main": "src/index.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "start": "parcel showcase/index.html",
     "build": "parcel build showcase/index.html --public-url .",
@@ -21,8 +24,5 @@
     "gh-pages": "^2.2.0",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-svg-sprite": "^1.4.1"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   }
 }
