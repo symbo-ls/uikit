@@ -25,6 +25,7 @@ import {
 } from '@rackai/scratch'
 
 import Shape from './Shape'
+import Direction from './Direction'
 import SVG from './SVG'
 import Icon from './Icon'
 import Img from './Img'
@@ -45,6 +46,7 @@ export {
 
   // symbols
   Shape,
+  Direction,
   SVG,
   Img,
   Link,

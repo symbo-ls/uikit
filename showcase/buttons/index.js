@@ -26,6 +26,7 @@ export default {
     text: 'avoes'
   },
   button2: {
+    proto: Button,
     _icon: {},
     text: 'Avoe',
     shape: 'rectangle',

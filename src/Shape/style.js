@@ -1,6 +1,6 @@
 'use strict'
 
-import { Size, Unit } from '@rackai/scratch'
+import { Unit } from '@rackai/scratch'
 
 export default {
   border: `1px solid transparent`,
@@ -31,13 +31,4 @@ export const shape = {
   circle: { borderRadius: '100%' },
   bubble: {},
   tooltip: {}
-}
-
-export const size = {
-  default: {
-    height: `${Math.pow(Size.ratio, 2)}em`,
-    padding: `0 ${Size.ratio}em`,
-    fontSize: `${Size.base}${Unit}`,
-    lineHeight: `${Size.base}${Unit}`
-  }
 }

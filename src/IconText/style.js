@@ -1,6 +1,15 @@
 'use strict'
 
-// import { Sequence, Size, Unit } from '@rackai/scratch'
+import { Size, Unit } from '@rackai/scratch'
+
+export const size = {
+  default: {
+    height: `${Math.pow(Size.ratio, 2)}em`,
+    padding: `0 ${Size.ratio}em`,
+    fontSize: `${Size.base}${Unit}`,
+    lineHeight: `${Size.base}${Unit}`
+  }
+}
 
 export default {
   display: 'flex',

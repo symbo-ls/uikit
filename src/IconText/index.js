@@ -1,13 +1,18 @@
 'use strict'
 
 import { Icon } from '../'
-import style from './style'
+import style, { size } from './style'
 
 export default {
   style,
 
   define: {
-    icon: param => param || 'left'
+    icon: param => param || 'left',
+    size: param => param || 'default'
+  },
+
+  class: {
+    size: element => size[element.size]
   },
 
   _icon: {
