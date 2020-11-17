@@ -12,8 +12,8 @@ var set = (kind, ...props) => {
     return Colors
   } else if (kind === 'theme') {
     props.map(value => {
-      var { name } = value
-      Theme[name] = value
+      var { name, ...rest } = value
+      Theme[name] = rest
     })
     return Theme
   } else if (kind === 'typography') {
