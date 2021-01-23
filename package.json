@@ -13,13 +13,15 @@
     "start": "parcel showcase/index.html",
     "build": "parcel build showcase/index.html --public-url .",
     "deploy": "yarn build && gh-pages -d dist",
-    "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn"
+    "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn",
+    "bump": "npx np"
   },
   "dependencies": {
     "@rackai/domql": "1.0.1",
     "@rackai/scratch": "0.0.2"
   },
   "devDependencies": {
+    "np": "^7.2.0",
     "emotion": "^10.0.27",
     "gh-pages": "^2.2.0",
     "parcel-bundler": "^1.12.3",
