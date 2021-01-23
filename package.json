@@ -3,7 +3,7 @@
   "description": "UI Library built on Scratch and DOMQL",
   "private": false,
   "author": "rackai",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "https://github.com/rackai/symbols",
   "main": "src/index.js",
   "publishConfig": {
@@ -21,9 +21,9 @@
     "@rackai/scratch": "0.0.2"
   },
   "devDependencies": {
-    "np": "^7.2.0",
     "emotion": "^10.0.27",
     "gh-pages": "^2.2.0",
+    "np": "^7.2.0",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-svg-sprite": "^1.4.1"
   }
