@@ -4,8 +4,6 @@ import sprite from './svg'
 import style from './style'
 import SVG from '../SVG'
 
-console.log(sprite)
-
 export default {
   proto: SVG,
   style,
