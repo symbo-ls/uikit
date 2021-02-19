@@ -11,14 +11,15 @@ export default {
     proto: IconText,
     style: {
       margin: 16,
+      padding: 0,
       color: 'black'
     },
     icon: element => element.key,
     _icon: {},
     text: element => element.key
   },
-  left: {},
-  right: {},
-  up: {},
-  down: {}
+  arrowMediumLeft: {},
+  arrowMediumRight: {},
+  arrowMediumUp: {},
+  arrowMediumDown: {}
 }

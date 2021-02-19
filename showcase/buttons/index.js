@@ -14,7 +14,7 @@ export default {
     text: 'Avoe',
     theme: 'primary',
     on: {
-      click: (e, el) => el.update({ 
+      click: (e, el) => el.update({
         theme: 'quo',
       }, true)
     }

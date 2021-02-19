@@ -15,8 +15,8 @@ export default {
       color: 'black'
     }
   },
-  left: {},
-  right: {},
-  up: {},
-  down: {}
+  arrowMediumLeft: {},
+  arrowMediumRight: {},
+  arrowMediumUp: {},
+  arrowMediumDown: {}
 }

@@ -13,12 +13,13 @@
     "start": "parcel showcase/index.html",
     "build": "parcel build showcase/index.html --public-url .",
     "deploy": "yarn build && gh-pages -d dist",
+    "clean": "rm yarn.lock && rm -rf node_modules && rm -rf dist && rm -rf .cache",
     "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn",
     "bump": "npx np"
   },
   "dependencies": {
-    "@rackai/domql": "1.0.1",
-    "@rackai/scratch": "0.0.2"
+    "@rackai/domql": "1.0.6",
+    "@rackai/scratch": "0.0.3"
   },
   "devDependencies": {
     "emotion": "^10.0.27",
