@@ -7,7 +7,7 @@ export default {
   style,
 
   define: {
-    icon: param => param || 'left',
+    icon: param => param || 'arrowMediumDown',
     size: param => param || 'default'
   },
 
