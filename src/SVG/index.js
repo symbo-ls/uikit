@@ -9,6 +9,6 @@ export default {
     'xmlns': 'http://www.w3.org/2000/svg',
     'xmlns:xlink': 'http://www.w3.org/1999/xlink'
   },
-  define: { src: (param, element) => useSVGSymbol(param) },
-  html: element => element.src || useSVGSymbol(element.key)
+  define: { src: param => param },
+  html: element => useSVGSymbol(element.src || element.key)
 }
