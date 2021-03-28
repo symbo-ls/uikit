@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape,  } from '../../src'
+import { Shape, Img } from '../../src'
 
 export default {
   style: { border: '1px solid red'  },

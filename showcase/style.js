@@ -34,6 +34,7 @@ injectGlobal`
 `
 
 export default `
+  font-size: 10px;
   > h4 {
     margin-bottom: 2%;
 

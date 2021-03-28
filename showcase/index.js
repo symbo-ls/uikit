@@ -22,6 +22,13 @@ DOM.create({
       attr: { href: '/' }
     }
   },
+  banners: {
+    banners
+  },
+  svinchyShapes: {
+    h1: 'Svinchy Shapes',
+    svinchyShapes
+  },
   colors: {
     h1: 'Colors',
     colors
@@ -29,10 +36,6 @@ DOM.create({
   shapes: {
     h1: 'Shapes',
     shapes
-  },
-  svinchyShapes: {
-    h1: 'Svinchy Shapes',
-    svinchyShapes
   },
   icons: {
     h1: 'Icons',
@@ -42,8 +45,5 @@ DOM.create({
   buttons: {
     h1: 'Buttons',
     buttons
-  },
-  banners: {
-    banners
   }
 })

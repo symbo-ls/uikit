@@ -3,7 +3,7 @@
 import { Theme } from '@rackai/scratch'
 
 var colors = {
-  style: { display: 'flex', flexWrap: 'wrap', border: '1px solid red' },
+  style: { display: 'flex', flexWrap: 'wrap', border: '1px solid red', background: 'black' },
   class: {},
   childProto: {
     style: { padding: '16 26', marginRight: 26, marginBottom: 26, border: '1px solid black' },

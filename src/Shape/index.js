@@ -12,7 +12,7 @@ var Shape = {
     round: param => param !== undefined ? param : 6,
     theme: param => {
       var themes = Object.keys(Theme)
-      return (themes.indexOf(param) >= 0) ? param : themes[0]
+      return (themes.indexOf(param) >= 0) ? param : themes['transparent']
     }
   },
 
