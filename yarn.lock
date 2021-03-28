@@ -982,10 +982,10 @@
     "@parcel/utils" "^1.11.0"
     physical-cpu-count "^2.0.0"
 
-"@rackai/domql@1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@rackai/domql/-/domql-1.0.6.tgz#cee832993e1e5649d7297e16047e5b8e967d9908"
-  integrity sha512-Hw75HPquwmGm9ieLRLH+3VDlC8ewQM685k+qZrQF0Zb6tQLXVETLcfepqcF9PehcV/mzoV1dd0mDEZHnc23LCA==
+"@rackai/domql@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@rackai/domql/-/domql-1.0.8.tgz#f9c742af4a4e0fba546aefb958d07adcc73dcad0"
+  integrity sha512-AONWGLGOSchENAKFMQ4z5HrBcF/mzRWdtvIa43MowZvVdT62E8kdvceYIKzU+5QO9lgUgSOBIvZdI7ALaxx+xg==
   dependencies:
     regenerator-runtime "^0.13.5"
 
