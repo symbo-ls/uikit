@@ -11,6 +11,7 @@ import shapes from './shapes'
 import svinchyShapes from './svinchyShapes'
 import icons from './icons'
 import iconText from './icons/iconText'
+import banners from './banners'
 
 DOM.create({
   style,
@@ -41,5 +42,8 @@ DOM.create({
   buttons: {
     h1: 'Buttons',
     buttons
+  },
+  banners: {
+    banners
   }
 })

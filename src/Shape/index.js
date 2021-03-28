@@ -5,7 +5,7 @@ import style, { shape, depth, round } from './style'
 
 var Shape = {
   style,
-
+  
   define: {
     shape: param => param || 'rectangle',
     depth: param => param !== undefined ? param : 10,
