@@ -7,8 +7,10 @@ var defaultFont = primaryFont || '--system-default'
 
 export default {
   appearance: 'none',
+  border: 0,
   outline: 0,
+  padding: 0,
   cursor: 'pointer',
   fontFamily: 'inherit',
-  display: 'inline-flex'
+  fontSize: '1.6em',
 }

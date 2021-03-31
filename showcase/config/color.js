@@ -13,6 +13,6 @@ set('color', {
   brown: '#7D6755',
   pink: '#FD8ABF',
   purple: '#7345AF',
-  purple2: 'rgba(215, 100, 185, .15)',
+  purple2: 'rgba(215, 100, 185, .02)',
   white: '#fff'
 })

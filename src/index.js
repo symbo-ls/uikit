@@ -31,8 +31,10 @@ import Icon from './Icon'
 import Img from './Img'
 import Link from './Link'
 import IconText from './IconText'
-import Button from './Button'
 import Field from './Field'
+import Button, { squareButton, rectangleButton, userButton } from './Button'
+import * as Banner from './Banner'
+import User, { userBundle } from './User'
 
 export {
   // scratch library
@@ -53,7 +55,13 @@ export {
   Icon,
   IconText,
   Button,
+  squareButton,
+  rectangleButton,
+  userButton,
   Field,
+  Banner,
+  User,
+  userBundle,
 
   // scratch utils
   set,

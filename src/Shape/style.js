@@ -3,7 +3,6 @@
 import { Unit } from '@rackai/scratch'
 
 export default {
-  borderStyle: 'solid',
   boxSizing: 'border-box'
 }
 
