@@ -37,17 +37,25 @@ export const rectangleButton = {
 console.log(rectangleButton, userBundle)
 
 export const userButton = {
-  // proto: rectangleButton,
-  theme: 'white',
-  // childProto: userBundle,
+  proto: [Button],
+  round: 26,
+  style: { 
+    fontSize: '1em',
+    padding: 0,
+    paddingLeft: '.8em',
+    paddingRight: '2.6em',
+  },
+  childProto: userBundle,
   ...[
     {
-      users: {...[{}, {}, {}]},
+      users: {
+        style: {paddingRight: '14px'},
+        ...[{}, {}, {}]
+      },
       span: 'View all Contacts'
     }
   ]
 }
-
 
 export default Button
 
