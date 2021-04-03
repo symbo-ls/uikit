@@ -21,8 +21,4 @@ export const userBundle = {
   span: 'join classroom'
 }
 
-// export const familyBundle = {
-
-// }
-
 export default User

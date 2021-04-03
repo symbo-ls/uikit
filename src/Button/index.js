@@ -52,13 +52,13 @@ export const buttonUser = {
     padding: 0,
     paddingLeft: '.8em',
     paddingRight: '2.6em',
-    height: '42px'
+    height: '42px',
+    img: { border: '1px solid white' }
   },
   childProto: userBundle,
   ...[
     {
       users: {
-        style: {paddingRight: '18px'},
         ...[{}, {}, {}]
       },
       span: 'View all Contacts'

@@ -33,9 +33,9 @@ import Link from './Link'
 import IconText from './IconText'
 import Field from './Field'
 import Button, { buttonSquare, buttonRectangle, buttonUser, buttonCircle } from './Button'
-import familyBundle from './User/familyBundle'
 import * as Banner from './Banner'
 import User, { userBundle } from './User'
+import { grid } from './GridLayouts'
 
 
 export {
@@ -65,6 +65,9 @@ export {
   Banner,
   User,
   userBundle,
+
+  // grid layouts
+  grid,
 
   // scratch utils
   set,
