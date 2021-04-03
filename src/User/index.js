@@ -1,5 +1,8 @@
 'use strict'
-import { styleUser, styleUserBundle } from './style.'
+
+import { styleUser, styleUserBundle } from './style'
+
+
 
 const User = {
   style: styleUser,
@@ -17,5 +20,9 @@ export const userBundle = {
   },
   span: 'join classroom'
 }
+
+// export const familyBundle = {
+
+// }
 
 export default User

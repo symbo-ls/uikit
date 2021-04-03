@@ -10,8 +10,17 @@ const Button = {
   tag: 'button',
   style
 }
+export const buttonCircle = {
+  proto: Button,
+  round: 42,
+  theme: 'circle',
+  style: {
+    width: '32px',
+    height: '32px',
+  }
+}
 
-export const squareButton = { 
+export const buttonSquare = { 
   proto: Button,
   round: 42,
   text: '3',
@@ -22,7 +31,8 @@ export const squareButton = {
     height: '42px'
   }
 }
-export const rectangleButton = {
+
+export const buttonRectangle = {
   proto: [ Button, IconText, Direction ],
   round: 26,
   theme: 'green',
@@ -34,9 +44,7 @@ export const rectangleButton = {
   text: 'Join the Classroom'
 }
 
-console.log(rectangleButton, userBundle)
-
-export const userButton = {
+export const buttonUser = {
   proto: [Button],
   round: 26,
   style: { 
@@ -44,18 +52,20 @@ export const userButton = {
     padding: 0,
     paddingLeft: '.8em',
     paddingRight: '2.6em',
+    height: '42px'
   },
   childProto: userBundle,
   ...[
     {
       users: {
-        style: {paddingRight: '14px'},
+        style: {paddingRight: '18px'},
         ...[{}, {}, {}]
       },
       span: 'View all Contacts'
     }
   ]
 }
+
 
 export default Button
 

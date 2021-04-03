@@ -13,4 +13,5 @@ export default {
   cursor: 'pointer',
   fontFamily: 'inherit',
   fontSize: '1.6em',
+  
 }
