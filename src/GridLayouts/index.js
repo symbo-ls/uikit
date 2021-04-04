@@ -14,5 +14,3 @@ var componentLink = {
 export const grid = {
   style: styleGrid
 }
-
-
