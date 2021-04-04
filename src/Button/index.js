@@ -13,14 +13,13 @@ const Button = {
 export const buttonCircle = {
   proto: Button,
   round: 42,
-  theme: 'circle',
   style: {
     width: '32px',
-    height: '32px',
+    height: '32px'
   }
 }
 
-export const buttonSquare = { 
+export const buttonSquare = {
   proto: Button,
   round: 42,
   text: '3',
@@ -33,7 +32,7 @@ export const buttonSquare = {
 }
 
 export const buttonRectangle = {
-  proto: [ Button, IconText, Direction ],
+  proto: [Button, IconText, Direction],
   round: 26,
   theme: 'green',
   style: {
