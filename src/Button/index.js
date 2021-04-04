@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, IconText, Direction, User } from '../'
+import { Shape, IconText, Direction, User, Icon } from '../'
 import { userBundle } from '../User'
 
 import style from './style'
@@ -14,27 +14,29 @@ export const buttonCircle = {
   proto: Button,
   round: 42,
   style: {
-    width: '32px',
-    height: '32px'
+    width: '42px',
+    height: '42px',
+    fontSize: '2em'
   }
 }
 
 export const buttonSquare = {
   proto: Button,
-  round: 42,
-  text: '3',
-  theme: 'secondary',
+  define: {
+    icon: param => param
+  },
+  round: 16,
   style: {
     fontSize: '2em',
     width: `${42 / 20}em`,
-    height: '42px'
-  }
+    height: `${42 / 20}em`
+  },
+  _icon: { proto: Icon, name: el => el.parent.icon }
 }
 
 export const buttonRectangle = {
   proto: [Button, IconText, Direction],
   round: 26,
-  theme: 'green',
   style: {
     padding: `0 ${26 / 16}em`
   },
