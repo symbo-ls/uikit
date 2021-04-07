@@ -17,7 +17,6 @@ export const userBundle = {
     ...[{}]
   },
   span: 'join classroom'
-
 }
 
 export default User

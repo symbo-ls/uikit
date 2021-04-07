@@ -37,6 +37,7 @@ import Button, { buttonSquare, buttonRectangle, buttonUser, buttonCircle, button
 import { parentMode } from './Banner'
 import User, { userBundle } from './User'
 import { grid } from './GridLayouts'
+import { sideMenu } from './SideBar'
 
 export {
   // scratch library
@@ -67,6 +68,7 @@ export {
   parentMode,
   User,
   userBundle,
+  sideMenu,
 
   // grid layouts
   grid,
