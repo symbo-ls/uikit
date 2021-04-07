@@ -6,18 +6,25 @@ import { userBundle } from '../User'
 import style from './style'
 
 const Button = {
-  proto: Shape,
   tag: 'button',
+  proto: Shape,
   style
 }
 export const buttonCircle = {
   proto: Button,
   round: 42,
+  define: {
+    icon: param => param
+  },
   style: {
     width: '42px',
     height: '42px',
-    fontSize: '2em'
-  }
+    fontSize: '2em',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  _icon: { proto: Icon, name: el => el.parent.icon }
 }
 
 export const buttonSquare = {
@@ -41,14 +48,25 @@ export const buttonRectangle = {
     padding: `0 ${26 / 16}em`
   },
   _icon: {},
-  icon: 'checkMedium',
-  text: 'Join the Classroom'
+  icon: '',
+  text: ''
+}
+export const buttonPlus = {
+  proto: buttonCircle,
+  theme: 'greyBlue',
+  icon: 'checkMedium'
+}
+
+export const buttonMore = {
+  proto: buttonCircle,
+  theme: 'transparent',
+  icon: 'checkMedium'
 }
 
 export const buttonUser = {
   proto: [Button],
   round: 26,
-  style: { 
+  style: {
     fontSize: '1em',
     padding: 0,
     paddingLeft: '.8em',
@@ -67,7 +85,4 @@ export const buttonUser = {
   ]
 }
 
-
 export default Button
-
-

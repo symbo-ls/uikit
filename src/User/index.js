@@ -2,8 +2,6 @@
 
 import { styleUser, styleUserBundle } from './style'
 
-
-
 const User = {
   style: styleUser,
   tag: 'img',
@@ -16,9 +14,10 @@ export const userBundle = {
   style: styleUserBundle,
   users: {
     childProto: User,
-    ...[ {} ]
+    ...[{}]
   },
   span: 'join classroom'
+
 }
 
 export default User

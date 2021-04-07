@@ -12,5 +12,7 @@ export default {
   padding: 0,
   cursor: 'pointer',
   fontFamily: 'inherit',
-  fontSize: '1.6em'
+  fontSize: '1.6em',
+  '> svg': { marginRight: 0 }
+
 }

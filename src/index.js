@@ -32,11 +32,11 @@ import Img from './Img'
 import Link from './Link'
 import IconText from './IconText'
 import Field from './Field'
-import Button, { buttonSquare, buttonRectangle, buttonUser, buttonCircle } from './Button'
-import * as Banner from './Banner'
+import Button, { buttonSquare, buttonRectangle, buttonUser, buttonCircle, buttonPlus, buttonMore } from './Button'
+// import * as Banner from './Banner'
+import { parentMode } from './Banner'
 import User, { userBundle } from './User'
 import { grid } from './GridLayouts'
-
 
 export {
   // scratch library
@@ -61,8 +61,10 @@ export {
   buttonRectangle,
   buttonUser,
   buttonCircle,
+  buttonPlus,
+  buttonMore,
   Field,
-  Banner,
+  parentMode,
   User,
   userBundle,
 

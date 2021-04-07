@@ -6,8 +6,6 @@ export const styleParentMode = {
   position: 'relative',
   display: 'block',
   width: '700px',
-  
-  
   '> svg': {
     position: 'absolute',
     top: '1.2em',
