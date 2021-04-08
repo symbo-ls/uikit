@@ -18,6 +18,6 @@ export default {
   lineHeight: 1,
 
   '> svg': {
-    marginInlineEnd: `${0.35}em`
+    // marginInlineEnd: `${0.35}em`
   }
 }

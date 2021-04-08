@@ -13,6 +13,11 @@ export default {
   cursor: 'pointer',
   fontFamily: 'inherit',
   fontSize: '1.6em',
-  '> svg': { marginRight: 0 }
-
+  height: '42px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  '> svg': {
+    fontSize: '16px'
+  }
 }

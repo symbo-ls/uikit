@@ -4,8 +4,7 @@ export const styleUser = {
   cursor: 'pointer',
   width: '26px',
   height: '26px',
-  borderRadius: '100%',
-  cursor: 'pointer'
+  borderRadius: '100%'
 }
 
 export const styleUserBundle = {
@@ -19,6 +18,5 @@ export const styleUserBundle = {
     '> img': {
       marginRight: '-8px'
     }
-  },
-  span: { opacity: '.6' }
+  }
 }
