@@ -28,7 +28,7 @@ export const buttonRectangle = {
   proto: Button,
   round: 26,
   style: {
-    '> svg': { marginRight: '8px' }
+    '> svg': { marginRight: '6px' }
   }
 }
 

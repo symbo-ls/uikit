@@ -25,9 +25,6 @@ export default {
   alignItems: 'center',
   width: 'auto',
   maxHeight: '28px',
-  svg: {
-    fontSize: '12px'
-  },
   '> svg': {
     marginRight: '12px',
     opacity: '.2'

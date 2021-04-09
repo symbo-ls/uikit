@@ -16,8 +16,5 @@ export default {
   height: '42px',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  '> svg': {
-    fontSize: '16px'
-  }
+  justifyContent: 'center'
 }
