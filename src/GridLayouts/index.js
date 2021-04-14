@@ -16,6 +16,7 @@ export const grid = {
   text: 'eded'
 }
 
+
 export const grid2 = {
   style: styleGrid2
 }
