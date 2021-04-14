@@ -44,3 +44,9 @@ export const styleGrid = {
     gridColumn: '7 / span 15'
   }
 }
+
+export const styleGrid2 = {
+  color: 'red',
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr'
+}

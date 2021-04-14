@@ -2,7 +2,7 @@
 
 import { Button, Link } from '@rackai/symbols'
 
-import { styleGrid } from './style'
+import { styleGrid, styleGrid2 } from './style'
 
 var componentLink = {
   proto: Link,
@@ -12,5 +12,10 @@ var componentLink = {
 }
 
 export const grid = {
-  style: styleGrid
+  style: styleGrid,
+  text: 'eded'
+}
+
+export const grid2 = {
+  style: styleGrid2
 }

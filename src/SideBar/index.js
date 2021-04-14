@@ -13,6 +13,10 @@ var MenuItem = {
 export const sideMenu = {
   caption: '',
   nav: {
+    style: { 
+      a: { cursor: 'pointer'}
+
+    },
     childProto: Link,
     ...[{}]
   }
