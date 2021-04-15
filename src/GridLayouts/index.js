@@ -12,8 +12,7 @@ var componentLink = {
 }
 
 export const grid = {
-  style: styleGrid,
-  text: 'eded'
+  style: styleGrid
 }
 
 

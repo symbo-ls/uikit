@@ -34,9 +34,8 @@ export const buttonRectangle = {
 
 export const buttonKangoroo = {
   proto: buttonRectangle,
-  button: {
+  child: {
     proto: buttonRectangle
   }
 }
 
-export default Button
