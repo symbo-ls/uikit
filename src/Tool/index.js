@@ -22,6 +22,7 @@ export const rangeSliderTool = {
     button: {
       proto: buttonSquare,
       theme: 'white',
+      icon: 'minus',
       round: 6
     },
     span: '16px',
@@ -29,6 +30,7 @@ export const rangeSliderTool = {
     button2: {
       proto: buttonSquare,
       theme: 'white',
+      icon: 'plus',
       round: 6
     }
   }
