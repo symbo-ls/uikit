@@ -3,7 +3,6 @@
 import { Unit } from '@rackai/scratch'
 
 export default {
-  border: `1px solid transparent`,
   boxSizing: 'border-box'
 }
 
@@ -12,6 +11,7 @@ export const round = {
   4: { borderRadius: 4 },
   6: { borderRadius: 6 },
   10: { borderRadius: 10 },
+  12: { borderRadius: 12 },
   16: { borderRadius: 16 },
   26: { borderRadius: 26 },
   42: { borderRadius: 42 }

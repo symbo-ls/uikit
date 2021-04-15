@@ -6,7 +6,7 @@ import style, { size } from './style'
 export default {
   style,
 
-  define: {
+  define: { 
     icon: param => param || 'arrowMediumDown',
     size: param => param || 'default'
   },

@@ -30,4 +30,13 @@ set('theme', {
   name: 'seq',
   color: Color['white'],
   backgroundColor: Color['purple']
+}, {
+  name: 'transparent',
+  borderWidth: 1,
+  borderColor: 'transparent',
+  borderStyle: 'solid'
+}, {
+  name: 'whites',
+  color: 'black',
+  background: Color['white']
 })
