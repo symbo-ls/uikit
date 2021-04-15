@@ -14,7 +14,7 @@ export const rangeSliderTool = {
   style: style,
   icon: {
     proto: Icon,
-    name: 'typography'
+    name: 'fontSize'
   },
   tool: {
     proto: Shape,
