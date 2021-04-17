@@ -2,6 +2,7 @@
 
 export default {
   padding: '1.2em 2em 1.6em 1.8em',
+  borderBottomLeftRadius: '4px',
   caption: {
     padding: 0,
     height: 'fit-content',
@@ -16,9 +17,10 @@ export default {
     }
   },
   span: {
+    display: 'block',
     fontSize: '1.3em',
     opacity: '.6',
-    paddingLeft: '20px',
-    marginTop: '2px'
+    marginLeft: '24px',
+    paddingTop: '2px'
   }
 }
