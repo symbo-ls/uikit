@@ -36,10 +36,11 @@ import Button, { buttonSquare, buttonRectangle, buttonCircle, buttonKangoroo } f
 // import * as Banner from './Banner'
 import { parentMode } from './Banner'
 import User, { userBundle } from './User'
-import { grid } from './GridLayouts'
+import { grid, grid2 } from './GridLayouts'
 import { sideMenu } from './SideBar'
 import ToolBar from './ToolBar'
 import { rangeSliderTool } from './Tool'
+import Notification from './Notification'
 
 export {
   // scratch library
@@ -71,9 +72,11 @@ export {
   sideMenu,
   ToolBar,
   rangeSliderTool,
+  Notification,
 
   // grid layouts
   grid,
+  grid2,
 
   // scratch utils
   set,
