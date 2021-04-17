@@ -1,11 +1,16 @@
 'use strict'
 import { Shape, IconText, Direction } from '../'
 
+import style from './style'
+
 export default {
-  proto: [Shape, IconText],
+  style,
+  proto: [Shape],
   caption: {
+    proto: [IconText],
+    _icon: {},
     icon: 'info',
-    text: 'Notification'
+    text: 'Notification',
   },
   span: 'is not always a distraction'
 }
