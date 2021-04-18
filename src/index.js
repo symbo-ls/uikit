@@ -41,7 +41,7 @@ import { sideMenu } from './SideBar'
 import ToolBar from './ToolBar'
 import { rangeSliderTool } from './Tool'
 import Notification from './Notification'
-import Dropdown from './DropDown'
+import { ListItem, List } from './Dropdown'
 
 export {
   // scratch library
@@ -74,7 +74,8 @@ export {
   ToolBar,
   rangeSliderTool,
   Notification,
-  Dropdown,
+  List,
+  ListItem,
 
   // grid layouts
   grid,
