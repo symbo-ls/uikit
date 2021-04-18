@@ -1,20 +1,31 @@
 'use strict'
 import { Shape, IconText } from '..'
-import { styleDropDown, active } from './style'
+import { styleRow, styleRowActive, styleDropDown } from './style'
 
 export const dropDown = {
   style: styleDropDown,
   tag: 'ul',
+
+  state: {
+    active: 0
+  },
+
   childProto: {
     tag: 'li',
     proto: [Shape, IconText],
     theme: 'lightBlue',
     icon: 'checkMedium',
-    define: {
-      value: param => param,
-      active: param => param
+    style: styleRow,
+    class: {
+      active: (element, state) => (state.active === element.key) ? styleRowActive : ''
+    },
+    on: {
+      click: (event, element, state) => {
+        state.update({ active: element.key })
+      }
     }
   },
+
   ...[
     { text: 'Today' },
     { text: 'Yesterday' },
