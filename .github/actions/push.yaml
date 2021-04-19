@@ -1,2 +1,0 @@
-- name: Automated Version Bump
-  uses: phips28/gh-action-bump-version@v8.0.18
