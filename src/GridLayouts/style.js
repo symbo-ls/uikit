@@ -45,7 +45,6 @@ export const styleGrid = {
   }
 }
 
-
 export const styleGrid2 = {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr',
@@ -80,7 +79,7 @@ export const styleGrid2 = {
   },
   '> a:nth-child(5)': {
     gridRow: '2 / span 2',
-    gridColumn: '6 / span 6',
+    gridColumn: '6 / span 6'
   },
   '> a:nth-child(6)': {
     gridRow: 2,
