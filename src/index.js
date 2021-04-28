@@ -39,9 +39,10 @@ import User, { userBundle } from './User'
 import { grid, grid2 } from './GridLayouts'
 import { sideMenu } from './SideBar'
 import ToolBar from './ToolBar'
-import { rangeSliderTool } from './Tool'
+import { rangeSliderTool, slideShow } from './Tool'
 import Notification from './Notification'
 import { ListItem, List } from './Dropdown'
+import DarePicker from './DatePicker'
 
 export {
   // scratch library
@@ -76,6 +77,8 @@ export {
   Notification,
   List,
   ListItem,
+  DarePicker,
+  slideShow,
 
   // grid layouts
   grid,
