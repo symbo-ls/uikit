@@ -98,14 +98,14 @@ export const styleGrid2 = {
   },
   '> a:nth-child(9)': {
     gridRow: '4 / span 2',
-    gridColumn: '1 / span 6'
+    gridColumn: '1 / span 7'
   },
   '> a:nth-child(10)': {
-    gridColumn: '7 / span 5'
+    gridColumn: '8 / span 4'
   },
   '> a:nth-child(11)': {
     gridRow: '5',
-    gridColumn: '7 / span 5'
+    gridColumn: '8 / span 4'
   },
   '> a:nth-child(12)': {
     gridColumn: '12 / span 4'

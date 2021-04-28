@@ -43,6 +43,7 @@ import { rangeSliderTool, slideShow } from './Tool'
 import Notification from './Notification'
 import { ListItem, List } from './Dropdown'
 import DarePicker from './DatePicker'
+import Tooltip from './Tooltip'
 
 export {
   // scratch library
@@ -79,6 +80,7 @@ export {
   ListItem,
   DarePicker,
   slideShow,
+  Tooltip,
 
   // grid layouts
   grid,
