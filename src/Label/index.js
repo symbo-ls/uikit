@@ -7,6 +7,6 @@ export default {
     fontSize: '1.5em',
     padding: '0 6px'
   },
-  theme: 'white',
+  theme: 'White',
   text: '😂3'
 }

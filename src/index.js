@@ -41,7 +41,7 @@ import { sideMenu } from './SideBar'
 import ToolBar from './ToolBar'
 import { rangeSliderTool, slideShow } from './Tool'
 import Notification from './Notification'
-import { ListItem, List } from './Dropdown'
+import { dropDown } from './Dropdown'
 import DarePicker from './DatePicker'
 import Tooltip from './Tooltip'
 import Label from './Label'
@@ -77,8 +77,9 @@ export {
   ToolBar,
   rangeSliderTool,
   Notification,
-  List,
-  ListItem,
+  // List,
+  // ListItem,
+  dropDown,
   DarePicker,
   slideShow,
   Tooltip,

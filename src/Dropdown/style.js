@@ -36,3 +36,7 @@ export const styleRowActive = {
   },
   'span > svg': { display: 'inline' }
 }
+
+export const styleSelectDropdown = {
+  color: 'red'
+}
