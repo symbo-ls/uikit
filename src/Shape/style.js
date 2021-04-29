@@ -28,7 +28,7 @@ export const depth = {
 
 export const shape = {
   rectangle: {},
-  round: { borderRadius: '100%' },
+  oval: { borderRadius: '100%' },
   bubble: {},
   tooltip: {}
 }

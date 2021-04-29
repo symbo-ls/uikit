@@ -3,16 +3,16 @@
 import { Theme } from '@rackai/scratch'
 import style, { shape, depth, round } from './style'
 
-var Shape = {
+const Shape = {
   style,
-  
+
   define: {
     shape: param => param || 'rectangle',
     depth: param => param !== undefined ? param : 10,
     round: param => param !== undefined ? param : 6,
     theme: param => {
-      var themes = Object.keys(Theme)
-      return (themes.indexOf(param) >= 0) ? param : themes['transparent']
+      const themes = Object.keys(Theme)
+      return (themes.indexOf(param) >= 0) ? param : themes.transparent
     }
   },
 

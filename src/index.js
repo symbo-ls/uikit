@@ -45,6 +45,7 @@ import { dropDown } from './Dropdown'
 import DarePicker from './DatePicker'
 import Tooltip from './Tooltip'
 import Label from './Label'
+import Pills from './Pills'
 
 export {
   // scratch library
@@ -84,6 +85,7 @@ export {
   slideShow,
   Tooltip,
   Label,
+  Pills,
 
   // grid layouts
   grid,
