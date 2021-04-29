@@ -56,7 +56,8 @@ export const styleGrid2 = {
   gridAutoRows: 'auto',
   gridAutoFlow: 'column',
   '> a': {
-    padding: '70px 0',
+    boxSizing: 'border-box',
+    padding: '7em 3em',
     display: 'flex',
     justifyContent: 'center',
     background: 'rgba(255, 255, 255, .05)',
