@@ -1,7 +1,7 @@
 'use strict'
 
 import { Theme } from '@rackai/scratch'
-import style, { shape, depth, round, roundCornerTopLeft, roundCornerBottomLeft } from './style'
+import style, { shape, depth, round, roundCornerTopLeft, roundCornerBottomLeft, roundCornerTopRight } from './style'
 
 const Shape = {
   style,
@@ -12,6 +12,7 @@ const Shape = {
     round: param => param !== undefined ? param : 6,
     roundCornerTopLeft: param => param !== undefined ? param : 6,
     roundCornerBottomLeft: param => param !== undefined ? param : 6,
+    roundCornerTopRight: param => param !== undefined ? param : 6,
     theme: param => {
       const themes = Object.keys(Theme)
       return (themes.indexOf(param) >= 0) ? param : themes.transparent
@@ -24,6 +25,7 @@ const Shape = {
     round: element => round[element.round],
     roundCornerTopLeft: element => roundCornerTopLeft[element.roundCornerTopLeft],
     roundCornerBottomLeft: element => roundCornerBottomLeft[element.roundCornerBottomLeft],
+    roundCornerTopRight: element => roundCornerTopRight[element.roundCornerTopRight],
     theme: element => Theme[element.theme]
   }
 
