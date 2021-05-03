@@ -17,6 +17,17 @@ export const round = {
   42: { borderRadius: 42 }
 }
 
+export const roundCornerTopLeft = {
+  0: { borderTopLeftRadius: 0 },
+  4: { borderTopLeftRadius: 4 },
+  6: { borderTopLeftRadius: 6 },
+  10: { borderTopLeftRadius: 10 },
+  12: { borderTopLeftRadius: 12 },
+  16: { borderTopLeftRadius: 16 },
+  26: { borderTopLeftRadius: 26 },
+  42: { borderTopLeftRadius: 42 }
+}
+
 export const depth = {
   4: { boxShadow: `rgba(0,0,0,.10) 0 2${Unit} 4${Unit}` },
   6: { boxShadow: `rgba(0,0,0,.10) 0 3${Unit} 6${Unit}` },
