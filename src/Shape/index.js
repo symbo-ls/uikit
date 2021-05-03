@@ -1,7 +1,7 @@
 'use strict'
 
 import { Theme } from '@rackai/scratch'
-import style, { shape, depth, round } from './style'
+import style, { shape, depth, round, oval } from './style'
 
 const Shape = {
   style,
