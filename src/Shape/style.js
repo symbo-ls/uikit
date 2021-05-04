@@ -132,6 +132,74 @@ export const toolTipShape = {
   }
 }
 
+export const tagShape = {
+  top: {
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      display: 'block',
+      width: '0',
+      height: '0',
+      background: 'white',
+      border: '16px solid white',
+      borderRadius: '6px',
+      position: 'absolute',
+      top: '5px',
+      left: '50%',
+      transform: 'translate(-50%, -50%) rotate(45deg)'
+    }
+  },
+  right: {
+    position: 'relative',
+    // background: 'red',
+    '&:before': {
+      content: '""',
+      display: 'block',
+      width: '0',
+      height: '0',
+      background: 'white',
+      border: '16px solid white',
+      borderRadius: '6px',
+      position: 'absolute',
+      top: '50%',
+      left: '37px',
+      transform: 'translate(-50%, -50%) rotate(45deg)'
+    }
+  },
+  bottom: {
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      display: 'block',
+      width: '0',
+      height: '0',
+      background: 'white',
+      border: '16px solid white',
+      borderRadius: '6px',
+      position: 'absolute',
+      bottom: '-27px',
+      left: '50%',
+      transform: 'translate(-50%, -50%) rotate(45deg)'
+    }
+  },
+  left: {
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      display: 'block',
+      width: '0',
+      height: '0',
+      background: 'white',
+      border: '16px solid white',
+      borderRadius: '6px',
+      position: 'absolute',
+      top: '50%',
+      left: '5px',
+      transform: 'translate(-50%, -50%) rotate(45deg)'
+    }
+  }
+}
+
 export const shape = {
   rectangle: {},
   circle: { borderRadius: '100%' },
