@@ -1,13 +1,14 @@
 'use strict'
 
 import { Theme } from '@rackai/scratch'
-import style, { shape, depth, round, roundCornerTopLeft, roundCornerBottomLeft, roundCornerTopRight, roundCornerBottomRight } from './style'
+import style, { toolTipShape, shape, depth, round, roundCornerTopLeft, roundCornerBottomLeft, roundCornerTopRight, roundCornerBottomRight } from './style'
 
 const Shape = {
   style,
 
   define: {
-    shape: param => param || 'rectangle',
+    shape: param => param || '',
+    toolTipShape: param => param || '',
     depth: param => param !== undefined ? param : 10,
     round: param => param !== undefined ? param : 6,
     roundCornerTopLeft: param => param !== undefined ? param : 6,
@@ -21,6 +22,7 @@ const Shape = {
   },
 
   class: {
+    toolTipShape: element => toolTipShape[element.toolTipShape],
     shape: element => shape[element.shape],
     depth: element => depth[element.depth],
     round: element => round[element.round],

@@ -69,9 +69,72 @@ export const depth = {
   42: { boxShadow: `rgba(0,0,0,.10) 0 20${Unit} 42${Unit}` }
 }
 
+export const toolTipShape = {
+  top: {
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      display: 'block',
+      width: '0px',
+      height: '0px',
+      border: '6px solid white',
+      borderRadius: '2px',
+      position: 'absolute',
+      top: '2px',
+      left: '50%',
+      transform: 'translate(-50%, -50%) rotate(45deg)'
+    }
+  },
+  right: {
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      display: 'block',
+      width: '0px',
+      height: '0px',
+      border: '6px solid white',
+      borderRadius: '2px',
+      position: 'absolute',
+      top: '50%',
+      right: '-10px',
+      transform: 'translate(-50%, -50%) rotate(45deg)'
+    }
+  },
+  bottom: {
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      display: 'block',
+      width: '0px',
+      height: '0px',
+      border: '6px solid white',
+      borderRadius: '2px',
+      position: 'absolute',
+      bottom: '-10px',
+      left: '50%',
+      transform: 'translate(-50%, -50%) rotate(45deg)'
+    }
+  },
+  left: {
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      display: 'block',
+      width: '0px',
+      height: '0px',
+      border: '6px solid white',
+      borderRadius: '2px',
+      position: 'absolute',
+      top: '50%',
+      left: '2px',
+      transform: 'translate(-50%, -50%) rotate(45deg)'
+    }
+  }
+}
+
 export const shape = {
   rectangle: {},
-  oval: { borderRadius: '100%' },
+  circle: { borderRadius: '100%' },
   bubble: {},
   tooltip: {}
 }
