@@ -14,7 +14,7 @@ export default {
   fontFamily: 'inherit',
   fontSize: '1.6em',
   height: '42px',
-  display: 'flex',
+  display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center'
 }

@@ -7,14 +7,14 @@ export const styleRangeSlider = {
   outline: 'none',
   marginRight: '8px',
   marginLeft: '8px',
-  background: 'rgba(255, 255, 255, .2)',
+
   '&::-webkit-slider-thumb': {
     boxSizing: 'content-box',
     appearance: 'none',
     width: '8px',
     height: '8px',
-    border: '2px solid #3C6AC0',
-    background: '#232526',
+    borderWidth: '2px',
+    borderStyle: 'solid',
     borderRadius: '100%',
     opacity: '.8'
   }
