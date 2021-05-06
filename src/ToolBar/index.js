@@ -1,5 +1,5 @@
 'use strict'
-import { buttonSquare } from '../Button'
+import { SquareButton } from '../Button'
 import Shape from '../Shape'
 
 export default {
@@ -9,7 +9,7 @@ export default {
     display: 'flex'
   },
   childProto: {
-    proto: buttonSquare,
+    proto: SquareButton,
     theme: 'transparent'
   }
 }

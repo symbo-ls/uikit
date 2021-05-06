@@ -2,7 +2,7 @@
 
 export const styleGrid = {
   display: 'grid',
-  gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr',
+  gridTemplateColumns: 'repeat(15, 1fr)',
   boxSizing: 'border-box',
   padding: '0 8em',
   marginBottom: '2em',
@@ -15,7 +15,8 @@ export const styleGrid = {
     display: 'flex',
     justifyContent: 'center',
     background: 'rgba(255, 255, 255, .05)',
-    borderRadius: '12px'
+    borderRadius: '12px',
+    alignItems: 'center'
   },
   '> a:first-child': {
     gridColumn: '1 / span 15'
@@ -47,7 +48,7 @@ export const styleGrid = {
 
 export const styleGrid2 = {
   display: 'grid',
-  gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr',
+  gridTemplateColumns: 'repeat(15, 1fr)',
   boxSizing: 'border-box',
   marginBottom: '2em',
   gap: '10px',
@@ -55,11 +56,13 @@ export const styleGrid2 = {
   gridAutoRows: 'auto',
   gridAutoFlow: 'column',
   '> a': {
-    padding: '70px 0',
+    boxSizing: 'border-box',
+    padding: '7em 3em',
     display: 'flex',
     justifyContent: 'center',
     background: 'rgba(255, 255, 255, .05)',
-    borderRadius: '12px'
+    borderRadius: '12px',
+    alignItems: 'center'
   },
   '> a:first-child': {
     gridColumn: '1 / span 3',
@@ -96,14 +99,14 @@ export const styleGrid2 = {
   },
   '> a:nth-child(9)': {
     gridRow: '4 / span 2',
-    gridColumn: '1 / span 6'
+    gridColumn: '1 / span 7'
   },
   '> a:nth-child(10)': {
-    gridColumn: '7 / span 5'
+    gridColumn: '8 / span 4'
   },
   '> a:nth-child(11)': {
     gridRow: '5',
-    gridColumn: '7 / span 5'
+    gridColumn: '8 / span 4'
   },
   '> a:nth-child(12)': {
     gridColumn: '12 / span 4'

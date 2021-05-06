@@ -1,6 +1,6 @@
 'use strict'
 
-import { Icon, buttonSquare, Shape, Field } from '..'
+import { Icon, SquareButton, Shape, Field } from '..'
 import * as Scratch from '@rackai/scratch'
 
 import style, { styleRangeSlider } from './style'
@@ -27,14 +27,14 @@ Scratch.set('theme', {
   }
 })
 
-const rangeSlider = {
+const RangeSlider = {
   proto: [Shape, Field],
   theme: 'sliderThumb',
   style: styleRangeSlider,
   attr: { type: 'range' }
 }
 
-export const rangeSliderTool = {
+export default {
   style: style,
   icon: {
     proto: Icon,
@@ -44,7 +44,7 @@ export const rangeSliderTool = {
     proto: Shape,
     round: 6,
     less: {
-      proto: buttonSquare,
+      proto: SquareButton,
       theme: 'white',
       icon: 'minus',
       round: 6
@@ -53,9 +53,9 @@ export const rangeSliderTool = {
       tag: 'span',
       style: { width: 36 }
     },
-    range: { proto: rangeSlider },
+    range: { proto: RangeSlider },
     more: {
-      proto: buttonSquare,
+      proto: SquareButton,
       theme: 'white',
       icon: 'plus',
       round: 6

@@ -10,7 +10,7 @@ const User = {
   }
 }
 
-export const userBundle = {
+export const UserBundle = {
   style: styleUserBundle,
   users: {
     childProto: User,

@@ -10,7 +10,7 @@ const Button = {
   style
 }
 
-export const buttonSquare = {
+export const SquareButton = {
   proto: Button,
   round: 10,
   style: {
@@ -19,12 +19,12 @@ export const buttonSquare = {
   }
 }
 
-export const buttonCircle = {
-  proto: [Button, buttonSquare],
+export const CircleButton = {
+  proto: [Button, SquareButton],
   round: 42
 }
 
-export const buttonRectangle = {
+export const RectangleButton = {
   proto: Button,
   round: 26,
   style: {
@@ -32,10 +32,10 @@ export const buttonRectangle = {
   }
 }
 
-export const buttonKangoroo = {
-  proto: buttonRectangle,
+export const KangorooButton = {
+  proto: RectangleButton,
   button: {
-    proto: buttonRectangle
+    proto: RectangleButton
   }
 }
 

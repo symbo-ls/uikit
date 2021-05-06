@@ -15,8 +15,16 @@ import * as checkMedium from './check-medium'
 import * as checkBold from './check-bold'
 
 export default {
-  ...arrowBold, ...arrowMedium, ...arrowRegular, ...arrowOval,
-  ...arrowMirroringLight, ...arrowMirroringMedium, ...arrowMirroringBold, ...arrowMirroringExtraBold,
+  ...arrowBold,
+  ...arrowMedium,
+  ...arrowRegular,
+  ...arrowOval,
+  ...arrowMirroringLight,
+  ...arrowMirroringMedium,
+  ...arrowMirroringBold,
+  ...arrowMirroringExtraBold,
 
-  ...checkRegular, ...checkMedium, ...checkBold
+  ...checkRegular,
+  ...checkMedium,
+  ...checkBold
 }
