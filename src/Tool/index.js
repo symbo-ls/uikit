@@ -1,16 +1,40 @@
 'use strict'
 
-import { Icon, buttonSquare, Shape } from '..'
+import { Icon, SquareButton, Shape, Field } from '..'
+import * as Scratch from '@rackai/scratch'
 
 import style, { styleRangeSlider } from './style'
 
-const rangeSlider = {
-  tag: 'input',
+Scratch.set('theme', {
+  name: 'sliderThumb',
+  backgroundColor: Scratch.opacify('#fff', 0.2),
+
+  '&::-webkit-slider-thumb': {
+    background: '#232526',
+    borderColor: Scratch.opacify('#454646', 0.75)
+  },
+
+  '&:hover': {
+    '&::-webkit-slider-thumb': {
+      borderColor: Scratch.opacify('#fff', 0.35)
+    }
+  },
+
+  '&:focus, &:active': {
+    '&::-webkit-slider-thumb': {
+      borderColor: '#3C6AC0'
+    }
+  }
+})
+
+const RangeSlider = {
+  proto: [Shape, Field],
+  theme: 'sliderThumb',
   style: styleRangeSlider,
   attr: { type: 'range' }
 }
 
-export const rangeSliderTool = {
+export default {
   style: style,
   icon: {
     proto: Icon,
@@ -19,16 +43,19 @@ export const rangeSliderTool = {
   tool: {
     proto: Shape,
     round: 6,
-    button: {
-      proto: buttonSquare,
+    less: {
+      proto: SquareButton,
       theme: 'white',
       icon: 'minus',
       round: 6
     },
-    span: '16px',
-    rangeSlider,
-    button2: {
-      proto: buttonSquare,
+    value: {
+      tag: 'span',
+      style: { width: 36 }
+    },
+    range: { proto: RangeSlider },
+    more: {
+      proto: SquareButton,
       theme: 'white',
       icon: 'plus',
       round: 6

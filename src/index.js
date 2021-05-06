@@ -32,16 +32,21 @@ import Img from './Img'
 import Link from './Link'
 import IconText from './IconText'
 import Field from './Field'
-import Button, { buttonSquare, buttonRectangle, buttonCircle, buttonKangoroo } from './Button'
-// import * as Banner from './Banner'
-import { parentMode } from './Banner'
-import User, { userBundle } from './User'
-import { grid, grid2 } from './GridLayouts'
-import { sideMenu } from './SideBar'
+import Button, { buttonSquare, RectangleButton, CircleButton, KangorooButton } from './Button'
+import * as Banner from './Banner'
 import ToolBar from './ToolBar'
-import { rangeSliderTool } from './Tool'
+import User, { userBundle } from './User'
+import { parentMode } from './Banner'
+import { grid, grid2 } from './GridLayouts'
+import SideBar from './SideBar'
+// import { ListItem, List } from './Dropdown'
+import RangeSlider from './Tool'
 import Notification from './Notification'
-import { ListItem, List } from './Dropdown'
+import Dropdown from './Dropdown'
+import DatePicker from './DatePicker'
+import Tooltip from './Tooltip'
+import Label from './Label'
+import Pills from './Pills'
 
 export {
   // scratch library
@@ -63,19 +68,24 @@ export {
   IconText,
   Button,
   buttonSquare,
-  buttonRectangle,
-  buttonCircle,
-  buttonKangoroo,
+  RectangleButton,
+  CircleButton,
+  KangorooButton,
   Field,
   parentMode,
   User,
   userBundle,
-  sideMenu,
+  SideBar,
   ToolBar,
-  rangeSliderTool,
+  RangeSlider,
   Notification,
-  List,
-  ListItem,
+  // List,
+  // ListItem,
+  Dropdown,
+  DatePicker,
+  Tooltip,
+  Label,
+  Pills,
 
   // grid layouts
   grid,

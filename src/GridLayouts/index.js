@@ -4,7 +4,7 @@ import { Button, Link } from '@rackai/symbols'
 
 import { styleGrid, styleGrid2 } from './style'
 
-var componentLink = {
+let componentLink = {
   proto: Link,
   attr: {
     href: '#'
@@ -14,7 +14,6 @@ var componentLink = {
 export const grid = {
   style: styleGrid
 }
-
 
 export const grid2 = {
   style: styleGrid2

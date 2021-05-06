@@ -10,12 +10,11 @@ var MenuItem = {
   }
 }
 
-export const sideMenu = {
+export default {
   caption: '',
   nav: {
-    style: { 
+    style: {
       a: { cursor: 'pointer'}
-
     },
     childProto: Link,
     ...[{}]

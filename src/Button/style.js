@@ -2,8 +2,8 @@
 
 import { Typography } from '@rackai/scratch'
 
-var primaryFont = Object.keys(Typography)[0]
-var defaultFont = primaryFont || '--system-default'
+let primaryFont = Object.keys(Typography)[0]
+let defaultFont = primaryFont || '--system-default'
 
 export default {
   appearance: 'none',
@@ -14,7 +14,7 @@ export default {
   fontFamily: 'inherit',
   fontSize: '1.6em',
   height: '42px',
-  display: 'flex',
+  display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center'
 }

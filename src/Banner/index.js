@@ -2,7 +2,7 @@
 
 import { Shape, Img, Icon } from '../'
 
-import { userBundle } from '../User'
+import { UserBundle } from '../User'
 
 import { styleParentMode } from './style'
 
@@ -17,7 +17,7 @@ export const parentMode = {
   },
   h2: 'Welcome to parent Mode',
   description: {
-    proto: userBundle,
+    proto: UserBundle,
     users: { ...[{}, {}, {}] },
     span: 'You’ll now be able to chat with tutor privately. No other participants will see the messages.'
   }
