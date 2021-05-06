@@ -32,7 +32,7 @@ import Img from './Img'
 import Link from './Link'
 import IconText from './IconText'
 import Field from './Field'
-import Button, { buttonSquare, RectangleButton, CircleButton, KangorooButton } from './Button'
+import Button, { SquareButton, RectangleButton, CircleButton, KangorooButton } from './Button'
 import * as Banner from './Banner'
 import ToolBar from './ToolBar'
 import User, { userBundle } from './User'
@@ -67,7 +67,7 @@ export {
   Icon,
   IconText,
   Button,
-  buttonSquare,
+  SquareButton,
   RectangleButton,
   CircleButton,
   KangorooButton,
