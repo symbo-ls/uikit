@@ -3,7 +3,7 @@
   "description": "UI Library built on Scratch and DOMQL",
   "private": false,
   "author": "rackai",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "repository": "https://github.com/rackai/symbols",
   "main": "src/index.js",
   "publishConfig": {
@@ -15,7 +15,8 @@
     "deploy": "yarn build && gh-pages -d dist",
     "clean": "rm yarn.lock && rm -rf node_modules && rm -rf dist && rm -rf .cache",
     "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn",
-    "version": "auto-changelog -p --template keepachangelog && git add CHANGELOG.md"
+    "version": "auto-changelog -p --template keepachangelog && git add CHANGELOG.md",
+    "bump": "npx np"
   },
   "dependencies": {
     "@rackai/domql": "1.0.8",
