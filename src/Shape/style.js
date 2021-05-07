@@ -204,5 +204,7 @@ export const shape = {
   rectangle: {},
   circle: { borderRadius: '100%' },
   bubble: {},
-  tooltip: {}
+  tooltip: {
+    background: 'red'
+  }
 }

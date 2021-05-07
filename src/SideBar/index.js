@@ -1,7 +1,7 @@
 'use strict'
 import { Icon, Link } from '../'
 
-var MenuItem = {
+const MenuItem = {
   proto: Link,
   define: { icon: param => param },
   glyph: {
@@ -11,13 +11,13 @@ var MenuItem = {
 }
 
 export const sideMenu = {
+  border: '1px solid red',
   caption: '',
   nav: {
-    style: { 
-      a: { cursor: 'pointer'}
-
+    style: {
+      a: { cursor: 'pointer' }
     },
-    childProto: Link,
+    childProto: MenuItem,
     ...[{}]
   }
 }
