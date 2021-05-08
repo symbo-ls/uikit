@@ -10,8 +10,7 @@ const MenuItem = {
   }
 }
 
-export const sideMenu = {
-  border: '1px solid red',
+export default {
   caption: '',
   nav: {
     style: {

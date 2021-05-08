@@ -2,7 +2,7 @@
 import { Shape, IconText } from '..'
 import { styleRow, styleRowActive, styleDropDown, styleSelectDropdown } from './style'
 
-export const dropDown = {
+export default {
   style: styleDropDown,
   tag: 'ul',
   proto: Shape,
