@@ -46,6 +46,7 @@ import DatePicker from './DatePicker'
 import Tooltip from './Tooltip'
 import Label from './Label'
 import Pills from './Pills'
+import Select from './Select'
 
 export {
   // scratch library
@@ -77,6 +78,7 @@ export {
   ToolBar,
   RangeSlider,
   Notification,
+  Select,
   // List,
   // ListItem,
   Dropdown,

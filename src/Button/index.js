@@ -26,7 +26,7 @@ export const CircleButton = {
 
 export const RectangleButton = {
   proto: Button,
-  round: 26,
+  round: 42,
   style: {
     '> svg': { marginRight: '6px' }
   }
