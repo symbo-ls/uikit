@@ -28,7 +28,8 @@ Scratch.set('theme', {
 })
 
 const RangeSlider = {
-  proto: [Shape, Field],
+  proto: Shape,
+  tag: 'input',
   theme: 'sliderThumb',
   style: styleRangeSlider,
   attr: { type: 'range' }

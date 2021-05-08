@@ -35,10 +35,9 @@ import Field from './Field'
 import Button, { SquareButton, RectangleButton, CircleButton, KangorooButton } from './Button'
 import * as Banner from './Banner'
 import ToolBar from './ToolBar'
-import User, { userBundle } from './User'
+import User, { UserBundle } from './User'
 import { parentMode } from './Banner'
 import { grid, grid2 } from './GridLayouts'
-import SideBar from './SideBar'
 // import { ListItem, List } from './Dropdown'
 import RangeSlider from './Tool'
 import Notification from './Notification'
@@ -74,8 +73,7 @@ export {
   Field,
   parentMode,
   User,
-  userBundle,
-  SideBar,
+  UserBundle,
   ToolBar,
   RangeSlider,
   Notification,
