@@ -21,12 +21,13 @@ export const buttonSquare = {
 
 export const buttonCircle = {
   proto: [Button, buttonSquare],
-  round: 42
+  round: 10
+  // theme: 'blue'
 }
 
 export const buttonRectangle = {
   proto: Button,
-  round: 26,
+  round: 42,
   style: {
     '> svg': { marginRight: '6px' }
   }
@@ -34,6 +35,7 @@ export const buttonRectangle = {
 
 export const buttonKangoroo = {
   proto: buttonRectangle,
+  round: 42,
   button: {
     proto: buttonRectangle
   }
