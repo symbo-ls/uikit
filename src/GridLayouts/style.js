@@ -4,7 +4,6 @@ export const styleGrid = {
   display: 'grid',
   gridTemplateColumns: 'repeat(15, 1fr)',
   boxSizing: 'border-box',
-  padding: '0 8em',
   marginBottom: '2em',
   rowGap: '10px',
   gridAutoColumns: 'auto',
