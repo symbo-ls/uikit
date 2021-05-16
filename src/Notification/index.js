@@ -5,12 +5,11 @@ import style from './style'
 
 export default {
   style,
-  proto: [Shape],
-  caption: {
-    proto: [IconText],
-    _icon: {},
-    icon: 'info',
-    text: 'Notification'
-  },
-  p: 'is not always a distraction'
+  proto: [Shape, IconText],
+  _icon: {},
+  icon: 'info',
+  article: {
+    caption: 'Notification',
+    p: 'is not always a distraction'
+  }
 }
