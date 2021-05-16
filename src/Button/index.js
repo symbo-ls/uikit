@@ -10,28 +10,16 @@ const Button = {
   style
 }
 
-// export const SquareButton = {
-//   proto: Button
-// }
-
-export const CircleButton = {
+export const buttonCircle = {
   proto: Button,
   style: { borderRadius: '100%' }
 }
 
-// export const RectangleButton = {
-//   proto: Button,
-//   round: 42,
-//   style: {
-//     '> svg': { marginRight: '6px' }
-//   }
-// }
-
-// export const KangorooButton = {
-//   proto: RectangleButton,
-//   button: {
-//     proto: RectangleButton
-//   }
-// }
+export const buttonKangoroo = {
+  proto: Button,
+  button: {
+    proto: Button
+  }
+}
 
 export default Button

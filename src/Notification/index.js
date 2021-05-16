@@ -10,7 +10,7 @@ export default {
     proto: [IconText],
     _icon: {},
     icon: 'info',
-    text: 'Notification',
+    text: 'Notification'
   },
   span: 'is not always a distraction'
 }

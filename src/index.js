@@ -32,17 +32,17 @@ import Img from './Img'
 import Link from './Link'
 import IconText from './IconText'
 import Field from './Field'
-import Button, { CircleButton } from './Button'
-import * as Banner from './Banner'
-import ToolBar from './ToolBar'
-import User, { UserBundle } from './User'
+import Button, { buttonCircle, buttonKangoroo } from './Button'
+// import * as Banner from './Banner'
 import { parentMode } from './Banner'
+import User, { userBundle } from './User'
 import { grid, grid2 } from './GridLayouts'
-// import { ListItem, List } from './Dropdown'
-import RangeSlider from './Tool'
+import { sideMenu } from './SideBar'
+import ToolBar from './ToolBar'
+import { rangeSliderTool, slideShow } from './Tool'
 import Notification from './Notification'
-import Dropdown from './Dropdown'
-import DatePicker from './DatePicker'
+import { dropDown } from './Dropdown'
+import DarePicker from './DatePicker'
 import Tooltip from './Tooltip'
 import Label from './Label'
 import Pills from './Pills'
@@ -68,20 +68,23 @@ export {
   IconText,
 
   Button,
-  CircleButton,
+  buttonCircle,
+  buttonKangoroo,
 
   Field,
   parentMode,
   User,
-  UserBundle,
+  userBundle,
+  sideMenu,
   ToolBar,
-  RangeSlider,
+  rangeSliderTool,
   Notification,
   Select,
   // List,
   // ListItem,
-  Dropdown,
-  DatePicker,
+  dropDown,
+  DarePicker,
+  slideShow,
   Tooltip,
   Label,
   Pills,
