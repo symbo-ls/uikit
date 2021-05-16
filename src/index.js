@@ -32,7 +32,7 @@ import Img from './Img'
 import Link from './Link'
 import IconText from './IconText'
 import Field from './Field'
-import Button, { buttonCircle, buttonKangoroo } from './Button'
+import Button, { CircleButton, KangorooButton } from './Button'
 // import * as Banner from './Banner'
 import { parentMode } from './Banner'
 import User, { userBundle } from './User'
@@ -68,8 +68,8 @@ export {
   IconText,
 
   Button,
-  buttonCircle,
-  buttonKangoroo,
+  CircleButton,
+  KangorooButton,
 
   Field,
   parentMode,

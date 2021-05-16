@@ -10,12 +10,12 @@ const Button = {
   style
 }
 
-export const buttonCircle = {
+export const CircleButton = {
   proto: Button,
   style: { borderRadius: '100%' }
 }
 
-export const buttonKangoroo = {
+export const KangorooButton = {
   proto: Button,
   button: {
     proto: Button
