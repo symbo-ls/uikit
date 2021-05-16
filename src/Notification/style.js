@@ -1,7 +1,7 @@
 'use strict'
 
 export default {
-  padding: '1.2em 2em 1.6em 1.8em',
+  padding: '1.2em 2em 1.2em 1.8em',
   borderBottomLeftRadius: '4px',
   caption: {
     padding: 0,
@@ -16,11 +16,12 @@ export default {
       padding: '2px'
     }
   },
-  span: {
+  p: {
     display: 'block',
     fontSize: '1.3em',
     opacity: '.6',
+    marginTop: '2px',
     marginLeft: '24px',
-    paddingTop: '2px'
+    marginBottom: '0'
   }
 }
