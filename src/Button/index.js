@@ -17,9 +17,7 @@ export const CircleButton = {
 
 export const KangorooButton = {
   proto: Button,
-  button: {
-    proto: Button
-  }
+  span: {}
 }
 
 export default Button

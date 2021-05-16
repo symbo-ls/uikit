@@ -67,6 +67,7 @@ export {
   Icon,
   IconText,
 
+  // buttons
   Button,
   CircleButton,
   KangorooButton,
