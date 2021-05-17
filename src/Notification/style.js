@@ -20,7 +20,6 @@ export default {
   p: {
     margin: 0,
     fontSize: `${13 / 16}em`,
-    opacity: '.6',
     marginTop: '4px'
   }
 }

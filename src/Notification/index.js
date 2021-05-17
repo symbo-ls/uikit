@@ -5,7 +5,7 @@ import style from './style'
 
 export default {
   style,
-  proto: [Shape, IconText],
+  proto: [Shape, IconText, Direction],
   _icon: {},
   icon: 'info',
   article: {
