@@ -35,6 +35,10 @@ const RangeSlider = {
   attr: { type: 'range' }
 }
 
+export const tool = {
+  text: 'eeee'
+}
+
 export default {
   style: style,
   icon: {
@@ -58,7 +62,7 @@ export default {
     more: {
       proto: SquareButton,
       theme: 'white',
-      icon: 'plus',
+      icon: '',
       round: 6
     }
   }
