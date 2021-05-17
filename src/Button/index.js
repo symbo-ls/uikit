@@ -20,8 +20,9 @@ export const SquareButton = {
 }
 
 export const CircleButton = {
-  proto: [Button, SquareButton],
-  round: 42
+  proto: Button,
+  text: '',
+  style: { borderRadius: '100%' }
 }
 
 export const RectangleButton = {
