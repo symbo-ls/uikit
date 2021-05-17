@@ -27,6 +27,7 @@ export const roundCornerTopLeft = {
   26: { borderTopLeftRadius: 26 },
   42: { borderTopLeftRadius: 42 }
 }
+
 export const roundCornerBottomLeft = {
   0: { borderBottomLeftRadius: 0 },
   4: { borderBottomLeftRadius: 4 },
@@ -151,7 +152,6 @@ export const tagShape = {
   },
   right: {
     position: 'relative',
-    // background: 'red',
     '&:before': {
       content: '""',
       display: 'block',
