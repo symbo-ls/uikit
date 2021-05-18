@@ -35,6 +35,10 @@ const RangeSlider = {
   attr: { type: 'range' }
 }
 
+export const clickRaise = {
+  text: 'efef'
+}
+
 export default {
   style: style,
   icon: {
