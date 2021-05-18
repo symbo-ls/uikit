@@ -1,12 +1,13 @@
 'use strict'
 
+import { hexToRGBA } from '@rackai/scratch'
+
 export const styleRangeSlider = {
   appearance: 'none',
   width: '7.6em',
   height: '2px',
   outline: 'none',
   marginRight: '8px',
-  marginLeft: '8px',
 
   '&::-webkit-slider-thumb': {
     boxSizing: 'content-box',
@@ -19,34 +20,33 @@ export const styleRangeSlider = {
     opacity: '.8'
   }
 }
-
 export const styleRangeSliderTool = {
   display: 'flex',
   alignItems: 'center',
   width: 'auto',
   maxHeight: '28px',
-  '> svg': {
-    marginRight: '12px',
-    opacity: '.2'
-  },
+  span: {
+    textAlign: 'center',
+    marginLeft: '2px'
+  }
+}
+
+export default {
   '> div': {
     display: 'flex',
     alignItems: 'center',
     height: '100%',
     boxSizing: 'border-box',
-    padding: '0 4px',
-    background: 'rgba(255, 255, 255, .03)'
+    padding: '.4em',
+    background: 'rgba(255, 255, 255, .06)'
   },
   button: {
     width: '20px',
-    height: '20px'
+    height: '20px',
+    background: 'rgba(255, 255, 255, .06)',
+    color: 'rgba(255, 255, 255, .55)'
   },
   span: {
-    fontSize: '1.3em',
-    marginLeft: '10px'
+    fontSize: '1.3em'
   }
-
-}
-
-export default {
 }

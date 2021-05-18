@@ -3,7 +3,7 @@
 import { Icon, SquareButton, Shape } from '..'
 import * as Scratch from '@rackai/scratch'
 
-import { styleRangeSlider, styleRangeSliderTool } from './style'
+import style, { styleRangeSlider, styleRangeSliderTool } from './style'
 
 Scratch.set('theme', {
   name: 'sliderThumb',
@@ -34,6 +34,28 @@ const RangeSlider = {
   style: styleRangeSlider,
   attr: { type: 'range' }
 }
+
+export const RangeSliderTool = {
+  class: { style, styleRangeSliderTool },
+  tool: {
+    proto: Shape,
+    round: 6,
+    less: {
+      proto: SquareButton,
+      icon: 'minus'
+    },
+    value: {
+      tag: 'span',
+      style: { width: 36 }
+    },
+    range: { proto: RangeSlider },
+    more: {
+      proto: SquareButton,
+      icon: 'plus'
+    }
+  }
+}
+
 export const SelectTool = {
   proto: Shape,
   text: 'jbjbj',
@@ -47,34 +69,5 @@ export const SelectTool = {
       { text: 'adam' },
       { text: 'jora' }
     ]
-  }
-}
-
-export const RangeSliderTool = {
-  style: styleRangeSliderTool,
-  icon: {
-    proto: Icon,
-    name: 'fontSize'
-  },
-  tool: {
-    proto: Shape,
-    round: 6,
-    less: {
-      proto: SquareButton,
-      theme: 'white',
-      icon: 'minus',
-      round: 6
-    },
-    value: {
-      tag: 'span',
-      style: { width: 36 }
-    },
-    range: { proto: RangeSlider },
-    more: {
-      proto: SquareButton,
-      theme: 'white',
-      icon: 'plus',
-      round: 6
-    }
   }
 }
