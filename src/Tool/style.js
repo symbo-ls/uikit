@@ -20,7 +20,7 @@ export const styleRangeSlider = {
   }
 }
 
-export default {
+export const styleRangeSliderTool = {
   display: 'flex',
   alignItems: 'center',
   width: 'auto',
@@ -45,4 +45,8 @@ export default {
     fontSize: '1.3em',
     marginLeft: '10px'
   }
+
+}
+
+export default {
 }
