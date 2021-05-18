@@ -12,7 +12,7 @@ const Button = {
 
 export const SquareButton = {
   proto: Button,
-  round: 10,
+  // round: 10,
   style: {
     width: '42px',
     justifyContent: 'center'

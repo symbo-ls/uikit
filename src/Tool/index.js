@@ -36,7 +36,6 @@ const RangeSlider = {
 }
 
 export const RangeSliderTool = {
-  class: { style, styleRangeSliderTool },
   tool: {
     proto: Shape,
     round: 6,
@@ -46,7 +45,7 @@ export const RangeSliderTool = {
     },
     value: {
       tag: 'span',
-      style: { width: 36 }
+      style: { margin: '0 8px' }
     },
     range: { proto: RangeSlider },
     more: {
