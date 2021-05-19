@@ -9,9 +9,13 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
-  "scripts": {},
-  "devDependencies": {},
+  "scripts": {
+    "bump": "npx np"
+  },
   "dependencies": {
     "color-contrast-checker": "^1.5.0"
+  },
+  "devDependencies": {
+    "np": "^7.2.0"
   }
 }
