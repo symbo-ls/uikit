@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@rackai/domql": "1.0.8",
-    "@rackai/scratch": "0.0.3",
+    "@rackai/scratch": "0.1.0",
     "@rackai/symbols": "^0.1.5"
   },
   "devDependencies": {
