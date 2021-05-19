@@ -1,9 +1,9 @@
 'use strict'
 
-import { Icon, SquareButton, Shape } from '..'
+import { SquareButton, Shape } from '..'
 import * as Scratch from '@rackai/scratch'
 
-import style, { styleRangeSlider, styleRangeSliderTool } from './style'
+import { styleRangeSlider, styleSelect } from './style'
 
 Scratch.set('theme', {
   name: 'sliderThumb',
@@ -36,29 +36,33 @@ const RangeSlider = {
 }
 
 export const RangeSliderTool = {
-  tool: {
-    proto: Shape,
-    round: 6,
-    less: {
-      proto: SquareButton,
-      icon: 'minus'
-    },
-    value: {
-      tag: 'span',
-      style: { margin: '0 8px' }
-    },
-    range: { proto: RangeSlider },
-    more: {
-      proto: SquareButton,
-      icon: 'plus'
-    }
+  proto: Shape,
+  round: 6,
+  less: {
+    proto: SquareButton,
+    icon: 'minus'
+  },
+  value: {
+    tag: 'span',
+    style: { margin: '0 8px' }
+  },
+  range: { proto: RangeSlider },
+  more: {
+    proto: SquareButton,
+    icon: 'plus'
   }
 }
 
 export const SelectTool = {
   proto: Shape,
-  text: 'jbjbj',
+  theme: 'greyWhite',
+  style: {
+    position: 'relative'
+  },
   select: {
+    proto: Shape,
+    theme: 'transparent',
+    style: styleSelect,
     attr: {
       name: 'user',
       id: 'user'
@@ -68,5 +72,14 @@ export const SelectTool = {
       { text: 'adam' },
       { text: 'jora' }
     ]
+  },
+  button: {
+    proto: SquareButton,
+    icon: 'code',
+    style: {
+      position: 'absolute',
+      right: '4px',
+      pointerEvents: 'none'
+    }
   }
 }

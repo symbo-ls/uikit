@@ -4,10 +4,11 @@ import { hexToRGBA } from '@rackai/scratch'
 
 export const styleRangeSlider = {
   appearance: 'none',
-  width: '7.6em',
+  width: '70px',
   height: '2px',
   outline: 'none',
   marginRight: '8px',
+  flex: 1,
 
   '&::-webkit-slider-thumb': {
     boxSizing: 'content-box',
@@ -19,4 +20,16 @@ export const styleRangeSlider = {
     borderRadius: '100%',
     opacity: '.8'
   }
+}
+
+export const styleSelect = {
+  width: '100%',
+  height: '100%',
+  outline: 'none',
+  border: 'none',
+  appearance: 'none',
+  boxSizing: 'border-box',
+  paddingLeft: '8px',
+  fontSize: '14px',
+  cursor: 'pointer'
 }
