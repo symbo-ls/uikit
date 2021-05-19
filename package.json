@@ -10,5 +10,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "color-contrast-checker": "^1.5.0"
+  }
 }

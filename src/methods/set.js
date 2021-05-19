@@ -5,11 +5,11 @@ import { getFontFace } from '../utils'
 
 var set = (kind, ...props) => {
   if (kind === 'color') {
-    var Colors = props[0]
-    for (let c in Colors) {
-      Color[c] = Colors[c]
-    }
-    return Colors
+    props.map(value => {
+      var { name, ...rest } = value
+      Color[name] = rest
+    })
+    return Color
   } else if (kind === 'theme') {
     props.map(value => {
       var { name, ...rest } = value

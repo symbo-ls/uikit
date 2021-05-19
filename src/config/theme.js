@@ -5,6 +5,7 @@ var themeA = {
   background: 'white',
   border: 'black', // .opacity(0.2),
   helpers: [],
+  themes: {},
   inverse: {} // schemeAInverse
 }
 
