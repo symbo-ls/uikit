@@ -29,7 +29,26 @@ export const styleSelect = {
   border: 'none',
   appearance: 'none',
   boxSizing: 'border-box',
-  paddingLeft: '8px',
   fontSize: '14px',
   cursor: 'pointer'
+}
+
+export const styleTool = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  paddingLeft: '.4em',
+  paddingRight: '.4em',
+  background: 'rgba(255, 255, 255, .06)',
+  width: '18em',
+  height: '2.8em',
+  '> button': {
+    width: '20px',
+    height: '20px',
+    background: 'rgba(255, 255, 255, .06)',
+    color: 'rgba(255, 255, 255, .55)'
+  },
+  span: {
+    fontSize: '1.3em'
+  }
 }
