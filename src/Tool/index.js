@@ -1,9 +1,9 @@
 'use strict'
 
-import { Icon, SquareButton, Shape, Field } from '..'
+import { SquareButton, Shape } from '..'
 import * as Scratch from '@rackai/scratch'
 
-import style, { styleRangeSlider } from './style'
+import { styleRangeSlider, styleSelect, styleTool } from './style'
 
 Scratch.set('theme', {
   name: 'sliderThumb',
@@ -35,31 +35,53 @@ const RangeSlider = {
   attr: { type: 'range' }
 }
 
-export default {
-  style: style,
-  icon: {
-    proto: Icon,
-    name: 'fontSize'
+export const RangeSliderTool = {
+  class: { styleTool },
+  proto: Shape,
+  round: 6,
+  less: {
+    proto: SquareButton,
+    icon: 'minus'
   },
-  tool: {
+  value: {
+    tag: 'span',
+    style: { margin: '0 8px' }
+  },
+  range: { proto: RangeSlider },
+  more: {
+    proto: SquareButton,
+    icon: 'plus'
+  }
+}
+
+export const SelectTool = {
+  class: { styleTool },
+  proto: Shape,
+  theme: 'greyWhite',
+  style: {
+    position: 'relative'
+  },
+  select: {
     proto: Shape,
-    round: 6,
-    less: {
-      proto: SquareButton,
-      theme: 'white',
-      icon: 'minus',
-      round: 6
+    theme: 'transparent',
+    style: styleSelect,
+    attr: {
+      name: 'user',
+      id: 'user'
     },
-    value: {
-      tag: 'span',
-      style: { width: 36 }
-    },
-    range: { proto: RangeSlider },
-    more: {
-      proto: SquareButton,
-      theme: 'white',
-      icon: 'plus',
-      round: 6
+    childProto: { tag: 'option' },
+    ...[
+      { text: 'adam' },
+      { text: 'jora' }
+    ]
+  },
+  button: {
+    proto: SquareButton,
+    icon: 'code',
+    style: {
+      position: 'absolute',
+      right: '4px',
+      pointerEvents: 'none'
     }
   }
 }

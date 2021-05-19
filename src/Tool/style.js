@@ -1,12 +1,14 @@
 'use strict'
 
+import { hexToRGBA } from '@rackai/scratch'
+
 export const styleRangeSlider = {
   appearance: 'none',
-  width: '7.6em',
+  width: '70px',
   height: '2px',
   outline: 'none',
   marginRight: '8px',
-  marginLeft: '8px',
+  flex: 1,
 
   '&::-webkit-slider-thumb': {
     boxSizing: 'content-box',
@@ -20,29 +22,33 @@ export const styleRangeSlider = {
   }
 }
 
-export default {
+export const styleSelect = {
+  width: '100%',
+  height: '100%',
+  outline: 'none',
+  border: 'none',
+  appearance: 'none',
+  boxSizing: 'border-box',
+  fontSize: '14px',
+  cursor: 'pointer'
+}
+
+export const styleTool = {
   display: 'flex',
   alignItems: 'center',
-  width: 'auto',
-  maxHeight: '28px',
-  '> svg': {
-    marginRight: '12px',
-    opacity: '.2'
-  },
-  '> div': {
-    display: 'flex',
-    alignItems: 'center',
-    height: '100%',
-    boxSizing: 'border-box',
-    padding: '0 4px',
-    background: 'rgba(255, 255, 255, .03)'
-  },
-  button: {
+  justifyContent: 'space-between',
+  paddingLeft: '.4em',
+  paddingRight: '.4em',
+  background: 'rgba(255, 255, 255, .06)',
+  width: '18em',
+  height: '2.8em',
+  '> button': {
     width: '20px',
-    height: '20px'
+    height: '20px',
+    background: 'rgba(255, 255, 255, .06)',
+    color: 'rgba(255, 255, 255, .55)'
   },
   span: {
-    fontSize: '1.3em',
-    marginLeft: '10px'
+    fontSize: '1.3em'
   }
 }

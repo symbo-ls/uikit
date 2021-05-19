@@ -33,13 +33,12 @@ import Link from './Link'
 import IconText from './IconText'
 import Field from './Field'
 import Button, { SquareButton, RectangleButton, CircleButton, KangorooButton } from './Button'
-import * as Banner from './Banner'
 import ToolBar from './ToolBar'
 import User, { UserBundle } from './User'
 import { parentMode } from './Banner'
 import { grid, grid2 } from './GridLayouts'
 // import { ListItem, List } from './Dropdown'
-import RangeSlider from './Tool'
+import { RangeSliderTool, SelectTool } from './Tool'
 import Notification from './Notification'
 import Dropdown from './Dropdown'
 import DatePicker from './DatePicker'
@@ -76,7 +75,11 @@ export {
   User,
   UserBundle,
   ToolBar,
-  RangeSlider,
+
+  // tools
+  RangeSliderTool,
+  SelectTool,
+
   Notification,
   Select,
   // List,
