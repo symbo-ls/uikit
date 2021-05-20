@@ -6,61 +6,6 @@ export default {
   boxSizing: 'border-box'
 }
 
-export const round = {
-  0: { borderRadius: 0 },
-  4: { borderRadius: 4 },
-  6: { borderRadius: 6 },
-  10: { borderRadius: 10 },
-  12: { borderRadius: 12 },
-  16: { borderRadius: 16 },
-  26: { borderRadius: 26 },
-  42: { borderRadius: 42 }
-}
-
-export const roundCornerTopLeft = {
-  0: { borderTopLeftRadius: 0 },
-  4: { borderTopLeftRadius: 4 },
-  6: { borderTopLeftRadius: 6 },
-  10: { borderTopLeftRadius: 10 },
-  12: { borderTopLeftRadius: 12 },
-  16: { borderTopLeftRadius: 16 },
-  26: { borderTopLeftRadius: 26 },
-  42: { borderTopLeftRadius: 42 }
-}
-
-export const roundCornerBottomLeft = {
-  0: { borderBottomLeftRadius: 0 },
-  4: { borderBottomLeftRadius: 4 },
-  6: { borderBottomLeftRadius: 6 },
-  10: { borderBottomLeftRadius: 10 },
-  12: { bborderBottomLeftRadius: 12 },
-  16: { borderBottomLeftRadius: 16 },
-  26: { borderBottomtLeftRadius: 26 },
-  42: { borderBottomLeftRadius: 42 }
-}
-
-export const roundCornerTopRight = {
-  0: { borderTopRightRadius: 0 },
-  4: { borderTopRightRadius: 4 },
-  6: { borderTopRightRadius: 6 },
-  10: { borderTopRightRadius: 10 },
-  12: { borderTopRightRadius: 12 },
-  16: { borderTopRightRadius: 16 },
-  26: { borderTopRightRadius: 26 },
-  42: { borderTopRightRadius: 42 }
-}
-
-export const roundCornerBottomRight = {
-  0: { borderBottomRightRadius: 0 },
-  4: { borderBottomRightRadius: 4 },
-  6: { borderBottomRightRadius: 6 },
-  10: { borderBottomRightRadius: 10 },
-  12: { borderBottomRightRadius: 12 },
-  16: { borderBottomRightRadius: 16 },
-  26: { borderBottomRightRadius: 26 },
-  42: { borderBottomRightRadius: 42 }
-}
-
 export const depth = {
   4: { boxShadow: `rgba(0,0,0,.10) 0 2${Unit} 4${Unit}` },
   6: { boxShadow: `rgba(0,0,0,.10) 0 3${Unit} 6${Unit}` },
