@@ -30,7 +30,9 @@ export const CircleButton = {
 
 export const KangorooButton = {
   proto: Button,
-  span: {}
+  span: {
+    proto: [Shape, IconText, Direction]
+  }
 }
 
 export default Button
