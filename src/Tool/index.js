@@ -3,7 +3,7 @@
 import { SquareButton, Shape } from '..'
 import * as Scratch from '@rackai/scratch'
 
-import { styleRangeSlider, styleSelect, styleTool } from './style'
+import { styleRangeSlider, styleTool } from './style'
 
 Scratch.set('theme', {
   name: 'sliderThumb',
@@ -58,30 +58,8 @@ export const SelectTool = {
   class: { styleTool },
   proto: Shape,
   theme: 'greyWhite',
-  style: {
-    position: 'relative'
-  },
-  select: {
-    proto: Shape,
-    theme: 'transparent',
-    style: styleSelect,
-    attr: {
-      name: 'user',
-      id: 'user'
-    },
-    childProto: { tag: 'option' },
-    ...[
-      { text: 'adam' },
-      { text: 'jora' }
-    ]
-  },
+  span: 'Font Size',
   button: {
-    proto: SquareButton,
-    icon: 'code',
-    style: {
-      position: 'absolute',
-      right: '4px',
-      pointerEvents: 'none'
-    }
+    proto: SquareButton
   }
 }

@@ -9,7 +9,6 @@ export const styleRangeSlider = {
   outline: 'none',
   marginRight: '8px',
   flex: 1,
-
   '&::-webkit-slider-thumb': {
     boxSizing: 'content-box',
     appearance: 'none',
@@ -20,17 +19,6 @@ export const styleRangeSlider = {
     borderRadius: '100%',
     opacity: '.8'
   }
-}
-
-export const styleSelect = {
-  width: '100%',
-  height: '100%',
-  outline: 'none',
-  border: 'none',
-  appearance: 'none',
-  boxSizing: 'border-box',
-  fontSize: '14px',
-  cursor: 'pointer'
 }
 
 export const styleTool = {
