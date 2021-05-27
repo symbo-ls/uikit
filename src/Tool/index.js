@@ -31,35 +31,23 @@ const RangeSlider = {
   proto: Shape,
   tag: 'input',
   theme: 'sliderThumb',
-  style: styleRangeSlider,
   attr: { type: 'range' }
 }
 
-export const RangeSliderTool = {
-  class: { styleTool },
+export default {
   proto: Shape,
   round: 6,
-  less: {
+  button: {
     proto: SquareButton,
-    icon: 'minus'
+    icon: ''
   },
   value: {
     tag: 'span',
-    style: { margin: '0 8px' }
+    text: '16px'
   },
   range: { proto: RangeSlider },
-  more: {
+  button2: {
     proto: SquareButton,
-    icon: 'plus'
-  }
-}
-
-export const SelectTool = {
-  class: { styleTool },
-  proto: Shape,
-  theme: 'greyWhite',
-  span: 'Font Size',
-  button: {
-    proto: SquareButton
+    icon: ''
   }
 }
