@@ -8,5 +8,9 @@ export default {
   tag: 'select',
   style,
 
-  childProto: { tag: 'option' }
+  childProto: {
+    tag: 'option',
+    define: { value: param => param },
+    attr: { value: element => element.value }
+  }
 }
