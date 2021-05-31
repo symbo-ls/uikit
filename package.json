@@ -20,7 +20,7 @@
   "dependencies": {
     "@rackai/domql": "1.0.8",
     "@rackai/scratch": "0.1.0",
-    "@rackai/symbols": "^0.1.5"
+    "@rackai/symbols": "^0.1.13"
   },
   "devDependencies": {
     "emotion": "^10.0.27",

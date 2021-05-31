@@ -31,6 +31,7 @@ import Icon from './Icon'
 import Img from './Img'
 import Link from './Link'
 import IconText from './IconText'
+import Input from './Input'
 import Field from './Field'
 import Button, { SquareButton, RectangleButton, CircleButton, KangorooButton } from './Button'
 import ToolBar from './ToolBar'
@@ -70,6 +71,7 @@ export {
   RectangleButton,
   CircleButton,
   KangorooButton,
+  Input,
   Field,
   parentMode,
   User,

@@ -1,24 +1,18 @@
 'use strict'
 
-import { Shape, IconText } from '../'
+import { Shape, IconText, Input } from '../'
 import style from './style'
 
 export default {
   proto: [Shape, IconText],
   style,
   round: 26,
-  theme: 'White',
-  define: {
-    placeholder: param => param
-  },
-  attr: {
-    placeholder: element => element.placeholder
-  },
+  theme: 'white',
   input: {
-    proto: Shape,
+    proto: Input,
     round: 26,
     attr: {
-      value: 'Today'
+      value: el => el.parent.value
     }
   }
 }

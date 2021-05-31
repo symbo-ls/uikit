@@ -1060,9 +1060,9 @@
   dependencies:
     color-contrast-checker "^1.5.0"
 
-"@rackai/symbols@^0.1.5":
+"@rackai/symbols@^0.1.13", "@rackai/symbols@^0.1.5":
   version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@rackai/symbols/-/symbols-0.1.13.tgz#74bde4bee0dd18bcc264fa9d583d8cf75ebaa5e9"
+  resolved "https://registry.npmjs.org/@rackai/symbols/-/symbols-0.1.13.tgz#74bde4bee0dd18bcc264fa9d583d8cf75ebaa5e9"
   integrity sha512-E4cVPRyLcpIWIWlruUb3MztrktGjvt6ZfMV7/Xa4KQ8RwtCqTnFekQIHqKWFQ/uGPU5tGCQVYM9tqliVogfDrQ==
   dependencies:
     "@rackai/domql" "1.0.8"
