@@ -3,8 +3,6 @@
 import { SquareButton, Shape } from '..'
 import * as Scratch from '@rackai/scratch'
 
-import { styleRangeSlider, styleTool } from './style'
-
 Scratch.set('theme', {
   name: 'sliderThumb',
   backgroundColor: Scratch.opacify('#fff', 0.2),
