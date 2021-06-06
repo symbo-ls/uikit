@@ -1,6 +1,6 @@
 # Symbols
 
-UI Library built on [Scratch](https://github.com/rackai/scratch) and [DOMQL](https://github.com/rackai/domql)
+UI Library in composition of [Scratch](https://github.com/rackai/scratch) and [DOMQL](https://github.com/rackai/domql)
 
 ### Setup
 
