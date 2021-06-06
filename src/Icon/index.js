@@ -10,5 +10,5 @@ export default {
   define: { sprite: param => param, name: param => param },
   sprite,
   src: element => element.sprite[element.name || element.key],
-  attr: { viewBox: '0 0 16 16' }
+  attr: { viewBox: '0 0 24 24' }
 }
