@@ -1069,6 +1069,15 @@
     "@rackai/scratch" "0.1.0"
     "@rackai/symbols" "^0.1.5"
 
+"@rackai/symbols@^0.1.14":
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@rackai/symbols/-/symbols-0.1.14.tgz#0b61342bebf57aee760fbfd730a1b2185c8a7ff4"
+  integrity sha512-XrVRTZvNBi4v406O9BvLmPTnV0T+YeGUOPoxig+Ylzh4LzFovMuUH/MIwwTp6k4JLncecvebOQOZG1Ekl8/ujg==
+  dependencies:
+    "@rackai/domql" "1.0.8"
+    "@rackai/scratch" "0.1.0"
+    "@rackai/symbols" "^0.1.13"
+
 "@samverschueren/stream-to-observable@^0.3.0", "@samverschueren/stream-to-observable@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.1.tgz#a21117b19ee9be70c379ec1877537ef2e1c63301"
