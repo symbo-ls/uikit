@@ -3,7 +3,7 @@
   "description": "UI Library built on Scratch and DOMQL",
   "private": false,
   "author": "rackai",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "repository": "https://github.com/rackai/symbols",
   "main": "src/index.js",
   "publishConfig": {
@@ -19,8 +19,7 @@
   },
   "dependencies": {
     "@rackai/domql": "1.0.8",
-    "@rackai/scratch": "0.1.0",
-    "@rackai/symbols": "^0.1.13"
+    "@rackai/scratch": "0.1.0"
   },
   "devDependencies": {
     "emotion": "^10.0.27",
