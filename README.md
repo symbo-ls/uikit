@@ -6,7 +6,7 @@ UI Library built on [Scratch](https://github.com/rackai/scratch) and [DOMQL](htt
 
 1. Clone the repo
 ```
-git clone git@github.com:rackai/domql-example.git
+git clone git@github.com:rackai/symbols.git
 ```
 
 2. Install scripts
