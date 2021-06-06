@@ -7,6 +7,7 @@ import Box from './box'
 import Size from './size'
 import Typography from './typography'
 import Unit from './unit'
+import Document from './document'
 
 export {
   Sequence,
@@ -15,5 +16,6 @@ export {
   Box,
   Size,
   Typography,
-  Unit
+  Unit,
+  Document
 }

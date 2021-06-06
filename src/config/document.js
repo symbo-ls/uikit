@@ -1,6 +1,12 @@
 'use strict'
 
 export default {
-  color: '',
-  backgroundColor: 'transparent'
+  color: 'black',
+  backgroundColor: 'white',
+  themes: {
+    dark: {
+      color: 'white',
+      backgroundColor: 'black',
+    }
+  }
 }
