@@ -9,7 +9,7 @@ export default {
     display: 'flex'
   },
   childProto: {
-    proto: SquareButton,
+    proto: [SquareButton],
     round: 12,
     theme: 'transparent'
   }
