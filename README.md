@@ -3,6 +3,6 @@ Scratch is CSS framework and methodology to build web, mobile and TV application
 
 [![npm version](https://badge.fury.io/js/%40rackai%2Fscratch.svg)](https://badge.fury.io/js/%40rackai%2Fscratch)
 
-<!-- ### TODO:
+### TODO:
 - [ ] Generate CSS variables
-- [ ] Accessibility (WCAG) automated tests -->
+- [ ] Accessibility (WCAG) automated tests
