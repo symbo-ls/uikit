@@ -6,21 +6,13 @@
   "version": "0.1.1",
   "repository": "https://github.com/rackai/scratch",
   "main": "src/index.js",
-  "files": ["README.md", "package.json", "*/src"],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
-  },
-  "scripts": {
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
   },
   "dependencies": {
     "color-contrast-checker": "^1.5.0"
   },
   "devDependencies": {
-    "husky": "^6.0.0",
-    "np": "^7.2.0",
-    "pinst": "^2.1.6"
+    "np": "^7.2.0"
   }
 }
