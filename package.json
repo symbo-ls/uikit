@@ -3,7 +3,7 @@
   "description": "Φ / CSS framework and methodology.",
   "private": false,
   "author": "rackai",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "repository": "https://github.com/rackai/scratch",
   "main": "src/index.js",
   "publishConfig": {
