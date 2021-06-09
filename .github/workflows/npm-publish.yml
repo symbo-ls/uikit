@@ -40,4 +40,4 @@ jobs:
       - run: git push && git push --tags
         env:
           # The secret is passed automatically. Nothing to configure.
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
