@@ -37,7 +37,10 @@ jobs:
           # Use a token to publish to NPM. See below for how to set it up
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       # push the version changes to GitHub
-      - run: git push && git push --tags
-        env:
-          # The secret is passed automatically. Nothing to configure.
-          GITHUB_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+      - name: Push to protected branch
+        uses: CasperWA/push-protected@v2
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          branch: main
+          tags: true
+          unprotect_reviews: true
