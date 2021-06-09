@@ -6,7 +6,7 @@
   "version": "0.1.1",
   "repository": "https://github.com/rackai/scratch",
   "main": "src/index.js",
-  "files": ["README.md", "package.json", "src/*"],
+  "files": ["README.md", "package.json", "*/src"],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
