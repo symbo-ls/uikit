@@ -5,4 +5,4 @@ Scratch is CSS framework and methodology to build web, mobile and TV application
 
 ### TODO:
 - [ ] Generate CSS variables
-- [ ] Accessibility (WCAG) automated tests
+- [ ] Accessibility (WCAG) automated  tests
