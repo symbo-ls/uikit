@@ -9,3 +9,6 @@ jobs:
     steps:
       - name: NPM Publish
         uses: rackai/npm-publish@main
+        with:
+          NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
+          GH_TOKEN: ${{ inputs.GH_TOKEN }}
