@@ -6,8 +6,8 @@ import style from './style'
 
 const Button = {
   tag: 'button',
-  proto: [Shape, IconText, Direction],
-  style
+  style,
+  proto: [Shape, IconText, Direction]
 }
 
 export const SquareButton = {

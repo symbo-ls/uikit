@@ -39,7 +39,7 @@ import User, { UserBundle } from './User'
 import { parentMode } from './Banner'
 import { grid, grid2 } from './GridLayouts'
 // import { ListItem, List } from './Dropdown'
-import Tool from './Tool'
+import Slider from './Slider'
 import Notification from './Notification'
 import Dropdown from './Dropdown'
 import DatePicker from './DatePicker'
@@ -79,7 +79,7 @@ export {
   ToolBar,
 
   // tools
-  Tool,
+  Slider,
 
   Notification,
   Select,
