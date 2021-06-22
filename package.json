@@ -18,7 +18,7 @@
     "bump": "npx np"
   },
   "dependencies": {
-    "@rackai/domql": "1.0.12",
+    "@rackai/domql": "1.1.0",
     "@rackai/scratch": "0.1.1"
   },
   "devDependencies": {
