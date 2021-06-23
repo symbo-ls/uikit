@@ -9,8 +9,7 @@ const Shape = {
   define: {
     shape: param => param || '',
     fontSize: param => param || '',
-    toolTipShape: param => param || '',
-    tagShape: param => param || '',
+    ratio: param => param,
     depth: param => param !== undefined ? param : 10,
     round: param => param !== undefined ? param : 6,
     theme: param => {
@@ -20,12 +19,10 @@ const Shape = {
   },
 
   class: {
-    toolTipShape: element => toolTipShape[element.toolTipShape],
-    tagShape: element => tagShape[element.tagShape],
     shape: element => shape[element.shape],
+    fontSize: element => ({ fontSize: element.fontSize }),
     depth: element => depth[element.depth],
     round: element => ({ borderRadius: element.round }),
-    fontSize: element => ({ fontSize: element.fontSize }),
     theme: element => Theme[element.theme]
   }
 

@@ -10,7 +10,6 @@ export default {
   },
   childProto: {
     proto: [SquareButton],
-    round: 12,
-    theme: 'transparent'
+    round: 12
   }
 }
