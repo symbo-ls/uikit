@@ -37,6 +37,9 @@ export default {
     paddingBottom: '1em',
     overflow: 'hidden',
 
+    display: 'flex',
+    flexDirection: 'column',
+
     '> header': {
       display: 'flex',
       alignItems: 'center',
