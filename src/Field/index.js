@@ -17,7 +17,7 @@ export default {
     round: 26,
     attr: {
       value: el => el.parent.value,
-      placeholder: el => el.parent.value
+      placeholder: el => el.parent.placeholder
     }
   }
 }
