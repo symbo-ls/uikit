@@ -1,4 +1,5 @@
 'use strict'
+
 import { SquareButton } from '../Button'
 import Shape from '../Shape'
 
