@@ -11,20 +11,18 @@ export default {
   border: 'none',
   cursor: 'pointer',
   fontFamily: 'inherit',
-  height: '42px',
   boxSizing: 'border-box',
   position: 'relative',
   padding: 0,
   input: {
     width: '100%',
     height: '100%',
-    paddingLeft: '22px',
-    border: 'none',
-    fontSize: '16px'
+    padding: `${13 / 16}em`,
+    border: 'none'
   },
   svg: {
     position: 'absolute',
-    right: '16px',
-    fontSize: '16px'
+    right: '1em',
+    fontSize: '1em'
   }
 }

@@ -15,9 +15,8 @@ export default {
   input: {
     proto: Input,
     round: 26,
-    attr: {
-      value: el => el.parent.value,
-      placeholder: el => el.parent.placeholder
-    }
+  theme: el => el.parent.theme,
+  value: el => el.parent.value,
+    placeholder: el => el.parent.placeholder
   }
 }

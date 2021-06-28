@@ -17,5 +17,6 @@ export default {
     value: element => element.value,
     type: element => element.type
   },
+  theme: el => el.parent.theme,
   round: 26
 }
