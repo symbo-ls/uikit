@@ -1,6 +1,6 @@
 'use strict'
 
-import { Size, Unit } from '@rackai/scratch'
+import { Spacing, Unit } from '@rackai/scratch'
 
 export const size = {
   default: {
@@ -11,10 +11,10 @@ export const size = {
     gap: '.35em'
   },
   1: {
-    height: `${Math.pow(Size.ratio, 2)}em`,
-    padding: `0 ${Size.ratio}em`,
-    fontSize: `${Size.base}${Unit}`,
-    lineHeight: `${Size.base}${Unit}`
+    height: `${Math.pow(Spacing.ratio, 2)}em`,
+    padding: `0 ${Spacing.ratio}em`,
+    fontSize: `${Spacing.base}${Unit}`,
+    lineHeight: `${Spacing.base}${Unit}`
   }
 }
 

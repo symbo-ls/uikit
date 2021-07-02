@@ -7,9 +7,10 @@ import {
   Color,
   Theme,
   Box,
-  Size,
+  Spacing,
   Typography,
   Unit,
+  Font,
 
   set,
 
@@ -56,9 +57,10 @@ export {
   Color,
   Theme,
   Box,
-  Size,
+  Spacing,
   Typography,
   Unit,
+  Font,
 
   // symbols
   Shape,
