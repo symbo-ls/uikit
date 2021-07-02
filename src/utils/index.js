@@ -100,15 +100,16 @@ export const setCustomFont = (name, weight, url) => `@font-face {
   font-family: '${name}';
   font-style: normal;
   font-weight: ${weight};
-  src: url('${url}') format('${getFontFormat(url)}');
+  src: url('${url}') format('${url}');
 }`
+// src: url('${url}') format('${getFontFormat(url)}');
 
 export const getFontFace = Library => {
   var fonts = ''
   for (var name in Library) {
     var font = Library[name]
     for (var weight in font) {
-      var url = font[weight]
+      var { url } = font[weight]
       fonts += `\n${setCustomFont(name, weight, url)}`
     }
   }

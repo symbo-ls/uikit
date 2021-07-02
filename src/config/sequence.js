@@ -9,7 +9,7 @@ export default {
   'augmented-fourth': 1.414,
   'perfect-fifth': 1.5,
   'phi': 1.618, // golden-ratio
-  'square-root-3': 1.73205, // theodorus
+  'square-root-3': 1.732, // theodorus
   'square-root-5': 2.23, // pythagoras
   'pi': 3.14 // archimedes
 }

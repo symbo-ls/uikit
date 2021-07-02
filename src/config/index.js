@@ -4,7 +4,8 @@ import Sequence from './sequence'
 import Color from './color'
 import Theme from './theme'
 import Box from './box'
-import Size from './size'
+import Font from './font'
+import Spacing from './spacing'
 import Typography from './typography'
 import Unit from './unit'
 import Document from './document'
@@ -14,7 +15,8 @@ export {
   Color,
   Theme,
   Box,
-  Size,
+  Font,
+  Spacing,
   Typography,
   Unit,
   Document

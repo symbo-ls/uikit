@@ -1,3 +1,8 @@
 'use strict'
 
-export default {}
+import sequence from './sequence'
+
+export default {
+  base: 16,
+  ratio: sequence['major-second']
+}

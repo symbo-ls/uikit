@@ -7,7 +7,7 @@ import {
   Color,
   Theme,
   Box,
-  Size,
+  Spacing,
   Typography,
   Unit
 } from './config'
@@ -31,7 +31,7 @@ export {
   Color,
   Theme,
   Box,
-  Size,
+  Spacing,
   Typography,
   Unit,
 
