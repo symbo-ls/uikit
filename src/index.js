@@ -1,5 +1,7 @@
 'use strict'
 
+import './styles.js'
+
 import {
   Sequence,
   Color,
