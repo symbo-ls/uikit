@@ -4,6 +4,9 @@
   "private": false,
   "author": "rackai",
   "version": "0.1.8",
+  "files": [
+    "src"
+  ],
   "repository": "https://github.com/rackai/scratch",
   "main": "src/index.js",
   "publishConfig": {
