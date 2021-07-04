@@ -1,13 +1,13 @@
 'use strict'
 
-import { Shape, IconText, Direction } from '../'
+import { Shape, Block, IconText, Direction } from '../'
 
 import style from './style'
 
 const Button = {
   tag: 'button',
   style,
-  proto: [Shape, IconText, Direction]
+  proto: [Shape, Block, IconText, Direction]
 }
 
 export const SquareButton = {

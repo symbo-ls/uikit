@@ -1,7 +1,6 @@
 'use strict'
 
 export default {
-  fontSize: '1em',
   appearance: 'none',
   maxWidth: '8.2em',
   height: '.2em',

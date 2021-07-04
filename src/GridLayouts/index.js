@@ -1,6 +1,6 @@
 'use strict'
 
-import { Button, Link } from '@rackai/symbols'
+import { Button, Link } from '..'
 
 import { styleGrid, styleGrid2 } from './style'
 

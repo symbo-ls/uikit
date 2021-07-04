@@ -6,8 +6,9 @@ import style from './style'
 export default {
   style,
   proto: [Shape, IconText, Direction],
-  _icon: {},
-  icon: 'info',
+  props: {
+    icon: 'info'
+  },
   article: {
     caption: 'Notification',
     p: 'is not always a distraction'

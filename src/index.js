@@ -6,11 +6,12 @@ import {
   Sequence,
   Color,
   Theme,
-  Box,
   Spacing,
   Typography,
   Unit,
   Font,
+  Document,
+  Reset,
 
   set,
 
@@ -24,11 +25,18 @@ import {
 
   getFontFormat,
   setCustomFont,
-  getFontFace
+  getFontFace,
+  mapPadding,
+  mapFontSize
 } from '@rackai/scratch'
 
+import utilityStyles from './styles'
+
+import Text from './Text'
+import Block from './Block'
 import Shape from './Shape'
 import Direction from './Direction'
+
 import SVG from './SVG'
 import Icon from './Icon'
 import Img from './Img'
@@ -52,19 +60,25 @@ import Pills from './Pills'
 import Select from './Select'
 
 export {
+  utilityStyles,
+
   // scratch library
   Sequence,
   Color,
   Theme,
-  Box,
   Spacing,
   Typography,
+  Document,
   Unit,
   Font,
+  Reset,
 
   // symbols
+  Text,
+  Block,
   Shape,
   Direction,
+
   SVG,
   Img,
   Link,
@@ -112,5 +126,7 @@ export {
 
   getFontFormat,
   setCustomFont,
-  getFontFace
+  getFontFace,
+  mapPadding,
+  mapFontSize
 }

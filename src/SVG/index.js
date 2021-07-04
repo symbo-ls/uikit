@@ -10,5 +10,5 @@ export default {
     'xmlns:xlink': 'http://www.w3.org/1999/xlink'
   },
   define: { src: param => param },
-  html: element => useSVGSymbol(element.src || element.key)
+  html: ({ key, src }) => useSVGSymbol(src || key)
 }

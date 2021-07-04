@@ -17,7 +17,6 @@ export const styleParentMode = {
     '> div': { marginTop: '4px'}
   },
   h2: {
-    fontSize: '2em',
     margin: 0,
     marginBottom: '10px'
   },

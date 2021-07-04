@@ -6,11 +6,9 @@ import Shape from '../Shape'
 export default {
   tag: 'nav',
   proto: [Shape],
-  style: {
-    display: 'flex'
-  },
+  style: { display: 'flex' },
   childProto: {
     proto: [SquareButton],
-    round: 12
+    props: { round: 12 }
   }
 }

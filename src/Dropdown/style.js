@@ -8,7 +8,6 @@ export const styleDropDown = {
 }
 
 export const styleRow = {
-  fontSize: '1.6em',
   height: `${42 / 16}em`,
   width: `${178 / 16}em`,
   position: 'relative',

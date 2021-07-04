@@ -9,7 +9,11 @@ export default {
   class: {},
   childProto: {
     proto: Icon,
-    name: element => element.key,
+
+    props: (el, s) => ({
+      icon: el.key
+    }),
+
     style: {
       margin: 16,
       color: 'black'

@@ -6,17 +6,20 @@ import style from './style'
 export default {
   proto: [Shape, IconText],
   style,
-  define: {
-    placeholder: param => param,
-    value: param => param
-  },
-  round: 26,
-  theme: 'white',
+  props: (el, s) => ({
+    placeholder: 'Type in',
+    value: s[el.key],
+    round: 26,
+    theme: 'field',
+  }),
   input: {
     proto: Input,
-    round: 26,
-  theme: el => el.parent.theme,
-  value: el => el.parent.value,
-    placeholder: el => el.parent.placeholder
+    props: {
+      round: ({ props }) => props.round,
+      theme: ({ props }) => props.theme,
+      value: ({ props }) => props.value,
+      placeholder: ({ props }) => props.placeholder,
+      round: ({ props }) => props.round
+    }
   }
 }

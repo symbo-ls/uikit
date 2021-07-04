@@ -2,14 +2,16 @@
 
 export default {
   tag: 'img',
-  define: {
-    src: param => param,
-    alt: param => param || '',
-    title: param => param || ''
+
+  props: {
+    src: '',
+    alt: '',
+    title: ''
   },
+
   attr: {
-    src: element => element.src,
-    alt: element => element.alt,
-    title: element => element.title || element.alt
+    src: ({ props }) => props.src,
+    alt: ({ props }) => props.alt,
+    title: ({ props }) => props.title || props.alt
   }
 }

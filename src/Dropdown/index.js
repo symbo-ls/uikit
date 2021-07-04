@@ -5,6 +5,7 @@ import { styleRow, styleRowActive, styleDropDown, styleSelectDropdown } from './
 export default {
   style: styleDropDown,
   tag: 'ul',
+
   proto: Shape,
 
   state: {
@@ -14,12 +15,16 @@ export default {
   childProto: {
     tag: 'li',
     proto: [Shape],
-    depth: 0,
-    round: 0,
+    props: {
+      depth: 0,
+      round: 0
+    },
     span: {
       proto: [IconText],
-      text: '',
-      icon: 'checkMedium'
+      props: {
+        icon: 'checkMedium',
+        text: ''
+      }
     },
     style: styleRow,
     class: {

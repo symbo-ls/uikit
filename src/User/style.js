@@ -10,7 +10,6 @@ export const styleUser = {
 export const styleUserBundle = {
   display: 'flex',
   alignItems: 'center',
-  fontSize: '1.4em',
   textTransform: 'capitalize',
   '> div': {
     display: 'flex',

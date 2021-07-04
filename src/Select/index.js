@@ -10,7 +10,7 @@ export default {
 
   childProto: {
     tag: 'option',
-    define: { value: param => param },
-    attr: { value: element => element.value }
+    props: { value: '' },
+    attr: { value: ({ props }) => props.value }
   }
 }

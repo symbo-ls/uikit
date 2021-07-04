@@ -1,24 +1,21 @@
 'use strict'
 
-import { Icon } from '../'
+import { Icon, Text } from '../'
 import style, { size } from './style'
 
 export default {
   style,
 
-  define: {
-    icon: param => param || 'arrowMediumDown',
-    size: param => param || 'default'
+  proto: [Text],
+
+  props: {
+    icon: 'arrowMediumDown'
   },
 
-  class: {
-    size: element => size[element.size]
-  },
-
-  _icon: {
+  icon: {
     proto: Icon,
-    name: element => element.parent.icon
+    name: ({ props }) => props.icon
   },
 
-  text: ''
+  text: ({ props }) => props.text
 }

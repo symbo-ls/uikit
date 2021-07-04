@@ -2,14 +2,14 @@
 
 export default {
   tag: 'a',
-  define: {
-    href: param => param,
-    target: param => param,
-    aria: param => param || {}
+  props: {
+    href: '',
+    target: '',
+    aria: {}
   },
   attr: {
-    href: element => element.href,
-    target: element => element.target,
-    'aria-label': element => element.aria.label || element.text
+    href: ({ props }) => props.href,
+    target: ({ props }) => props.target,
+    'aria-label': ({ props }) => props.aria.label || props.text
   }
 }

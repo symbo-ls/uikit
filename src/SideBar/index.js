@@ -3,10 +3,10 @@ import { Icon, Link } from '../'
 
 const MenuItem = {
   proto: Link,
-  define: { icon: param => param },
+  props: { icon: '' },
   glyph: {
     proto: Icon,
-    name: element => element.parent.icon
+    name: ({ props }) => props.icon
   }
 }
 

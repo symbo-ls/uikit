@@ -25,7 +25,7 @@ export default {
     header: {
       icon: {
         proto: Icon,
-        name: 'arrowMediumLeft'
+        props: { icon: 'arrowMediumLeft' }
       },
       month: {
         childProto: { tag: 'span' },
@@ -46,7 +46,7 @@ export default {
       },
       icon2: {
         proto: Icon,
-        name: 'arrowMediumRight'
+        props: { icon: 'arrowMediumRight' }
       }
     },
     days: {

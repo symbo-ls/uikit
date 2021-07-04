@@ -13,13 +13,11 @@ export default {
     padding: '2px'
   },
   caption: {
-    fontSize: '1em',
     fontWeight: 'bold',
     whiteSpace: 'nowrap'
   },
   p: {
     margin: 0,
-    fontSize: `${13 / 16}em`,
     marginTop: '4px'
   }
 }

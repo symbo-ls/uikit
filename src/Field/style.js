@@ -22,7 +22,6 @@ export default {
   },
   svg: {
     position: 'absolute',
-    right: '1em',
-    fontSize: '1em'
+    right: '1em'
   }
 }

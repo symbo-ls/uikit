@@ -1,22 +1,25 @@
 'use strict'
 
-import { Shape, IconText } from '..'
+import { Shape, IconText, Block } from '..'
 import style from './style'
 
 export default {
-  proto: Shape,
+  proto: [Shape, Block],
   tag: 'input',
   style,
-  define: {
-    placeholder: param => param,
-    value: param => param,
-    type: param => param
-  },
+
+  props: (el, s) => ({
+    type: 'input',
+    value: ({ key }, s) => s[el.key],
+    placeholder: 'Type in',
+    round: 26,
+    spacing: 'a',
+    theme: '--transparent'
+  }),
+
   attr: {
-    placeholder: element => element.placeholder,
-    value: element => element.value,
-    type: element => element.type
+    placeholder: ({ props }) => props.placeholder,
+    value: ({ props }) => props.value,
+    type: ({ props }) => props.type
   },
-  theme: el => el.parent.theme,
-  round: 26
 }

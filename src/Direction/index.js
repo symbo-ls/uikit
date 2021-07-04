@@ -3,10 +3,10 @@
 import style from './style'
 
 export default {
-  define: {
-    direction: param => param || 'ltr'
+  props: {
+    direction: 'ltr'
   },
   class: {
-    direction: element => style[element.direction]
+    direction: ({ props }) => style[props.direction]
   }
 }

@@ -13,7 +13,7 @@ export const parentMode = {
   style: styleParentMode,
   icon: {
     proto: Icon,
-    name: 'checkMedium'
+    props: { icon: 'checkMedium' }
   },
   h2: 'Welcome to parent Mode',
   description: {

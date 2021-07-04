@@ -19,7 +19,7 @@ export default {
   childProto: {
     tag: 'div',
     proto: Shape,
-    theme: 'White'
+    props: { theme: 'White' }
   },
   ...[
     {}, {}, {}
