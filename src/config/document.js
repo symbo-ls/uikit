@@ -1,12 +1,9 @@
 'use strict'
 
+import { Font, Theme, Typography } from '.'
+
 export default {
-  color: 'black',
-  backgroundColor: 'white',
-  themes: {
-    dark: {
-      color: 'white',
-      backgroundColor: 'black',
-    }
-  }
+  theme: Theme['document'],
+  fontSize: Typography.base,
+  // fontFace: FontFace.primary
 }

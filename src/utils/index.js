@@ -1,5 +1,16 @@
 'use strict'
 
+import { Unit } from '../config'
+import { settings as Spacing } from '../config/spacing'
+import { settings as Typography } from '../config/typography'
+
+export const isArray = arg => Array.isArray(arg)
+
+export const isObjectLike = arg => {
+  if (arg === null) return false
+  return (typeof arg === 'object')
+}
+
 export const merge = (obj, original) => {
   for (const e in original) {
     const objProp = obj[e]
@@ -115,3 +126,73 @@ export const getFontFace = Library => {
   }
   return fonts
 }
+
+const numToLetterMap = {
+  '-6': 'U',
+  '-5': 'V',
+  '-4': 'W',
+  '-3': 'X',
+  '-2': 'Y',
+  '-1': 'Z',
+  '0': 'A',
+  '1': 'B',
+  '2': 'C',
+  '3': 'D',
+  '4': 'E',
+  '5': 'F',
+  '6': 'G',
+  '7': 'H',
+  '8': 'I',
+  '9': 'J'
+}
+
+export const generateSequence = ({type, base, ratio, range, ...state}) => {
+  const n = Math.abs(range[0]) + Math.abs(range[1])
+  for (let i = 0; i <= n; i++) {
+    const key = range[1] - i
+    const letterKey = numToLetterMap[key]
+    const value = base * Math.pow(ratio, key)
+    const scaling = Math.round(value / base * 1000) / 1000
+    const variable = '--' + type + '-' + letterKey
+    state.sequence[variable] = {
+      decimal: Math.round(value * 100) / 100,
+      val: Math.round(value),
+      scaling
+    }
+    state.scales[variable] = scaling
+  }
+  return state
+}
+
+const fallBack = (type, prop, val = '--font-size-A') => {
+  const value = type ? type[val] : null
+  if (!value) return console.warn('can\'t find', type, prop, val)
+  return ({
+    [prop]: value.val + Unit.default,
+    [prop]: value.scaling + 'em'
+  })
+}
+
+export const mapPadding = val => {
+  const wrapFallBack = (prop, i) => fallBack(Spacing.sequence, prop, val)
+  if (isObjectLike(val)) {
+    if (val.length === 2) return [
+      wrapFallBack('paddingBlock', 0),
+      wrapFallBack('paddingInline', 1),
+    ]
+    else if (val.length === 3) return [
+      wrapFallBack('paddingBlockStart', 0),
+      wrapFallBack('paddingInline', 1),
+      wrapFallBack('paddingBlockEnd', 2)
+    ]
+    else if (val.length === 4) return [
+      wrapFallBack('paddingBlockStart', 0),
+      wrapFallBack('paddingInlineStart', 1),
+      wrapFallBack('paddingBlockEnd', 2),
+      wrapFallBack('paddingInlineEnd', 3)
+    ]
+    else return wrapFallBack('padding', 0)
+  } else return fallBack(Spacing.sequence, 'padding', val)
+}
+
+export const mapFontSize = val => fallBack(Typography.sequence, 'fontSize', val)

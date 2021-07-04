@@ -9,4 +9,9 @@ var themeA = {
   inverse: {} // schemeAInverse
 }
 
-export default { }
+export default {
+  document: {
+    color: 'white',
+    background: 'black'
+  }
+}

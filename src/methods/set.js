@@ -30,6 +30,5 @@ var set = (kind, ...props) => {
     return Font
   }
 }
-console.log('Font')
 
 export default set

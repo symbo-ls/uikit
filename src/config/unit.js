@@ -1,3 +1,5 @@
 'use strict'
 
-export default 'px'
+export default {
+  default: 'px'
+}

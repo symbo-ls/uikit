@@ -6,10 +6,12 @@ import {
   Sequence,
   Color,
   Theme,
-  Box,
   Spacing,
   Typography,
-  Unit
+  Document,
+  Unit,
+  Font,
+  Reset
 } from './config'
 
 import {
@@ -23,17 +25,21 @@ import {
 
   getFontFormat,
   setCustomFont,
-  getFontFace
+  getFontFace,
+  mapPadding,
+  mapFontSize
 } from './utils'
 
 export {
   Sequence,
   Color,
   Theme,
-  Box,
   Spacing,
   Typography,
+  Document,
   Unit,
+  Font,
+  Reset,
 
   set,
 
@@ -47,5 +53,7 @@ export {
 
   getFontFormat,
   setCustomFont,
-  getFontFace
+  getFontFace,
+  mapPadding,
+  mapFontSize
 }
