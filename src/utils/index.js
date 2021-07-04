@@ -164,9 +164,9 @@ export const generateSequence = ({type, base, ratio, range, ...state}) => {
   return state
 }
 
-const fallBack = (type, prop, val = '--font-size-A') => {
-  const value = type ? type[val] : null
-  if (!value) return console.warn('can\'t find', type, prop, val)
+const fallBack = ({type, prop, val = 'A', prefix = '--font-size-'}) => {
+  const value = type ? type[prefix + val] : null
+  if (!value) return console.warn('can\'t find', type, prefix + val, val)
   return ({
     [prop]: value.val + Unit.default,
     [prop]: value.scaling + 'em'
@@ -174,25 +174,35 @@ const fallBack = (type, prop, val = '--font-size-A') => {
 }
 
 export const mapPadding = val => {
-  const wrapFallBack = (prop, i) => fallBack(Spacing.sequence, prop, val)
+  const length = Object.keys(val)
+  const prefix = '--spacing-'
+  const type = Spacing.sequence
+
+  const wrapFallBack = (prop, i) => fallBack({ type, prop, val: val[i], prefix })
+
   if (isObjectLike(val)) {
-    if (val.length === 2) return [
+    if (length === 2) return [
       wrapFallBack('paddingBlock', 0),
       wrapFallBack('paddingInline', 1),
     ]
-    else if (val.length === 3) return [
+    else if (length === 3) return [
       wrapFallBack('paddingBlockStart', 0),
       wrapFallBack('paddingInline', 1),
       wrapFallBack('paddingBlockEnd', 2)
     ]
-    else if (val.length === 4) return [
+    else if (length === 4) return [
       wrapFallBack('paddingBlockStart', 0),
       wrapFallBack('paddingInlineStart', 1),
       wrapFallBack('paddingBlockEnd', 2),
       wrapFallBack('paddingInlineEnd', 3)
     ]
     else return wrapFallBack('padding', 0)
-  } else return fallBack(Spacing.sequence, 'padding', val)
+  } else return fallBack({ type, prop: 'padding', val, prefix })
 }
 
-export const mapFontSize = val => fallBack(Typography.sequence, 'fontSize', val)
+export const mapFontSize = val => fallBack({
+  type: Typography.sequence,
+  prop: 'fontSize',
+  val,
+  prefix: '--font-size-'
+})
