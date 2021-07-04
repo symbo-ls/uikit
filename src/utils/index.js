@@ -165,8 +165,8 @@ export const generateSequence = ({type, base, ratio, range, ...state}) => {
 }
 
 const fallBack = ({type, prop, val = 'A', prefix = '--font-size-'}) => {
-  const value = type ? type[prefix + val] : null
-  if (!value) return console.warn('can\'t find', type, prefix + val, val)
+  const value = type ? type[prefix + val.toUpperCase()] : null
+  if (!value) return console.warn('can\'t find', type, prefix + val.toUpperCase(), val.toUpperCase())
   return ({
     [prop]: value.val + Unit.default,
     [prop]: value.scaling + 'em'
@@ -174,13 +174,12 @@ const fallBack = ({type, prop, val = 'A', prefix = '--font-size-'}) => {
 }
 
 export const mapPadding = val => {
-  const length = Object.keys(val)
   const prefix = '--spacing-'
   const type = Spacing.sequence
-
   const wrapFallBack = (prop, i) => fallBack({ type, prop, val: val[i], prefix })
 
   if (isObjectLike(val)) {
+    const length = Object.keys(val)
     if (length === 2) return [
       wrapFallBack('paddingBlock', 0),
       wrapFallBack('paddingInline', 1),
