@@ -12,10 +12,7 @@ export default {
     icon: 'arrowMediumDown'
   },
 
-  icon: {
-    proto: Icon,
-    name: ({ props }) => props.icon
-  },
+  icon: { proto: Icon },
 
   text: ({ props }) => props.text
 }

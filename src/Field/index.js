@@ -6,7 +6,7 @@ import style from './style'
 export default {
   proto: [Shape, IconText],
   style,
-  props: (el, s) => ({
+  props: (el, s) => console.log(el, s) && ({
     placeholder: 'Type in',
     value: s[el.key],
     round: 26,

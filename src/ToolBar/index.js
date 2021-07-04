@@ -5,7 +5,7 @@ import Shape from '../Shape'
 
 export default {
   tag: 'nav',
-  proto: [Shape],
+  proto: Shape,
   style: { display: 'flex' },
   childProto: {
     proto: [SquareButton],

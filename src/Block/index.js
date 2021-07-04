@@ -13,9 +13,7 @@ const Block = {
   },
 
   class: {
-    padding: ({ props }) => mapPadding(
-      `--spacing-${props.spacing.toUpperCase()}`
-    )
+    padding: ({ props }) => mapPadding(props.spacing)
   }
 }
 
