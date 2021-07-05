@@ -6,11 +6,11 @@ import style from './style'
 export default {
   proto: [Shape, IconText],
   style,
-  props: (el, s) => console.log(el, s) && ({
+  props: (el, s) => ({
     placeholder: 'Type in',
     value: s[el.key],
     round: 26,
-    theme: 'field',
+    theme: 'field'
   }),
   input: {
     proto: Input,
@@ -18,8 +18,7 @@ export default {
       round: ({ props }) => props.round,
       theme: ({ props }) => props.theme,
       value: ({ props }) => props.value,
-      placeholder: ({ props }) => props.placeholder,
-      round: ({ props }) => props.round
+      placeholder: ({ props }) => props.placeholder
     }
   }
 }

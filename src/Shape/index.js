@@ -1,13 +1,10 @@
 'use strict'
 
-import { Theme, Spacing } from '@rackai/scratch'
+import { Theme } from '@rackai/scratch'
 
-import { Block, Text } from '..'
-import style, { tagShape, toolTipShape, shape, depth } from './style'
+import style, { shape, depth } from './style'
 
 const Shape = {
-  proto: [ Text ],
-
   style,
 
   props: {
