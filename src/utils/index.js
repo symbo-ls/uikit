@@ -75,7 +75,7 @@ export const hexToRGBA = (hex, alpha = 1) => {
 }
 
 export const mixTwoRGB = (colorA, colorB, range = 0.5) => {
-  let arr = []
+  const arr = []
   for (let i = 0; i < 3; i++) {
     arr[i] = Math.round(
       colorA[i] + (
@@ -87,9 +87,9 @@ export const mixTwoRGB = (colorA, colorB, range = 0.5) => {
 }
 
 export const mixTwoRGBA = (colorA, colorB, range = 0.5) => {
-  let arr = []
+  const arr = []
   for (let i = 0; i < 4; i++) {
-    let round = (i === 3) ? x => x : Math.round
+    const round = (i === 3) ? x => x : Math.round
     arr[i] = round(
       (colorA[i] + (
         (colorB[i] - colorA[i]) * range
@@ -100,7 +100,7 @@ export const mixTwoRGBA = (colorA, colorB, range = 0.5) => {
 }
 
 export const opacify = (color, opacity) => {
-  let arr = colorStringToRGBAArray(color)
+  const arr = colorStringToRGBAArray(color)
   arr[3] = opacity
   return `rgba(${arr})`
 }
@@ -134,19 +134,19 @@ const numToLetterMap = {
   '-3': 'X',
   '-2': 'Y',
   '-1': 'Z',
-  '0': 'A',
-  '1': 'B',
-  '2': 'C',
-  '3': 'D',
-  '4': 'E',
-  '5': 'F',
-  '6': 'G',
-  '7': 'H',
-  '8': 'I',
-  '9': 'J'
+  0: 'A',
+  1: 'B',
+  2: 'C',
+  3: 'D',
+  4: 'E',
+  5: 'F',
+  6: 'G',
+  7: 'H',
+  8: 'I',
+  9: 'J'
 }
 
-export const generateSequence = ({type, base, ratio, range, ...state}) => {
+export const generateSequence = ({ type, base, ratio, range, ...state }) => {
   const n = Math.abs(range[0]) + Math.abs(range[1])
   for (let i = 0; i <= n; i++) {
     const key = range[1] - i
@@ -164,7 +164,7 @@ export const generateSequence = ({type, base, ratio, range, ...state}) => {
   return state
 }
 
-const fallBack = ({type, prop, val = 'A', prefix = '--font-size-'}) => {
+const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
   const value = type ? type[prefix + val.toUpperCase()] : null
   if (!value) return console.warn('can\'t find', type, prefix + val.toUpperCase(), val.toUpperCase())
   return ({
@@ -180,22 +180,25 @@ export const mapPadding = val => {
 
   if (isObjectLike(val)) {
     const length = Object.keys(val)
-    if (length === 2) return [
-      wrapFallBack('paddingBlock', 0),
-      wrapFallBack('paddingInline', 1),
-    ]
-    else if (length === 3) return [
-      wrapFallBack('paddingBlockStart', 0),
-      wrapFallBack('paddingInline', 1),
-      wrapFallBack('paddingBlockEnd', 2)
-    ]
-    else if (length === 4) return [
-      wrapFallBack('paddingBlockStart', 0),
-      wrapFallBack('paddingInlineStart', 1),
-      wrapFallBack('paddingBlockEnd', 2),
-      wrapFallBack('paddingInlineEnd', 3)
-    ]
-    else return wrapFallBack('padding', 0)
+    if (length === 2) {
+      return [
+        wrapFallBack('paddingBlock', 0),
+        wrapFallBack('paddingInline', 1)
+      ]
+    } else if (length === 3) {
+      return [
+        wrapFallBack('paddingBlockStart', 0),
+        wrapFallBack('paddingInline', 1),
+        wrapFallBack('paddingBlockEnd', 2)
+      ]
+    } else if (length === 4) {
+      return [
+        wrapFallBack('paddingBlockStart', 0),
+        wrapFallBack('paddingInlineStart', 1),
+        wrapFallBack('paddingBlockEnd', 2),
+        wrapFallBack('paddingInlineEnd', 3)
+      ]
+    } else return wrapFallBack('padding', 0)
   } else return fallBack({ type, prop: 'padding', val, prefix })
 }
 
