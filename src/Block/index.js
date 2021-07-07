@@ -1,7 +1,7 @@
 'use strict'
 
 import { Theme, Typography, Unit, Spacing } from '@rackai/scratch'
-import { mapPadding } from '..'
+import { mapPadding } from '@rackai/scratch/src/config/spacing'
 import style from './style'
 
 const Block = {
@@ -13,7 +13,11 @@ const Block = {
   },
 
   class: {
-    padding: ({ props }) => mapPadding(props.spacing)
+    padding: ({ props }) => {
+      const result = mapPadding(props.spacing)
+      console.log(props.spacing, result)
+      return result
+    }
   }
 }
 

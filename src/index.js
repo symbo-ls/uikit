@@ -3,16 +3,6 @@
 import './styles.js'
 
 import {
-  Sequence,
-  Color,
-  Theme,
-  Spacing,
-  Typography,
-  Unit,
-  Font,
-  Document,
-  Reset,
-
   set,
 
   colorStringToRGBAArray,
@@ -26,8 +16,19 @@ import {
   getFontFormat,
   setCustomFont,
   getFontFace,
+  generateSequence,
   mapPadding,
-  mapFontSize
+  mapFontSize,
+
+  Sequence,
+  Color,
+  Theme,
+  Spacing,
+  Typography,
+  Unit,
+  Font,
+  Document,
+  Reset,
 } from '@rackai/scratch'
 
 import utilityStyles from './styles'
@@ -60,6 +61,23 @@ import Pills from './Pills'
 import Select from './Select'
 
 export {
+  // scratch utils
+  set,
+
+  colorStringToRGBAArray,
+  opacify,
+  mixTwoColors,
+  hexToRGB,
+  hexToRGBA,
+  mixTwoRGB,
+  mixTwoRGBA,
+
+  getFontFormat,
+  setCustomFont,
+  getFontFace,
+  generateSequence,
+
+  // default utility styles
   utilityStyles,
 
   // scratch library
@@ -112,21 +130,4 @@ export {
   // grid layouts
   grid,
   grid2,
-
-  // scratch utils
-  set,
-
-  colorStringToRGBAArray,
-  opacify,
-  mixTwoColors,
-  hexToRGB,
-  hexToRGBA,
-  mixTwoRGB,
-  mixTwoRGBA,
-
-  getFontFormat,
-  setCustomFont,
-  getFontFace,
-  mapPadding,
-  mapFontSize
 }
