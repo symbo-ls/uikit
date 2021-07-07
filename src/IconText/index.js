@@ -1,7 +1,7 @@
 'use strict'
 
 import { Icon, Text } from '../'
-import style, { size } from './style'
+import style from './style'
 
 export default {
   style,

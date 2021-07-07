@@ -14,9 +14,8 @@ const Block = {
 
   class: {
     padding: ({ props }) => {
-      const result = mapPadding(props.spacing)
-      console.log(props.spacing, result)
-      return result
+      // console.log(mapPadding(props.spacing))
+      return mapPadding(props.spacing)
     }
   }
 }

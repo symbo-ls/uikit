@@ -22,8 +22,8 @@ export const SquareButton = {
 
 export const CircleButton = {
   proto: SquareButton,
-  style: {
-    borderRadius: '100%'
+  props: {
+    round: '100%'
   }
 }
 

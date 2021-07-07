@@ -3,7 +3,7 @@
 export default {
   appearance: 'none',
   maxWidth: '8.2em',
-  height: '.2em',
+  height: '2px',
   outline: 'none',
   marginRight: '.9em',
   flex: 1,
