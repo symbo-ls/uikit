@@ -3,6 +3,20 @@
 import { set } from './methods'
 
 import {
+  colorStringToRGBAArray,
+  opacify,
+  mixTwoColors,
+  hexToRGB,
+  hexToRGBA,
+  mixTwoRGB,
+  mixTwoRGBA,
+
+  getFontFormat,
+  setCustomFont,
+  getFontFace
+} from './utils'
+
+import {
   Sequence,
   Color,
   Theme,
@@ -14,33 +28,7 @@ import {
   Reset
 } from './config'
 
-import {
-  colorStringToRGBAArray,
-  opacify,
-  mixTwoColors,
-  hexToRGB,
-  hexToRGBA,
-  mixTwoRGB,
-  mixTwoRGBA,
-
-  getFontFormat,
-  setCustomFont,
-  getFontFace,
-  mapPadding,
-  mapFontSize
-} from './utils'
-
 export {
-  Sequence,
-  Color,
-  Theme,
-  Spacing,
-  Typography,
-  Document,
-  Unit,
-  Font,
-  Reset,
-
   set,
 
   colorStringToRGBAArray,
@@ -54,6 +42,14 @@ export {
   getFontFormat,
   setCustomFont,
   getFontFace,
-  mapPadding,
-  mapFontSize
+
+  Sequence,
+  Color,
+  Theme,
+  Spacing,
+  Typography,
+  Document,
+  Unit,
+  Font,
+  Reset
 }

@@ -1,7 +1,7 @@
 'use strict'
 
-import { generateSequence } from '../utils'
 import sequence from './sequence'
+import { fallBack, generateSequence } from '../utils'
 
 const defaultProps = {
   base: 16,
@@ -12,5 +12,13 @@ const defaultProps = {
   scales: {}
 }
 
-export const settings = generateSequence(defaultProps)
-export default settings.scales
+generateSequence(defaultProps)
+
+export const mapFontSize = val => fallBack({
+  type: defaultProps.sequence,
+  prop: 'fontSize',
+  val,
+  prefix: '--font-size-'
+})
+
+export default defaultProps

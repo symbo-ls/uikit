@@ -1,8 +1,6 @@
 'use strict'
 
 import { Unit } from '../config'
-import { settings as Spacing } from '../config/spacing'
-import { settings as Typography } from '../config/typography'
 
 export const isArray = arg => Array.isArray(arg)
 
@@ -147,13 +145,15 @@ const numToLetterMap = {
 }
 
 export const generateSequence = ({ type, base, ratio, range, ...state }) => {
+  console.log(({ type, base, ratio, range, ...state }))
   const n = Math.abs(range[0]) + Math.abs(range[1])
+  const prefix = '--' + type + '-'
   for (let i = 0; i <= n; i++) {
     const key = range[1] - i
     const letterKey = numToLetterMap[key]
     const value = base * Math.pow(ratio, key)
     const scaling = Math.round(value / base * 1000) / 1000
-    const variable = '--' + type + '-' + letterKey
+    const variable = prefix + letterKey
     state.sequence[variable] = {
       decimal: Math.round(value * 100) / 100,
       val: Math.round(value),
@@ -161,10 +161,12 @@ export const generateSequence = ({ type, base, ratio, range, ...state }) => {
     }
     state.scales[variable] = scaling
   }
+  console.log(state)
   return state
 }
 
-const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
+export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
+  if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
   const value = type ? type[prefix + val.toUpperCase()] : null
   if (!value) return console.warn('can\'t find', type, prefix + val.toUpperCase(), val.toUpperCase())
   return ({
@@ -172,39 +174,3 @@ const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
     [prop]: value.scaling + 'em'
   })
 }
-
-export const mapPadding = val => {
-  const prefix = '--spacing-'
-  const type = Spacing.sequence
-  const wrapFallBack = (prop, i) => fallBack({ type, prop, val: val[i], prefix })
-
-  if (isObjectLike(val)) {
-    const length = Object.keys(val)
-    if (length === 2) {
-      return [
-        wrapFallBack('paddingBlock', 0),
-        wrapFallBack('paddingInline', 1)
-      ]
-    } else if (length === 3) {
-      return [
-        wrapFallBack('paddingBlockStart', 0),
-        wrapFallBack('paddingInline', 1),
-        wrapFallBack('paddingBlockEnd', 2)
-      ]
-    } else if (length === 4) {
-      return [
-        wrapFallBack('paddingBlockStart', 0),
-        wrapFallBack('paddingInlineStart', 1),
-        wrapFallBack('paddingBlockEnd', 2),
-        wrapFallBack('paddingInlineEnd', 3)
-      ]
-    } else return wrapFallBack('padding', 0)
-  } else return fallBack({ type, prop: 'padding', val, prefix })
-}
-
-export const mapFontSize = val => fallBack({
-  type: Typography.sequence,
-  prop: 'fontSize',
-  val,
-  prefix: '--font-size-'
-})

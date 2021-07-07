@@ -1,23 +1,31 @@
 'use strict'
 
 import Sequence from './sequence'
+import Unit from './unit'
+
+import Typography from './typography'
+import Font from './font'
+
+import Spacing from './spacing'
+
 import Color from './color'
 import Theme from './theme'
-import Font from './font'
-import Spacing from './spacing'
-import Typography from './typography'
-import Unit from './unit'
+
 import Document from './document'
 import Reset from './reset'
 
 export {
   Sequence,
+  Unit,
+
+  Typography,
+  Font,
+
+  Spacing,
+
   Color,
   Theme,
-  Font,
-  Spacing,
-  Typography,
-  Unit,
+
   Document,
   Reset
 }
