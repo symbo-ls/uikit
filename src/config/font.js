@@ -1,6 +1,6 @@
 'use strict'
 
-var defFont = {
+var defFont = { // eslint-disable-line
   name: '',
   url: '',
   fontStyle: '',

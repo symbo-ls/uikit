@@ -1,55 +1,57 @@
 'use strict'
 
-import { set } from './methods'
+// import {
+//   colorStringToRGBAArray,
+//   opacify,
+//   mixTwoColors,
+//   hexToRGB,
+//   hexToRGBA,
+//   mixTwoRGB,
+//   mixTwoRGBA,
 
-import {
-  colorStringToRGBAArray,
-  opacify,
-  mixTwoColors,
-  hexToRGB,
-  hexToRGBA,
-  mixTwoRGB,
-  mixTwoRGBA,
+//   getFontFormat,
+//   setCustomFont,
+//   getFontFace
+// } from './utils'
 
-  getFontFormat,
-  setCustomFont,
-  getFontFace
-} from './utils'
+// import {
+//   Sequence,
+//   Color,
+//   Theme,
+//   Spacing,
+//   Typography,
+//   Document,
+//   Unit,
+//   Font,
+//   Reset
+// } from './config'
 
-import {
-  Sequence,
-  Color,
-  Theme,
-  Spacing,
-  Typography,
-  Document,
-  Unit,
-  Font,
-  Reset
-} from './config'
+export * from './methods'
+export * from './utils'
+export * from './config'
 
-export {
-  set,
+// export {
+//   set,
 
-  colorStringToRGBAArray,
-  opacify,
-  mixTwoColors,
-  hexToRGB,
-  hexToRGBA,
-  mixTwoRGB,
-  mixTwoRGBA,
+//   colorStringToRGBAArray,
+//   opacify,
+//   mixTwoColors,
+//   hexToRGB,
+//   hexToRGBA,
+//   mixTwoRGB,
+//   mixTwoRGBA,
 
-  getFontFormat,
-  setCustomFont,
-  getFontFace,
+//   getFontFormat,
+//   setCustomFont,
+//   getFontFace,
 
-  Sequence,
-  Color,
-  Theme,
-  Spacing,
-  Typography,
-  Document,
-  Unit,
-  Font,
-  Reset
-}
+//   Sequence,
+//   Color,
+//   Theme,
+//   Spacing,
+//   Typography,
+//   Document,
+//   Unit,
+//   Font,
+//   Reset
+// }

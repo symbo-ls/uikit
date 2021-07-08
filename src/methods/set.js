@@ -1,7 +1,6 @@
 'use strict'
 
 import { Color, Theme, Font } from '../config'
-import { getFontFace } from '../utils'
 
 var set = (kind, ...props) => {
   if (kind === 'color') {
@@ -20,10 +19,10 @@ var set = (kind, ...props) => {
     props.map(value => {
       var { name, fontWeight, ...rest } = value
       if (Font[name]) {
-        Font[name][fontWeight] = rest
+        Font[name][fontWeight || 400] = rest
       } else {
         Font[name] = {
-          [fontWeight]: rest
+          [fontWeight || 400]: rest
         }
       }
     })

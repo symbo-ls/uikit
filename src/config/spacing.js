@@ -9,6 +9,7 @@ const defaultProps = {
   type: 'spacing',
   ratio: sequence['phi'],
   range: [-5, +7],
+  subSequence: true,
   sequence: {},
   scales: {}
 }
@@ -43,5 +44,7 @@ export const mapPadding = val => {
     } else return wrapFallBack('padding', 0)
   } else return fallBack({ type, prop: 'padding', val, prefix })
 }
+
+console.log(defaultProps.scales)
 
 export default defaultProps

@@ -144,8 +144,40 @@ const numToLetterMap = {
   9: 'J'
 }
 
-export const generateSequence = ({ type, base, ratio, range, ...state }) => {
-  console.log(({ type, base, ratio, range, ...state }))
+const setSequenceValue = ({ variable, value, scaling, state }) => {
+  state.sequence[variable] = {
+    decimal: Math.round(value * 100) / 100,
+    val: Math.round(value),
+    scaling
+  }
+  state.scales[variable] = scaling
+}
+
+export const generateSubSequence = ({ base, value, ratio, variable, state }) => {
+  const next = value * ratio
+  const smallscale = (next - value) / ratio
+
+  const valueRounded = Math.round(value)
+  const nextRounded = Math.round(next)
+  const diffRounded = nextRounded - valueRounded
+
+  let arr = []
+  const first = next - smallscale
+  const second = value + smallscale
+  const middle = (first + second) / 2
+  if (diffRounded > 100) arr = [first, middle, second]
+  else if (diffRounded > 2) arr = [first, second]
+  else if (diffRounded > 1) arr = [middle]
+
+  arr.map((v, k) => {
+    const scaling = Math.round(v / base * 1000) / 1000
+    const newVar = variable + (k + 1)
+
+    setSequenceValue({ variable: newVar, value: v, scaling, state })
+  })
+}
+
+export const generateSequence = ({ type, base, ratio, range, subSequence, ...state }) => {
   const n = Math.abs(range[0]) + Math.abs(range[1])
   const prefix = '--' + type + '-'
   for (let i = 0; i <= n; i++) {
@@ -154,14 +186,11 @@ export const generateSequence = ({ type, base, ratio, range, ...state }) => {
     const value = base * Math.pow(ratio, key)
     const scaling = Math.round(value / base * 1000) / 1000
     const variable = prefix + letterKey
-    state.sequence[variable] = {
-      decimal: Math.round(value * 100) / 100,
-      val: Math.round(value),
-      scaling
-    }
-    state.scales[variable] = scaling
+
+    setSequenceValue({ variable, value, scaling, state })
+
+    if (subSequence) generateSubSequence({ base, value, ratio, variable, state })
   }
-  console.log(state)
   return state
 }
 

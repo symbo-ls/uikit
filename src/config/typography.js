@@ -21,4 +21,6 @@ export const mapFontSize = val => fallBack({
   prefix: '--font-size-'
 })
 
+console.log(defaultProps.scales)
+
 export default defaultProps
