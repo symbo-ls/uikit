@@ -4,6 +4,11 @@ import { Unit } from '../config'
 
 export const isArray = arg => Array.isArray(arg)
 
+export const isObject = arg => {
+  if (arg === null) return false
+  return (typeof arg === 'object') && (arg.constructor === Object)
+}
+
 export const isObjectLike = arg => {
   if (arg === null) return false
   return (typeof arg === 'object')
