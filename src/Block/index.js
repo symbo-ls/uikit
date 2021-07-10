@@ -13,11 +13,7 @@ const Block = {
   },
 
   class: {
-    padding: ({ props }) => {
-      const result = mapPadding(props.spacing)
-      console.log(props.spacing, result)
-      return result
-    }
+    padding: ({ props }) => mapPadding(props.spacing)
   }
 }
 
