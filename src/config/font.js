@@ -9,4 +9,4 @@ var defFont = { // eslint-disable-line
   fontOpticalSizing: 'auto'
 }
 
-export default {}
+export const FONT = {}

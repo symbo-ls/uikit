@@ -1,31 +1,15 @@
 'use strict'
 
-import Sequence from './sequence'
-import Unit from './unit'
+export * from './sequence'
+export * from './unit'
 
-import Typography from './typography'
-import Font from './font'
+export * from './typography'
+export * from './font'
 
-import Spacing from './spacing'
+export * from './spacing'
 
-import Color from './color'
-import Theme from './theme'
+export * from './color'
+export * from './theme'
 
-import Document from './document'
-import Reset from './reset'
-
-export {
-  Sequence,
-  Unit,
-
-  Typography,
-  Font,
-
-  Spacing,
-
-  Color,
-  Theme,
-
-  Document,
-  Reset
-}
+export * from './document'
+export * from './reset'

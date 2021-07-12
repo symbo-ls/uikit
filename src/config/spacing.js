@@ -1,14 +1,12 @@
 'use strict'
 
-import sequence from './sequence'
-import Typography from './typography'
-import { generateSequence, fallBack, isObjectLike, isObject, isArray } from '../utils'
-import { isString } from '@rackai/domql/src/utils'
+import { SEQUENCE, TYPOGRAPHY } from '.'
+import { Arrayize, fallBack, generateSequence } from '../utils'
 
 const defaultProps = {
-  base: Typography.base,
+  base: TYPOGRAPHY.base,
   type: 'spacing',
-  ratio: sequence['phi'],
+  ratio: SEQUENCE['phi'],
   range: [-5, +7],
   subSequence: true,
   sequence: {},
@@ -17,18 +15,11 @@ const defaultProps = {
 
 generateSequence(defaultProps)
 
-const Arrayize = val => {
-  const isString = typeof val === 'string'
-  if (isString) return val.split(' ')
-  if (isObject(val)) return Object.keys(val).map(v => val[v])
-  if (isArray(val)) return val
-}
-
-export const mapPadding = val => {
+export const mapPadding = (val, props) => {
   const prefix = '--spacing-'
-  const type = defaultProps.sequence
+  const type = (props ? generateSequence(props) : defaultProps).sequence
 
-  let stack = Arrayize(val)
+  const stack = Arrayize(val)
   if (!stack) return
 
   const length = stack.length
@@ -40,23 +31,28 @@ export const mapPadding = val => {
     prefix
   })
 
-  if (length === 2) return [
-    wrapFallBack('paddingBlock', 0),
-    wrapFallBack('paddingInline', 1)
-  ]
-  if (length === 3) return [
-    wrapFallBack('paddingBlockStart', 0),
-    wrapFallBack('paddingInline', 1),
-    wrapFallBack('paddingBlockEnd', 2)
-  ]
-  else if (length === 4) return [
-    wrapFallBack('paddingBlockStart', 0),
-    wrapFallBack('paddingInlineStart', 1),
-    wrapFallBack('paddingBlockEnd', 2),
-    wrapFallBack('paddingInlineEnd', 3)
-  ]
+  if (length === 2) {
+    return [
+      wrapFallBack('paddingBlock', 0),
+      wrapFallBack('paddingInline', 1)
+    ]
+  }
+  if (length === 3) {
+    return [
+      wrapFallBack('paddingBlockStart', 0),
+      wrapFallBack('paddingInline', 1),
+      wrapFallBack('paddingBlockEnd', 2)
+    ]
+  } else if (length === 4) {
+    return [
+      wrapFallBack('paddingBlockStart', 0),
+      wrapFallBack('paddingInlineStart', 1),
+      wrapFallBack('paddingBlockEnd', 2),
+      wrapFallBack('paddingInlineEnd', 3)
+    ]
+  }
 
   return fallBack({ type, prop: 'padding', val, prefix })
 }
 
-export default defaultProps
+export const SPACING = defaultProps

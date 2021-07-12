@@ -1,6 +1,6 @@
 'use strict'
 
-export default {
+export const SEQUENCE = {
   'minor-second': 1.067,
   'major-second': 1.125,
   'minor-third': 1.2,
@@ -9,16 +9,16 @@ export default {
   'augmented-fourth': 1.414,
   'perfect-fifth': 1.5,
   'minor-sixth': 1.6,
-  'phi': 1.618, // golden-ratio
+  phi: 1.618, // golden-ratio
   'major-sixth': 1.667,
   'square-root-3': 1.732, // theodorus
   'minor-seventh': 1.778,
   'major-seventh': 1.875,
-  'octave': 2,
+  octave: 2,
   'square-root-5': 2.23, // pythagoras
   'major-tenth': 2.5,
   'major-eleventh': 2.667,
   'major-twelfth': 3,
-  'pi': 3.14, // archimedes
+  pi: 3.14, // archimedes
   'double-octave': 4
 }

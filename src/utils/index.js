@@ -1,6 +1,6 @@
 'use strict'
 
-import { Unit } from '../config'
+import { UNIT } from '../config'
 
 export const isArray = arg => Array.isArray(arg)
 
@@ -182,19 +182,19 @@ export const generateSubSequence = ({ base, value, ratio, variable, state }) => 
   })
 }
 
-export const generateSequence = ({ type, base, ratio, range, subSequence, ...state }) => {
+export const generateSequence = ({ type, base, ratio, range, subSequence, ...state }, ratioOverride) => {
   const n = Math.abs(range[0]) + Math.abs(range[1])
   const prefix = '--' + type + '-'
   for (let i = 0; i <= n; i++) {
     const key = range[1] - i
     const letterKey = numToLetterMap[key]
-    const value = base * Math.pow(ratio, key)
+    const value = base * Math.pow(ratioOverride || ratio, key)
     const scaling = Math.round(value / base * 1000) / 1000
     const variable = prefix + letterKey
 
     setSequenceValue({ variable, value, scaling, state })
 
-    if (subSequence) generateSubSequence({ base, value, ratio, variable, state })
+    if (subSequence) generateSubSequence({ base, value, ratio: ratioOverride || ratio, variable, state })
   }
   return state
 }
@@ -204,7 +204,14 @@ export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => 
   const value = type ? type[prefix + val.toUpperCase()] : null
   if (!value) return console.warn('can\'t find', type, prefix + val.toUpperCase(), val.toUpperCase())
   return ({
-    [prop]: value.val + Unit.default,
+    [prop]: value.val + UNIT.default,
     [prop]: value.scaling + 'em'
   })
+}
+
+export const Arrayize = val => {
+  const isString = typeof val === 'string'
+  if (isString) return val.split(' ')
+  if (isObject(val)) return Object.keys(val).map(v => val[v])
+  if (isArray(val)) return val
 }

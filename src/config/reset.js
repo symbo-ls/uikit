@@ -1,8 +1,8 @@
 'use strict'
 
-import { Document, Typography, Unit } from '.'
+import { DOCUMENT, UNIT } from '.'
 
-export default {
+export const RESET = {
   html: {
     position: 'fixed',
     overflow: 'hidden',
@@ -13,9 +13,9 @@ export default {
     margin: '0',
     WebkitFontSmoothing: 'antialiased',
 
-    fontSize: Document.fontSize + Unit.default,
-    color: Document.theme.color,
-    background: Document.theme.background
+    fontSize: DOCUMENT.fontSize + UNIT.default,
+    color: DOCUMENT.theme.color,
+    background: DOCUMENT.theme.background
   },
   body: {
     boxSizing: 'border-box',

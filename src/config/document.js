@@ -1,9 +1,9 @@
 'use strict'
 
-import { Font, Theme, Typography } from '.'
+import { THEME, TYPOGRAPHY } from '.'
 
-export default {
-  theme: Theme['document'],
-  fontSize: Typography.base
+export const DOCUMENT = {
+  theme: THEME['document'],
+  fontSize: TYPOGRAPHY.base
   // fontFace: FontFace.primary
 }
