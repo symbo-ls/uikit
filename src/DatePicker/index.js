@@ -3,7 +3,7 @@ import Icon from '../Icon'
 
 import style from './style'
 
-export default {
+export const DatePicker = {
   style,
 
   aside: {

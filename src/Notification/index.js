@@ -3,7 +3,7 @@ import { Shape, IconText, Direction } from '../'
 
 import style from './style'
 
-export default {
+export const Notification = {
   style,
   proto: [Shape, IconText, Direction],
   props: {

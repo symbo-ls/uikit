@@ -1,8 +1,8 @@
 'use strict'
 import { Shape, IconText } from '..'
-import { styleRow, styleRowActive, styleDropDown, styleSelectDropdown } from './style'
+import { styleRow, styleRowActive, styleDropDown } from './style'
 
-export default {
+export const Dropdown = {
   style: styleDropDown,
   tag: 'ul',
 

@@ -3,7 +3,7 @@
 import { Shape, IconText, Input } from '../'
 import style from './style'
 
-export default {
+export const Field = {
   proto: [Shape, IconText],
   style,
   props: (el, s) => ({

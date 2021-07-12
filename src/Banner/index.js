@@ -6,7 +6,7 @@ import { UserBundle } from '../User'
 
 import { styleParentMode } from './style'
 
-export const parentMode = {
+export const ParentMode = {
   proto: Shape,
   round: 10,
   theme: 'purple',

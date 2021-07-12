@@ -1,9 +1,10 @@
 'use strict'
 
 import style from './style'
-import SVG from '../SVG'
 
-export default {
+import { SVG } from '..'
+
+export const Icon = {
   proto: SVG,
   style,
   define: { name: param => param },

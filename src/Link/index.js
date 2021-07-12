@@ -1,6 +1,6 @@
 'use strict'
 
-export default {
+export const Link = {
   tag: 'a',
   props: {
     href: '',

@@ -1,10 +1,10 @@
 'use strict'
 
-import { Theme } from '@rackai/scratch'
+import { THEME } from '@rackai/scratch'
 
 import style, { shape, depth } from './style'
 
-const Shape = {
+export const Shape = {
   style,
 
   props: {
@@ -18,7 +18,7 @@ const Shape = {
     shape: ({ props }) => shape[props.shape],
     depth: ({ props }) => depth[props.depth],
     round: ({ props }) => ({ borderRadius: props.round }),
-    theme: ({ props }) => Theme[props.theme]
+    theme: ({ props }) => THEME[props.theme]
   }
 
   // mode: {

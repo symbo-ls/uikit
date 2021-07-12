@@ -2,7 +2,7 @@
 
 import { styleUser, styleUserBundle } from './style'
 
-const User = {
+export const User = {
   style: styleUser,
   tag: 'img',
   attr: {

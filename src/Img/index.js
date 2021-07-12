@@ -1,6 +1,6 @@
 'use strict'
 
-export default {
+export const Img = {
   tag: 'img',
 
   props: {

@@ -1,7 +1,7 @@
 'use strict'
 import Shape from '../Shape'
 
-export default {
+export const Label = {
   proto: Shape,
 
   props: {

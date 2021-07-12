@@ -3,7 +3,7 @@
 import Shape from '../Shape'
 import style from './style'
 
-export default {
+export const Select = {
   proto: Shape,
   tag: 'select',
   style,

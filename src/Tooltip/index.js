@@ -4,7 +4,7 @@ import Shape from '../Shape'
 
 import style from './style'
 
-export default {
+export const Tooltip = {
   style,
   proto: Shape,
   props: { theme: 'purple2' },

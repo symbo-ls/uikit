@@ -1,23 +1,17 @@
 'use strict'
 
-import { Theme, Typography, Unit, Spacing } from '@rackai/scratch'
-import { mapPadding } from '@rackai/scratch/src/config/spacing'
+import { SPACING, mapPadding } from '@rackai/scratch'
 import style from './style'
 
-const Block = {
+export const Block = {
   style,
 
   props: {
-    ratio: Spacing.ratio,
+    ratio: SPACING.ratio,
     spacing: 'A'
   },
 
   class: {
-    padding: ({ props }) => {
-      // console.log(mapPadding(props.spacing))
-      return mapPadding(props.spacing)
-    }
+    padding: ({ props }) => mapPadding(props.spacing)
   }
 }
-
-export default Block

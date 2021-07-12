@@ -4,7 +4,7 @@ import { Shape, Block, IconText, Direction } from '../'
 
 import style from './style'
 
-const Button = {
+export const Button = {
   tag: 'button',
   style,
   proto: [Shape, Block, IconText, Direction]

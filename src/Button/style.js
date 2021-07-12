@@ -1,10 +1,5 @@
 'use strict'
 
-import { Document, Typography } from '@rackai/scratch'
-
-const primaryFont = Object.keys(Typography)[0]
-const defaultFont = primaryFont || '--system-default'
-
 export default {
   appearance: 'none',
   border: 'none',

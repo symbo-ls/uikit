@@ -1,9 +1,9 @@
 'use strict'
 
-import { Shape, IconText, Block } from '..'
+import { Shape, Block } from '..'
 import style from './style'
 
-export default {
+export const Input = {
   proto: [Shape, Block],
   tag: 'input',
   style,
@@ -21,5 +21,5 @@ export default {
     placeholder: ({ props }) => props.placeholder,
     value: ({ props }) => props.value,
     type: ({ props }) => props.type
-  },
+  }
 }

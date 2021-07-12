@@ -10,7 +10,7 @@ const MenuItem = {
   }
 }
 
-export default {
+export const Sidebar = {
   caption: '',
   nav: {
     style: {

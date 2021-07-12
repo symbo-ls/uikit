@@ -3,7 +3,7 @@
 import { Icon, Text } from '../'
 import style from './style'
 
-export default {
+export const IconText = {
   style,
 
   proto: [Text],
@@ -12,7 +12,7 @@ export default {
     icon: 'arrowMediumDown'
   },
 
-  icon: { proto: Icon },
+  icon: { proto: Icon, if: ({ props }, s) => props.icon },
 
   text: ({ props }) => props.text
 }

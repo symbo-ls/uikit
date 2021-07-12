@@ -28,11 +28,11 @@ Scratch.set('theme', {
   }
 })
 
-const RangeSlider = {
+export const RangeSlider = {
   style,
   proto: Shape,
   props: {
-    theme: 'sliderThumb',
+    theme: 'sliderThumb'
   },
 
   tag: 'input',
@@ -44,7 +44,7 @@ const findOut = (el, s, key, def) => {
   return isFunction(val) ? val(el, s) : val || def
 }
 
-export default {
+export const Slider = {
   proto: Shape,
 
   props: {

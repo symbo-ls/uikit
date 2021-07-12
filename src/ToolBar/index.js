@@ -3,7 +3,7 @@
 import { SquareButton } from '../Button'
 import Shape from '../Shape'
 
-export default {
+export const ToolBar = {
   tag: 'nav',
   proto: Shape,
   style: { display: 'flex' },
