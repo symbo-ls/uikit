@@ -9,6 +9,7 @@ export { styles } from './styles'
 export { Text } from './Text'
 export { Block } from './Block'
 export { Shape } from './Shape'
+export { Flex } from './Flex'
 export { Direction } from './Direction'
 
 export { SVG } from './SVG'

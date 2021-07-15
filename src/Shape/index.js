@@ -1,6 +1,6 @@
 'use strict'
 
-import { THEME } from '@rackai/scratch'
+import { isObjectLike, THEME, mapSpacing } from '@rackai/scratch'
 
 import style, { shape, depth } from './style'
 
@@ -17,8 +17,12 @@ export const Shape = {
   class: {
     shape: ({ props }) => shape[props.shape],
     depth: ({ props }) => depth[props.depth],
-    round: ({ props }) => ({ borderRadius: props.round }),
-    theme: ({ props }) => THEME[props.theme]
+    round: ({ props }) => mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round }),
+    theme: ({ props }) => {
+      const { theme } = props
+      if (isObjectLike(theme)) return THEME[theme[0]][theme[1]]
+      else return THEME[theme]
+    }
   }
 
   // mode: {

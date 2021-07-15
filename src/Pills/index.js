@@ -19,7 +19,10 @@ export const Pills = {
   childProto: {
     tag: 'div',
     proto: Shape,
-    props: { theme: 'White' }
+    props: {
+      round: 42,
+      theme: 'White'
+    }
   },
   ...[
     {}, {}, {}

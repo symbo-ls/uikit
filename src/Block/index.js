@@ -1,17 +1,19 @@
 'use strict'
 
-import { SPACING, mapPadding } from '@rackai/scratch'
+import { SPACING, mapSpacing } from '@rackai/scratch'
 import style from './style'
 
 export const Block = {
   style,
 
   props: {
-    ratio: SPACING.ratio,
-    spacing: 'A'
+    ratio: SPACING.ratio
   },
 
   class: {
-    padding: ({ props }) => mapPadding(props.spacing)
+    width: ({ props }) => mapSpacing(props.width, 'width'),
+    height: ({ props }) => mapSpacing(props.height, 'height'),
+    padding: ({ props }) => mapSpacing(props.spacing, 'padding'),
+    gap: ({ props }) => mapSpacing(props.gap, 'gap')
   }
 }

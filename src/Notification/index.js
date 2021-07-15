@@ -1,16 +1,20 @@
 'use strict'
-import { Shape, IconText, Direction } from '../'
 
 import style from './style'
 
+import { Shape, Block, Icon, Direction, Flex } from '../'
+
 export const Notification = {
   style,
-  proto: [Shape, IconText, Direction],
+  proto: [Shape, Block, Direction, Flex],
   props: {
-    icon: 'info'
+    icon: 'info',
+    title: 'Notification',
+    caption: 'is not always a distraction'
   },
+  icon: { proto: Icon },
   article: {
-    caption: 'Notification',
-    p: 'is not always a distraction'
+    caption: ({ props }) => props.title,
+    p: ({ props }) => props.caption
   }
 }
