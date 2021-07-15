@@ -15,7 +15,7 @@ const defaultProps = {
 
 generateSequence(defaultProps)
 
-export const mapPadding = (val, props) => {
+export const mapSpacing = (val, property = 'padding', props) => {
   const prefix = '--spacing-'
   const type = (props ? generateSequence(props) : defaultProps).sequence
 
@@ -33,26 +33,28 @@ export const mapPadding = (val, props) => {
 
   if (length === 2) {
     return [
-      wrapFallBack('paddingBlock', 0),
-      wrapFallBack('paddingInline', 1)
+      wrapFallBack(property + 'Block', 0),
+      wrapFallBack(property + 'Inline', 1)
     ]
   }
   if (length === 3) {
     return [
-      wrapFallBack('paddingBlockStart', 0),
-      wrapFallBack('paddingInline', 1),
-      wrapFallBack('paddingBlockEnd', 2)
+      wrapFallBack(property + 'BlockStart', 0),
+      wrapFallBack(property + 'Inline', 1),
+      wrapFallBack(property + 'BlockEnd', 2)
     ]
   } else if (length === 4) {
     return [
-      wrapFallBack('paddingBlockStart', 0),
-      wrapFallBack('paddingInlineStart', 1),
-      wrapFallBack('paddingBlockEnd', 2),
-      wrapFallBack('paddingInlineEnd', 3)
+      wrapFallBack(property + 'BlockStart', 0),
+      wrapFallBack(property + 'InlineStart', 3),
+      wrapFallBack(property + 'BlockEnd', 2),
+      wrapFallBack(property + 'InlineEnd', 1)
     ]
   }
 
-  return fallBack({ type, prop: 'padding', val, prefix })
+  return fallBack({ type, prop: property, val, prefix })
 }
+
+console.log(defaultProps.sequence)
 
 export const SPACING = defaultProps

@@ -149,8 +149,9 @@ const numToLetterMap = {
   9: 'J'
 }
 
-const setSequenceValue = ({ variable, value, scaling, state }) => {
+const setSequenceValue = ({ key, variable, value, scaling, state }) => {
   state.sequence[variable] = {
+    key,
     decimal: Math.round(value * 100) / 100,
     val: Math.round(value),
     scaling
@@ -158,7 +159,7 @@ const setSequenceValue = ({ variable, value, scaling, state }) => {
   state.scales[variable] = scaling
 }
 
-export const generateSubSequence = ({ base, value, ratio, variable, state }) => {
+export const generateSubSequence = ({ key, base, value, ratio, variable, state }) => {
   const next = value * ratio
   const smallscale = (next - value) / ratio
 
@@ -171,14 +172,15 @@ export const generateSubSequence = ({ base, value, ratio, variable, state }) => 
   const second = value + smallscale
   const middle = (first + second) / 2
   if (diffRounded > 100) arr = [first, middle, second]
-  else if (diffRounded > 2) arr = [first, second]
-  else if (diffRounded > 1) arr = [middle]
+  else arr = [first, second]
+  // else if (diffRounded > 2) arr = [first, second]
+  // else if (diffRounded > 1) arr = [middle]
 
   arr.map((v, k) => {
     const scaling = Math.round(v / base * 1000) / 1000
     const newVar = variable + (k + 1)
 
-    setSequenceValue({ variable: newVar, value: v, scaling, state })
+    setSequenceValue({ key: key + (k + 1), variable: newVar, value: v, scaling, state })
   })
 }
 
@@ -192,15 +194,16 @@ export const generateSequence = ({ type, base, ratio, range, subSequence, ...sta
     const scaling = Math.round(value / base * 1000) / 1000
     const variable = prefix + letterKey
 
-    setSequenceValue({ variable, value, scaling, state })
+    setSequenceValue({ key: letterKey, variable, value, scaling, state })
 
-    if (subSequence) generateSubSequence({ base, value, ratio: ratioOverride || ratio, variable, state })
+    if (subSequence) generateSubSequence({ key: letterKey, base, value, ratio: ratioOverride || ratio, variable, state })
   }
   return state
 }
 
 export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
   if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
+  if (parseInt(val) === 0) return ({ [prop]: val })
   const value = type ? type[prefix + val.toUpperCase()] : null
   if (!value) return console.warn('can\'t find', type, prefix + val.toUpperCase(), val.toUpperCase())
   return ({
