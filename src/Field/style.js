@@ -17,7 +17,6 @@ export default {
   input: {
     width: '100%',
     height: '100%',
-    padding: `${13 / 16}em`,
     border: 'none'
   },
   svg: {

@@ -6,11 +6,13 @@ import { Text } from '../Text'
 export const Label = {
   proto: [Shape, Block, Text],
 
+  style: { lineHeight: 1 },
+
   props: {
     emoji: '😂',
     text: '3',
-    spacing: 'X1 Z2',
-    round: 42,
+    spacing: 'X2 Z',
+    round: 'C',
     theme: 'White'
   },
 

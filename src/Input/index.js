@@ -10,16 +10,22 @@ export const Input = {
 
   props: (el, s) => ({
     type: 'input',
-    value: ({ key }, s) => s[el.key],
+    value: s[el.key],
     placeholder: 'Type in',
-    round: 26,
-    spacing: 'a',
-    theme: '--transparent'
+    round: 'C',
+    spacing: 'A B',
+    theme: 'transparent'
   }),
 
   attr: {
     placeholder: ({ props }) => props.placeholder,
     value: ({ props }) => props.value,
     type: ({ props }) => props.type
+  },
+
+  on: {
+    input: ({ key, value, props }) => {
+
+    }
   }
 }

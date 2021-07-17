@@ -2,7 +2,6 @@
 
 export const styleDropDown = {
   listStyleType: 'none',
-  background: 'white',
   padding: '4px',
   maxHeight: '17.6em'
 }
@@ -11,7 +10,6 @@ export const styleRow = {
   height: `${42 / 16}em`,
   width: `${178 / 16}em`,
   position: 'relative',
-  color: 'black',
   padding: 0,
   span: {
     height: '100%',
@@ -28,8 +26,6 @@ export const styleRow = {
 }
 
 export const styleRowActive = {
-  background: 'rgba(200, 236, 250, 1)',
-  borderRadius: '6px',
   '&:not(:last-child) > span': {
     borderBottom: 'none'
   },

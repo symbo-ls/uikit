@@ -23,7 +23,7 @@ export const SquareButton = {
 export const CircleButton = {
   proto: SquareButton,
   props: {
-    round: '100%'
+    round: 'D'
   }
 }
 

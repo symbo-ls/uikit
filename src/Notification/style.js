@@ -17,7 +17,6 @@ export default {
     whiteSpace: 'nowrap'
   },
   p: {
-    margin: 0,
-    marginTop: '4px'
+    margin: 0
   }
 }

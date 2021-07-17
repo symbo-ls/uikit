@@ -10,6 +10,6 @@ export const Link = {
   attr: {
     href: ({ props }) => props.href,
     target: ({ props }) => props.target,
-    'aria-label': ({ props }) => props.aria.label || props.text
+    'aria-label': ({ props }) => props.aria //.label || props.text
   }
 }

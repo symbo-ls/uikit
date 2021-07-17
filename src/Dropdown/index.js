@@ -15,10 +15,12 @@ export const Dropdown = {
   childProto: {
     tag: 'li',
     proto: [Shape],
-    props: {
+    props: (el, s) => ({
       depth: 0,
-      round: 0
-    },
+      round: 0,
+      theme: el.props.rowTheme
+    }),
+
     span: {
       proto: [IconText],
       props: {

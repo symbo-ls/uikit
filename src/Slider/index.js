@@ -48,24 +48,27 @@ export const Slider = {
   proto: Shape,
 
   props: {
-    round: 6
+    round: 'X'
   },
 
-  minusButton: {
+  button0: {
     proto: SquareButton,
-    props: ({ parent }) => ({
-      icon: parent.props.minusIcon
-    }),
+    props: (el) => {
+      const props = el.parent.parent.props
+      //       console.log(el.parent.parent, props)
+      return {
+        icon: props.button0Icon
+      }
+    },
     on: {
-      click: (ev, el, s) => el.parent.props.minusClick(ev, el, s)
+      click: (ev, el, s) => {
+        el.parent.parent.props.minusClick(ev, el, s)
+      }
     }
   },
   value: {
     tag: 'span',
-    class: {
-      // w: (el, s) => ({width: `${el.text.length}ch`})
-      w: (el, s) => ({ width: `4ch` })
-    },
+    class: { w: (el, s) => ({ width: `4ch` }) },
     text: (el, s) => `${findOut(el, s, 'value', 50)}px`
   },
   range: {
@@ -76,16 +79,18 @@ export const Slider = {
       max: (el, s) => findOut(el, s, 'max', 100)
     },
     on: {
-      input: (ev, el, s) => el.parent.props.input(ev, el, s)
+      input: (ev, el, s) => el.parent.parent.props.input(ev, el, s)
     }
   },
-  plusButton: {
+  button1: {
     proto: SquareButton,
-    props: ({ parent }) => ({
-      icon: parent.props.plusIcon
+    props: (el) => ({
+      icon: el.parent.parent.props.button1Icon
     }),
     on: {
-      click: (ev, el, s) => el.parent.props.plusClick(ev, el, s)
+      click: (ev, el, s) => {
+        el.parent.parent.props.plusClick(ev, el, s)
+      }
     }
   }
 }

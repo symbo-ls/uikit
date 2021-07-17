@@ -1,18 +1,18 @@
 'use strict'
 
-import { Unit } from '@rackai/scratch'
+import { UNIT } from '@rackai/scratch'
 
 export default {
   boxSizing: 'border-box'
 }
 
 export const depth = {
-  4: { boxShadow: `rgba(0,0,0,.10) 0 2${Unit} 4${Unit}` },
-  6: { boxShadow: `rgba(0,0,0,.10) 0 3${Unit} 6${Unit}` },
-  10: { boxShadow: `rgba(0,0,0,.10) 0 4${Unit} 10${Unit}` },
-  16: { boxShadow: `rgba(0,0,0,.10) 0 8${Unit} 16${Unit}` },
-  26: { boxShadow: `rgba(0,0,0,.10) 0 14${Unit} 26${Unit}` },
-  42: { boxShadow: `rgba(0,0,0,.10) 0 20${Unit} 42${Unit}` }
+  4: { boxShadow: `rgba(0,0,0,.10) 0 2${UNIT.default} 4${UNIT.default}` },
+  6: { boxShadow: `rgba(0,0,0,.10) 0 3${UNIT.default} 6${UNIT.default}` },
+  10: { boxShadow: `rgba(0,0,0,.10) 0 4${UNIT.default} 10${UNIT.default}` },
+  16: { boxShadow: `rgba(0,0,0,.10) 0 8${UNIT.default} 16${UNIT.default}` },
+  26: { boxShadow: `rgba(0,0,0,.10) 0 14${UNIT.default} 26${UNIT.default}` },
+  42: { boxShadow: `rgba(0,0,0,.10) 0 20${UNIT.default} 42${UNIT.default}` }
 }
 
 export const toolTipShape = {

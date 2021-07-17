@@ -9,16 +9,12 @@ export const Field = {
   props: (el, s) => ({
     placeholder: 'Type in',
     value: s[el.key],
-    round: 26,
+    spacing: 'A B',
+    round: 'C',
     theme: 'field'
   }),
   input: {
     proto: Input,
-    props: {
-      round: ({ props }) => props.round,
-      theme: ({ props }) => props.theme,
-      value: ({ props }) => props.value,
-      placeholder: ({ props }) => props.placeholder
-    }
+    props: el => el.parent.props
   }
 }

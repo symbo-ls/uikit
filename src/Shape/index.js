@@ -7,17 +7,12 @@ import style, { shape, depth } from './style'
 export const Shape = {
   style,
 
-  props: {
-    shape: '',
-    depth: '',
-    theme: 'transparent',
-    round: 0
-  },
-
   class: {
     shape: ({ props }) => shape[props.shape],
     depth: ({ props }) => depth[props.depth],
-    round: ({ props }) => mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round }),
+    round: ({ props, key, ...el }) => {
+      return mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })
+    },
     theme: ({ props }) => {
       const { theme } = props
       if (isObjectLike(theme)) return THEME[theme[0]][theme[1]]
