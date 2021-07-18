@@ -184,19 +184,19 @@ export const generateSubSequence = ({ key, base, value, ratio, variable, state }
   })
 }
 
-export const generateSequence = ({ type, base, ratio, range, subSequence, ...state }, ratioOverride) => {
+export const generateSequence = ({ type, base, ratio, range, subSequence, ...state }) => {
   const n = Math.abs(range[0]) + Math.abs(range[1])
   const prefix = '--' + type + '-'
   for (let i = 0; i <= n; i++) {
     const key = range[1] - i
     const letterKey = numToLetterMap[key]
-    const value = base * Math.pow(ratioOverride || ratio, key)
+    const value = base * Math.pow(ratio, key)
     const scaling = Math.round(value / base * 1000) / 1000
     const variable = prefix + letterKey
 
     setSequenceValue({ key: letterKey, variable, value, scaling, state })
 
-    if (subSequence) generateSubSequence({ key: letterKey, base, value, ratio: ratioOverride || ratio, variable, state })
+    if (subSequence) generateSubSequence({ key: letterKey, base, value, ratio, variable, state })
   }
   return state
 }
