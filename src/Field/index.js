@@ -1,12 +1,13 @@
 'use strict'
 
-import { Shape, IconText, Input } from '../'
+import { IconText, Input } from '../'
 import style from './style'
 
 export const Field = {
-  proto: [Shape, IconText],
   style,
+  proto: [IconText],
   props: (el, s) => ({
+    depth: 16,
     placeholder: 'Type in',
     value: s[el.key],
     spacing: 'A B',

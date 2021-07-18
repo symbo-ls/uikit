@@ -1,10 +1,21 @@
 'use strict'
-import Icon from '../Icon'
 
 import style from './style'
 
+import Icon from '../Icon'
+import Shape from '../Shape'
+import { Block } from '../Block'
+
 export const DatePicker = {
   style,
+
+  proto: [Shape, Block],
+  props: {
+    theme: 'lightDark',
+    spacing: 'A',
+    round: 'Z',
+    depth: 16
+  },
 
   aside: {
     childProto: { tag: 'button' },

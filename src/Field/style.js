@@ -14,11 +14,15 @@ export default {
   boxSizing: 'border-box',
   position: 'relative',
   padding: 0,
+
+  width: '16em',
+
   input: {
     width: '100%',
     height: '100%',
     border: 'none'
   },
+
   svg: {
     position: 'absolute',
     right: '1em'

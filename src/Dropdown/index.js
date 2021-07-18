@@ -15,6 +15,8 @@ export const Dropdown = {
   childProto: {
     tag: 'li',
     proto: [Shape],
+
+    style: styleRow,
     props: (el, s) => ({
       depth: 0,
       round: 0,
@@ -24,11 +26,10 @@ export const Dropdown = {
     span: {
       proto: [IconText],
       props: {
-        icon: 'checkMedium',
+        icon: 'checkmark',
         text: ''
       }
     },
-    style: styleRow,
     class: {
       active: (element, state) => (state.active === element.key) ? styleRowActive : 'round: 6'
     },
@@ -40,9 +41,9 @@ export const Dropdown = {
   },
 
   ...[
-    { span: { text: 'Today' } },
-    { span: { text: 'Yesterday' } },
-    { span: { text: 'A week age' } },
-    { span: { text: 'A month ago' } }
+    { span: { props: { text: 'Today' } } },
+    { span: { props: { text: 'Yesterday' } } },
+    { span: { props: { text: 'A week age' } } },
+    { span: { props: { text: 'A month ago' } } }
   ]
 }

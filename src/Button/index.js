@@ -12,10 +12,11 @@ export const Button = {
 
 export const SquareButton = {
   proto: Button,
+  props: {
+    round: 'X2'
+  },
   style: {
     justifyContent: 'center',
-    width: '1em',
-    height: '1em',
     boxSizing: 'content-box'
   }
 }

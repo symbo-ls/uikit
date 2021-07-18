@@ -13,7 +13,7 @@ export const Label = {
     text: '3',
     spacing: 'X2 Z',
     round: 'C',
-    theme: 'White'
+    depth: 16
   },
 
   emoji: ({ props }) => props.emoji

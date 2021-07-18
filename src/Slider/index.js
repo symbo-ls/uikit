@@ -45,17 +45,16 @@ const findOut = (el, s, key, def) => {
 }
 
 export const Slider = {
-  proto: Shape,
+  proto: [Shape],
 
   props: {
-    round: 'X'
+    round: 'Z'
   },
 
   button0: {
-    proto: SquareButton,
+    proto: [SquareButton],
     props: (el) => {
       const props = el.parent.parent.props
-      //       console.log(el.parent.parent, props)
       return {
         icon: props.button0Icon
       }
@@ -83,7 +82,7 @@ export const Slider = {
     }
   },
   button1: {
-    proto: SquareButton,
+    proto: [SquareButton],
     props: (el) => ({
       icon: el.parent.parent.props.button1Icon
     }),

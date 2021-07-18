@@ -26,9 +26,9 @@ export const styleRow = {
 }
 
 export const styleRowActive = {
-  '&:not(:last-child) > span': {
-    borderBottom: 'none'
-  },
+  // '&:not(:last-child) > span': {
+  //   borderBottom: 'none'
+  // },
   'span > svg': { display: 'inline' }
 }
 
