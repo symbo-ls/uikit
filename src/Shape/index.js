@@ -15,7 +15,7 @@ export const Shape = {
     },
     theme: ({ props }) => {
       const { theme } = props
-      if (isObjectLike(theme)) return THEME[theme[0]][theme[1]]
+      if (isObjectLike(theme)) return theme
       else return THEME[theme]
     }
   }

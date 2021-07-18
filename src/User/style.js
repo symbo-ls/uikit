@@ -2,8 +2,8 @@
 
 export const styleUser = {
   cursor: 'pointer',
-  width: '26px',
-  height: '26px',
+  width: '1.618em',
+  height: '1.618em',
   borderRadius: '100%'
 }
 
@@ -13,9 +13,9 @@ export const styleUserBundle = {
   textTransform: 'capitalize',
   '> div': {
     display: 'flex',
-    marginRight: '16px',
+    marginRight: '1em',
     '> img': {
-      marginRight: '-8px'
+      marginRight: '-0.5em'
     }
   }
 }

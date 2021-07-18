@@ -20,7 +20,7 @@ export const Dropdown = {
     props: (el, s) => ({
       depth: 0,
       round: 0,
-      theme: el.props.rowTheme
+      theme: el.parent.props.rowTheme
     }),
 
     span: {
@@ -31,7 +31,7 @@ export const Dropdown = {
       }
     },
     class: {
-      active: (element, state) => (state.active === element.key) ? styleRowActive : 'round: 6'
+      active: (element, state) => (state.active === element.key) ? styleRowActive : {}
     },
     on: {
       click: (event, element, state) => {
