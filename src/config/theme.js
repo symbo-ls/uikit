@@ -1,6 +1,6 @@
 'use strict'
 
-var themeA = {
+var themeA = { // eslint-disable-line no-unused-vars
   text: 'blue',
   background: 'white',
   border: 'black', // .opacity(0.2),
@@ -9,4 +9,9 @@ var themeA = {
   inverse: {} // schemeAInverse
 }
 
-export default { }
+export const THEME = {
+  document: {
+    color: 'white',
+    background: 'black'
+  }
+}

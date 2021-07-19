@@ -1,35 +1,33 @@
 'use strict'
 
-import { Color, Theme, Font } from '../config'
-import { getFontFace } from '../utils'
+import { COLOR, THEME, FONT } from '../config'
 
 var set = (kind, ...props) => {
   if (kind === 'color') {
     props.map(value => {
       var { name, ...rest } = value
-      Color[name] = rest
+      COLOR[name] = rest
     })
-    return Color
+    return COLOR
   } else if (kind === 'theme') {
     props.map(value => {
       var { name, ...rest } = value
-      Theme[name] = rest
+      THEME[name] = rest
     })
-    return Theme
+    return THEME
   } else if (kind === 'font') {
     props.map(value => {
       var { name, fontWeight, ...rest } = value
-      if (Font[name]) {
-        Font[name][fontWeight] = rest
+      if (FONT[name]) {
+        FONT[name][fontWeight || 400] = rest
       } else {
-        Font[name] = {
-          [fontWeight]: rest
+        FONT[name] = {
+          [fontWeight || 400]: rest
         }
       }
     })
-    return Font
+    return FONT
   }
 }
-console.log('Font')
 
 export default set

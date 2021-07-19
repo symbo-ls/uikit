@@ -1,8 +1,26 @@
 'use strict'
 
-import sequence from './sequence'
+import { SEQUENCE } from '.'
+import { fallBack, generateSequence } from '../utils'
 
-export default {
+const defaultProps = {
   base: 16,
-  ratio: sequence['major-second']
+  type: 'font-size',
+  ratio: SEQUENCE['major-second'],
+  range: [-3, +7],
+  sequence: {},
+  scales: {}
 }
+
+generateSequence(defaultProps)
+
+export const mapFontSize = val => fallBack({
+  type: defaultProps.sequence,
+  prop: 'fontSize',
+  val,
+  prefix: '--font-size-'
+})
+
+console.log(defaultProps.scales)
+
+export const TYPOGRAPHY = defaultProps

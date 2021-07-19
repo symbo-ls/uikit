@@ -1,12 +1,9 @@
 'use strict'
 
-export default {
-  color: 'black',
-  backgroundColor: 'white',
-  themes: {
-    dark: {
-      color: 'white',
-      backgroundColor: 'black',
-    }
-  }
+import { THEME, TYPOGRAPHY } from '.'
+
+export const DOCUMENT = {
+  theme: THEME['document'],
+  fontSize: TYPOGRAPHY.base
+  // fontFace: FontFace.primary
 }

@@ -1,23 +1,15 @@
 'use strict'
 
-import Sequence from './sequence'
-import Color from './color'
-import Theme from './theme'
-import Box from './box'
-import Font from './font'
-import Spacing from './spacing'
-import Typography from './typography'
-import Unit from './unit'
-import Document from './document'
+export * from './sequence'
+export * from './unit'
 
-export {
-  Sequence,
-  Color,
-  Theme,
-  Box,
-  Font,
-  Spacing,
-  Typography,
-  Unit,
-  Document
-}
+export * from './typography'
+export * from './font'
+
+export * from './spacing'
+
+export * from './color'
+export * from './theme'
+
+export * from './document'
+export * from './reset'

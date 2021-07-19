@@ -1,6 +1,6 @@
 'use strict'
 
-var defFont = {
+var defFont = { // eslint-disable-line
   name: '',
   url: '',
   fontStyle: '',
@@ -9,4 +9,4 @@ var defFont = {
   fontOpticalSizing: 'auto'
 }
 
-export default {}
+export const FONT = {}

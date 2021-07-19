@@ -1,9 +1,9 @@
 'use strict'
 
-var proto = {
+var proto = { // eslint-disable-line
   name: '',
   value: '',
   themes: {}
 }
 
-export default {}
+export const COLOR = {}

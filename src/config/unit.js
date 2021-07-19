@@ -1,3 +1,5 @@
 'use strict'
 
-export default 'px'
+export const UNIT = {
+  default: 'px'
+}

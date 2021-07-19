@@ -1,5 +1,19 @@
 'use strict'
 
+import { UNIT } from '../config'
+
+export const isArray = arg => Array.isArray(arg)
+
+export const isObject = arg => {
+  if (arg === null) return false
+  return (typeof arg === 'object') && (arg.constructor === Object)
+}
+
+export const isObjectLike = arg => {
+  if (arg === null) return false
+  return (typeof arg === 'object')
+}
+
 export const merge = (obj, original) => {
   for (const e in original) {
     const objProp = obj[e]
@@ -64,7 +78,7 @@ export const hexToRGBA = (hex, alpha = 1) => {
 }
 
 export const mixTwoRGB = (colorA, colorB, range = 0.5) => {
-  let arr = []
+  const arr = []
   for (let i = 0; i < 3; i++) {
     arr[i] = Math.round(
       colorA[i] + (
@@ -76,9 +90,9 @@ export const mixTwoRGB = (colorA, colorB, range = 0.5) => {
 }
 
 export const mixTwoRGBA = (colorA, colorB, range = 0.5) => {
-  let arr = []
+  const arr = []
   for (let i = 0; i < 4; i++) {
-    let round = (i === 3) ? x => x : Math.round
+    const round = (i === 3) ? x => x : Math.round
     arr[i] = round(
       (colorA[i] + (
         (colorB[i] - colorA[i]) * range
@@ -89,7 +103,7 @@ export const mixTwoRGBA = (colorA, colorB, range = 0.5) => {
 }
 
 export const opacify = (color, opacity) => {
-  let arr = colorStringToRGBAArray(color)
+  const arr = colorStringToRGBAArray(color)
   arr[3] = opacity
   return `rgba(${arr})`
 }
@@ -114,4 +128,93 @@ export const getFontFace = Library => {
     }
   }
   return fonts
+}
+
+const numToLetterMap = {
+  '-6': 'U',
+  '-5': 'V',
+  '-4': 'W',
+  '-3': 'X',
+  '-2': 'Y',
+  '-1': 'Z',
+  0: 'A',
+  1: 'B',
+  2: 'C',
+  3: 'D',
+  4: 'E',
+  5: 'F',
+  6: 'G',
+  7: 'H',
+  8: 'I',
+  9: 'J'
+}
+
+const setSequenceValue = ({ key, variable, value, scaling, state }) => {
+  state.sequence[variable] = {
+    key,
+    decimal: Math.round(value * 100) / 100,
+    val: Math.round(value),
+    scaling
+  }
+  state.scales[variable] = scaling
+}
+
+export const generateSubSequence = ({ key, base, value, ratio, variable, state }) => {
+  const next = value * ratio
+  const smallscale = (next - value) / ratio
+
+  const valueRounded = Math.round(value)
+  const nextRounded = Math.round(next)
+  const diffRounded = nextRounded - valueRounded
+
+  let arr = []
+  const first = next - smallscale
+  const second = value + smallscale
+  const middle = (first + second) / 2
+  if (diffRounded > 100) arr = [first, middle, second]
+  else arr = [first, second]
+  // else if (diffRounded > 2) arr = [first, second]
+  // else if (diffRounded > 1) arr = [middle]
+
+  arr.map((v, k) => {
+    const scaling = Math.round(v / base * 1000) / 1000
+    const newVar = variable + (k + 1)
+
+    setSequenceValue({ key: key + (k + 1), variable: newVar, value: v, scaling, state })
+  })
+}
+
+export const generateSequence = ({ type, base, ratio, range, subSequence, ...state }) => {
+  const n = Math.abs(range[0]) + Math.abs(range[1])
+  const prefix = '--' + type + '-'
+  for (let i = 0; i <= n; i++) {
+    const key = range[1] - i
+    const letterKey = numToLetterMap[key]
+    const value = base * Math.pow(ratio, key)
+    const scaling = Math.round(value / base * 1000) / 1000
+    const variable = prefix + letterKey
+
+    setSequenceValue({ key: letterKey, variable, value, scaling, state })
+
+    if (subSequence) generateSubSequence({ key: letterKey, base, value, ratio, variable, state })
+  }
+  return state
+}
+
+export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
+  if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
+  if (parseInt(val) === 0) return ({ [prop]: val })
+  const value = type ? type[prefix + val.toUpperCase()] : null
+  if (!value) return console.warn('can\'t find', type, prefix + val.toUpperCase(), val.toUpperCase())
+  return ({
+    [prop]: value.val + UNIT.default,
+    [prop]: value.scaling + 'em'
+  })
+}
+
+export const Arrayize = val => {
+  const isString = typeof val === 'string'
+  if (isString) return val.split(' ')
+  if (isObject(val)) return Object.keys(val).map(v => val[v])
+  if (isArray(val)) return val
 }
