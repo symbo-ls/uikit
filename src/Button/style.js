@@ -9,5 +9,6 @@ export default {
   fontFamily: 'inherit',
   display: 'inline-flex',
   alignItems: 'center',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  textDecoration: 'none'
 }

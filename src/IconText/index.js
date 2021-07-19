@@ -8,9 +8,7 @@ export const IconText = {
 
   proto: [Text],
 
-  props: {
-    icon: 'arrowMediumDown'
-  },
+  props: {},
 
   icon: { proto: Icon, if: ({ props }, s) => props.icon },
 

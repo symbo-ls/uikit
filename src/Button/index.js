@@ -32,9 +32,6 @@ export const KangorooButton = {
   tag: 'button',
   proto: [Shape, Direction, Block, Text],
   style,
-  props: {
-    gap: 'X'
-  },
 
   iconText: {
     proto: IconText

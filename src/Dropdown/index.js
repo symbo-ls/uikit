@@ -19,8 +19,8 @@ export const Dropdown = {
     style: styleRow,
     props: (el, s) => ({
       depth: 0,
-      round: 0,
-      theme: el.parent.props.rowTheme
+      round: 0
+      // theme: el.parent.props.rowTheme
     }),
 
     span: {
