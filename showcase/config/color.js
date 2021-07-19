@@ -1,6 +1,6 @@
 'use strict'
 
-import { opacify, set } from '@rackai/scratch'
+import { set } from '@rackai/scratch'
 
 set('color', {
   black: '#000',

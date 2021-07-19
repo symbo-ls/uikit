@@ -1,35 +1,35 @@
 'use strict'
 
-import { set, Color } from '@rackai/scratch'
+import { set, COLOR } from '@rackai/scratch'
 
 set('theme', {
   name: 'primary',
-  color: Color['white'],
-  backgroundColor: Color['red']
+  color: COLOR['white'],
+  backgroundColor: COLOR['red']
 }, {
   name: 'secondary',
-  color: Color['white'],
-  backgroundColor: Color['blue']
+  color: COLOR['white'],
+  backgroundColor: COLOR['blue']
 }, {
   name: 'tertiary',
-  color: Color['white'],
-  backgroundColor: Color['pink']
+  color: COLOR['white'],
+  backgroundColor: COLOR['pink']
 }, {
   name: 'quo',
-  color: Color['white'],
-  backgroundColor: Color['yellow']
+  color: COLOR['white'],
+  backgroundColor: COLOR['yellow']
 }, {
   name: 'qui',
-  color: Color['white'],
-  backgroundColor: Color['indigo']
+  color: COLOR['white'],
+  backgroundColor: COLOR['indigo']
 }, {
   name: 'six',
-  color: Color['white'],
-  backgroundColor: Color['green']
+  color: COLOR['white'],
+  backgroundColor: COLOR['green']
 }, {
   name: 'seq',
-  color: Color['white'],
-  backgroundColor: Color['purple']
+  color: COLOR['white'],
+  backgroundColor: COLOR['purple']
 }, {
   name: 'transparent',
   borderWidth: 1,
@@ -38,5 +38,5 @@ set('theme', {
 }, {
   name: 'whites',
   color: 'black',
-  background: Color['white']
+  background: COLOR['white']
 })
