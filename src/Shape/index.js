@@ -1,7 +1,7 @@
 'use strict'
 
 import { THEME, mapSpacing, COLOR } from '@rackai/scratch'
-import { isObject, isArray } from '../../../domql/src/utils'
+import { isObject } from '../../../domql/src/utils'
 
 import style, { shape, depth } from './style'
 
@@ -18,8 +18,8 @@ export const Shape = {
     },
     theme: ({ props }) => {
       const { theme } = props
+      if (isObject(theme) && theme[0]) return THEME[theme[0]][theme[1]]
       if (isObject(theme)) return theme
-      if (isArray(theme)) return THEME[theme[0]][theme[1]]
       else return THEME[theme]
     }
   }
