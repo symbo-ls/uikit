@@ -53,11 +53,8 @@ export const Slider = {
 
   button0: {
     proto: [SquareButton],
-    props: (el) => {
-      const props = el.parent.parent.props
-      return {
-        icon: props.button0Icon
-      }
+    props: {
+      icon: 'minus'
     },
     on: {
       click: (ev, el, s) => {
@@ -84,9 +81,9 @@ export const Slider = {
   },
   button1: {
     proto: [SquareButton],
-    props: (el) => ({
-      icon: el.parent.parent.props.button1Icon
-    }),
+    props: {
+      icon: 'plus'
+    },
     on: {
       click: (ev, el, s) => {
         el.parent.parent.props.plusClick(ev, el, s)

@@ -1,12 +1,13 @@
 'use strict'
 
-import { Icon, Text } from '../'
 import style from './style'
+
+import { Icon, Text, Direction } from '../'
 
 export const IconText = {
   style,
 
-  proto: [Text],
+  proto: [Text, Direction],
 
   props: {},
 
