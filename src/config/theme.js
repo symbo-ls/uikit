@@ -15,3 +15,9 @@ export const THEME = {
     background: 'black'
   }
 }
+
+export const returnSubThemeOrDefault = (orig, theme) => {
+  if (orig.themes && orig.themes[theme]) return orig.themes[theme]
+  if (orig[theme]) return [orig, orig[theme]]
+  return orig
+}

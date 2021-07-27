@@ -6,4 +6,6 @@ var proto = { // eslint-disable-line
   themes: {}
 }
 
-export const COLOR = {}
+export const COLOR = {
+  transparent: 'transparent'
+}
