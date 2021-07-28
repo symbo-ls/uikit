@@ -23,7 +23,7 @@ export default {
 
     button: {
       // fontSize: '1.2em',
-      color: 'rgba(0, 0, 0, .5)',
+      opacity: 0.5,
       marginBottom: `${22 / 12}em`
     }
   },
@@ -48,7 +48,7 @@ export default {
     },
     '> header > svg': {
       // fontSize: '1.2em',
-      color: '#11B9DC',
+      // color: '#11B9DC',
       cursor: 'pointer'
     },
 
@@ -62,7 +62,7 @@ export default {
       minWidth: '100%',
       textTransform: 'capitalize',
       textAlign: 'center',
-      color: 'black',
+      // color: 'black',
       fontWeight: 'bold'
     },
 
@@ -81,14 +81,16 @@ export default {
     'section > header span': {
       // fontSize: '10px',
       textAlign: 'center',
-      color: 'black',
+      // color: 'black',
       fontWeight: 'bold'
     },
     'section > header span:nth-child(6)': {
-      color: 'rgba(0, 0, 0, .5)'
+      // color: 'rgba(0, 0, 0, .5)'
+      opacity: 0.5
     },
     'section > header span:nth-child(7)': {
-      color: 'rgba(0, 0, 0, .5)'
+      // color: 'rgba(0, 0, 0, .5)'
+      opacity: 0.5
     },
     'section > div': {
       flex: 1,
@@ -100,10 +102,12 @@ export default {
       // fontSize: '1.3em'
     },
     'section > div button:nth-child(7n)': {
-      color: 'rgba(0, 0, 0, .5)'
+      // color: 'rgba(0, 0, 0, .5)'
+      opacity: 0.5
     },
     'section > div button:nth-child(7n - 1)': {
-      color: 'rgba(0, 0, 0, .5)'
+      // color: 'rgba(0, 0, 0, .5)'
+      opacity: 0.5
     }
   }
 }
