@@ -20,7 +20,6 @@ export { IconText } from './IconText'
 export { Input } from './Input'
 export { Field } from './Field'
 export { Button, SquareButton, CircleButton, KangorooButton } from './Button'
-export { ButtonSet } from './ButtonSet'
 
 export { ToolBar } from './ToolBar'
 export { User, UserBundle } from './User'
