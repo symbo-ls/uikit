@@ -21,7 +21,7 @@ export { Input } from './Input'
 export { Field } from './Field'
 export { Button, SquareButton, CircleButton, KangorooButton } from './Button'
 
-export { ToolBar } from './ToolBar'
+export { ButtonSet } from './ToolBar'
 export { User, UserBundle } from './User'
 export { ParentMode } from './Banner'
 // export { ListItem, List } from './Dropdown'
