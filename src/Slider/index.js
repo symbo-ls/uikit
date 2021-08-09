@@ -64,7 +64,7 @@ export const Slider = {
   },
   value: {
     tag: 'span',
-    class: { w: { minWidth: `4ch` } },
+    // class: { w: { minWidth: `4ch` } },
     text: (el, s) => `${findOut(el, s, 'value', 50)}${findOut(el, s, 'type') === 'fontSize' ? 'px' : ''}`
   },
   range: {

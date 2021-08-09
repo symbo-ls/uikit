@@ -2,10 +2,9 @@
 
 export default {
   appearance: 'none',
-  maxWidth: '8.2em',
+  maxWidth: '82px',
   height: '2px',
   outline: 'none',
-  marginRight: '.9em',
   flex: 1,
   '&::-webkit-slider-thumb': {
     boxSizing: 'content-box',
