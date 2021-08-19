@@ -1,20 +1,35 @@
 'use strict'
 
-import style from './style'
-
-import { Shape, Block, Icon, Direction, Flex } from '../'
+import { Shape, Block, IconText, Direction, Flex, Text } from '../'
 
 export const Notification = {
-  style,
+  // style,
   proto: [Shape, Block, Direction, Flex],
-  props: {
-    icon: 'info',
-    title: 'Notification',
-    caption: 'is not always a distraction'
+  icon: {
+    proto: [IconText, Block, Shape, Text],
+    props: {
+      icon: 'info'
+    },
+    style: {
+      border: '1px solid red',
+      width: 'fit-content',
+      height: 'fit-content'
+    }
   },
-  icon: { proto: Icon },
   article: {
-    caption: ({ props }) => props.title,
-    p: ({ props }) => props.caption
+    proto: Shape,
+    caption: {
+      proto: Text,
+      text: 'Notification'
+    },
+    p: {
+      proto: Text,
+      text: 'is not always a distraction'
+    }
   }
+
+  // article: {
+  //   caption: ({ props }) => props.title,
+  //   p: ({ props }) => props.caption
+  // }
 }
