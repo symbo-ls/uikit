@@ -3,7 +3,7 @@
 import { Shape, Block, IconText, Direction, Flex, Text } from '../'
 
 export const Notification = {
-  // style,
+  style: { cursor: 'pointer' },
   proto: [Shape, Block, Direction, Flex],
   icon: {
     proto: [IconText, Block, Shape, Text],
@@ -11,20 +11,24 @@ export const Notification = {
       icon: 'info'
     },
     style: {
-      border: '1px solid red',
       width: 'fit-content',
       height: 'fit-content'
     }
   },
   article: {
-    proto: Shape,
+    proto: [Block, Flex],
+    style: {
+      flexDirection: 'column',
+      alignItems: 'flex-start'
+    },
     caption: {
       proto: Text,
       text: 'Notification'
     },
     p: {
       proto: Text,
-      text: 'is not always a distraction'
+      text: 'is not always a distraction',
+      style: { margin: 0 }
     }
   }
 

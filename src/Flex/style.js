@@ -1,5 +1,6 @@
 'use strict'
 
 export default {
-  display: 'flex'
+  display: 'flex',
+  alignItems: 'center'
 }
