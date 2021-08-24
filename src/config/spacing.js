@@ -55,6 +55,4 @@ export const mapSpacing = (val, property = 'padding', props) => {
   return fallBack({ type, prop: property, val, prefix })
 }
 
-console.log(defaultProps.sequence)
-
 export const SPACING = defaultProps

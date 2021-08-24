@@ -7,7 +7,7 @@ const defaultProps = {
   base: 16,
   type: 'font-size',
   ratio: SEQUENCE['major-second'],
-  range: [-3, +7],
+  range: [-3, +12],
   sequence: {},
   scales: {}
 }
@@ -20,7 +20,5 @@ export const mapFontSize = val => fallBack({
   val,
   prefix: '--font-size-'
 })
-
-console.log(defaultProps.scales)
 
 export const TYPOGRAPHY = defaultProps
