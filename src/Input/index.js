@@ -20,6 +20,7 @@ export const Input = {
   attr: {
     placeholder: ({ props }) => props.placeholder,
     value: ({ props }) => props.value,
+    required: ({ props }) => props.required,
     type: ({ props }) => props.type
   },
 

@@ -12,7 +12,8 @@ export const Field = {
     value: s[el.key],
     spacing: 'A B',
     round: 'C',
-    theme: 'field'
+    theme: 'field',
+    type: 'text'
   }),
   input: {
     proto: Input,

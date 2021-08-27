@@ -5,9 +5,15 @@ import { Shape, Block, IconText, Direction, Text } from '../'
 import style from './style'
 
 export const Button = {
+  proto: [Shape, Block, IconText, Direction],
   tag: 'button',
   style,
-  proto: [Shape, Block, IconText, Direction]
+  props: {
+    type: 'button'
+  },
+  attr: {
+    type: ({ props }) => props.type
+  }
 }
 
 export const SquareButton = {
