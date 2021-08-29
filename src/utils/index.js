@@ -114,7 +114,7 @@ export const setCustomFont = (name, weight, url) => `@font-face {
   font-family: '${name}';
   font-style: normal;
   font-weight: ${weight};
-  src: url('${url}') format('${url}');
+  src: url('${url}') format('${/(?:\.([^.]+))?$/.exec(url)[1]}');
 }`
 // src: url('${url}') format('${getFontFormat(url)}');
 
