@@ -10,7 +10,15 @@ export const Select = {
 
   childProto: {
     tag: 'option',
-    props: { value: '' },
-    attr: { value: ({ props }) => props.value }
+    props: {
+      value: '',
+      selected: '',
+      disabled: ''
+    },
+    attr: {
+      value: ({ props }) => props.value,
+      selected: ({ props }) => props.selected,
+      disabled: ({ props }) => props.disabled
+    }
   }
 }
