@@ -11,5 +11,7 @@ export * from './spacing'
 export * from './color'
 export * from './theme'
 
+export * from './responsive'
+
 export * from './document'
 export * from './reset'
