@@ -7,17 +7,23 @@ const mapBasedOnRatio = (props, prop) => {
   const { spacingRatio } = props
   const val = props[prop === 'padding' ? 'spacing' : prop]
   if (spacingRatio) {
-    const params = SPACING[spacingRatio] || {
-      base: SPACING.base,
-      type: 'spacing',
-      ratio: spacingRatio,
-      range: [-5, +7],
-      subSequence: true,
-      sequence: {},
-      scales: {}
+    const params = SPACING[spacingRatio]
+
+    if (!params) {
+      SPACING[spacingRatio] = {
+        base: SPACING.base,
+        type: 'spacing',
+        ratio: spacingRatio,
+        range: [-5, +7],
+        subSequence: true,
+        sequence: {},
+        scales: {}
+      }
     }
-    SPACING[spacingRatio] = params
+
     const result = mapSpacing(val, prop, params)
+
+    console.log(result)
     return result
   }
   return mapSpacing(val, prop)
