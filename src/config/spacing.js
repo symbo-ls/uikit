@@ -15,14 +15,24 @@ const defaultProps = {
 
 generateSequence(defaultProps)
 
+const getSequence = (props) => {
+  if (!props) return
+  const hasGenerated = Object.keys(props.sequence).length > 0
+  return hasGenerated ? props : generateSequence(props)
+}
+
 export const mapSpacing = (val, property = 'padding', props) => {
   const prefix = '--spacing-'
-  const type = (props ? generateSequence(props) : defaultProps).sequence
+
+  let generatedSequence = getSequence(props)
+  const type = (generatedSequence || defaultProps).sequence
 
   const stack = Arrayize(val)
   if (!stack) return
 
   const length = stack.length
+
+  console.log(stack)
 
   const wrapFallBack = (prop, i) => fallBack({
     type,
