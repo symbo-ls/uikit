@@ -7,7 +7,6 @@ export default {
   padding: '0 1em',
   boxSizing: 'border-box',
   borderRadius: '10px',
-
   button: {
     border: 'none',
     outline: 'none',

@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, Block, IconText, Direction, Text } from '../'
+import { Shape, Block, IconText, Direction } from '../'
 
 import style from './style'
 
@@ -29,19 +29,18 @@ export const SquareButton = {
 
 export const CircleButton = {
   proto: SquareButton,
-  props: {
-    round: 'D'
-  }
+  style: { borderRadius: '100%' }
 }
 
 export const KangorooButton = {
   tag: 'button',
-  proto: [Shape, Direction, Block, Text],
+  proto: [Shape, Direction, Block],
   style,
 
   iconText: {
     proto: IconText
   },
+
   child: {
     proto: [Shape, Block, IconText]
   }

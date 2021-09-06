@@ -2,12 +2,13 @@
 
 import style from './style'
 
-import { Icon, Text, Direction } from '../'
+import { Icon, Text, Direction, Flex } from '../'
+import { } from '../Flex'
 
 export const IconText = {
   style,
 
-  proto: [Text, Direction],
+  proto: [Text, Direction, Flex],
 
   props: {},
 
