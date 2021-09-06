@@ -6,7 +6,7 @@ import { themeMap } from '../config/theme'
 
 var mapThemeCSS = scheme => {
   var str = ''
-  for (let prop in scheme) {
+  for (const prop in scheme) {
     var mappedProp = themeMap[prop]
     var value = scheme[prop]
     if (mappedProp && value) {

@@ -130,7 +130,7 @@ export const getFontFace = Library => {
   return fonts
 }
 
-const numToLetterMap = {
+export const numToLetterMap = {
   '-6': 'U',
   '-5': 'V',
   '-4': 'W',
@@ -146,7 +146,13 @@ const numToLetterMap = {
   6: 'G',
   7: 'H',
   8: 'I',
-  9: 'J'
+  9: 'J',
+  10: 'K',
+  11: 'L',
+  12: 'M',
+  13: 'N',
+  14: 'O',
+  15: 'P'
 }
 
 const setSequenceValue = ({ key, variable, value, scaling, state }) => {
