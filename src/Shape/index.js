@@ -10,6 +10,10 @@ export const Shape = {
 
   class: {
     shape: ({ props }) => shape[props.shape],
+    shapeDirection: ({ props }) => props.shape ? shape[props.shape][props.shapeDirection || 'top'] : null,
+    shapeDirectionColor: ({ props, ...el }) => {
+      return props.shape ? { '&:before': { borderColor: el.class.backgroundColor } } : null
+    },
     depth: ({ props }) => depth[props.depth],
     round: ({ props, key, ...el }) => {
       return mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })
