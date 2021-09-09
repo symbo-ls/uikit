@@ -23,7 +23,6 @@ const mapBasedOnRatio = (props, prop) => {
 
     const result = mapSpacing(val, prop, params)
 
-    console.log(result)
     return result
   }
   return mapSpacing(val, prop)
