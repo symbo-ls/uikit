@@ -191,7 +191,6 @@ export const generateSubSequence = ({ key, base, value, ratio, variable, state }
 }
 
 export const generateSequence = ({ type, base, ratio, range, subSequence, ...state }) => {
-  console.warn('generating!!')
   const n = Math.abs(range[0]) + Math.abs(range[1])
   const prefix = '--' + type + '-'
   for (let i = 0; i <= n; i++) {
