@@ -6,9 +6,10 @@ import { fallBack, generateSequence } from '../utils'
 const defaultProps = {
   base: 16,
   type: 'font-size',
-  ratio: SEQUENCE['major-second'],
+  ratio: SEQUENCE['minor-third'],
   range: [-3, +12],
   sequence: {},
+  h1Matches: +6,
   scales: {}
 }
 

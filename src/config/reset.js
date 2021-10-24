@@ -1,6 +1,18 @@
 'use strict'
 
 import { DOCUMENT, UNIT } from '.'
+import { findHeadings } from '../utils'
+
+var HEADINGS = findHeadings()
+console.log(HEADINGS)
+const headingsObj = {}
+for (const k in HEADINGS) {
+  headingsObj[`h${parseInt(k) + 1}`] = {
+    fontSize: `${HEADINGS[k].scaling}em`
+  }
+}
+
+console.log(headingsObj)
 
 export const RESET = {
   html: {
@@ -20,5 +32,6 @@ export const RESET = {
   body: {
     boxSizing: 'border-box',
     height: '100%'
-  }
+  },
+  ...headingsObj
 }

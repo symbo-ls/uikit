@@ -1,6 +1,6 @@
 'use strict'
 
-import { UNIT } from '../config'
+import { TYPOGRAPHY, UNIT } from '../config'
 
 export const isArray = arg => Array.isArray(arg)
 
@@ -155,12 +155,13 @@ export const numToLetterMap = {
   15: 'P'
 }
 
-const setSequenceValue = ({ key, variable, value, scaling, state }) => {
+const setSequenceValue = ({ key, variable, value, scaling, state, index }) => {
   state.sequence[variable] = {
     key,
     decimal: Math.round(value * 100) / 100,
     val: Math.round(value),
-    scaling
+    scaling,
+    index
   }
   state.scales[variable] = scaling
 }
@@ -200,7 +201,7 @@ export const generateSequence = ({ type, base, ratio, range, subSequence, ...sta
     const scaling = Math.round(value / base * 1000) / 1000
     const variable = prefix + letterKey
 
-    setSequenceValue({ key: letterKey, variable, value, scaling, state })
+    setSequenceValue({ key: letterKey, variable, value, scaling, state, index: key })
 
     if (subSequence) generateSubSequence({ key: letterKey, base, value, ratio, variable, state })
   }
@@ -223,4 +224,12 @@ export const Arrayize = val => {
   if (isString) return val.split(' ')
   if (isObject(val)) return Object.keys(val).map(v => val[v])
   if (isArray(val)) return val
+}
+
+export const findHeadings = () => {
+  const { h1Matches, type, sequence } = TYPOGRAPHY
+  return new Array(6).fill(null).map((_, i) => {
+    const findLetter = numToLetterMap[h1Matches - i]
+    return sequence[`--${type}-${findLetter}`]
+  })
 }
