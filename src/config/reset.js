@@ -1,18 +1,6 @@
 'use strict'
 
-import { DOCUMENT, UNIT } from '.'
-import { findHeadings } from '../utils'
-
-var HEADINGS = findHeadings()
-console.log(HEADINGS)
-const headingsObj = {}
-for (const k in HEADINGS) {
-  headingsObj[`h${parseInt(k) + 1}`] = {
-    fontSize: `${HEADINGS[k].scaling}em`
-  }
-}
-
-console.log(headingsObj)
+import { TYPOGRAPHY, DOCUMENT, UNIT } from '.'
 
 export const RESET = {
   html: {
@@ -25,7 +13,8 @@ export const RESET = {
     margin: '0',
     WebkitFontSmoothing: 'antialiased',
 
-    fontSize: DOCUMENT.fontSize + UNIT.default,
+    fontSize: TYPOGRAPHY.default / DOCUMENT.fontSize + UNIT.default,
+    lineHeight: DOCUMENT.lineHeight,
     color: DOCUMENT.theme.color,
     background: DOCUMENT.theme.background
   },
@@ -33,5 +22,13 @@ export const RESET = {
     boxSizing: 'border-box',
     height: '100%'
   },
-  ...headingsObj
+
+  ...TYPOGRAPHY.styles,
+
+  // form elements
+  fieldset: {
+    border: 0,
+    padding: 0,
+    margin: 0
+  }
 }

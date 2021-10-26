@@ -1,6 +1,6 @@
 'use strict'
 
-import { TYPOGRAPHY, UNIT } from '../config'
+import { UNIT } from '../config'
 
 export const isArray = arg => Array.isArray(arg)
 
@@ -226,7 +226,7 @@ export const Arrayize = val => {
   if (isArray(val)) return val
 }
 
-export const findHeadings = () => {
+export const findHeadings = (TYPOGRAPHY) => {
   const { h1Matches, type, sequence } = TYPOGRAPHY
   return new Array(6).fill(null).map((_, i) => {
     const findLetter = numToLetterMap[h1Matches - i]
