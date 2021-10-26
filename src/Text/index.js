@@ -7,13 +7,12 @@ export const Text = {
   style,
 
   props: {
-    size: 'A',
     text: ''
   },
 
   text: ({ props }) => props.text,
 
   class: {
-    size: ({ props }) => mapFontSize(props.size)
+    size: ({ props }) => props.size && mapFontSize(props.size)
   }
 }
