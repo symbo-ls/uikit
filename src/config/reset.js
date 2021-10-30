@@ -1,6 +1,6 @@
 'use strict'
 
-import { DOCUMENT, UNIT } from '.'
+import { TYPOGRAPHY, DOCUMENT, UNIT } from '.'
 
 export const RESET = {
   html: {
@@ -13,12 +13,22 @@ export const RESET = {
     margin: '0',
     WebkitFontSmoothing: 'antialiased',
 
-    fontSize: DOCUMENT.fontSize + UNIT.default,
+    fontSize: TYPOGRAPHY.default / DOCUMENT.fontSize + UNIT.default,
+    lineHeight: DOCUMENT.lineHeight,
     color: DOCUMENT.theme.color,
     background: DOCUMENT.theme.background
   },
   body: {
     boxSizing: 'border-box',
     height: '100%'
+  },
+
+  ...TYPOGRAPHY.styles,
+
+  // form elements
+  fieldset: {
+    border: 0,
+    padding: 0,
+    margin: 0
   }
 }
