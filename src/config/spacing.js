@@ -32,8 +32,6 @@ export const mapSpacing = (val, property = 'padding', props) => {
 
   const length = stack.length
 
-  console.log(stack)
-
   const wrapFallBack = (prop, i) => fallBack({
     type,
     prop,
