@@ -19,6 +19,9 @@ export const Button = {
 export const SquareButton = {
   proto: Button,
   props: {
+    width: 'A',
+    height: 'A',
+    spacing: 'Z',
     round: 'X2'
   },
   style: {

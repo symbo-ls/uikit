@@ -11,6 +11,7 @@ export { Block } from './Block'
 export { Shape } from './Shape'
 export { Flex } from './Flex'
 export { Direction } from './Direction'
+export { Position } from './Position'
 
 export { SVG } from './SVG'
 export { Icon } from './Icon'
