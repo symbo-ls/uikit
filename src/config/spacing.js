@@ -24,7 +24,7 @@ const getSequence = (props) => {
 export const mapSpacing = (val, property = 'padding', props) => {
   const prefix = '--spacing-'
 
-  let generatedSequence = getSequence(props)
+  const generatedSequence = getSequence(props)
   const type = (generatedSequence || defaultProps).sequence
 
   const stack = Arrayize(val)
