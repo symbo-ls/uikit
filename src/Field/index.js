@@ -10,7 +10,7 @@ export const Field = {
     depth: 16,
     placeholder: 'Type in',
     value: s[el.key],
-    spacing: 'A B',
+    padding: 'A B',
     round: 'C',
     theme: 'field',
     type: 'text'

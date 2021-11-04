@@ -11,7 +11,7 @@ export const Label = {
   props: {
     emoji: '😂',
     text: '3',
-    spacing: 'X2 Z',
+    padding: 'X2 Z',
     round: 'C',
     depth: 16
   },

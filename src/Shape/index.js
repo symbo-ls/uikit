@@ -44,7 +44,7 @@ export const Shape = {
   //   mobile: 'fit'
   // }
 
-  // spacing: {
+  // padding: {
   //   default: ratio.phi,
   //   mobile: ratio.perfect
   // }

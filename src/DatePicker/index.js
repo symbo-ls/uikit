@@ -12,7 +12,7 @@ export const DatePicker = {
   proto: [Shape, Block],
   props: {
     theme: 'lightDark',
-    spacing: 'A',
+    padding: 'A',
     round: 'Z',
     depth: 16
   },

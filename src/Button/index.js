@@ -21,7 +21,7 @@ export const SquareButton = {
   props: {
     width: 'A',
     height: 'A',
-    spacing: 'Z',
+    padding: 'Z',
     round: 'X2'
   },
   style: {

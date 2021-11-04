@@ -5,7 +5,7 @@ import style from './style'
 
 const mapBasedOnRatio = (props, prop) => {
   const { spacingRatio } = props
-  const val = props[prop === 'padding' ? 'spacing' : prop]
+  const val = props[prop]
   if (spacingRatio) {
     const params = SPACING[spacingRatio]
 
