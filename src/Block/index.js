@@ -35,6 +35,8 @@ export const Block = {
 
   class: {
     width: ({ props }) => mapSpacing(props.width, 'width'),
+    maxWidth: ({ props }) => mapSpacing(props.maxWidth, 'max-width'),
+    minWidth: ({ props }) => mapSpacing(props.minWidth, 'min-width'),
     height: ({ props }) => mapSpacing(props.height, 'height'),
     padding: ({ props }) => mapBasedOnRatio(props, 'padding'),
     margin: ({ props }) => mapBasedOnRatio(props, 'margin'),
