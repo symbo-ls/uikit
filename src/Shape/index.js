@@ -6,9 +6,8 @@ import { isObject } from '../../../domql/src/utils'
 import style, { shape, depth } from './style'
 
 export const Shape = {
-  style,
-
   class: {
+    default: style,
     shape: ({ props }) => shape[props.shape],
     shapeDirection: ({ props }) => props.shape ? shape[props.shape][props.shapeDirection || 'top'] : null,
     shapeDirectionColor: ({ props, ...el }) => {
