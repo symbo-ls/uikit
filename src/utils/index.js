@@ -210,7 +210,10 @@ export const generateSequence = ({ type, base, ratio, range, subSequence, ...sta
 
 export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
   if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
-  if (parseInt(val) === 0) return ({ [prop]: val })
+
+  const hasLetter = /[A-Za-z]+/.test(val)
+  if (!hasLetter) return ({ [prop]: val })
+
   const value = type ? type[prefix + val.toUpperCase()] : null
   if (!value) return console.warn('can\'t find', type, prefix + val.toUpperCase(), val.toUpperCase())
   return ({
