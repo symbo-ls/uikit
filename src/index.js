@@ -10,6 +10,7 @@ export { Text } from './Text'
 export { Block } from './Block'
 export { Shape } from './Shape'
 export { Flex } from './Flex'
+export { Grid } from './Grid'
 export { Direction } from './Direction'
 export { Position } from './Position'
 
