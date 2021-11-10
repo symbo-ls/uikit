@@ -214,11 +214,16 @@ export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => 
   const hasLetter = /[A-Za-z]+/.test(val)
   if (!hasLetter) return ({ [prop]: val })
 
-  const value = type ? type[prefix + val.toUpperCase()] : null
-  if (!value) return console.warn('can\'t find', type, prefix + val.toUpperCase(), val.toUpperCase())
+  const letterVal = val.toUpperCase()
+  const isNegative = letterVal.slice(0, 1) === '-' ? '-' : ''
+  const simplyLetterVal = isNegative ? letterVal.slice(1) : letterVal
+
+  const value = type ? type[prefix + simplyLetterVal] : null
+  if (!value) return console.warn('can\'t find', type, prefix + simplyLetterVal, simplyLetterVal)
+
   return ({
-    [prop]: value.val + UNIT.default,
-    [prop]: value.scaling + 'em'
+    [prop]: isNegative + value.val + UNIT.default,
+    [prop]: isNegative + value.scaling + 'em'
   })
 }
 
