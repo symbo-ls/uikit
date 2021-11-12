@@ -4,7 +4,7 @@ import { Button, Link } from '..'
 
 import { styleGrid, styleGrid2 } from './style'
 
-let componentLink = {
+const componentLink = {
   proto: Link,
   attr: {
     href: '#'

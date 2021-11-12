@@ -6,7 +6,7 @@ export const Notification = {
   style: { cursor: 'pointer' },
   proto: [Shape, Block, Direction, Flex],
   icon: {
-    proto: [IconText, Block, Shape, Text],
+    proto: [IconText],
     props: {
       icon: 'info'
     },
@@ -16,7 +16,7 @@ export const Notification = {
     }
   },
   article: {
-    proto: [Block, Flex],
+    proto: [Flex],
     style: {
       flexDirection: 'column',
       alignItems: 'flex-start'
@@ -27,13 +27,11 @@ export const Notification = {
     },
     p: {
       proto: Text,
-      text: 'is not always a distraction',
+      props: {
+        size: 'Z',
+        text: 'is not always a distraction'
+      },
       style: { margin: 0 }
     }
   }
-
-  // article: {
-  //   caption: ({ props }) => props.title,
-  //   p: ({ props }) => props.caption
-  // }
 }

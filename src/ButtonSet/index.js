@@ -9,7 +9,6 @@ export const ButtonSet = {
   tag: 'nav',
   proto: [Shape, Flex, Block],
   childProto: {
-    proto: [SquareButton],
-    props: { round: 12 }
+    proto: [SquareButton]
   }
 }

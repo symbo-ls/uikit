@@ -3,9 +3,9 @@
 import { SPACING, mapSpacing } from '@rackai/scratch'
 import style from './style'
 
-const mapBasedOnRatio = (props, prop) => {
+export const mapBasedOnRatio = (props, prop) => {
   const { spacingRatio } = props
-  const val = props[prop === 'padding' ? 'spacing' : prop]
+  const val = props[prop]
   if (spacingRatio) {
     const params = SPACING[spacingRatio]
 
@@ -23,7 +23,6 @@ const mapBasedOnRatio = (props, prop) => {
 
     const result = mapSpacing(val, prop, params)
 
-    console.log(result)
     return result
   }
   return mapSpacing(val, prop)
@@ -36,8 +35,11 @@ export const Block = {
 
   class: {
     width: ({ props }) => mapSpacing(props.width, 'width'),
+    maxWidth: ({ props }) => mapSpacing(props.maxWidth, 'maxWidth'),
+    minWidth: ({ props }) => mapSpacing(props.minWidth, 'minWidth'),
     height: ({ props }) => mapSpacing(props.height, 'height'),
     padding: ({ props }) => mapBasedOnRatio(props, 'padding'),
+    margin: ({ props }) => mapBasedOnRatio(props, 'margin'),
     gap: ({ props }) => mapBasedOnRatio(props, 'gap')
   }
 }

@@ -13,7 +13,7 @@ export const Input = {
     value: s[el.key],
     placeholder: 'Type in',
     round: 'C',
-    spacing: 'A B',
+    padding: 'A B',
     theme: 'transparent'
   }),
 

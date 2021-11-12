@@ -19,11 +19,17 @@ export const Button = {
 export const SquareButton = {
   proto: Button,
   props: {
+    width: 'A',
+    height: 'A',
+    size: 'A',
+    padding: 'Z',
     round: 'X2'
   },
-  style: {
-    justifyContent: 'center',
-    boxSizing: 'content-box'
+  class: {
+    squareButton: {
+      justifyContent: 'center',
+      boxSizing: 'content-box'
+    }
   }
 }
 

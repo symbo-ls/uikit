@@ -1,7 +1,8 @@
 'use strict'
 
-import './styles.js'
+import DOM from '@rackai/domql'
 
+import './styles.js'
 export * from '@rackai/scratch'
 
 export { styles } from './styles'
@@ -10,7 +11,9 @@ export { Text } from './Text'
 export { Block } from './Block'
 export { Shape } from './Shape'
 export { Flex } from './Flex'
+export { Grid } from './Grid'
 export { Direction } from './Direction'
+export { Position } from './Position'
 
 export { SVG } from './SVG'
 export { Icon } from './Icon'
@@ -33,3 +36,5 @@ export { Tooltip } from './Tooltip'
 export { Label } from './Label'
 export { Pills } from './Pills'
 export { Select } from './Select'
+
+export default DOM

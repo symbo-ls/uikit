@@ -6,10 +6,13 @@ import { isObject } from '../../../domql/src/utils'
 import style, { shape, depth } from './style'
 
 export const Shape = {
-  style,
-
   class: {
+    default: style,
     shape: ({ props }) => shape[props.shape],
+    shapeDirection: ({ props }) => props.shape ? shape[props.shape][props.shapeDirection || 'top'] : null,
+    shapeDirectionColor: ({ props, ...el }) => {
+      return props.shape ? { '&:before': { borderColor: el.class.backgroundColor } } : null
+    },
     depth: ({ props }) => depth[props.depth],
     round: ({ props, key, ...el }) => {
       return mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })
@@ -40,7 +43,7 @@ export const Shape = {
   //   mobile: 'fit'
   // }
 
-  // spacing: {
+  // padding: {
   //   default: ratio.phi,
   //   mobile: ratio.perfect
   // }
