@@ -3,7 +3,7 @@
 import { SPACING, mapSpacing } from '@rackai/scratch'
 import style from './style'
 
-const mapBasedOnRatio = (props, prop) => {
+export const mapBasedOnRatio = (props, prop) => {
   const { spacingRatio } = props
   const val = props[prop]
   if (spacingRatio) {

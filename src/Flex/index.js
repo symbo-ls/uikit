@@ -1,6 +1,7 @@
 'use strict'
 
 import style from './style'
+import { mapBasedOnRatio } from '../Block'
 
 export const Flex = {
   style,
@@ -13,6 +14,7 @@ export const Flex = {
     flow: ({ props }) => ({ flexFlow: props.flow }),
     flexDirection: ({ props }) => ({ flexDirection: props.flexDirection }),
     alignItems: ({ props }) => ({ alignItems: props.alignItems }),
-    justifyContent: ({ props }) => ({ justifyContent: props.justifyContent })
+    justifyContent: ({ props }) => ({ justifyContent: props.justifyContent }),
+    gap: ({ props }) => mapBasedOnRatio(props, 'gap')
   }
 }
