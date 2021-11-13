@@ -35,11 +35,35 @@ export const Block = {
 
   class: {
     width: ({ props }) => mapSpacing(props.width, 'width'),
+    height: ({ props }) => mapSpacing(props.height, 'height'),
+    boxSize: ({ props }) => {
+      if (typeof props.boxSize !== 'string') return
+      const [width, height] = props.boxSize.split(' ')
+      console.log(width, height, props.boxSize)
+      return {
+        ...mapSpacing(width, 'width'),
+        ...mapSpacing(height, 'height')
+      }
+    },
+
     maxWidth: ({ props }) => mapSpacing(props.maxWidth, 'maxWidth'),
     minWidth: ({ props }) => mapSpacing(props.minWidth, 'minWidth'),
-    height: ({ props }) => mapSpacing(props.height, 'height'),
     padding: ({ props }) => mapBasedOnRatio(props, 'padding'),
     margin: ({ props }) => mapBasedOnRatio(props, 'margin'),
-    gap: ({ props }) => mapBasedOnRatio(props, 'gap')
+    gap: ({ props }) => mapBasedOnRatio(props, 'gap'),
+
+    flexFlow: ({ props }) => props.flexFlow && ({
+      display: 'flex',
+      flexFlow: props.flexFlow
+    }),
+    flexAlign: ({ props }) => {
+      if (typeof props.flexAlign !== 'string') return
+      const [alignItems, justifyContent] = props.flexAlign.split(' ')
+      return {
+        display: 'flex',
+        alignItems: alignItems,
+        justifyContent: justifyContent
+      }
+    }
   }
 }
