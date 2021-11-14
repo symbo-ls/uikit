@@ -48,6 +48,9 @@ export const Block = {
 
     maxWidth: ({ props }) => mapSpacing(props.maxWidth, 'maxWidth'),
     minWidth: ({ props }) => mapSpacing(props.minWidth, 'minWidth'),
+
+    aspectRatio: ({ props }) => ({ aspectRatio: props.aspectRatio }),
+
     padding: ({ props }) => mapBasedOnRatio(props, 'padding'),
     margin: ({ props }) => mapBasedOnRatio(props, 'margin'),
     gap: ({ props }) => mapBasedOnRatio(props, 'gap'),
