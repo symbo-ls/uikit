@@ -20,7 +20,8 @@ export const SquareButton = {
   proto: Button,
   props: {
     size: 'A',
-    padding: 'X1'
+    padding: 'X1',
+    round: 'X2'
   },
   class: {
     squareButton: {
