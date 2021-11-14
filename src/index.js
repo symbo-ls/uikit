@@ -1,7 +1,5 @@
 'use strict'
 
-import DOM from '@rackai/domql'
-
 import './styles.js'
 export * from '@rackai/scratch'
 
@@ -36,5 +34,3 @@ export { Tooltip } from './Tooltip'
 export { Label } from './Label'
 export { Pills } from './Pills'
 export { Select } from './Select'
-
-export default DOM
