@@ -1,7 +1,7 @@
 'use strict'
 
 import { THEME, mapSpacing, COLOR, isObjectLike } from '@rackai/scratch'
-import { isObject } from '../../../domql/src/utils'
+import { isObject } from '@rackai/domql/src/utils'
 
 import style, { shape, depth } from './style'
 

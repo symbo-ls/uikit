@@ -39,7 +39,6 @@ export const Block = {
     boxSize: ({ props }) => {
       if (typeof props.boxSize !== 'string') return
       const [width, height] = props.boxSize.split(' ')
-      console.log(width, height, props.boxSize)
       return {
         ...mapSpacing(width, 'width'),
         ...mapSpacing(height, 'height')
@@ -48,6 +47,28 @@ export const Block = {
 
     maxWidth: ({ props }) => mapSpacing(props.maxWidth, 'maxWidth'),
     minWidth: ({ props }) => mapSpacing(props.minWidth, 'minWidth'),
+    widthRange: ({ props }) => {
+      if (typeof props.widthRange !== 'string') return
+      const [minWidth, maxWidth] = props.widthRange.split(' ')
+      return {
+        ...mapSpacing(minWidth, 'minWidth'),
+        ...mapSpacing(maxWidth, 'maxWidth')
+      }
+    },
+
+    maxHeight: ({ props }) => mapSpacing(props.maxHeight, 'maxHeight'),
+    minHeight: ({ props }) => mapSpacing(props.minHeight, 'minHeight'),
+    heightRange: ({ props }) => {
+      if (typeof props.heightRange !== 'string') return
+      const [minHeight, maxHeight] = props.heightRange.split(' ')
+      return {
+        ...mapSpacing(minHeight, 'minHeight'),
+        ...mapSpacing(maxHeight, 'maxHeight')
+      }
+    },
+
+    aspectRatio: ({ props }) => ({ aspectRatio: props.aspectRatio }),
+
     padding: ({ props }) => mapBasedOnRatio(props, 'padding'),
     margin: ({ props }) => mapBasedOnRatio(props, 'margin'),
     gap: ({ props }) => mapBasedOnRatio(props, 'gap'),
