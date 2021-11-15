@@ -2,7 +2,7 @@
 
 export default {
   appearance: 'none',
-  maxWidth: '82px',
+  width: '100%',
   height: '2px',
   outline: 'none',
   flex: 1,
