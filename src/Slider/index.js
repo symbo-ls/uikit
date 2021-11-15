@@ -47,10 +47,6 @@ const findOut = (el, s, prop, def) => {
 export const Slider = {
   proto: [Shape],
 
-  props: {
-    round: 'Z'
-  },
-
   button0: {
     proto: [SquareButton],
     props: {
