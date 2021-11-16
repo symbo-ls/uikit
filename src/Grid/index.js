@@ -11,6 +11,8 @@ export const Grid = {
   class: {
     columns: ({ props }) => ({ gridTemplateColumns: props.columns }),
     rows: ({ props }) => ({ gridTemplateRows: props.rows }),
-    gap: ({ props }) => mapBasedOnRatio(props, 'gap')
+    gap: ({ props }) => mapBasedOnRatio(props, 'gap'),
+    columnGap: ({ props }) => mapBasedOnRatio(props, 'columnGap'),
+    rowGap: ({ props }) => mapBasedOnRatio(props, 'rowGap')
   }
 }
