@@ -12,6 +12,7 @@ export * from './Flex'
 export * from './Grid'
 export * from './Direction'
 export * from './Position'
+export * from './Overflow'
 
 export * from './SVG'
 export * from './Icon'
