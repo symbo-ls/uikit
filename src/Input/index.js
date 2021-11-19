@@ -1,17 +1,15 @@
 'use strict'
 
-import { Shape, Block } from '..'
-import style from './style'
+import { Shape, Block, Text } from '..'
 
 export const Input = {
-  proto: [Shape, Block],
+  proto: [Shape, Block, Text],
   tag: 'input',
-  style,
 
   props: (el, s) => ({
     type: 'input',
     value: s[el.key],
-    placeholder: 'Type in',
+    // placeholder: '',
     round: 'C',
     padding: 'A B',
     theme: 'transparent'

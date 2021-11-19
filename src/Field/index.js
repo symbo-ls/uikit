@@ -8,7 +8,7 @@ export const Field = {
   proto: [IconText],
   props: (el, s) => ({
     depth: 16,
-    placeholder: 'Type in',
+    placeholder: '',
     value: s[el.key],
     padding: 'A B',
     round: 'C',
