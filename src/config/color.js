@@ -7,5 +7,5 @@ var proto = { // eslint-disable-line
 }
 
 export const COLOR = {
-  transparent: 'transparent'
+  transparent: { value: 'transparent' }
 }
