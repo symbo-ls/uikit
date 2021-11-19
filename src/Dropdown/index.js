@@ -2,7 +2,7 @@
 import { Shape, IconText } from '..'
 import { styleRow, styleRowActive, styleDropDown } from './style'
 
-export const Dropdown = {
+export const DropdownList = {
   style: styleDropDown,
   tag: 'ul',
 
@@ -38,12 +38,5 @@ export const Dropdown = {
         state.update({ active: element.key })
       }
     }
-  },
-
-  ...[
-    { span: { props: { text: 'Today' } } },
-    { span: { props: { text: 'Yesterday' } } },
-    { span: { props: { text: 'A week age' } } },
-    { span: { props: { text: 'A month ago' } } }
-  ]
+  }
 }

@@ -19,12 +19,13 @@ export const Shape = {
     },
     theme: ({ props }) => {
       const { theme } = props
+      // const [  ] = theme
       if (isObjectLike(theme) && theme[1]) return THEME[theme[0]][theme[1]]
       if (isObject(theme)) return theme
       else return THEME[theme]
     },
     color: ({ props }) => COLOR[props.color] ? { color: COLOR[props.color].value } : null,
-    background: ({ props }) => COLOR[props.background] ? { color: COLOR[props.background].value } : null
+    background: ({ props }) => COLOR[props.background] ? { backgroundColor: COLOR[props.background].value } : null
   }
 
   // mode: {
