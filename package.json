@@ -21,7 +21,7 @@
     "bump": "npx np"
   },
   "dependencies": {
-    "@rackai/scratch": "^0.2.23"
+    "@rackai/scratch": "^0.2.26"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
