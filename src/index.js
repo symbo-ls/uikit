@@ -14,6 +14,8 @@ export * from './Direction'
 export * from './Position'
 export * from './Overflow'
 
+export * from './Box'
+
 export * from './SVG'
 export * from './Icon'
 export * from './Img'

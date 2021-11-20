@@ -20,7 +20,9 @@ export const SquareButton = {
   proto: Button,
   props: {
     size: 'A',
+    width: 'A',
     padding: 'Z',
+    aspectRatio: '1 / 1',
     round: 'Z'
   },
   class: {
@@ -33,7 +35,7 @@ export const SquareButton = {
 
 export const CircleButton = {
   proto: SquareButton,
-  style: { borderRadius: '100%' }
+  props: { round: 'C' }
 }
 
 export const KangorooButton = {
