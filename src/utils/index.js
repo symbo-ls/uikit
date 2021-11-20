@@ -104,6 +104,7 @@ export const mixTwoRGBA = (colorA, colorB, range = 0.5) => {
 
 export const opacify = (color, opacity) => {
   const arr = colorStringToRGBAArray(color)
+  if (!arr) return console.warn(color + 'color is not rgba')
   arr[3] = opacity
   return `rgba(${arr})`
 }
