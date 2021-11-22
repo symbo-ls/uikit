@@ -34,8 +34,8 @@ export const Block = {
   props: {},
 
   class: {
-    width: ({ props }) => mapSpacing(props.width, 'width'),
-    height: ({ props }) => mapSpacing(props.height, 'height'),
+    width: ({ props }) => props.width && mapSpacing(props.width, 'width'),
+    height: ({ props }) => props.height && mapSpacing(props.height, 'height'),
     boxSize: ({ props }) => {
       if (typeof props.boxSize !== 'string') return
       const [width, height] = props.boxSize.split(' ')
@@ -45,8 +45,8 @@ export const Block = {
       }
     },
 
-    maxWidth: ({ props }) => mapSpacing(props.maxWidth, 'maxWidth'),
-    minWidth: ({ props }) => mapSpacing(props.minWidth, 'minWidth'),
+    maxWidth: ({ props }) => props.maxWidth && mapSpacing(props.maxWidth, 'maxWidth'),
+    minWidth: ({ props }) => props.minWidth && mapSpacing(props.minWidth, 'minWidth'),
     widthRange: ({ props }) => {
       if (typeof props.widthRange !== 'string') return
       const [minWidth, maxWidth] = props.widthRange.split(' ')
@@ -56,8 +56,8 @@ export const Block = {
       }
     },
 
-    maxHeight: ({ props }) => mapSpacing(props.maxHeight, 'maxHeight'),
-    minHeight: ({ props }) => mapSpacing(props.minHeight, 'minHeight'),
+    maxHeight: ({ props }) => props.maxHeight && mapSpacing(props.maxHeight, 'maxHeight'),
+    minHeight: ({ props }) => props.minHeight && mapSpacing(props.minHeight, 'minHeight'),
     heightRange: ({ props }) => {
       if (typeof props.heightRange !== 'string') return
       const [minHeight, maxHeight] = props.heightRange.split(' ')
