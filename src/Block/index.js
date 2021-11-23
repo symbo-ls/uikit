@@ -34,30 +34,30 @@ export const Block = {
   props: {},
 
   class: {
-    width: ({ props }) => props.width && mapSpacing(props.width, 'width'),
-    height: ({ props }) => props.height && mapSpacing(props.height, 'height'),
+    width: ({ props }) => props.width && mapBasedOnRatio(props.width, 'width'),
+    height: ({ props }) => props.height && mapBasedOnRatio(props.height, 'height'),
     boxSize: ({ props }) => {
       if (typeof props.boxSize !== 'string') return
       const [width, height] = props.boxSize.split(' ')
       return {
-        ...mapSpacing(width, 'width'),
-        ...mapSpacing(height, 'height')
+        ...mapBasedOnRatio(width, 'width'),
+        ...mapBasedOnRatio(height, 'height')
       }
     },
 
-    maxWidth: ({ props }) => props.maxWidth && mapSpacing(props.maxWidth, 'maxWidth'),
-    minWidth: ({ props }) => props.minWidth && mapSpacing(props.minWidth, 'minWidth'),
+    maxWidth: ({ props }) => props.maxWidth && mapBasedOnRatio(props.maxWidth, 'maxWidth'),
+    minWidth: ({ props }) => props.minWidth && mapBasedOnRatio(props.minWidth, 'minWidth'),
     widthRange: ({ props }) => {
       if (typeof props.widthRange !== 'string') return
       const [minWidth, maxWidth] = props.widthRange.split(' ')
       return {
-        ...mapSpacing(minWidth, 'minWidth'),
-        ...mapSpacing(maxWidth, 'maxWidth')
+        ...mapBasedOnRatio(minWidth, 'minWidth'),
+        ...mapBasedOnRatio(maxWidth, 'maxWidth')
       }
     },
 
-    maxHeight: ({ props }) => props.maxHeight && mapSpacing(props.maxHeight, 'maxHeight'),
-    minHeight: ({ props }) => props.minHeight && mapSpacing(props.minHeight, 'minHeight'),
+    maxHeight: ({ props }) => props.maxHeight && mapBasedOnRatio(props.maxHeight, 'maxHeight'),
+    minHeight: ({ props }) => props.minHeight && mapBasedOnRatio(props.minHeight, 'minHeight'),
     heightRange: ({ props }) => {
       if (typeof props.heightRange !== 'string') return
       const [minHeight, maxHeight] = props.heightRange.split(' ')
