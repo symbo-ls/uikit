@@ -39,6 +39,7 @@ export const Block = {
     boxSize: ({ props }) => {
       if (typeof props.boxSize !== 'string') return
       const [width, height] = props.boxSize.split(' ')
+      console.log(width, height)
       return {
         ...mapSpacing(width, 'width'),
         ...mapSpacing(height, 'height')

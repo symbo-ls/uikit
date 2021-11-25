@@ -2,8 +2,6 @@
 
 export const styleUser = {
   cursor: 'pointer',
-  width: '1.618em',
-  height: '1.618em',
   borderRadius: '100%'
 }
 

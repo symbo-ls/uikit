@@ -1,8 +1,11 @@
 'use strict'
 
+import { Shape, Block } from '..'
 import { styleUser, styleUserBundle } from './style'
 
 export const User = {
+  proto: [Shape, Block],
+  props: { boxSize: 'B B' },
   style: styleUser,
   tag: 'img',
   attr: {
