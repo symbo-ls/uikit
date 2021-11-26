@@ -1,17 +1,15 @@
 {
-  "name": "@rackai/scratch",
+  "name": "@symbols/scratch",
   "description": "Φ / CSS framework and methodology.",
-  "private": false,
-  "author": "rackai",
+  "private": true,
+  "author": "Symbols",
   "version": "0.2.26",
   "files": [
     "src"
   ],
   "repository": "https://github.com/rackai/scratch",
   "main": "src/index.js",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
+  "publishConfig": {},
   "dependencies": {
     "color-contrast-checker": "^1.5.0"
   },
