@@ -1,6 +1,7 @@
 'use strict'
 
-import { COLOR, THEME, FONT } from '../config'
+import { COLOR, THEME, FONT, FONT_FAMILY, FONT_FAMILY_TYPES } from '../config'
+import { isArray } from '../utils'
 
 var set = (kind, ...props) => {
   if (kind === 'color') {
@@ -27,6 +28,16 @@ var set = (kind, ...props) => {
       }
     })
     return FONT
+  } else if (kind === 'font-family') {
+    props.map(value => {
+      const { name, type } = value
+      let { family } = value
+      if (!family) family = Object.keys(FONT)
+      if (isArray(family)) family = family.join(', ')
+      FONT_FAMILY[name] = `${family}, ${FONT_FAMILY_TYPES[type || 'serif']}`
+      if (!FONT_FAMILY.default) FONT_FAMILY.default = name
+    })
+    return FONT_FAMILY
   }
 }
 

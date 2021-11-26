@@ -1,6 +1,9 @@
 'use strict'
 
-import { TYPOGRAPHY, DOCUMENT, UNIT } from '.'
+import { TYPOGRAPHY, DOCUMENT, UNIT, FONT_FAMILY } from '.'
+import { getFontFamily } from '../utils'
+
+console.log(FONT_FAMILY, getFontFamily(FONT_FAMILY))
 
 export const RESET = {
   html: {
@@ -12,6 +15,8 @@ export const RESET = {
     left: '0',
     margin: '0',
     WebkitFontSmoothing: 'antialiased',
+
+    fontFamily: FONT_FAMILY[FONT_FAMILY.default],
 
     fontSize: TYPOGRAPHY.default / DOCUMENT.fontSize + UNIT.default,
     lineHeight: DOCUMENT.lineHeight,

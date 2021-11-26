@@ -109,6 +109,11 @@ export const opacify = (color, opacity) => {
   return `rgba(${arr})`
 }
 
+export const getDefaultOrFirstKey = Library => {
+  if (Library.default) return Library[Library.default]
+  return Library[Object.keys(Library)[0]]
+}
+
 export const getFontFormat = url => url.split(/[#?]/)[0].split('.').pop().trim()
 
 export const setCustomFont = (name, weight, url) => `@font-face {
@@ -129,6 +134,10 @@ export const getFontFace = Library => {
     }
   }
   return fonts
+}
+
+export const getFontFamily = Library => {
+  return getDefaultOrFirstKey(Library)
 }
 
 export const numToLetterMap = {

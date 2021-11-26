@@ -5,6 +5,7 @@ export * from './unit'
 
 export * from './typography'
 export * from './font'
+export * from './font-family'
 
 export * from './spacing'
 
