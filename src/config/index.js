@@ -15,4 +15,5 @@ export * from './theme'
 export * from './responsive'
 
 export * from './document'
-export * from './reset'
+
+export default {}
