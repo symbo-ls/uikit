@@ -1,14 +1,14 @@
 'use strict'
 
-import { COLOR, GRADIENT, THEME, FONT, FONT_FAMILY, FONT_FAMILY_TYPES } from '../config'
-import { isArray, opacify, colorStringToRGBAArray } from '../utils'
+import { FONT, FONT_FAMILY_TYPES } from '../config'
+import { isArray, colorStringToRGBAArray, isObject } from '../utils'
 
 import CONFIG, { CSS_VARS } from '../factory'
 
 const defineColor = () => {}
 
 const setColor = (val, key) => {
-  const [ r, g, b, a = 1 ] = colorStringToRGBAArray(val.value || val)
+  const [r, g, b, a = 1] = colorStringToRGBAArray(val.value || val)
   const alpha = parseFloat(a.toFixed(2))
   const CSSVar = `--color-${key}`
   const rgb = `${r}, ${g}, ${b}`
@@ -22,16 +22,45 @@ const setColor = (val, key) => {
   }
 }
 
-const setGradient = (value, key) => {
-  const CSSVar = `--color-${key}`
+const setGradient = (val, key) => {
+  const CSSVar = `--gradient-${key}`
   return {
     var: CSSVar,
-    value
+    value: val.value || val
   }
 }
 
+const getColor = value => {
+  const [name, modifier] = isArray(value) ? value : value.split(' ')
+  const { COLOR, GRADIENT } = CONFIG
+  const val = COLOR[name] || GRADIENT[name]
+
+  if (modifier) return `rgba(${val.rgb}, ${modifier})`
+  // if (modifier) return `rgba(var(${val.var}), ${modifier})`
+  else return val.value
+}
+
+const setPrefersScheme = (value, theme) => {
+  if (!isObject(theme)) return
+  const themeKeys = Object.keys(theme)
+  if (themeKeys.length) {
+    themeKeys.map(key => (value[`@media (prefers-color-scheme: ${key})`] = setTheme(theme[key]).value))
+  }
+}
+
+const setTheme = (val, key) => {
+  const value = {}
+  const { state, theme, helpers, inverse, ...rest } = val
+  const keys = Object.keys(rest)
+  keys.map(key => (value[key] = getColor(val[key])))
+
+  setPrefersScheme(value, theme)
+
+  return { value }
+}
+
 const setFont = (factory, value) => {
-  var { name, fontWeight, ...rest } = value
+  const { name, fontWeight, ...rest } = value
   if (factory[name]) {
     factory[name][fontWeight || 400] = rest
   } else {
@@ -54,9 +83,17 @@ export const SETTERS = {
   color: setColor,
   gradient: setGradient,
   font: setFont,
-  'font-family': setFontFamily
+  'font-family': setFontFamily,
+  theme: setTheme
 }
 
+/**
+ *
+ * @param {Object} FACTORY_NAME Defines which factory it goes to
+ * @param {*} value Value of the property
+ * @param {String} key Key, or the name of the property
+ * @returns {Object} Factory
+ */
 const setValue = (FACTORY_NAME, value, key) => {
   const factoryName = FACTORY_NAME.toLowerCase()
   const result = SETTERS[factoryName](value, key)

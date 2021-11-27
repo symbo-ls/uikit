@@ -1,9 +1,11 @@
 'use strict'
 
-import { COLOR } from './config'
+import { COLOR, GRADIENT, THEME } from './config'
 
 export const CSS_VARS = {}
 
 export default {
-  COLOR
+  COLOR,
+  GRADIENT,
+  THEME
 }

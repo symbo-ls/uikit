@@ -37,90 +37,51 @@ test('should setup a COLOR', () => {
   })
 })
 
-test('should set a COLOR PALETTE', () => {
-  const COLORS = {
-    black: '#000',
-    blue: {
-      value: '#0079FD'
-    },
-    green: {
-      value: 'rgba(255, 10, 255)'
-    },
-    indigo: {
-      value: '#50E1FFAA'
-    }
+const COLOR = {
+  black: '#000',
+  blue: {
+    value: '#0079FD'
+  },
+  green: {
+    value: 'rgba(255, 10, 255)'
+  },
+  indigo: {
+    value: '#50E1FFAA'
   }
+}
 
-  expect(setEach('color', COLORS)).toStrictEqual({
-    black: {
-      var: '--color-black',
-      rgb: '0, 0, 0',
-      alpha: 1,
-      value: 'rgba(0, 0, 0, 1)'
-    },
-    blue: {
-      var: '--color-blue',
-      rgb: '0, 121, 253',
-      alpha: 1,
-      value: 'rgba(0, 121, 253, 1)'
-    },
-    green: {
-      var: '--color-green',
-      rgb: '255, 10, 255',
-      alpha: 1,
-      value: 'rgba(255, 10, 255, 1)'
-    },
-    indigo: {
-      var: '--color-indigo',
-      rgb: '80, 225, 255',
-      alpha: 0.67,
-      value: 'rgba(80, 225, 255, 0.67)'
-    }
-  })
+const EXPECTED = {
+  black: {
+    var: '--color-black',
+    rgb: '0, 0, 0',
+    alpha: 1,
+    value: 'rgba(0, 0, 0, 1)'
+  },
+  blue: {
+    var: '--color-blue',
+    rgb: '0, 121, 253',
+    alpha: 1,
+    value: 'rgba(0, 121, 253, 1)'
+  },
+  green: {
+    var: '--color-green',
+    rgb: '255, 10, 255',
+    alpha: 1,
+    value: 'rgba(255, 10, 255, 1)'
+  },
+  indigo: {
+    var: '--color-indigo',
+    rgb: '80, 225, 255',
+    alpha: 0.67,
+    value: 'rgba(80, 225, 255, 0.67)'
+  }
+}
+
+test('should set a COLOR PALETTE', () => {
+  expect(setEach('color', COLOR)).toStrictEqual(EXPECTED)
 })
 
 test('should set COLORS from entire config', () => {
-  const CONFIG = {
-    COLOR: {
-      black: '#000',
-      blue: {
-        value: '#0079FD'
-      },
-      green: {
-        value: 'rgba(255, 10, 255)'
-      },
-      indigo: {
-        value: '#50E1FFAA'
-      }
-    }
-  }
-
-  expect(set(CONFIG)).toStrictEqual({
-    COLOR: {
-      black: {
-        var: '--color-black',
-        rgb: '0, 0, 0',
-        alpha: 1,
-        value: 'rgba(0, 0, 0, 1)'
-      },
-      blue: {
-        var: '--color-blue',
-        rgb: '0, 121, 253',
-        alpha: 1,
-        value: 'rgba(0, 121, 253, 1)'
-      },
-      green: {
-        var: '--color-green',
-        rgb: '255, 10, 255',
-        alpha: 1,
-        value: 'rgba(255, 10, 255, 1)'
-      },
-      indigo: {
-        var: '--color-indigo',
-        rgb: '80, 225, 255',
-        alpha: 0.67,
-        value: 'rgba(80, 225, 255, 0.67)'
-      }
-    }
-  })
+  const CONFIG = { COLOR }
+  expect(set(CONFIG).COLOR).toStrictEqual(EXPECTED)
 })
