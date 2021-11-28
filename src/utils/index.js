@@ -2,6 +2,8 @@
 
 import { UNIT } from '../config'
 
+export const isString = arg => typeof arg === 'string'
+
 export const isArray = arg => Array.isArray(arg)
 
 export const isObject = arg => {
@@ -42,9 +44,9 @@ export const colorStringToRGBAArray = color => {
   // convert named colors
   if (color.indexOf('rgb') === -1) {
     // intentionally use unknown tag to lower chances of css rule override with !important
-    var elem = document.body.appendChild(document.createElement('fictum'))
+    const elem = document.body.appendChild(document.createElement('fictum'))
     // this flag tested on chrome 59, ff 53, ie9, ie10, ie11, edge 14
-    var flag = 'rgb(1, 2, 3)'
+    const flag = 'rgb(1, 2, 3)'
     elem.style.color = flag
     // color set failed - some monstrous css rule is probably taking over the color of our object
     if (elem.style.color !== flag) return
@@ -125,11 +127,11 @@ export const setCustomFont = (name, weight, url) => `@font-face {
 // src: url('${url}') format('${getFontFormat(url)}');
 
 export const getFontFace = Library => {
-  var fonts = ''
-  for (var name in Library) {
-    var font = Library[name]
-    for (var weight in font) {
-      var { url } = font[weight]
+  let fonts = ''
+  for (const name in Library) {
+    const font = Library[name]
+    for (const weight in font) {
+      const { url } = font[weight]
       fonts += `\n${setCustomFont(name, weight, url)}`
     }
   }
@@ -197,7 +199,7 @@ export const generateSubSequence = ({ key, base, value, ratio, variable, state }
     const scaling = Math.round(v / base * 1000) / 1000
     const newVar = variable + (k + 1)
 
-    setSequenceValue({ key: key + (k + 1), variable: newVar, value: v, scaling, state })
+    return setSequenceValue({ key: key + (k + 1), variable: newVar, value: v, scaling, state })
   })
 }
 

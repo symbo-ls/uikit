@@ -1,7 +1,3 @@
 'use strict'
 
-import set from './set'
-
-export {
-  set
-}
+export * from './set'

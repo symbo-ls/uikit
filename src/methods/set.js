@@ -1,11 +1,9 @@
 'use strict'
 
 import { FONT, FONT_FAMILY_TYPES } from '../config'
-import { isArray, colorStringToRGBAArray, isObject } from '../utils'
+import { isArray, colorStringToRGBAArray, isObject, isString, isObjectLike } from '../utils'
 
 import CONFIG, { CSS_VARS } from '../factory'
-
-const defineColor = () => {}
 
 const setColor = (val, key) => {
   const [r, g, b, a = 1] = colorStringToRGBAArray(val.value || val)
@@ -30,33 +28,101 @@ const setGradient = (val, key) => {
   }
 }
 
-const getColor = value => {
+export const getColor = value => {
+  if (!isString(value)) return console.warn(value, '- type for color is not valid')
+
   const [name, modifier] = isArray(value) ? value : value.split(' ')
   const { COLOR, GRADIENT } = CONFIG
   const val = COLOR[name] || GRADIENT[name]
 
-  if (modifier) return `rgba(${val.rgb}, ${modifier})`
+  if (!val) return console.warn('Can\'t find color', name)
+
+  if (modifier && val.rgb) return `rgba(${val.rgb}, ${modifier})`
   // if (modifier) return `rgba(var(${val.var}), ${modifier})`
   else return val.value
 }
 
-const setPrefersScheme = (value, theme) => {
-  if (!isObject(theme)) return
-  const themeKeys = Object.keys(theme)
-  if (themeKeys.length) {
-    themeKeys.map(key => (value[`@media (prefers-color-scheme: ${key})`] = setTheme(theme[key]).value))
+const setThemeValue = theme => {
+  const value = {}
+  const { state, variants, helpers, ...rest } = theme
+  const keys = Object.keys(rest)
+  keys.map(key => (value[key] = getColor(theme[key])))
+  return value
+}
+
+const getThemeValue = theme => {
+  if (theme.value) return theme.value
+  theme.value = setThemeValue(theme)
+  return theme.value
+}
+
+export const getTheme = value => {
+  const { THEME } = CONFIG
+  if (isObjectLike(value) && value[1]) {
+    const [themeName, subThemeName] = value
+    const { helpers, variants } = THEME[themeName]
+    if (variants && variants[subThemeName]) return getThemeValue(variants[subThemeName])
+    if (helpers && helpers[subThemeName]) return getThemeValue(helpers[subThemeName])
+  }
+  if (isObject(value)) return setThemeValue(value)
+  else if (isString(value) && THEME[value]) return getThemeValue(THEME[value])
+  console.warn('Can\'t find theme', value)
+}
+
+const setPrefersScheme = (theme, key, variant, themeValue) => {
+  const result = getTheme(variant)
+  themeValue[`@media (prefers-color-scheme: ${key})`] = result
+  if (isObject(variant) && !variant.value) variant.value = result
+}
+
+const setInverseTheme = (theme, variant, value) => {
+  if (isObject(variant)) {
+    theme.variants.inverse.value = setThemeValue(variant)
+  } else if (variant === true) {
+    const { color, background } = value
+    theme.variants.inverse = {
+      value: {
+        color: background,
+        background: color
+      }
+    }
   }
 }
 
+const goThroughHelpers = (theme, value) => {
+  const { helpers } = theme
+  if (!helpers) return
+  const keys = Object.keys(helpers)
+  keys.map(key => {
+    const helper = helpers[key]
+    if (isString(helper)) helpers[key] = CONFIG.THEME[helper]
+    else getThemeValue(helpers[key])
+    return theme
+  })
+  return theme
+}
+
+const goThroughVariants = (theme, value) => {
+  const { variants } = theme
+  if (!variants) return
+  const keys = Object.keys(variants)
+  keys.map(key => {
+    const variant = variants[key]
+    if (key === 'dark' || key === 'light') setPrefersScheme(theme, key, variant, value)
+    if (key === 'inverse') setInverseTheme(theme, variant, value)
+    return theme
+  })
+  return theme
+}
+
 const setTheme = (val, key) => {
-  const value = {}
-  const { state, theme, helpers, inverse, ...rest } = val
-  const keys = Object.keys(rest)
-  keys.map(key => (value[key] = getColor(val[key])))
+  const { state, variants, helpers } = val
+  const value = setThemeValue(val, key)
 
-  setPrefersScheme(value, theme)
+  goThroughVariants(val, value)
+  goThroughHelpers(val, value)
 
-  return { value }
+  return { value, state, variants, helpers }
 }
 
 const setFont = (factory, value) => {
@@ -94,7 +160,7 @@ export const SETTERS = {
  * @param {String} key Key, or the name of the property
  * @returns {Object} Factory
  */
-const setValue = (FACTORY_NAME, value, key) => {
+export const setValue = (FACTORY_NAME, value, key) => {
   const factoryName = FACTORY_NAME.toLowerCase()
   const result = SETTERS[factoryName](value, key)
   const FACTORY = CONFIG[FACTORY_NAME]
