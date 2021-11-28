@@ -1,5 +1,5 @@
 {
-  "name": "@rackai/symbols",
+  "name": "@symbols/uikit",
   "description": "UI Library built on Scratch and DOMQL",
   "private": false,
   "author": "rackai",
@@ -17,12 +17,10 @@
     "build": "parcel build showcase/index.html --public-url .",
     "deploy": "yarn build && gh-pages -d dist",
     "clean": "rm yarn.lock && rm -rf node_modules && rm -rf dist && rm -rf .cache",
-    "reinstall": "rm yarn.lock && rm -rf node_modules/domql node_modules/scratch && yarn",
+    "reinstall": "rm yarn.lock && rm -rf node_modules/rackai && yarn",
     "bump": "npx np"
   },
-  "dependencies": {
-    "@rackai/scratch": "^0.2.26"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "babel-eslint": "^10.0.3",

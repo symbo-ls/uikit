@@ -6,27 +6,27 @@ import { SquareButton, Shape } from '..'
 import * as Scratch from '@rackai/scratch'
 import { isFunction } from '@rackai/domql/src/utils'
 
-Scratch.set('theme', {
-  name: 'sliderThumb',
-  backgroundColor: Scratch.opacify('#fff', 0.2),
+// TODO: fix this
+Scratch.setValue('THEME', {
+  background: 'white 0.2'
 
-  '&::-webkit-slider-thumb': {
-    background: '#232526',
-    borderColor: Scratch.opacify('#454646', 0.75)
-  },
+  // '&::-webkit-slider-thumb': {
+  //   background: '#232526',
+  //   borderColor: Scratch.opacify('#454646', 0.75)
+  // },
 
-  '&:hover': {
-    '&::-webkit-slider-thumb': {
-      borderColor: Scratch.opacify('#fff', 0.35)
-    }
-  },
+  // '&:hover': {
+  //   '&::-webkit-slider-thumb': {
+  //     borderColor: Scratch.opacify('#fff', 0.35)
+  //   }
+  // },
 
-  '&:focus, &:active': {
-    '&::-webkit-slider-thumb': {
-      borderColor: '#3C6AC0'
-    }
-  }
-})
+  // '&:focus, &:active': {
+  //   '&::-webkit-slider-thumb': {
+  //     borderColor: '#3C6AC0'
+  //   }
+  // }
+}, 'sliderThumb')
 
 export const RangeSlider = {
   style,

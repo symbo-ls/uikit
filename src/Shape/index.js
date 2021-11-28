@@ -1,31 +1,20 @@
 'use strict'
 
-import { THEME, mapSpacing, COLOR, isObjectLike } from '@rackai/scratch'
-import { isObject } from '@rackai/domql/src/utils'
+import { mapSpacing, getTheme, getColor } from '@rackai/scratch'
 
 import style, { shape, depth } from './style'
 
 export const Shape = {
   class: {
     default: style,
-    shape: ({ props }) => shape[props.shape],
-    shapeDirection: ({ props }) => props.shape ? shape[props.shape][props.shapeDirection || 'top'] : null,
-    shapeDirectionColor: ({ props, ...el }) => {
-      return props.shape ? { '&:before': { borderColor: el.class.backgroundColor } } : null
-    },
+    shape: ({ props }) => props.shape && shape[props.shape],
+    shapeDirection: ({ props }) => props.shape && shape[props.shape][props.shapeDirection || 'top'],
+    shapeDirectionColor: ({ props, ...el }) => props.shapeDirection && { '&:before': { borderColor: el.class.backgroundColor } },
     depth: ({ props }) => depth[props.depth],
-    round: ({ props, key, ...el }) => {
-      return mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })
-    },
-    theme: ({ props }) => {
-      const { theme } = props
-      // const [  ] = theme
-      if (isObjectLike(theme) && theme[1]) return THEME[theme[0]][theme[1]]
-      if (isObject(theme)) return theme
-      else return THEME[theme]
-    },
-    color: ({ props }) => COLOR[props.color] ? { color: COLOR[props.color].value } : null,
-    background: ({ props }) => COLOR[props.background] ? { backgroundColor: COLOR[props.background].value } : null
+    round: ({ props, key, ...el }) => props.round && (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })),
+    theme: ({ props }) => props.theme && getTheme(props.theme),
+    color: ({ props }) => props.color && ({ color: getColor(props.color) }),
+    background: ({ props }) => props.background && ({ backgroundColor: getColor(props.background) })
   }
 
   // mode: {
