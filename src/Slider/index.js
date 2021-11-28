@@ -3,7 +3,7 @@
 import style from './style'
 
 import { SquareButton, Shape } from '..'
-import * as Scratch from '@rackai/scratch'
+import * as Scratch from '@symbols/scratch'
 import { isFunction } from '@rackai/domql/src/utils'
 
 // TODO: fix this

@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapSpacing, getTheme, getColor } from '@rackai/scratch'
+import { mapSpacing, getTheme, getColor } from '@symbols/scratch'
 
 import style, { shape, depth } from './style'
 

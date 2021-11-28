@@ -1,7 +1,6 @@
 'use strict'
 
 import './styles.js'
-export * from '@rackai/scratch'
 
 export * from './styles'
 

@@ -1,6 +1,6 @@
 'use strict'
 
-import { set } from '@rackai/scratch'
+import { set } from '@symbols/scratch'
 
 set('color', {
   black: '#000',
