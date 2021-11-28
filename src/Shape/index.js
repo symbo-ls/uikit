@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapSpacing, getTheme, getColor } from '@symbols/scratch'
+import { mapSpacing, getTheme, getColor, THEME, COLOR } from '@symbols/scratch'
 
 import style, { shape, depth } from './style'
 
@@ -12,7 +12,13 @@ export const Shape = {
     shapeDirectionColor: ({ props, ...el }) => props.shapeDirection && { '&:before': { borderColor: el.class.backgroundColor } },
     depth: ({ props }) => depth[props.depth],
     round: ({ props, key, ...el }) => props.round && (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })),
-    theme: ({ props }) => props.theme && getTheme(props.theme),
+    theme: ({ props }) => {
+      // console.warn(props.theme)
+      // console.log(getTheme(props.theme))
+      // console.log(THEME.document)
+      // console.log(COLOR)
+      return getTheme(props.theme)
+    },
     color: ({ props }) => props.color && ({ color: getColor(props.color) }),
     background: ({ props }) => props.background && ({ backgroundColor: getColor(props.background) })
   }
