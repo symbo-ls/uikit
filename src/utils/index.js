@@ -27,7 +27,7 @@ export const merge = (obj, original) => {
   return obj
 }
 
-export const colorStringToRGBAArray = color => {
+export const colorStringToRgbaArray = color => {
   if (color === '') return
   if (color.toLowerCase() === 'transparent') return [0, 0, 0, 0]
 
@@ -69,17 +69,30 @@ export const mixTwoColors = (colorA, colorB, range = 0.5) => {
   return mixTwoRGBA(colorA, colorB, range)
 }
 
-export const hexToRGB = (hex, alpha = 1) => {
+export const hexToRgb = (hex, alpha = 1) => {
   const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16))
   return `rgb(${r},${g},${b})`
 }
 
-export const hexToRGBA = (hex, alpha = 1) => {
+export const hexToRgbArray = (hex, alpha = 1) => {
+  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16))
+  return [r, g, b]
+}
+
+export const rgbToHex = (r, g, b) => {
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+}
+
+export const rgbArrayToHex = ([r, g, b]) => {
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+}
+
+export const hexToRgba = (hex, alpha = 1) => {
   const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16))
   return `rgba(${r},${g},${b},${alpha})`
 }
 
-export const mixTwoRGB = (colorA, colorB, range = 0.5) => {
+export const mixTwoRgb = (colorA, colorB, range = 0.5) => {
   const arr = []
   for (let i = 0; i < 3; i++) {
     arr[i] = Math.round(
@@ -91,7 +104,28 @@ export const mixTwoRGB = (colorA, colorB, range = 0.5) => {
   return `rgb(${arr})`
 }
 
-export const mixTwoRGBA = (colorA, colorB, range = 0.5) => {
+export const getColorShade = (col, amt) => {
+  const num = parseInt(col, 16)
+
+  let r = (num >> 16) + amt
+
+  if (r > 255) r = 255
+  else if (r < 0) r = 0
+
+  let b = ((num >> 8) & 0x00FF) + amt
+
+  if (b > 255) b = 255
+  else if (b < 0) b = 0
+
+  let g = (num & 0x0000FF) + amt
+
+  if (g > 255) g = 255
+  else if (g < 0) g = 0
+
+  return (g | (b << 8) | (r << 16)).toString(16)
+}
+
+export const mixTwoRgba = (colorA, colorB, range = 0.5) => {
   const arr = []
   for (let i = 0; i < 4; i++) {
     const round = (i === 3) ? x => x : Math.round
@@ -105,7 +139,7 @@ export const mixTwoRGBA = (colorA, colorB, range = 0.5) => {
 }
 
 export const opacify = (color, opacity) => {
-  const arr = colorStringToRGBAArray(color)
+  const arr = colorStringToRgbaArray(color)
   if (!arr) return console.warn(color + 'color is not rgba')
   arr[3] = opacity
   return `rgba(${arr})`

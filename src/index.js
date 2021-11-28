@@ -7,6 +7,4 @@ export * from './utils'
 export * from './config'
 export * from './reset'
 
-window.CONFIG = CONFIG
-
 export default CONFIG

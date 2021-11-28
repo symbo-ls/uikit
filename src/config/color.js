@@ -6,8 +6,5 @@ var proto = { // eslint-disable-line
   themes: {}
 }
 
-export const COLOR = {
-  // transparent: { value: 'transparent' }
-}
-
+export const COLOR = {}
 export const GRADIENT = {}

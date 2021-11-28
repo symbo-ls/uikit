@@ -10,12 +10,7 @@ const themeA = { // eslint-disable-line no-unused-vars
   inverse: {} // schemeAInverse
 }
 
-export const THEME = {
-  document: {
-    color: 'white',
-    background: 'black'
-  }
-}
+export const THEME = {}
 
 export const returnSubThemeOrDefault = (orig, theme) => {
   if (!orig) return

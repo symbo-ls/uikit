@@ -1,12 +1,11 @@
 'use strict'
 
-import { FONT, FONT_FAMILY_TYPES } from '../config'
-import { isArray, colorStringToRGBAArray, isObject, isString, isObjectLike } from '../utils'
-
 import CONFIG, { CSS_VARS } from '../factory'
+import { FONT, FONT_FAMILY_TYPES } from '../config'
+import { isArray, colorStringToRgbaArray, isObject, isString, isObjectLike, getColorShade, hexToRgbArray, rgbArrayToHex } from '../utils'
 
 const setColor = (val, key) => {
-  const [r, g, b, a = 1] = colorStringToRGBAArray(val.value || val)
+  const [r, g, b, a = 1] = colorStringToRgbaArray(val.value || val)
   const alpha = parseFloat(a.toFixed(2))
   const CSSVar = `--color-${key}`
   const rgb = `${r}, ${g}, ${b}`
@@ -31,22 +30,41 @@ const setGradient = (val, key) => {
 export const getColor = value => {
   if (!isString(value)) return console.warn(value, '- type for color is not valid')
 
-  const [name, modifier] = isArray(value) ? value : value.split(' ')
+  const [name, alpha, tone] = isArray(value) ? value : value.split(' ')
   const { COLOR, GRADIENT } = CONFIG
   const val = COLOR[name] || GRADIENT[name]
 
-  if (!val) return console.warn('Can\'t find color', name)
+  if (!val) {
+    console.warn('Can\'t find color', name)
+    return value
+  }
 
-  if (modifier && val.rgb) return `rgba(${val.rgb}, ${modifier})`
-  // if (modifier) return `rgba(var(${val.var}), ${modifier})`
-  else return val.value
+  let rgb = val.rgb
+
+  // TODO: support variables
+  // if (alpha) return `rgba(var(${val[shade || ''].var}), ${modifier})`
+
+  if (rgb) {
+    const toHex = rgbArrayToHex(rgb.split(', '))
+    if (tone) {
+      if (!val[tone]) {
+        rgb = hexToRgbArray(getColorShade(toHex, tone)).join(', ')
+        val[tone] = { rgb, var: `${val.var}-${tone}` }
+      } else rgb = val[tone].rgb
+    }
+    if (alpha) return `rgba(${val.rgb}, ${alpha})`
+  } else return val.value
 }
 
 const setThemeValue = theme => {
   const value = {}
   const { state, variants, helpers, ...rest } = theme
   const keys = Object.keys(rest)
-  keys.map(key => (value[key] = getColor(theme[key])))
+  keys.map(key => {
+    const conditions = ['color', 'Color', 'background', 'border']
+    const isColor = conditions.some(k => key.includes(k))
+    return (value[key] = isColor ? getColor(theme[key]) : theme[key])
+  })
   return value
 }
 
