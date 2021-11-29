@@ -39,20 +39,20 @@ export const getColor = value => {
     return value
   }
 
-  let rgb = val.rgb
-
   // TODO: support variables
   // if (alpha) return `rgba(var(${val[shade || ''].var}), ${modifier})`
 
+  let rgb = val.rgb
   if (rgb) {
-    const toHex = rgbArrayToHex(rgb.split(', '))
     if (tone) {
       if (!val[tone]) {
+        const toHex = rgbArrayToHex(rgb.split(', '))
         rgb = hexToRgbArray(getColorShade(toHex, tone)).join(', ')
         val[tone] = { rgb, var: `${val.var}-${tone}` }
       } else rgb = val[tone].rgb
     }
     if (alpha) return `rgba(${val.rgb}, ${alpha})`
+    return `rgb(${rgb})`
   } else return val.value
 }
 
@@ -144,30 +144,33 @@ const setTheme = (val, key) => {
 }
 
 const setFont = (factory, value) => {
-  const { name, fontWeight, ...rest } = value
-  if (factory[name]) {
-    factory[name][fontWeight || 400] = rest
-  } else {
-    factory[name] = {
-      [fontWeight || 400]: rest
-    }
-  }
+  console.log(factory, value)
+  // const { name, fontWeight, ...rest } = value
+  // if (factory[name]) {
+  //   factory[name][fontWeight || 400] = rest
+  // } else {
+  //   factory[name] = {
+  //     [fontWeight || 400]: rest
+  //   }
+  // }
+  return { var: factory }
 }
 
 const setFontFamily = (factory, value) => {
-  const { name, type } = value
-  let { family } = value
-  if (!family) family = Object.keys(FONT)
-  if (isArray(family)) family = family.join(', ')
-  factory[name] = `${family}, ${FONT_FAMILY_TYPES[type || 'serif']}`
-  if (!factory.default) factory.default = name
+  // const { name, type } = value
+  // let { family } = value
+  // if (!family) family = Object.keys(FONT)
+  // if (isArray(family)) family = family.join(', ')
+  // factory[name] = `${family}, ${FONT_FAMILY_TYPES[type || 'serif']}`
+  // if (!factory.default) factory.default = name
+  return { var: factory }
 }
 
 export const SETTERS = {
   color: setColor,
   gradient: setGradient,
   font: setFont,
-  'font-family': setFontFamily,
+  font_family: setFontFamily,
   theme: setTheme
 }
 
@@ -180,8 +183,8 @@ export const SETTERS = {
  */
 export const setValue = (FACTORY_NAME, value, key) => {
   const factoryName = FACTORY_NAME.toLowerCase()
-  const result = SETTERS[factoryName](value, key)
   const FACTORY = CONFIG[FACTORY_NAME]
+  const result = SETTERS[factoryName](value, key)
   FACTORY[key] = result
   CSS_VARS[result.var] = result.value
   return FACTORY
