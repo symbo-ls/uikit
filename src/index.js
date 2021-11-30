@@ -2,6 +2,7 @@
 
 import CONFIG from './factory'
 
+export * from './factory'
 export * from './methods'
 export * from './utils'
 export * from './config'

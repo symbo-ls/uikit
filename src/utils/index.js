@@ -64,9 +64,9 @@ export const colorStringToRgbaArray = color => {
 }
 
 export const mixTwoColors = (colorA, colorB, range = 0.5) => {
-  colorA = colorStringToRGBAArray(colorA)
-  colorB = colorStringToRGBAArray(colorB)
-  return mixTwoRGBA(colorA, colorB, range)
+  colorA = colorStringToRgbaArray(colorA)
+  colorB = colorStringToRgbaArray(colorB)
+  return mixTwoRgba(colorA, colorB, range)
 }
 
 export const hexToRgb = (hex, alpha = 1) => {
@@ -145,9 +145,10 @@ export const opacify = (color, opacity) => {
   return `rgba(${arr})`
 }
 
-export const getDefaultOrFirstKey = Library => {
-  if (Library.default) return Library[Library.default]
-  return Library[Object.keys(Library)[0]]
+export const getDefaultOrFirstKey = (LIBRARY, key) => {
+  if (LIBRARY[key]) return LIBRARY[key].value
+  if (LIBRARY.default) return LIBRARY[LIBRARY.default].value
+  return LIBRARY[Object.keys(LIBRARY)[0]].value
 }
 
 export const getFontFormat = url => url.split(/[#?]/)[0].split('.').pop().trim()
@@ -160,20 +161,16 @@ export const setCustomFont = (name, weight, url) => `@font-face {
 }`
 // src: url('${url}') format('${getFontFormat(url)}');
 
-export const getFontFace = Library => {
+export const getFontFace = LIBRARY => {
   let fonts = ''
-  for (const name in Library) {
-    const font = Library[name]
+  for (const name in LIBRARY) {
+    const font = LIBRARY[name]
     for (const weight in font) {
       const { url } = font[weight]
       fonts += `\n${setCustomFont(name, weight, url)}`
     }
   }
   return fonts
-}
-
-export const getFontFamily = Library => {
-  return getDefaultOrFirstKey(Library)
 }
 
 export const numToLetterMap = {

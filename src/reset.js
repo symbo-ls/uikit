@@ -1,7 +1,6 @@
 'use strict'
 
-import { TYPOGRAPHY, DOCUMENT, UNIT, FONT_FAMILY } from './config'
-import { getFontFamily } from './utils'
+import { TYPOGRAPHY, DOCUMENT, UNIT } from './config'
 
 export const RESET = {
   html: {
@@ -14,12 +13,10 @@ export const RESET = {
     margin: '0',
     WebkitFontSmoothing: 'antialiased',
 
-    fontFamily: FONT_FAMILY[FONT_FAMILY.default],
+    fontFamily: DOCUMENT.fontFamily,
 
     fontSize: TYPOGRAPHY.default / DOCUMENT.fontSize + UNIT.default,
     lineHeight: DOCUMENT.lineHeight
-    // color: DOCUMENT.theme.color,
-    // background: DOCUMENT.theme.background
   },
   body: {
     boxSizing: 'border-box',

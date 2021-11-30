@@ -1,8 +1,18 @@
 'use strict'
 
 import CONFIG, { CSS_VARS } from '../factory'
-import { FONT, FONT_FAMILY_TYPES } from '../config'
-import { isArray, colorStringToRgbaArray, isObject, isString, isObjectLike, getColorShade, hexToRgbArray, rgbArrayToHex } from '../utils'
+// import { FONT, FONT_FAMILY_TYPES } from '../config'
+import {
+  isArray,
+  colorStringToRgbaArray,
+  isObject,
+  isString,
+  isObjectLike,
+  getColorShade,
+  hexToRgbArray,
+  rgbArrayToHex,
+  getDefaultOrFirstKey
+} from '../utils'
 
 const setColor = (val, key) => {
   const [r, g, b, a = 1] = colorStringToRgbaArray(val.value || val)
@@ -77,7 +87,8 @@ const getThemeValue = theme => {
 export const getTheme = value => {
   const { THEME } = CONFIG
   if (isObjectLike(value) && value[1]) {
-    const [themeName, subThemeName] = value
+    const themeName = value[0]
+    const subThemeName = value[1]
     const { helpers, variants } = THEME[themeName]
     if (variants && variants[subThemeName]) return getThemeValue(variants[subThemeName])
     if (helpers && helpers[subThemeName]) return getThemeValue(helpers[subThemeName])
@@ -136,15 +147,15 @@ const goThroughVariants = (theme, value) => {
 const setTheme = (val, key) => {
   const { state, variants, helpers } = val
   const value = setThemeValue(val, key)
+  const CSSvar = `--theme-${key}`
 
   goThroughVariants(val, value)
   goThroughHelpers(val, value)
 
-  return { value, state, variants, helpers }
+  return { var: CSSvar, value, state, variants, helpers }
 }
 
 const setFont = (factory, value) => {
-  console.log(factory, value)
   // const { name, fontWeight, ...rest } = value
   // if (factory[name]) {
   //   factory[name][fontWeight || 400] = rest
@@ -156,14 +167,18 @@ const setFont = (factory, value) => {
   return { var: factory }
 }
 
-const setFontFamily = (factory, value) => {
-  // const { name, type } = value
-  // let { family } = value
-  // if (!family) family = Object.keys(FONT)
-  // if (isArray(family)) family = family.join(', ')
-  // factory[name] = `${family}, ${FONT_FAMILY_TYPES[type || 'serif']}`
-  // if (!factory.default) factory.default = name
-  return { var: factory }
+export const getFontFamily = (LIBRARY, key) => {
+  return getDefaultOrFirstKey(LIBRARY, key)
+}
+
+const setFontFamily = (val, key) => {
+  const { FONT_FAMILY, FONT_FAMILY_TYPES } = CONFIG
+  const { family, type } = val
+  if (val.default) FONT_FAMILY.default = key
+
+  const CSSvar = `--font-family-${key}`
+  const value = `${family.join(', ')}, ${FONT_FAMILY_TYPES[type]}`
+  return { var: CSSvar, value, family, type }
 }
 
 export const SETTERS = {
