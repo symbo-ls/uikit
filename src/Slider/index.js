@@ -4,7 +4,7 @@ import style from './style'
 
 import { SquareButton, Shape } from '..'
 import * as Scratch from '@symbols/scratch'
-import { isFunction } from '@rackai/domql/src/utils'
+import { isFunction } from '@symbols/domql/src/utils'
 
 // TODO: fix this
 Scratch.setValue('THEME', {
