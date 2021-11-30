@@ -1,6 +1,6 @@
 'use strict'
 
-import { TYPOGRAPHY, DOCUMENT, UNIT } from './config'
+import * as CONFIG from './config'
 
 export const RESET = {
   html: {
@@ -13,17 +13,18 @@ export const RESET = {
     margin: '0',
     WebkitFontSmoothing: 'antialiased',
 
-    fontFamily: DOCUMENT.fontFamily,
+    fontFamily: CONFIG.DOCUMENT.fontFamily,
 
-    fontSize: TYPOGRAPHY.default / DOCUMENT.fontSize + UNIT.default,
-    lineHeight: DOCUMENT.lineHeight
+    fontSize: CONFIG.TYPOGRAPHY.default / CONFIG.DOCUMENT.fontSize + CONFIG.UNIT.default,
+    lineHeight: CONFIG.DOCUMENT.lineHeight
   },
+
   body: {
     boxSizing: 'border-box',
     height: '100%'
   },
 
-  ...TYPOGRAPHY.styles,
+  ...CONFIG.TYPOGRAPHY.styles,
 
   // form elements
   fieldset: {

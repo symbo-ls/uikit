@@ -157,20 +157,23 @@ export const setCustomFont = (name, weight, url) => `@font-face {
   font-family: '${name}';
   font-style: normal;
   font-weight: ${weight};
-  src: url('${url}') format('${/(?:\.([^.]+))?$/.exec(url)[1]}');
+  src: url('${url}') format('${getFontFormat(url)}');
 }`
 // src: url('${url}') format('${getFontFormat(url)}');
 
+export const getFontFaceEach = (name, weightsObject) => {
+  const keys = Object.keys(weightsObject)
+  const weightsJoint = keys.map(key => {
+    const { fontWeight, url } = weightsObject[key]
+    return setCustomFont(name, fontWeight, url)
+  })
+  return weightsJoint.join('\n')
+}
+
 export const getFontFace = LIBRARY => {
-  let fonts = ''
-  for (const name in LIBRARY) {
-    const font = LIBRARY[name]
-    for (const weight in font) {
-      const { url } = font[weight]
-      fonts += `\n${setCustomFont(name, weight, url)}`
-    }
-  }
-  return fonts
+  const keys = Object.keys(LIBRARY)
+  const fontsJoint = keys.map(key => getFontFaceEach(key, LIBRARY[key].value))
+  return fontsJoint.join('\n')
 }
 
 export const numToLetterMap = {

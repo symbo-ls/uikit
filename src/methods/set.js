@@ -11,7 +11,8 @@ import {
   getColorShade,
   hexToRgbArray,
   rgbArrayToHex,
-  getDefaultOrFirstKey
+  getDefaultOrFirstKey,
+  getFontFaceEach
 } from '../utils'
 
 const setColor = (val, key) => {
@@ -155,16 +156,10 @@ const setTheme = (val, key) => {
   return { var: CSSvar, value, state, variants, helpers }
 }
 
-const setFont = (factory, value) => {
-  // const { name, fontWeight, ...rest } = value
-  // if (factory[name]) {
-  //   factory[name][fontWeight || 400] = rest
-  // } else {
-  //   factory[name] = {
-  //     [fontWeight || 400]: rest
-  //   }
-  // }
-  return { var: factory }
+const setFont = (val, key) => {
+  const CSSvar = `--font-${key}`
+  const fontFace = getFontFaceEach(key, val)
+  return { var: CSSvar, value: val, fontFace }
 }
 
 export const getFontFamily = (LIBRARY, key) => {
@@ -173,12 +168,12 @@ export const getFontFamily = (LIBRARY, key) => {
 
 const setFontFamily = (val, key) => {
   const { FONT_FAMILY, FONT_FAMILY_TYPES } = CONFIG
-  const { family, type } = val
+  const { value, type } = val
   if (val.default) FONT_FAMILY.default = key
 
   const CSSvar = `--font-family-${key}`
-  const value = `${family.join(', ')}, ${FONT_FAMILY_TYPES[type]}`
-  return { var: CSSvar, value, family, type }
+  const str = `${value.join(', ')}, ${FONT_FAMILY_TYPES[type]}`
+  return { var: CSSvar, value: str, arr: value, type }
 }
 
 export const SETTERS = {
@@ -204,15 +199,6 @@ export const setValue = (FACTORY_NAME, value, key) => {
   CSS_VARS[result.var] = result.value
   return FACTORY
 }
-
-// export const setColor =
-
-// const getColor = value => {
-//   const [ key, param ] = isArray(value) ? value : value.split(' ')
-//   const color = COLOR[`--${key}`]
-//   if (param) opacify
-//   COLOR
-// }
 
 export const setEach = (factoryName, props) => {
   const FACTORY_NAME = factoryName.toUpperCase()
