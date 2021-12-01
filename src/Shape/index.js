@@ -14,6 +14,7 @@ export const Shape = {
     round: ({ props, key, ...el }) => props.round && (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })),
     theme: ({ props }) => props.theme && getTheme(props.theme),
     color: ({ props }) => props.color && ({ color: getColor(props.color) }),
+    border: ({ props }) => props.border && ({ border: getColor(props.border) }),
     background: ({ props }) => props.background && ({ backgroundColor: getColor(props.background) })
   }
 
