@@ -1,0 +1,12 @@
+{
+  "name": "@symbo.ls/react-button",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "nikoloza <nika.tomadze@gmail.com>",
+  "homepage": "https://github.com/symbo-ls/symbols#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ]
+}

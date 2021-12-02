@@ -20,11 +20,11 @@
     "reinstall": "rm yarn.lock && rm -rf node_modules/rackai && yarn",
     "bump": "npx np"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "babel-eslint": "^10.0.3",
     "emotion": "^10.0.27",
+    "lerna": "^4.0.0",
     "np": "^7.2.0",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-svg-sprite": "^1.4.1",

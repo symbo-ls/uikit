@@ -1,0 +1,6 @@
+{
+  "name": "datepicker",
+  "version": "1.0.0",
+  "main": "@symbo.ls/index.js",
+  "license": "MIT"
+}

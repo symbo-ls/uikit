@@ -1,7 +1,5 @@
 'use strict'
 
-import './styles.js'
-
 export * from './styles'
 
 export * from './Text'
