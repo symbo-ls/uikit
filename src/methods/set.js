@@ -145,11 +145,30 @@ const goThroughVariants = (theme, value) => {
   return theme
 }
 
+const setPseudo = (theme, key, variant, themeValue) => {
+  const result = getTheme(variant)
+  themeValue[`&:${key}`] = result
+  if (isObject(variant) && !variant.value) variant.value = result
+}
+
+const goThroughInteractiveStates = (theme, value) => {
+  const { state } = theme
+  if (!state) return
+  const keys = Object.keys(state)
+  keys.map(key => {
+    const variant = state[key]
+    setPseudo(theme, key, variant, value)
+    return theme
+  })
+  return theme
+}
+
 const setTheme = (val, key) => {
   const { state, variants, helpers } = val
   const value = setThemeValue(val, key)
   const CSSvar = `--theme-${key}`
 
+  goThroughInteractiveStates(val, value)
   goThroughVariants(val, value)
   goThroughHelpers(val, value)
 
