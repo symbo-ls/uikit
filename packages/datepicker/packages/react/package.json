@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/react-datepicker",
-  "version": "0.0.2",
+  "version": "0.4.0",
   "main": "index.js",
   "license": "MIT",
   "gitHead": "d24315993386338af456a720afccf6f4e12645b8"
