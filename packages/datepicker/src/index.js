@@ -2,8 +2,8 @@
 
 import style from './style'
 
-import Icon from '../Icon'
-import Shape from '../Shape'
+import Icon from '../../icon/src'
+import Shape from '../../shape/src'
 import { Block } from '../Block'
 
 export const DatePicker = {

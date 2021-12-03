@@ -1,6 +1,6 @@
 {
-  "name": "dropdown",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@symbo.ls/dropdown",
+  "version": "0.0.1",
+  "main": "src/index.js",
   "license": "MIT"
 }

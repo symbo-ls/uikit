@@ -1,6 +1,6 @@
 {
-  "name": "shape",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@symbo.ls/shape",
+  "version": "0.0.1",
+  "main": "src/index.js",
   "license": "MIT"
 }

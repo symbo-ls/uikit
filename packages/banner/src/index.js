@@ -2,7 +2,7 @@
 
 import { Shape, Img, Icon } from '../'
 
-import { UserBundle } from '../User'
+import { UserBundle } from '../../user/src'
 
 import { styleParentMode } from './style'
 

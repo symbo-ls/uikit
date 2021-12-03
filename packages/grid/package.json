@@ -1,6 +1,6 @@
 {
-  "name": "grid",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "@symbo.ls/grid",
+  "version": "0.0.1",
+  "main": "src/index.js",
   "license": "MIT"
 }
