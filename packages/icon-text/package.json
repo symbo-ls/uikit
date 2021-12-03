@@ -8,5 +8,6 @@
     "@symbo.ls/direction": "^0.4.2",
     "@symbo.ls/icon": "^0.4.2",
     "@symbo.ls/text": "^0.4.2"
-  }
+  },
+  "gitHead": "f9ff8cad170955f2f2c63dbf530d04b76f2238e0"
 }

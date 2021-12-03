@@ -2,5 +2,6 @@
   "name": "@symbo.ls/react-grid-layouts",
   "version": "0.4.2",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "f9ff8cad170955f2f2c63dbf530d04b76f2238e0"
 }
