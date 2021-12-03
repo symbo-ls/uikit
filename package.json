@@ -48,7 +48,9 @@
     "deploy": "yarn build && gh-pages -d dist",
     "clean": "rm yarn.lock && rm -rf node_modules && rm -rf dist && rm -rf .cache",
     "reinstall": "rm yarn.lock && rm -rf node_modules/rackai && yarn",
-    "publish-all": "lerna publish && npm version patch && npm publish"
+    "vpatch": "npm version patch && npm publish",
+    "vpush": "git add . && git commit -am 'version update' && git push",
+    "publish-all": "lerna publish && yarn vpatch && yarn vpush"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -63,8 +65,5 @@
   "standard": {
     "parser": "babel-eslint"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }
