@@ -1,6 +1,6 @@
 'use strict'
-import { Block } from '../Block'
-import { Shape } from '../Shape'
+import { Block } from '@symbo-ls/block'
+import { Shape } from '@symbo-ls/shape'
 import { Text } from '../Text'
 
 export const Label = {

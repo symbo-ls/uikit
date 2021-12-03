@@ -3,7 +3,7 @@
 import style from './style'
 
 import { Icon, Text, Direction, Block } from '../'
-import { } from '../Flex'
+import { } from '@symbo-ls/flex'
 
 export const IconText = {
   style,

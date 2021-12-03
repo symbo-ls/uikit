@@ -1,6 +1,6 @@
 'use strict'
 
-import Shape from '../Shape'
+import Shape from '@symbo-ls/shape'
 import style from './style'
 
 export const Select = {

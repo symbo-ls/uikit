@@ -1,5 +1,5 @@
 'use strict'
-import Shape from '../Shape'
+import Shape from '@symbo-ls/shape'
 
 export const Pills = {
   style: {

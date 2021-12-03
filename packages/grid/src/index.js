@@ -1,7 +1,7 @@
 'use strict'
 
 import style from './style'
-import { mapBasedOnRatio } from '../Block'
+import { mapBasedOnRatio } from '@symbo-ls/block'
 
 export const Grid = {
   style,
