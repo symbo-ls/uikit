@@ -1,6 +1,11 @@
 'use strict'
 
-import { Shape, Block, IconText, Direction, Flex, Text } from '../'
+import { Shape } from '@symbo.ls/shape'
+import { Block } from '@symbo.ls/block'
+import { IconText } from '@symbo.ls/icon-text'
+import { Direction } from '@symbo.ls/direction'
+import { Flex } from '@symbo.ls/flex'
+import { Text } from '@symbo.ls/text'
 
 export const Notification = {
   style: { cursor: 'pointer' },

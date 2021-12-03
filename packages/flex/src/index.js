@@ -1,7 +1,8 @@
 'use strict'
 
+import { mapBasedOnRatio } from '@symbols/scratch'
+
 import style from './style'
-import { mapBasedOnRatio } from '@symbo-ls/block'
 
 export const Flex = {
   style,

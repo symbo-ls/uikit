@@ -2,7 +2,7 @@
 
 import style from './style'
 
-import { SVG } from '..'
+import { SVG } from '@symbo.ls/svg'
 
 export const Icon = {
   proto: SVG,

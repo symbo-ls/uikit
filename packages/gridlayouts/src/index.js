@@ -1,10 +1,10 @@
 'use strict'
 
-import { Button, Link } from '..'
+import { Link } from '@symbo.ls/link'
 
 import { styleGrid, styleGrid2 } from './style'
 
-const componentLink = {
+const componentLink = { // eslint-disable-line
   proto: Link,
   attr: {
     href: '#'

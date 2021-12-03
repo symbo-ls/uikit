@@ -1,6 +1,8 @@
 'use strict'
 
-import { Shape, Block } from '..'
+import { Shape } from '@symbo.ls/shape'
+import { Block } from '@symbo.ls/block'
+
 import { styleUser, styleUserBundle } from './style'
 
 export const User = {

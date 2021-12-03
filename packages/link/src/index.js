@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape } from '..'
+import { Shape } from '@symbo.ls/shape'
 
 export const Link = {
   proto: [Shape],

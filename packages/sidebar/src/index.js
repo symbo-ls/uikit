@@ -1,5 +1,7 @@
 'use strict'
-import { Icon, Link } from '../'
+
+import { Icon } from '@symbo.ls/icon'
+import { Link } from '@symbo.ls/link'
 
 const MenuItem = {
   proto: Link,

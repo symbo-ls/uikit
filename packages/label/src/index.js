@@ -1,7 +1,8 @@
 'use strict'
+
 import { Block } from '@symbo-ls/block'
 import { Shape } from '@symbo-ls/shape'
-import { Text } from '../Text'
+import { Text } from '@symbo-ls/text'
 
 export const Label = {
   proto: [Shape, Block, Text],

@@ -1,6 +1,8 @@
 'use strict'
 
-import { IconText, Input } from '../'
+import { IconText } from '@symbo.ls/icon-text'
+import { Input } from '@symbo.ls/input'
+
 import style from './style'
 
 export const Field = {

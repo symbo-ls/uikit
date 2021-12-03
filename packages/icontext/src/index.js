@@ -2,8 +2,10 @@
 
 import style from './style'
 
-import { Icon, Text, Direction, Block } from '../'
-import { } from '@symbo-ls/flex'
+import { Block } from '@symbo.ls/block'
+import { Icon } from '@symbo.ls/icon'
+import { Direction } from '@symbo.ls/direction'
+import { Text } from '@symbo.ls/text'
 
 export const IconText = {
   style,

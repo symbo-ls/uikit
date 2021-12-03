@@ -1,8 +1,8 @@
 'use strict'
 
-import { Shape, Img, Icon } from '../'
-
-import { UserBundle } from '../../user/src'
+import { Shape } from '@symbo.ls/shape'
+import { Icon } from '@symbo.ls/icon'
+import { UserBundle } from '@symbo.ls/user'
 
 import { styleParentMode } from './style'
 
