@@ -2,5 +2,6 @@
   "name": "@symbo.ls/react-text",
   "version": "0.0.1",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "d24315993386338af456a720afccf6f4e12645b8"
 }
