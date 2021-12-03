@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/sidebar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.js",
   "license": "MIT",
   "gitHead": "d24315993386338af456a720afccf6f4e12645b8"
