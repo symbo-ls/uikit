@@ -1,13 +1,13 @@
 {
   "name": "@symbo.ls/notification",
-  "version": "0.4.3",
+  "version": "0.4.14",
   "main": "src/index.js",
   "license": "MIT",
   "gitHead": "f9ff8cad170955f2f2c63dbf530d04b76f2238e0",
   "dependencies": {
     "@symbo.ls/block": "^0.4.2",
     "@symbo.ls/direction": "^0.4.2",
-    "@symbo.ls/flex": "^0.4.2",
+    "@symbo.ls/flex": "^0.4.14",
     "@symbo.ls/icon-text": "^0.4.2",
     "@symbo.ls/shape": "^0.4.2",
     "@symbo.ls/text": "^0.4.2"
