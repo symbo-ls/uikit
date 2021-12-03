@@ -1,8 +1,8 @@
 'use strict'
 
-import { Shape } from '@symbo-ls/shape'
-import { Position } from '@symbo-ls/position'
-import { Block } from '@symbo-ls/block'
+import { Shape } from '@symbo.ls/shape'
+import { Position } from '@symbo.ls/position'
+import { Block } from '@symbo.ls/block'
 
 export const Box = {
   proto: [Shape, Position, Block]

@@ -2,5 +2,11 @@
   "name": "@symbo.ls/icon-text",
   "version": "0.4.0",
   "main": "src/index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@symbo.ls/block": "^0.4.0",
+    "@symbo.ls/direction": "^0.4.0",
+    "@symbo.ls/icon": "^0.4.1",
+    "@symbo.ls/text": "^0.4.0"
+  }
 }

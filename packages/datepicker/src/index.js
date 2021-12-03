@@ -2,9 +2,9 @@
 
 import style from './style'
 
-import { Icon } from '@symbo-ls/icon'
-import { Shape } from '@symbo-ls/shape'
-import { Block } from '@symbo-ls/block'
+import { Icon } from '@symbo.ls/icon'
+import { Shape } from '@symbo.ls/shape'
+import { Block } from '@symbo.ls/block'
 
 export const DatePicker = {
   style,

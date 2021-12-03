@@ -2,7 +2,9 @@
 
 import style from './style'
 
-import { SquareButton, Shape } from '..'
+import { SquareButton } from '@symbo.ls/button'
+import { Shape } from '@symbo.ls/shape'
+
 import * as Scratch from '@symbols/scratch'
 import { isFunction } from '@domql/utils'
 

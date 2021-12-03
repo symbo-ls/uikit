@@ -1,9 +1,9 @@
 'use strict'
 
-import { Shape } from '@symbo-ls/shape'
-import { IconText } from '@symbo-ls/icon-text'
-import { Block } from '@symbo-ls/block'
-import { Direction } from '@symbo-ls/direction'
+import { Shape } from '@symbo.ls/shape'
+import { IconText } from '@symbo.ls/icon-text'
+import { Block } from '@symbo.ls/block'
+import { Direction } from '@symbo.ls/direction'
 
 import style from './style'
 

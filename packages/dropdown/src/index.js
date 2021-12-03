@@ -1,7 +1,7 @@
 'use strict'
 
-import { IconText } from '@symbo-ls/icon-text'
-import { Shape } from '@symbo-ls/shape'
+import { IconText } from '@symbo.ls/icon-text'
+import { Shape } from '@symbo.ls/shape'
 import { styleRow, styleRowActive, styleDropDown } from './style'
 
 export const DropdownList = {

@@ -3,5 +3,11 @@
   "version": "0.4.1",
   "main": "src/index.js",
   "license": "MIT",
-  "gitHead": "d24315993386338af456a720afccf6f4e12645b8"
+  "gitHead": "d24315993386338af456a720afccf6f4e12645b8",
+  "dependencies": {
+    "@symbo.ls/block": "^0.4.0",
+    "@symbo.ls/button": "^0.4.1",
+    "@symbo.ls/flex": "^0.4.1",
+    "@symbo.ls/shape": "^0.4.1"
+  }
 }
