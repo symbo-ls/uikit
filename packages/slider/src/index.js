@@ -5,7 +5,7 @@ import style from './style'
 import { SquareButton } from '@symbo.ls/button'
 import { Shape } from '@symbo.ls/shape'
 
-import * as Scratch from '@symbols/scratch'
+import * as Scratch from '@symbo.ls/scratch'
 import { isFunction } from '@domql/utils'
 
 // TODO: fix this

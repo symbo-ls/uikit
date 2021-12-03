@@ -1,6 +1,6 @@
 'use strict'
 
-import { TYPOGRAPHY } from '@symbols/scratch'
+import { TYPOGRAPHY } from '@symbo.ls/scratch'
 
 const primaryFont = Object.keys(TYPOGRAPHY)[0]
 const defaultFont = primaryFont || '--system-default'

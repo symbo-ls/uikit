@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapFontSize } from '@symbols/scratch'
+import { mapFontSize } from '@symbo.ls/scratch'
 import style from './style'
 
 export const Text = {

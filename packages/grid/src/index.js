@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapBasedOnRatio } from '@symbols/scratch'
+import { mapBasedOnRatio } from '@symbo.ls/scratch'
 
 import style from './style'
 
