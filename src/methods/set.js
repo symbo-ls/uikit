@@ -90,11 +90,11 @@ export const getTheme = value => {
   if (isObjectLike(value) && value[1]) {
     const themeName = value[0]
     const subThemeName = value[1]
-    const { helpers, variants } = THEME[themeName]
+    const { helpers, variants, state } = THEME[themeName]
     if (variants && variants[subThemeName]) return getThemeValue(variants[subThemeName])
     if (helpers && helpers[subThemeName]) return getThemeValue(helpers[subThemeName])
-  }
-  if (isObject(value)) return setThemeValue(value)
+    if (state && state[subThemeName]) return getThemeValue(state[subThemeName])
+  } else if (isObject(value)) return setThemeValue(value)
   else if (isString(value) && THEME[value]) return getThemeValue(THEME[value])
   console.warn('Can\'t find theme', value)
 }
