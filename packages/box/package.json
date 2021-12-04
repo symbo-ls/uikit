@@ -1,12 +1,12 @@
 {
   "name": "@symbo.ls/box",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "src/index.js",
   "license": "MIT",
   "gitHead": "e1a463822fa03d578efd1b82b42f5a556b15c1c9",
   "dependencies": {
-    "@symbo.ls/block": "^0.5.0",
-    "@symbo.ls/position": "^0.5.0",
-    "@symbo.ls/shape": "^0.5.0"
+    "@symbo.ls/block": "^0.5.1",
+    "@symbo.ls/position": "^0.5.1",
+    "@symbo.ls/shape": "^0.5.1"
   }
 }
