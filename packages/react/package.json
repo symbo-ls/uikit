@@ -1,7 +1,41 @@
 {
   "name": "@symbols/react",
+  "private": false,
   "version": "0.5.0",
   "main": "index.js",
   "license": "MIT",
-  "gitHead": "e1a463822fa03d578efd1b82b42f5a556b15c1c9"
+  "gitHead": "e1a463822fa03d578efd1b82b42f5a556b15c1c9",
+  "dependencies": {
+    "@symbo.ls/react-text": "latest",
+    "@symbo.ls/react-block": "latest",
+    "@symbo.ls/react-shape": "latest",
+    "@symbo.ls/react-flex": "latest",
+    "@symbo.ls/react-grid": "latest",
+    "@symbo.ls/react-direction": "latest",
+    "@symbo.ls/react-position": "latest",
+    "@symbo.ls/react-overflow": "latest",
+
+    "@symbo.ls/react-box": "latest",
+
+    "@symbo.ls/react-svg": "latest",
+    "@symbo.ls/react-icon": "latest",
+    "@symbo.ls/react-img": "latest",
+    "@symbo.ls/react-link": "latest",
+    "@symbo.ls/react-icon-text": "latest",
+    "@symbo.ls/react-input": "latest",
+    "@symbo.ls/react-field": "latest",
+    "@symbo.ls/react-button": "latest",
+
+    "@symbo.ls/react-buttonset": "latest",
+    "@symbo.ls/react-user": "latest",
+    "@symbo.ls/react-banner": "latest",
+    "@symbo.ls/react-slider": "latest",
+    "@symbo.ls/react-notification": "latest",
+    "@symbo.ls/react-dropdown": "latest",
+    "@symbo.ls/react-datepicker": "latest",
+    "@symbo.ls/react-tooltip": "latest",
+    "@symbo.ls/react-label": "latest",
+    "@symbo.ls/react-pills": "latest",
+    "@symbo.ls/react-select": "latest"
+  }
 }
