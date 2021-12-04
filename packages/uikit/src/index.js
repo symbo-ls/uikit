@@ -1,8 +1,9 @@
 'use strict'
 
-export * from '../styles'
+export * from './styles'
 
-export * from '@symbo.ls/text'
+export * from '@symbo.ls/scratch'
+
 export * from '@symbo.ls/block'
 export * from '@symbo.ls/shape'
 export * from '@symbo.ls/flex'

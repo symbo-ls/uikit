@@ -3,7 +3,7 @@
   "description": "UI Library built on Scratch and DOMQL",
   "version": "0.5.3",
   "repository": "https://github.com/rackai/symbols",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "files": [
     "src"
   ],
@@ -32,6 +32,7 @@
     "@symbo.ls/overflow": "latest",
     "@symbo.ls/pills": "latest",
     "@symbo.ls/position": "latest",
+    "@symbo.ls/scratch": "latest",
     "@symbo.ls/select": "latest",
     "@symbo.ls/shape": "latest",
     "@symbo.ls/slider": "latest",

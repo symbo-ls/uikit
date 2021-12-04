@@ -32,6 +32,7 @@
     "@symbo.ls/react-svg": "latest",
     "@symbo.ls/react-text": "latest",
     "@symbo.ls/react-tooltip": "latest",
-    "@symbo.ls/react-user": "latest"
+    "@symbo.ls/react-user": "latest",
+    "@symbo.ls/scratch": "^0.2.26"
   }
 }

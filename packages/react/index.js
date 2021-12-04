@@ -1,5 +1,7 @@
 'use strict'
 
+export * from '@symbo.ls/scratch'
+
 export * from '@symbo.ls/react-text'
 export * from '@symbo.ls/react-block'
 export * from '@symbo.ls/react-shape'
