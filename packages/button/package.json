@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/button",
-  "version": "0.5.8",
+  "version": "0.5.12",
   "main": "src/index.js",
   "license": "MIT",
   "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e",
