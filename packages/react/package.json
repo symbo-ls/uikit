@@ -2,5 +2,6 @@
   "name": "@symbols/react",
   "version": "0.5.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "e1a463822fa03d578efd1b82b42f5a556b15c1c9"
 }

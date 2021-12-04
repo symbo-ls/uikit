@@ -40,5 +40,6 @@
     "@symbo.ls/tooltip": "latest",
     "@symbo.ls/user": "latest"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "gitHead": "e1a463822fa03d578efd1b82b42f5a556b15c1c9"
 }

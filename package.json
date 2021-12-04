@@ -5,9 +5,7 @@
     "build": "parcel build showcase/index.html --public-url .",
     "deploy": "yarn build && gh-pages -d dist",
     "clean": "rm yarn.lock && rm -rf node_modules && rm -rf dist && rm -rf .cache",
-    "vpatch": "npm version patch && npm publish",
-    "vpush": "git add . && git commit -am 'version update' && git push",
-    "publish-all": "lerna publish && yarn vpatch && yarn vpush"
+    "vpush": "git add . && git commit -am 'version update' && git push"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
