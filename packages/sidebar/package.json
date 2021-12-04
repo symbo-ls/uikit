@@ -1,11 +1,11 @@
 {
   "name": "@symbo.ls/sidebar",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "main": "src/index.js",
   "license": "MIT",
   "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e",
   "dependencies": {
-    "@symbo.ls/icon": "^0.5.2",
-    "@symbo.ls/link": "^0.5.2"
+    "@symbo.ls/icon": "^0.5.3",
+    "@symbo.ls/link": "^0.5.3"
   }
 }

@@ -1,10 +1,10 @@
 {
   "name": "@symbo.ls/tooltip",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "main": "src/index.js",
   "license": "MIT",
   "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e",
   "dependencies": {
-    "@symbo.ls/shape": "^0.5.2"
+    "@symbo.ls/shape": "^0.5.3"
   }
 }

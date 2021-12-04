@@ -1,12 +1,12 @@
 {
   "name": "@symbo.ls/route-link",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "main": "src/index.js",
   "license": "MIT",
   "dependencies": {
     "@domql/router": "^1.2.14",
     "@domql/utils": "^1.2.14",
-    "@symbo.ls/link": "^0.5.2"
+    "@symbo.ls/link": "^0.5.3"
   },
   "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e"
 }
