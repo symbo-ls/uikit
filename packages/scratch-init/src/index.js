@@ -14,6 +14,8 @@ const SYMBOLSRC_FILE = loadModule('~/symbolsrc.json')
 // loadModule(SYMBOLSRC_FILE)
 
 const activeConfig = SYMBOLSRC_FILE || CONFIG_DEFAULT
+console.log('Config received:')
+console.log(activeConfig)
 set(activeConfig)
 
 export default CONFIG_DEFAULT
