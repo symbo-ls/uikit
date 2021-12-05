@@ -8,6 +8,6 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "jsonify": "node bin/json.js"
+    "jsonify": "npx parcel build src/index.js && node bin/json.js"
   }
 }
