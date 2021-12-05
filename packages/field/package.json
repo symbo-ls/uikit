@@ -8,5 +8,6 @@
     "@symbo.ls/icon-text": "^0.6.2",
     "@symbo.ls/input": "^0.6.2",
     "@symbo.ls/scratch": "^0.2.26"
-  }
+  },
+  "source": "src/index.js"
 }

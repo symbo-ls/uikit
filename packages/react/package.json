@@ -37,5 +37,6 @@
     "@symbo.ls/react-tooltip": "latest",
     "@symbo.ls/react-user": "latest",
     "@symbo.ls/scratch": "latest"
-  }
+  },
+  "source": "src/index.js"
 }

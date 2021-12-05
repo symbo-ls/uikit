@@ -7,5 +7,6 @@
   "dependencies": {
     "@domql/react-transformer": "^2.0.0",
     "@symbo.ls/flex": "^0.6.2"
-  }
+  },
+  "source": "src/index.js"
 }

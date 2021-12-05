@@ -1,0 +1,7 @@
+{
+  "name": "@symbo.ls/config-default",
+  "version": "1.0.3",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "license": "MIT"
+}

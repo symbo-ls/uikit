@@ -8,5 +8,6 @@
     "@symbo.ls/block": "^0.6.0",
     "@symbo.ls/position": "^0.6.2",
     "@symbo.ls/shape": "^0.6.2"
-  }
+  },
+  "source": "src/index.js"
 }

@@ -7,5 +7,6 @@
   "dependencies": {
     "@symbo.ls/icon-text": "^0.6.2",
     "@symbo.ls/shape": "^0.6.2"
-  }
+  },
+  "source": "src/index.js"
 }
