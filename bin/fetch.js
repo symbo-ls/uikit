@@ -5,7 +5,7 @@ import fetch from 'node-fetch'
 import chalk from 'chalk'
 import { loadModule } from './require.js'
 import { Command } from 'commander'
-import { exec } from "child_process"
+import { exec } from 'child_process'
 
 const pkg = loadModule('../package.json')
 const program = new Command()
@@ -17,8 +17,7 @@ const LOG_DEST = 'https://raw.githubusercontent.com/symbo-ls/uikit/packages/conf
 program
   .version(pkg.version)
 
-
-  program
+program
   .command('init [destination]')
   .description('Initialize a repository')
   .option('-m, --mode', 'Which Symbols to install (domql, react)')
@@ -28,16 +27,16 @@ program
 
     exec(`yarn add ${packageName} --force`, (error, stdout, stderr) => {
       if (error) {
-        console.log(`error: ${error.message}`);
-        return;
+        console.log(`error: ${error.message}`)
+        return
       }
       if (stderr) {
-        console.log(`stderr: ${stderr}`);
+        console.log(`stderr: ${stderr}`)
         // return;
       }
-      console.log(``);
-      console.log(`stdout: ${stdout}`);
-      console.log(`\n`);
+      console.log('')
+      console.log(`stdout: ${stdout}`)
+      console.log('\n')
       console.log(chalk.green.bold(packageName), 'successfuly added!')
       console.log('')
       console.log(chalk.dim('Now you can import components like:'), `import { Button } from "${chalk.green.bold(packageName)}"`)
@@ -77,5 +76,5 @@ program
     }
   })
 
-var args = process.argv
+const args = process.argv
 program.parse(args)
