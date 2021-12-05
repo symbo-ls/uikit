@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/cli",
-  "version": "0.6.19",
+  "version": "0.6.20",
   "description": "Fetch your Symbols configuration",
   "main": "bin/fetch.js",
   "author": "Symbols",
