@@ -1,3 +1,3 @@
 'use strict'
 
-export * from '@domq/react-transformer'
+export * from '@domql/react-transformer'
