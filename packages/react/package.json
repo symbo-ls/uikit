@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/react",
-  "version": "0.6.8",
+  "version": "0.6.9",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6123989a3672237d094929300016f72da7edf822",
@@ -32,7 +32,7 @@
     "@symbo.ls/react-select": "latest",
     "@symbo.ls/react-shape": "latest",
     "@symbo.ls/react-slider": "latest",
-    "@symbo.ls/react-startup": "^0.6.8",
+    "@symbo.ls/react-startup": "^0.6.9",
     "@symbo.ls/react-svg": "latest",
     "@symbo.ls/react-text": "latest",
     "@symbo.ls/react-tooltip": "latest",
