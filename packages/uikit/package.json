@@ -1,7 +1,7 @@
 {
   "name": "@symbo.ls/uikit",
   "description": "UI Library built on Scratch and DOMQL",
-  "version": "0.6.12",
+  "version": "0.6.13",
   "repository": "https://github.com/rackai/symbols",
   "main": "dist/index.js",
   "files": [
@@ -11,7 +11,6 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@symbo.ls/scratch-init": "latest",
     "@symbo.ls/banner": "latest",
     "@symbo.ls/block": "latest",
     "@symbo.ls/box": "latest",
@@ -34,6 +33,7 @@
     "@symbo.ls/overflow": "latest",
     "@symbo.ls/pills": "latest",
     "@symbo.ls/position": "latest",
+    "@symbo.ls/scratch-init": "latest",
     "@symbo.ls/select": "latest",
     "@symbo.ls/shape": "latest",
     "@symbo.ls/slider": "latest",
