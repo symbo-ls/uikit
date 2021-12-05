@@ -1,0 +1,13 @@
+{
+  "name": "@symbo.ls/react-transformer",
+  "version": "0.6.4",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@domql/react-transformer": "latest"
+  },
+  "gitHead": "af46b0e8685f18163ee0a4a37a9cb4ff1e0bae1e"
+}

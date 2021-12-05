@@ -27,8 +27,11 @@ export const Input = {
   },
 
   on: {
-    input: ({ key, value, props }) => {
-
+    input: (event, { key, value, props }) => {
+      props.onInput && props.onInput(event)
+    },
+    change: (event, { key, value, props }) => {
+      props.onChange && props.onChange(event)
     }
   }
 }
