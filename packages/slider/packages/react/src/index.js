@@ -1,6 +1,6 @@
 'use strict'
 
-import { reactTransformer } from '@domql/react-transformer'
+import { reactTransformer } from '@symbo.ls/react-transformer'
 import { Slider as component } from '@symbo.ls/slider'
 
 export const Slider = (props, state) => {

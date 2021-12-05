@@ -3,7 +3,6 @@
   "scripts": {
     "start": "parcel showcase/index.html",
     "build": "parcel build showcase/index.html --public-url .",
-    "deploy": "yarn build && gh-pages -d dist",
     "build-all": "lerna exec -- npx parcel build src/index.js",
     "publish-all": "yarn build-all && lerna publish",
     "test": "npx standard \"packages/**/*.js\"",

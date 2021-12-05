@@ -1,6 +1,6 @@
 'use strict'
 
-import { reactTransformer } from '@domql/react-transformer'
+import { reactTransformer } from '@symbo.ls/react-transformer'
 import { GridLayout as component } from '@symbo.ls/grid-layouts'
 
 export const GridLayout = (props, state) => {

@@ -1,6 +1,6 @@
 'use strict'
 
-import { reactTransformer } from '@domql/react-transformer'
+import { reactTransformer } from '@symbo.ls/react-transformer'
 import { DatePicker as component } from '@symbo.ls/datepicker'
 
 export const DatePicker = (props, state) => {

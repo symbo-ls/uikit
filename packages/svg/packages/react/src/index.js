@@ -1,6 +1,6 @@
 'use strict'
 
-import { reactTransformer } from '@domql/react-transformer'
+import { reactTransformer } from '@symbo.ls/react-transformer'
 import { Svg as component } from '@symbo.ls/svg'
 
 export const Svg = (props, state) => {

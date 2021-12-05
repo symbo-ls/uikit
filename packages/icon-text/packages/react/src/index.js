@@ -1,6 +1,6 @@
 'use strict'
 
-import { reactTransformer } from '@domql/react-transformer'
+import { reactTransformer } from '@symbo.ls/react-transformer'
 import { IconText as component } from '@symbo.ls/icon-text'
 
 export const IconText = (props, state) => {

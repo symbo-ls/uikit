@@ -7,7 +7,7 @@
     "dist"
   ],
   "dependencies": {
-    "@domql/react-transformer": "latest"
+    "@symbo.ls/react-transformer": "latest"
   },
   "gitHead": "6123989a3672237d094929300016f72da7edf822"
 }
