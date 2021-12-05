@@ -1,12 +1,12 @@
 {
   "name": "@symbo.ls/react-tooltip",
-  "version": "0.6.2",
+  "version": "0.6.4",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e",
   "dependencies": {
     "@domql/react-transformer": "^2.0.0",
-    "@symbo.ls/tooltip": "^0.6.2"
+    "@symbo.ls/tooltip": "^0.6.4"
   },
   "source": "src/index.js"
 }
