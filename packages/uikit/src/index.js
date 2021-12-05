@@ -1,8 +1,13 @@
 'use strict'
 
+import '@domql/emotion'
+import '@symbo.ls/scratch'
+
+import CONFIG_DEFAULT from '@symbo.ls/config-default'
+
 export * from './styles'
 
-export * from '@symbo.ls/scratch'
+export { CONFIG_DEFAULT }
 
 export * from '@symbo.ls/block'
 export * from '@symbo.ls/shape'

@@ -3,6 +3,10 @@
 import '@domql/emotion'
 import '@symbo.ls/scratch'
 
+import CONFIG_DEFAULT from '@symbo.ls/config-default'
+
+export { CONFIG_DEFAULT }
+
 export * from '@symbo.ls/scratch'
 
 export * from '@symbo.ls/react-text'
