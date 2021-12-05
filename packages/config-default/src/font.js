@@ -1,8 +1,8 @@
 'use strict'
 
 const S3_BUCKET = 'https://symbols-fonts.s3.us-west-1.amazonaws.com'
-const KarlaVariable = '/europa//Karla/Karla-VariableFont_wght.ttf'
-const KarlaItalicVariable = '/europa//Karla/Karla-VariableFont_wght.ttf' // eslint-disable-line
+const KarlaVariable = '/Karla/Karla-VariableFont_wght.ttf'
+const KarlaItalicVariable = '/Karla/Karla-VariableFont_wght.ttf' // eslint-disable-line
 
 export const FONT = {
   Karla: [{
