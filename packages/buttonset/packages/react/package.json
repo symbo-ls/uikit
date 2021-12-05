@@ -3,5 +3,9 @@
   "version": "0.5.3",
   "main": "index.js",
   "license": "MIT",
-  "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e"
+  "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e",
+  "dependencies": {
+    "@domql/react-transformer": "^1.3.0",
+    "@symbo.ls/buttonset": "^0.5.12"
+  }
 }

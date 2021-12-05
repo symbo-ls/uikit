@@ -6,7 +6,8 @@
   "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e",
   "dependencies": {
     "@domql/emotion": "^1.3.2",
-    "@symbo.ls/scratch":"latest",
+    "@domql/react-transformer": "^2.0.0",
+    "@symbo.ls/buttonset": "^0.5.12",
     "@symbo.ls/react-banner": "latest",
     "@symbo.ls/react-block": "latest",
     "@symbo.ls/react-box": "latest",
@@ -34,6 +35,7 @@
     "@symbo.ls/react-svg": "latest",
     "@symbo.ls/react-text": "latest",
     "@symbo.ls/react-tooltip": "latest",
-    "@symbo.ls/react-user": "latest"
+    "@symbo.ls/react-user": "latest",
+    "@symbo.ls/scratch": "latest"
   }
 }
