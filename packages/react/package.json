@@ -1,13 +1,13 @@
 {
   "name": "@symbo.ls/react",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e",
   "dependencies": {
     "@domql/emotion": "^1.3.2",
     "@domql/react-transformer": "^2.0.0",
-    "@symbo.ls/buttonset": "^0.6.1",
+    "@symbo.ls/buttonset": "^0.6.2",
     "@symbo.ls/react-banner": "latest",
     "@symbo.ls/react-block": "latest",
     "@symbo.ls/react-box": "latest",
