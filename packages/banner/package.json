@@ -1,13 +1,13 @@
 {
   "name": "@symbo.ls/banner",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6123989a3672237d094929300016f72da7edf822",
   "dependencies": {
-    "@symbo.ls/icon": "^0.6.7",
-    "@symbo.ls/shape": "^0.6.7",
-    "@symbo.ls/user": "^0.6.7"
+    "@symbo.ls/icon": "^0.6.8",
+    "@symbo.ls/shape": "^0.6.8",
+    "@symbo.ls/user": "^0.6.8"
   },
   "source": "src/index.js"
 }

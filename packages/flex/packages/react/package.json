@@ -1,12 +1,12 @@
 {
   "name": "@symbo.ls/react-flex",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6123989a3672237d094929300016f72da7edf822",
   "dependencies": {
-    "@symbo.ls/flex": "^0.6.7",
-    "@symbo.ls/react-transformer": "^0.6.7"
+    "@symbo.ls/flex": "^0.6.8",
+    "@symbo.ls/react-transformer": "^0.6.8"
   },
   "source": "src/index.js"
 }
