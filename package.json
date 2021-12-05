@@ -8,10 +8,12 @@
   "private": false,
   "type": "module",
   "bin": {
-    "symbo-ls": "dist/fetch.js"
+    "symbo-ls": "bin/fetch.js"
   },
   "scripts": {
-    "start": "node bin/fetch.js"
+    "start": "node bin/fetch.js",
+    "vpush": "git add . && git commit -am 'version update' && git push",
+    "vpatch": "npm version patch && npm publish"
   },
   "dependencies": {
     "chalk": "^5.0.0",
