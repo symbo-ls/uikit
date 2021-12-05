@@ -90,6 +90,8 @@ export const getTheme = value => {
   if (isObjectLike(value) && value[1]) {
     const themeName = value[0]
     const subThemeName = value[1]
+    console.log(THEME)
+    console.log(themeName)
     const { helpers, variants, state } = THEME[themeName]
     if (variants && variants[subThemeName]) return getThemeValue(variants[subThemeName])
     if (helpers && helpers[subThemeName]) return getThemeValue(helpers[subThemeName])
@@ -226,7 +228,8 @@ export const setEach = (factoryName, props) => {
   return CONFIG[FACTORY_NAME]
 }
 
-export const set = config => {
+export const set = recivedConfig => {
+  const { version, ...config } = recivedConfig
   const keys = Object.keys(config)
   keys.map(key => setEach(key, config[key]))
   return CONFIG
