@@ -4,11 +4,11 @@ import { themeMap } from '../config/theme'
 
 // var pairAsInvert = (scheme, referenced) => cx(scheme, referenced)
 
-var mapThemeCSS = scheme => {
-  var str = ''
+const mapThemeCSS = scheme => {
+  let str = ''
   for (const prop in scheme) {
-    var mappedProp = themeMap[prop]
-    var value = scheme[prop]
+    const mappedProp = themeMap[prop]
+    const value = scheme[prop]
     if (mappedProp && value) {
       str += `${mappedProp}: ${value}`
     }
@@ -16,10 +16,10 @@ var mapThemeCSS = scheme => {
   return str
 }
 
-var generateTheme = scheme => {
-  var { helpers, inverse } = scheme
+const generateTheme = scheme => {
+  const { helpers, inverse } = scheme
 
-  var rule = `
+  let rule = `
     ${mapThemeCSS(scheme)}
   `
 
@@ -28,8 +28,8 @@ var generateTheme = scheme => {
   }
 
   if (helpers) {
-    for (var prop in helpers) {
-      var value = helpers[prop]
+    for (const prop in helpers) {
+      const value = helpers[prop]
       rule += `.${prop} { ${value} }`
     }
   }
