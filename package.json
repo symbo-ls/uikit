@@ -2,7 +2,7 @@
   "name": "@symbo.ls/cli",
   "version": "0.6.11",
   "description": "Fetch your Symbols configuration",
-  "main": "index.js",
+  "main": "bin/fetch.js",
   "author": "Symbols",
   "license": "MIT",
   "private": false,
@@ -23,9 +23,5 @@
   },
   "devDependencies": {
     "np": "^7.6.0"
-  },
-  "env": {
-    "process": true
-  },
-  "gitHead": "6123989a3672237d094929300016f72da7edf822"
+  }
 }
