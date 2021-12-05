@@ -1,6 +1,8 @@
 'use strict'
 
 import '@domql/emotion'
+import '@symbo.ls/scratch'
+
 export * from '@symbo.ls/scratch'
 
 export * from '@symbo.ls/react-text'
