@@ -32,11 +32,11 @@
     "@symbo.ls/react-select": "latest",
     "@symbo.ls/react-shape": "latest",
     "@symbo.ls/react-slider": "latest",
-    "@symbo.ls/react-startup": "^0.6.9",
+    "@symbo.ls/react-startup": "latest",
     "@symbo.ls/react-svg": "latest",
     "@symbo.ls/react-text": "latest",
     "@symbo.ls/react-tooltip": "latest",
-    "@symbo.ls/react-transformer": "^0.6.8",
+    "@symbo.ls/react-transformer": "latest",
     "@symbo.ls/react-user": "latest",
     "@symbo.ls/scratch": "latest"
   },
