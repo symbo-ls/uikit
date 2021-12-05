@@ -1,16 +1,16 @@
 {
   "name": "@symbo.ls/notification",
-  "version": "0.6.8",
+  "version": "0.6.10",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6123989a3672237d094929300016f72da7edf822",
   "dependencies": {
-    "@symbo.ls/block": "^0.6.8",
-    "@symbo.ls/direction": "^0.6.8",
-    "@symbo.ls/flex": "^0.6.8",
-    "@symbo.ls/icon-text": "^0.6.8",
-    "@symbo.ls/shape": "^0.6.8",
-    "@symbo.ls/text": "^0.6.8"
+    "@symbo.ls/block": "^0.6.10",
+    "@symbo.ls/direction": "^0.6.10",
+    "@symbo.ls/flex": "^0.6.10",
+    "@symbo.ls/icon-text": "^0.6.10",
+    "@symbo.ls/shape": "^0.6.10",
+    "@symbo.ls/text": "^0.6.10"
   },
   "source": "src/index.js"
 }

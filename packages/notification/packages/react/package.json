@@ -1,12 +1,12 @@
 {
   "name": "@symbo.ls/react-notification",
-  "version": "0.6.8",
+  "version": "0.6.10",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6123989a3672237d094929300016f72da7edf822",
   "dependencies": {
-    "@symbo.ls/notification": "^0.6.8",
-    "@symbo.ls/react-transformer": "^0.6.8"
+    "@symbo.ls/notification": "^0.6.10",
+    "@symbo.ls/react-transformer": "^0.6.10"
   },
   "source": "src/index.js"
 }
