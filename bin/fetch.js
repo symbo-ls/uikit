@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
 import 'v8-compile-cache'
-import { loadModule } from './require'
+import { loadModule } from './require.js'
 import { Command } from 'commander'
 import fetch from 'node-fetch'
 import chalk from 'chalk'
-import fs from 'fs'
-import process from 'process'
 
 const pkg = loadModule('../package.json')
 const program = new Command()
@@ -16,20 +14,6 @@ const DEFAULT_CONFIG = 'https://raw.githubusercontent.com/symbo-ls/uikit/8e7026a
 
 program
   .version(pkg.version)
-
-// program
-//   .command('login [destination]')
-//   .description('Sign in to Symbols')
-//   .argument('<username>', 'user to login')
-//   .argument('[password]', 'password for user, if required', 'no password given')
-//   .action(async (username, password) => {
-//     console.log('username:', username)
-//     console.log('password:', password)
-
-//     const response = await fetch(API_URL)
-//     const body = await response.json()
-//     console.log(body)
-//   })
 
 program
   .command('fetch [destination]')
