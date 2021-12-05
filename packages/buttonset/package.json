@@ -1,14 +1,14 @@
 {
   "name": "@symbo.ls/buttonset",
-  "version": "0.6.5",
+  "version": "0.6.7",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6ca45b0d1b79edf50bb5527f099f19bf8bafc44e",
   "dependencies": {
-    "@symbo.ls/block": "^0.6.5",
-    "@symbo.ls/button": "^0.6.5",
-    "@symbo.ls/flex": "^0.6.5",
-    "@symbo.ls/shape": "^0.6.5"
+    "@symbo.ls/block": "^0.6.7",
+    "@symbo.ls/button": "^0.6.7",
+    "@symbo.ls/flex": "^0.6.7",
+    "@symbo.ls/shape": "^0.6.7"
   },
   "source": "src/index.js"
 }
