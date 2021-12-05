@@ -11,7 +11,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@domql/emotion": "latest",
+    "@symbo.ls/scratch-init": "latest",
     "@symbo.ls/banner": "latest",
     "@symbo.ls/block": "latest",
     "@symbo.ls/box": "latest",
@@ -34,8 +34,6 @@
     "@symbo.ls/overflow": "latest",
     "@symbo.ls/pills": "latest",
     "@symbo.ls/position": "latest",
-    "@symbo.ls/scratch": "latest",
-    "@symbo.ls/scratch-init": "latest",
     "@symbo.ls/select": "latest",
     "@symbo.ls/shape": "latest",
     "@symbo.ls/slider": "latest",

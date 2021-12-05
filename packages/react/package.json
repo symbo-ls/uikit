@@ -5,6 +5,7 @@
   "license": "MIT",
   "gitHead": "6123989a3672237d094929300016f72da7edf822",
   "dependencies": {
+    "@symbo.ls/scratch-init": "latest",
     "@symbo.ls/buttonset": "latest",
     "@symbo.ls/react-banner": "latest",
     "@symbo.ls/react-block": "latest",
@@ -30,7 +31,6 @@
     "@symbo.ls/react-select": "latest",
     "@symbo.ls/react-shape": "latest",
     "@symbo.ls/react-slider": "latest",
-    "@symbo.ls/react-startup": "latest",
     "@symbo.ls/react-svg": "latest",
     "@symbo.ls/react-text": "latest",
     "@symbo.ls/react-tooltip": "latest",
