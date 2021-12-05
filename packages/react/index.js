@@ -1,7 +1,7 @@
 'use strict'
 
+import '@domql/emotion'
 export * from '@symbo.ls/scratch'
-export * from '@domql/emotion'
 
 export * from '@symbo.ls/react-text'
 export * from '@symbo.ls/react-block'
