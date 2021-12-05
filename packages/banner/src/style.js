@@ -14,7 +14,7 @@ export const styleParentMode = {
   },
   '> div': {
     alignItems: 'flex-start',
-    '> div': { marginTop: '4px'}
+    '> div': { marginTop: '4px' }
   },
   h2: {
     margin: 0,

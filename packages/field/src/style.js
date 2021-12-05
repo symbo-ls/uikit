@@ -3,7 +3,7 @@
 import { TYPOGRAPHY } from '@symbo.ls/scratch'
 
 const primaryFont = Object.keys(TYPOGRAPHY)[0]
-const defaultFont = primaryFont || '--system-default'
+const defaultFont = primaryFont || '--system-default' // eslint-disable-line
 
 export default {
   appearance: 'none',

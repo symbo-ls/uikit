@@ -2,7 +2,7 @@
 
 import { Link } from '@symbo.ls/link'
 
-import { styleGrid, styleGrid2 } from './style'
+import { styleGrid } from './style'
 
 const componentLink = { // eslint-disable-line
   proto: Link,
@@ -13,8 +13,4 @@ const componentLink = { // eslint-disable-line
 
 export const grid = {
   style: styleGrid
-}
-
-export const grid2 = {
-  style: styleGrid2
 }
