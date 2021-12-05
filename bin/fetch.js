@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 
 import 'v8-compile-cache'
-import { loadModule } from './require.js'
-import { Command } from 'commander'
+import fs from 'fs'
 import fetch from 'node-fetch'
 import chalk from 'chalk'
+import { loadModule } from './require.js'
+import { Command } from 'commander'
 
 const pkg = loadModule('../package.json')
 const program = new Command()
 
 const API_URL = 'https://api.symbols.app/' // eslint-disable-line
-const DEFAULT_CONFIG = 'https://raw.githubusercontent.com/symbo-ls/uikit/8e7026a2216c68efad260961a77c9302d34c7aa4/packages/config-default/src/config.json'
+const DEFAULT_CONFIG = 'https://raw.githubusercontent.com/symbo-ls/uikit/feature/monorepo/packages/config-default/src/config.json'
+const LOG_DEST = 'https://raw.githubusercontent.com/symbo-ls/uikit/packages/config-default/src/config.json'
 
 program
   .version(pkg.version)
@@ -24,10 +26,11 @@ program
     const { version, ...config } = body
 
     console.log('')
-    console.log(chalk.bold('Symbols'), 'config received: ', chalk.green(version))
+    console.log(chalk.bold('Symbols'), 'config fetched:', chalk.green(version))
+    console.log(chalk.dim('- Default config from:'), chalk.dim.underline(LOG_DEST))
 
     const path = process.cwd() + '/.symbolsrc.json'
-    console.log(chalk.dim('Default config fetched: '), chalk.dim.underline(path))
+    console.log(chalk.dim('- .symbolsrc.json created:'), chalk.dim.underline(path))
     console.log('')
 
     fs.writeFile(path, JSON.stringify(body), err => {
