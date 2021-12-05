@@ -1,3 +1,3 @@
 'use strict'
 
-export * from '@symbo.ls/react-transformer'
+export * from '@domq/react-transformer'
