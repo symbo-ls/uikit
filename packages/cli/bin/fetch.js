@@ -11,7 +11,7 @@ const require = createRequire(import.meta.url)
 const pkg = require('../package.json')
 const program = new Command()
 
-const API_URL = 'https://api.symbols.app/'
+const API_URL = 'https://api.symbols.app/' // eslint-disable-line
 const DEFAULT_CONFIG = 'https://raw.githubusercontent.com/symbo-ls/uikit/8e7026a2216c68efad260961a77c9302d34c7aa4/packages/config-default/src/config.json'
 
 program
