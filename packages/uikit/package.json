@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@domql/emotion": "latest",
+    "@symbo.ls/scratch-init": "latest",
     "@symbo.ls/banner": "latest",
     "@symbo.ls/block": "latest",
     "@symbo.ls/box": "latest",
