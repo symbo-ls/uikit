@@ -7,7 +7,8 @@
   "dependencies": {
     "@domql/emotion": "^2.0.0",
     "@symbo.ls/config-default": "^0.6.8",
-    "@symbo.ls/scratch": "^0.2.26"
+    "@symbo.ls/scratch": "^0.2.26",
+    "module": "^1.2.5"
   },
   "source": "src/index.js"
 }
