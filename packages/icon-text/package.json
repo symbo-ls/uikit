@@ -1,13 +1,13 @@
 {
   "name": "@symbo.ls/icon-text",
-  "version": "0.6.14",
+  "version": "0.6.15",
   "main": "dist/index.js",
   "license": "MIT",
   "dependencies": {
-    "@symbo.ls/block": "^0.6.14",
-    "@symbo.ls/direction": "^0.6.14",
-    "@symbo.ls/icon": "^0.6.14",
-    "@symbo.ls/text": "^0.6.14"
+    "@symbo.ls/block": "^0.6.15",
+    "@symbo.ls/direction": "^0.6.15",
+    "@symbo.ls/icon": "^0.6.15",
+    "@symbo.ls/text": "^0.6.15"
   },
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "source": "src/index.js"
