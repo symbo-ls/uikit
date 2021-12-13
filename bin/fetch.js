@@ -60,10 +60,13 @@ program
     console.log(chalk.dim('- .symbolsrc.json created:'), chalk.dim.underline(path))
     console.log('')
 
-    fs.writeFile(path, JSON.stringify(body), err => {
+    const bodyString = JSON.stringify(body)
+    fs.writeFile(path, bodyString, err => {
       if (err) {
         console.log('Error writing file', err)
       } else {
+        const initPath = process.cwd() + 'node_modules/@symbo.ls/scratch-init/.symbolsrc.json'
+        fs.writeFile(initPath, bodyString)
         console.log('Successfully wrote file')
       }
     })
