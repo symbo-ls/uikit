@@ -65,7 +65,7 @@ program
       if (err) {
         console.log('Error writing file', err)
       } else {
-        const initPath = process.cwd() + 'node_modules/@symbo.ls/scratch-init/.symbolsrc.json'
+        const initPath = process.cwd() + '/node_modules/@symbo.ls/scratch-init/.symbolsrc.json'
         fs.writeFile(initPath, bodyString, err => { if (err) throw err })
         console.log('Successfully wrote file')
       }
