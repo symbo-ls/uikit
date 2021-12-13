@@ -3,7 +3,7 @@
   "version": "0.6.14",
   "main": "dist/index.js",
   "license": "MIT",
-  "gitHead": "6123989a3672237d094929300016f72da7edf822",
+  "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "dependencies": {
     "@symbo.ls/field": "^0.6.14",
     "@symbo.ls/transform-react": "^0.6.14"

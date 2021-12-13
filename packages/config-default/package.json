@@ -10,5 +10,5 @@
   "scripts": {
     "jsonify": "npx parcel build src/index.js && node bin/json.js"
   },
-  "gitHead": "6123989a3672237d094929300016f72da7edf822"
+  "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b"
 }
