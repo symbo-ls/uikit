@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/react",
-  "version": "0.6.13",
+  "version": "0.6.14",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6123989a3672237d094929300016f72da7edf822",
@@ -33,9 +33,9 @@
     "@symbo.ls/react-svg": "latest",
     "@symbo.ls/react-text": "latest",
     "@symbo.ls/react-tooltip": "latest",
-    "@symbo.ls/transform-react": "latest",
     "@symbo.ls/react-user": "latest",
-    "@symbo.ls/scratch-init": "latest"
+    "@symbo.ls/scratch-init": "latest",
+    "@symbo.ls/transform-react": "latest"
   },
   "source": "src/index.js"
 }

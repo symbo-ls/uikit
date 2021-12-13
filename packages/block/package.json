@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/block",
-  "version": "0.6.10",
+  "version": "0.6.14",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6123989a3672237d094929300016f72da7edf822",

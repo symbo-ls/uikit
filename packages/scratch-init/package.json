@@ -1,12 +1,12 @@
 {
   "name": "@symbo.ls/scratch-init",
-  "version": "0.6.12",
+  "version": "0.6.14",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "6123989a3672237d094929300016f72da7edf822",
   "dependencies": {
     "@domql/emotion": "^2.0.0",
-    "@symbo.ls/config-default": "^0.6.8",
+    "@symbo.ls/config-default": "^0.6.14",
     "@symbo.ls/scratch": "^0.2.26",
     "module": "^1.2.5"
   },

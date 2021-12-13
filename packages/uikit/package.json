@@ -1,7 +1,7 @@
 {
   "name": "@symbo.ls/uikit",
   "description": "UI Library built on Scratch and DOMQL",
-  "version": "0.6.13",
+  "version": "0.6.14",
   "repository": "https://github.com/rackai/symbols",
   "main": "dist/index.js",
   "files": [
