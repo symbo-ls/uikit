@@ -1,13 +1,13 @@
 {
   "name": "@symbo.ls/button",
-  "version": "0.6.15",
+  "version": "0.6.16",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "dependencies": {
     "@symbo.ls/block": "^0.6.15",
     "@symbo.ls/direction": "^0.6.15",
-    "@symbo.ls/icon-text": "^0.6.15",
+    "@symbo.ls/icon-text": "^0.6.16",
     "@symbo.ls/shape": "^0.6.15"
   },
   "source": "src/index.js"
