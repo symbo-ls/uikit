@@ -32,7 +32,7 @@ Scratch.setValue('THEME', {
 
 export const RangeSlider = {
   style,
-  proto: Shape,
+  extends: Shape,
   props: {
     theme: 'sliderThumb'
   },
@@ -47,10 +47,10 @@ const findOut = (el, s, prop, def) => {
 }
 
 export const Slider = {
-  proto: [Shape],
+  extends: [Shape],
 
   button0: {
-    proto: [SquareButton],
+    extends: [SquareButton],
     props: {
       icon: 'minus'
     },
@@ -66,7 +66,7 @@ export const Slider = {
     text: (el, s) => `${findOut(el, s, 'value', 50)}${findOut(el, s, 'type') === 'fontSize' ? 'px' : ''}`
   },
   range: {
-    proto: RangeSlider,
+    extends: RangeSlider,
     attr: {
       value: (el, s) => findOut(el, s, 'value', 50),
       min: (el, s) => findOut(el, s, 'min', 0),
@@ -78,7 +78,7 @@ export const Slider = {
     }
   },
   button1: {
-    proto: [SquareButton],
+    extends: [SquareButton],
     props: {
       icon: 'plus'
     },

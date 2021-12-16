@@ -5,7 +5,7 @@ import style from './style'
 import { SVG } from '@symbo.ls/svg'
 
 export const Icon = {
-  proto: SVG,
+  extends: SVG,
   style,
   define: { name: param => param },
   name: ({ props }) => props.icon,

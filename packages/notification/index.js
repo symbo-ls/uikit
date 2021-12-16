@@ -9,9 +9,9 @@ import { Text } from '@symbo.ls/text'
 
 export const Notification = {
   style: { cursor: 'pointer' },
-  proto: [Shape, Block, Direction, Flex],
+  extends: [Shape, Block, Direction, Flex],
   icon: {
-    proto: [IconText],
+    extends: [IconText],
     props: {
       icon: 'info'
     },
@@ -21,17 +21,17 @@ export const Notification = {
     }
   },
   article: {
-    proto: [Flex],
+    extends: [Flex],
     style: {
       flexDirection: 'column',
       alignItems: 'flex-start'
     },
     caption: {
-      proto: Text,
+      extends: Text,
       text: 'Notification'
     },
     p: {
-      proto: Text,
+      extends: Text,
       props: {
         size: 'Z',
         text: 'is not always a distraction'

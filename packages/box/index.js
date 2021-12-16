@@ -5,5 +5,5 @@ import { Position } from '@symbo.ls/position'
 import { Block } from '@symbo.ls/block'
 
 export const Box = {
-  proto: [Shape, Position, Block]
+  extends: [Shape, Position, Block]
 }

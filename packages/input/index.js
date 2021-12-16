@@ -5,7 +5,7 @@ import { Block } from '@symbo.ls/block'
 import { Text } from '@symbo.ls/text'
 
 export const Input = {
-  proto: [Shape, Block, Text],
+  extends: [Shape, Block, Text],
   tag: 'input',
 
   props: (el, s) => ({

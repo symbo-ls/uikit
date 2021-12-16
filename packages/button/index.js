@@ -8,7 +8,7 @@ import { Direction } from '@symbo.ls/direction'
 import style from './style'
 
 export const Button = {
-  proto: [Shape, Block, IconText, Direction],
+  extends: [Shape, Block, IconText, Direction],
   tag: 'button',
   style,
   props: {
@@ -20,7 +20,7 @@ export const Button = {
 }
 
 export const SquareButton = {
-  proto: Button,
+  extends: Button,
   props: {
     size: 'A',
     width: 'A',
@@ -37,21 +37,21 @@ export const SquareButton = {
 }
 
 export const CircleButton = {
-  proto: SquareButton,
+  extends: SquareButton,
   props: { round: 'C' }
 }
 
 export const KangorooButton = {
   tag: 'button',
-  proto: [Shape, Direction, Block],
+  extends: [Shape, Direction, Block],
   style,
 
   iconText: {
-    proto: IconText
+    extends: IconText
   },
 
   child: {
-    proto: [Shape, Block, IconText]
+    extends: [Shape, Block, IconText]
   }
 }
 

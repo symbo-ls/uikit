@@ -3,7 +3,7 @@
 import { Shape } from '@symbo.ls/shape'
 
 export const Link = {
-  proto: [Shape],
+  extends: [Shape],
   tag: 'a',
   props: {
     href: '',

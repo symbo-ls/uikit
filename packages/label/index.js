@@ -5,7 +5,7 @@ import { Shape } from '@symbo.ls/shape'
 import { Text } from '@symbo.ls/text'
 
 export const Label = {
-  proto: [Shape, Block, Text],
+  extends: [Shape, Block, Text],
 
   style: { lineHeight: 1 },
 

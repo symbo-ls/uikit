@@ -7,7 +7,7 @@ import style from './style'
 
 export const Field = {
   style,
-  proto: [IconText],
+  extends: [IconText],
   props: (el, s) => ({
     depth: 16,
     placeholder: '',
@@ -17,7 +17,7 @@ export const Field = {
     type: 'text'
   }),
   input: {
-    proto: Input,
+    extends: Input,
     props: el => el.parent.props
   }
 }

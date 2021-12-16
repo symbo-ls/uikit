@@ -7,8 +7,8 @@ import { Block } from '@symbo.ls/block'
 
 export const ButtonSet = {
   tag: 'nav',
-  proto: [Shape, Flex, Block],
-  childProto: {
-    proto: [SquareButton]
+  extends: [Shape, Flex, Block],
+  childExtends: {
+    extends: [SquareButton]
   }
 }

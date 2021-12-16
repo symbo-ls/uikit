@@ -17,9 +17,9 @@ export const Pills = {
     'div:nth-child(2)': { opacity: '.3' },
     'div:nth-child(3)': { opacity: '.3' }
   },
-  childProto: {
+  childExtends: {
     tag: 'div',
-    proto: Shape,
+    extends: Shape,
     props: {
       round: 42,
       theme: 'White'

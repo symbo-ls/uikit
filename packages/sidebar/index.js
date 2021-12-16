@@ -4,10 +4,10 @@ import { Icon } from '@symbo.ls/icon'
 import { Link } from '@symbo.ls/link'
 
 const MenuItem = {
-  proto: Link,
+  extends: Link,
   props: { icon: '' },
   glyph: {
-    proto: Icon,
+    extends: Icon,
     name: ({ props }) => props.icon
   }
 }
@@ -18,7 +18,7 @@ export const Sidebar = {
     style: {
       a: { cursor: 'pointer' }
     },
-    childProto: MenuItem,
+    childExtends: MenuItem,
     ...[{}]
   }
 }

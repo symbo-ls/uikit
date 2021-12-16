@@ -9,15 +9,15 @@ export const DropdownList = {
   style: styleDropDown,
   tag: 'ul',
 
-  proto: Shape,
+  extends: Shape,
 
   state: {
     active: 0
   },
 
-  childProto: {
+  childExtends: {
     tag: 'li',
-    proto: [Shape],
+    extends: [Shape],
 
     style: styleRow,
     props: (el, s) => ({
@@ -27,7 +27,7 @@ export const DropdownList = {
     }),
 
     span: {
-      proto: [IconText],
+      extends: [IconText],
       props: {
         icon: 'checkmark',
         text: ''

@@ -10,12 +10,12 @@ import { Text } from '@symbo.ls/text'
 export const IconText = {
   style,
 
-  proto: [Text, Direction, Block],
+  extends: [Text, Direction, Block],
   props: {
     flexAlign: 'center flex-start'
   },
 
-  icon: { proto: Icon, if: ({ props }, s) => props.icon },
+  icon: { extends: Icon, if: ({ props }, s) => props.icon },
 
   text: ({ props }) => props.text
 }

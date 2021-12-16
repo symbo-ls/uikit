@@ -6,7 +6,7 @@ import { Block } from '@symbo.ls/block'
 import { styleUser, styleUserBundle } from './style'
 
 export const User = {
-  proto: [Shape, Block],
+  extends: [Shape, Block],
   props: { boxSize: 'B B' },
   style: styleUser,
   tag: 'img',
@@ -18,7 +18,7 @@ export const User = {
 export const UserBundle = {
   style: styleUserBundle,
   users: {
-    childProto: User,
+    childExtends: User,
     ...[{}]
   },
   span: 'join classroom'

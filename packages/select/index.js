@@ -5,11 +5,11 @@ import { Shape } from '@symbo.ls/shape'
 import style from './style'
 
 export const Select = {
-  proto: Shape,
+  extends: Shape,
   tag: 'select',
   style,
 
-  childProto: {
+  childExtends: {
     tag: 'option',
     props: {
       value: '',
