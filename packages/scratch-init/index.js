@@ -1,10 +1,15 @@
 'use strict'
 
 import '@domql/emotion'
-import { set } from '@symbo.ls/scratch'
+import { set, RESET } from '@symbo.ls/scratch'
+
+import { injectGlobal } from 'emotion'
 
 import CONFIG_DEFAULT from '@symbo.ls/config-default'
 import SYMBOLSRC_FILE from './.symbolsrc.json'
+
+injectGlobal(RESET)
+console.log(RESET)
 
 const activeConfig = SYMBOLSRC_FILE || CONFIG_DEFAULT
 set(activeConfig)
