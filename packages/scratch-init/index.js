@@ -9,7 +9,6 @@ import CONFIG_DEFAULT from '@symbo.ls/config-default'
 import SYMBOLSRC_FILE from './.symbolsrc.json'
 
 injectGlobal(RESET)
-console.log(RESET)
 
 const activeConfig = SYMBOLSRC_FILE || CONFIG_DEFAULT
 set(activeConfig)

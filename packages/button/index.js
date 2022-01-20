@@ -16,6 +16,12 @@ export const Button = {
   },
   attr: {
     type: ({ props }) => props.type
+  },
+
+  on: {
+    click: (event, { key, value, props }) => {
+      props.onClick && props.onClick(event)
+    }
   }
 }
 

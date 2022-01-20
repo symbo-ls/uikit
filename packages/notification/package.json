@@ -1,7 +1,7 @@
 {
   "name": "@symbo.ls/notification",
   "version": "0.6.16",
-  "main": "dist/index.js",
+  "main": "index.js",
   "license": "MIT",
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "dependencies": {

@@ -3,7 +3,7 @@
   "description": "UI Library built on Scratch and DOMQL",
   "version": "0.6.15",
   "repository": "https://github.com/rackai/symbols",
-  "main": "dist/index.js",
+  "main": "index.js",
   "files": [
     "src"
   ],
