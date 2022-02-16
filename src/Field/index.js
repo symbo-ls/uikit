@@ -12,7 +12,6 @@ export const Field = {
     value: s[el.key],
     padding: 'A B',
     round: 'C',
-    theme: 'field',
     type: 'text'
   }),
   input: {

@@ -3,12 +3,12 @@
 import style from './style'
 
 import { SquareButton, Shape } from '..'
-import * as Scratch from '@rackai/scratch'
-import { isFunction } from '@rackai/domql/src/utils'
+import * as Scratch from '@symbols/scratch'
+import { isFunction } from '@symbols/domql/src/utils'
 
-Scratch.set('theme', {
-  name: 'sliderThumb',
-  backgroundColor: Scratch.opacify('#fff', 0.2),
+// TODO: fix this
+Scratch.setValue('THEME', {
+  background: 'white 0.2',
 
   '&::-webkit-slider-thumb': {
     background: '#232526',
@@ -26,7 +26,7 @@ Scratch.set('theme', {
       borderColor: '#3C6AC0'
     }
   }
-})
+}, 'sliderThumb')
 
 export const RangeSlider = {
   style,

@@ -9,7 +9,7 @@ export const Label = {
   style: { lineHeight: 1 },
 
   props: {
-    emoji: '😂',
+    emoji: '👍',
     text: '3',
     padding: 'X2 Z',
     round: 'C',

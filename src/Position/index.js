@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapSpacing } from '..'
+import { mapSpacing } from '@symbols/scratch'
 
 export const Position = {
   props: {},

@@ -1,6 +1,6 @@
 'use strict'
 
-import { UNIT } from '@rackai/scratch'
+import { UNIT } from '@symbols/scratch'
 
 export default {
   boxSizing: 'border-box'

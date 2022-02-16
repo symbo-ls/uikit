@@ -1,10 +1,14 @@
 'use strict'
 
+import { Shape } from '..'
+
 export const Link = {
+  proto: [Shape],
   tag: 'a',
   props: {
     href: '',
     target: '',
+    theme: 'link',
     aria: {}
   },
   attr: {

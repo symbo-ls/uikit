@@ -18,6 +18,7 @@ export const Input = {
   attr: {
     placeholder: ({ props }) => props.placeholder,
     value: ({ props }) => props.value,
+    disabled: ({ props }) => props.disabled || null,
     readonly: ({ props }) => props.readonly,
     required: ({ props }) => props.required,
     type: ({ props }) => props.type

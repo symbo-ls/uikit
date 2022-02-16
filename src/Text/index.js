@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapFontSize } from '@rackai/scratch'
+import { mapFontSize } from '@symbols/scratch'
 import style from './style'
 
 export const Text = {

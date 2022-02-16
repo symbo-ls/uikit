@@ -1,6 +1,6 @@
 'use strict'
 
-import { SPACING, mapSpacing } from '@rackai/scratch'
+import { SPACING, mapSpacing } from '@symbols/scratch'
 import style from './style'
 
 export const mapBasedOnRatio = (props, prop) => {
@@ -39,7 +39,6 @@ export const Block = {
     boxSize: ({ props }) => {
       if (typeof props.boxSize !== 'string') return
       const [width, height] = props.boxSize.split(' ')
-      console.log(width, height)
       return {
         ...mapSpacing(width, 'width'),
         ...mapSpacing(height, 'height')
