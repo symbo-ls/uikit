@@ -1,0 +1,8 @@
+{
+  "name": "@symbo.ls/direction",
+  "version": "0.6.15",
+  "main": "index.js",
+  "license": "MIT",
+  "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
+  "source": "src/index.js"
+}

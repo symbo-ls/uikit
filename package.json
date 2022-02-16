@@ -1,36 +1,27 @@
 {
-  "name": "@symbols/uikit",
-  "description": "UI Library built on Scratch and DOMQL",
-  "private": false,
-  "author": "rackai",
-  "version": "0.3.23",
-  "repository": "https://github.com/rackai/symbols",
-  "main": "src/index.js",
-  "files": [
-    "src"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
+  "private": true,
   "scripts": {
     "start": "parcel showcase/index.html",
-    "build": "parcel build showcase/index.html --public-url .",
-    "deploy": "yarn build && gh-pages -d dist",
-    "clean": "rm yarn.lock && rm -rf node_modules && rm -rf dist && rm -rf .cache",
-    "reinstall": "rm yarn.lock && rm -rf node_modules/rackai && yarn",
-    "bump": "npx np"
+    "build": "lerna run build",
+    "build:all": "lerna exec -- npx parcel build index.js",
+    "test:lint": "npx standard \"packages/**/*.js\"",
+    "test": "echo running all tests is not supported, maybe run: \"yarn test:lint\"",
+    "publish:all": "yarn build:all && lerna publish",
+    "push": "echo push is not yet supported",
+    "push:version": "git add . && git commit -am 'version update' && git push",
+    "clean": "rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log",
+    "clean:all": "lerna exec -- rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "babel-eslint": "^10.0.3",
     "emotion": "^10.0.27",
-    "np": "^7.2.0",
-    "parcel-bundler": "^1.12.3",
+    "lerna": "^4.0.0",
+    "parcel": "^2.0.1",
     "parcel-plugin-svg-sprite": "^1.4.1",
     "standard": "^13.1.0"
   },
   "standard": {
     "parser": "babel-eslint"
-  }
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
