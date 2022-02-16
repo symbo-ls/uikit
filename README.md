@@ -1,4 +1,4 @@
-# cli tool for Symbols
+# CLI tool for Symbols
 
 Yarn:
 ```
