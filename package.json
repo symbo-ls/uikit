@@ -1,26 +1,51 @@
 {
-  "name": "@rackai/scratch",
+  "name": "@symbo.ls/scratch",
   "description": "Φ / CSS framework and methodology.",
-  "private": false,
-  "author": "rackai",
-  "version": "0.2.26",
+  "author": "Symbols",
+  "version": "0.2.27",
   "files": [
     "src"
   ],
   "repository": "https://github.com/rackai/scratch",
-  "main": "src/index.js",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
+  "main": "dist/index.js",
+  "publishConfig": {},
   "dependencies": {
     "color-contrast-checker": "^1.5.0"
   },
+  "scripts": {
+    "standard": "npx standard \"src/**/*.js\"",
+    "test": "yarn standard && jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test-watch": "jest --watch",
+    "bump": "npx np"
+  },
   "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^27.0.2",
+    "babel-preset-env": "^1.7.0",
+    "coveralls": "^3.0.5",
+    "eslint": "^7.12.1",
+    "eslint-plugin-jest": "^24.1.0",
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.6",
     "np": "^7.2.0",
-    "standard": "^13.1.0"
+    "parcel-bundler": "^1.12.4",
+    "standard": "^16.0.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
   },
   "standard": {
-    "parser": "babel-eslint"
-  }
+    "parser": "babel-eslint",
+    "env": [
+      "jest"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "ie >= 9"
+  ]
 }

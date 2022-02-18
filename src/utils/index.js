@@ -2,6 +2,8 @@
 
 import { UNIT } from '../config'
 
+export const isString = arg => typeof arg === 'string'
+
 export const isArray = arg => Array.isArray(arg)
 
 export const isObject = arg => {
@@ -25,7 +27,7 @@ export const merge = (obj, original) => {
   return obj
 }
 
-export const colorStringToRGBAArray = color => {
+export const colorStringToRgbaArray = color => {
   if (color === '') return
   if (color.toLowerCase() === 'transparent') return [0, 0, 0, 0]
 
@@ -42,9 +44,9 @@ export const colorStringToRGBAArray = color => {
   // convert named colors
   if (color.indexOf('rgb') === -1) {
     // intentionally use unknown tag to lower chances of css rule override with !important
-    var elem = document.body.appendChild(document.createElement('fictum'))
+    const elem = document.body.appendChild(document.createElement('fictum'))
     // this flag tested on chrome 59, ff 53, ie9, ie10, ie11, edge 14
-    var flag = 'rgb(1, 2, 3)'
+    const flag = 'rgb(1, 2, 3)'
     elem.style.color = flag
     // color set failed - some monstrous css rule is probably taking over the color of our object
     if (elem.style.color !== flag) return
@@ -54,7 +56,7 @@ export const colorStringToRGBAArray = color => {
     document.body.removeChild(elem)
   }
 
-  // convert 'rgb(R,G,B)' to 'rgb(R,G,B)A' which looks awful but will pass the regxep below
+  // convert 'rgb(R,G,B)' to 'rgb(R,G,B,A)' which looks awful but will pass the regxep below
   if (color.indexOf('rgb') === 0) {
     if (color.indexOf('rgba') === -1) color = `${color}, 1`
     return color.match(/[\.\d]+/g).map(a => +a) // eslint-disable-line
@@ -62,22 +64,35 @@ export const colorStringToRGBAArray = color => {
 }
 
 export const mixTwoColors = (colorA, colorB, range = 0.5) => {
-  colorA = colorStringToRGBAArray(colorA)
-  colorB = colorStringToRGBAArray(colorB)
-  return mixTwoRGBA(colorA, colorB, range)
+  colorA = colorStringToRgbaArray(colorA)
+  colorB = colorStringToRgbaArray(colorB)
+  return mixTwoRgba(colorA, colorB, range)
 }
 
-export const hexToRGB = (hex, alpha = 1) => {
+export const hexToRgb = (hex, alpha = 1) => {
   const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16))
   return `rgb(${r},${g},${b})`
 }
 
-export const hexToRGBA = (hex, alpha = 1) => {
+export const hexToRgbArray = (hex, alpha = 1) => {
+  const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16))
+  return [r, g, b]
+}
+
+export const rgbToHex = (r, g, b) => {
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+}
+
+export const rgbArrayToHex = ([r, g, b]) => {
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+}
+
+export const hexToRgba = (hex, alpha = 1) => {
   const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16))
   return `rgba(${r},${g},${b},${alpha})`
 }
 
-export const mixTwoRGB = (colorA, colorB, range = 0.5) => {
+export const mixTwoRgb = (colorA, colorB, range = 0.5) => {
   const arr = []
   for (let i = 0; i < 3; i++) {
     arr[i] = Math.round(
@@ -89,7 +104,28 @@ export const mixTwoRGB = (colorA, colorB, range = 0.5) => {
   return `rgb(${arr})`
 }
 
-export const mixTwoRGBA = (colorA, colorB, range = 0.5) => {
+export const getColorShade = (col, amt) => {
+  const num = parseInt(col, 16)
+
+  let r = (num >> 16) + amt
+
+  if (r > 255) r = 255
+  else if (r < 0) r = 0
+
+  let b = ((num >> 8) & 0x00FF) + amt
+
+  if (b > 255) b = 255
+  else if (b < 0) b = 0
+
+  let g = (num & 0x0000FF) + amt
+
+  if (g > 255) g = 255
+  else if (g < 0) g = 0
+
+  return (g | (b << 8) | (r << 16)).toString(16)
+}
+
+export const mixTwoRgba = (colorA, colorB, range = 0.5) => {
   const arr = []
   for (let i = 0; i < 4; i++) {
     const round = (i === 3) ? x => x : Math.round
@@ -103,15 +139,16 @@ export const mixTwoRGBA = (colorA, colorB, range = 0.5) => {
 }
 
 export const opacify = (color, opacity) => {
-  const arr = colorStringToRGBAArray(color)
+  const arr = colorStringToRgbaArray(color)
   if (!arr) return console.warn(color + 'color is not rgba')
   arr[3] = opacity
   return `rgba(${arr})`
 }
 
-export const getDefaultOrFirstKey = Library => {
-  if (Library.default) return Library[Library.default]
-  return Library[Object.keys(Library)[0]]
+export const getDefaultOrFirstKey = (LIBRARY, key) => {
+  if (LIBRARY[key]) return LIBRARY[key].value
+  if (LIBRARY.default) return LIBRARY[LIBRARY.default].value
+  return LIBRARY[Object.keys(LIBRARY)[0]].value
 }
 
 export const getFontFormat = url => url.split(/[#?]/)[0].split('.').pop().trim()
@@ -120,24 +157,23 @@ export const setCustomFont = (name, weight, url) => `@font-face {
   font-family: '${name}';
   font-style: normal;
   font-weight: ${weight};
-  src: url('${url}') format('${/(?:\.([^.]+))?$/.exec(url)[1]}');
+  src: url('${url}') format('${getFontFormat(url)}');
 }`
 // src: url('${url}') format('${getFontFormat(url)}');
 
-export const getFontFace = Library => {
-  var fonts = ''
-  for (var name in Library) {
-    var font = Library[name]
-    for (var weight in font) {
-      var { url } = font[weight]
-      fonts += `\n${setCustomFont(name, weight, url)}`
-    }
-  }
-  return fonts
+export const getFontFaceEach = (name, weightsObject) => {
+  const keys = Object.keys(weightsObject)
+  const weightsJoint = keys.map(key => {
+    const { fontWeight, url } = weightsObject[key]
+    return setCustomFont(name, fontWeight, url)
+  })
+  return weightsJoint.join('\n')
 }
 
-export const getFontFamily = Library => {
-  return getDefaultOrFirstKey(Library)
+export const getFontFace = LIBRARY => {
+  const keys = Object.keys(LIBRARY)
+  const fontsJoint = keys.map(key => getFontFaceEach(key, LIBRARY[key].value))
+  return fontsJoint.join('\n')
 }
 
 export const numToLetterMap = {
@@ -197,7 +233,7 @@ export const generateSubSequence = ({ key, base, value, ratio, variable, state }
     const scaling = Math.round(v / base * 1000) / 1000
     const newVar = variable + (k + 1)
 
-    setSequenceValue({ key: key + (k + 1), variable: newVar, value: v, scaling, state })
+    return setSequenceValue({ key: key + (k + 1), variable: newVar, value: v, scaling, state })
   })
 }
 
