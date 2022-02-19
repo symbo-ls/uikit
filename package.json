@@ -7,7 +7,7 @@
     "src"
   ],
   "repository": "https://github.com/rackai/scratch",
-  "main": "dist/index.js",
+  "main": "src/index.js",
   "publishConfig": {},
   "dependencies": {
     "color-contrast-checker": "^1.5.0"
