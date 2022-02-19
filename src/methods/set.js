@@ -87,11 +87,10 @@ const getThemeValue = theme => {
 
 export const getTheme = value => {
   const { THEME } = CONFIG
+  // console.log('theme', THEME, CONFIG)
   if (isObjectLike(value) && value[1]) {
     const themeName = value[0]
     const subThemeName = value[1]
-    console.log(THEME)
-    console.log(themeName)
     const { helpers, variants, state } = THEME[themeName]
     if (variants && variants[subThemeName]) return getThemeValue(variants[subThemeName])
     if (helpers && helpers[subThemeName]) return getThemeValue(helpers[subThemeName])
