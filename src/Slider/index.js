@@ -3,8 +3,8 @@
 import style from './style'
 
 import { SquareButton, Shape } from '..'
-import * as Scratch from '@symbols/scratch'
-import { isFunction } from '@symbols/domql/src/utils'
+import * as Scratch from '@symbo.ls/scratch'
+import { isFunction } from 'domql/src/utils'
 
 // TODO: fix this
 Scratch.setValue('THEME', {

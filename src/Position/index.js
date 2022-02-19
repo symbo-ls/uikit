@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapSpacing } from '@symbols/scratch'
+import { mapSpacing } from '@symbo.ls/scratch'
 
 export const Position = {
   props: {},

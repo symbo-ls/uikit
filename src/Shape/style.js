@@ -1,6 +1,6 @@
 'use strict'
 
-import { UNIT } from '@symbols/scratch'
+import { UNIT } from '@symbo.ls/scratch'
 
 export default {
   boxSizing: 'border-box'

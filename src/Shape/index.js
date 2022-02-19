@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapSpacing, getTheme, getColor, THEME, COLOR } from '@symbols/scratch'
+import { mapSpacing, getTheme, getColor, THEME, COLOR } from '@symbo.ls/scratch'
 
 import style, { shape, depth } from './style'
 

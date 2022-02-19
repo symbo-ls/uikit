@@ -1,6 +1,6 @@
 'use strict'
 
-import { SPACING, mapSpacing } from '@symbols/scratch'
+import { SPACING, mapSpacing } from '@symbo.ls/scratch'
 import style from './style'
 
 export const mapBasedOnRatio = (props, prop) => {
