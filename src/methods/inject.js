@@ -1,5 +1,5 @@
 'use strict'
 
-var global = ''
+const global = ''
 
 export default global

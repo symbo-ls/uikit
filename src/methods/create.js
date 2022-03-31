@@ -2,7 +2,7 @@
 
 import base from '../base'
 
-var create = (what, params, preset) => {
+const create = (what, params, preset) => {
   base[what] = preset(params)
 }
 
