@@ -17,14 +17,16 @@ const defaultProps = {
   scales: {}
 }
 
-generateSequence(defaultProps)
+export const applyTypographySequence = () => {
+  generateSequence(defaultProps)
 
-if (defaultProps.h1Matches) {
-  var HEADINGS = findHeadings(defaultProps)
-  const { styles } = defaultProps
-  for (const k in HEADINGS) {
-    styles[`h${parseInt(k) + 1}`] = {
-      fontSize: `${HEADINGS[k].scaling}em`
+  if (defaultProps.h1Matches) {
+    const HEADINGS = findHeadings(defaultProps)
+    const { styles } = defaultProps
+    for (const k in HEADINGS) {
+      styles[`h${parseInt(k) + 1}`] = {
+        fontSize: `${HEADINGS[k].scaling}em`
+      }
     }
   }
 }

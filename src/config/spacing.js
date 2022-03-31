@@ -6,14 +6,16 @@ import { Arrayize, fallBack, generateSequence } from '../utils'
 const defaultProps = {
   base: TYPOGRAPHY.base,
   type: 'spacing',
-  ratio: SEQUENCE['phi'],
+  ratio: SEQUENCE.phi,
   range: [-5, +7],
   subSequence: true,
   sequence: {},
   scales: {}
 }
 
-generateSequence(defaultProps)
+export const applySpacingSequence = () => {
+  generateSequence(defaultProps)
+}
 
 const getSequence = (props) => {
   if (!props) return

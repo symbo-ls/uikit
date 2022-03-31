@@ -1,7 +1,7 @@
 'use strict'
 
+import { applyDocument, applySpacingSequence, applyTypographySequence } from '../config'
 import CONFIG, { CSS_VARS } from '../factory'
-// import { FONT, FONT_FAMILY_TYPES } from '../config'
 import {
   isArray,
   colorStringToRgbaArray,
@@ -196,12 +196,17 @@ const setFontFamily = (val, key) => {
   return { var: CSSvar, value: str, arr: value, type }
 }
 
+const setTypography = (val, key) => {
+  return val
+}
+
 export const SETTERS = {
   color: setColor,
   gradient: setGradient,
   font: setFont,
   font_family: setFontFamily,
-  theme: setTheme
+  theme: setTheme,
+  typography: setTypography
 }
 
 /**
@@ -224,6 +229,7 @@ export const setEach = (factoryName, props) => {
   const FACTORY_NAME = factoryName.toUpperCase()
   const keys = Object.keys(props)
   keys.map(key => setValue(FACTORY_NAME, props[key], key))
+
   return CONFIG[FACTORY_NAME]
 }
 
@@ -231,6 +237,12 @@ export const set = recivedConfig => {
   const { version, ...config } = recivedConfig
   const keys = Object.keys(config)
   keys.map(key => setEach(key, config[key]))
+
+  // apply generic configs
+  applyTypographySequence()
+  applySpacingSequence()
+  applyDocument()
+
   return CONFIG
 }
 
