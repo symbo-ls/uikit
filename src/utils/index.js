@@ -257,6 +257,8 @@ export const generateSequence = ({ type, base, ratio, range, subSequence, ...sta
 export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
   if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
 
+  if (val === 'auto') return ({ [prop]: val })
+
   // const startsWithLetterRegex = /^[a-zA-Z]/i
   const startsWithLetterRegex = /^-?[a-zA-Z]/i
   // const hasLetter = /[A-Za-z]+/.test(val)
