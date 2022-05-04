@@ -1,5 +1,5 @@
 {
-  "name": "no-css",
+  "name": "css-in-props",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/symbo-ls/no-css.git"
+    "url": "git+https://github.com/symbo-ls/css-in-props.git"
   },
   "author": "symbo.ls",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/symbo-ls/no-css/issues"
+    "url": "https://github.com/symbo-ls/css-in-props/issues"
   },
-  "homepage": "https://github.com/symbo-ls/no-css#readme"
+  "homepage": "https://github.com/symbo-ls/css-in-props#readme"
 }
