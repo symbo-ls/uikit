@@ -196,7 +196,7 @@ const setFontFamily = (val, key) => {
   return { var: CSSvar, value: str, arr: value, type }
 }
 
-const setTypography = (val, key) => {
+const setSameValue = (val, key) => {
   return val
 }
 
@@ -206,7 +206,9 @@ export const SETTERS = {
   font: setFont,
   font_family: setFontFamily,
   theme: setTheme,
-  typography: setTypography
+  typography: setSameValue,
+  spacing: setSameValue,
+  responsive: setSameValue
 }
 
 /**
