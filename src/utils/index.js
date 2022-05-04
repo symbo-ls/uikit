@@ -2,6 +2,8 @@
 
 import { UNIT } from '../config'
 
+const ENV = process.env.NODE_ENV
+
 export const isString = arg => typeof arg === 'string'
 
 export const isArray = arg => Array.isArray(arg)
@@ -153,7 +155,10 @@ export const mixTwoRgba = (colorA, colorB, range = 0.5) => {
 
 export const opacify = (color, opacity) => {
   const arr = colorStringToRgbaArray(color)
-  if (!arr) return console.warn(color + 'color is not rgba')
+  if (!arr) {
+    if (ENV === 'test' || ENV === 'development') console.warn(color + 'color is not rgba')
+    return
+  }
   arr[3] = opacity
   return `rgba(${arr})`
 }

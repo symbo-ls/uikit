@@ -15,6 +15,8 @@ import {
   getFontFaceEach
 } from '../utils'
 
+const ENV = process.env.NODE_ENV
+
 const setColor = (val, key) => {
   const [r, g, b, a = 1] = colorStringToRgbaArray(val.value || val)
   const alpha = parseFloat(a.toFixed(2))
@@ -39,14 +41,17 @@ const setGradient = (val, key) => {
 }
 
 export const getColor = value => {
-  if (!isString(value)) return console.warn(value, '- type for color is not valid')
+  if (!isString(value)) {
+    if (ENV === 'test' || ENV === 'development') console.warn(value, '- type for color is not valid')
+    return
+  }
 
   const [name, alpha, tone] = isArray(value) ? value : value.split(' ')
   const { COLOR, GRADIENT } = CONFIG
   const val = COLOR[name] || GRADIENT[name]
 
   if (!val) {
-    console.warn('Can\'t find color', name)
+    if (ENV === 'test' || ENV === 'development') console.warn('Can\'t find color', name)
     return value
   }
 
@@ -97,7 +102,8 @@ export const getTheme = value => {
     if (state && state[subThemeName]) return getThemeValue(state[subThemeName])
   } else if (isObject(value)) return setThemeValue(value)
   else if (isString(value) && THEME[value]) return getThemeValue(THEME[value])
-  console.warn('Can\'t find theme', value)
+
+  if (ENV === 'test' || ENV === 'development') console.warn('Can\'t find theme', value)
 }
 
 const setPrefersScheme = (theme, key, variant, themeValue) => {
