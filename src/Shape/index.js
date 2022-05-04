@@ -7,15 +7,15 @@ import style, { shape, depth } from './style'
 export const Shape = {
   class: {
     default: style,
-    shape: ({ props }) => props.shape && shape[props.shape],
-    shapeDirection: ({ props }) => props.shape && shape[props.shape][props.shapeDirection || 'top'],
-    shapeDirectionColor: ({ props, ...el }) => props.shapeDirection && { '&:before': { borderColor: el.class.backgroundColor } },
+    shape: ({ props }) => props.shape ? shape[props.shape] : null,
+    shapeDirection: ({ props }) => props.shape ? shape[props.shape][props.shapeDirection || 'top'] : null,
+    shapeDirectionColor: ({ props, ...el }) => props.shapeDirection ? { '&:before': { borderColor: el.class.backgroundColor } } : null,
     depth: ({ props }) => depth[props.depth],
-    round: ({ props, key, ...el }) => props.round && (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })),
-    theme: ({ props }) => props.theme && getTheme(props.theme),
-    color: ({ props }) => props.color && ({ color: getColor(props.color) }),
-    border: ({ props }) => (props.border && ({ borderColor: getColor(props.border) })) || 'transparent 0',
-    background: ({ props }) => props.background && ({ backgroundColor: getColor(props.background) })
+    round: ({ props, key, ...el }) => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
+    theme: ({ props }) => props.theme ? getTheme(props.theme) : null,
+    color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,
+    border: ({ props }) => props.border ? ({ borderColor: getColor(props.border) }) : null,
+    background: ({ props }) => props.background ? ({ backgroundColor: getColor(props.background) }) : null
   }
 
   // mode: {

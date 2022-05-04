@@ -85,8 +85,8 @@ export const Block = {
     },
 
     size: ({ props }) => {
-      if (typeof props.size !== 'string') return
-      const [fontSize, padding, margin] = props.size.split(' ')
+      // if (typeof props.size !== 'string') return
+      // const [fontSize, padding, margin] = props.size.split(' ')
     }
   }
 }
