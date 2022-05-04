@@ -27,6 +27,19 @@ export const merge = (obj, original) => {
   return obj
 }
 
+export const deepMerge = (obj, obj2) => {
+  for (const e in obj2) {
+    const objProp = obj[e]
+    const obj2Prop = obj2[e]
+    if (objProp === undefined) {
+      obj[e] = obj2Prop
+    } else if (isObjectLike(objProp) && isObject(obj2Prop)) {
+      deepMerge(objProp, obj2Prop)
+    }
+  }
+  return obj
+}
+
 export const colorStringToRgbaArray = color => {
   if (color === '') return
   if (color.toLowerCase() === 'transparent') return [0, 0, 0, 0]

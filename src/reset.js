@@ -1,11 +1,11 @@
 'use strict'
 
 import * as CONFIG from './config'
-import { merge } from './utils'
+import { deepMerge, merge } from './utils'
 
 export const RESET = {}
 
-export const applyReset = () => merge(RESET, {
+export const applyReset = (reset = {}) => deepMerge(merge(RESET, reset), {
   html: {
     position: 'absolute',
     overflow: 'hidden',
