@@ -6,6 +6,6 @@ export const Text = {
   text: ({ props }) => props.text,
 
   class: {
-    size: ({ props }) => props.fontSize && mapFontSize(props.fontSize)
+    fontSize: ({ props }) => props.fontSize && mapFontSize(props.fontSize)
   }
 }
