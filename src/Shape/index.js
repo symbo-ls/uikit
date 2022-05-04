@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapSpacing, getTheme, getColor, THEME, COLOR } from '@symbo.ls/scratch'
+import { mapSpacing, getTheme, getColor } from '@symbo.ls/scratch'
 
 import style, { shape, depth } from './style'
 
@@ -14,7 +14,7 @@ export const Shape = {
     round: ({ props, key, ...el }) => props.round && (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })),
     theme: ({ props }) => props.theme && getTheme(props.theme),
     color: ({ props }) => props.color && ({ color: getColor(props.color) }),
-    border: ({ props }) => props.border && ({ border: getColor(props.border) }) || 'transparent 0',
+    border: ({ props }) => (props.border && ({ borderColor: getColor(props.border) })) || 'transparent 0',
     background: ({ props }) => props.background && ({ backgroundColor: getColor(props.background) })
   }
 
