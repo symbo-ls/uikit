@@ -29,8 +29,6 @@ export const mapBasedOnRatio = (props, prop) => {
 }
 
 export const Block = {
-  style,
-
   props: {},
 
   class: {
@@ -85,6 +83,11 @@ export const Block = {
         alignItems: alignItems,
         justifyContent: justifyContent
       }
+    },
+
+    size: ({ props }) => {
+      if (typeof props.size !== 'string') return
+      const [fontSize, padding, margin] = props.size.split(' ')
     }
   }
 }
