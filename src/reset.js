@@ -15,6 +15,8 @@ export const applyReset = (reset = {}) => deepMerge(merge(RESET, reset), {
     left: '0',
     margin: '0',
     WebkitFontSmoothing: 'antialiased',
+    transform: 'translate3d(0, 0, 1px)',
+    scrollBehavior: 'smooth',
 
     fontFamily: CONFIG.DOCUMENT.fontFamily,
 
