@@ -6,6 +6,11 @@ export const Responsive = {
   on: {
     init: (el, s) => {
       const { props } = el
+
+      // Object.keys(props)
+      //   .filter(v => v.slice(0, 1) === '@')
+      //   .map()
+
       for (const screen in props) {
         if (screen.slice(0, 1) === '@') {
           const screenName = screen.slice(1)
@@ -18,7 +23,12 @@ export const Responsive = {
             // const classProp = el.class[prop]
             const classProp = el.class[prop]
             if (typeof classProp !== 'function') continue
-            const calculatedProp = classProp({ props: screenProps })
+            let calculatedProp = classProp({ props: screenProps })
+
+            if (Array.isArray(calculatedProp)) {
+              calculatedProp = Object.assign({}, ...calculatedProp)
+            }
+
             for (const finalProp in calculatedProp) {
               calculatedScreenProps[finalProp] = calculatedProp[finalProp]
             }
