@@ -8,11 +8,15 @@ import {
   isObject,
   isString,
   isObjectLike,
-  getColorShade,
+  rgbToHSL,
   hexToRgbArray,
   rgbArrayToHex,
   getDefaultOrFirstKey,
-  getFontFaceEach
+  getFontFaceEach,
+  hslToRgb,
+  getColorShade,
+  pSBC,
+  changeLightness
 } from '../utils'
 
 const ENV = process.env.NODE_ENV
@@ -62,12 +66,24 @@ export const getColor = value => {
   if (rgb) {
     if (tone) {
       if (!val[tone]) {
-        const toHex = rgbArrayToHex(rgb.split(', '))
-        rgb = hexToRgbArray(getColorShade(toHex, tone)).join(', ')
+        const toHex = rgbArrayToHex(rgb.split(', ').map(v => parseFloat(v)))
+        if (tone.slice(0, 1) === '-' || tone.slice(0, 1) === '+') {
+          rgb = hexToRgbArray(getColorShade(toHex, parseFloat(tone))).join(', ')
+        } else {
+          console.log(rgb)
+          const [r, g, b] = [...rgb.split(', ').map(v => parseFloat(v))]
+          const hsl = rgbToHSL(r, g, b)
+          const [h, s, l] = hsl
+          console.log(h, s, l, tone)
+          const newRgb = hslToRgb(h, s, parseFloat(tone) / 100 * 255)
+          console.log(newRgb)
+          rgb = newRgb
+          console.log(rgb)
+        }
         val[tone] = { rgb, var: `${val.var}-${tone}` }
       } else rgb = val[tone].rgb
     }
-    if (alpha) return `rgba(${val.rgb}, ${alpha})`
+    if (alpha) return `rgba(${rgb}, ${alpha})`
     return `rgb(${rgb})`
   } else return val.value
 }

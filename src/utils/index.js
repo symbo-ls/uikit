@@ -99,7 +99,7 @@ export const rgbToHex = (r, g, b) => {
 }
 
 export const rgbArrayToHex = ([r, g, b]) => {
-  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+  return ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
 }
 
 export const hexToRgba = (hex, alpha = 1) => {
@@ -118,6 +118,59 @@ export const mixTwoRgb = (colorA, colorB, range = 0.5) => {
   }
   return `rgb(${arr})`
 }
+
+// export const rgbToHSL = (r, g, b) => {
+//   console.log(r, g, b)
+//   r /= 255
+//   g /= 255
+//   b /= 255
+//   const l = Math.max(r, g, b)
+//   const s = l - Math.min(r, g, b)
+//   const h = s
+//     ? l === r
+//         ? (g - b) / s
+//         : l === g
+//           ? 2 + (b - r) / s
+//           : 4 + (r - g) / s
+//     : 0
+//   return [
+//     60 * h < 0 ? 60 * h + 360 : 60 * h,
+//     100 * (s ? (l <= 0.5 ? s / (2 * l - s) : s / (2 - (2 * l - s))) : 0),
+//     (100 * (2 * l - s)) / 2
+//   ]
+// }
+
+// export const hslToRgb = (h, s, l) => {
+//   console.log(h, s, l)
+//   const a = s * Math.min(l, 1 - l)
+//   const f = (n, k = (n + h / 30) % 12) => l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1)
+//   return [f(0), f(8), f(4)].map(v => v * 1000)
+// }
+
+export const changeLightness = (delta, hsl) => {
+  const [hue, saturation, lightness] = hsl
+
+  const newLightness = Math.max(
+    0,
+    Math.min(100, lightness + parseFloat(delta))
+  )
+
+  return [hue, saturation, newLightness]
+}
+
+export const rgbToHSL = (r, g, b) => {
+  console.log(r, g, b)
+  const a = Math.max(r, g, b); const n = a - Math.min(r, g, b); const f = (1 - Math.abs(a + a - n - 1))
+  const h = n && ((a == r) ? (g - b) / n : ((a == g) ? 2 + (b - r) / n : 4 + (r - g) / n))
+  return [60 * (h < 0 ? h + 6 : h), f ? n / f : 0, (a + a - n) / 2]
+}
+
+export const hslToRgb = (h, s, l,
+  a = s * Math.min(l, 1 - l),
+  f = (n, k = (n + h / 30) % 12) => l - a * Math.max(
+    Math.min(k - 3, 9 - k, 1), -1
+  )
+) => [f(0), f(8), f(4)]
 
 export const getColorShade = (col, amt) => {
   const num = parseInt(col, 16)
