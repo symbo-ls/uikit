@@ -2,6 +2,6 @@
 
 export const Overflow = {
   class: {
-    overflow: { overflow: 'hidden' }
+    overflow: ({ props }) => ({ overflow: props.overflow }),
   }
 }

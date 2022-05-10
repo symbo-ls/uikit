@@ -85,6 +85,7 @@ export const Block = {
         justifyContent: justifyContent
       }
     },
+    flex: ({ props }) => props.flex && ({ flex: props.flex }),
 
     size: ({ props }) => {
       // if (typeof props.size !== 'string') return

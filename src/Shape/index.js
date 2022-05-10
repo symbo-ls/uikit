@@ -4,6 +4,18 @@ import { mapSpacing, getTheme, getColor } from '@symbo.ls/scratch'
 
 import style, { shape, depth } from './style'
 
+const diffBorder = (border, key = 'border') => {
+  const obj = {}
+  const arr = border.split(' ')
+  arr.map(v => {
+    const isColor = getColor(v)
+    if (v.includes('px')) obj[`${key}Width`] = v
+    else if (v === 'solid' || !isColor) obj[`${key}Style`] = v || 'solid'
+    else obj[`${key}Color`] = v
+  })
+  return obj
+}
+
 export const Shape = {
   class: {
     default: style,
@@ -14,8 +26,14 @@ export const Shape = {
     round: ({ props, key, ...el }) => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
     theme: ({ props }) => props.theme ? getTheme(props.theme) : null,
     color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,
-    border: ({ props }) => props.border ? ({ borderColor: getColor(props.border) }) : null,
-    background: ({ props }) => props.background ? ({ backgroundColor: getColor(props.background) }) : null
+    background: ({ props }) => props.background ? ({ backgroundColor: getColor(props.background) }) : null,
+    // border: ({ props }) => props.border ? ({ borderColor: getColor(props.border) }) : null,
+
+    border: ({ props }) => props.border ? diffBorder(props.border) : null,
+    borderLeft: ({ props }) => props.borderLeft ? diffBorder(props.borderLeft, 'borderLeft') : null,
+    borderTop: ({ props }) => props.borderTop ? diffBorder(props.borderTop, 'borderTop') : null,
+    borderRight: ({ props }) => props.borderRight ? diffBorder(props.borderRight, 'borderRight') : null,
+    borderBottom: ({ props }) => props.borderBottom ? diffBorder(props.borderBottom, 'borderBottom') : null,
   }
 
   // mode: {
