@@ -31,6 +31,8 @@ export const Block = {
   props: {},
 
   class: {
+    display: ({ props }) => ({ display: props.display }),
+
     width: ({ props }) => props.width && mapBasedOnRatio(props, 'width'),
     height: ({ props }) => props.height && mapBasedOnRatio(props, 'height'),
     boxSize: ({ props }) => {
