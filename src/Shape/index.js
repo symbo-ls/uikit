@@ -4,14 +4,16 @@ import { mapSpacing, getTheme, getColor } from '@symbo.ls/scratch'
 
 import style, { shape, depth } from './style'
 
+const isBorderStyle = str =>
+  ['none','hidden','dotted','dashed','solid','double','groove','ridge','inset','outset','initial'].some(v => str.includes(v))
+
 const diffBorder = (border, key = 'border') => {
   const obj = {}
   const arr = border.split(' ')
   arr.map(v => {
-    const isColor = getColor(v)
     if (v.includes('px')) obj[`${key}Width`] = v
-    else if (v === 'solid' || !isColor) obj[`${key}Style`] = v || 'solid'
-    else obj[`${key}Color`] = v
+    else if (isBorderStyle(v)) obj[`${key}Style`] = v || 'solid'
+    else if (getColor(v)) obj[`${key}Color`] = getColor(v)
   })
   return obj
 }
