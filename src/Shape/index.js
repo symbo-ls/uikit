@@ -36,6 +36,9 @@ export const Shape = {
     borderTop: ({ props }) => props.borderTop ? diffBorder(props.borderTop, 'borderTop') : null,
     borderRight: ({ props }) => props.borderRight ? diffBorder(props.borderRight, 'borderRight') : null,
     borderBottom: ({ props }) => props.borderBottom ? diffBorder(props.borderBottom, 'borderBottom') : null,
+
+    opacity: ({ props }) => props.opacity && ({ opacity: props.opacity }),
+    visibility: ({ props }) => props.visibility && ({ visibility: props.visibility })
   }
 
   // mode: {
