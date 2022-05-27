@@ -7,7 +7,9 @@
   "dependencies": {
     "@symbo.ls/block": "^0.6.15",
     "@symbo.ls/position": "^0.6.15",
-    "@symbo.ls/shape": "^0.6.15"
+    "@symbo.ls/shape": "^0.6.15",
+    "@symbo.ls/text": "^0.6.15",
+    "@symbo.ls/responsive": "^0.6.15"
   },
   "source": "src/index.js"
 }

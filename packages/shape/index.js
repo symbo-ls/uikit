@@ -7,15 +7,24 @@ import style, { shape, depth } from './style'
 export const Shape = {
   class: {
     default: style,
-    shape: ({ props }) => props.shape && shape[props.shape],
-    shapeDirection: ({ props }) => props.shape && shape[props.shape][props.shapeDirection || 'top'],
-    shapeDirectionColor: ({ props, ...el }) => props.shapeDirection && { '&:before': { borderColor: el.class.backgroundColor } },
+    shape: ({ props }) => props.shape ? shape[props.shape] : null,
+    shapeDirection: ({ props }) => props.shape ? shape[props.shape][props.shapeDirection || 'top'] : null,
+    shapeDirectionColor: ({ props, ...el }) => props.shapeDirection ? { '&:before': { borderColor: el.class.backgroundColor } } : null,
     depth: ({ props }) => depth[props.depth],
-    round: ({ props, key, ...el }) => props.round && (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })),
-    theme: ({ props }) => props.theme && getTheme(props.theme),
-    color: ({ props }) => props.color && ({ color: getColor(props.color) }),
-    border: ({ props }) => props.border ? ({ border: getColor(props.border) }) : 'transparent 0',
-    background: ({ props }) => props.background && ({ backgroundColor: getColor(props.background) })
+    round: ({ props, key, ...el }) => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
+    theme: ({ props }) => props.theme ? getTheme(props.theme) : null,
+    color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,
+    background: ({ props }) => props.background ? ({ backgroundColor: getColor(props.background) }) : null,
+    // border: ({ props }) => props.border ? ({ borderColor: getColor(props.border) }) : null,
+
+    border: ({ props }) => props.border ? diffBorder(props.border) : null,
+    borderLeft: ({ props }) => props.borderLeft ? diffBorder(props.borderLeft, 'borderLeft') : null,
+    borderTop: ({ props }) => props.borderTop ? diffBorder(props.borderTop, 'borderTop') : null,
+    borderRight: ({ props }) => props.borderRight ? diffBorder(props.borderRight, 'borderRight') : null,
+    borderBottom: ({ props }) => props.borderBottom ? diffBorder(props.borderBottom, 'borderBottom') : null,
+
+    opacity: ({ props }) => props.opacity && ({ opacity: props.opacity }),
+    visibility: ({ props }) => props.visibility && ({ visibility: props.visibility })
   }
 
   // mode: {

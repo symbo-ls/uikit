@@ -1,0 +1,11 @@
+{
+  "name": "@symbo.ls/responsive",
+  "version": "0.6.15",
+  "main": "index.js",
+  "license": "MIT",
+  "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
+  "dependencies": {
+    "@symbo.ls/scratch": "^0.2.26"
+  },
+  "source": "src/index.js"
+}

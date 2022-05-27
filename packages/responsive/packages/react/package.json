@@ -1,0 +1,12 @@
+{
+  "name": "@symbo.ls/react-responsive",
+  "version": "0.6.15",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
+  "dependencies": {
+    "@symbo.ls/responsive": "^0.6.15",
+    "@symbo.ls/transform-react": "^0.6.15"
+  },
+  "source": "src/index.js"
+}
