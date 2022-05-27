@@ -1,11 +1,11 @@
 {
   "name": "@symbo.ls/link",
-  "version": "0.6.16",
+  "version": "0.6.18",
   "main": "index.js",
   "license": "MIT",
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "dependencies": {
-    "@symbo.ls/shape": "^0.6.15"
+    "@symbo.ls/shape": "^0.6.18"
   },
   "source": "src/index.js"
 }

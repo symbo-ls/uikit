@@ -1,10 +1,10 @@
 {
   "name": "@symbo.ls/grid-layouts",
-  "version": "0.6.16",
+  "version": "0.6.18",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@symbo.ls/link": "^0.6.16"
+    "@symbo.ls/link": "^0.6.18"
   },
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "source": "src/index.js"
