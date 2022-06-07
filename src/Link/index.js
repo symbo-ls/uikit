@@ -1,9 +1,9 @@
 'use strict'
 
-import { Shape } from '..'
+import { Shape, Text } from '..'
 
 export const Link = {
-  proto: [Shape],
+  proto: [Shape, Text],
   tag: 'a',
   props: {
     href: '',

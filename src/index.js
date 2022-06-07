@@ -12,6 +12,8 @@ export * from './Grid'
 export * from './Direction'
 export * from './Position'
 export * from './Overflow'
+export * from './Transform'
+export * from './Responsive'
 
 export * from './Box'
 
