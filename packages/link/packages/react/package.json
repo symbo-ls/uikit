@@ -1,11 +1,11 @@
 {
   "name": "@symbo.ls/react-link",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "dependencies": {
-    "@symbo.ls/link": "^0.7.0",
+    "@symbo.ls/link": "^1.0.0",
     "@symbo.ls/transform-react": "latest"
   },
   "source": "src/index.js"

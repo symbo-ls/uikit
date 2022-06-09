@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/react-responsive",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
