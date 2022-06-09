@@ -1,4 +1,6 @@
-class ImportError extends Error {}
+'use strict'
+
+// class ImportError extends Error {}
 
 export const loadModule = async (modulePath) => {
   try {

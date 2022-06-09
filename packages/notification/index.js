@@ -33,7 +33,7 @@ export const Notification = {
     p: {
       extends: Text,
       props: {
-        size: 'Z',
+        fontSize: 'Z',
         text: 'is not always a distraction'
       },
       style: { margin: 0 }

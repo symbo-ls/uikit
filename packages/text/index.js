@@ -1,10 +1,8 @@
 'use strict'
 
 import { mapFontSize } from '@symbo.ls/scratch'
-import style from './style'
 
 export const Text = {
-  style,
 
   text: ({ props }) => props.text || '',
 

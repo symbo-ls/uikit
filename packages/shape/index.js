@@ -5,7 +5,7 @@ import { mapSpacing, getTheme, getColor } from '@symbo.ls/scratch'
 import style, { shape, depth } from './style'
 
 const isBorderStyle = str =>
-  ['none','hidden','dotted','dashed','solid','double','groove','ridge','inset','outset','initial'].some(v => str.includes(v))
+  ['none', 'hidden', 'dotted', 'dashed', 'solid', 'double', 'groove', 'ridge', 'inset', 'outset', 'initial'].some(v => str.includes(v))
 
 const diffBorder = (border, key = 'border') => {
   const obj = {}

@@ -28,7 +28,7 @@ export const Button = {
 export const SquareButton = {
   extends: Button,
   props: {
-    size: 'A',
+    fontSize: 'A',
     width: 'A',
     padding: 'Z',
     aspectRatio: '1 / 1',
