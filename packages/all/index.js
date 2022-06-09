@@ -2,7 +2,7 @@
 
 export * from '@symbo.ls/scratch-init'
 
-export * from './styles'
+// export * from './styles'
 
 export * from '@symbo.ls/responsive'
 export * from '@symbo.ls/block'
