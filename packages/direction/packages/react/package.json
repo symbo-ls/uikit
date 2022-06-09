@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/react-direction",
-  "version": "0.6.26",
+  "version": "0.7.0",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",

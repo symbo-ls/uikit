@@ -1,14 +1,14 @@
 {
   "name": "@symbo.ls/slider",
-  "version": "0.6.26",
+  "version": "0.7.0",
   "main": "index.js",
   "license": "MIT",
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "dependencies": {
     "@domql/utils": "latest",
-    "@symbo.ls/button": "^0.6.26",
+    "@symbo.ls/button": "^0.7.0",
     "@symbo.ls/scratch": "^0.2.26",
-    "@symbo.ls/shape": "^0.6.26"
+    "@symbo.ls/shape": "^0.7.0"
   },
   "source": "src/index.js"
 }

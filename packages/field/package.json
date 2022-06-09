@@ -1,12 +1,12 @@
 {
   "name": "@symbo.ls/field",
-  "version": "0.6.26",
+  "version": "0.7.0",
   "main": "index.js",
   "license": "MIT",
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "dependencies": {
     "@symbo.ls/icon-text": "latest",
-    "@symbo.ls/input": "^0.6.26",
+    "@symbo.ls/input": "^0.7.0",
     "@symbo.ls/scratch": "^0.2.26"
   },
   "source": "src/index.js"
