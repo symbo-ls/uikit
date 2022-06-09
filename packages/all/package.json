@@ -1,7 +1,7 @@
 {
   "name": "smbls",
   "description": "UI Library built on Scratch and DOMQL",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "repository": "https://github.com/rackai/symbols",
   "main": "index.js",
   "files": [
