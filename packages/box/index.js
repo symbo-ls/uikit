@@ -7,5 +7,5 @@ import { Text } from '@symbo.ls/text'
 import { Responsive } from '@symbo.ls/responsive'
 
 export const Box = {
-  proto: [Shape, Position, Block, Text, Responsive]
+  extends: [Shape, Position, Block, Text, Responsive]
 }
