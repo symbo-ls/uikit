@@ -72,6 +72,11 @@ export const Block = {
     margin: ({ props }) => mapBasedOnRatio(props, 'margin'),
     gap: ({ props }) => mapBasedOnRatio(props, 'gap'),
 
+    paddingBlockStart: ({ props }) => mapBasedOnRatio(props, 'paddingBlockStart'),
+    paddingBlockEnd: ({ props }) => mapBasedOnRatio(props, 'paddingBlockEnd'),
+    paddingInlineStart: ({ props }) => mapBasedOnRatio(props, 'paddingInlineStart'),
+    paddingInlineEnd: ({ props }) => mapBasedOnRatio(props, 'paddingInlineEnd'),
+
     flexFlow: ({ props }) => props.flexFlow && ({
       display: 'flex',
       flexFlow: props.flexFlow
@@ -86,6 +91,7 @@ export const Block = {
       }
     },
     flex: ({ props }) => props.flex && ({ flex: props.flex }),
+    alignSelf: ({ props }) => props.alignSelf && ({ alignSelf: props.alignSelf }),
 
     size: ({ props }) => {
       // if (typeof props.size !== 'string') return

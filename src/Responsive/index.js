@@ -6,6 +6,8 @@ export const Responsive = {
   on: {
     init: (el, s) => {
       const { props } = el
+      // console.log(el.key)
+      // console.log(el.props)
 
       // Object.keys(props)
       //   .filter(v => v.slice(0, 1) === '@')
