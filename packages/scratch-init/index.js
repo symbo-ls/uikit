@@ -1,9 +1,8 @@
 'use strict'
 
-import 'domql/packages/emotion'
 import { set, RESET } from '@symbo.ls/scratch'
 
-import { injectGlobal } from 'emotion'
+import { injectGlobal } from '@emotion/css'
 
 import CONFIG_DEFAULT from '@symbo.ls/config-default'
 import SYMBOLSRC_FILE from './.symbolsrc.json'

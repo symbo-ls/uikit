@@ -5,9 +5,9 @@
   "license": "MIT",
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "dependencies": {
+    "@emotion/css": "latest",
     "@symbo.ls/config-default": "latest",
-    "@symbo.ls/scratch": "^0.3.6",
-    "domql": "latest"
+    "@symbo.ls/scratch": "latest"
   },
   "source": "src/index.js"
 }

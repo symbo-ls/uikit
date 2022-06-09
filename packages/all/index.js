@@ -1,5 +1,7 @@
 'use strict'
 
+export * from '@symbo.ls/scratch-init'
+
 export * from './styles'
 
 export * from '@symbo.ls/responsive'
