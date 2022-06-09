@@ -6,8 +6,8 @@
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "dependencies": {
     "@symbo.ls/icon": "latest",
-    "@symbo.ls/shape": "^1.0.3",
-    "@symbo.ls/user": "^1.0.3"
+    "@symbo.ls/shape": "latest",
+    "@symbo.ls/user": "latest"
   },
   "source": "src/index.js"
 }

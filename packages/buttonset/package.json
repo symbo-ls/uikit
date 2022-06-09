@@ -6,9 +6,9 @@
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "dependencies": {
     "@symbo.ls/block": "latest",
-    "@symbo.ls/button": "^1.0.3",
+    "@symbo.ls/button": "latest",
     "@symbo.ls/flex": "latest",
-    "@symbo.ls/shape": "^1.0.3"
+    "@symbo.ls/shape": "latest"
   },
   "source": "src/index.js"
 }

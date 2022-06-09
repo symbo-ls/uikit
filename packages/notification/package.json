@@ -9,7 +9,7 @@
     "@symbo.ls/direction": "latest",
     "@symbo.ls/flex": "latest",
     "@symbo.ls/icon-text": "latest",
-    "@symbo.ls/shape": "^1.0.3",
+    "@symbo.ls/shape": "latest",
     "@symbo.ls/text": "latest"
   },
   "source": "src/index.js"

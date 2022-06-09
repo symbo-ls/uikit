@@ -8,7 +8,7 @@
     "@symbo.ls/block": "latest",
     "@symbo.ls/position": "latest",
     "@symbo.ls/responsive": "latest",
-    "@symbo.ls/shape": "^1.0.3",
+    "@symbo.ls/shape": "latest",
     "@symbo.ls/text": "latest"
   },
   "source": "src/index.js"

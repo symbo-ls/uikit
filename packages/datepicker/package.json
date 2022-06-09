@@ -7,7 +7,7 @@
   "dependencies": {
     "@symbo.ls/block": "latest",
     "@symbo.ls/icon": "latest",
-    "@symbo.ls/shape": "^1.0.3"
+    "@symbo.ls/shape": "latest"
   },
   "source": "src/index.js"
 }

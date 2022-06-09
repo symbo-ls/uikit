@@ -5,7 +5,7 @@
   "license": "MIT",
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "dependencies": {
-    "@symbo.ls/link": "^1.0.3",
+    "@symbo.ls/link": "latest",
     "@symbo.ls/transform-react": "latest"
   },
   "source": "src/index.js"

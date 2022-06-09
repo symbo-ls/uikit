@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "@symbo.ls/link": "^1.0.3"
+    "@symbo.ls/link": "latest"
   },
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "source": "src/index.js"
