@@ -6,6 +6,6 @@
   "dependencies": {
     "@symbo.ls/link": "^0.7.0"
   },
-  "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
+  "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "source": "src/index.js"
 }
