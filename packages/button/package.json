@@ -1,14 +1,14 @@
 {
   "name": "@symbo.ls/button",
-  "version": "0.6.18",
+  "version": "0.6.26",
   "main": "index.js",
   "license": "MIT",
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "dependencies": {
-    "@symbo.ls/block": "^0.6.18",
-    "@symbo.ls/direction": "^0.6.18",
-    "@symbo.ls/icon-text": "^0.6.18",
-    "@symbo.ls/shape": "^0.6.18"
+    "@symbo.ls/block": "latest",
+    "@symbo.ls/direction": "latest",
+    "@symbo.ls/icon-text": "latest",
+    "@symbo.ls/shape": "^0.6.26"
   },
   "source": "src/index.js"
 }

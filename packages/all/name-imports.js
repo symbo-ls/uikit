@@ -2,6 +2,7 @@
 
 export * from './styles'
 
+export * from './Responsive'
 export * from './Text'
 export * from './Block'
 export * from './Shape'

@@ -1,7 +1,7 @@
 {
-  "name": "@symbo.ls/uikit",
+  "name": "smbls",
   "description": "UI Library built on Scratch and DOMQL",
-  "version": "0.6.18",
+  "version": "0.6.24",
   "repository": "https://github.com/rackai/symbols",
   "main": "index.js",
   "files": [
@@ -33,7 +33,7 @@
     "@symbo.ls/overflow": "latest",
     "@symbo.ls/pills": "latest",
     "@symbo.ls/position": "latest",
-    "@symbo.ls/scratch-init": "latest",
+    "@symbo.ls/responsive": "latest",
     "@symbo.ls/select": "latest",
     "@symbo.ls/shape": "latest",
     "@symbo.ls/slider": "latest",

@@ -1,6 +1,6 @@
 'use strict'
 
-import '@domql/emotion'
+import 'domql/packages/emotion'
 import { set, RESET } from '@symbo.ls/scratch'
 
 import { injectGlobal } from 'emotion'

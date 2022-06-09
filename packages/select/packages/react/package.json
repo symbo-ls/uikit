@@ -1,12 +1,12 @@
 {
   "name": "@symbo.ls/react-select",
-  "version": "0.6.18",
+  "version": "0.6.26",
   "main": "dist/index.js",
   "license": "MIT",
   "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
   "dependencies": {
-    "@symbo.ls/select": "^0.6.18",
-    "@symbo.ls/transform-react": "^0.6.18"
+    "@symbo.ls/select": "^0.6.26",
+    "@symbo.ls/transform-react": "latest"
   },
   "source": "src/index.js"
 }
