@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/box",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
@@ -8,7 +8,7 @@
     "@symbo.ls/block": "latest",
     "@symbo.ls/position": "latest",
     "@symbo.ls/responsive": "latest",
-    "@symbo.ls/shape": "^1.0.0",
+    "@symbo.ls/shape": "^1.0.3",
     "@symbo.ls/text": "latest"
   },
   "source": "src/index.js"

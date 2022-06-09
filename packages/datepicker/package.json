@@ -1,13 +1,13 @@
 {
   "name": "@symbo.ls/datepicker",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "dependencies": {
     "@symbo.ls/block": "latest",
     "@symbo.ls/icon": "latest",
-    "@symbo.ls/shape": "^1.0.0"
+    "@symbo.ls/shape": "^1.0.3"
   },
   "source": "src/index.js"
 }
