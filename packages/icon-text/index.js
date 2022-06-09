@@ -1,18 +1,14 @@
 'use strict'
 
-import style from './style'
-
-import { Block } from '@symbo.ls/block'
+import { Box } from '@symbo.ls/box'
 import { Icon } from '@symbo.ls/icon'
-import { Direction } from '@symbo.ls/direction'
-import { Text } from '@symbo.ls/text'
 
 export const IconText = {
-  style,
-
-  extends: [Text, Direction, Block],
+  extends: [Box],
   props: {
-    flexAlign: 'center flex-start'
+    flexAlign: 'center center',
+    display: 'flex',
+    lineHeight: 1
   },
 
   icon: { extends: Icon, if: ({ props }, s) => props.icon },
