@@ -12,6 +12,7 @@ export * from '@symbo.ls/grid'
 export * from '@symbo.ls/direction'
 export * from '@symbo.ls/position'
 export * from '@symbo.ls/overflow'
+export * from '@symbo.ls/text'
 
 export * from '@symbo.ls/box'
 
