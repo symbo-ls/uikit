@@ -5,7 +5,7 @@ import { Shape, Block, IconText, Direction } from '../'
 import style from './style'
 
 export const Button = {
-  proto: [Shape, Block, IconText, Direction],
+  proto: [IconText],
   tag: 'button',
   style,
   props: {
@@ -40,7 +40,6 @@ export const CircleButton = {
 
 export const KangorooButton = {
   tag: 'button',
-  proto: [Shape, Direction, Block],
   style,
 
   iconText: {
@@ -48,7 +47,7 @@ export const KangorooButton = {
   },
 
   child: {
-    proto: [Shape, Block, IconText]
+    proto: [IconText]
   }
 }
 

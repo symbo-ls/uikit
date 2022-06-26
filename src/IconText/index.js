@@ -8,12 +8,11 @@ import { } from '../Flex'
 export const IconText = {
   style,
 
-  proto: [Text, Direction, Block],
   props: {
     flexAlign: 'center flex-start'
   },
 
-  icon: { proto: Icon, if: ({ props }, s) => props.icon },
+  icon: { proto: Icon, if: ({ parent }) => parent.props.icon, props: ({ parent }) => ({ icon: parent.props.icon }) },
 
   text: ({ props }) => props.text
 }
