@@ -7,16 +7,10 @@ export const Position = {
 
   class: {
     position: ({ props }) => props.position && ({ position: props.position }),
-    positionAxes: ({ props }) => {
-      const { positionAxes } = props
-      if (typeof positionAxes !== 'string') return
-      const [left, top, right, bottom] = positionAxes.split(' ')
-      return {
-        left: mapSpacing(left, 'left'),
-        top: mapSpacing(top, 'top'),
-        right: mapSpacing(right, 'right'),
-        bottom: mapSpacing(bottom, 'bottom')
-      }
+    inset: ({ props }) => {
+      const { inset } = props
+      if (typeof inset !== 'string') return
+      return { inset: inset.split(' ').map(v => mapSpacing(v,'k').k).join(' ') }
     },
 
     left: ({ props }) => mapSpacing(props.left, 'left'),
