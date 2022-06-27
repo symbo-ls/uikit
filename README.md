@@ -1,22 +1,25 @@
 # Symbols
 
-UI Library in composition of [Scratch](https://github.com/rackai/scratch) and [DOMQL](https://github.com/rackai/domql)
+UI Library in composition of [Scratch](https://github.com/smbo-ls/scratch) and [DOMQL](https://github.com/domql/domql)
 
-[![npm version](https://badge.fury.io/js/%40rackai%2Fsymbols.svg)](https://badge.fury.io/js/%40rackai%2Fsymbols)
+[![npm version](https://badge.fury.io/js/smbls.svg)](https://badge.fury.io/js/smbls)
 
 ### Setup
 
-1. Clone the repo
+1. Installation
 ```
-git clone git@github.com:rackai/symbols.git
-```
-
-2. Install scripts
-```
-yarn
+yarn add smbls
 ```
 
-3. Run the project
+2. Import the component from Symbols
 ```
-yarn start
+import { Box } from 'smbls'
+```
+
+3. Use it inside your DOMQL code
+```
+const Header = {
+  proto: Box,
+  // ...Other Properties
+}
 ```
