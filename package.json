@@ -1,8 +1,8 @@
 {
-  "name": "@symbo.ls/symbols",
+  "name": "smbls",
   "description": "UI Library built on Scratch and DOMQL",
   "private": false,
-  "author": "rackai",
+  "author": "symbo.ls",
   "version": "0.8.2",
   "repository": "https://github.com/rackai/symbols",
   "main": "src/index.js",
