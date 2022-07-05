@@ -6,8 +6,4 @@ export default {
   outline: 0,
   cursor: 'pointer',
   fontFamily: 'inherit',
-  display: 'inline-flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  textDecoration: 'none'
 }

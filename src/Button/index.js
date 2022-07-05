@@ -9,7 +9,11 @@ export const Button = {
   tag: 'button',
   style,
   props: {
-    type: 'button'
+    type: 'button',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textDecoration: 'none'
   },
   attr: {
     type: ({ props }) => props.type
@@ -23,11 +27,11 @@ export const SquareButton = {
     width: 'A',
     padding: 'Z',
     aspectRatio: '1 / 1',
+    justifyContent: 'center',
     round: 'Z'
   },
   class: {
     squareButton: {
-      justifyContent: 'center',
       boxSizing: 'content-box'
     }
   }

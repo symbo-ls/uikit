@@ -1,15 +1,14 @@
 'use strict'
 
-import style from './style'
-
-import { Icon, Text, Direction, Block } from '../'
-import { } from '../Flex'
+import { Icon } from '../Icon'
 
 export const IconText = {
-  style,
-
   props: {
-    flexAlign: 'center flex-start'
+    flexAlign: 'center flex-start',
+    display: 'flex',
+    alignItems: 'center',
+    alignContent: 'center',
+    lineHeight: 1
   },
 
   icon: { proto: Icon, if: ({ parent }) => parent.props.icon, props: ({ parent }) => ({ icon: parent.props.icon }) },

@@ -14,6 +14,7 @@ export const Flex = {
     flow: ({ props }) => ({ flexFlow: props.flow }),
     flexDirection: ({ props }) => ({ flexDirection: props.flexDirection }),
     alignItems: ({ props }) => ({ alignItems: props.alignItems }),
+    alignContent: ({ props }) => ({ alignContent: props.alignContent }),
     justifyContent: ({ props }) => ({ justifyContent: props.justifyContent }),
     gap: ({ props }) => mapBasedOnRatio(props, 'gap')
   }
