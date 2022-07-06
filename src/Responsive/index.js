@@ -7,14 +7,10 @@ export const Responsive = {
     init: (el, s) => {
       const { props } = el
 
-      // Object.keys(props)
-      //   .filter(v => v.slice(0, 1) === '@')
-      //   .map()
-
       for (const screen in props) {
         if (screen.slice(0, 1) === '@') {
-          const screenName = screen.slice(1)
-          const responsiveKey = `@media screen and ${RESPONSIVE[screenName]}`
+          const mediaName = screen.slice(1)
+          const responsiveKey = `@media screen and ${RESPONSIVE[mediaName]}`
           const screenProps = props[screen]
           const calculatedScreenProps = {}
 
@@ -39,6 +35,33 @@ export const Responsive = {
           else {
             el.class.responsive = {
               [responsiveKey]: calculatedScreenProps
+            }
+          }
+        } else if (screen.slice(0, 1) === ':') {
+          const selectorProps = {}
+          const selectorName = screen.slice(1)
+          const underSelectorProps = props[screen]
+          const selectorKey = `&${selectorName}`
+
+          for (const prop in underSelectorProps) {
+            const classProp = el.class[prop]
+            if (typeof classProp !== 'function') continue
+            let calculatedProp = classProp({ props: underSelectorProps })
+
+            if (Array.isArray(underSelectorProps)) {
+              underSelectorProps = Object.assign({}, ...underSelectorProps)
+            }
+
+            for (const finalProp in calculatedProp) {
+              selectorProps[finalProp] = calculatedProp[finalProp]
+            }
+          }
+
+          const { selectors } = el.class
+          if (selectors) selectors[selectorKey] = selectorProps
+          else {
+            el.class.selectors = {
+              [selectorKey]: selectorProps
             }
           }
         }

@@ -1,5 +1,6 @@
 'use strict'
 
+import { exec } from '@domql/utils'
 import { Shape, Text } from '..'
 
 export const Link = {
@@ -12,7 +13,7 @@ export const Link = {
     aria: {}
   },
   attr: {
-    href: ({ props }) => props.href,
+    href: element => exec(element.props.href, element),
     target: ({ props }) => props.target,
     'aria-label': ({ props }) => props.aria.label || props.text
   }
