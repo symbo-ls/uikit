@@ -70,15 +70,11 @@ export const getColor = value => {
         if (tone.slice(0, 1) === '-' || tone.slice(0, 1) === '+') {
           rgb = hexToRgbArray(getColorShade(toHex, parseFloat(tone))).join(', ')
         } else {
-          console.log(rgb)
           const [r, g, b] = [...rgb.split(', ').map(v => parseFloat(v))]
           const hsl = rgbToHSL(r, g, b)
           const [h, s, l] = hsl
-          console.log(h, s, l, tone)
           const newRgb = hslToRgb(h, s, parseFloat(tone) / 100 * 255)
-          console.log(newRgb)
           rgb = newRgb
-          console.log(rgb)
         }
         val[tone] = { rgb, var: `${val.var}-${tone}` }
       } else rgb = val[tone].rgb
@@ -218,9 +214,7 @@ const setFontFamily = (val, key) => {
   return { var: CSSvar, value: str, arr: value, type }
 }
 
-const setSameValue = (val, key) => {
-  return val
-}
+const setSameValue = (val, key) => val
 
 export const SETTERS = {
   color: setColor,

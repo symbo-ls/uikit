@@ -159,7 +159,6 @@ export const changeLightness = (delta, hsl) => {
 }
 
 export const rgbToHSL = (r, g, b) => {
-  console.log(r, g, b)
   const a = Math.max(r, g, b); const n = a - Math.min(r, g, b); const f = (1 - Math.abs(a + a - n - 1))
   const h = n && ((a == r) ? (g - b) / n : ((a == g) ? 2 + (b - r) / n : 4 + (r - g) / n))
   return [60 * (h < 0 ? h + 6 : h), f ? n / f : 0, (a + a - n) / 2]
@@ -328,6 +327,7 @@ export const generateSequence = ({ type, base, ratio, range, subSequence, ...sta
 export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
   if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
 
+  if (val === '-' || val === '') return ({ })
   if (val === 'auto') return ({ [prop]: val })
 
   // const startsWithLetterRegex = /^[a-zA-Z]/i
