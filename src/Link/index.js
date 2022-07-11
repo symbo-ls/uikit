@@ -10,7 +10,9 @@ export const Link = {
     href: '',
     target: '',
     theme: 'link',
-    aria: {}
+    aria: {},
+    fontWeight: 'bold',
+    textDecoration: 'none'
   },
   attr: {
     href: element => exec(element.props.href, element) || exec(element.props, element).href,
