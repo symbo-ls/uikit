@@ -261,6 +261,7 @@ export const set = recivedConfig => {
   applySpacingSequence()
   applyDocument()
 
+  console.log(CONFIG)
   return CONFIG
 }
 
