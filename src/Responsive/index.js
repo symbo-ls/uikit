@@ -41,15 +41,16 @@ export const Responsive = {
           const selectorProps = {}
           const selectorName = screen.slice(1)
           const underSelectorProps = props[screen]
-          const selectorKey = `&${selectorName}`
+          const selectorKey = `&${screen}`
+
 
           for (const prop in underSelectorProps) {
             const classProp = el.class[prop]
             if (typeof classProp !== 'function') continue
             let calculatedProp = classProp({ props: underSelectorProps })
 
-            if (Array.isArray(underSelectorProps)) {
-              underSelectorProps = Object.assign({}, ...underSelectorProps)
+            if (Array.isArray(calculatedProp)) {
+              calculatedProp = Object.assign({}, ...calculatedProp)
             }
 
             for (const finalProp in calculatedProp) {

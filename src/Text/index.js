@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapFontSize } from '@symbo.ls/scratch'
+import { mapFontSize, getFontFamily, FONT_FAMILY } from '@symbo.ls/scratch'
 
 export const Text = {
   props: {},
@@ -9,6 +9,7 @@ export const Text = {
 
   class: {
     fontSize: ({ props }) => props.fontSize ? mapFontSize(props.fontSize) : null,
+    fontFamily: ({ props }) => props.fontFamily && ({ fontFamily: getFontFamily(FONT_FAMILY, props.fontFamily) || props.fontFamily }),
     lineHeight: ({ props }) => ({ lineHeight: props.lineHeight }),
     textDecoration: ({ props }) => ({ textDecoration: props.textDecoration }),
     textTransform: ({ props }) => ({ textTransform: props.textTransform }),

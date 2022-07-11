@@ -13,7 +13,7 @@ export const Link = {
     aria: {}
   },
   attr: {
-    href: element => exec(element.props.href, element),
+    href: element => exec(element.props.href, element) || exec(element.props, element).href,
     target: ({ props }) => props.target,
     'aria-label': ({ props }) => props.aria.label || props.text
   }
