@@ -3,6 +3,9 @@
 export const Transition = {
   class: {
     transition: ({ props }) => ({ transition: props.transition }),
-    transitionProperty: ({ props }) => ({ transitionProperty: props.transitionProperty })
+    transitionProperty: ({ props }) => ({
+      transitionProperty: props.transitionProperty,
+      willChange: props.transitionProperty
+    })
   }
 }

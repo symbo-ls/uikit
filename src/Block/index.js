@@ -87,6 +87,9 @@ export const Block = {
     },
     flex: ({ props }) => props.flex && ({ flex: props.flex }),
 
+    gridColumn: ({ props }) => props.gridColumn && ({ gridColumn: props.gridColumn }),
+    gridRow: ({ props }) => props.gridRow && ({ gridRow: props.gridRow }),
+
     size: ({ props }) => {
       // if (typeof props.size !== 'string') return
       // const [fontSize, padding, margin] = props.size.split(' ')
