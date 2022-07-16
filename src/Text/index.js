@@ -10,10 +10,10 @@ export const Text = {
   class: {
     fontSize: ({ props }) => props.fontSize ? mapFontSize(props.fontSize) : null,
     fontFamily: ({ props }) => props.fontFamily && ({ fontFamily: getFontFamily(FONT_FAMILY, props.fontFamily) || props.fontFamily }),
-    lineHeight: ({ props }) => ({ lineHeight: props.lineHeight }),
-    textDecoration: ({ props }) => ({ textDecoration: props.textDecoration }),
-    textTransform: ({ props }) => ({ textTransform: props.textTransform }),
-    textAlign: ({ props }) => ({ textAlign: props.textAlign }),
-    fontWeight: ({ props }) => ({ fontWeight: props.fontWeight })
+    lineHeight: ({ props }) => props.lineHeight && ({ lineHeight: props.lineHeight }),
+    textDecoration: ({ props }) => props.textDecoration && ({ textDecoration: props.textDecoration }),
+    textTransform: ({ props }) => props.textTransform && ({ textTransform: props.textTransform }),
+    textAlign: ({ props }) => props.textAlign && ({ textAlign: props.textAlign }),
+    fontWeight: ({ props }) => props.fontWeight && ({ fontWeight: props.fontWeight })
   }
 }

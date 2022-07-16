@@ -2,7 +2,7 @@
 
 export const Transform = {
   class: {
-    transform: ({ props }) => ({
+    transform: ({ props }) => props.transform && ({
       transform: props.transform
     }),
   }

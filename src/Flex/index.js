@@ -11,11 +11,11 @@ export const Flex = {
   },
 
   class: {
-    flow: ({ props }) => ({ flexFlow: props.flow }),
-    flexDirection: ({ props }) => ({ flexDirection: props.flexDirection }),
-    alignItems: ({ props }) => ({ alignItems: props.alignItems }),
-    alignContent: ({ props }) => ({ alignContent: props.alignContent }),
-    justifyContent: ({ props }) => ({ justifyContent: props.justifyContent }),
-    gap: ({ props }) => mapBasedOnRatio(props, 'gap')
+    flow: ({ props }) => props.flow && ({ flexFlow: props.flow }),
+    flexDirection: ({ props }) => props.flexDirection && ({ flexDirection: props.flexDirection }),
+    alignItems: ({ props }) => props.alignItems && ({ alignItems: props.alignItems }),
+    alignContent: ({ props }) => props.alignContent && ({ alignContent: props.alignContent }),
+    justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
+    gap: ({ props }) => props.gap && mapBasedOnRatio(props, 'gap')
   }
 }

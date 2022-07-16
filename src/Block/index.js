@@ -31,7 +31,9 @@ export const Block = {
   props: {},
 
   class: {
-    display: ({ props }) => ({ display: props.display }),
+    display: ({ props }) => props.display && ({ display: props.display }),
+
+    hide: ({ props }) => props.hide && ({ display: 'none' }),
 
     width: ({ props }) => props.width && mapBasedOnRatio(props, 'width'),
     height: ({ props }) => props.height && mapBasedOnRatio(props, 'height'),
@@ -66,7 +68,7 @@ export const Block = {
       }
     },
 
-    aspectRatio: ({ props }) => ({ aspectRatio: props.aspectRatio }),
+    aspectRatio: ({ props }) => props.aspectRatio && ({ aspectRatio: props.aspectRatio }),
 
     padding: ({ props }) => mapBasedOnRatio(props, 'padding'),
     margin: ({ props }) => mapBasedOnRatio(props, 'margin'),
