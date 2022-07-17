@@ -328,7 +328,7 @@ export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => 
   if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
 
   if (val === '-' || val === '') return ({ })
-  if (val === 'auto') return ({ [prop]: val })
+  if (val === 'auto' || val === 'fit-content') return ({ [prop]: val })
 
   // const startsWithLetterRegex = /^[a-zA-Z]/i
   const startsWithLetterRegex = /^-?[a-zA-Z]/i
