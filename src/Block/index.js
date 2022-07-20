@@ -2,9 +2,10 @@
 
 import { SPACING, mapSpacing } from '@symbo.ls/scratch'
 
-export const mapBasedOnRatio = (props, prop) => {
+export const mapBasedOnRatio = (props, prop, unit) => {
   const { spacingRatio } = props
   const val = props[prop]
+  // TODO: move this to mapSpacing
   if (spacingRatio) {
     const params = SPACING[spacingRatio]
 
@@ -20,11 +21,9 @@ export const mapBasedOnRatio = (props, prop) => {
       }
     }
 
-    const result = mapSpacing(val, prop, params)
-
-    return result
+    return mapSpacing(val, prop, params, unit)
   }
-  return mapSpacing(val, prop)
+  return mapSpacing(val, prop, null, unit)
 }
 
 export const Block = {

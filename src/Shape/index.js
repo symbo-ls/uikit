@@ -1,5 +1,6 @@
 'use strict'
 
+import { isArray, isObject } from '@domql/utils'
 import { mapSpacing, getTheme, getColor } from '@symbo.ls/scratch'
 
 import style, { shape, depth } from './style'
@@ -9,7 +10,7 @@ const isBorderStyle = str =>
 
 const diffBorder = (border, key = 'border') => {
   const obj = {}
-  const arr = border.split(' ')
+  const arr = isObject(border) ? Object.values(border) : isArray(border) ? border : border.split(', ')
   arr.map(v => {
     if (v.includes('px')) obj[`${key}Width`] = v
     else if (isBorderStyle(v)) obj[`${key}Style`] = v || 'solid'
