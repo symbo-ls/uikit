@@ -27,6 +27,7 @@ export const Shape = {
     shapeDirectionColor: ({ props, ...el }) => props.shapeDirection ? { '&:before': { borderColor: el.class.backgroundColor } } : null,
     depth: ({ props }) => depth[props.depth],
     round: ({ props, key, ...el }) => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
+    borderRadius: ({ props, key, ...el }) => props.borderRadius ? (mapSpacing(props.borderRadius, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
     theme: ({ props }) => props.theme ? getTheme(props.theme) : null,
     color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,
     background: ({ props }) => props.background ? ({ backgroundColor: getColor(props.background) }) : null,
