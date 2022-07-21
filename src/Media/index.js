@@ -30,10 +30,10 @@ export const Responsive = {
             }
           }
 
-          const { responsive } = el.class
-          if (responsive) responsive[responsiveKey] = calculatedScreenProps
+          const { MEDIA } = el.class
+          if (MEDIA) MEDIA[responsiveKey] = calculatedScreenProps
           else {
-            el.class.responsive = {
+            el.class.MEDIA = {
               [responsiveKey]: calculatedScreenProps
             }
           }
@@ -58,10 +58,10 @@ export const Responsive = {
             }
           }
 
-          const { selectors } = el.class
-          if (selectors) selectors[selectorKey] = selectorProps
+          const { SELECTORS } = el.class
+          if (SELECTORS) SELECTORS[selectorKey] = selectorProps
           else {
-            el.class.selectors = {
+            el.class.SELECTORS = {
               [selectorKey]: selectorProps
             }
           }

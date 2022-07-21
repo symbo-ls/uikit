@@ -14,7 +14,7 @@ export * from './Position'
 export * from './Overflow'
 export * from './Transform'
 export * from './Transition'
-export * from './Responsive'
+export * from './Media'
 
 export * from './Box'
 
