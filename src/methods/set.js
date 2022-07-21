@@ -21,29 +21,6 @@ import {
 
 const ENV = process.env.NODE_ENV
 
-const setColor = (val, key) => {
-  const [r, g, b, a = 1] = colorStringToRgbaArray(val.value || val)
-  const alpha = parseFloat(a.toFixed(2))
-  const CSSVar = `--color-${key}`
-  const rgb = `${r}, ${g}, ${b}`
-  const value = `rgba(${rgb}, ${alpha})`
-
-  return {
-    var: CSSVar,
-    rgb,
-    alpha,
-    value
-  }
-}
-
-const setGradient = (val, key) => {
-  const CSSVar = `--gradient-${key}`
-  return {
-    var: CSSVar,
-    value: val.value || val
-  }
-}
-
 export const getColor = value => {
   if (!isString(value)) {
     if (ENV === 'test' || ENV === 'development') console.warn(value, '- type for color is not valid')
@@ -82,6 +59,31 @@ export const getColor = value => {
     if (alpha) return `rgba(${rgb}, ${alpha})`
     return `rgb(${rgb})`
   } else return val.value
+}
+
+const setColor = (val, key) => {
+  if (val.slice(0, 2) === '--') val = getColor(val.slice(2))
+
+  const CSSVar = `--color-${key}`
+  const [r, g, b, a = 1] = colorStringToRgbaArray(val.value || val)
+  const alpha = parseFloat(a.toFixed(2))
+  const rgb = `${r}, ${g}, ${b}`
+  const value = `rgba(${rgb}, ${alpha})`
+
+  return {
+    var: CSSVar,
+    rgb,
+    alpha,
+    value
+  }
+}
+
+const setGradient = (val, key) => {
+  const CSSVar = `--gradient-${key}`
+  return {
+    var: CSSVar,
+    value: val.value || val
+  }
 }
 
 const setThemeValue = theme => {
