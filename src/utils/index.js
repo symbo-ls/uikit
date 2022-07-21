@@ -324,11 +324,11 @@ export const generateSequence = ({ type, base, ratio, range, subSequence, ...sta
   return state
 }
 
-export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => {
+export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-', unit = UNIT.default }) => {
   if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
 
   if (val === '-' || val === '') return ({ })
-  if (val === 'auto' || val === 'fit-content') return ({ [prop]: val })
+  if (val === 'auto' || val === 'fit-content' || val === 'min-content' || val === 'max-content') return ({ [prop]: val })
 
   // const startsWithLetterRegex = /^[a-zA-Z]/i
   const startsWithLetterRegex = /^-?[a-zA-Z]/i
@@ -344,7 +344,7 @@ export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-' }) => 
   if (!value) return console.warn('can\'t find', type, prefix + simplyLetterVal, simplyLetterVal)
 
   return ({
-    [prop]: isNegative + value.val + UNIT.default,
+    [prop]: isNegative + value.val + value.unit,
     [prop]: isNegative + value.scaling + 'em'
   })
 }

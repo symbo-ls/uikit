@@ -23,7 +23,7 @@ const getSequence = (props) => {
   return hasGenerated ? props : generateSequence(props)
 }
 
-export const mapSpacing = (val, property = 'padding', props) => {
+export const mapSpacing = (val, property = 'padding', props, unit) => {
   const prefix = '--spacing-'
 
   const generatedSequence = getSequence(props)
@@ -38,7 +38,8 @@ export const mapSpacing = (val, property = 'padding', props) => {
     type,
     prop,
     val: stack[i],
-    prefix
+    prefix,
+    unit
   })
 
   if (length === 2) {
