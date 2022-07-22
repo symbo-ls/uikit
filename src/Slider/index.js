@@ -1,32 +1,35 @@
 'use strict'
 
 import style from './style'
+import { set, opacify } from '@symbo.ls/scratch'
+import { isFunction } from '@domql/utils'
 
 import { SquareButton, Shape } from '..'
-import * as Scratch from '@symbo.ls/scratch'
-import { isFunction } from 'domql/src/utils'
 
-// TODO: fix this
-Scratch.setValue('THEME', {
-  background: 'white 0.2',
+set({
+  theme: {
+    sliderThumb: {
+      background: 'white 0.2',
 
-  '&::-webkit-slider-thumb': {
-    background: '#232526',
-    borderColor: Scratch.opacify('#454646', 0.75)
-  },
+      '&::-webkit-slider-thumb': {
+        background: '#232526',
+        borderColor: opacify('#454646', 0.75)
+      },
 
-  '&:hover': {
-    '&::-webkit-slider-thumb': {
-      borderColor: Scratch.opacify('#fff', 0.35)
-    }
-  },
+      '&:hover': {
+        '&::-webkit-slider-thumb': {
+          borderColor: opacify('#fff', 0.35)
+        }
+      },
 
-  '&:focus, &:active': {
-    '&::-webkit-slider-thumb': {
-      borderColor: '#3C6AC0'
+      '&:focus, &:active': {
+        '&::-webkit-slider-thumb': {
+          borderColor: '#3C6AC0'
+        }
+      }
     }
   }
-}, 'sliderThumb')
+})
 
 export const RangeSlider = {
   style,
@@ -39,50 +42,59 @@ export const RangeSlider = {
   attr: { type: 'range' }
 }
 
-const findOut = (el, s, prop, def) => {
-  const val = el.parent.parent.props[prop]
-  return isFunction(val) ? val(el, s) : val || def
+const listenProp = (el, prop, def) => {
+  const val = el.props && el.props[prop]
+  const r = (isFunction(val) ? val() : val) || (def !== undefined ? def : 50)
+  // if (prop === 'value') console.log(r)
+  return r
 }
 
 export const Slider = {
-  proto: [Shape],
-
-  button0: {
-    proto: [SquareButton],
-    props: {
-      icon: 'minus'
-    },
+  minus: {
+    proto: SquareButton,
+    props: { icon: 'minus' },
     on: {
       click: (ev, el, s) => {
-        el.parent.parent.props.minusClick(ev, el, s)
+        el.props && isFunction(el.props.click) && el.props.click(ev, el, s)
+        const input = el.parent.input
+        const props = input.props
+        const value = isFunction(props.value) ? props.value() : props.value
+        input.node.value = value
       }
     }
   },
   value: {
+    style: { width: '4ch' },
     tag: 'span',
-    // class: { w: { minWidth: `4ch` } },
-    text: (el, s) => `${findOut(el, s, 'value', 50)}${findOut(el, s, 'type') === 'fontSize' ? 'px' : ''}`
-  },
-  range: {
-    proto: RangeSlider,
-    attr: {
-      value: (el, s) => findOut(el, s, 'value', 50),
-      min: (el, s) => findOut(el, s, 'min', 0),
-      max: (el, s) => findOut(el, s, 'max', 100),
-      step: (el, s) => findOut(el, s, 'step', 1)
-    },
-    on: {
-      input: (ev, el, s) => el.parent.parent.props.input(ev, el, s)
+    text: (el, s) => {
+      const value = listenProp(el.parent.input, 'value')
+      const unit = listenProp(el.parent.input, 'unit', '')
+      return '' + value + unit
     }
   },
-  button1: {
-    proto: [SquareButton],
-    props: {
-      icon: 'plus'
+  input: {
+    proto: RangeSlider,
+    attr: {
+      value: (el, s) => listenProp(el, 'value', 50),
+      min: (el, s) => listenProp(el, 'min', 0),
+      max: (el, s) => listenProp(el, 'max', 100),
+      step: (el, s) => listenProp(el, 'step', 1)
     },
     on: {
+      input: (ev, el, s) => el.props && isFunction(el.props.input) && el.props.input(ev, el, s),
+      change: (ev, el, s) => el.props && isFunction(el.props.change) && el.props.change(ev, el, s)
+    }
+  },
+  plus: {
+    proto: SquareButton,
+    props: { icon: 'plus' },
+    on: {
       click: (ev, el, s) => {
-        el.parent.parent.props.plusClick(ev, el, s)
+        el.props && isFunction(el.props.click) && el.props.click(ev, el, s)
+        const input = el.parent.input
+        const props = input.props
+        const value = isFunction(props.value) ? props.value() : props.value
+        input.node.value = value
       }
     }
   }

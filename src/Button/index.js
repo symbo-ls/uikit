@@ -5,7 +5,7 @@ import { Shape, Block, IconText, Direction } from '../'
 import style from './style'
 
 export const Button = {
-  proto: [IconText],
+  proto: IconText,
   tag: 'button',
   style,
   props: {
