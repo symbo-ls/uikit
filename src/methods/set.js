@@ -14,16 +14,14 @@ import {
   getDefaultOrFirstKey,
   getFontFaceEach,
   hslToRgb,
-  getColorShade,
-  pSBC,
-  changeLightness
+  getColorShade
 } from '../utils'
 
 const ENV = process.env.NODE_ENV
 
 export const getColor = value => {
   if (!isString(value)) {
-    if (ENV === 'test' || ENV === 'development') console.warn(value, '- type for color is not valid')
+    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(value, '- type for color is not valid')
     return
   }
 
@@ -32,7 +30,7 @@ export const getColor = value => {
   const val = COLOR[name] || GRADIENT[name]
 
   if (!val) {
-    if (ENV === 'test' || ENV === 'development') console.warn('Can\'t find color', name)
+    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find color', name)
     return value
   }
 
@@ -49,7 +47,7 @@ export const getColor = value => {
         } else {
           const [r, g, b] = [...rgb.split(', ').map(v => parseFloat(v))]
           const hsl = rgbToHSL(r, g, b)
-          const [h, s, l] = hsl
+          const [h, s, l] = hsl // eslint-disable-line
           const newRgb = hslToRgb(h, s, parseFloat(tone) / 100 * 255)
           rgb = newRgb
         }
@@ -117,7 +115,7 @@ export const getTheme = value => {
   } else if (isObject(value)) return setThemeValue(value)
   else if (isString(value) && THEME[value]) return getThemeValue(THEME[value])
 
-  if (ENV === 'test' || ENV === 'development') console.warn('Can\'t find theme', value)
+  if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find theme', value)
 }
 
 const setPrefersScheme = (theme, key, variant, themeValue) => {
@@ -254,7 +252,7 @@ export const setEach = (factoryName, props) => {
 }
 
 export const set = recivedConfig => {
-  const { version, ...config } = recivedConfig
+  const { version, verbose, ...config } = recivedConfig
   const keys = Object.keys(config)
   keys.map(key => setEach(key, config[key]))
 
@@ -262,6 +260,8 @@ export const set = recivedConfig => {
   applyTypographySequence()
   applySpacingSequence()
   applyDocument()
+
+  CONFIG.verbose = verbose
 
   console.log(CONFIG)
   return CONFIG
