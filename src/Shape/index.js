@@ -1,9 +1,9 @@
 'use strict'
 
-import { isArray, isObject } from '@domql/utils'
+import { isArray, isObject, exec } from '@domql/utils'
 import { mapSpacing, getTheme, getColor } from '@symbo.ls/scratch'
 
-import style, { shape, depth } from './style'
+import style, { SHAPES, depth } from './style'
 
 const isBorderStyle = str =>
   ['none','hidden','dotted','dashed','solid','double','groove','ridge','inset','outset','initial'].some(v => str.includes(v))
@@ -22,8 +22,17 @@ const diffBorder = (border, key = 'border') => {
 export const Shape = {
   class: {
     default: style,
-    shape: ({ props }) => props.shape ? shape[props.shape] : null,
-    shapeDirection: ({ props }) => props.shape ? shape[props.shape][props.shapeDirection || 'top'] : null,
+    shape: (element) => {
+      const { props } = element
+      const { shape } = props
+      return shape ? exec(SHAPES[shape], element) : null
+    },
+    shapeDirection: ({ props }) => {
+      const { shape, shapeDirection } = props
+      if (!shape || !shapeDirection) return
+      const shapeDir = SHAPES[shape + 'Direction']
+      return shape ? shapeDir[shapeDirection || 'top'] : null
+    },
     shapeDirectionColor: ({ props, ...el }) => props.shapeDirection ? { '&:before': { borderColor: el.class.backgroundColor } } : null,
     depth: ({ props }) => depth[props.depth],
     round: ({ props, key, ...el }) => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,

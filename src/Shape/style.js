@@ -1,6 +1,6 @@
 'use strict'
 
-import { UNIT } from '@symbo.ls/scratch'
+import { UNIT, getColor } from '@symbo.ls/scratch'
 
 export default {
   boxSizing: 'border-box'
@@ -15,21 +15,25 @@ export const depth = {
   42: { boxShadow: `rgba(0,0,0,.10) 0 20${UNIT.default} 42${UNIT.default}` }
 }
 
-export const shape = {
+export const SHAPES = {
   rectangle: {},
   circle: { borderRadius: '100%' },
   bubble: {},
-  tooltip: {
+
+  tooltip: ({ props }) => ({
     position: 'relative',
     '&:before': {
       content: '""',
       display: 'block',
       width: '0px',
       height: '0px',
-      border: '6px solid #343434',
+      border: `6px solid ${getColor(props.background)}`,
       position: 'absolute',
       borderRadius: '2px'
-    },
+    }
+  }),
+
+  tooltipDirection: {
     top: {
       '&:before': {
         top: '2px',
@@ -59,17 +63,21 @@ export const shape = {
       }
     }
   },
-  tag: {
+
+  tag: ({ props }) => ({
     position: 'relative',
     '&:before': {
       content: '""',
       display: 'block',
       width: '0',
       height: '0',
-      border: '16px solid #343434',
+      border: `16px solid ${getColor(props.background)}`,
       borderRadius: '6px',
       position: 'absolute'
     },
+  }),
+
+  tagDirection: {
     top: {
       '&:before': {
         bottom: '100%',
