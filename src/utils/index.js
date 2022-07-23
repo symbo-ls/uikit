@@ -282,7 +282,7 @@ const setSequenceValue = ({ key, variable, value, scaling, state, index }) => {
   state.scales[variable] = scaling
 }
 
-export const generateSubSequence = ({ key, base, value, ratio, variable, state }) => {
+export const generateSubSequence = ({ key, base, value, ratio, variable, state, index }) => {
   const next = value * ratio
   const smallscale = (next - value) / ratio
 
@@ -303,7 +303,7 @@ export const generateSubSequence = ({ key, base, value, ratio, variable, state }
     const scaling = Math.round(v / base * 1000) / 1000
     const newVar = variable + (k + 1)
 
-    return setSequenceValue({ key: key + (k + 1), variable: newVar, value: v, scaling, state })
+    return setSequenceValue({ key: key + (k + 1), variable: newVar, value: v, scaling, state, index: index + (k + 1) / 10 })
   })
 }
 
@@ -319,7 +319,7 @@ export const generateSequence = ({ type, base, ratio, range, subSequence, ...sta
 
     setSequenceValue({ key: letterKey, variable, value, scaling, state, index: key })
 
-    if (subSequence) generateSubSequence({ key: letterKey, base, value, ratio, variable, state })
+    if (subSequence) generateSubSequence({ key: letterKey, base, value, ratio, variable, state, index: key })
   }
   return state
 }
