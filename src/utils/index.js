@@ -160,7 +160,7 @@ export const changeLightness = (delta, hsl) => {
 
 export const rgbToHSL = (r, g, b) => {
   const a = Math.max(r, g, b); const n = a - Math.min(r, g, b); const f = (1 - Math.abs(a + a - n - 1))
-  const h = n && ((a == r) ? (g - b) / n : ((a == g) ? 2 + (b - r) / n : 4 + (r - g) / n))
+  const h = n && ((a == r) ? (g - b) / n : ((a == g) ? 2 + (b - r) / n : 4 + (r - g) / n)) //eslint-disable-line
   return [60 * (h < 0 ? h + 6 : h), f ? n / f : 0, (a + a - n) / 2]
 }
 
@@ -328,7 +328,7 @@ export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-', unit 
   if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
 
   if (val === '-' || val === '') return ({ })
-  if (val === 'auto' || val === 'fit-content' || val === 'min-content' || val === 'max-content') return ({ [prop]: val })
+  if (val === 'none' || val === 'auto' || val === 'fit-content' || val === 'min-content' || val === 'max-content') return ({ [prop]: val })
 
   // const startsWithLetterRegex = /^[a-zA-Z]/i
   const startsWithLetterRegex = /^-?[a-zA-Z]/i
