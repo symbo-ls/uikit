@@ -31,9 +31,7 @@ export const SquareButton = {
     round: 'Z'
   },
   class: {
-    squareButton: {
-      boxSizing: 'content-box'
-    }
+    squareButton: { boxSizing: 'content-box' }
   }
 }
 
