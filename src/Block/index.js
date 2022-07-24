@@ -69,10 +69,10 @@ export const Block = {
 
     aspectRatio: ({ props }) => props.aspectRatio && ({ aspectRatio: props.aspectRatio }),
 
-    borderWidth: ({ props }) => mapBasedOnRatio(props, 'borderWidth'),
+    borderWidth: ({ props }) => props.borderWidth ? mapBasedOnRatio(props, 'borderWidth') : null,
 
-    padding: ({ props }) => mapBasedOnRatio(props, 'padding'),
-    margin: ({ props }) => mapBasedOnRatio(props, 'margin'),
+    padding: ({ props }) => props.padding ? mapBasedOnRatio(props, 'padding') : null,
+    margin: ({ props }) => props.margin ? mapBasedOnRatio(props, 'margin') : null,
 
     gap: ({ props }) => props.gap ? mapBasedOnRatio(props, 'gap') : null,
     gridArea: ({ props }) => props.gridArea && ({ gridArea: props.gridArea }),
