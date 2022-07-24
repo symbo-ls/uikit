@@ -69,9 +69,13 @@ export const Block = {
 
     aspectRatio: ({ props }) => props.aspectRatio && ({ aspectRatio: props.aspectRatio }),
 
+    borderWidth: ({ props }) => mapBasedOnRatio(props, 'borderWidth'),
+
     padding: ({ props }) => mapBasedOnRatio(props, 'padding'),
     margin: ({ props }) => mapBasedOnRatio(props, 'margin'),
+
     gap: ({ props }) => mapBasedOnRatio(props, 'gap'),
+    gridArea: ({ props }) => props.gridArea && ({ gridArea: props.gridArea }),
 
     flexFlow: ({ props }) => props.flexFlow && ({
       display: 'flex',
@@ -86,14 +90,22 @@ export const Block = {
         justifyContent: justifyContent
       }
     },
+
     flex: ({ props }) => props.flex && ({ flex: props.flex }),
+    alignItems: ({ props }) => props.alignItems && ({ alignItems: props.alignItems }),
+    alignContent: ({ props }) => props.alignContent && ({ alignContent: props.alignContent }),
+    justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
 
     gridColumn: ({ props }) => props.gridColumn && ({ gridColumn: props.gridColumn }),
     gridRow: ({ props }) => props.gridRow && ({ gridRow: props.gridRow }),
 
     size: ({ props }) => {
-      // if (typeof props.size !== 'string') return
-      // const [fontSize, padding, margin] = props.size.split(' ')
+      if (typeof props.heightRange !== 'string') return
+      const [minHeight, maxHeight] = props.heightRange.split(' ')
+      return {
+        ...mapSpacing(minHeight, 'minHeight'),
+        ...mapSpacing(maxHeight, 'maxHeight')
+      }
     }
   }
 }

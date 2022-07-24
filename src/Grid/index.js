@@ -9,10 +9,13 @@ export const Grid = {
   props: {},
 
   class: {
-    columns: ({ props }) => ({ gridTemplateColumns: props.columns }),
-    rows: ({ props }) => ({ gridTemplateRows: props.rows }),
-    gap: ({ props }) => mapBasedOnRatio(props, 'gap'),
-    columnGap: ({ props }) => mapBasedOnRatio(props, 'columnGap'),
-    rowGap: ({ props }) => mapBasedOnRatio(props, 'rowGap')
+    columns: ({ props }) => props.columns ? ({ gridTemplateColumns: props.columns }) : null,
+    rows: ({ props }) => props.rows ? ({ gridTemplateRows: props.rows }) : null,
+    area: ({ props }) => props.area ? ({ gridArea: props.area }) : null,
+    template: ({ props }) => props.template ? ({ gridTemplate: props.template }) : null,
+    templateAreas: ({ props }) => props.templateAreas ? ({ gridTemplateAreas: props.templateAreas }) : null,
+    gap: ({ props }) => props.template ? mapBasedOnRatio(props, 'gap') : null,
+    columnGap: ({ props }) => props.template ? mapBasedOnRatio(props, 'columnGap') : null,
+    rowGap: ({ props }) => props.template ? mapBasedOnRatio(props, 'rowGap') : null
   }
 }

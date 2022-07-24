@@ -43,6 +43,9 @@ export const Shape = {
     // border: ({ props }) => props.border ? ({ borderColor: getColor(props.border) }) : null,
 
     border: ({ props }) => props.border ? diffBorder(props.border) : null,
+    borderColor: ({ props }) => props.borderColor ? ({ borderColor: getColor(props.borderColor) }) : null,
+    borderStyle: ({ props }) => props.borderStyle && ({ borderStyle: props.borderStyle }),
+
     borderLeft: ({ props }) => props.borderLeft ? diffBorder(props.borderLeft, 'borderLeft') : null,
     borderTop: ({ props }) => props.borderTop ? diffBorder(props.borderTop, 'borderTop') : null,
     borderRight: ({ props }) => props.borderRight ? diffBorder(props.borderRight, 'borderRight') : null,
