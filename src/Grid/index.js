@@ -14,7 +14,7 @@ export const Grid = {
     area: ({ props }) => props.area ? ({ gridArea: props.area }) : null,
     template: ({ props }) => props.template ? ({ gridTemplate: props.template }) : null,
     templateAreas: ({ props }) => props.templateAreas ? ({ gridTemplateAreas: props.templateAreas }) : null,
-    gap: ({ props }) => props.template ? mapBasedOnRatio(props, 'gap') : null,
+    gap: ({ props }) => props.gap ? mapBasedOnRatio(props, 'gap') : null,
     columnGap: ({ props }) => props.template ? mapBasedOnRatio(props, 'columnGap') : null,
     rowGap: ({ props }) => props.template ? mapBasedOnRatio(props, 'rowGap') : null
   }
