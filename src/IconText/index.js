@@ -8,10 +8,15 @@ export const IconText = {
     display: 'flex',
     alignItems: 'center',
     alignContent: 'center',
-    lineHeight: 1
+    lineHeight: 1,
+    icon: 'noicon'
   },
 
-  icon: { proto: Icon, if: ({ parent }) => parent.props.icon, props: ({ parent }) => ({ icon: parent.props.icon }) },
+  icon: {
+    proto: Icon,
+    if: ({ parent }) => parent.props.icon,
+    props: ({ parent }) => ({ icon: parent.props.icon })
+  },
 
   text: ({ props }) => props.text
 }
