@@ -19,6 +19,14 @@ const diffBorder = (border, key = 'border') => {
   return obj
 }
 
+const diffStroke = stroke => {
+  const WebkitTextStroke = stroke.split(', ').map(v => {
+    if (v.includes('px')) return v
+    else if (getColor(v)) return getColor(v)
+  }).join(' ')
+  return { WebkitTextStroke }
+}
+
 export const Shape = {
   class: {
     default: style,
@@ -41,6 +49,8 @@ export const Shape = {
     color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,
     background: ({ props }) => props.background ? ({ backgroundColor: getColor(props.background) }) : null,
     // border: ({ props }) => props.border ? ({ borderColor: getColor(props.border) }) : null,
+
+    textStroke: ({ props }) => props.textStroke ? diffStroke(props.textStroke) : null,
 
     border: ({ props }) => props.border ? diffBorder(props.border) : null,
     borderColor: ({ props }) => props.borderColor ? ({ borderColor: getColor(props.borderColor) }) : null,
