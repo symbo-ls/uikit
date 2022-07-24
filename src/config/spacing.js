@@ -42,24 +42,30 @@ export const mapSpacing = (val, property = 'padding', props, unit) => {
     unit
   })
 
+  let suffix = ''
+  if (property === 'borderWidth') {
+    property = 'border'
+    suffix = 'Width'
+  }
+
   if (length === 2) {
     return [
-      wrapFallBack(property + 'Block', 0),
-      wrapFallBack(property + 'Inline', 1)
+      wrapFallBack(property + 'Block' + suffix, 0),
+      wrapFallBack(property + 'Inline' + suffix, 1)
     ]
   }
   if (length === 3) {
     return [
-      wrapFallBack(property + 'BlockStart', 0),
-      wrapFallBack(property + 'Inline', 1),
-      wrapFallBack(property + 'BlockEnd', 2)
+      wrapFallBack(property + 'BlockStart' + suffix, 0),
+      wrapFallBack(property + 'Inline' + suffix, 1),
+      wrapFallBack(property + 'BlockEnd' + suffix, 2)
     ]
   } else if (length === 4) {
     return [
-      wrapFallBack(property + 'BlockStart', 0),
-      wrapFallBack(property + 'InlineStart', 3),
-      wrapFallBack(property + 'BlockEnd', 2),
-      wrapFallBack(property + 'InlineEnd', 1)
+      wrapFallBack(property + 'BlockStart' + suffix, 0),
+      wrapFallBack(property + 'InlineStart' + suffix, 3),
+      wrapFallBack(property + 'BlockEnd' + suffix, 2),
+      wrapFallBack(property + 'InlineEnd' + suffix, 1)
     ]
   }
 
