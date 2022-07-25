@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, Block, IconText, Direction } from '../'
+import { IconText } from '../'
 
 import style from './style'
 

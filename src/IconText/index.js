@@ -8,8 +8,7 @@ export const IconText = {
     display: 'flex',
     alignItems: 'center',
     alignContent: 'center',
-    lineHeight: 1,
-    icon: 'noicon'
+    lineHeight: 1
   },
 
   icon: {

@@ -5,5 +5,5 @@ export default {
   border: 'none',
   outline: 0,
   cursor: 'pointer',
-  fontFamily: 'inherit',
+  fontFamily: 'inherit'
 }
