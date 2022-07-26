@@ -1,18 +1,26 @@
 'use strict'
 
-import { ICONS } from '@symbo.ls/scratch'
 import { SVG } from '.'
+
+import { ICONS } from '@symbo.ls/scratch'
 
 export const Icon = {
   proto: SVG,
   props: ({ key, props, parent }) => {
-    const iconName = ICONS[props.inheritedString || props.name || props.icon || key || 'noIcon']
+    let iconName = props.inheritedString || props.name || props.icon || key || 'noIcon'
+
+    const isArray = iconName.split(' ')
+    const secondArg = props.iconModifier || isArray[1]
+
+    if (secondArg) iconName = isArray[0] + secondArg.slice(0, 1).toUpperCase() + secondArg.slice(1)
+
+    const iconFromLibrary = ICONS[iconName]
 
     return {
       width: 'A',
       height: 'A',
       display: 'inline-block',
-      src: iconName,
+      src: iconFromLibrary,
       css: { fill: 'currentColor' }
     }
   },
