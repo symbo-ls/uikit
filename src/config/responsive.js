@@ -1,6 +1,6 @@
 'use strict'
 
-export const RESPONSIVE = {
+export const BREAKPOINTS = {
   screenL: 1920,
   screenD: 1680,
   screenS: 1440,

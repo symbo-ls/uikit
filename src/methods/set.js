@@ -224,7 +224,8 @@ export const SETTERS = {
   theme: setTheme,
   typography: setSameValue,
   spacing: setSameValue,
-  responsive: setSameValue
+  media: setSameValue,
+  icons: setSameValue
 }
 
 /**
@@ -262,8 +263,8 @@ export const set = recivedConfig => {
   applyDocument()
 
   CONFIG.verbose = verbose
+  if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.log(CONFIG)
 
-  console.log(CONFIG)
   return CONFIG
 }
 

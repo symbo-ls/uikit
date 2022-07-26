@@ -12,6 +12,8 @@ export * from './spacing'
 export * from './color'
 export * from './theme'
 
-export * from './responsive'
+export * from './icons'
+
+export * from './media'
 
 export * from './document'
