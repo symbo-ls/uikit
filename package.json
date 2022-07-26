@@ -3,7 +3,7 @@
   "description": "UI Library built on Scratch and DOMQL",
   "private": false,
   "author": "symbo.ls",
-  "version": "0.8.25",
+  "version": "0.8.26",
   "repository": "https://github.com/rackai/symbols",
   "main": "src/index.js",
   "files": [
