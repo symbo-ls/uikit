@@ -16,6 +16,16 @@ export const Flex = {
     alignItems: ({ props }) => props.alignItems && ({ alignItems: props.alignItems }),
     alignContent: ({ props }) => props.alignContent && ({ alignContent: props.alignContent }),
     justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
-    gap: ({ props }) => props.gap && mapBasedOnRatio(props, 'gap')
+    gap: ({ props }) => props.gap && mapBasedOnRatio(props, 'gap'),
+
+    align: ({ props }) => {
+      if (typeof props.align !== 'string') return
+      const [alignItems, justifyContent] = props.align.split(' ')
+      return {
+        display: 'flex',
+        alignItems: alignItems,
+        justifyContent: justifyContent
+      }
+    }
   }
 }

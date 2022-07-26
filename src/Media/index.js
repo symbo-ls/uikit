@@ -1,6 +1,6 @@
 'use strict'
 
-import { RESPONSIVE } from '@symbo.ls/scratch'
+import { MEDIA as BREAKPOINTS } from '@symbo.ls/scratch'
 
 export const Responsive = {
   on: {
@@ -10,7 +10,7 @@ export const Responsive = {
       for (const screen in props) {
         if (screen.slice(0, 1) === '@') {
           const mediaName = screen.slice(1)
-          const responsiveKey = `@media screen and ${RESPONSIVE[mediaName]}`
+          const responsiveKey = `@media screen and ${BREAKPOINTS[mediaName]}`
           const screenProps = props[screen]
           const calculatedScreenProps = {}
 
@@ -39,10 +39,9 @@ export const Responsive = {
           }
         } else if (screen.slice(0, 1) === ':') {
           const selectorProps = {}
-          const selectorName = screen.slice(1)
+          // const selectorName = screen.slice(1)
           const underSelectorProps = props[screen]
           const selectorKey = `&${screen}`
-
 
           for (const prop in underSelectorProps) {
             const classProp = el.class[prop]

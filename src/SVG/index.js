@@ -1,6 +1,6 @@
 'use strict'
 
-var useSVGSymbol = file => `<use xlink:href="${file}" />`
+const useSVGSymbol = file => `<use xlink:href="${file}" />`
 
 // create icon
 export const SVG = {
@@ -9,6 +9,6 @@ export const SVG = {
     xmlns: 'http://www.w3.org/2000/svg',
     'xmlns:xlink': 'http://www.w3.org/1999/xlink'
   },
-  define: { src: param => param },
-  html: ({ key, src, props }) => useSVGSymbol(props.src || src || key)
+  // define: { src: param => param },
+  html: ({ key, props }) => useSVGSymbol(props.src || key)
 }
