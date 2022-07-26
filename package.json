@@ -4,7 +4,7 @@
   "private": false,
   "author": "symbo.ls",
   "version": "0.8.26",
-  "repository": "https://github.com/rackai/symbols",
+  "repository": "https://github.com/symbo-ls/smbls",
   "main": "src/index.js",
   "files": [
     "src"
