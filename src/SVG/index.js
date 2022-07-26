@@ -10,5 +10,5 @@ export const SVG = {
     'xmlns:xlink': 'http://www.w3.org/1999/xlink'
   },
   // define: { src: param => param },
-  html: ({ key, props }) => useSVGSymbol(props.src || key)
+  html: ({ key, props }) => useSVGSymbol(props.src)
 }
