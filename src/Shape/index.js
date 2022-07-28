@@ -45,7 +45,12 @@ export const Shape = {
     depth: ({ props }) => depth[props.depth],
     round: ({ props, key, ...el }) => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
     borderRadius: ({ props, key, ...el }) => props.borderRadius ? (mapSpacing(props.borderRadius, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
-    theme: ({ props }) => props.theme ? getTheme(props.theme) : null,
+
+    theme: ({ props }) => {
+      if (!props.theme) return
+      return props.returnGeneratedTheme || getTheme(props.theme)
+    },
+
     color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,
     background: ({ props }) => props.background ? ({ backgroundColor: getColor(props.background) }) : null,
     // border: ({ props }) => props.border ? ({ borderColor: getColor(props.border) }) : null,

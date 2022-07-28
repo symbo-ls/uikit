@@ -3,7 +3,9 @@
 import { Shape, Position, Block, Text, Overflow, Transition, Transform, Responsive } from '..'
 
 const PropsCSS = {
-  class: { propsCSS: ({ props }) => props && props.css }
+  class: {
+    propsCSS: ({ props }) => props && props.css
+  }
 }
 
 export const Box = {
