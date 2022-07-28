@@ -104,7 +104,6 @@ const getThemeValue = theme => {
 
 export const getTheme = value => {
   const { THEME } = CONFIG
-  // console.log('theme', THEME, CONFIG)
   if (isObjectLike(value) && value[1]) {
     const themeName = value[0]
     const subThemeName = value[1]
@@ -214,6 +213,10 @@ const setFontFamily = (val, key) => {
   return { var: CSSvar, value: str, arr: value, type }
 }
 
+const setCases = (val, key) => {
+  return val()
+}
+
 const setSameValue = (val, key) => val
 
 export const SETTERS = {
@@ -225,6 +228,7 @@ export const SETTERS = {
   typography: setSameValue,
   spacing: setSameValue,
   media: setSameValue,
+  cases: setCases,
   icons: setSameValue
 }
 

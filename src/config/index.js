@@ -17,3 +17,5 @@ export * from './icons'
 export * from './media'
 
 export * from './document'
+
+export * from './cases'
