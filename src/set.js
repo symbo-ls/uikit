@@ -1,7 +1,8 @@
 'use strict'
 
-import { applyDocument, applySpacingSequence, applyTypographySequence } from '../config'
-import CONFIG, { CSS_VARS } from '../factory'
+import { applyDocument, applySpacingSequence, applyTimingSequence, applyTypographySequence } from './config'
+import CONFIG, { CSS_VARS } from './factory'
+import { applyReset } from './reset'
 import {
   isArray,
   colorStringToRgbaArray,
@@ -14,8 +15,9 @@ import {
   getDefaultOrFirstKey,
   getFontFaceEach,
   hslToRgb,
-  getColorShade
-} from '../utils'
+  getColorShade,
+  setVariables
+} from './utils'
 
 const ENV = process.env.NODE_ENV
 
@@ -107,30 +109,24 @@ export const getTheme = value => {
 
   if (isString(value)) {
     const [theme, subtheme] = value.split(' ')
-    if (!THEME[theme]) {
-      if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find theme', value)
-      return
+    const isOurTheme = THEME[theme]
+    if (isOurTheme) {
+      if (!subtheme) return getThemeValue(isOurTheme)
+      value = [theme, subtheme]
     }
-    if (!subtheme) return getThemeValue(THEME[theme])
-    value = [theme, subtheme]
   }
 
   if (isObjectLike(value) && value[1]) {
     const themeName = value[0]
     const subThemeName = value[1]
     const { helpers, variants, state } = THEME[themeName]
+
     if (variants && variants[subThemeName]) return getThemeValue(variants[subThemeName])
     if (helpers && helpers[subThemeName]) return getThemeValue(helpers[subThemeName])
     if (state && state[subThemeName]) return getThemeValue(state[subThemeName])
   } else if (isObject(value)) return setThemeValue(value)
 
   if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find theme', value)
-}
-
-const setPrefersScheme = (theme, key, variant, themeValue) => {
-  const result = getTheme(variant)
-  themeValue[`@media (prefers-color-scheme: ${key})`] = result
-  if (isObject(variant) && !variant.value) variant.value = result
 }
 
 const setInverseTheme = (theme, variant, value) => {
@@ -147,32 +143,6 @@ const setInverseTheme = (theme, variant, value) => {
   }
 }
 
-const goThroughHelpers = (theme, value) => {
-  const { helpers } = theme
-  if (!helpers) return
-  const keys = Object.keys(helpers)
-  keys.map(key => {
-    const helper = helpers[key]
-    if (isString(helper)) helpers[key] = CONFIG.THEME[helper]
-    else getThemeValue(helpers[key])
-    return theme
-  })
-  return theme
-}
-
-const goThroughVariants = (theme, value) => {
-  const { variants } = theme
-  if (!variants) return
-  const keys = Object.keys(variants)
-  keys.map(key => {
-    const variant = variants[key]
-    if (key === 'dark' || key === 'light') setPrefersScheme(theme, key, variant, value)
-    if (key === 'inverse') setInverseTheme(theme, variant, value)
-    return theme
-  })
-  return theme
-}
-
 const setPseudo = (theme, key, variant, themeValue) => {
   const result = getTheme(variant)
   themeValue[`&:${key}`] = result
@@ -186,6 +156,41 @@ const goThroughInteractiveStates = (theme, value) => {
   keys.map(key => {
     const variant = state[key]
     setPseudo(theme, key, variant, value)
+    return theme
+  })
+  return theme
+}
+
+const setPrefersScheme = (theme, key, variant, themeValue) => {
+  const result = getTheme(variant)
+  // console.log(variant)
+  themeValue[`@media (prefers-color-scheme: ${key})`] = result
+  if (isObject(variant) && !variant.value) variant.value = result
+}
+
+const goThroughVariants = (theme, value) => {
+  const { variants } = theme
+  if (!variants) return
+  const keys = Object.keys(variants)
+  keys.map(key => {
+    const variant = variants[key]
+    // console.log('=========')
+    // console.log(theme, key, variant, value)
+    if (key === 'dark' || key === 'light') setPrefersScheme(theme, key, variant, value)
+    if (key === 'inverse') setInverseTheme(theme, variant, value)
+    return theme
+  })
+  return theme
+}
+
+const goThroughHelpers = (theme, value) => {
+  const { helpers } = theme
+  if (!helpers) return
+  const keys = Object.keys(helpers)
+  keys.map(key => {
+    const helper = helpers[key]
+    if (isString(helper)) helpers[key] = CONFIG.THEME[helper]
+    else getThemeValue(helpers[key])
     return theme
   })
   return theme
@@ -236,10 +241,12 @@ export const SETTERS = {
   font_family: setFontFamily,
   theme: setTheme,
   typography: setSameValue,
+  cases: setCases,
   spacing: setSameValue,
   media: setSameValue,
-  cases: setCases,
-  icons: setSameValue
+  timing: setSameValue,
+  icons: setSameValue,
+  reset: setSameValue
 }
 
 /**
@@ -253,8 +260,15 @@ export const setValue = (FACTORY_NAME, value, key) => {
   const factoryName = FACTORY_NAME.toLowerCase()
   const FACTORY = CONFIG[FACTORY_NAME]
   const result = SETTERS[factoryName](value, key)
+
+  // console.log(CONFIG.verbose)
+  if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose && FACTORY[key]) {
+    // console.warn('Replacing ', key, ' as ', FACTORY[key], ' in ', factoryName)
+  }
+
   FACTORY[key] = result
-  CSS_VARS[result.var] = result.value
+  setVariables(result, key)
+
   return FACTORY
 }
 
@@ -267,7 +281,15 @@ export const setEach = (factoryName, props) => {
 }
 
 export const set = recivedConfig => {
-  const { version, verbose, ...config } = recivedConfig
+  const { version, verbose, useVariable, ...config } = recivedConfig
+
+  // console.log('=========')
+  // console.log(verbose)
+  CONFIG.verbose = verbose
+  CONFIG.useVariable = useVariable
+  // console.log(recivedConfig)
+  if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.log(CONFIG)
+
   const keys = Object.keys(config)
   keys.map(key => setEach(key, config[key]))
 
@@ -275,11 +297,9 @@ export const set = recivedConfig => {
   applyTypographySequence()
   applySpacingSequence()
   applyDocument()
+  applyTimingSequence()
+  applyReset()
 
-  CONFIG.verbose = verbose
-  if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.log(CONFIG)
-
+  CONFIG.VARS = CSS_VARS
   return CONFIG
 }
-
-export default set

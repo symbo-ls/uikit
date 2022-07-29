@@ -1,6 +1,6 @@
 'use strict'
 
-import set, { setEach, SETTERS } from '../src/methods/set'
+import set, { setEach, SETTERS } from '../src/set'
 
 test('should setup a GRADIENT', () => {
   const color = `linear-gradient(0deg,

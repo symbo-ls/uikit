@@ -1,7 +1,7 @@
 'use strict'
 
 import * as CONFIG from './config'
-import { getTheme } from './methods'
+import { getTheme } from './set'
 import { deepMerge, merge } from './utils'
 
 export const RESET = {}

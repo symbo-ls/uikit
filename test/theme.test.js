@@ -1,7 +1,7 @@
 'use strict'
 
 import CONFIG from '../src/factory'
-import { setEach, SETTERS, getTheme, setValue } from '../src/methods/set'
+import { setEach, SETTERS, getTheme, setValue } from '../src/set'
 
 setEach('color', {
   white: '#fff',
