@@ -45,7 +45,7 @@ export const getColor = value => {
         if (tone.slice(0, 1) === '-' || tone.slice(0, 1) === '+') {
           rgb = hexToRgbArray(getColorShade(toHex, parseFloat(tone))).join(', ')
         } else {
-          const [r, g, b] = [...rgb.split(', ').map(v => parseFloat(v))]
+          const [r, g, b] = [...rgb.split(', ').map(v => parseInt(v))]
           const hsl = rgbToHSL(r, g, b)
           const [h, s, l] = hsl // eslint-disable-line
           const newRgb = hslToRgb(h, s, parseFloat(tone) / 100 * 255)
@@ -104,6 +104,17 @@ const getThemeValue = theme => {
 
 export const getTheme = value => {
   const { THEME } = CONFIG
+
+  if (isString(value)) {
+    const [theme, subtheme] = value.split(' ')
+    if (!THEME[theme]) {
+      if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find theme', value)
+      return
+    }
+    if (!subtheme) return getThemeValue(THEME[theme])
+    value = [theme, subtheme]
+  }
+
   if (isObjectLike(value) && value[1]) {
     const themeName = value[0]
     const subThemeName = value[1]
@@ -112,7 +123,6 @@ export const getTheme = value => {
     if (helpers && helpers[subThemeName]) return getThemeValue(helpers[subThemeName])
     if (state && state[subThemeName]) return getThemeValue(state[subThemeName])
   } else if (isObject(value)) return setThemeValue(value)
-  else if (isString(value) && THEME[value]) return getThemeValue(THEME[value])
 
   if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find theme', value)
 }

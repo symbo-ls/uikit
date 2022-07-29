@@ -1,6 +1,7 @@
 'use strict'
 
 import * as CONFIG from './config'
+import { getTheme } from './methods'
 import { deepMerge, merge } from './utils'
 
 export const RESET = {}
@@ -27,7 +28,9 @@ export const applyReset = (reset = {}) => deepMerge(merge(RESET, reset), {
   body: {
     boxSizing: 'border-box',
     height: '100%',
-    margin: 0
+    margin: 0,
+
+    ...getTheme('document')
   },
 
   ...CONFIG.TYPOGRAPHY.styles,
