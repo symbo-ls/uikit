@@ -1,6 +1,6 @@
 'use strict'
 
-import { merge } from '@domql/utils'
+import { merge, isArray } from '@domql/utils'
 import { CASES as CONFIG_CASES, MEDIA as CONFIG_MEDIA, getTheme } from '@symbo.ls/scratch'
 
 const convertToClass = (subProps, element) => {
@@ -10,7 +10,11 @@ const convertToClass = (subProps, element) => {
     const classnameExec = className[prop]
     if (typeof classnameExec !== 'function') continue
 
-    const contertedToClass = classnameExec({ props: subProps })
+    let contertedToClass = classnameExec({ props: subProps })
+    if (isArray(contertedToClass)) {
+      contertedToClass = contertedToClass.reduce((a, c) => merge(a, c), {})
+    }
+
     for (const finalProp in contertedToClass) subPropsClassname[finalProp] = contertedToClass[finalProp]
   }
   return subPropsClassname
@@ -40,11 +44,10 @@ const init = (el, s) => {
       if (!CONFIG_CASES[caseKey]) continue
 
       const caseProps = props[screen]
-      const execCaseProps = convertToClass(caseProps, el)
 
       const { CASE } = className
       if (!CASE) className.CASE = {}
-      merge(className.CASE, execCaseProps)
+      merge(className.CASE, convertToClass(caseProps, el))
     }
   }
 }
@@ -53,22 +56,24 @@ export const Responsive = {
   on: {
     init,
     initUpdate: el => {
+      // FORCE STATE UPDATE:
       const { props, class: className } = el
       const rootState = el.__root ? el.__root.state : el.state
       // console.log(props)
+      if (el.key !== 'app') return
 
       if (props.theme) {
-        // console.group(props.theme)
         const { theme } = props
 
-        for (const key in theme) {
+        const convertTheme = getTheme(theme)
+
+        for (const key in convertTheme) {
           if (key.includes('dark') || key.includes('light')) {
             const parse = key.split(': ')[1].split(')')[0]
             if (rootState.globalTheme === parse) {
               props.theme = getTheme(theme[key])
             } else props.theme = theme
             className.MEDIA_FORCED_BY_STATE = props.theme
-            props.generatedTheme = true
           }
         }
         // console.groupEnd(props.theme)
