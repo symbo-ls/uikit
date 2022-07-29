@@ -3,51 +3,81 @@
 import { merge, isArray } from '@domql/utils'
 import { CASES as CONFIG_CASES, MEDIA as CONFIG_MEDIA, getTheme } from '@symbo.ls/scratch'
 
-const convertToClass = (subProps, element) => {
+const convertPropsToClass = (subProps, lib, element) => {
   const { class: className } = element
   const subPropsClassname = {}
   for (const prop in subProps) {
+    // if (prop.slice(0, 1) === ':') {
+    //   applySelectorProps(prop, lib, element)
+    //   continue
+    // }
+
     const classnameExec = className[prop]
     if (typeof classnameExec !== 'function') continue
 
-    let contertedToClass = classnameExec({ props: subProps })
-    if (isArray(contertedToClass)) {
-      contertedToClass = contertedToClass.reduce((a, c) => merge(a, c), {})
+    let classExec = classnameExec({ props: subProps })
+    if (isArray(classExec)) {
+      classExec = classExec.reduce((a, c) => merge(a, c), {})
     }
 
-    for (const finalProp in contertedToClass) subPropsClassname[finalProp] = contertedToClass[finalProp]
+    for (const finalProp in classExec) {
+      subPropsClassname[finalProp] = classExec[finalProp]
+    }
   }
   return subPropsClassname
+}
+
+const applyMediaProps = (key, lib, element) => {
+  const { props } = element
+  const mediaName = CONFIG_MEDIA[key.slice(1)]
+  const mediaKey = `@media key and ${mediaName}`
+  const mediaProps = props[key]
+  lib.media[mediaKey] = convertPropsToClass(mediaProps, lib, element)
+}
+
+const applySelectorProps = (key, lib, element) => {
+  const { props } = element
+  const selectorKey = `&${key}`
+  const selectorProps = props[key]
+  lib.selector[selectorKey] = convertPropsToClass(selectorProps, lib, element)
+}
+
+const applyCaseProps = (key, lib, element) => {
+  const { props } = element
+  const caseKey = key.slice(1)
+  if (!CONFIG_CASES[caseKey]) return
+  const caseProps = props[key]
+  merge(lib.case, convertPropsToClass(caseProps, lib, element))
+}
+
+const keySetters = {
+  '@': applyMediaProps,
+  ':': applySelectorProps,
+  $: applyCaseProps
 }
 
 const init = (el, s) => {
   const { props, class: className } = el
 
-  for (const screen in props) {
-    if (screen.slice(0, 1) === '@') {
-      const mediaName = CONFIG_MEDIA[screen.slice(1)]
-      const mediaKey = `@media screen and ${mediaName}`
-      const screenProps = props[screen]
-
-      const { MEDIA } = className
-      if (!MEDIA) className.MEDIA = {}
-      className.MEDIA[mediaKey] = convertToClass(screenProps, el)
-    } else if (screen.slice(0, 1) === ':') {
-      const selectorProps = props[screen]
-      const selectorKey = `&${screen}`
-
-      const { SELECTORS } = className
-      if (!SELECTORS) className.SELECTORS = {}
-      className.SELECTORS[selectorKey] = convertToClass(selectorProps, el)
-    } else if (screen.slice(0, 1) === '$') {
-      const caseKey = screen.slice(1)
-      if (!CONFIG_CASES[caseKey]) continue
-      const caseProps = props[screen]
-      const { CASE } = className
-      if (!CASE) className.CASE = {}
-      merge(className.CASE, convertToClass(caseProps, el))
-    }
+  const CLASS_NAMES = {
+    media: {},
+    selector: {},
+    case: {}
   }
+
+  for (const key in props) {
+    const setter = keySetters[key.slice(0, 1)]
+    if (setter) setter(key, CLASS_NAMES, el)
+    // if (key.slice(0, 1) === '@') {
+    //   applyMediaProps(key, CLASS_NAMES.media, el)
+    // } else if (key.slice(0, 1) === ':') {
+    //   applySelectorProps(key, CLASS_NAMES.selector, el)
+    // } else if (key.slice(0, 1) === '$') {
+    //   applyCaseProps(key, CLASS_NAMES.case, el)
+    // }
+  }
+
+  merge(className, CLASS_NAMES)
 }
 
 export const Responsive = {

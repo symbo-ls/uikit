@@ -27,9 +27,11 @@ export const mapBasedOnRatio = (props, prop, unit) => {
 }
 
 export const Block = {
-  props: {},
-
   class: {
+    boxSizing: ({ props }) => props.boxSizing ? ({ display: props.boxSizing }) : {
+      boxSizing: 'border-box'
+    },
+
     display: ({ props }) => props.display && ({ display: props.display }),
 
     hide: ({ props }) => props.hide && ({ display: 'none' }),

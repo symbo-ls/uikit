@@ -2,10 +2,6 @@
 
 import { UNIT, getColor, getTheme } from '@symbo.ls/scratch'
 
-export default {
-  boxSizing: 'border-box'
-}
-
 export const depth = {
   4: { boxShadow: `rgba(0,0,0,.10) 0 2${UNIT.default} 4${UNIT.default}` },
   6: { boxShadow: `rgba(0,0,0,.10) 0 3${UNIT.default} 6${UNIT.default}` },
