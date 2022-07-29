@@ -1,12 +1,9 @@
 'use strict'
 
-import style from './style'
-import { mapBasedOnRatio } from '../Block'
+import { mapBasedOnRatio } from './Block'
 
 export const Grid = {
-  style,
-
-  props: {},
+  props: { display: 'grid' },
 
   class: {
     columns: ({ props }) => props.columns ? ({ gridTemplateColumns: props.columns }) : null,

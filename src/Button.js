@@ -1,6 +1,6 @@
 'use strict'
 
-import { IconText } from '../'
+import { IconText } from '.'
 
 const css = {
   appearance: 'none',

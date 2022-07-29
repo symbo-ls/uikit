@@ -1,12 +1,10 @@
 'use strict'
 
-import style from './style'
-import { mapBasedOnRatio } from '../Block'
+import { mapBasedOnRatio } from './Block'
 
 export const Flex = {
-  style,
-
   props: {
+    display: 'flex',
     flow: 'row'
   },
 

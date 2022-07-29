@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, Position, Block, Text, Overflow, Transition, Transform, Responsive } from '..'
+import { Shape, Position, Block, Text, Overflow, Transition, Transform, Responsive } from '.'
 
 const PropsCSS = {
   class: {

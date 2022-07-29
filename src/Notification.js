@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, Block, IconText, Direction, Flex, Text } from '../'
+import { Shape, Block, IconText, Direction, Flex, Text } from '.'
 
 export const Notification = {
   style: { cursor: 'pointer' },

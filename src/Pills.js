@@ -1,5 +1,4 @@
 'use strict'
-import Shape from '../Shape'
 
 export const Pills = {
   style: {
@@ -18,13 +17,10 @@ export const Pills = {
   },
   childProto: {
     tag: 'div',
-    proto: Shape,
     props: {
       round: 42,
       theme: 'White'
     }
   },
-  ...[
-    {}, {}, {}
-  ]
+  ...[{}, {}, {}]
 }

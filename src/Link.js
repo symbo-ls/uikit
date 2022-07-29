@@ -1,7 +1,7 @@
 'use strict'
 
 import { exec } from '@domql/utils'
-import { Shape, Text } from '..'
+import { Shape, Text } from '.'
 
 export const Link = {
   proto: [Shape, Text],

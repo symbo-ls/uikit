@@ -1,7 +1,7 @@
 'use strict'
-import { Block } from '../Block'
-import { Shape } from '../Shape'
-import { Text } from '../Text'
+import { Block } from './Block'
+import { Shape } from './Shape'
+import { Text } from './Text'
 
 export const Label = {
   proto: [Shape, Block, Text],

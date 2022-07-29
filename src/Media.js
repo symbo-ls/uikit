@@ -42,9 +42,7 @@ const init = (el, s) => {
     } else if (screen.slice(0, 1) === '$') {
       const caseKey = screen.slice(1)
       if (!CONFIG_CASES[caseKey]) continue
-
       const caseProps = props[screen]
-
       const { CASE } = className
       if (!CASE) className.CASE = {}
       merge(className.CASE, convertToClass(caseProps, el))
@@ -64,6 +62,7 @@ export const Responsive = {
 
       if (props.theme) {
         const { theme } = props
+        // console.group(props.theme)
 
         const convertTheme = getTheme(theme)
 
