@@ -11,5 +11,6 @@ export const MEDIA = {
   mobileM: '(max-width: 560px)',
   mobileS: '(max-width: 480px)',
 
-  light: '(prefers-color-scheme: light)'
+  light: '(prefers-color-scheme: light)',
+  dark: '(prefers-color-scheme: dark)'
 }
