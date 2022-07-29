@@ -38,10 +38,10 @@ export const Block = {
     height: ({ props }) => props.height && mapBasedOnRatio(props, 'height'),
     boxSize: ({ props }) => {
       if (typeof props.boxSize !== 'string') return
-      const [width, height] = props.boxSize.split(' ')
+      const [height, width] = props.boxSize.split(' ')
       return {
-        ...mapSpacing(width, 'width'),
-        ...mapSpacing(height, 'height')
+        ...mapSpacing(height, 'height'),
+        ...mapSpacing(width, 'width')
       }
     },
 

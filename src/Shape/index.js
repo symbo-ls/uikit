@@ -48,12 +48,11 @@ export const Shape = {
 
     theme: ({ props }) => {
       if (!props.theme) return
-      return props.returnGeneratedTheme || getTheme(props.theme)
+      return getTheme(props.theme)
     },
 
     color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,
     background: ({ props }) => props.background ? ({ backgroundColor: getColor(props.background) }) : null,
-    // border: ({ props }) => props.border ? ({ borderColor: getColor(props.border) }) : null,
 
     textStroke: ({ props }) => props.textStroke ? diffStroke(props.textStroke) : null,
 

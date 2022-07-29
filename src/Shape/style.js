@@ -1,6 +1,6 @@
 'use strict'
 
-import { UNIT, getColor } from '@symbo.ls/scratch'
+import { UNIT, getColor, getTheme } from '@symbo.ls/scratch'
 
 export default {
   boxSizing: 'border-box'
@@ -27,7 +27,7 @@ export const SHAPES = {
       display: 'block',
       width: '0px',
       height: '0px',
-      border: `6px solid ${getColor(props.background)}`,
+      border: `6px solid ${getColor(props.background) || (props.theme && getTheme(props.theme).backgroundColor)}`,
       position: 'absolute',
       borderRadius: '2px'
     }
@@ -71,10 +71,10 @@ export const SHAPES = {
       display: 'block',
       width: '0',
       height: '0',
-      border: `16px solid ${getColor(props.background)}`,
+      border: `16px solid ${getColor(props.background) || (props.theme && getTheme(props.theme).backgroundColor)}`,
       borderRadius: '6px',
       position: 'absolute'
-    },
+    }
   }),
 
   tagDirection: {
