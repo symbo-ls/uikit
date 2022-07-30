@@ -7,7 +7,7 @@ export const Link = {
   proto: [Shape, Text],
   tag: 'a',
   props: {
-    theme: 'link',
+    // theme: 'link',
     aria: {},
     fontWeight: 'bold',
     textDecoration: 'none'
