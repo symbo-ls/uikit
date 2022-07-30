@@ -28,7 +28,7 @@ const keySetters = {
   '@': (key, props, result, element, isSubtree) => applyMediaProps(key, props, isSubtree ? result : result.media, element),
   ':': (key, props, result, element, isSubtree) => applySelectorProps(key, props, isSubtree ? result : result.selector, element),
   $: (key, props, result, element, isSubtree) => applyCaseProps(key, props, isSubtree ? result : result.case, element),
-  '.': (key, props, result, element, isSubtree) => applyCaseProps(key, props, isSubtree ? result : result.case, element)
+  '.': (key, props, result, element, isSubtree) => applyConditionalCaseProps(key, props, isSubtree ? result : result.case, element)
 }
 
 const execClass = (key, props, result, element) => {
@@ -76,7 +76,13 @@ const applySelectorProps = (key, props, result, element) => {
 
 const applyCaseProps = (key, props, result, element) => {
   const caseKey = key.slice(1)
-  if (!(CONFIG_CASES[caseKey] || element.props[caseKey])) return
+  if (!CONFIG_CASES[caseKey]) return
+  merge(result, convertPropsToClass(props, result, element))
+}
+
+const applyConditionalCaseProps = (key, props, result, element) => {
+  const caseKey = key.slice(1)
+  if (!element.props[caseKey]) return
   merge(result, convertPropsToClass(props, result, element))
 }
 
