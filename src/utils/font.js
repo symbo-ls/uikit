@@ -2,8 +2,9 @@
 
 export const getDefaultOrFirstKey = (LIBRARY, key) => {
   if (LIBRARY[key]) return LIBRARY[key].value
-  if (LIBRARY.default) return LIBRARY[LIBRARY.default].value
-  return LIBRARY[Object.keys(LIBRARY)[0]].value
+  if (LIBRARY.isDefault) return LIBRARY[LIBRARY.isDefault].value
+  const hasValue = Object.keys(LIBRARY)[0]
+  return hasValue && LIBRARY[hasValue] && LIBRARY[hasValue].value
 }
 
 export const getFontFormat = url => url.split(/[#?]/)[0].split('.').pop().trim()
