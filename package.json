@@ -3,7 +3,7 @@
   "description": "Utilize props as CSS methods",
   "private": false,
   "author": "symbo.ls",
-  "version": "0.8.32",
+  "version": "0.9.0",
   "repository": "https://github.com/symbo-ls/smbls",
   "main": "src/index.js",
   "files": [
