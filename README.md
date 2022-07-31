@@ -1,4 +1,4 @@
-# Symbols
+# css-in-props
 
 UI Library in composition of [Scratch](https://github.com/smbo-ls/scratch) and [DOMQL](https://github.com/domql/domql)
 
