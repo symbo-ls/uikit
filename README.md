@@ -8,18 +8,15 @@ UI Library in composition of [Scratch](https://github.com/smbo-ls/scratch) and [
 
 1. Installation
 ```
-yarn add smbls
+yarn add css-in-props
 ```
 
 2. Import the component from Symbols
 ```
-import { Box } from 'smbls'
+import { transformClassName } from 'css-in-props'
 ```
 
 3. Use it inside your DOMQL code
 ```
-const Header = {
-  proto: Box,
-  // ...Other Properties
-}
+const Box = (props) => <div className={transformClassName(props)}>{props.children}</div>
 ```
