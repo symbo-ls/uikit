@@ -16,6 +16,5 @@ export const transformClassname = props => {
     else if (isFunction(hasCSS)) merge(CLASS_NAMES, hasCSS(props))
   }
 
-
   return CLASS_NAMES
 }

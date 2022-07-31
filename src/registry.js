@@ -82,8 +82,8 @@ export const theme = {
 }
 
 export const block = {
-  round: ({ props, key }) => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
-  borderRadius: ({ props, key }) => props.borderRadius ? (mapSpacing(props.borderRadius, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
+  round: props => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
+  borderRadius: props => props.borderRadius ? (mapSpacing(props.borderRadius, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
 
   transition: props => props.transition && ({ transition: props.transition }),
   transitionProperty: props => props.transitionProperty && ({

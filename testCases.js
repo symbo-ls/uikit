@@ -11,8 +11,8 @@ export const code_test = { // eslint-disable-line
   lineHeight: 1.8,
   margin: '0 0 0 0',
   maxHeight: '99%',
-  maxWidth: 'I',
-  minWidth: 'G',
+  maxWidth: 'F2',
+  minWidth: 'F1',
   overflow: 'auto',
   padding: 'A',
   round: 'Z2',
@@ -59,8 +59,12 @@ set({
   }
 })
 
-const trasnsformed = transformClassname(navLink_test)
-const trasnsformedCSS = transformEmotion(trasnsformed)
+const codePropsTrasnsformClassname = transformClassname(code_test)
+const codePropsTrasnsformEmotion = transformEmotion(codePropsTrasnsformClassname)
+console.log(codePropsTrasnsformClassname)
+console.log(codePropsTrasnsformEmotion)
 
-console.log(trasnsformed)
-console.log(trasnsformedCSS)
+const navLinkPropsTrasnsformClassname = transformClassname(navLink_test)
+const navLinkPropsTrasnsformEmotion = transformEmotion(navLinkPropsTrasnsformClassname)
+console.log(navLinkPropsTrasnsformClassname)
+console.log(navLinkPropsTrasnsformEmotion)
