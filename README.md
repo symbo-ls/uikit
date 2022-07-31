@@ -2,7 +2,7 @@
 
 UI Library in composition of [Scratch](https://github.com/smbo-ls/scratch) and [DOMQL](https://github.com/domql/domql)
 
-[![npm version](https://badge.fury.io/js/smbls.svg)](https://badge.fury.io/js/smbls)
+[![npm version](https://badge.fury.io/js/css-in-props.svg)](https://badge.fury.io/js/css-in-props)
 
 ### Setup
 
