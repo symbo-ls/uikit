@@ -1,6 +1,6 @@
 'use strict'
 
-import { transformClassname } from './src'
+import { transformClassname, transformEmotion, set } from './src'
 
 export const code_test = { // eslint-disable-line
   display: 'block',
@@ -42,6 +42,25 @@ export const navLink_test = { // eslint-disable-line
   }
 }
 
+set({
+  color: {
+    gray1: '#0C0C0D',
+    gray2: '#141416',
+    gray3: '#1C1C1F',
+    gray4: '#252527',
+    gray5: '#3E3E41',
+    gray6: '#57575C',
+    gray7: '#818186',
+    gray8: '#A3A3A8',
+    gray9: '#BDBDC1',
+    gray10: '#cfcfd1',
+    gray11: '#e0e0e2',
+    gray12: '#e9e9ea'
+  }
+})
+
 const trasnsformed = transformClassname(navLink_test)
+const trasnsformedCSS = transformEmotion(trasnsformed)
 
 console.log(trasnsformed)
+console.log(trasnsformedCSS)
