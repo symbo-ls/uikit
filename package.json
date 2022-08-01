@@ -11,7 +11,7 @@
     "css-in-props": "latest"
   },
   "source": "src/index.js",
-  "main": "dist/main.js",
+  "main": "src/index.js",
   "targets": {
     "main": {
       "context": "browser",
@@ -21,11 +21,12 @@
   },
   "files": [
     "dist",
+    "src",
     "README.md"
   ],
   "scripts": {
     "prebuild": "rm -rf dist .parcel-cache",
-    "build": "parcel build index.js",
+    "build": "parcel build src/index.js",
     "build:watch": "nodemon --exec \"yarn build\" --ignore 'dist/*' --watch ..",
     "test:lint": "npx standard \"packages/**/*.js\"",
     "test": "echo running all tests is not supported, maybe run: \"yarn test:lint\"",

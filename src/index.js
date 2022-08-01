@@ -20,12 +20,13 @@ const { css, injectGlobal } = createEmotion({
 export const init = (config) => {
   const defaultConfig = config || CONFIG_DEFAULT || SYMBOLSRC_FILE
 
-  set({ verbose: false, ...defaultConfig })
-
+  const conf = set({ verbose: false, ...defaultConfig })
   const FontFace = getFontFaceString(FONT)
 
   injectGlobal(FontFace)
   injectGlobal(RESET)
+
+  return conf
 }
 
 export const setClass = props => setClassname(props, css)
