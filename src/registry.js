@@ -82,8 +82,8 @@ export const theme = {
 }
 
 export const block = {
-  round: props => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
-  borderRadius: props => props.borderRadius ? (mapSpacing(props.borderRadius, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
+  round: props => props.round ? (mapBasedOnRatio(props, 'borderRadius') || ({ borderRadius: props.round })) : null,
+  borderRadius: props => props.borderRadius ? (mapBasedOnRatio(props, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
 
   transition: props => props.transition && ({ transition: props.transition }),
   transitionProperty: props => props.transitionProperty && ({
@@ -105,8 +105,8 @@ export const block = {
     if (typeof props.boxSize !== 'string') return
     const [height, width] = props.boxSize.split(' ')
     return {
-      ...mapSpacing(height, 'height'),
-      ...mapSpacing(width, 'width')
+      ...mapBasedOnRatio({ height, spacingRatio: props.spacingRatio }, 'height'),
+      ...mapBasedOnRatio({ width, spacingRatio: props.spacingRatio }, 'width')
     }
   },
 
@@ -116,8 +116,8 @@ export const block = {
     if (typeof props.widthRange !== 'string') return
     const [minWidth, maxWidth] = props.widthRange.split(' ')
     return {
-      ...mapSpacing(minWidth, 'minWidth'),
-      ...mapSpacing(maxWidth, 'maxWidth')
+      ...mapBasedOnRatio({ minWidth, spacingRatio: props.spacingRatio }, 'minWidth'),
+      ...mapBasedOnRatio({ maxWidth, spacingRatio: props.spacingRatio }, 'maxWidth')
     }
   },
 
@@ -127,8 +127,8 @@ export const block = {
     if (typeof props.heightRange !== 'string') return
     const [minHeight, maxHeight] = props.heightRange.split(' ')
     return {
-      ...mapSpacing(minHeight, 'minHeight'),
-      ...mapSpacing(maxHeight, 'maxHeight')
+      ...mapBasedOnRatio({ minHeight, spacingRatio: props.spacingRatio }, 'minHeight'),
+      ...mapBasedOnRatio({ maxHeight, spacingRatio: props.spacingRatio }, 'maxHeight')
     }
   },
 
@@ -169,13 +169,13 @@ export const position = {
   inset: props => {
     const { inset } = props
     if (typeof inset !== 'string') return
-    return { inset: inset.split(' ').map(v => mapSpacing(v, 'k').k).join(' ') }
+    return { inset: inset.split(' ').map(v => mapBasedOnRatio(v, 'k').k).join(' ') }
   },
 
-  left: props => mapSpacing(props.left, 'left'),
-  top: props => mapSpacing(props.top, 'top'),
-  right: props => mapSpacing(props.right, 'right'),
-  bottom: props => mapSpacing(props.bottom, 'bottom')
+  left: props => mapBasedOnRatio(props, 'left'),
+  top: props => mapBasedOnRatio(props, 'top'),
+  right: props => mapBasedOnRatio(props, 'right'),
+  bottom: props => mapBasedOnRatio(props, 'bottom')
 }
 
 export const text = {

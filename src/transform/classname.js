@@ -1,12 +1,13 @@
 'use strict'
 
-import { merge, isFunction } from '@domql/utils'
+import { merge, isFunction, isObject, isArray } from '@domql/utils'
 import { keySetters } from './subProps'
 
 import { registry } from '../registry'
 
 export const transformClassname = props => {
   const CLASS_NAMES = {}
+  if (!isObject(props)) return
 
   for (const key in props) {
     const setter = keySetters[key.slice(0, 1)]
@@ -14,7 +15,13 @@ export const transformClassname = props => {
     const hasCSS = reg[key]
 
     if (setter) setter(key, props[key], CLASS_NAMES)
-    else if (isFunction(hasCSS)) merge(CLASS_NAMES, hasCSS(props))
+    else if (isFunction(hasCSS)) {
+      const stack = hasCSS(props)
+      const exec = isArray(stack) ? stack.reduce((a, c) => {
+        return merge(a, c)
+      }, {}) : stack
+      merge(CLASS_NAMES, exec)
+    }
   }
 
   return CLASS_NAMES
