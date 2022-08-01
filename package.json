@@ -10,7 +10,7 @@
     "@symbo.ls/scratch": "latest",
     "css-in-props": "latest"
   },
-  "source": "index.js",
+  "source": "src/index.js",
   "main": "dist/main.js",
   "targets": {
     "main": {
@@ -19,6 +19,7 @@
       "includeNodeModules": true
     }
   },
+  "files": [ "dist", "README.md" ],
   "scripts": {
     "prebuild": "rm -rf dist .parcel-cache",
     "build": "parcel build index.js",
