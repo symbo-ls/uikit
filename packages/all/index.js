@@ -1,6 +1,6 @@
 'use strict'
 
-export * from '@symbo.ls/scratch-init'
+export * from '@symbo.ls/init'
 
 // export * from './styles'
 
