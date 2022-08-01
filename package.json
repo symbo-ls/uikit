@@ -1,14 +1,14 @@
 {
   "name": "@symbo.ls/scratch",
   "description": "Φ / CSS framework and methodology.",
-  "author": "Symbols",
+  "author": "symbo.ls",
   "version": "0.3.21",
   "files": [
     "src"
   ],
-  "repository": "https://github.com/rackai/scratch",
+  "repository": "https://github.com/symbo-ls/scratch",
   "source": "src/index.js",
-  "main": "build/main.js",
+  "main": "src/index.js",
   "publishConfig": {},
   "dependencies": {
     "color-contrast-checker": "^1.5.0"
