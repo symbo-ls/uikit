@@ -3,27 +3,6 @@
 import { merge, isArray } from '@domql/utils'
 import { CASES as CONFIG_CASES, MEDIA as CONFIG_MEDIA, getTheme } from '@symbo.ls/scratch'
 
-// const keySetters = {
-//   '@': (props, result, element, isSubtree) => {
-//     if (isSubtree) result.media = {}
-//     return applyMediaProps(props, result.media, element)
-//   },
-//   ':': (props, result, element, isSubtree) => {
-//     if (isSubtree) result.selector = {}
-//     return applySelectorProps(props, result.selector, element)
-//   },
-//   $: (props, result, element, isSubtree) => {
-//     if (isSubtree) result.case = {}
-//     return applyCaseProps(props, result.case, element)
-//   }
-// }
-
-// const keySetters = {
-//   '@': (props, result, element) => applyMediaProps(props, result.media, element),
-//   ':': (props, result, element) => applySelectorProps(props, result.selector, element),
-//   $: (props, result, element) => applyCaseProps(props, result.case, element)
-// }
-
 const keySetters = {
   '@': (key, props, result, element, isSubtree) => applyMediaProps(key, props, isSubtree ? result : result.media, element),
   ':': (key, props, result, element, isSubtree) => applySelectorProps(key, props, isSubtree ? result : result.selector, element),
@@ -82,7 +61,7 @@ const applyCaseProps = (key, props, result, element) => {
 
 const applyConditionalCaseProps = (key, props, result, element) => {
   const caseKey = key.slice(1)
-  if (!element.props[caseKey]) return
+  if (!element.props[caseKey]) return // remove classname if not here
   merge(result, convertPropsToClass(props, result, element))
 }
 

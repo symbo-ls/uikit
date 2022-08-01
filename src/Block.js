@@ -74,7 +74,7 @@ export const Block = {
     borderWidth: ({ props }) => props.borderWidth ? mapBasedOnRatio(props, 'borderWidth') : null,
 
     padding: ({ props }) => props.padding ? mapBasedOnRatio(props, 'padding') : null,
-    margin: ({ props }) => props.margin ? mapBasedOnRatio(props, 'margin') : null,
+    margin: ({ props }) => props.margin ? { ...mapBasedOnRatio(props, 'margin') } : null,
 
     gap: ({ props }) => props.gap ? mapBasedOnRatio(props, 'gap') : null,
     gridArea: ({ props }) => props.gridArea && ({ gridArea: props.gridArea }),
