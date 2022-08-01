@@ -7,7 +7,8 @@
     "@domql/utils": "latest",
     "@emotion/css": "latest",
     "@symbo.ls/config-default": "latest",
-    "@symbo.ls/scratch": "latest"
+    "@symbo.ls/scratch": "latest",
+    "css-in-props": "latest"
   },
   "source": "index.js",
   "main": "dist/main.js",
@@ -21,6 +22,7 @@
   "scripts": {
     "prebuild": "rm -rf dist .parcel-cache",
     "build": "parcel build index.js",
+    "build:watch": "nodemon --exec \"yarn build\" --ignore 'dist/*' --watch ..",
     "test:lint": "npx standard \"packages/**/*.js\"",
     "test": "echo running all tests is not supported, maybe run: \"yarn test:lint\"",
     "push": "echo push is not yet supported",
