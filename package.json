@@ -22,15 +22,13 @@
 
 
   "scripts": {
-    "start": "parcel showcase/index.html",
     "prebuild": "rm -rf dist .parcel-cache",
     "build": "parcel build index.js",
     "test:lint": "npx standard \"packages/**/*.js\"",
     "test": "echo running all tests is not supported, maybe run: \"yarn test:lint\"",
     "push": "echo push is not yet supported",
     "push:version": "npm version patch && npm publish && git push origin --tags && git push",
-    "clean": "rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log",
-    "clean:all": "lerna exec -- rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log"
+    "clean": "rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
