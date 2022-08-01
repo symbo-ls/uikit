@@ -1,6 +1,7 @@
 'use strict'
 
 import { mapFontSize } from '@symbo.ls/scratch'
+import { mapBasedOnRatio } from '@symbo.ls/block'
 
 export const Text = {
 
@@ -8,7 +9,7 @@ export const Text = {
 
   class: {
     fontSize: ({ props }) => props.fontSize ? mapFontSize(props.fontSize) : null,
-    lineHeight: ({ props }) => ({ lineHeight: props.lineHeight }),
+    lineHeight: ({ props }) => mapBasedOnRatio(props, 'lineHeight'),
     textDecoration: ({ props }) => ({ textDecoration: props.textDecoration }),
     textTransform: ({ props }) => ({ textTransform: props.textTransform }),
     textAlign: ({ props }) => ({ textAlign: props.textAlign }),

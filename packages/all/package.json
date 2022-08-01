@@ -11,6 +11,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
+    "@symbo.ls/init": "latest",
+    "@symbo.ls/react-box": "latest",
     "@symbo.ls/banner": "latest",
     "@symbo.ls/block": "latest",
     "@symbo.ls/box": "latest",

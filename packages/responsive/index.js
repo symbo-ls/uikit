@@ -7,10 +7,6 @@ export const Responsive = {
     init: (el, s) => {
       const { props } = el
 
-      // Object.keys(props)
-      //   .filter(v => v.slice(0, 1) === '@')
-      //   .map()
-
       for (const screen in props) {
         if (screen.slice(0, 1) === '@') {
           const screenName = screen.slice(1)
