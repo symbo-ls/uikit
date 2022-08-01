@@ -16,8 +16,6 @@ const { css, injectGlobal } = createEmotion({
   key: 'smbls'
 })
 
-export * from 'css-in-props'
-
 export const init = (config) => {
   const defaultConfig = config || CONFIG_DEFAULT || SYMBOLSRC_FILE
 
