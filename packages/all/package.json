@@ -1,7 +1,7 @@
 {
   "name": "smbls",
   "description": "UI Library built on Scratch and DOMQL",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "repository": "https://github.com/rackai/symbols",
   "main": "index.js",
   "files": [
@@ -12,8 +12,6 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@symbo.ls/init": "latest",
-    "@symbo.ls/react-box": "symbo.ls/react-box",
     "@symbo.ls/banner": "latest",
     "@symbo.ls/block": "latest",
     "@symbo.ls/box": "latest",
@@ -29,6 +27,7 @@
     "@symbo.ls/icon": "latest",
     "@symbo.ls/icon-text": "latest",
     "@symbo.ls/img": "latest",
+    "@symbo.ls/init": "latest",
     "@symbo.ls/input": "latest",
     "@symbo.ls/label": "latest",
     "@symbo.ls/link": "latest",
@@ -36,6 +35,7 @@
     "@symbo.ls/overflow": "latest",
     "@symbo.ls/pills": "latest",
     "@symbo.ls/position": "latest",
+    "@symbo.ls/react-box": "symbo-ls/react-box",
     "@symbo.ls/responsive": "latest",
     "@symbo.ls/scratch-init": "latest",
     "@symbo.ls/select": "latest",
