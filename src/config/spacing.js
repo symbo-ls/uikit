@@ -7,7 +7,7 @@ const defaultProps = {
   base: TYPOGRAPHY.base,
   type: 'spacing',
   ratio: SEQUENCE.phi,
-  range: [-5, +7],
+  range: [-5, +15],
   subSequence: true,
   sequence: {},
   scales: {}

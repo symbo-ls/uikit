@@ -4,41 +4,45 @@ import * as CONFIG from './config'
 import { getTheme } from './set'
 import { deepMerge, merge } from './utils'
 
-export const RESET = {}
+export const applyReset = (reset = {}) => {
+  return deepMerge(merge(CONFIG.RESET, reset), {
+    html: {
+      position: 'absolute',
+      overflow: 'hidden',
+      width: '100%',
+      height: '100%',
+      top: '0',
+      left: '0',
+      margin: '0',
+      WebkitFontSmoothing: 'antialiased',
+      transform: 'translate3d(0, 0, 1px)',
+      scrollBehavior: 'smooth',
 
-export const applyReset = (reset = {}) => deepMerge(merge(RESET, reset), {
-  html: {
-    position: 'absolute',
-    overflow: 'hidden',
-    width: '100%',
-    height: '100%',
-    top: '0',
-    left: '0',
-    margin: '0',
-    WebkitFontSmoothing: 'antialiased',
-    transform: 'translate3d(0, 0, 1px)',
-    scrollBehavior: 'smooth',
+      fontFamily: CONFIG.DOCUMENT.fontFamily,
+      fontSize: CONFIG.DOCUMENT.fontSize / CONFIG.TYPOGRAPHY.default + CONFIG.UNIT.default,
+      lineHeight: CONFIG.DOCUMENT.lineHeight
+    },
 
-    fontFamily: CONFIG.DOCUMENT.fontFamily,
+    body: {
+      boxSizing: 'border-box',
+      height: '100%',
+      margin: 0,
+      fontFamily: CONFIG.DOCUMENT.fontFamily,
 
-    fontSize: CONFIG.DOCUMENT.fontSize / CONFIG.TYPOGRAPHY.default + CONFIG.UNIT.default,
-    lineHeight: CONFIG.DOCUMENT.lineHeight
-  },
+      ...getTheme('document')
+    },
 
-  body: {
-    boxSizing: 'border-box',
-    height: '100%',
-    margin: 0,
+    ...CONFIG.TYPOGRAPHY.styles,
 
-    ...getTheme('document')
-  },
+    // form elements
+    fieldset: {
+      border: 0,
+      padding: 0,
+      margin: 0
+    },
 
-  ...CONFIG.TYPOGRAPHY.styles,
-
-  // form elements
-  fieldset: {
-    border: 0,
-    padding: 0,
-    margin: 0
-  }
-})
+    select: {
+      fontFamily: CONFIG.DOCUMENT.fontFamily
+    }
+  })
+}

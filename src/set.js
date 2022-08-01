@@ -221,7 +221,7 @@ export const getFontFamily = (LIBRARY, key) => {
 const setFontFamily = (val, key) => {
   const { FONT_FAMILY, FONT_FAMILY_TYPES } = CONFIG
   const { value, type } = val
-  if (val.default) FONT_FAMILY.default = key
+  if (val.isDefault) FONT_FAMILY.default = key
 
   const CSSvar = `--font-family-${key}`
   const str = `${value.join(', ')}, ${FONT_FAMILY_TYPES[type]}`
@@ -296,8 +296,8 @@ export const set = recivedConfig => {
   // apply generic configs
   applyTypographySequence()
   applySpacingSequence()
-  applyDocument()
   applyTimingSequence()
+  applyDocument()
   applyReset()
 
   CONFIG.VARS = CSS_VARS

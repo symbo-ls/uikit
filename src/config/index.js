@@ -13,3 +13,4 @@ export * from './icons'
 export * from './timing'
 export * from './document'
 export * from './cases'
+export const RESET = {}

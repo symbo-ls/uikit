@@ -8,4 +8,4 @@ export * from './set'
 export * from './config'
 export * from './reset'
 
-export default CONFIG
+export { CONFIG }
