@@ -1,20 +1,10 @@
 'use strict'
 
+import { isFunction } from '@domql/utils'
 import createEmotion from '@emotion/css/create-instance'
-// const ENV = process.env.NODE_ENV
 
-export const {
-  flush,
-  hydrate,
-  cx,
-  getRegisteredStyles,
-  injectGlobal,
-  keyframes,
-  css,
-  sheet,
-  cache
-} = createEmotion({
+const { css } = createEmotion({
   key: 'smbls'
 })
 
-export const transformEmotion = props => css(props)
+export const transformEmotion = (props, callback) => isFunction(callback) ? callback(props) : css(props)

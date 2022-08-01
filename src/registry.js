@@ -64,7 +64,7 @@ export const theme = {
   theme: props => props.theme ? getTheme(props.theme) : null,
 
   color: props => props.color ? ({ color: getColor(props.color) }) : null,
-  background: props => props.background ? ({ backgroundColor: getColor(props.background) }) : null,
+  background: props => props.background ? ({ background: getColor(props.background) }) : null,
 
   textStroke: props => props.textStroke ? diffStroke(props.textStroke) : null,
 

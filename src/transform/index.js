@@ -1,5 +1,5 @@
 'use strict'
 
-export * from './emotion'
 export * from './classname'
+export * from './emotion'
 export * from './subProps'
