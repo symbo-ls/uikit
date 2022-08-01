@@ -1,6 +1,7 @@
 'use strict'
 
-import { transformClassname, transformEmotion, set } from './src'
+import { set } from '@symbo.ls/scratch'
+import { transformClassname, transformEmotion } from './src'
 
 export const code_test = { // eslint-disable-line
   display: 'block',
