@@ -77,8 +77,6 @@ const applyCaseProps = (key, props, result, element) => {
 const applyConditionalCaseProps = (key, props, result, element) => {
   const caseKey = key.slice(1)
   const isPropTrue = element.props[caseKey]
-  console.log(isPropTrue)
-  console.log(result)
   if (!isPropTrue) return // remove classname if not here
   return merge(result, convertPropsToClass(props, result, element))
 }
