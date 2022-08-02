@@ -44,3 +44,5 @@ export const Arrayize = val => {
   if (isObject(val)) return Object.keys(val).map(v => val[v])
   if (isArray(val)) return val
 }
+
+export const isFunction = arg => typeof arg === 'function'
