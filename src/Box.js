@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive } from '.'
+import { Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive, Interaction } from '.'
 
 const PropsCSS = {
   class: {
@@ -9,5 +9,5 @@ const PropsCSS = {
 }
 
 export const Box = {
-  proto: [Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive, PropsCSS]
+  proto: [Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive, PropsCSS, Interaction]
 }

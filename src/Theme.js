@@ -33,9 +33,9 @@ export const Theme = {
     round: ({ props, key, ...el }) => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
     borderRadius: ({ props, key, ...el }) => props.borderRadius ? (mapSpacing(props.borderRadius, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
 
-    theme: ({ props }) => {
+    theme: ({ props, key }) => {
       if (!props.theme) return
-      return getTheme(props.theme)
+      return getTheme(props.theme, props.themeModifier)
     },
 
     color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,

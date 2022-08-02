@@ -16,6 +16,7 @@ export * from './Overflow'
 export * from './Transform'
 export * from './Transition'
 export * from './Media'
+export * from './Interaction'
 
 export * from './Box'
 
