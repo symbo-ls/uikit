@@ -47,13 +47,15 @@ const convertPropsToClass = (props, result, element) => {
 const applyMediaProps = (key, props, result, element) => {
   const mediaName = CONFIG_MEDIA[key.slice(1)]
   const generatedClass = convertPropsToClass(props, result, element)
+
   const rootState = element.__root ? element.__root.state : element.state
   const { globalTheme } = rootState
   const name = key.slice(1)
+  const isTheme = ['dark', 'light'].includes(name)
   const matchesGlobal = name === globalTheme
 
-  if (globalTheme) {
-    if (matchesGlobal) merge(result, generatedClass)
+  if (globalTheme && isTheme) {
+    if (matchesGlobal) return merge(result, generatedClass)
     return
   }
 
