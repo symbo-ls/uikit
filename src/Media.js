@@ -70,7 +70,8 @@ const applySelectorProps = (key, props, result, element) => {
 
 const applyCaseProps = (key, props, result, element) => {
   const caseKey = key.slice(1)
-  if (!CONFIG_CASES[caseKey]) return
+  const isPropTrue = element.props[caseKey]
+  if (!CONFIG_CASES[caseKey] && !isPropTrue) return
   return merge(result, convertPropsToClass(props, result, element))
 }
 
@@ -80,6 +81,8 @@ const applyConditionalCaseProps = (key, props, result, element) => {
   if (!isPropTrue) return // remove classname if not here
   return merge(result, convertPropsToClass(props, result, element))
 }
+
+const applyTrueProps = (props, result, element) => merge(result, convertPropsToClass(props, result, element))
 
 const beforeClassAssign = (element, s) => {
   const { props, class: className } = element
@@ -115,27 +118,14 @@ export const initUpdate = element => {
     const setter = keySetters[key.slice(0, 1)]
     if (key === 'theme') {
       props.update({ themeModifier: globalTheme }, { preventRecursive: true, ignoreInitUpdate: true })
-    }
+    } else if (key === 'true') applyTrueProps(props[key], CLASS_NAMES, element)
+
     if (setter) setter(key, props[key], CLASS_NAMES, element)
   }
 
   if (Object.keys(CLASS_NAMES.media).length) className.media = CLASS_NAMES.media
   className.selector = CLASS_NAMES.selector
   className.case = CLASS_NAMES.case
-
-  // for (const screen in props) {
-  //   if (screen.slice(0, 1) === '@') {
-  //     const mediaName = screen.slice(1)
-  //     const mediaKey = `@media screen and ${CONFIG_MEDIA[mediaName]}`
-  //     if (mediaName === 'dark' || mediaName === 'light') {
-  //       const { MEDIA_FORCE } = className
-  //       if (!MEDIA_FORCE) className.media = {}
-  //       if (globalTheme === mediaName) {
-  //         className.MEDIA_FORCED = className.MEDIA[mediaKey]
-  //       } else className.MEDIA_FORCED = {}
-  //     }
-  //   }
-  // }
 }
 
 export const Responsive = {
