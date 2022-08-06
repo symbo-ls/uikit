@@ -38,3 +38,4 @@ dist
 
 # Yarn lock
 yarn.lock
+.DS_Store

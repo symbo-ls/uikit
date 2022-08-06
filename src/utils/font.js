@@ -9,6 +9,8 @@ export const getDefaultOrFirstKey = (LIBRARY, key) => {
 
 export const getFontFormat = url => url.split(/[#?]/)[0].split('.').pop().trim()
 
+export const setInCustomFontMedia = str => `@font-face { ${str} }`
+
 export const setCustomFont = (name, weight, url) => `
   font-family: '${name}';
   font-style: normal;
@@ -28,13 +30,16 @@ export const getFontFaceEach = (name, weightsObject) => {
   })
 }
 
-export const getFontFaceEachString = (name, weightsObject) => {
-  return getFontFaceEach(name, weightsObject).join('\n')
-}
-
 export const getFontFace = LIBRARY => {
   const keys = Object.keys(LIBRARY)
   return keys.map(key => getFontFaceEach(key, LIBRARY[key].value))
 }
 
-export const getFontFaceString = LIBRARY => getFontFace(LIBRARY).join('\n')
+export const getFontFaceEachString = (name, weightsObject) => {
+  return getFontFaceEach(name, weightsObject).map(setInCustomFontMedia)
+}
+
+export const getFontFaceString = LIBRARY => {
+  const keys = Object.keys(LIBRARY)
+  return keys.map(key => getFontFaceEachString(key, LIBRARY[key].value))
+}
