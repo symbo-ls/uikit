@@ -23,15 +23,13 @@ yarn add 'smbls'
 import { Box } from 'smbls'
 ```
 
-3. Use it inside your DOMQL code
-### DOMQL
+3. Use it inside your DOMQL app
 ```javascript
 const Header = {
-  proto: Box,
+  extends: Box,
   // ...Other Properties
 }
 ```
-
 ### React
 ```javascript
 <Box {...props} />
