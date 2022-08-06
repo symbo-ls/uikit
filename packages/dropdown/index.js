@@ -8,8 +8,6 @@ export const DropdownList = {
   style: styleDropDown,
   tag: 'ul',
 
-  extends: Shape,
-
   state: {
     active: 0
   },

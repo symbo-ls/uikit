@@ -5,8 +5,6 @@ export const Input = {
 
   props: {
     type: 'input',
-    // value: s[el.key],
-    // placeholder: '',
     round: 'C',
     padding: 'A B',
     theme: 'transparent'

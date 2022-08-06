@@ -1,7 +1,5 @@
 'use strict'
 
-import { Shape } from '@symbo.ls/shape'
-
 export const Link = {
   tag: 'a',
   props: {

@@ -1,27 +1,28 @@
 'use strict'
 
-import { Shape } from '@symbo.ls/shape'
 import { IconText } from '@symbo.ls/icon-text'
-import { Block } from '@symbo.ls/block'
-import { Direction } from '@symbo.ls/direction'
 
-import style from './style'
+const css = {
+  appearance: 'none',
+  border: 'none',
+  outline: 0,
+  cursor: 'pointer',
+  fontFamily: 'inherit'
+}
 
 export const Button = {
   extends: IconText,
   tag: 'button',
-  style,
   props: {
-    type: 'button'
+    type: 'button',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textDecoration: 'none',
+    css
   },
   attr: {
     type: ({ props }) => props.type
-  },
-
-  on: {
-    click: (event, { key, value, props }) => {
-      props.onClick && props.onClick(event)
-    }
   }
 }
 
@@ -32,13 +33,9 @@ export const SquareButton = {
     width: 'A',
     padding: 'Z',
     aspectRatio: '1 / 1',
-    round: 'Z'
-  },
-  class: {
-    squareButton: {
-      justifyContent: 'center',
-      boxSizing: 'content-box'
-    }
+    justifyContent: 'center',
+    round: 'Z',
+    css: { boxSizing: 'content-box' }
   }
 }
 
@@ -49,10 +46,8 @@ export const CircleButton = {
 
 export const KangorooButton = {
   tag: 'button',
-  style,
+  props: { css },
 
   iconText: { extends: IconText },
   child: { extends: IconText }
 }
-
-export default Button

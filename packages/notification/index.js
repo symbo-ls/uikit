@@ -1,38 +1,32 @@
 'use strict'
 
-import { Shape } from '@symbo.ls/shape'
-import { Block } from '@symbo.ls/block'
 import { IconText } from '@symbo.ls/icon-text'
-import { Direction } from '@symbo.ls/direction'
 import { Flex } from '@symbo.ls/flex'
-import { Text } from '@symbo.ls/text'
 
 export const Notification = {
-  style: { cursor: 'pointer' },
   extends: Flex,
-  icon: {
-    extends: IconText,
-    props: {
-      icon: 'info'
-    },
-    style: {
+  props: {
+    icon: {
+      icon: 'info',
       width: 'fit-content',
       height: 'fit-content'
-    }
+    },
+    article: {
+      flow: 'column',
+      align: 'flex-start',
+      p: {
+        fontSize: 'Z',
+        margin: '0'
+      }
+    },
+    css: { cursor: 'pointer' }
+  },
+  icon: {
+    extends: IconText
   },
   article: {
     extends: Flex,
-    style: {
-      flexDirection: 'column',
-      alignItems: 'flex-start'
-    },
     caption: { text: 'Notification' },
-    p: {
-      props: {
-        fontSize: 'Z',
-        text: 'is not always a distraction'
-      },
-      style: { margin: 0 }
-    }
+    p: { text: 'is not always a distraction' }
   }
 }

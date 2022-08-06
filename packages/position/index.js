@@ -10,7 +10,7 @@ export const Position = {
     inset: ({ props }) => {
       const { inset } = props
       if (typeof inset !== 'string') return
-      return { inset: inset.split(' ').map(v => mapSpacing(v,'k').k).join(' ') }
+      return { inset: inset.split(' ').map(v => mapSpacing(v, 'k').k).join(' ') }
     },
 
     left: ({ props }) => mapSpacing(props.left, 'left'),

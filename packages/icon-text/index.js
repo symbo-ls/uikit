@@ -1,6 +1,5 @@
 'use strict'
 
-import { Box } from '@symbo.ls/box'
 import { Icon } from '@symbo.ls/icon'
 
 export const IconText = {
@@ -11,6 +10,5 @@ export const IconText = {
   },
 
   icon: { extends: Icon, if: ({ props }, s) => props.icon },
-
   text: ({ props }) => props.text
 }
