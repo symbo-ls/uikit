@@ -27,6 +27,14 @@ const diffStroke = stroke => {
   return { WebkitTextStroke }
 }
 
+const diffShadow = stroke => {
+  const boxShadow = stroke.split(', ').map(v => {
+    if (v.includes('px')) return v
+    else if (getColor(v)) return getColor(v)
+  }).join(' ')
+  return { boxShadow }
+}
+
 export const Theme = {
   class: {
     depth: ({ props }) => depth[props.depth],
@@ -51,6 +59,8 @@ export const Theme = {
     borderTop: ({ props }) => props.borderTop ? diffBorder(props.borderTop, 'borderTop') : null,
     borderRight: ({ props }) => props.borderRight ? diffBorder(props.borderRight, 'borderRight') : null,
     borderBottom: ({ props }) => props.borderBottom ? diffBorder(props.borderBottom, 'borderBottom') : null,
+
+    shadow: ({ props }) => props.shadow ? diffShadow(props.shadow) : null,
 
     opacity: ({ props }) => props.opacity && ({ opacity: props.opacity }),
     visibility: ({ props }) => props.visibility && ({ visibility: props.visibility })

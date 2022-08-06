@@ -1,35 +1,10 @@
 'use strict'
 
 import style from './style'
-import { set, opacify } from '@symbo.ls/scratch'
+import { opacify } from '@symbo.ls/scratch'
 import { isFunction } from '@domql/utils'
 
 import { SquareButton } from '..'
-
-// set({
-//   theme: {
-//     sliderThumb: {
-//       background: 'white 0.2',
-
-//       '&::-webkit-slider-thumb': {
-//         background: '#232526',
-//         borderColor: opacify('#454646', 0.75)
-//       },
-
-//       '&:hover': {
-//         '&::-webkit-slider-thumb': {
-//           borderColor: opacify('#fff', 0.35)
-//         }
-//       },
-
-//       '&:focus, &:active': {
-//         '&::-webkit-slider-thumb': {
-//           borderColor: '#3C6AC0'
-//         }
-//       }
-//     }
-//   }
-// })
 
 const theme = {
   '@dark': {
@@ -85,7 +60,6 @@ export const RangeSlider = {
 const listenProp = (el, prop, def) => {
   const val = el.props && el.props[prop]
   const r = (isFunction(val) ? val() : val) || (def !== undefined ? def : 50)
-  // if (prop === 'value') console.log(r)
   return r
 }
 
