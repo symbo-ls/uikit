@@ -24,5 +24,6 @@
   "standard": {
     "parser": "babel-eslint"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "version": "0.0.1"
 }
