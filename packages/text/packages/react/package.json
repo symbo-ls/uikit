@@ -1,12 +1,12 @@
 {
   "name": "@symbo.ls/react-text",
-  "version": "0.6.18",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
-  "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
+  "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "dependencies": {
-    "@symbo.ls/text": "^0.6.18",
-    "@symbo.ls/transform-react": "^0.6.18"
+    "@symbo.ls/text": "latest",
+    "@symbo.ls/transform-react": "latest"
   },
   "source": "src/index.js"
 }

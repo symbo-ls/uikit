@@ -2,7 +2,8 @@
   "private": true,
   "scripts": {
     "start": "parcel showcase/index.html",
-    "build": "lerna run build",
+    "prebuild": "rm -rf dist .parcel-cache",
+    "build": "npx parcel build index.js",
     "build:all": "lerna exec -- npx parcel build index.js",
     "test:lint": "npx standard \"packages/**/*.js\"",
     "test": "echo running all tests is not supported, maybe run: \"yarn test:lint\"",
@@ -14,6 +15,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
+    "babel-eslint": "^10.1.0",
     "emotion": "^10.0.27",
     "lerna": "^4.0.0",
     "parcel": "^2.0.1",

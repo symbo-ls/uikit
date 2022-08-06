@@ -7,5 +7,8 @@ import { Text } from '@symbo.ls/text'
 import { Responsive } from '@symbo.ls/responsive'
 
 export const Box = {
-  extends: [Shape, Position, Block, Text, Responsive]
+  extends: [Shape, Position, Block, Text, Responsive],
+  class: {
+    fromProps: ({ props }) => props && props.css
+  }
 }

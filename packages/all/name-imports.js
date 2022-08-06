@@ -2,6 +2,7 @@
 
 export * from './styles'
 
+export * from './Responsive'
 export * from './Text'
 export * from './Block'
 export * from './Shape'
@@ -10,6 +11,8 @@ export * from './Grid'
 export * from './Direction'
 export * from './Position'
 export * from './Overflow'
+export * from './Transform'
+export * from './Responsive'
 
 export * from './Box'
 

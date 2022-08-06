@@ -8,14 +8,14 @@ export const Input = {
   extends: [Shape, Block, Text],
   tag: 'input',
 
-  props: (el, s) => ({
+  props: {
     type: 'input',
-    value: s[el.key],
+    // value: s[el.key],
     // placeholder: '',
     round: 'C',
     padding: 'A B',
     theme: 'transparent'
-  }),
+  },
 
   attr: {
     placeholder: ({ props }) => props.placeholder,

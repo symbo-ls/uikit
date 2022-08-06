@@ -1,15 +1,11 @@
 'use strict'
 
+import { RESPONSIVE } from '@symbo.ls/scratch'
+
 export const Responsive = {
   on: {
     init: (el, s) => {
       const { props } = el
-      // console.log(el.key)
-      // console.log(el.props)
-
-      // Object.keys(props)
-      //   .filter(v => v.slice(0, 1) === '@')
-      //   .map()
 
       for (const screen in props) {
         if (screen.slice(0, 1) === '@') {

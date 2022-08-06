@@ -1,9 +1,10 @@
 'use strict'
 
-export * from '@symbo.ls/scratch-init'
+export * from '@symbo.ls/init'
 
-export * from './styles'
+// export * from './styles'
 
+export * from '@symbo.ls/responsive'
 export * from '@symbo.ls/block'
 export * from '@symbo.ls/shape'
 export * from '@symbo.ls/flex'
@@ -11,6 +12,7 @@ export * from '@symbo.ls/grid'
 export * from '@symbo.ls/direction'
 export * from '@symbo.ls/position'
 export * from '@symbo.ls/overflow'
+export * from '@symbo.ls/text'
 
 export * from '@symbo.ls/box'
 

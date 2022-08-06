@@ -1,11 +1,10 @@
 {
-  "name": "@symbo.ls/react",
-  "version": "0.6.18",
+  "name": "smbls-react",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "gitHead": "f6e4efc2a41edd241f470c5704b5849c8bb41f2b",
+  "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "dependencies": {
-    "@symbo.ls/buttonset": "latest",
     "@symbo.ls/react-banner": "latest",
     "@symbo.ls/react-block": "latest",
     "@symbo.ls/react-box": "latest",
@@ -27,6 +26,7 @@
     "@symbo.ls/react-overflow": "latest",
     "@symbo.ls/react-pills": "latest",
     "@symbo.ls/react-position": "latest",
+    "@symbo.ls/react-responsive": "latest",
     "@symbo.ls/react-select": "latest",
     "@symbo.ls/react-shape": "latest",
     "@symbo.ls/react-slider": "latest",
