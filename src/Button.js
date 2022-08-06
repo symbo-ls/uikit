@@ -51,5 +51,3 @@ export const KangorooButton = {
   iconText: { proto: IconText },
   child: { proto: IconText }
 }
-
-export default Button

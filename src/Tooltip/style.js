@@ -4,7 +4,7 @@ export default {
   textAlign: 'center',
   padding: '1.2em',
   caption: {
-    whiteSpace: 'nowrap',
+    whiteSpace: 'nowrap'
   },
   span: {
     opacity: '.5'
