@@ -5,7 +5,6 @@ import { set, opacify } from '@symbo.ls/scratch'
 import { isFunction } from '@domql/utils'
 
 import { SquareButton } from '@symbo.ls/button'
-import { Shape } from '@symbo.ls/shape'
 
 import * as Scratch from '@symbo.ls/scratch'
 import { isFunction } from '@domql/utils'
@@ -37,7 +36,6 @@ set({
 
 export const RangeSlider = {
   style,
-  extends: Shape,
   props: {
     theme: 'sliderThumb'
   },
@@ -54,8 +52,6 @@ const listenProp = (el, prop, def) => {
 }
 
 export const Slider = {
-  extends: [Shape],
-
   button0: {
     extends: [SquareButton],
     props: {

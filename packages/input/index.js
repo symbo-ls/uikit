@@ -1,9 +1,5 @@
 'use strict'
 
-import { Shape } from '@symbo.ls/shape'
-import { Block } from '@symbo.ls/block'
-import { Text } from '@symbo.ls/text'
-
 export const Input = {
   tag: 'input',
 

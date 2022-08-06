@@ -4,7 +4,6 @@ import { mapFontSize } from '@symbo.ls/scratch'
 import { mapBasedOnRatio } from '@symbo.ls/block'
 
 export const Text = {
-
   text: ({ props }) => props.text || '',
 
   class: {

@@ -11,7 +11,7 @@ export const Notification = {
   style: { cursor: 'pointer' },
   extends: Flex,
   icon: {
-    extends: [IconText],
+    extends: IconText,
     props: {
       icon: 'info'
     },
@@ -21,17 +21,13 @@ export const Notification = {
     }
   },
   article: {
-    extends: [Flex],
+    extends: Flex,
     style: {
       flexDirection: 'column',
       alignItems: 'flex-start'
     },
-    caption: {
-      extends: Text,
-      text: 'Notification'
-    },
+    caption: { text: 'Notification' },
     p: {
-      extends: Text,
       props: {
         fontSize: 'Z',
         text: 'is not always a distraction'

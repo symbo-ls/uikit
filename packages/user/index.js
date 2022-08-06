@@ -1,12 +1,8 @@
 'use strict'
 
-import { Shape } from '@symbo.ls/shape'
-import { Block } from '@symbo.ls/block'
-
 import { styleUser, styleUserBundle } from './style'
 
 export const User = {
-  extends: [Shape, Block],
   props: { boxSize: 'B B' },
   style: styleUser,
   tag: 'img',

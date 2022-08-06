@@ -4,7 +4,6 @@ import { Box } from '@symbo.ls/box'
 import { Icon } from '@symbo.ls/icon'
 
 export const IconText = {
-  extends: [Box],
   props: {
     flexAlign: 'center center',
     display: 'flex',

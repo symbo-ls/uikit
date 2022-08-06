@@ -8,7 +8,7 @@ import { Direction } from '@symbo.ls/direction'
 import style from './style'
 
 export const Button = {
-  extends: [Shape, Block, IconText, Direction],
+  extends: IconText,
   tag: 'button',
   style,
   props: {
@@ -49,16 +49,10 @@ export const CircleButton = {
 
 export const KangorooButton = {
   tag: 'button',
-  extends: [Shape, Direction, Block],
   style,
 
-  iconText: {
-    extends: IconText
-  },
-
-  child: {
-    extends: [Shape, Block, IconText]
-  }
+  iconText: { extends: IconText },
+  child: { extends: IconText }
 }
 
 export default Button
