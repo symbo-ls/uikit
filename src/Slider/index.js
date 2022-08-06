@@ -4,39 +4,79 @@ import style from './style'
 import { set, opacify } from '@symbo.ls/scratch'
 import { isFunction } from '@domql/utils'
 
-import { SquareButton, Shape } from '..'
+import { SquareButton } from '..'
 
-set({
-  theme: {
-    sliderThumb: {
-      background: 'white 0.2',
+// set({
+//   theme: {
+//     sliderThumb: {
+//       background: 'white 0.2',
 
-      '&::-webkit-slider-thumb': {
-        background: '#232526',
-        borderColor: opacify('#454646', 0.75)
-      },
+//       '&::-webkit-slider-thumb': {
+//         background: '#232526',
+//         borderColor: opacify('#454646', 0.75)
+//       },
 
-      '&:hover': {
-        '&::-webkit-slider-thumb': {
-          borderColor: opacify('#fff', 0.35)
-        }
-      },
+//       '&:hover': {
+//         '&::-webkit-slider-thumb': {
+//           borderColor: opacify('#fff', 0.35)
+//         }
+//       },
 
-      '&:focus, &:active': {
-        '&::-webkit-slider-thumb': {
-          borderColor: '#3C6AC0'
-        }
+//       '&:focus, &:active': {
+//         '&::-webkit-slider-thumb': {
+//           borderColor: '#3C6AC0'
+//         }
+//       }
+//     }
+//   }
+// })
+
+const theme = {
+  '@dark': {
+    background: 'white 0.2',
+
+    '::-webkit-slider-thumb': {
+      background: '#232526',
+      borderColor: opacify('#454646', 0.75)
+    },
+
+    ':hover': {
+      '::-webkit-slider-thumb': {
+        borderColor: opacify('#fff', 0.35)
+      }
+    },
+
+    ':focus': {
+      '::-webkit-slider-thumb': {
+        borderColor: '#3C6AC0'
+      }
+    }
+  },
+  '@light': {
+    background: 'gray9',
+
+    '::-webkit-slider-thumb': {
+      background: 'white',
+      borderColor: 'gray9'
+    },
+
+    ':hover': {
+      '::-webkit-slider-thumb': {
+        borderColor: 'gray7'
+      }
+    },
+
+    ':focus': {
+      '::-webkit-slider-thumb': {
+        borderColor: 'blue'
       }
     }
   }
-})
+}
 
 export const RangeSlider = {
   style,
-  proto: Shape,
-  props: {
-    theme: 'sliderThumb'
-  },
+  props: theme,
 
   tag: 'input',
   attr: { type: 'range' }

@@ -21,8 +21,8 @@
     "bump": "npx np"
   },
   "dependencies": {
-    "@domql/utils": "^2.2.8",
-    "@symbo.ls/scratch": "^0.3.24"
+    "@domql/utils": "latest",
+    "@symbo.ls/scratch": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
