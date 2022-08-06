@@ -67,8 +67,6 @@ const applyMediaProps = (key, props, result, element) => {
 const applySelectorProps = (key, props, result, element) => {
   const selectorKey = `&${key}`
   result[selectorKey] = convertPropsToClass(props, result, element)
-  console.log(key)
-  if (key === '::after') console.log(props)
   return result[selectorKey]
 }
 
