@@ -2,7 +2,7 @@
 
 import style from './style'
 
-import Icon from '../Icon'
+import { Icon } from '../Icon'
 
 export const DatePicker = {
   style,
