@@ -1,7 +1,7 @@
 'use strict'
 
 import { applyDocument, applySpacingSequence, applyTimingSequence, applyTypographySequence } from './config'
-import CONFIG, { CSS_VARS } from './factory'
+import { CONFIG, CSS_VARS } from './factory'
 import { applyReset } from './reset'
 import { setColor, setGradient, setFont, setFontFamily, setTheme } from './system'
 import {

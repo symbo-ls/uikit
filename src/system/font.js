@@ -1,6 +1,6 @@
 'use strict'
 
-import CONFIG, { CSS_VARS } from '../factory' // eslint-disable-line
+import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
 
 import {
   getDefaultOrFirstKey,
