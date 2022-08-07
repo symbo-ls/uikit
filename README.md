@@ -1,6 +1,6 @@
 # Symbols
 
-UI Library in composition of [Scratch](https://github.com/symbo.ls/scratch) and [DOMQL](https://github.com/symbo.ls/domql) or [React](https://github.com/symbo-ls/smbls/tree/main/packages/all/packages/react)
+UI Library in composition of [Scratch](https://github.com/symbo.ls/scratch) and [DOMQL](https://github.com/symbo.ls/domql) or [React](https://github.com/symbo-ls/smbls/tree/main/packages/all/react.js)
 
 Check out the [documentation page](https://docs.symbols.app/).
 
