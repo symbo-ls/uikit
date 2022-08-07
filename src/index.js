@@ -4,7 +4,8 @@ import {
   set,
   FONT,
   RESET,
-  getFontFaceString
+  getFontFaceString,
+  CONFIG
 } from '@symbo.ls/scratch'
 
 import CONFIG_DEFAULT from '@symbo.ls/config-default'
@@ -30,3 +31,5 @@ export const init = (config) => {
 }
 
 export const setClass = props => setClassname(props, css)
+
+export { CONFIG }
