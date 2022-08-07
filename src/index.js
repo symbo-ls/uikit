@@ -2,6 +2,8 @@
 
 import './styles.js'
 
+export * from '@symbo.ls/init'
+
 export * from './styles'
 
 export * from './Text'
