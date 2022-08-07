@@ -24,7 +24,11 @@ export const numToLetterMap = {
   12: 'M',
   13: 'N',
   14: 'O',
-  15: 'P'
+  15: 'P',
+  16: 'Q',
+  17: 'R',
+  18: 'S',
+  19: 'T'
 }
 
 const setSequenceValue = ({ key, variable, value, scaling, state, index }) => {
