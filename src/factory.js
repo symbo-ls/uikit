@@ -5,6 +5,6 @@ export const CSS_VARS = {}
 
 CONFIG.verbose = false
 CONFIG.useVariable = false
-CONFIG.var = CSS_VARS
+CONFIG.VARS = CSS_VARS
 
 export { CONFIG }
