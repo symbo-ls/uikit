@@ -25,7 +25,7 @@ export const init = (config) => {
   const FontFace = getFontFaceString(FONT)
 
   injectGlobal(FontFace)
-  injectGlobal(RESET)
+  if (conf.useReset) injectGlobal(RESET)
 
   return conf
 }
