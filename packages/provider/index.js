@@ -11,7 +11,9 @@ const Provider = context.Provider;
 
 export const SymbolsProvider = ({ config, children }) => {
   const defaultConfig = config || CONFIG_DEFAULT
-  set(defaultConfig);
+  React.useEffect(() => {
+    set(defaultConfig);
+  }, []) 
 
   return React.createElement(
     Provider,
