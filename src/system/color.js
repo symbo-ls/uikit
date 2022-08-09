@@ -13,8 +13,6 @@ import {
   getColorShade
 } from '../utils'
 
-console.log(CONFIG)
-
 const ENV = process.env.NODE_ENV
 
 export const getColor = value => {
