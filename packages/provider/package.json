@@ -5,7 +5,7 @@
     "license": "MIT",
     "gitHead": "54fa6500c697604b3f48ba33a573545d7bff311a",
     "dependencies": {
-      "@symbo.ls/init": "latest",
+      "@symbo.ls/config-default": "latest",
       "@symbo.ls/scratch": "latest",
       "react": "latest"
     },
