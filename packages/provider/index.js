@@ -14,7 +14,9 @@ export const SymbolsProvider = ({ config, children }) => {
   return /*#__PURE__*/ React.createElement(
     Provider,
     {
-      config: config,
+      value: {
+        config: config,
+      },
     },
     children
   );
