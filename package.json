@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/init",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
   "source": "src/index.js",
