@@ -67,11 +67,8 @@ export const setEach = (factoryName, props) => {
 export const set = recivedConfig => {
   const { version, verbose, useVariable, ...config } = recivedConfig
 
-  // console.log('=========')
-  // console.log(verbose)
   CONFIG.verbose = verbose
   CONFIG.useVariable = useVariable
-  // console.log(recivedConfig)
   if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.log(CONFIG)
 
   const keys = Object.keys(config)
@@ -84,7 +81,6 @@ export const set = recivedConfig => {
   applyDocument()
   applyReset()
 
-  CONFIG.VARS = CSS_VARS
   return CONFIG
 }
 
