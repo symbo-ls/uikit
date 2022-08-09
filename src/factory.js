@@ -1,10 +1,14 @@
 'use strict'
 
-import * as CONFIG from './config'
+import * as CONF from './config'
+
 export const CSS_VARS = {}
+export const CONFIG = {
+  verbose: false,
+  useVariable: false,
+  useReset: true,
+  VARS: CSS_VARS,
+  ...CONF
+}
 
-CONFIG.verbose = false
-CONFIG.useVariable = false
-CONFIG.VARS = CSS_VARS
 
-export { CONFIG }

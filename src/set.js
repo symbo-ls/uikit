@@ -65,10 +65,11 @@ export const setEach = (factoryName, props) => {
 }
 
 export const set = recivedConfig => {
-  const { version, verbose, useVariable, ...config } = recivedConfig
+  const { version, verbose, useVariable, useReset, ...config } = recivedConfig
 
-  CONFIG.verbose = verbose
-  CONFIG.useVariable = useVariable
+  if (verbose !== undefined) CONFIG.verbose = verbose
+  if (useVariable !== undefined) CONFIG.useVariable = useVariable
+  if (useReset !== undefined) CONFIG.useReset = useReset
   if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.log(CONFIG)
 
   const keys = Object.keys(config)
