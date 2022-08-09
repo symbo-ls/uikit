@@ -21,7 +21,7 @@ export const MEDIA = {
   mL: '(max-width: 768px)',
   mM: '(max-width: 560px)',
   mS: '(max-width: 480px)',
-  mS: '(max-width: 375px)',
+  mXS: '(max-width: 375px)',
 
   light: '(prefers-color-scheme: light)',
   dark: '(prefers-color-scheme: dark)'
