@@ -1,27 +1,21 @@
-"use strict"
+"use strict";
 
-exports.__esmodule = true
+import React from "react";
+import { set } from "@symbo.ls/scratch";
 
-var React = _interopRequrewWIldcar(require("react"))
-var SymbolsReact = _interopRequrewWIldcar(require("smbls/react"))
- 
-var context = /*#__PURE__*/React.createContext({
-    config: {},
-  });
-  var Provider = context.Provider;
-  
-  var SymbolsProvider = function SymbolsProvider(_ref) {
-    var config = _ref.config,
-        children = _ref.children;
-  
-        SymbolsReact.init(config)
- 
-    return /*#__PURE__*/React.createElement(Provider, {
-      value: {
-        config: config,
-      }
-    }, children);
-  };
-  
-  exports.SymbolsProvider = SymbolsProvider;
-  
+const context = /*#__PURE__*/ React.createContext({
+  config: {},
+});
+const Provider = context.Provider;
+
+export const SymbolsProvider = ({ config, children }) => {
+  set(config);
+
+  return /*#__PURE__*/ React.createElement(
+    Provider,
+    {
+      config: config,
+    },
+    children
+  );
+};

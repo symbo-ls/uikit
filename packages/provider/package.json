@@ -5,7 +5,8 @@
     "license": "MIT",
     "gitHead": "54fa6500c697604b3f48ba33a573545d7bff311a",
     "dependencies": {
-      "smbls/react": "latest",
+      "@symbo.ls/init": "latest",
+      "@symbo.ls/scratch": "latest",
       "react": "latest"
     },
     "source": "src/index.js"
