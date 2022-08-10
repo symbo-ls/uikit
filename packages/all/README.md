@@ -15,7 +15,7 @@ Library consists with packages. Components can be invoked individually.
 
 1. Installation
 ```
-yarn add 'smbls'
+yarn add 'smbls@^1.1.1'
 ```
 
 2. Import the component from Symbols
