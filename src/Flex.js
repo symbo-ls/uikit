@@ -12,6 +12,7 @@ export const Flex = {
     flow: ({ props }) => props.flow && ({ flexFlow: props.flow }),
     flexDirection: ({ props }) => props.flexDirection && ({ flexDirection: props.flexDirection }),
     alignItems: ({ props }) => props.alignItems && ({ alignItems: props.alignItems }),
+    wrap: ({ props }) => props.wrap && ({ wrap: props.wrap }),
     alignContent: ({ props }) => props.alignContent && ({ alignContent: props.alignContent }),
     justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
     gap: ({ props }) => props.gap && mapBasedOnRatio(props, 'gap'),

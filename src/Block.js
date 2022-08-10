@@ -79,6 +79,15 @@ export const Block = {
     gap: ({ props }) => props.gap ? mapBasedOnRatio(props, 'gap') : null,
     gridArea: ({ props }) => props.gridArea && ({ gridArea: props.gridArea }),
 
+    flex: ({ props }) => props.flex && ({ flex: props.flex }),
+    alignItems: ({ props }) => props.alignItems && ({ alignItems: props.alignItems }),
+    alignContent: ({ props }) => props.alignContent && ({ alignContent: props.alignContent }),
+    justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
+
+    flexWrap: ({ props }) => props.flexWrap && ({
+      display: 'flex',
+      flexFlow: props.flexWrap
+    }),
     flexFlow: ({ props }) => props.flexFlow && ({
       display: 'flex',
       flexFlow: props.flexFlow
@@ -92,11 +101,6 @@ export const Block = {
         justifyContent: justifyContent
       }
     },
-
-    flex: ({ props }) => props.flex && ({ flex: props.flex }),
-    alignItems: ({ props }) => props.alignItems && ({ alignItems: props.alignItems }),
-    alignContent: ({ props }) => props.alignContent && ({ alignContent: props.alignContent }),
-    justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
 
     gridColumn: ({ props }) => props.gridColumn && ({ gridColumn: props.gridColumn }),
     gridRow: ({ props }) => props.gridRow && ({ gridRow: props.gridRow }),

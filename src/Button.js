@@ -19,6 +19,7 @@ export const Button = {
     alignItems: 'center',
     justifyContent: 'center',
     textDecoration: 'none',
+    round: 'C2',
     css
   },
   attr: {
