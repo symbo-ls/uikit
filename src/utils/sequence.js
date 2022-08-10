@@ -104,7 +104,7 @@ export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-', unit 
   if (!value) return console.warn('can\'t find', type, prefix + simplyLetterVal, simplyLetterVal)
 
   if (unit === 'ms' || unit === 's') {
-    return ({ [prop]: isNegative + value.val + value.unit })
+    return ({ [prop]: isNegative + value.val + unit })
   }
   return ({
     [prop]: isNegative + value.val + value.unit,
