@@ -2,7 +2,7 @@
 
 import { IconText } from '.'
 
-const css = {
+const style = {
   appearance: 'none',
   border: 'none',
   outline: 0,
@@ -14,13 +14,17 @@ export const Button = {
   proto: IconText,
   tag: 'button',
   props: {
+    fontSize: 'A',
     type: 'button',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
     textDecoration: 'none',
+    lineHeight: '1',
+    whiteSpace: 'nowrap',
+    padding: 'Z A1',
     round: 'C2',
-    css
+    style
   },
   attr: {
     type: ({ props }) => props.type
@@ -36,7 +40,7 @@ export const SquareButton = {
     aspectRatio: '1 / 1',
     justifyContent: 'center',
     round: 'Z',
-    css: { boxSizing: 'content-box' }
+    style: { boxSizing: 'content-box' }
   }
 }
 
@@ -47,7 +51,7 @@ export const CircleButton = {
 
 export const KangorooButton = {
   tag: 'button',
-  props: { css },
+  props: { style },
 
   iconText: { proto: IconText },
   child: { proto: IconText }

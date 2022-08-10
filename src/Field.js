@@ -15,7 +15,7 @@ export const Field = {
     position: 'relative',
     width: '16em',
 
-    css: {
+    style: {
       appearance: 'none',
       outline: 0,
       border: 'none',

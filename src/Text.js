@@ -14,6 +14,7 @@ export const Text = {
     // lineHeight: ({ props }) => props.lineHeight && mapBasedOnRatio(props, 'lineHeight', null, ''),
     textDecoration: ({ props }) => props.textDecoration && ({ textDecoration: props.textDecoration }),
     textTransform: ({ props }) => props.textTransform && ({ textTransform: props.textTransform }),
+    whiteSpace: ({ props }) => props.whiteSpace && ({ whiteSpace: props.whiteSpace }),
     textAlign: ({ props }) => props.textAlign && ({ textAlign: props.textAlign }),
     fontWeight: ({ props }) => props.fontWeight && ({ fontWeight: props.fontWeight })
   }

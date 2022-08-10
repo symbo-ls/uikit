@@ -17,13 +17,13 @@ export const SHAPES = {
   bubble: {},
 
   tooltip: ({ props }) => ({
-    position: 'relative',
+    position: props.position || 'relative',
     '&:before': {
       content: '""',
       display: 'block',
       width: '0px',
       height: '0px',
-      border: `6px solid ${getColor(props.background) || (props.theme && getTheme(props.theme).backgroundColor)}`,
+      border: `6px solid ${getColor(props.background) || (props.theme && getTheme(props.theme).background)}`,
       position: 'absolute',
       borderRadius: '2px'
     }

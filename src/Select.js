@@ -5,7 +5,7 @@ export const Select = {
 
   props: {
     fontSize: 'A',
-    css: {
+    style: {
       border: 'none',
       boxSizing: 'border-box',
       cursor: 'pointer'

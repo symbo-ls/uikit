@@ -20,7 +20,7 @@ export const Icon = {
       height: 'A',
       display: 'inline-block',
       src: iconFromLibrary,
-      css: { fill: 'currentColor' }
+      style: { fill: 'currentColor' }
     }
   },
   attr: { viewBox: '0 0 24 24' }

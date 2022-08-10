@@ -6,7 +6,7 @@ const useSVGSymbol = file => `<use xlink:href="${file}" />`
 export const SVG = {
   tag: 'svg',
   props: {
-    css: { '*': { fill: 'currentColor' } }
+    style: { '*': { fill: 'currentColor' } }
   },
   attr: {
     xmlns: 'http://www.w3.org/2000/svg',
