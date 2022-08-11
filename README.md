@@ -27,8 +27,7 @@ import { Box } from 'smbls'
 ### DOMQL
 ```javascript
 const Header = {
-  extends: Box,
-  // ...Other Properties
+  props
 }
 ```
 
