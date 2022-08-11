@@ -4,7 +4,7 @@ import { Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, R
 
 const PropsCSS = {
   class: {
-    style: ({ props }) => props && props.style
+    propStyle: ({ props }) => props && props.style
   }
 }
 

@@ -23,6 +23,7 @@ export const Button = {
     lineHeight: '1',
     whiteSpace: 'nowrap',
     padding: 'Z A1',
+    fontFamily: 'inherit',
     round: 'C2',
     style
   },
