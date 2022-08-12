@@ -7,7 +7,7 @@ const style = {
   border: 'none',
   outline: 0,
   cursor: 'pointer',
-  fontFamily: 'default'
+  fontFamily: 'inherit'
 }
 
 export const Button = {
