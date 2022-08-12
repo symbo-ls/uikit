@@ -39,3 +39,5 @@ export * from './Tooltip'
 export * from './Label'
 export * from './Pills'
 export * from './Select'
+
+export * from './Provider'
