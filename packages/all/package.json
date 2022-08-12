@@ -1,7 +1,7 @@
 {
   "name": "smbls",
   "description": "UI Library built on Scratch and DOMQL",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "author": "symbo.ls",
   "repository": "https://github.com/symbo-ls/smbls",
   "main": "index.js",
@@ -37,6 +37,7 @@
     "@symbo.ls/pills": "latest",
     "@symbo.ls/position": "latest",
     "@symbo.ls/react-box": "symbo-ls/react-box",
+    "@symbo.ls/react-provider": "latest",
     "@symbo.ls/responsive": "latest",
     "@symbo.ls/select": "latest",
     "@symbo.ls/shape": "latest",
@@ -44,8 +45,7 @@
     "@symbo.ls/svg": "latest",
     "@symbo.ls/text": "latest",
     "@symbo.ls/tooltip": "latest",
-    "@symbo.ls/user": "latest",
-    "@symbo.ls/react-provider": "latest"
+    "@symbo.ls/user": "latest"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",

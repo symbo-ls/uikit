@@ -1,13 +1,13 @@
 {
-    "name": "@symbo.ls/react-provider",
-    "version": "0.0.1",
-    "main": "index.js",
-    "license": "MIT",
-    "gitHead": "54fa6500c697604b3f48ba33a573545d7bff311a",
-    "dependencies": {
-      "@symbo.ls/config-default": "latest",
-      "@symbo.ls/scratch": "latest",
-      "react": "latest"
-    },
-    "source": "src/index.js"
-  }
+  "name": "@symbo.ls/react-provider",
+  "version": "1.1.5",
+  "main": "index.js",
+  "license": "MIT",
+  "gitHead": "54fa6500c697604b3f48ba33a573545d7bff311a",
+  "dependencies": {
+    "@symbo.ls/config-default": "latest",
+    "@symbo.ls/scratch": "latest",
+    "react": "latest"
+  },
+  "source": "src/index.js"
+}
