@@ -21,9 +21,6 @@ const execClass = (key, props, result, element) => {
     classExec = classExec.reduce((a, c) => merge(a, c), {})
   }
 
-  if (key === 'style') {
-  }
-
   for (const finalProp in classExec) {
     result[finalProp] = classExec[finalProp]
   }

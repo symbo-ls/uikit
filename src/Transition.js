@@ -2,7 +2,7 @@
 
 import { mapTiming } from '@symbo.ls/scratch'
 
-const diffTransition = transition => {
+const transformTransition = transition => {
   const arr = transition.split(' ')
 
   if (!arr.length) return transition
@@ -20,7 +20,7 @@ const splitTransition = transition => {
   const arr = transition.split(',')
   if (!arr.length) return
   return {
-    transition: arr.map(diffTransition).join(',')
+    transition: arr.map(transformTransition).join(',')
   }
 }
 
