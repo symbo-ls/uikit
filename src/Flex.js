@@ -21,7 +21,6 @@ export const Flex = {
       if (typeof props.align !== 'string') return
       const [alignItems, justifyContent] = props.align.split(' ')
       return {
-        display: 'flex',
         alignItems: alignItems,
         justifyContent: justifyContent
       }
