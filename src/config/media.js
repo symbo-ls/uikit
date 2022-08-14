@@ -11,7 +11,7 @@ export const MEDIA = {
   mobileM: '(max-width: 560px)',
   mobileS: '(max-width: 480px)',
   mobileXS: '(max-width: 375px)',
-  
+
   sL: '(max-width: 1920px)',
   sM: '(max-width: 1680px)',
   sS: '(max-width: 1440px)',
