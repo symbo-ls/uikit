@@ -20,10 +20,7 @@ export const Flex = {
     align: ({ props }) => {
       if (typeof props.align !== 'string') return
       const [alignItems, justifyContent] = props.align.split(' ')
-      return {
-        alignItems: alignItems,
-        justifyContent: justifyContent
-      }
+      return { alignItems, justifyContent }
     }
   }
 }
