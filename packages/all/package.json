@@ -1,7 +1,7 @@
 {
   "name": "smbls",
   "description": "UI Library built on Scratch and DOMQL",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "author": "symbo.ls",
   "repository": "https://github.com/symbo-ls/smbls",
   "main": "index.js",
