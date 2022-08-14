@@ -83,6 +83,7 @@ export const Block = {
     alignItems: ({ props }) => props.alignItems && ({ alignItems: props.alignItems }),
     alignContent: ({ props }) => props.alignContent && ({ alignContent: props.alignContent }),
     justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
+    flexDirection: ({ props }) => props.flexDirection && ({ flexDirection: props.flexDirection }),
 
     flexWrap: ({ props }) => props.flexWrap && ({
       display: 'flex',
