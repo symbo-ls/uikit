@@ -3,9 +3,9 @@
 import { merge, isFunction, isObject, isArray } from '@domql/utils'
 import { keySetters } from './subProps'
 
-import { registry } from '../registry'
+import { registry as reg } from '../registry'
 
-export const transformClassname = props => {
+export const transformClassname = (props, registry = reg) => {
   const CLASS_NAMES = {}
   if (!isObject(props)) return
 
