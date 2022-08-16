@@ -26,9 +26,7 @@ import { Box } from 'smbls'
 3. Use it inside your DOMQL code
 ### DOMQL
 ```javascript
-const Header = {
-  props
-}
+const Header = { props }
 ```
 
 ### React
