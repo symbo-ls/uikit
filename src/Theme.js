@@ -33,7 +33,7 @@ const transformShadow = shadow => ({
 
     const arr = v.split(' ')
     if (!arr.length) return v
-    return arr.map(v => mapSpacing(v, 'shadow').shadow ).join(' ')
+    return arr.map(v => mapSpacing(v, 'shadow').shadow).join(' ')
   }).join(' ')
 })
 
@@ -49,7 +49,9 @@ export const Theme = {
     },
 
     color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,
-    background: ({ props }) => props.background ? ({ backgroundColor: getColor(props.background) }) : null,
+    background: ({ props }) => props.background ? ({ background: getColor(props.background) }) : null,
+    backgroundColor: ({ props }) => props.backgroundColor ? ({ backgroundColor: getColor(props.backgroundColor) }) : null,
+    backgroundImage: ({ props }) => props.backgroundImage ? ({ backgroundImage: getColor(props.backgroundImage) }) : null,
 
     textStroke: ({ props }) => props.textStroke ? transformTextStroke(props.textStroke) : null,
 
