@@ -52,6 +52,7 @@ export const Theme = {
     background: ({ props }) => props.background ? ({ background: getColor(props.background) }) : null,
     backgroundColor: ({ props }) => props.backgroundColor ? ({ backgroundColor: getColor(props.backgroundColor) }) : null,
     backgroundImage: ({ props }) => props.backgroundImage ? ({ backgroundImage: getColor(props.backgroundImage) }) : null,
+    backgroundSize: ({ props }) => props.backgroundSize ? ({ backgroundSize: getColor(props.backgroundSize) }) : null,
 
     textStroke: ({ props }) => props.textStroke ? transformTextStroke(props.textStroke) : null,
 
