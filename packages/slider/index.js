@@ -6,9 +6,6 @@ import { isFunction } from '@domql/utils'
 
 import { SquareButton } from '@symbo.ls/button'
 
-import * as Scratch from '@symbo.ls/scratch'
-import { isFunction } from '@domql/utils'
-
 set({
   theme: {
     sliderThumb: {
