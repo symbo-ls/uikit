@@ -43,7 +43,7 @@ export const Block = {
       const [height, width] = props.boxSize.split(' ')
       return {
         ...mapSpacing(height, 'height'),
-        ...mapSpacing(width, 'width')
+        ...mapSpacing(width || height, 'width')
       }
     },
 
@@ -65,7 +65,7 @@ export const Block = {
       const [minHeight, maxHeight] = props.heightRange.split(' ')
       return {
         ...mapSpacing(minHeight, 'minHeight'),
-        ...mapSpacing(maxHeight, 'maxHeight')
+        ...mapSpacing(maxHeight || minHeight, 'maxHeight')
       }
     },
 
@@ -111,7 +111,7 @@ export const Block = {
       const [minHeight, maxHeight] = props.heightRange.split(' ')
       return {
         ...mapSpacing(minHeight, 'minHeight'),
-        ...mapSpacing(maxHeight, 'maxHeight')
+        ...mapSpacing(maxHeight || minHeight, 'maxHeight')
       }
     }
   }
