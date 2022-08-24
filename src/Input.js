@@ -1,9 +1,6 @@
 'use strict'
 
-import { Box } from '.'
-
 export const Input = {
-  proto: Box,
   tag: 'input',
 
   props: {
