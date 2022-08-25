@@ -1,11 +1,11 @@
 'use strict'
 
-import { SPACING, mapSpacing } from '@symbo.ls/scratch'
+import { SPACING, getSpacingByKey } from '@symbo.ls/scratch'
 
 export const mapBasedOnRatio = (props, prop, unit) => {
   const { spacingRatio } = props
   const val = props[prop]
-  // TODO: move this to mapSpacing
+  // TODO: move this to getSpacingByKey
   if (spacingRatio) {
     const params = SPACING[spacingRatio]
 
@@ -21,9 +21,9 @@ export const mapBasedOnRatio = (props, prop, unit) => {
       }
     }
 
-    return mapSpacing(val, prop, params, unit)
+    return getSpacingByKey(val, prop, params, unit)
   }
-  return mapSpacing(val, prop, null, unit)
+  return getSpacingByKey(val, prop, null, unit)
 }
 
 export const Block = {
@@ -42,8 +42,8 @@ export const Block = {
       if (typeof props.boxSize !== 'string') return
       const [height, width] = props.boxSize.split(' ')
       return {
-        ...mapSpacing(height, 'height'),
-        ...mapSpacing(width || height, 'width')
+        ...getSpacingByKey(height, 'height'),
+        ...getSpacingByKey(width || height, 'width')
       }
     },
 
@@ -53,8 +53,8 @@ export const Block = {
       if (typeof props.widthRange !== 'string') return
       const [minWidth, maxWidth] = props.widthRange.split(' ')
       return {
-        ...mapSpacing(minWidth, 'minWidth'),
-        ...mapSpacing(maxWidth, 'maxWidth')
+        ...getSpacingByKey(minWidth, 'minWidth'),
+        ...getSpacingByKey(maxWidth, 'maxWidth')
       }
     },
 
@@ -64,8 +64,8 @@ export const Block = {
       if (typeof props.heightRange !== 'string') return
       const [minHeight, maxHeight] = props.heightRange.split(' ')
       return {
-        ...mapSpacing(minHeight, 'minHeight'),
-        ...mapSpacing(maxHeight || minHeight, 'maxHeight')
+        ...getSpacingByKey(minHeight, 'minHeight'),
+        ...getSpacingByKey(maxHeight || minHeight, 'maxHeight')
       }
     },
 
@@ -110,8 +110,8 @@ export const Block = {
       if (typeof props.heightRange !== 'string') return
       const [minHeight, maxHeight] = props.heightRange.split(' ')
       return {
-        ...mapSpacing(minHeight, 'minHeight'),
-        ...mapSpacing(maxHeight || minHeight, 'maxHeight')
+        ...getSpacingByKey(minHeight, 'minHeight'),
+        ...getSpacingByKey(maxHeight || minHeight, 'maxHeight')
       }
     }
   }

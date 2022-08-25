@@ -1,7 +1,7 @@
 'use strict'
 
 import { isArray, isObject } from '@domql/utils'
-import { mapSpacing, getTheme, getColor } from '@symbo.ls/scratch'
+import { getSpacingByKey, getTheme, getColor } from '@symbo.ls/scratch'
 
 import { depth } from './Shape/style'
 
@@ -33,15 +33,15 @@ const transformShadow = shadow => ({
 
     const arr = v.split(' ')
     if (!arr.length) return v
-    return arr.map(v => mapSpacing(v, 'shadow').shadow).join(' ')
+    return arr.map(v => getSpacingByKey(v, 'shadow').shadow).join(' ')
   }).join(' ')
 })
 
 export const Theme = {
   class: {
     depth: ({ props }) => depth[props.depth],
-    round: ({ props, key, ...el }) => props.round ? (mapSpacing(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
-    borderRadius: ({ props, key, ...el }) => props.borderRadius ? (mapSpacing(props.borderRadius, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
+    round: ({ props, key, ...el }) => props.round ? (getSpacingByKey(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
+    borderRadius: ({ props, key, ...el }) => props.borderRadius ? (getSpacingByKey(props.borderRadius, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
 
     theme: ({ props, key }) => {
       if (!props.theme) return

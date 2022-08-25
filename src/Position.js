@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapSpacing } from '@symbo.ls/scratch'
+import { getSpacingByKey } from '@symbo.ls/scratch'
 
 export const Position = {
   props: {},
@@ -10,12 +10,12 @@ export const Position = {
     inset: ({ props }) => {
       const { inset } = props
       if (typeof inset !== 'string') return
-      return { inset: inset.split(' ').map(v => mapSpacing(v,'k').k).join(' ') }
+      return { inset: inset.split(' ').map(v => getSpacingByKey(v,'k').k).join(' ') }
     },
 
-    left: ({ props }) => mapSpacing(props.left, 'left'),
-    top: ({ props }) => mapSpacing(props.top, 'top'),
-    right: ({ props }) => mapSpacing(props.right, 'right'),
-    bottom: ({ props }) => mapSpacing(props.bottom, 'bottom')
+    left: ({ props }) => getSpacingByKey(props.left, 'left'),
+    top: ({ props }) => getSpacingByKey(props.top, 'top'),
+    right: ({ props }) => getSpacingByKey(props.right, 'right'),
+    bottom: ({ props }) => getSpacingByKey(props.bottom, 'bottom')
   }
 }

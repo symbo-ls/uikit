@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapFontSize, getFontFamily, FONT_FAMILY } from '@symbo.ls/scratch'
+import { getFontSizeByKey, getFontFamily } from '@symbo.ls/scratch'
 
 export const Text = {
   props: {},
@@ -8,8 +8,8 @@ export const Text = {
   text: ({ props }) => props.text,
 
   class: {
-    fontSize: ({ props }) => props.fontSize ? mapFontSize(props.fontSize) : null,
-    fontFamily: ({ props }) => props.fontFamily && ({ fontFamily: getFontFamily(FONT_FAMILY, props.fontFamily) || props.fontFamily }),
+    fontSize: ({ props }) => props.fontSize ? getFontSizeByKey(props.fontSize) : null,
+    fontFamily: ({ props }) => props.fontFamily && ({ fontFamily: getFontFamily(props.fontFamily) || props.fontFamily }),
     lineHeight: ({ props }) => props.lineHeight && ({ lineHeight: props.lineHeight }),
     // lineHeight: ({ props }) => props.lineHeight && mapBasedOnRatio(props, 'lineHeight', null, ''),
     textDecoration: ({ props }) => props.textDecoration && ({ textDecoration: props.textDecoration }),
