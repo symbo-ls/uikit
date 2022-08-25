@@ -10,7 +10,8 @@ const defaultProps = {
   ratio: SEQUENCE['perfect-fourth'],
   range: [-3, +12],
   sequence: {},
-  scales: {}
+  scales: {},
+  vars: {}
 }
 
 export const applyTimingSequence = () => {

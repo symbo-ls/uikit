@@ -15,8 +15,9 @@ export const setFont = (val, key) => {
   return { var: CSSvar, value: val, fontFace }
 }
 
-export const getFontFamily = (LIBRARY, key) => {
-  return getDefaultOrFirstKey(LIBRARY, key)
+export const getFontFamily = key => {
+  const { FONT_FAMILY } = CONFIG
+  return getDefaultOrFirstKey(FONT_FAMILY, key)
 }
 
 export const setFontFamily = (val, key) => {

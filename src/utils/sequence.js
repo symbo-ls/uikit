@@ -1,6 +1,7 @@
 'use strict'
 
 import { UNIT } from '../config'
+import { CONFIG } from '../factory'
 
 export const numToLetterMap = {
   '-6': 'U',
@@ -32,14 +33,57 @@ export const numToLetterMap = {
 }
 
 const setSequenceValue = ({ key, variable, value, scaling, state, index }) => {
-  state.sequence[variable] = {
+  state.sequence[key] = {
     key,
     decimal: Math.round(value * 100) / 100,
     val: Math.round(value),
     scaling,
-    index
+    index,
+    variable
   }
-  state.scales[variable] = scaling
+  state.scales[key] = scaling
+  state.vars[variable] = scaling + UNIT.default
+}
+
+export const getSequenceValue = ({ type, prop, val = 'A', prefix = '--font-size-', unit = UNIT.default }) => {
+  if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
+
+  if (val === '-' || val === '') return ({ })
+  if (
+    val === 'none' ||
+    val === 'auto' ||
+    val === 'fit-content' ||
+    val === 'min-content' ||
+    val === 'max-content'
+  ) return ({ [prop]: val })
+
+  const startsWithLetterRegex = /^-?[a-zA-Z]/i
+  const startsWithLetter = startsWithLetterRegex.test(val)
+  if (!startsWithLetter) return ({ [prop]: val })
+
+  const letterVal = val.toUpperCase()
+  const isNegative = letterVal.slice(0, 1) === '-' ? '-' : ''
+  const simplyLetterVal = isNegative ? letterVal.slice(1) : letterVal
+
+  const value = type ? type[simplyLetterVal] : null
+  if (!value) return console.warn('can\'t find', type, simplyLetterVal)
+
+  if (CONFIG.useVariable) {
+    return isNegative ? {
+      [prop]: `calc(var(${prefix}${simplyLetterVal}) * -1)`
+    } : {
+      [prop]: `var(${prefix}${simplyLetterVal})`
+    }
+  }
+
+  if (unit === 'ms' || unit === 's') {
+    return ({ [prop]: isNegative + value.val + unit })
+  }
+
+  return ({
+    [prop]: isNegative + value.val + value.unit,
+    [prop]: isNegative + value.scaling + 'em'
+  })
 }
 
 export const generateSubSequence = ({ key, base, value, ratio, variable, state, index }) => {
@@ -84,38 +128,10 @@ export const generateSequence = ({ type, base, ratio, range, subSequence, ...sta
   return state
 }
 
-export const fallBack = ({ type, prop, val = 'A', prefix = '--font-size-', unit = UNIT.default }) => {
-  if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
-
-  if (val === '-' || val === '') return ({ })
-  if (val === 'none' || val === 'auto' || val === 'fit-content' || val === 'min-content' || val === 'max-content') return ({ [prop]: val })
-
-  // const startsWithLetterRegex = /^[a-zA-Z]/i
-  const startsWithLetterRegex = /^-?[a-zA-Z]/i
-  // const hasLetter = /[A-Za-z]+/.test(val)
-  const startsWithLetter = startsWithLetterRegex.test(val)
-  if (!startsWithLetter) return ({ [prop]: val })
-
-  const letterVal = val.toUpperCase()
-  const isNegative = letterVal.slice(0, 1) === '-' ? '-' : ''
-  const simplyLetterVal = isNegative ? letterVal.slice(1) : letterVal
-
-  const value = type ? type[prefix + simplyLetterVal] : null
-  if (!value) return console.warn('can\'t find', type, prefix + simplyLetterVal, simplyLetterVal)
-
-  if (unit === 'ms' || unit === 's') {
-    return ({ [prop]: isNegative + value.val + unit })
-  }
-  return ({
-    [prop]: isNegative + value.val + value.unit,
-    [prop]: isNegative + value.scaling + 'em'
-  })
-}
-
-export const findHeadings = (TYPOGRAPHY) => {
-  const { h1Matches, type, sequence } = TYPOGRAPHY
+export const findHeadings = props => {
+  const { h1Matches, sequence } = props
   return new Array(6).fill(null).map((_, i) => {
     const findLetter = numToLetterMap[h1Matches - i]
-    return sequence[`--${type}-${findLetter}`]
+    return sequence[findLetter]
   })
 }

@@ -19,7 +19,7 @@ export const applyReset = (reset = {}) => {
       scrollBehavior: 'smooth',
 
       fontFamily: CONFIG.DOCUMENT.fontFamily,
-      fontSize: CONFIG.DOCUMENT.fontSize / CONFIG.TYPOGRAPHY.default + CONFIG.UNIT.default,
+      fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default,
       lineHeight: CONFIG.DOCUMENT.lineHeight
     },
 

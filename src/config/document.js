@@ -9,5 +9,5 @@ export const applyDocument = () => merge(DOCUMENT, {
   theme: THEME.document,
   fontFamily: getDefaultOrFirstKey(FONT_FAMILY),
   fontSize: TYPOGRAPHY.base,
-  lineHeight: TYPOGRAPHY.styles.lineHeight
+  lineHeight: TYPOGRAPHY.lineHeight
 })
