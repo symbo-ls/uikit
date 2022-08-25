@@ -4,7 +4,7 @@ import { Shape, Block } from '..'
 import { styleUser, styleUserBundle } from './style'
 
 export const User = {
-  proto: [Shape, Block],
+  extend: [Shape, Block],
   props: { boxSize: 'B B' },
   style: styleUser,
   tag: 'img',
@@ -16,7 +16,7 @@ export const User = {
 export const UserBundle = {
   style: styleUserBundle,
   users: {
-    childProto: User,
+    childExtend: User,
     ...[{}]
   },
   span: 'join classroom'

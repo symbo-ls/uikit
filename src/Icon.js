@@ -5,7 +5,7 @@ import { SVG } from '.'
 import { ICONS } from '@symbo.ls/scratch'
 
 export const Icon = {
-  proto: SVG,
+  extend: SVG,
   props: ({ key, props, parent }) => {
     let iconName = props.inheritedString || props.name || props.icon || key
 

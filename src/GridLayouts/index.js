@@ -5,7 +5,7 @@ import { Button, Link } from '..'
 import { styleGrid, styleGrid2 } from './style'
 
 const componentLink = {
-  proto: Link,
+  extend: Link,
   attr: {
     href: '#'
   }

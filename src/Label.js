@@ -4,7 +4,7 @@ import { Shape } from './Shape'
 import { Text } from './Text'
 
 export const Label = {
-  proto: [Shape, Block, Text],
+  extend: [Shape, Block, Text],
 
   style: { lineHeight: 1 },
 

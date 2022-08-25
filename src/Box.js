@@ -9,5 +9,5 @@ const PropsCSS = {
 }
 
 export const Box = {
-  proto: [Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive, PropsCSS, Interaction]
+  extend: [Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive, PropsCSS, Interaction]
 }

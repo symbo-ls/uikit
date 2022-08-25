@@ -3,7 +3,7 @@
 import { Flex, Icon } from '.'
 
 export const IconText = {
-  proto: Flex,
+  extend: Flex,
 
   props: {
     align: 'center center',
@@ -11,7 +11,7 @@ export const IconText = {
   },
 
   icon: {
-    proto: Icon,
+    extend: Icon,
     if: ({ parent }) => parent.props.icon,
     props: 'match'
   },

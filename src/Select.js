@@ -12,7 +12,7 @@ export const Select = {
     }
   },
 
-  childProto: {
+  childExtend: {
     tag: 'option',
     props: {
       value: '',

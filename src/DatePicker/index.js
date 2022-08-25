@@ -15,7 +15,7 @@ export const DatePicker = {
   },
 
   aside: {
-    childProto: { tag: 'button' },
+    childExtend: { tag: 'button' },
     ...[
       { text: '2020' },
       { text: '2021' },
@@ -32,11 +32,11 @@ export const DatePicker = {
   main: {
     header: {
       icon: {
-        proto: Icon,
+        extend: Icon,
         props: { icon: 'arrowMediumLeft' }
       },
       month: {
-        childProto: { tag: 'span' },
+        childExtend: { tag: 'span' },
         ...[
           { text: 'january' },
           { text: 'february' },
@@ -53,14 +53,14 @@ export const DatePicker = {
         ]
       },
       icon2: {
-        proto: Icon,
+        extend: Icon,
         props: { icon: 'arrowMediumRight' }
       }
     },
     days: {
       tag: 'section',
       header: {
-        childProto: { tag: 'span' },
+        childExtend: { tag: 'span' },
         ...[
           { text: 'Mo' },
           { text: 'Tu' },
@@ -72,7 +72,7 @@ export const DatePicker = {
         ]
       },
       content: {
-        childProto: { tag: 'button' },
+        childExtend: { tag: 'button' },
         ...[
           { text: '1' },
           { text: '2' },

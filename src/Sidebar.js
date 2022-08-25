@@ -3,10 +3,10 @@
 import { Icon, Link } from '.'
 
 const MenuItem = {
-  proto: Link,
+  extend: Link,
   props: { icon: '' },
   glyph: {
-    proto: Icon,
+    extend: Icon,
     name: ({ props }) => props.icon
   }
 }
@@ -17,7 +17,7 @@ export const Sidebar = {
     style: {
       a: { cursor: 'pointer' }
     },
-    childProto: MenuItem,
+    childExtend: MenuItem,
     ...[{}]
   }
 }

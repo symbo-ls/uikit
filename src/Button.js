@@ -11,7 +11,7 @@ const style = {
 }
 
 export const Button = {
-  proto: IconText,
+  extend: IconText,
   tag: 'button',
   props: {
     fontSize: 'A',
@@ -33,7 +33,7 @@ export const Button = {
 }
 
 export const SquareButton = {
-  proto: Button,
+  extend: Button,
   props: {
     fontSize: 'A',
     width: 'A',
@@ -46,7 +46,7 @@ export const SquareButton = {
 }
 
 export const CircleButton = {
-  proto: SquareButton,
+  extend: SquareButton,
   props: { round: 'C' }
 }
 
@@ -54,6 +54,6 @@ export const KangorooButton = {
   tag: 'button',
   props: { style },
 
-  iconText: { proto: IconText },
-  child: { proto: IconText }
+  iconText: { extend: IconText },
+  child: { extend: IconText }
 }

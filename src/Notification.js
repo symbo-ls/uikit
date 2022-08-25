@@ -4,9 +4,9 @@ import { Shape, Block, IconText, Direction, Flex, Text } from '.'
 
 export const Notification = {
   style: { cursor: 'pointer' },
-  proto: [Shape, Block, Direction, Flex],
+  extend: [Shape, Block, Direction, Flex],
   icon: {
-    proto: [IconText],
+    extend: [IconText],
     props: {
       icon: 'info'
     },
@@ -16,17 +16,17 @@ export const Notification = {
     }
   },
   article: {
-    proto: [Flex],
+    extend: [Flex],
     style: {
       flexDirection: 'column',
       alignItems: 'flex-start'
     },
     caption: {
-      proto: Text,
+      extend: Text,
       text: 'Notification'
     },
     p: {
-      proto: Text,
+      extend: Text,
       props: {
         fontSize: 'Z',
         text: 'is not always a distraction'

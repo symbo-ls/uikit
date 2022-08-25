@@ -5,6 +5,6 @@ import { Flex } from './Flex'
 
 export const ButtonSet = {
   tag: 'nav',
-  proto: Flex,
-  childProto: SquareButton
+  extend: Flex,
+  childExtend: SquareButton
 }
