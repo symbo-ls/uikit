@@ -19,7 +19,7 @@ import { Box } from 'smbls'
 3. Use it inside your DOMQL code
 ```
 const Header = {
-  proto: Box,
+  extend: Box,
   // ...Other Properties
 }
 ```

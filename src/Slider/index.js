@@ -65,7 +65,7 @@ const listenProp = (el, prop, def) => {
 
 export const Slider = {
   minus: {
-    proto: SquareButton,
+    extend: SquareButton,
     props: { icon: 'minus' },
     on: {
       click: (ev, el, s) => {
@@ -87,7 +87,7 @@ export const Slider = {
     }
   },
   input: {
-    proto: RangeSlider,
+    extend: RangeSlider,
     attr: {
       value: (el, s) => listenProp(el, 'value', 50),
       min: (el, s) => listenProp(el, 'min', 0),
@@ -100,7 +100,7 @@ export const Slider = {
     }
   },
   plus: {
-    proto: SquareButton,
+    extend: SquareButton,
     props: { icon: 'plus' },
     on: {
       click: (ev, el, s) => {

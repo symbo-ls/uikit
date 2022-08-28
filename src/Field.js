@@ -3,7 +3,7 @@
 import { IconText, Input } from '.'
 
 export const Field = {
-  proto: IconText,
+  extend: IconText,
   props: (el, s) => ({
     value: s[el.key],
 
@@ -36,5 +36,5 @@ export const Field = {
     }
   }),
 
-  input: { proto: Input }
+  input: { extend: Input }
 }
