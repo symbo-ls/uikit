@@ -84,6 +84,7 @@ export const Block = {
     alignContent: ({ props }) => props.alignContent && ({ alignContent: props.alignContent }),
     justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
     flexDirection: ({ props }) => props.flexDirection && ({ flexDirection: props.flexDirection }),
+    alignSelf: ({ props }) => props.alignSelf && ({ alignSelf: props.alignSelf }),
 
     flexWrap: ({ props }) => props.flexWrap && ({
       display: 'flex',
