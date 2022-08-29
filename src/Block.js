@@ -55,7 +55,7 @@ export const Block = {
       const [minWidth, maxWidth] = props.widthRange.split(' ')
       return {
         ...getSpacingByKey(minWidth, 'minWidth'),
-        ...getSpacingByKey(maxWidth, 'maxWidth')
+        ...getSpacingByKey(maxWidth || minWidth, 'maxWidth')
       }
     },
 
@@ -86,6 +86,7 @@ export const Block = {
     justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
     flexDirection: ({ props }) => props.flexDirection && ({ flexDirection: props.flexDirection }),
     alignSelf: ({ props }) => props.alignSelf && ({ alignSelf: props.alignSelf }),
+    order: ({ props }) => props.order && ({ order: props.order }),
 
     flexWrap: ({ props }) => props.flexWrap && ({
       display: 'flex',
