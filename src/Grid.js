@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapBasedOnRatio } from './Block'
+import { getSpacingBasedOnRatio } from './Block'
 
 export const Grid = {
   props: { display: 'grid' },
@@ -11,7 +11,7 @@ export const Grid = {
     area: ({ props }) => props.area ? ({ gridArea: props.area }) : null,
     template: ({ props }) => props.template ? ({ gridTemplate: props.template }) : null,
     templateAreas: ({ props }) => props.templateAreas ? ({ gridTemplateAreas: props.templateAreas }) : null,
-    columnGap: ({ props }) => props.columnGap ? mapBasedOnRatio(props, 'columnGap') : null,
-    rowGap: ({ props }) => props.rowGap ? mapBasedOnRatio(props, 'rowGap') : null
+    columnGap: ({ props }) => props.columnGap ? getSpacingBasedOnRatio(props, 'columnGap') : null,
+    rowGap: ({ props }) => props.rowGap ? getSpacingBasedOnRatio(props, 'rowGap') : null
   }
 }

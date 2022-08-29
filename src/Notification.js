@@ -22,11 +22,9 @@ export const Notification = {
       alignItems: 'flex-start'
     },
     caption: {
-      extend: Text,
       text: 'Notification'
     },
     p: {
-      extend: Text,
       props: {
         fontSize: 'Z',
         text: 'is not always a distraction'

@@ -1,6 +1,6 @@
 'use strict'
 
-import { mapTiming } from '@symbo.ls/scratch'
+import { getTimingByKey } from '@symbo.ls/scratch'
 
 const transformTransition = transition => {
   const arr = transition.split(' ')
@@ -9,7 +9,7 @@ const transformTransition = transition => {
 
   return arr.map(v => {
     if (v.length < 3 || v.includes('ms')) {
-      const mapWithSequence = mapTiming(v)
+      const mapWithSequence = getTimingByKey(v)
       return mapWithSequence.duration
     }
     return v

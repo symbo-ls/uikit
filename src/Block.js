@@ -2,22 +2,23 @@
 
 import { SPACING, getSpacingByKey } from '@symbo.ls/scratch'
 
-export const mapBasedOnRatio = (props, prop, unit) => {
+export const getSpacingBasedOnRatio = (props, prop, unit) => {
   const { spacingRatio } = props
   const val = props[prop]
   // TODO: move this to getSpacingByKey
   if (spacingRatio) {
-    const params = SPACING[spacingRatio]
+    let params = SPACING[spacingRatio]
 
     if (!params) {
-      SPACING[spacingRatio] = {
+      params = SPACING[spacingRatio] = {
         base: SPACING.base,
-        type: 'spacing',
+        type: SPACING.type,
         ratio: spacingRatio,
-        range: [-5, +7],
-        subSequence: true,
+        range: SPACING.range,
+        subSequence: SPACING.subSequence,
         sequence: {},
-        scales: {}
+        scales: {},
+        vars: {}
       }
     }
 
@@ -36,8 +37,8 @@ export const Block = {
 
     hide: ({ props }) => props.hide && ({ display: 'none' }),
 
-    width: ({ props }) => props.width && mapBasedOnRatio(props, 'width'),
-    height: ({ props }) => props.height && mapBasedOnRatio(props, 'height'),
+    width: ({ props }) => props.width && getSpacingBasedOnRatio(props, 'width'),
+    height: ({ props }) => props.height && getSpacingBasedOnRatio(props, 'height'),
     boxSize: ({ props }) => {
       if (typeof props.boxSize !== 'string') return
       const [height, width] = props.boxSize.split(' ')
@@ -47,8 +48,8 @@ export const Block = {
       }
     },
 
-    maxWidth: ({ props }) => props.maxWidth && mapBasedOnRatio(props, 'maxWidth'),
-    minWidth: ({ props }) => props.minWidth && mapBasedOnRatio(props, 'minWidth'),
+    maxWidth: ({ props }) => props.maxWidth && getSpacingBasedOnRatio(props, 'maxWidth'),
+    minWidth: ({ props }) => props.minWidth && getSpacingBasedOnRatio(props, 'minWidth'),
     widthRange: ({ props }) => {
       if (typeof props.widthRange !== 'string') return
       const [minWidth, maxWidth] = props.widthRange.split(' ')
@@ -58,8 +59,8 @@ export const Block = {
       }
     },
 
-    maxHeight: ({ props }) => props.maxHeight && mapBasedOnRatio(props, 'maxHeight'),
-    minHeight: ({ props }) => props.minHeight && mapBasedOnRatio(props, 'minHeight'),
+    maxHeight: ({ props }) => props.maxHeight && getSpacingBasedOnRatio(props, 'maxHeight'),
+    minHeight: ({ props }) => props.minHeight && getSpacingBasedOnRatio(props, 'minHeight'),
     heightRange: ({ props }) => {
       if (typeof props.heightRange !== 'string') return
       const [minHeight, maxHeight] = props.heightRange.split(' ')
@@ -71,12 +72,12 @@ export const Block = {
 
     aspectRatio: ({ props }) => props.aspectRatio && ({ aspectRatio: props.aspectRatio }),
 
-    borderWidth: ({ props }) => props.borderWidth ? mapBasedOnRatio(props, 'borderWidth') : null,
+    borderWidth: ({ props }) => props.borderWidth ? getSpacingBasedOnRatio(props, 'borderWidth') : null,
 
-    padding: ({ props }) => props.padding ? mapBasedOnRatio(props, 'padding') : null,
-    margin: ({ props }) => props.margin ? mapBasedOnRatio(props, 'margin') : null,
+    padding: ({ props }) => props.padding ? getSpacingBasedOnRatio(props, 'padding') : null,
+    margin: ({ props }) => props.margin ? getSpacingBasedOnRatio(props, 'margin') : null,
 
-    gap: ({ props }) => props.gap ? mapBasedOnRatio(props, 'gap') : null,
+    gap: ({ props }) => props.gap ? getSpacingBasedOnRatio(props, 'gap') : null,
     gridArea: ({ props }) => props.gridArea && ({ gridArea: props.gridArea }),
 
     flex: ({ props }) => props.flex && ({ flex: props.flex }),
