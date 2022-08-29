@@ -85,7 +85,5 @@ export const set = recivedConfig => {
 
   return CONFIG
 }
-console.log(CONFIG.RESET)
-console.log(CSS_VARS)
 
 export * from './system'

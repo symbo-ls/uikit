@@ -154,7 +154,6 @@ test('should GET ANY THEME', () => {
     background: 'rgba(255, 255, 255, 1)',
     color: 'rgba(0, 0, 0, 0.35)'
   })
-  // console.log(CONFIG.THEME.whiteToGet.helpers)
   expect(getTheme(['whiteToGet', '0'])).toStrictEqual({
     color: 'rgba(0, 168, 255, 1)',
     background: 'rgba(0, 196, 159, 1)'

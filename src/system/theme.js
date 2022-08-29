@@ -88,7 +88,6 @@ const goThroughInteractiveStates = (theme, value) => {
 
 const setPrefersScheme = (theme, key, variant, themeValue) => {
   const result = getTheme(variant)
-  // console.log(variant)
   themeValue[`@media (prefers-color-scheme: ${key})`] = result
   if (isObject(variant) && !variant.value) variant.value = result
 }
@@ -99,8 +98,6 @@ const goThroughVariants = (theme, value) => {
   const keys = Object.keys(variants)
   keys.map(key => {
     const variant = variants[key]
-    // console.log('=========')
-    // console.log(theme, key, variant, value)
     if (key === 'dark' || key === 'light') setPrefersScheme(theme, key, variant, value)
     if (key === 'inverse') setInverseTheme(theme, variant, value)
     return theme

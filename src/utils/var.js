@@ -21,7 +21,6 @@ export const setVariables = (result, key) => {
 export const applySequenceVars = (props, mediaName) => {
   const unit = props.unit || CONFIG.UNIT.default
   const { sequence, scales } = props
-  console.log(props)
 
   for (const key in sequence) {
     const item = sequence[key]

@@ -80,6 +80,4 @@ export const getFontSizeByKey = val => getSequenceValue({
   prefix: '--font-size-'
 })
 
-console.log(defaultProps)
-
 export const TYPOGRAPHY = defaultProps

@@ -65,7 +65,6 @@ export const getSpacingByKey = (val, property = 'padding', props, unit) => {
   if (!stack) return
 
   const length = stack.length
-  console.log(stack)
 
   const wrapSequenceItem = (prop, i) => getSequenceValue({
     type,
