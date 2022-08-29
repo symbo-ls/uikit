@@ -1,5 +1,7 @@
 'use strict'
 
+import { CSS_VARS } from '../factory'
+
 export * from './sequence'
 export * from './unit'
 export * from './typography'
@@ -13,4 +15,5 @@ export * from './icons'
 export * from './timing'
 export * from './document'
 export * from './cases'
+
 export const RESET = {}

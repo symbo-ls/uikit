@@ -30,7 +30,8 @@ export const SETTERS = {
   media: setSameValue,
   timing: setSameValue,
   icons: setSameValue,
-  reset: setSameValue
+  reset: setSameValue,
+  unit: setSameValue
 }
 
 /**
@@ -84,5 +85,7 @@ export const set = recivedConfig => {
 
   return CONFIG
 }
+console.log(CONFIG.RESET)
+console.log(CSS_VARS)
 
 export * from './system'

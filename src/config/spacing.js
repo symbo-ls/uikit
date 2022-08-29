@@ -1,7 +1,7 @@
 'use strict'
 
 import { SEQUENCE, TYPOGRAPHY } from '.'
-import { Arrayize, getSequenceValue, generateSequence } from '../utils'
+import { Arrayize, getSequenceValue, generateSequence, applySequenceVars, merge } from '../utils'
 
 const defaultProps = {
   base: TYPOGRAPHY.base,
@@ -14,9 +14,38 @@ const defaultProps = {
   vars: {}
 }
 
+const runThroughMedia = props => {
+  for (const prop in props) {
+    const mediaProps = props[prop]
+    if (prop.slice(0, 1) === '@') {
+      const { type, base, ratio, range, subSequence, h1Matches, unit } = props
+
+      merge(mediaProps, {
+        type,
+        base,
+        ratio,
+        range,
+        subSequence,
+        h1Matches,
+        unit,
+        sequence: {},
+        scales: {},
+        styles: {},
+        vars: {}
+      })
+
+      generateSequence(mediaProps)
+
+      const mediaName = prop.slice(1)
+      applySequenceVars(mediaProps, mediaName)
+    }
+  }
+}
+
 export const applySpacingSequence = () => {
   generateSequence(defaultProps)
-  // applyVars(defaultProps)
+  applySequenceVars(defaultProps)
+  runThroughMedia(defaultProps)
 }
 
 const getSequence = (props) => {

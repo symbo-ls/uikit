@@ -1,7 +1,7 @@
 'use strict'
 
 import { SEQUENCE } from '.'
-import { fallBack, generateSequence } from '../utils'
+import { generateSequence, getSequenceValue } from '../utils'
 
 const defaultProps = {
   default: 150,
@@ -18,7 +18,7 @@ export const applyTimingSequence = () => {
   generateSequence(defaultProps)
 }
 
-export const mapTiming = val => fallBack({
+export const mapTiming = val => getSequenceValue({
   type: defaultProps.sequence,
   prop: 'duration',
   val,

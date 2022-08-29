@@ -1,11 +1,14 @@
 'use strict'
 
 import * as CONFIG from './config'
+import { CSS_VARS } from './factory'
 import { getTheme } from './system'
 import { deepMerge, merge } from './utils'
 
 export const applyReset = (reset = {}) => {
   return deepMerge(merge(CONFIG.RESET, reset), {
+    ':root': CSS_VARS,
+
     html: {
       position: 'absolute',
       overflow: 'hidden',
@@ -18,8 +21,9 @@ export const applyReset = (reset = {}) => {
       transform: 'translate3d(0, 0, 1px)',
       scrollBehavior: 'smooth',
 
+      fontSize: CONFIG.TYPOGRAPHY.browserDefault + 'px',
+
       fontFamily: CONFIG.DOCUMENT.fontFamily,
-      fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default,
       lineHeight: CONFIG.DOCUMENT.lineHeight
     },
 
@@ -29,10 +33,12 @@ export const applyReset = (reset = {}) => {
       margin: 0,
       fontFamily: CONFIG.DOCUMENT.fontFamily,
 
-      ...getTheme('document')
-    },
+      ...getTheme('document'),
 
-    ...CONFIG.TYPOGRAPHY.styles,
+      fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default,
+
+      ...CONFIG.TYPOGRAPHY.styles
+    },
 
     // form elements
     fieldset: {

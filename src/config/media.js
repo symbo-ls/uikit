@@ -1,6 +1,8 @@
 'use strict'
 
 export const MEDIA = {
+  tv: '(min-width: 2780px)',
+
   screenL: '(max-width: 1920px)',
   screenM: '(max-width: 1680px)',
   screenS: '(max-width: 1440px)',
