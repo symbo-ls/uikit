@@ -63,16 +63,24 @@ export const getSequenceValue = ({ type, prop, val = 'A', prefix = '--font-size-
 
   const letterVal = val.toUpperCase()
   const isNegative = letterVal.slice(0, 1) === '-' ? '-' : ''
-  const simplyLetterVal = isNegative ? letterVal.slice(1) : letterVal
+  let pureVal = isNegative ? letterVal.slice(1) : letterVal
 
-  const value = type ? type[simplyLetterVal] : null
-  if (!value) return console.warn('can\'t find', type, simplyLetterVal)
+  let mediaName = ''
+  if (pureVal.includes('-')) {
+    console.log(pureVal)
+    mediaName = '-' + pureVal.split('-')[1].toLowerCase()
+    pureVal = pureVal.split('-')[0]
+  }
+
+  const value = type ? type[pureVal] : null
+  if (!value) return console.warn('can\'t find', type, pureVal)
 
   if (CONFIG.useVariable) {
+    const varVal = `var(${prefix}${pureVal}${mediaName})`
     return isNegative ? {
-      [prop]: `calc(var(${prefix}${simplyLetterVal}) * -1)`
+      [prop]: `calc(${varVal} * -1)`
     } : {
-      [prop]: `var(${prefix}${simplyLetterVal})`
+      [prop]: varVal
     }
   }
 
