@@ -67,7 +67,6 @@ export const getSequenceValue = ({ type, prop, val = 'A', prefix = '--font-size-
 
   let mediaName = ''
   if (pureVal.includes('-')) {
-    console.log(pureVal)
     mediaName = '-' + pureVal.split('-')[1].toLowerCase()
     pureVal = pureVal.split('-')[0]
   }
