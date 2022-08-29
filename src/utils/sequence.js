@@ -42,7 +42,7 @@ const setSequenceValue = ({ key, variable, value, scaling, state, index }) => {
     variable
   }
   state.scales[key] = scaling
-  state.vars[variable] = scaling + UNIT.default
+  state.vars[variable] = scaling + state.unit
 }
 
 export const getSequenceValue = ({ type, prop, val = 'A', prefix = '--font-size-', unit = UNIT.default }) => {
@@ -100,8 +100,6 @@ export const generateSubSequence = ({ key, base, value, ratio, variable, state, 
   const middle = (first + second) / 2
   if (diffRounded > 100) arr = [first, middle, second]
   else arr = [first, second]
-  // else if (diffRounded > 2) arr = [first, second]
-  // else if (diffRounded > 1) arr = [middle]
 
   arr.map((v, k) => {
     const scaling = Math.round(v / base * 1000) / 1000

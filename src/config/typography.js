@@ -1,7 +1,7 @@
 'use strict'
 
 import { CONFIG } from '../factory'
-import { SEQUENCE, MEDIA, UNIT } from '.'
+import { SEQUENCE, MEDIA } from '.'
 import { getSequenceValue, generateSequence, findHeadings, merge, applySequenceVars } from '../utils'
 
 const defaultProps = {

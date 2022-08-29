@@ -1,7 +1,7 @@
 'use strict'
 
 import { SEQUENCE } from '.'
-import { generateSequence, getSequenceValue } from '../utils'
+import { applySequenceVars, generateSequence, getSequenceValue } from '../utils'
 
 const defaultProps = {
   default: 150,
@@ -9,6 +9,7 @@ const defaultProps = {
   type: 'duration',
   ratio: SEQUENCE['perfect-fourth'],
   range: [-3, +12],
+  unit: 'ms',
   sequence: {},
   scales: {},
   vars: {}
@@ -16,9 +17,10 @@ const defaultProps = {
 
 export const applyTimingSequence = () => {
   generateSequence(defaultProps)
+  applySequenceVars(defaultProps)
 }
 
-export const mapTiming = val => getSequenceValue({
+export const getTimingByKey = val => getSequenceValue({
   type: defaultProps.sequence,
   prop: 'duration',
   val,

@@ -9,6 +9,7 @@ const defaultProps = {
   ratio: SEQUENCE.phi,
   range: [-5, +15],
   subSequence: true,
+  unit: 'em',
   sequence: {},
   scales: {},
   vars: {}
@@ -100,7 +101,7 @@ export const getSpacingByKey = (val, property = 'padding', props, unit) => {
     ]
   }
 
-  return getSequenceValue({ type, prop: property, val, prefix })
+  return getSequenceValue({ type, prop: property, val, prefix, unit })
 }
 
 export const SPACING = defaultProps
