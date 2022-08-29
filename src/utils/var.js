@@ -21,9 +21,11 @@ export const setVariables = (result, key) => {
 export const applySequenceVars = (props, mediaName) => {
   const unit = props.unit || CONFIG.UNIT.default
   const { sequence, scales } = props
+  console.log(props)
+
   for (const key in sequence) {
     const item = sequence[key]
-    const value = scales[key] + unit
+    const value = (props.type === 'duration' ? sequence[key].val : scales[key]) + unit
     const query = MEDIA[mediaName]
 
     if (mediaName) {

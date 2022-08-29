@@ -76,6 +76,7 @@ export const getFontSizeByKey = val => getSequenceValue({
   type: defaultProps.sequence,
   prop: 'fontSize',
   val,
+  unit: defaultProps.unit,
   prefix: '--font-size-'
 })
 

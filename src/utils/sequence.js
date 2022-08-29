@@ -82,7 +82,7 @@ export const getSequenceValue = ({ type, prop, val = 'A', prefix = '--font-size-
 
   return ({
     [prop]: isNegative + value.val + value.unit,
-    [prop]: isNegative + value.scaling + 'em'
+    [prop]: isNegative + value.scaling + unit
   })
 }
 
@@ -112,6 +112,7 @@ export const generateSubSequence = ({ key, base, value, ratio, variable, state, 
 export const generateSequence = ({ type, base, ratio, range, subSequence, ...state }) => {
   const n = Math.abs(range[0]) + Math.abs(range[1])
   const prefix = '--' + type + '-'
+
   for (let i = 0; i <= n; i++) {
     const key = range[1] - i
     const letterKey = numToLetterMap[key]
