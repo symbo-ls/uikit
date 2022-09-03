@@ -1,7 +1,7 @@
 'use strict'
 
 import { isArray, isObject } from '@domql/utils'
-import { getSpacingByKey, getTheme, getColor } from '@symbo.ls/scratch'
+import { getSpacingByKey, getTheme, getColor, getMediaColor } from '@symbo.ls/scratch'
 
 import { depth } from './Shape/style'
 
@@ -48,8 +48,9 @@ export const Theme = {
       return getTheme(props.theme, props.themeModifier)
     },
 
-    color: ({ props }) => props.color ? ({ color: getColor(props.color) }) : null,
-    background: ({ props }) => props.background ? ({ background: getColor(props.background) }) : null,
+    color: ({ props }) => (props.color) && getMediaColor(props.color, 'color'),
+    background: ({ props }) => (props.background) && getMediaColor(props.background, 'background'),
+    // background: ({ props }) => props.background ? ({ background: getColor(props.background) }) : null,
     backgroundColor: ({ props }) => props.backgroundColor ? ({ backgroundColor: getColor(props.backgroundColor) }) : null,
     backgroundImage: ({ props }) => props.backgroundImage ? ({ backgroundImage: getColor(props.backgroundImage) }) : null,
     backgroundSize: ({ props }) => props.backgroundSize ? ({ backgroundSize: getColor(props.backgroundSize) }) : null,

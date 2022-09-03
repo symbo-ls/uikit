@@ -5,10 +5,11 @@ import { exec } from '@domql/utils'
 export const Link = {
   tag: 'a',
   props: {
-    // theme: 'link',
     aria: {},
     fontWeight: 'bold',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    color: 'currentColor',
+    ':-webkit-any-link': { color: 'currentColor' }
   },
   attr: {
     href: element => exec(element.props.href, element) || exec(element.props, element).href,
