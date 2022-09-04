@@ -1,13 +1,20 @@
 'use strict'
 
-import { applyDocument, applySpacingSequence, applyTimingSequence, applyTypographySequence } from './config'
 import { CONFIG, CSS_VARS } from './factory' // eslint-disable-line no-unused-vars
-import { applyReset } from './reset'
-import { setColor, setGradient, setFont, setFontFamily, setTheme } from './system'
 import {
-  setVariables,
-  isFunction
-} from './utils'
+  setColor,
+  setGradient,
+  setFont,
+  setFontFamily,
+  setTheme,
+  applyTypographySequence,
+  applySpacingSequence,
+  applyReset,
+  applyTimingSequence,
+  applyDocument
+} from './system'
+
+import { isFunction } from './utils'
 
 const ENV = process.env.NODE_ENV
 
@@ -52,7 +59,7 @@ export const setValue = (FACTORY_NAME, value, key) => {
   }
 
   FACTORY[key] = result
-  setVariables(result, key)
+  // setVariables(result, key)
 
   return FACTORY
 }

@@ -1,5 +1,6 @@
 'use strict'
 
+import { MEDIA } from '../config'
 import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
 
 import {
@@ -10,24 +11,32 @@ import {
   hexToRgbArray,
   rgbArrayToHex,
   hslToRgb,
-  getColorShade
+  getColorShade,
+  isObject
 } from '../utils'
 
 const ENV = process.env.NODE_ENV
 
-export const getColor = value => {
+export const getColor = (value, key) => {
   if (!isString(value)) {
     if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(value, '- type for color is not valid')
     return
   }
 
+  if (key && value[key]) value = value[key]
   const [name, alpha, tone] = isArray(value) ? value : value.split(' ')
   const { COLOR, GRADIENT } = CONFIG
-  const val = COLOR[name] || GRADIENT[name]
+
+  let val = (COLOR[name] || GRADIENT[name])
 
   if (!val) {
     if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find color', name)
     return value
+  }
+
+  if (key) {
+    if (val[key]) val = val[key]
+    else if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(value, ' - does not have ', key)
   }
 
   // TODO: support variables
@@ -52,17 +61,61 @@ export const getColor = value => {
     }
     if (alpha) return `rgba(${rgb}, ${alpha})`
     return `rgb(${rgb})`
-  } else return val.value
+  } else return CONFIG.useVariable ? `var(${val.var})` : val.value
 }
 
-export const setColor = (val, key) => {
+export const getMediaColor = (value, param) => {
+  if (!isString(value)) {
+    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(value, '- type for color is not valid')
+    return
+  }
+
+  const [name] = isArray(value) ? value : value.split(' ')
+
+  const { COLOR, GRADIENT } = CONFIG
+  const val = COLOR[name] || GRADIENT[name]
+
+  const isObj = isObject(val)
+  if (isObj && val.value) return { [param]: getColor(value) }
+  else if (isObj) {
+    const obj = {}
+
+    for (const mediaName in val) {
+      const query = MEDIA[mediaName.slice(1)]
+      const media = `@media screen and ${query}`
+      obj[media] = { [param]: getColor(value, mediaName) }
+    }
+
+    return obj
+  } else {
+    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find color', value)
+    return { [param]: value }
+  }
+}
+
+export const setColor = (val, key, suffix) => {
   if (val.slice(0, 2) === '--') val = getColor(val.slice(2))
 
-  const CSSVar = `--color-${key}`
+  if (isArray(val)) {
+    return {
+      '@light': setColor(val[0], key, 'light'),
+      '@dark': setColor(val[0], key, 'dark')
+    }
+  }
+
+  if (isObject(val)) {
+    const obj = {}
+    for (const variant in val) obj[variant] = setColor(val[variant], key, variant.slice(0, 1) === '@' ? variant.slice(1) : variant)
+    return obj
+  }
+
+  const CSSVar = `--color-${key}` + (suffix ? `-${suffix}` : '')
   const [r, g, b, a = 1] = colorStringToRgbaArray(val.value || val)
   const alpha = parseFloat(a.toFixed(2))
   const rgb = `${r}, ${g}, ${b}`
   const value = `rgba(${rgb}, ${alpha})`
+
+  if (CONFIG.useVariable) { CSS_VARS[CSSVar] = value }
 
   return {
     var: CSSVar,
@@ -72,8 +125,26 @@ export const setColor = (val, key) => {
   }
 }
 
-export const setGradient = (val, key) => {
-  const CSSVar = `--gradient-${key}`
+export const setGradient = (val, key, suffix) => {
+  if (isArray(val)) {
+    return {
+      '@light': setGradient(val[0], key, 'light'),
+      '@dark': setGradient(val[0], key, 'dark')
+    }
+  }
+
+  if (isObject(val)) {
+    const obj = {}
+    for (const variant in val) obj[variant] = setGradient(val[variant], key, variant.slice(0, 1) === '@' ? variant.slice(1) : variant)
+    return obj
+  }
+
+  const CSSVar = `--gradient-${key}` + (suffix ? `-${suffix}` : '')
+
+  if (CONFIG.useVariable) {
+    CSS_VARS[CSSVar] = val.value || val
+  }
+
   return {
     var: CSSVar,
     value: val.value || val

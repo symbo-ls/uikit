@@ -1,9 +1,9 @@
 'use strict'
 
-import * as CONFIG from './config'
-import { CSS_VARS } from './factory'
-import { getTheme } from './system'
-import { deepMerge, merge } from './utils'
+import * as CONFIG from '../config'
+import { CSS_VARS } from '../factory'
+import { getTheme } from '.'
+import { deepMerge, merge } from '../utils'
 
 export const applyReset = (reset = {}) => {
   return deepMerge(merge(CONFIG.RESET, reset), {

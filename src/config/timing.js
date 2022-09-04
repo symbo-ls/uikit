@@ -1,7 +1,6 @@
 'use strict'
 
 import { SEQUENCE } from '.'
-import { applySequenceVars, generateSequence, getSequenceValue } from '../utils'
 
 const defaultProps = {
   default: 150,
@@ -14,18 +13,5 @@ const defaultProps = {
   scales: {},
   vars: {}
 }
-
-export const applyTimingSequence = () => {
-  generateSequence(defaultProps)
-  applySequenceVars(defaultProps)
-}
-
-export const getTimingByKey = val => getSequenceValue({
-  type: defaultProps.sequence,
-  prop: 'duration',
-  val,
-  unit: 'ms',
-  prefix: '--duration-'
-})
 
 export const TIMING = defaultProps
