@@ -23,7 +23,7 @@
   "dependencies": {
     "@domql/utils": "latest",
     "@symbo.ls/init": "latest",
-    "@symbo.ls/scratch": "latest"
+    "@symbo.ls/scratch": "^0.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
