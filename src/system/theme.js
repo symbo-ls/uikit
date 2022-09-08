@@ -1,13 +1,12 @@
 'use strict'
 
-import { getColor, getMediaColor } from './color'
+import { getColor } from './color'
 import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
 
 import {
   isObject,
   isString,
   isObjectLike,
-  merge,
   isArray
 } from '../utils'
 
