@@ -60,7 +60,7 @@ export const getColor = (value, key) => {
       } else rgb = val[tone].rgb
     }
     if (alpha) return `rgba(${rgb}, ${alpha})`
-    return `rgb(${rgb})`
+    return CONFIG.useVariable ? `var(${val.var})` : `rgb(${rgb})`
   } else return CONFIG.useVariable ? `var(${val.var})` : val.value
 }
 
@@ -94,7 +94,7 @@ export const getMediaColor = (value, param) => {
 }
 
 export const setColor = (val, key, suffix) => {
-  if (val.slice(0, 2) === '--') val = getColor(val.slice(2))
+  if (isString(val) && val.slice(0, 2) === '--') val = getColor(val.slice(2))
 
   if (isArray(val)) {
     return {
@@ -126,6 +126,8 @@ export const setColor = (val, key, suffix) => {
 }
 
 export const setGradient = (val, key, suffix) => {
+  if (isString(val) && val.slice(0, 2) === '--') val = getColor(val.slice(2))
+
   if (isArray(val)) {
     return {
       '@light': setGradient(val[0], key, 'light'),
