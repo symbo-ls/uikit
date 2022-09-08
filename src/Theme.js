@@ -1,7 +1,7 @@
 'use strict'
 
 import { isArray, isObject } from '@domql/utils'
-import { getSpacingByKey, getTheme, getColor, getMediaColor } from '@symbo.ls/scratch'
+import { getSpacingByKey, getMediaTheme, getColor, getMediaColor } from '@symbo.ls/scratch'
 
 import { depth } from './Shape/style'
 
@@ -45,7 +45,7 @@ export const Theme = {
 
     theme: ({ props, key }) => {
       if (!props.theme) return
-      return getTheme(props.theme, props.themeModifier)
+      return getMediaTheme(props.theme, props.themeModifier)
     },
 
     color: ({ props }) => (props.color) && getMediaColor(props.color, 'color'),
