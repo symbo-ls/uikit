@@ -186,7 +186,7 @@ const recursiveTheme = val => {
 }
 
 export const getMediaTheme = (val, key, themeObj) => {
-  if (!isString(val)) {
+  if (!val || !isString(val)) {
     if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(val, '- type for color is not valid')
     return
   }
