@@ -192,6 +192,6 @@ export const getMediaTheme = (val, key, themeObj) => {
   }
   const [name, modifier] = isArray(val) ? val : val.split(' ')
   let value = CONFIG.THEME[name]
-  if (modifier && value[modifier]) value = value[modifier]
+  if (value && modifier && value[modifier]) value = value[modifier]
   return recursiveTheme(value)
 }
