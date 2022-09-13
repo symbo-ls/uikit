@@ -1,35 +1,43 @@
 'use strict'
 
-import { Shape, Block, IconText, Direction, Flex, Text } from '.'
+import { IconText, Flex } from '.'
 
 export const Notification = {
-  style: { cursor: 'pointer' },
-  extend: [Shape, Block, Direction, Flex],
+  extend: Flex,
+
+  props: {
+    padding: 'Z1 B Z1 A1',
+    round: 'A',
+    gap: 'X2',
+    style: { cursor: 'pointer' },
+
+    article: {
+      gap: 'X2',
+      title: {
+        fontWeight: '600',
+        lineHeight: '1em'
+      },
+      p: {
+        fontSize: 'Z',
+        margin: '0'
+      }
+    }
+  },
+
   icon: {
     extend: [IconText],
     props: {
-      icon: 'info'
-    },
-    style: {
-      width: 'fit-content',
-      height: 'fit-content'
+      icon: 'info outline'
     }
   },
+
   article: {
-    extend: [Flex],
-    style: {
-      flexDirection: 'column',
-      alignItems: 'flex-start'
+    extend: Flex,
+    props: {
+      flow: 'column',
+      align: 'flex-start'
     },
-    caption: {
-      text: 'Notification'
-    },
-    p: {
-      props: {
-        fontSize: 'Z',
-        text: 'is not always a distraction'
-      },
-      style: { margin: 0 }
-    }
+    title: { text: 'Notification' },
+    p: { text: 'is not always a distraction' }
   }
 }

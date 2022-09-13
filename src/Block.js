@@ -2,17 +2,20 @@
 
 import { SPACING, getSpacingByKey } from '@symbo.ls/scratch'
 
-export const getSpacingBasedOnRatio = (props, prop, unit) => {
+export const getSpacingBasedOnRatio = (props, propertyName, unit) => {
   const { spacingRatio } = props
-  const val = props[prop]
+
+  // if (spacingRatio) console.log(propertyName, props)
+
+  const val = props[propertyName]
   // TODO: move this to getSpacingByKey
   if (spacingRatio) {
     let params = SPACING[spacingRatio]
 
     if (!params) {
       params = SPACING[spacingRatio] = {
-        base: SPACING.base,
-        type: SPACING.type,
+        base: props.base || SPACING.base,
+        type: SPACING.type + '-' + spacingRatio,
         ratio: spacingRatio,
         range: SPACING.range,
         subSequence: SPACING.subSequence,
@@ -22,9 +25,9 @@ export const getSpacingBasedOnRatio = (props, prop, unit) => {
       }
     }
 
-    return getSpacingByKey(val, prop, params, unit)
+    return getSpacingByKey(val, propertyName, params, unit, false)
   }
-  return getSpacingByKey(val, prop, null, unit)
+  return getSpacingByKey(val, propertyName, null, unit)
 }
 
 export const Block = {

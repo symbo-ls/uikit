@@ -27,6 +27,8 @@ const splitTransition = transition => {
 export const Transition = {
   class: {
     transition: ({ props }) => props.transition && splitTransition(props.transition),
+    transitionEasing: ({ props }) => props.transitionEasing && ({ transitionEasing: props.transitionEasing }),
+    transitionTimingFunction: ({ props }) => props.transitionTimingFunction && ({ transitionTimingFunction: props.transitionTimingFunction }),
     transitionProperty: ({ props }) => props.transitionProperty && ({
       transitionProperty: props.transitionProperty,
       willChange: props.transitionProperty

@@ -12,7 +12,7 @@ const transformBorder = (border, key = 'border') => {
   const obj = {}
   const arr = isObject(border) ? Object.values(border) : isArray(border) ? border : border.split(', ')
   arr.map(v => {
-    if (v.includes('px')) obj[`${key}Width`] = v // TODO: add map spacing
+    if (v.slice(-2) === 'px' || v.slice(-2) === 'em') obj[`${key}Width`] = v // TODO: add map spacing
     else if (isBorderStyle(v)) obj[`${key}Style`] = v || 'solid'
     else if (getColor(v)) obj[`${key}Color`] = getColor(v)
   })
@@ -40,8 +40,6 @@ const transformShadow = shadow => ({
 export const Theme = {
   class: {
     depth: ({ props }) => depth[props.depth],
-    round: ({ props, key, ...el }) => props.round ? (getSpacingByKey(props.round, 'borderRadius') || ({ borderRadius: props.round })) : null,
-    borderRadius: ({ props, key, ...el }) => props.borderRadius ? (getSpacingByKey(props.borderRadius, 'borderRadius') || ({ borderRadius: props.borderRadius })) : null,
 
     theme: ({ props, key }) => {
       if (!props.theme) return

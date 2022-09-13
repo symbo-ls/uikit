@@ -4,16 +4,20 @@ import { SVG } from '.'
 
 import { ICONS } from '@symbo.ls/scratch'
 
+function camelize (str) {
+  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, function (word, index) {
+    return index === 0 ? word.toLowerCase() : word.toUpperCase()
+  }).replace(/\s+/g, '')
+}
+
 export const Icon = {
   extend: SVG,
   props: ({ key, props, parent }) => {
-    let iconName = props.inheritedString || props.name || props.icon || key
+    const iconName = props.inheritedString || props.name || props.icon || key
+    const camelCase = camelize(iconName)
+    const isArray = camelCase.replace(/([a-z])([A-Z])/g, '$1 $2')
 
-    const isArray = iconName.split(' ')
-    const secondArg = props.iconModifier || isArray[1]
-
-    if (secondArg) iconName = isArray[0] + secondArg.slice(0, 1).toUpperCase() + secondArg.slice(1)
-    const iconFromLibrary = ICONS[iconName] || ICONS[isArray[0]] || ICONS['noIcon']
+    const iconFromLibrary = ICONS[camelCase] || ICONS[isArray[0] + isArray[1]] || ICONS[isArray[0]] || ICONS['noIcon']
 
     return {
       width: 'A',
