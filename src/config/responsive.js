@@ -2,7 +2,7 @@
 
 export const BREAKPOINTS = {
   screenL: 1920,
-  screenD: 1680,
+  screenM: 1680,
   screenS: 1440,
   tabletL: 1366,
   tabletM: 1280,

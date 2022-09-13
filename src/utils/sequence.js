@@ -45,7 +45,14 @@ const setSequenceValue = ({ key, variable, value, scaling, state, index }) => {
   state.vars[variable] = scaling + state.unit
 }
 
-export const getSequenceValue = ({ type, prop, val = 'A', prefix = '--font-size-', unit = UNIT.default }) => {
+export const getSequenceValue = ({
+  type,
+  prop,
+  val = 'A',
+  prefix = '--font-size-',
+  unit = UNIT.default,
+  useVariable
+}) => {
   if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
 
   if (val === '-' || val === '') return ({ })
@@ -74,7 +81,7 @@ export const getSequenceValue = ({ type, prop, val = 'A', prefix = '--font-size-
   const value = type ? type[pureVal] : null
   if (!value) return console.warn('can\'t find', type, pureVal)
 
-  if (CONFIG.useVariable) {
+  if (useVariable || CONFIG.useVariable) {
     const varVal = `var(${prefix}${pureVal}${mediaName})`
     return isNegative ? {
       [prop]: `calc(${varVal} * -1)`

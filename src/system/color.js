@@ -23,6 +23,8 @@ export const getColor = (value, key) => {
     return
   }
 
+  if (value.slice(0, 2) === '--') return `var(${value})`
+
   if (key && value[key]) value = value[key]
   const [name, alpha, tone] = isArray(value) ? value : value.split(' ')
   const { COLOR, GRADIENT } = CONFIG

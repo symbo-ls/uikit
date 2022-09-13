@@ -14,6 +14,7 @@ export * from './theme'
 export * from './icons'
 export * from './timing'
 export * from './document'
+export * from './responsive'
 export * from './cases'
 
 export const RESET = {}
