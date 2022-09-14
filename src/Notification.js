@@ -12,14 +12,18 @@ export const Notification = {
     style: { cursor: 'pointer' },
 
     article: {
+      flow: 'column',
+      align: 'flex-start',
       gap: 'X2',
       title: {
         fontWeight: '600',
-        lineHeight: '1em'
+        lineHeight: '1em',
+        text: 'Notification'
       },
       p: {
         fontSize: 'Z',
-        margin: '0'
+        margin: '0',
+        text: 'is not always a distraction'
       }
     }
   },
@@ -33,13 +37,5 @@ export const Notification = {
     }
   },
 
-  article: {
-    extend: Flex,
-    props: {
-      flow: 'column',
-      align: 'flex-start'
-    },
-    title: { text: 'Notification' },
-    p: { text: 'is not always a distraction' }
-  }
+  article: { extend: Flex }
 }
