@@ -2,6 +2,7 @@
 
 export const Interaction = {
   class: {
-    cursor: ({ props }) => ({ cursor: props.cursor })
+    pointerEvents: ({ props }) => props.pointerEvents && ({ pointerEvents: props.pointerEvents }),
+    cursor: ({ props }) => props.cursor && ({ cursor: props.cursor })
   }
 }

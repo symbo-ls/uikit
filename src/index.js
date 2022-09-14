@@ -20,6 +20,7 @@ export * from './Transform'
 export * from './Transition'
 export * from './Media'
 export * from './Interaction'
+export * from './XYZ'
 
 export * from './Box'
 

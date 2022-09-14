@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive, Interaction } from '.'
+import { Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive, Interaction, XYZ } from '.'
 
 const PropsCSS = {
   class: {
@@ -9,5 +9,5 @@ const PropsCSS = {
 }
 
 export const Box = {
-  extend: [Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive, PropsCSS, Interaction]
+  extend: [Shape, Position, Theme, Block, Text, Overflow, Transition, Transform, Responsive, PropsCSS, Interaction, XYZ]
 }
