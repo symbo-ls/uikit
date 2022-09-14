@@ -15,9 +15,9 @@ export const Icon = {
   props: ({ key, props, parent }) => {
     const iconName = props.inheritedString || props.name || props.icon || key
     const camelCase = camelize(iconName)
-    const isArray = camelCase.replace(/([a-z])([A-Z])/g, '$1 $2')
+    const isArray = camelCase.split(/([a-z])([A-Z])/g)
 
-    const iconFromLibrary = ICONS[camelCase] || ICONS[isArray[0] + isArray[1]] || ICONS[isArray[0]] || ICONS['noIcon']
+    const iconFromLibrary = ICONS[camelCase] || (ICONS[isArray[0] + isArray[1]]) || ICONS[isArray[0]] || ICONS['noIcon']
 
     return {
       width: 'A',

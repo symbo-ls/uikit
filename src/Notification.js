@@ -27,7 +27,9 @@ export const Notification = {
   icon: {
     extend: [IconText],
     props: {
-      icon: 'info outline'
+      icon: {
+        name: 'info outline'
+      }
     }
   },
 
