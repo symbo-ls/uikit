@@ -8,8 +8,8 @@ export const Link = {
     aria: {},
     fontWeight: 'bold',
     textDecoration: 'none',
-    color: 'currentColor',
-    ':-webkit-any-link': { color: 'currentColor' }
+    color: 'currentColor'
+    // style: { '&::-webkit-any-link': { color: 'currentColor' } }
   },
   attr: {
     href: element => exec(element.props.href, element) || exec(element.props, element).href,
