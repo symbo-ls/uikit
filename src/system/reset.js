@@ -1,6 +1,6 @@
 'use strict'
 
-import * as CONFIG from '../config'
+import * as CONFIG from '../defaultConfig'
 import { CSS_VARS } from '../factory'
 import { getTheme } from '.'
 import { deepMerge, merge } from '../utils'

@@ -1,6 +1,6 @@
 'use strict'
 
-import { MEDIA } from '../config'
+import { MEDIA } from '../defaultConfig'
 import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
 
 import {

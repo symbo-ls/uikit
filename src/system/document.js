@@ -1,6 +1,6 @@
 'use strict'
 
-import { DOCUMENT, FONT_FAMILY, THEME, TYPOGRAPHY } from '../config'
+import { DOCUMENT, FONT_FAMILY, THEME, TYPOGRAPHY } from '../defaultConfig'
 import { getDefaultOrFirstKey, merge } from '../utils'
 
 export const applyDocument = () => merge(DOCUMENT, {

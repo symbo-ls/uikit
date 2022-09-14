@@ -1,6 +1,6 @@
 'use strict'
 
-import * as CONF from './config'
+import * as CONF from './defaultConfig'
 
 export const CSS_VARS = {}
 export const CONFIG = {

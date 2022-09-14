@@ -1,6 +1,6 @@
 'use strict'
 
-import { TIMING } from '../config'
+import { TIMING } from '../defaultConfig'
 import {
   applySequenceVars,
   generateSequence,

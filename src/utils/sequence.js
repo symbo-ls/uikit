@@ -1,6 +1,6 @@
 'use strict'
 
-import { UNIT } from '../config'
+import { UNIT } from '../defaultConfig'
 import { CONFIG } from '../factory'
 
 export const numToLetterMap = {

@@ -1,6 +1,6 @@
 'use strict'
 
-import { MEDIA, TYPOGRAPHY } from '../config'
+import { MEDIA, TYPOGRAPHY } from '../defaultConfig'
 import { CONFIG } from '../factory'
 import {
   applySequenceVars,

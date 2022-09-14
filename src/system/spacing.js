@@ -1,6 +1,6 @@
 'use strict'
 
-import { SPACING } from '../config'
+import { SPACING } from '../defaultConfig'
 import { applySequenceVars, Arrayize, generateSequence, getSequenceValue, merge } from '../utils'
 
 const runThroughMedia = props => {
