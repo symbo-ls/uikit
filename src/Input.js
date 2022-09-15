@@ -5,12 +5,10 @@ export const Input = {
 
   props: {
     type: 'input',
-    // value: s[el.key],
-    // placeholder: '',
     fontSize: 'A',
     round: 'C',
-    padding: 'Z B',
-    theme: 'transparent'
+    lineHeight: 1,
+    padding: 'Z A'
   },
 
   attr: {

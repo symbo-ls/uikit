@@ -37,6 +37,16 @@ const transformShadow = shadow => ({
   }).join(' ')
 })
 
+const transformBackgroundImage = (backgroundImage, ctx) => ({
+  backgroundImage: backgroundImage.split(', ').map(v => {
+    if (v.includes('url') || v.includes('gradient')) return v
+    else if (ctx.SYSTEM.GRADIENT[backgroundImage]) {
+      return getMediaColor(backgroundImage, 'backgroundImage')
+    }
+    return `url(${v})`
+  }).join(' ')
+})
+
 export const Theme = {
   class: {
     depth: ({ props }) => depth[props.depth],
@@ -49,8 +59,9 @@ export const Theme = {
     color: ({ props }) => (props.color) && getMediaColor(props.color, 'color'),
     background: ({ props }) => (props.background) && getMediaColor(props.background, 'background'),
     backgroundColor: ({ props }) => (props.backgroundColor) && getMediaColor(props.backgroundColor, 'backgroundColor'),
-    backgroundImage: ({ props }) => (props.backgroundImage) && getMediaColor(props.backgroundImage, 'backgroundImage'),
+    backgroundImage: ({ props, context }) => (props.backgroundImage) && transformBackgroundImage(props.backgroundImage, context),
     backgroundSize: ({ props }) => props.backgroundSize ? ({ backgroundSize: props.backgroundSize }) : null,
+    backgroundPosition: ({ props }) => props.backgroundPosition ? ({ backgroundPosition: props.backgroundPosition }) : null,
 
     textStroke: ({ props }) => props.textStroke ? transformTextStroke(props.textStroke) : null,
 
