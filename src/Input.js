@@ -7,8 +7,9 @@ export const Input = {
     type: 'input',
     // value: s[el.key],
     // placeholder: '',
+    fontSize: 'A',
     round: 'C',
-    padding: 'A B',
+    padding: 'Z B',
     theme: 'transparent'
   },
 
