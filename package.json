@@ -3,7 +3,7 @@
   "description": "UI Library built on Scratch and DOMQL",
   "private": false,
   "author": "symbo.ls",
-  "version": "0.13.7",
+  "version": "0.13.8",
   "repository": "https://github.com/symbo-ls/smbls",
   "main": "src/index.js",
   "files": [
