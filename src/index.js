@@ -30,6 +30,8 @@ export const init = (config) => {
   return conf
 }
 
+export const updateReset = () => injectGlobal(RESET)
+
 export const setClass = props => setClassname(props, css)
 
 export { CONFIG }
