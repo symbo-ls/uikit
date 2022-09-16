@@ -108,7 +108,7 @@ export const initUpdate = element => {
   const rootState = element.__root ? element.__root.state : element.state
 
   const parentProps = element.parent.props
-  if (parentProps.spacingRatio && parentProps.inheritSpacingRatio) {
+  if (parentProps && parentProps.spacingRatio && parentProps.inheritSpacingRatio) {
     element.setProps({
       spacingRatio: parentProps.spacingRatio,
       inheritSpacingRatio: true
