@@ -10,7 +10,7 @@ import {
   isArray
 } from '../utils'
 
-const ENV = process.env.NODE_ENV
+const ENV = process.env.NODE_ENV // eslint-disable-line
 
 const setThemeValue = theme => {
   const value = {}
@@ -53,7 +53,7 @@ export const getTheme = (value, modifier) => {
     if (state && state[subThemeName]) return getThemeValue(state[subThemeName])
   } else if (isObject(value)) return setThemeValue(value)
 
-  if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find theme', value)
+  // if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find theme', value)
 }
 
 const setInverseTheme = (theme, variant, value) => {
@@ -161,8 +161,23 @@ export const setMediaTheme = (val, key, suffix, prefers) => {
         } else {
           theme[param] = color
         }
+        theme[`.${param}`] = { [param]: theme[param] }
       }
     }
+
+    if (theme['background'] || theme['color'] || theme['backgroundColor']) {
+      theme['.inversed'] = {
+        color: theme['background'] || theme['backgroundColor'],
+        background: theme['color']
+      }
+    }
+  }
+
+  if (isString(val) && val.slice(0, 2) === '--') {
+    const { THEME } = CONFIG
+    const value = THEME[val.slice(2)]
+    const getReferenced = getMediaTheme(value)
+    return getReferenced
   }
 
   return theme
@@ -185,13 +200,42 @@ const recursiveTheme = val => {
   return obj
 }
 
-export const getMediaTheme = (val, key, themeObj) => {
+const findModifierFromArray = (val, modifierArray) => {
+  const currentMod = modifierArray.shift()
+  if (val[currentMod]) return findModifierFromArray(val[currentMod], modifierArray)
+  return val
+}
+
+const findModifier = (val, modifier) => {
+  // console.log(val)
+  // console.log(modifier)
+  if (isArray(modifier)) return findModifierFromArray(val, modifier)
+  else if (isString(modifier)) return val[modifier]
+  else return val
+}
+
+const checkForReference = (val, callback) => {
+  if (isString(val) && val.slice(0, 2) === '--') return getMediaTheme(val.slice(2))
+  return val
+}
+
+const checkThemeReference = (val) => checkForReference(val, checkThemeReference) // eslint-disable-line
+
+export const getMediaTheme = (val, mod, themeObj) => {
+  if (isString(val) && val.slice(0, 2) === '--') val = getMediaTheme(val.slice(2))
+
   if (!val || !isString(val)) {
-    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(val, '- type for color is not valid')
+    // if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(val, '- type for color is not valid')
     return
   }
-  const [name, modifier] = isArray(val) ? val : val.split(' ')
+
+  // console.group(val)
+  const [name, ...modifier] = isArray(val) ? val : val.split(' ')
   let value = CONFIG.THEME[name]
-  if (value && modifier && value[modifier]) value = value[modifier]
+  if (value && (modifier || mod)) value = findModifier(value, modifier.length ? modifier : mod)
+  // console.log('finalval', value)
+  // console.groupEnd(val)
   return recursiveTheme(value)
 }
+
+window.getMediaTheme = getMediaTheme

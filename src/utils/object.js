@@ -38,7 +38,7 @@ export const deepMerge = (obj, obj2) => {
   return obj
 }
 
-export const Arrayize = val => {
+export const arrayze = val => {
   const isString = typeof val === 'string'
   if (isString) return val.split(' ')
   if (isObject(val)) return Object.keys(val).map(v => val[v])

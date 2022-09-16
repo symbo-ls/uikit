@@ -32,7 +32,7 @@ export const getColor = (value, key) => {
   let val = (COLOR[name] || GRADIENT[name])
 
   if (!val) {
-    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find color', name)
+    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find color ', name)
     return value
   }
 
@@ -71,6 +71,8 @@ export const getMediaColor = (value, param) => {
     if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(value, '- type for color is not valid')
     return
   }
+
+  if (value.slice(0, 2) === '--') return { [param]: `var(${value})` }
 
   const [name] = isArray(value) ? value : value.split(' ')
 

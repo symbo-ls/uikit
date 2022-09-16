@@ -1,13 +1,13 @@
 'use strict'
 
 import { SPACING } from '../defaultConfig'
-import { applySequenceVars, Arrayize, generateSequence, getSequenceValue, merge } from '../utils'
+import { applySequenceVars, arrayze, generateSequence, getSequenceValuePropertyPair, merge } from '../utils'
 
-const runThroughMedia = props => {
-  for (const prop in props) {
-    const mediaProps = props[prop]
+const runThroughMedia = sequenceProps => {
+  for (const prop in sequenceProps) {
+    const mediaProps = sequenceProps[prop]
     if (prop.slice(0, 1) === '@') {
-      const { type, base, ratio, range, subSequence, h1Matches, unit } = props
+      const { type, base, ratio, range, subSequence, h1Matches, unit } = sequenceProps
 
       merge(mediaProps, {
         type,
@@ -37,57 +37,81 @@ export const applySpacingSequence = () => {
   runThroughMedia(SPACING)
 }
 
-const getSequence = (props) => {
-  if (!props) return
-  const hasGenerated = Object.keys(props.sequence).length > 0
-  return hasGenerated ? props : generateSequence(props)
+const getSequence = (sequenceProps) => {
+  if (!sequenceProps) return SPACING
+  const hasGenerated = Object.keys(sequenceProps.sequence).length > 0
+  return hasGenerated ? sequenceProps : generateSequence(sequenceProps)
 }
 
-export const getSpacingByKey = (val, property = 'padding', props, unit) => {
-  const prefix = '--spacing-'
+export const getSpacingByKey = (
+  value,
+  propertyName = 'padding',
+  sequenceProps
+) => {
+  const sequence = getSequence(sequenceProps)
 
-  const generatedSequence = getSequence(props)
-  const type = (generatedSequence || SPACING).sequence
-
-  const stack = Arrayize(val)
+  const stack = arrayze(value)
   if (!stack) return
 
-  const length = stack.length
-
-  const wrapSequenceItem = (prop, i) => getSequenceValue({
-    type,
-    prop,
-    val: stack[i],
-    prefix,
-    unit
-  })
-
   let suffix = ''
-  if (property === 'borderWidth') {
-    property = 'border'
+  if (propertyName === 'borderWidth') {
+    propertyName = 'border'
     suffix = 'Width'
   }
 
-  if (length === 2) {
-    return [
-      wrapSequenceItem(property + 'Block' + suffix, 0),
-      wrapSequenceItem(property + 'Inline' + suffix, 1)
-    ]
-  }
-  if (length === 3) {
-    return [
-      wrapSequenceItem(property + 'BlockStart' + suffix, 0),
-      wrapSequenceItem(property + 'Inline' + suffix, 1),
-      wrapSequenceItem(property + 'BlockEnd' + suffix, 2)
-    ]
-  } else if (length === 4) {
-    return [
-      wrapSequenceItem(property + 'BlockStart' + suffix, 0),
-      wrapSequenceItem(property + 'InlineStart' + suffix, 3),
-      wrapSequenceItem(property + 'BlockEnd' + suffix, 2),
-      wrapSequenceItem(property + 'InlineEnd' + suffix, 1)
-    ]
+  const directions = {
+    2: ['Block', 'Inline'],
+    3: ['BlockStart', 'Inline', 'BlockEnd'],
+    4: ['BlockStart', 'InlineEnd', 'BlockEnd', 'InlineStart']
   }
 
-  return getSequenceValue({ type, prop: property, val, prefix, unit })
+  const wrapSequenceValueByDirection = (direction, i) => getSequenceValuePropertyPair(
+    stack[i],
+    propertyName + direction + suffix,
+    sequence
+  )
+
+  if (stack.length > 1) {
+    return directions[stack.length].map((dir, key) => wrapSequenceValueByDirection(dir, key))
+  }
+
+  return getSequenceValuePropertyPair(
+    value,
+    propertyName,
+    sequence
+  )
+}
+
+export const getSpacingBasedOnRatio = (props, propertyName, val) => {
+  const { spacingRatio, unit } = props
+  const value = val || props[propertyName]
+
+  if (spacingRatio) {
+    let sequenceProps = SPACING[spacingRatio]
+
+    if (!sequenceProps) {
+      const { type, base, range, subSequence } = SPACING
+
+      sequenceProps = SPACING[spacingRatio] = merge({
+        ratio: spacingRatio,
+        type: type + '-' + spacingRatio,
+        unit,
+        sequence: {},
+        scales: {},
+        styles: {},
+        vars: {}
+      }, {
+        base,
+        range,
+        subSequence,
+        ratio: SPACING.ratio,
+        unit: SPACING.unit
+      })
+    }
+
+    applySequenceVars(sequenceProps, null, { useDefault: false })
+
+    return getSpacingByKey(value, propertyName, sequenceProps)
+  }
+  return getSpacingByKey(value, propertyName)
 }

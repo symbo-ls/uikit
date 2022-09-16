@@ -2,6 +2,7 @@
 
 import { UNIT } from '../defaultConfig'
 import { CONFIG } from '../factory'
+import { isString } from './object'
 
 export const numToLetterMap = {
   '-6': 'U',
@@ -32,8 +33,9 @@ export const numToLetterMap = {
   19: 'T'
 }
 
-const setSequenceValue = ({ key, variable, value, scaling, state, index }) => {
-  state.sequence[key] = {
+const setSequenceValue = (props, sequenceProps) => {
+  const { key, variable, value, scaling, index } = props
+  sequenceProps.sequence[key] = {
     key,
     decimal: Math.round(value * 100) / 100,
     val: Math.round(value),
@@ -41,66 +43,17 @@ const setSequenceValue = ({ key, variable, value, scaling, state, index }) => {
     index,
     variable
   }
-  state.scales[key] = scaling
-  state.vars[variable] = scaling + state.unit
+  sequenceProps.scales[key] = scaling
+  sequenceProps.vars[variable] = scaling + sequenceProps.unit
 }
 
-export const getSequenceValue = ({
-  type,
-  prop,
-  val = 'A',
-  prefix = '--font-size-',
-  unit = UNIT.default,
-  useVariable
-}) => {
-  if (typeof val !== 'string') console.warn(prop, val, 'is not a string')
+const dashize = val => val
+  .replace(/[A-Z]/g, (match, offset) => (offset > 0 ? '-' : '') + match.toLowerCase())
+  .replace('.', '-')
 
-  if (val === '-' || val === '') return ({ })
-  if (
-    val === 'none' ||
-    val === 'auto' ||
-    val === 'fit-content' ||
-    val === 'min-content' ||
-    val === 'max-content'
-  ) return ({ [prop]: val })
+export const generateSubSequence = (props, sequenceProps) => {
+  const { key, base, value, ratio, variable, index } = props
 
-  const startsWithLetterRegex = /^-?[a-zA-Z]/i
-  const startsWithLetter = startsWithLetterRegex.test(val)
-  if (!startsWithLetter) return ({ [prop]: val })
-
-  const letterVal = val.toUpperCase()
-  const isNegative = letterVal.slice(0, 1) === '-' ? '-' : ''
-  let pureVal = isNegative ? letterVal.slice(1) : letterVal
-
-  let mediaName = ''
-  if (pureVal.includes('-')) {
-    mediaName = '-' + pureVal.split('-')[1].toLowerCase()
-    pureVal = pureVal.split('-')[0]
-  }
-
-  const value = type ? type[pureVal] : null
-  if (!value) return console.warn('can\'t find', type, pureVal)
-
-  if (useVariable || CONFIG.useVariable) {
-    const varVal = `var(${prefix}${pureVal}${mediaName})`
-    return isNegative ? {
-      [prop]: `calc(${varVal} * -1)`
-    } : {
-      [prop]: varVal
-    }
-  }
-
-  if (unit === 'ms' || unit === 's') {
-    return ({ [prop]: isNegative + value.val + unit })
-  }
-
-  return ({
-    [prop]: isNegative + value.val + value.unit,
-    [prop]: isNegative + value.scaling + unit
-  })
-}
-
-export const generateSubSequence = ({ key, base, value, ratio, variable, state, index }) => {
   const next = value * ratio
   const smallscale = (next - value) / ratio
 
@@ -109,23 +62,32 @@ export const generateSubSequence = ({ key, base, value, ratio, variable, state, 
   const diffRounded = nextRounded - valueRounded
 
   let arr = []
-  const first = next - smallscale
-  const second = value + smallscale
+  const first = value + smallscale
+  const second = next - smallscale
   const middle = (first + second) / 2
-  if (diffRounded > 100) arr = [first, middle, second]
+  if (diffRounded > 16) arr = [first, middle, second]
   else arr = [first, second]
 
   arr.map((v, k) => {
     const scaling = Math.round(v / base * 1000) / 1000
     const newVar = variable + (k + 1)
 
-    return setSequenceValue({ key: key + (k + 1), variable: newVar, value: v, scaling, state, index: index + (k + 1) / 10 })
+    const props = {
+      key: key + (k + 1),
+      variable: newVar,
+      value: v,
+      scaling,
+      index: index + (k + 1) / 10
+    }
+
+    return setSequenceValue(props, sequenceProps)
   })
 }
 
-export const generateSequence = ({ type, base, ratio, range, subSequence, ...state }) => {
+export const generateSequence = (sequenceProps) => {
+  const { type, base, ratio, range, subSequence } = sequenceProps
   const n = Math.abs(range[0]) + Math.abs(range[1])
-  const prefix = '--' + type + '-'
+  const prefix = '--' + type.replace('.', '-') + '-'
 
   for (let i = 0; i <= n; i++) {
     const key = range[1] - i
@@ -134,15 +96,84 @@ export const generateSequence = ({ type, base, ratio, range, subSequence, ...sta
     const scaling = Math.round(value / base * 1000) / 1000
     const variable = prefix + letterKey
 
-    setSequenceValue({ key: letterKey, variable, value, scaling, state, index: key })
+    const props = {
+      key: letterKey,
+      variable,
+      value,
+      base,
+      scaling,
+      ratio,
+      index: key
+    }
 
-    if (subSequence) generateSubSequence({ key: letterKey, base, value, ratio, variable, state, index: key })
+    setSequenceValue(props, sequenceProps)
+
+    if (subSequence) generateSubSequence(props, sequenceProps)
   }
-  return state
+  return sequenceProps
 }
 
-export const findHeadings = props => {
-  const { h1Matches, sequence } = props
+export const getSequenceValue = (value = 'A', sequenceProps) => {
+  const {
+    sequence,
+    unit = UNIT.default,
+    useVariable
+  } = sequenceProps
+
+  if (isString(value) && value.slice(0, 2) === '--') {
+    return `var(${value})`
+  }
+
+  const prefix = `--${dashize(sequenceProps.type.replace('.', '-'))}-`
+
+  const startsWithDashOrLetterRegex = /^-?[a-zA-Z]/i
+  const startsWithDashOrLetter = startsWithDashOrLetterRegex.test(value)
+
+  if (
+    value === 'none' ||
+    value === 'auto' ||
+    value === 'fit-content' ||
+    value === 'min-content' ||
+    value === 'max-content' ||
+    !startsWithDashOrLetter
+  ) return value
+
+  const letterVal = value.toUpperCase()
+  const isNegative = letterVal.slice(0, 1) === '-' ? '-' : ''
+  let absValue = isNegative ? letterVal.slice(1) : letterVal
+
+  let mediaName = ''
+  if (absValue.includes('-')) {
+    mediaName = '-' + absValue.split('-')[1].toLowerCase()
+    absValue = absValue.split('-')[0]
+  }
+
+  if (useVariable || CONFIG.useVariable) {
+    const varValue = `var(${prefix}${absValue}${mediaName})`
+    return isNegative ? `calc(${varValue} * -1)` : varValue
+  }
+
+  const sequenceItem = sequence ? sequence[absValue] : null
+  if (!sequenceItem) return console.warn('can\'t find', sequence, absValue)
+
+  if (unit === 'ms' || unit === 's') {
+    return isNegative + sequenceItem.value + unit
+  }
+
+  return isNegative + sequenceItem.scaling + unit
+}
+
+export const getSequenceValuePropertyPair = (value, propertyName, sequenceProps) => {
+  if (typeof value !== 'string') {
+    console.warn(propertyName, value, 'is not a string')
+    return ({})
+  }
+  if (value === '-' || value === '') return ({})
+  return { [propertyName]: getSequenceValue(value, sequenceProps) }
+}
+
+export const findHeadings = propertyNames => {
+  const { h1Matches, sequence } = propertyNames
   return new Array(6).fill(null).map((_, i) => {
     const findLetter = numToLetterMap[h1Matches - i]
     return sequence[findLetter]

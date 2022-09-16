@@ -6,7 +6,7 @@ import {
   applySequenceVars,
   findHeadings,
   generateSequence,
-  getSequenceValue,
+  getSequenceValuePropertyPair,
   merge
 } from '../utils'
 
@@ -63,10 +63,8 @@ export const applyTypographySequence = () => {
   runThroughMedia(TYPOGRAPHY)
 }
 
-export const getFontSizeByKey = val => getSequenceValue({
-  type: TYPOGRAPHY.sequence,
-  prop: 'fontSize',
-  val,
-  unit: TYPOGRAPHY.unit,
-  prefix: '--font-size-'
-})
+export const getFontSizeByKey = value => getSequenceValuePropertyPair(
+  value,
+  'fontSize',
+  TYPOGRAPHY
+)
