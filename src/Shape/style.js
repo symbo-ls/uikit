@@ -18,14 +18,14 @@ export const SHAPES = {
 
   tooltip: ({ props }) => ({
     position: props.position || 'relative',
-    '&:before': {
+    ':before': {
       content: '""',
       display: 'block',
       width: '0px',
       height: '0px',
-      border: `6px solid ${getColor(props.background) || (props.theme && getTheme(props.theme).background)}`,
+      border: `6px, solid`,
       position: 'absolute',
-      borderRadius: '2px'
+      borderRadius: 'X2'
     }
   }),
 

@@ -2,7 +2,8 @@
 
 import { exec, isString } from '@domql/utils'
 import { SHAPES } from './style'
-import { getSpacingBasedOnRatio } from '@symbo.ls/scratch'
+import { getSpacingBasedOnRatio, getMediaColor } from '@symbo.ls/scratch'
+import { Pseudo } from '../Pseudo'
 
 const transformBorderRadius = (radius, props, propertyName) => {
   if (!isString(radius)) return
@@ -12,6 +13,8 @@ const transformBorderRadius = (radius, props, propertyName) => {
 }
 
 export const Shape = {
+  extend: Pseudo,
+
   class: {
     shape: (element) => {
       const { props } = element
@@ -24,7 +27,12 @@ export const Shape = {
       const shapeDir = SHAPES[shape + 'Direction']
       return shape ? shapeDir[shapeDirection || 'top'] : null
     },
-    shapeDirectionColor: ({ props, ...el }) => props.shapeDirection ? { '&:before': { borderColor: el.class.backgroundColor } } : null,
+    shapeDirectionColor: el => {
+      const { props } = el
+      const { background, backgroundColor } = props
+      const borderColor = getMediaColor(background || backgroundColor, 'borderColor')
+      return props.shapeDirection ? borderColor : null
+    },
 
     round: ({ props, key, ...el }) => transformBorderRadius(props.round || props.borderRadius, props, 'round'),
     borderRadius: ({ props, key, ...el }) => transformBorderRadius(props.borderRadius || props.round, props, 'borderRadius')
