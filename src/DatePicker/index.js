@@ -2,111 +2,153 @@
 
 import style from './style'
 
-import { Icon } from '../Icon'
+import { SquareButton, Flex, Button, Grid } from '../'
+
+const buttonProps = {
+  theme: 'transparent',
+  color: '--theme-quinary-dark-color',
+  ':hover': {
+    theme: 'quinary .child'
+  }
+}
+
+const aside = {
+  props: {
+    gap: 'X2',
+    margin: '-Z - -Z -X2',
+    padding: 'Z - Z X2',
+    minHeight: '100%',
+    height: '100%',
+    width: '--spacing-D'
+  },
+
+  cnt: {
+    extend: Flex,
+    props: {
+      flow: 'column',
+      overflow: 'hidden auto',
+      boxSize: '100% --spacing-D',
+      top: '0',
+      position: 'absolute',
+      maxHeight: '100%',
+      justifyContent: 'flex-end'
+    },
+
+    childExtend: {
+      extend: Button,
+      props: {
+        ...buttonProps,
+        fontSize: 'Z1'
+      },
+      text: ({ state }) => state.value
+    },
+    $setCollection: () => {
+      return new Array(30).fill(undefined).map((_, i) => (2022 - i)).reverse()
+    }
+  }
+
+}
+
+const main = {
+  extend: Flex,
+
+  props: {
+    flex: 1,
+    gap: 'X2',
+    flow: 'column',
+
+    header: {
+      align: 'center space-between'
+    }
+  },
+
+  header: {
+    extend: Flex,
+    left: {
+      extend: SquareButton,
+      props: {
+        ...buttonProps,
+        round: 'C',
+        icon: 'arrowAngleLeft'
+      }
+    },
+    month: {
+      tag: 'span',
+      text: 'December'
+    },
+    right: {
+      extend: SquareButton,
+      props: {
+        ...buttonProps,
+        round: 'C',
+        icon: 'arrowAngleRight'
+      }
+    }
+  },
+  days: {
+    extend: Flex,
+    props: {
+      flow: 'column',
+      gap: 'X2'
+    },
+    childExtend: {
+      extend: Grid,
+      props: {
+        columns: 'repeat(7, 1fr)',
+        gap: 'X2'
+      }
+    },
+    weekDays: {
+      childExtend: {
+        extend: Button,
+        props: {
+          ...buttonProps,
+          fontSize: 'Z1',
+          padding: 'X2'
+        }
+      },
+      ...[
+        { text: 'Mo' },
+        { text: 'Tu' },
+        { text: 'We' },
+        { text: 'Th' },
+        { text: 'Fr' },
+        { text: 'Sa' },
+        { text: 'Su' }
+      ]
+    },
+
+    cnt: {
+      childExtend: {
+        extend: SquareButton,
+        props: {
+          ...buttonProps,
+          theme: 'quinary'
+        }
+      },
+
+      // Generate days
+      ...new Array(31).fill(undefined).map((_, i) => ({ text: i + 1 }))
+    }
+  }
+}
 
 export const DatePicker = {
   style,
+  extend: Flex,
 
   props: {
-    theme: 'lightDark',
-    padding: 'A',
+    position: 'relative',
+    theme: 'quinary',
+    transition: 'A all',
     round: 'Z',
-    depth: 16
+    padding: 'Z Z2 Z X2',
+    gap: 'X2',
+    depth: 16,
+    minHeight: '0',
+    align: 'stretch center'
   },
 
-  aside: {
-    childExtend: { tag: 'button' },
-    ...[
-      { text: '2020' },
-      { text: '2021' },
-      { text: '2022' },
-      { text: '2023' },
-      { text: '2024' },
-      { text: '2025' },
-      { text: '2026' },
-      { text: '2026' },
-      { text: '2026' }
-    ]
-  },
-
-  main: {
-    header: {
-      icon: {
-        extend: Icon,
-        props: { icon: 'arrowMediumLeft' }
-      },
-      month: {
-        childExtend: { tag: 'span' },
-        ...[
-          { text: 'january' },
-          { text: 'february' },
-          { text: 'march' },
-          { text: 'april' },
-          { text: 'may' },
-          { text: 'june' },
-          { text: 'july' },
-          { text: 'august' },
-          { text: 'september' },
-          { text: 'october' },
-          { text: 'november' },
-          { text: 'december' }
-        ]
-      },
-      icon2: {
-        extend: Icon,
-        props: { icon: 'arrowMediumRight' }
-      }
-    },
-    days: {
-      tag: 'section',
-      header: {
-        childExtend: { tag: 'span' },
-        ...[
-          { text: 'Mo' },
-          { text: 'Tu' },
-          { text: 'We' },
-          { text: 'Th' },
-          { text: 'Fr' },
-          { text: 'Sa' },
-          { text: 'Su' }
-        ]
-      },
-      content: {
-        childExtend: { tag: 'button' },
-        ...[
-          { text: '1' },
-          { text: '2' },
-          { text: '3' },
-          { text: '4' },
-          { text: '5' },
-          { text: '6' },
-          { text: '7' },
-          { text: '8' },
-          { text: '9' },
-          { text: '10' },
-          { text: '11' },
-          { text: '12' },
-          { text: '13' },
-          { text: '14' },
-          { text: '15' },
-          { text: '16' },
-          { text: '17' },
-          { text: '18' },
-          { text: '19' },
-          { text: '20' },
-          { text: '21' },
-          { text: '22' },
-          { text: '23' },
-          { text: '24' },
-          { text: '25' },
-          { text: '26' },
-          { text: '27' },
-          { text: '28' },
-          { text: '29' },
-          { text: '30' },
-          { text: '31' }
-        ]
-      }
-    }
-  }
+  aside,
+  main
 }

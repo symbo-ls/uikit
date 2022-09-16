@@ -106,6 +106,18 @@ const beforeClassAssign = (element, s) => {
 export const initUpdate = element => {
   const { props, class: className } = element
   const rootState = element.__root ? element.__root.state : element.state
+
+  const parentProps = element.parent.props
+  if (parentProps?.spacingRatio && parentProps?.inheritSpacingRatio) {
+    element.setProps({
+      spacingRatio: parentProps.spacingRatio,
+      inheritSpacingRatio: true
+    }, {
+      preventRecursive: true,
+      ignoreInitUpdate: true
+    })
+  }
+
   const { globalTheme } = rootState
 
   if (!globalTheme) return
@@ -125,7 +137,9 @@ export const initUpdate = element => {
     if (setter) setter(key, props[key], CLASS_NAMES, element)
   }
 
-  if (Object.keys(CLASS_NAMES.media).length) className.media = CLASS_NAMES.media
+  if (Object.keys(CLASS_NAMES.media).length) {
+    className.media = CLASS_NAMES.media
+  }
   className.selector = CLASS_NAMES.selector
   className.case = CLASS_NAMES.case
 }

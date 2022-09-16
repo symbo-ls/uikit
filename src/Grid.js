@@ -1,6 +1,6 @@
 'use strict'
 
-import { getSpacingBasedOnRatio } from './Block'
+import { getSpacingBasedOnRatio } from '@symbo.ls/scratch'
 
 export const Grid = {
   props: { display: 'grid' },

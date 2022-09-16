@@ -2,12 +2,12 @@
 
 import { exec, isString } from '@domql/utils'
 import { SHAPES } from './style'
-import { getSpacingByKey } from '@symbo.ls/scratch'
+import { getSpacingBasedOnRatio } from '@symbo.ls/scratch'
 
-const transformBorderRadius = (radius, props) => {
+const transformBorderRadius = (radius, props, propertyName) => {
   if (!isString(radius)) return
   return {
-    borderRadius: radius.split(' ').map((v, k) => getSpacingByKey(v, 'radius').radius).join(' ')
+    borderRadius: radius.split(' ').map((v, k) => getSpacingBasedOnRatio(props, propertyName, v)[propertyName]).join(' ')
   }
 }
 
@@ -26,8 +26,8 @@ export const Shape = {
     },
     shapeDirectionColor: ({ props, ...el }) => props.shapeDirection ? { '&:before': { borderColor: el.class.backgroundColor } } : null,
 
-    round: ({ props, key, ...el }) => transformBorderRadius(props.round || props.borderRadius, props),
-    borderRadius: ({ props, key, ...el }) => transformBorderRadius(props.borderRadius || props.round, props)
+    round: ({ props, key, ...el }) => transformBorderRadius(props.round || props.borderRadius, props, 'round'),
+    borderRadius: ({ props, key, ...el }) => transformBorderRadius(props.borderRadius || props.round, props, 'borderRadius')
   }
 }
 

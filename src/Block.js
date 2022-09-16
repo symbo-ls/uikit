@@ -1,34 +1,6 @@
 'use strict'
 
-import { SPACING, getSpacingByKey } from '@symbo.ls/scratch'
-
-export const getSpacingBasedOnRatio = (props, propertyName, unit) => {
-  const { spacingRatio } = props
-
-  // if (spacingRatio) console.log(propertyName, props)
-
-  const val = props[propertyName]
-  // TODO: move this to getSpacingByKey
-  if (spacingRatio) {
-    let params = SPACING[spacingRatio]
-
-    if (!params) {
-      params = SPACING[spacingRatio] = {
-        base: props.base || SPACING.base,
-        type: SPACING.type + '-' + spacingRatio,
-        ratio: spacingRatio,
-        range: SPACING.range,
-        subSequence: SPACING.subSequence,
-        sequence: {},
-        scales: {},
-        vars: {}
-      }
-    }
-
-    return getSpacingByKey(val, propertyName, params, unit, false)
-  }
-  return getSpacingByKey(val, propertyName, null, unit)
-}
+import { getSpacingBasedOnRatio, getSpacingByKey } from '@symbo.ls/scratch'
 
 export const Block = {
   class: {
