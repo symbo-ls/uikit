@@ -55,15 +55,16 @@ export const generateSubSequence = (props, sequenceProps) => {
   const { key, base, value, ratio, variable, index } = props
 
   const next = value * ratio
-  const smallscale = (next - value) / ratio
+  const diff = next - value
+  const smallscale = diff / 1.618
 
   const valueRounded = Math.round(value)
   const nextRounded = Math.round(next)
   const diffRounded = nextRounded - valueRounded
 
   let arr = []
-  const first = value + smallscale
-  const second = next - smallscale
+  const first = next - smallscale
+  const second = value + smallscale
   const middle = (first + second) / 2
   if (diffRounded > 16) arr = [first, middle, second]
   else arr = [first, second]
