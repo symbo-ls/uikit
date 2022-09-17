@@ -1,20 +1,25 @@
 'use strict'
-import { Block } from './Block'
-import { Shape } from './Shape'
-import { Text } from './Text'
+
+import { Button } from '.'
 
 export const Label = {
-  extend: [Shape, Block, Text],
-
-  style: { lineHeight: 1 },
+  extend: Button,
 
   props: {
+    fontSize: 'Z',
     emoji: '👍',
     text: '3',
     padding: 'X2 Z',
     round: 'C',
-    depth: 16
+    lineHeight: 1,
+    gap: 'X2',
+    depth: 16,
+    fontWeight: '500',
+    background: 'blue .3',
+    color: 'white'
   },
 
-  emoji: ({ props }) => props.emoji
+  emoji: {
+    props: ({ parent }) => ({ text: parent.props.emoji })
+  }
 }

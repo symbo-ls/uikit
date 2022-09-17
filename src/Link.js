@@ -1,8 +1,10 @@
 'use strict'
 
 import { exec } from '@domql/utils'
+import { Focusable } from './Interaction'
 
 export const Link = {
+  extend: [Focusable],
   tag: 'a',
   props: {
     aria: {},

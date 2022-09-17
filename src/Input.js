@@ -1,6 +1,9 @@
 'use strict'
 
+import { Focusable } from './Interaction'
+
 export const Input = {
+  extend: [Focusable],
   tag: 'input',
 
   props: {

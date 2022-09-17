@@ -1,11 +1,10 @@
 'use strict'
 
-import { IconText } from '.'
+import { IconText, Focusable } from '.'
 
 const style = {
   appearance: 'none',
   border: 'none',
-  outline: 0,
   cursor: 'pointer',
   fontFamily: 'inherit',
   '& > *': {
@@ -14,7 +13,7 @@ const style = {
 }
 
 export const Button = {
-  extend: IconText,
+  extend: [Focusable, IconText],
   tag: 'button',
   props: {
     fontSize: 'A',
