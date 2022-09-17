@@ -7,7 +7,10 @@ const style = {
   border: 'none',
   outline: 0,
   cursor: 'pointer',
-  fontFamily: 'inherit'
+  fontFamily: 'inherit',
+  '& > *': {
+    pointerEvents: 'none'
+  }
 }
 
 export const Button = {
@@ -51,9 +54,39 @@ export const CircleButton = {
 }
 
 export const KangorooButton = {
-  tag: 'button',
-  props: { style },
+  extend: Button,
 
-  iconText: { extend: IconText },
+  props: {
+    theme: 'quinary',
+    round: 'Z2',
+    padding: 'X1 X1 X1 A2',
+    size: 'A',
+    gap: 'A',
+    transition: 'A defaultBezier',
+    transitionProperty: 'background, color, opacity',
+
+    label: {
+      gap: 'X1',
+      text: 'Become PRO',
+      alignItems: 'center',
+      fontWeight: 'bold',
+      icon: {
+        name: 'star',
+        color: 'yellow'
+      }
+    },
+    child: {
+      theme: 'tertiary',
+      round: 'Z',
+      size: 'Z',
+      padding: 'Z A2',
+      text: '1 month free',
+      opacity: '.85'
+    },
+
+    style
+  },
+
+  label: { extend: IconText },
   child: { extend: IconText }
 }

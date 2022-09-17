@@ -121,13 +121,17 @@ const main = {
     cnt: {
       childExtend: {
         extend: SquareButton,
-        props: {
+
+        props: ({ key, state }) => ({
           ...buttonProps,
-          theme: 'quinary'
-        }
+          theme: 'quaternary',
+          active: key === '18',
+          '.active': {
+            theme: 'quinary'
+          }
+        })
       },
 
-      // Generate days
       ...new Array(31).fill(undefined).map((_, i) => ({ text: i + 1 }))
     }
   }
