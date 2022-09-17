@@ -225,16 +225,13 @@ export const getMediaTheme = (val, mod, themeObj) => {
   if (isString(val) && val.slice(0, 2) === '--') val = getMediaTheme(val.slice(2))
 
   if (!val || !isString(val)) {
-    // if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(val, '- type for color is not valid')
+    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(val, '- theme is not string')
     return
   }
 
-  // console.group(val)
   const [name, ...modifier] = isArray(val) ? val : val.split(' ')
   let value = CONFIG.THEME[name]
   if (value && (modifier || mod)) value = findModifier(value, modifier.length ? modifier : mod)
-  // console.log('finalval', value)
-  // console.groupEnd(val)
   return recursiveTheme(value)
 }
 
