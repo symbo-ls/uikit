@@ -12,8 +12,10 @@ export const applyTimingSequence = () => {
   applySequenceVars(TIMING)
 }
 
+export const getTimingFunction = value => TIMING[value] || value
+
 export const getTimingByKey = value => getSequenceValuePropertyPair(
   value,
-  'duration',
+  'timing',
   TIMING
 )

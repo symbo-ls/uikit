@@ -158,7 +158,7 @@ export const getSequenceValue = (value = 'A', sequenceProps) => {
   if (!sequenceItem) return console.warn('can\'t find', sequence, absValue)
 
   if (unit === 'ms' || unit === 's') {
-    return isNegative + sequenceItem.value + unit
+    return isNegative + sequenceItem.val + unit
   }
 
   return isNegative + sequenceItem.scaling + unit

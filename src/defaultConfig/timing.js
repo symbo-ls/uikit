@@ -5,7 +5,7 @@ import { SEQUENCE } from '.'
 const defaultProps = {
   default: 150,
   base: 150,
-  type: 'duration',
+  type: 'timing',
   ratio: SEQUENCE['perfect-fourth'],
   range: [-3, +12],
   unit: 'ms',

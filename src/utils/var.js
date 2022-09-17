@@ -1,6 +1,6 @@
 'use strict'
 
-import { MEDIA } from '../defaultConfig'
+import { MEDIA, TIMING } from '../defaultConfig'
 import { CONFIG, CSS_VARS } from '../factory'
 import { isObjectLike } from './object'
 
@@ -26,7 +26,7 @@ export const applySequenceVars = (props, mediaName, options = {}) => {
 
   for (const key in sequence) {
     const item = sequence[key]
-    const value = (props.type === 'duration' ? sequence[key].val : scales[key]) + unit
+    const value = (props.type === TIMING.type ? sequence[key].val : scales[key]) + unit
 
     if (mediaName) {
       const query = MEDIA[mediaName]
