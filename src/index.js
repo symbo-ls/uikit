@@ -6,6 +6,7 @@ export * from '@symbo.ls/init'
 
 export * from './styles'
 
+// atoms
 export * from './Text'
 export * from './Block'
 export * from './Shape'
@@ -25,6 +26,7 @@ export * from './XYZ'
 
 export * from './Box'
 
+// atoms
 export * from './SVG'
 export * from './Icon'
 export * from './Img'
@@ -34,6 +36,7 @@ export * from './Input'
 export * from './Field'
 export * from './Button'
 
+// components
 export * from './ButtonSet'
 export * from './User'
 export * from './Banner'

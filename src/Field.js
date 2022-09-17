@@ -1,9 +1,10 @@
 'use strict'
 
-import { IconText, Input } from '.'
+import { IconText, Input, Focusable } from '.'
 
 export const Field = {
-  extend: IconText,
+  extend: [IconText],
+
   props: (el, s) => ({
     value: s[el.key],
 
@@ -36,5 +37,5 @@ export const Field = {
     }
   }),
 
-  input: { extend: Input }
+  input: { extend: [Focusable, Input] }
 }

@@ -11,6 +11,12 @@ export const Notification = {
     gap: 'X2',
     style: { cursor: 'pointer' },
 
+    icon: {
+      icon: {
+        name: 'info outline'
+      }
+    },
+
     article: {
       flow: 'column',
       align: 'flex-start',
@@ -29,13 +35,12 @@ export const Notification = {
   },
 
   icon: {
-    extend: [IconText],
-    props: {
-      icon: {
-        name: 'info outline'
-      }
-    }
+    extend: [IconText]
   },
 
-  article: { extend: Flex }
+  article: {
+    extend: Flex,
+    title: {},
+    p: {}
+  }
 }

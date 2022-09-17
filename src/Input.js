@@ -1,13 +1,15 @@
 'use strict'
 
-import { Focusable } from './Interaction'
+import { Focusable } from './'
 
 export const Input = {
   extend: [Focusable],
   tag: 'input',
 
   props: {
+    border: 'none',
     type: 'input',
+    theme: 'quaternary',
     fontSize: 'A',
     round: 'C',
     lineHeight: 1,

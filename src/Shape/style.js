@@ -18,21 +18,22 @@ export const SHAPES = {
 
   tooltip: ({ props }) => ({
     position: props.position || 'relative',
-    ':before': {
+    '&:before': {
       content: '""',
       display: 'block',
       width: '0px',
       height: '0px',
-      border: `6px, solid`,
+      border: `.35em solid`,
+      borderColor: getColor(props.background) || getColor(props.backgroundColor),
       position: 'absolute',
-      borderRadius: 'X2'
+      borderRadius: '.15em'
     }
   }),
 
   tooltipDirection: {
     top: {
       '&:before': {
-        top: '2px',
+        top: '-.1em',
         left: '50%',
         transform: 'translate(-50%, -50%) rotate(45deg)'
       }
@@ -40,13 +41,13 @@ export const SHAPES = {
     right: {
       '&:before': {
         top: '50%',
-        right: '-10px',
+        right: '-.1em',
         transform: 'translate(-50%, -50%) rotate(45deg)'
       }
     },
     bottom: {
       '&:before': {
-        bottom: '-10px',
+        bottom: '-.1em',
         left: '50%',
         transform: 'translate(-50%, -50%) rotate(45deg)'
       }
@@ -54,7 +55,7 @@ export const SHAPES = {
     left: {
       '&:before': {
         top: '50%',
-        left: '2px',
+        left: '-.1em',
         transform: 'translate(-50%, -50%) rotate(45deg)'
       }
     }

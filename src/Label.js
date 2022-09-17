@@ -6,7 +6,7 @@ export const Label = {
   extend: Button,
 
   props: {
-    fontSize: 'Z',
+    fontSize: 'Z2',
     emoji: '👍',
     text: '3',
     padding: 'X2 Z',
