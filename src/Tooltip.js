@@ -10,10 +10,10 @@ export const Tooltip = {
     flow: 'column',
     shape: 'tooltip',
     shapeDirection: 'top',
-    padding: 'Z2',
-    round: 'X2',
+    padding: 'Z1 A',
+    round: 'Y2',
     minWidth: 'D2',
-    gap: 'X1',
+    gap: 'X',
 
     title: {
       color: 'gray12',

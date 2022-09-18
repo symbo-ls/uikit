@@ -144,6 +144,6 @@ export const initUpdate = element => {
   className.case = CLASS_NAMES.case
 }
 
-export const Responsive = {
+export const Media = {
   on: { beforeClassAssign, initUpdate }
 }

@@ -1,7 +1,7 @@
 'use strict'
 
 import { exec } from '@domql/utils'
-import { Focusable } from './Interaction'
+import { Focusable } from './atoms'
 
 export const Link = {
   extend: [Focusable],

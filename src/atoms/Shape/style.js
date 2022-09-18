@@ -1,6 +1,6 @@
 'use strict'
 
-import { UNIT, getColor, getTheme } from '@symbo.ls/scratch'
+import { UNIT, getColor, getTheme } from '@symbo.ls/scratch' // eslint-disable-line no-unused-vars
 
 export const depth = {
   4: { boxShadow: `rgba(0,0,0,.10) 0 2${UNIT.default} 4${UNIT.default}` },
@@ -11,20 +11,43 @@ export const depth = {
   42: { boxShadow: `rgba(0,0,0,.10) 0 20${UNIT.default} 42${UNIT.default}` }
 }
 
+const getComputedBackgroundColor = el => {
+  const { props, node } = el
+  const propsColor = getColor(props.borderColor) || getColor(props.backgroundColor) || getColor(props.background)
+
+  if (!propsColor) {
+    const computedStyle = window.getComputedStyle(node)
+    // console.group(el.key)
+    // console.log(getColor(props.borderColor))
+    // console.log(getColor(props.backgroundColor))
+    // console.log(getColor(props.background))
+    // console.log(computedStyle.getPropertyValue('border-color'))
+    // console.log(computedStyle.getPropertyValue('background'))
+    // console.log(computedStyle.getPropertyValue('background-color'))
+    // console.log(el)
+    // console.groupEnd(el.key)
+    return computedStyle.getPropertyValue('border-color') ||
+      computedStyle.getPropertyValue('background') ||
+      computedStyle.getPropertyValue('background-color')
+  }
+
+  return propsColor
+}
+
 export const SHAPES = {
   rectangle: {},
   circle: { borderRadius: '100%' },
   bubble: {},
 
-  tooltip: ({ props }) => ({
-    position: props.position || 'relative',
+  tooltip: el => ({
+    position: el.props.position || 'relative',
     '&:before': {
       content: '""',
       display: 'block',
       width: '0px',
       height: '0px',
       border: `.35em solid`,
-      borderColor: getColor(props.background) || getColor(props.backgroundColor),
+      borderColor: getComputedBackgroundColor(el),
       position: 'absolute',
       borderRadius: '.15em'
     }
@@ -61,14 +84,15 @@ export const SHAPES = {
     }
   },
 
-  tag: ({ props }) => ({
+  tag: el => ({
     position: 'relative',
     '&:before': {
       content: '""',
       display: 'block',
       width: '0',
       height: '0',
-      border: `16px solid ${getColor(props.background) || (props.theme && getTheme(props.theme).backgroundColor)}`,
+      border: `16px solid`,
+      borderColor: getComputedBackgroundColor(el),
       borderRadius: '6px',
       position: 'absolute'
     }

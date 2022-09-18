@@ -6,8 +6,9 @@ export const Notification = {
   extend: Flex,
 
   props: {
+    theme: 'alert',
     padding: 'Z1 B Z1 A1',
-    round: 'A',
+    round: 'A A A Y2',
     gap: 'X2',
     style: { cursor: 'pointer' },
 

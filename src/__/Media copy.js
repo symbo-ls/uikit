@@ -99,7 +99,6 @@ export const initUpdate = el => {
         className.MEDIA_FORCED_BY_STATE = props.theme
       }
     }
-    // console.groupEnd(props.theme)
   }
 
   for (const screen in props) {

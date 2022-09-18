@@ -1,6 +1,6 @@
 'use strict'
 
-import { SVG } from '.'
+import { SVG } from './atoms'
 
 import { ICONS } from '@symbo.ls/scratch'
 import { camelize } from '@symbo.ls/utils'

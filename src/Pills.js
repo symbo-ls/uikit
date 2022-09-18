@@ -1,26 +1,25 @@
 'use strict'
 
+import { Flex } from './'
+
 export const Pills = {
-  style: {
+  extend: Flex,
+  props: (el, s) => ({
     display: 'flex',
-    div: {
-      width: '6px',
-      height: '6px',
-      background: 'white'
-    },
-    'div:not(:last-child)': {
-      marginRight: '10px'
-    },
-    'div:first-child': { opacity: '.5' },
-    'div:nth-child(2)': { opacity: '.3' },
-    'div:nth-child(3)': { opacity: '.3' }
-  },
-  childExtend: {
-    tag: 'div',
-    props: {
-      round: 42,
-      theme: 'White'
+    gap: 'Y2',
+
+    childProps: {
+      background: 'gray6',
+      width: 'Y2',
+      height: 'Y2',
+      round: 'A',
+
+      '.active': {
+        background: 'gray9'
+      }
     }
-  },
-  ...[{}, {}, {}]
+  }),
+  childExtend: {
+    props: (el, s) => ({ active: parseInt(el.key) === s.active })
+  }
 }

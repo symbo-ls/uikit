@@ -1,6 +1,6 @@
 'use strict'
 
-import { Shape, Position, Theme, Block, Text, Overflow, Timing, Transform, Responsive, Interaction, XYZ } from '.'
+import { Shape, Position, Theme, Block, Text, Overflow, Timing, Transform, Media, Interaction, XYZ } from './atoms'
 
 const PropsCSS = {
   class: {
@@ -9,5 +9,5 @@ const PropsCSS = {
 }
 
 export const Box = {
-  extend: [Shape, Position, Theme, Block, Text, Overflow, Timing, Transform, Responsive, PropsCSS, Interaction, XYZ]
+  extend: [Shape, Position, Theme, Block, Text, Overflow, Timing, Transform, Media, PropsCSS, Interaction, XYZ]
 }

@@ -1,7 +1,6 @@
 'use strict'
 
-import { SquareButton } from './Button'
-import { Flex } from './Flex'
+import { SquareButton, Flex } from './'
 
 export const ButtonSet = {
   tag: 'nav',

@@ -1,35 +1,13 @@
 'use strict'
 
-import './styles.js'
-
 export * from '@symbo.ls/init'
 
-export * from './styles'
-
 // atoms
-export * from './Text'
-export * from './Block'
-export * from './Shape'
-export * from './Theme'
-export * from './Flex'
-export * from './Grid'
-export * from './Pseudo'
-export * from './Direction'
-export * from './Position'
-export * from './Overflow'
-export * from './Transform'
-export * from './Timing'
-
-export * from './Media'
-export * from './Interaction'
-export * from './XYZ'
-
+export * from './atoms'
 export * from './Box'
 
 // atoms
-export * from './SVG'
 export * from './Icon'
-export * from './Img'
 export * from './Link'
 export * from './IconText'
 export * from './Input'
