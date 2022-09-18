@@ -53,7 +53,7 @@ export const getTheme = (value, modifier) => {
     if (state && state[subThemeName]) return getThemeValue(state[subThemeName])
   } else if (isObject(value)) return setThemeValue(value)
 
-  // if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find theme', value)
+  // if (CONFIG.verbose) console.warn('Can\'t find theme', value)
 }
 
 const setInverseTheme = (theme, variant, value) => {
@@ -225,7 +225,7 @@ export const getMediaTheme = (val, mod, themeObj) => {
   if (isString(val) && val.slice(0, 2) === '--') val = getMediaTheme(val.slice(2))
 
   if (!val || !isString(val)) {
-    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(val, '- theme is not string')
+    if (CONFIG.verbose) console.warn(val, '- theme is not string')
     return
   }
 

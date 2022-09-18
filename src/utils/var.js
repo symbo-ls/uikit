@@ -31,7 +31,7 @@ export const applySequenceVars = (props, mediaName, options = {}) => {
     if (mediaName) {
       const query = MEDIA[mediaName]
       if (!query) {
-        if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find query ', query)
+        if (CONFIG.verbose) console.warn('Can\'t find query ', query)
       }
       let underMediaQuery = CSS_VARS[`@media ${query}`]
       if (!underMediaQuery) underMediaQuery = CSS_VARS[`@media ${query}`] = {}

@@ -15,11 +15,9 @@ import {
   isObject
 } from '../utils'
 
-const ENV = process.env.NODE_ENV
-
 export const getColor = (value, key) => {
   if (!isString(value)) {
-    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(value, '- type for color is not valid')
+    if (CONFIG.verbose) console.warn(value, '- type for color is not valid')
     return
   }
 
@@ -32,13 +30,13 @@ export const getColor = (value, key) => {
   let val = (COLOR[name] || GRADIENT[name])
 
   if (!val) {
-    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find color ', name)
+    if (CONFIG.verbose) console.warn('Can\'t find color ', name)
     return value
   }
 
   if (key) {
     if (val[key]) val = val[key]
-    else if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(value, ' - does not have ', key)
+    else if (CONFIG.verbose) console.warn(value, ' - does not have ', key)
   }
 
   // TODO: support variables
@@ -68,7 +66,7 @@ export const getColor = (value, key) => {
 
 export const getMediaColor = (value, param) => {
   if (!isString(value)) {
-    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn(value, '- type for color is not valid')
+    if (CONFIG.verbose) console.warn(value, '- type for color is not valid')
     return
   }
 
@@ -90,7 +88,7 @@ export const getMediaColor = (value, param) => {
     }
     return obj
   } else {
-    if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find color', value)
+    if (CONFIG.verbose) console.warn('Can\'t find color', value)
     return { [param]: value }
   }
 }

@@ -54,7 +54,7 @@ export const setValue = (FACTORY_NAME, value, key) => {
   const result = SETTERS[factoryName](value, key)
 
   // console.log(CONFIG.verbose)
-  if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose && FACTORY[key]) {
+  if (CONFIG.verbose && FACTORY[key]) {
     // console.warn('Replacing ', key, ' as ', FACTORY[key], ' in ', factoryName)
   }
 
@@ -78,7 +78,7 @@ export const set = recivedConfig => {
   if (verbose !== undefined) CONFIG.verbose = verbose
   if (useVariable !== undefined) CONFIG.useVariable = useVariable
   if (useReset !== undefined) CONFIG.useReset = useReset
-  if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.log(CONFIG)
+  if (CONFIG.verbose) console.log(CONFIG)
 
   const keys = Object.keys(config)
   keys.map(key => setEach(key, config[key]))
