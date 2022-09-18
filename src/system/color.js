@@ -83,13 +83,11 @@ export const getMediaColor = (value, param) => {
   if (isObj && val.value) return { [param]: getColor(value) }
   else if (isObj) {
     const obj = {}
-
     for (const mediaName in val) {
       const query = MEDIA[mediaName.slice(1)]
       const media = `@media screen and ${query}`
       obj[media] = { [param]: getColor(value, mediaName) }
     }
-
     return obj
   } else {
     if ((ENV === 'test' || ENV === 'development') && CONFIG.verbose) console.warn('Can\'t find color', value)
@@ -103,7 +101,7 @@ export const setColor = (val, key, suffix) => {
   if (isArray(val)) {
     return {
       '@light': setColor(val[0], key, 'light'),
-      '@dark': setColor(val[0], key, 'dark')
+      '@dark': setColor(val[1], key, 'dark')
     }
   }
 
