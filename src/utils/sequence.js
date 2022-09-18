@@ -149,6 +149,12 @@ export const getSequenceValue = (value = 'A', sequenceProps) => {
     absValue = absValue.split('-')[0]
   }
 
+  // if subsequence is not set but value is applied
+  if (absValue.length === 2) {
+    if (CONFIG.verbose) console.warn(absValue, '- value is not found because `subSequence` is set to false')
+    absValue = absValue.slice(0, 1)
+  }
+
   if (useVariable || CONFIG.useVariable) {
     const varValue = `var(${prefix}${absValue}${mediaName})`
     return isNegative ? `calc(${varValue} * -1)` : varValue
