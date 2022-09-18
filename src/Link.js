@@ -11,7 +11,6 @@ export const Link = {
     fontWeight: 'bold',
     textDecoration: 'none',
     color: 'currentColor'
-    // style: { '&::-webkit-any-link': { color: 'currentColor' } }
   },
   attr: {
     href: element => exec(element.props.href, element) || exec(element.props, element).href,
