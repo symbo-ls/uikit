@@ -131,7 +131,9 @@ export const initUpdate = element => {
   for (const key in props) {
     const setter = keySetters[key.slice(0, 1)]
     if (key === 'theme') {
-      props.update({ themeModifier: `@${globalTheme}` }, { preventRecursive: true, ignoreInitUpdate: true })
+      props.update({
+        themeModifier: `@${globalTheme}`
+      }, { preventRecursive: true, ignoreInitUpdate: true })
     } else if (key === 'true') applyTrueProps(props[key], CLASS_NAMES, element)
 
     if (setter) setter(key, props[key], CLASS_NAMES, element)
