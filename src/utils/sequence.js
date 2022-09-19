@@ -1,5 +1,6 @@
 'use strict'
 
+import { toDashCase } from '@symbo.ls/utils'
 import { UNIT } from '../defaultConfig'
 import { CONFIG } from '../factory'
 import { isString } from './object'
@@ -46,10 +47,6 @@ const setSequenceValue = (props, sequenceProps) => {
   sequenceProps.scales[key] = scaling
   sequenceProps.vars[variable] = scaling + sequenceProps.unit
 }
-
-const dashize = val => val
-  .replace(/[A-Z]/g, (match, offset) => (offset > 0 ? '-' : '') + match.toLowerCase())
-  .replace('.', '-')
 
 export const generateSubSequence = (props, sequenceProps) => {
   const { key, base, value, ratio, variable, index } = props
@@ -125,7 +122,7 @@ export const getSequenceValue = (value = 'A', sequenceProps) => {
     return `var(${value})`
   }
 
-  const prefix = `--${dashize(sequenceProps.type.replace('.', '-'))}-`
+  const prefix = `--${toDashCase(sequenceProps.type.replace('.', '-'))}-`
 
   const startsWithDashOrLetterRegex = /^-?[a-zA-Z]/i
   const startsWithDashOrLetter = startsWithDashOrLetterRegex.test(value)
@@ -147,6 +144,14 @@ export const getSequenceValue = (value = 'A', sequenceProps) => {
   if (absValue.includes('-')) {
     mediaName = '-' + absValue.split('-')[1].toLowerCase()
     absValue = absValue.split('-')[0]
+  }
+
+  if (absValue.includes('+')) {
+    const args = absValue.split('+')
+    const varValue = v => `var(${prefix}${v}${mediaName})`
+    const [first, second] = args
+    const joint = `${varValue(first)} + ${varValue(second)}`
+    return isNegative ? `calc((${joint}) * -1)` : `calc(${joint})`
   }
 
   // if subsequence is not set but value is applied

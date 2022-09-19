@@ -11,6 +11,8 @@
   "main": "src/index.js",
   "publishConfig": {},
   "dependencies": {
+    "@domql/utils": "latest",
+    "@symbo.ls/utils": "latest",
     "color-contrast-checker": "^1.5.0"
   },
   "scripts": {
@@ -20,18 +22,18 @@
     "bump": "npx np"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.5",
     "@babel/preset-env": "^7.18.9",
+    "@emotion/css": "^11.5.0",
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^27.0.2",
     "babel-preset-env": "^1.7.0",
     "coveralls": "^3.0.5",
+    "eslint": "^6.1.0",
     "eslint-plugin-jest": "^24.1.0",
     "jest": "^27.0.6",
     "nodemon": "^2.0.6",
     "np": "^7.2.0",
-    "@babel/core": "^7.11.5",
-    "@emotion/css": "^11.5.0",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.1.0",
     "parcel-bundler": "^1.12.3",
     "parcel-plugin-svg-sprite": "^1.4.1",
     "standard": "^13.1.0"
