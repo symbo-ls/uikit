@@ -69,7 +69,7 @@ export const RangeWithButtons = {
     props: { theme: 'tertiary', icon: 'minus' },
     on: {
       click: (ev, el, s) => {
-        el.props && isFunction(el.props.click) && el.props.click(ev, el, s)
+        el.props && isFunction(el.props.onClick) && el.props.onClick(ev, el, s)
         const input = el.parent.input
         const props = input.props
         const value = isFunction(props.value) ? props.value() : props.value
@@ -95,8 +95,8 @@ export const RangeWithButtons = {
       step: (el, s) => listenProp(el, 'step', 1)
     },
     on: {
-      input: (ev, el, s) => el.props && isFunction(el.props.input) && el.props.input(ev, el, s),
-      change: (ev, el, s) => el.props && isFunction(el.props.change) && el.props.change(ev, el, s)
+      input: (ev, el, s) => el.props && isFunction(el.props.onInput) && el.props.onInput(ev, el, s),
+      change: (ev, el, s) => el.props && isFunction(el.props.onChange) && el.props.onChange(ev, el, s)
     }
   },
   plus: {
@@ -104,7 +104,7 @@ export const RangeWithButtons = {
     props: { theme: 'tertiary', icon: 'plus' },
     on: {
       click: (ev, el, s) => {
-        el.props && isFunction(el.props.click) && el.props.click(ev, el, s)
+        el.props && isFunction(el.props.onClick) && el.props.onClick(ev, el, s)
         const input = el.parent.input
         const props = input.props
         const value = isFunction(props.value) ? props.value() : props.value
