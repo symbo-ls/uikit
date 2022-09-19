@@ -49,7 +49,7 @@ const theme = {
   }
 }
 
-export const RangeSlider = {
+export const Range = {
   style,
   props: theme,
 
@@ -63,10 +63,10 @@ const listenProp = (el, prop, def) => {
   return r
 }
 
-export const Slider = {
+export const RangeWithButtons = {
   minus: {
     extend: SquareButton,
-    props: { icon: 'minus' },
+    props: { theme: 'tertiary', icon: 'minus' },
     on: {
       click: (ev, el, s) => {
         el.props && isFunction(el.props.click) && el.props.click(ev, el, s)
@@ -87,7 +87,7 @@ export const Slider = {
     }
   },
   input: {
-    extend: RangeSlider,
+    extend: Range,
     attr: {
       value: (el, s) => listenProp(el, 'value', 50),
       min: (el, s) => listenProp(el, 'min', 0),
@@ -101,7 +101,7 @@ export const Slider = {
   },
   plus: {
     extend: SquareButton,
-    props: { icon: 'plus' },
+    props: { theme: 'tertiary', icon: 'plus' },
     on: {
       click: (ev, el, s) => {
         el.props && isFunction(el.props.click) && el.props.click(ev, el, s)

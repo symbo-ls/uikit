@@ -29,6 +29,7 @@ export const Hoverable = {
 
 export const Focusable = {
   props: {
+    border: 'none',
     outline: 'none',
     ':focus-visible': {
       opacity: 1,

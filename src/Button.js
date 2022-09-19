@@ -1,6 +1,7 @@
 'use strict'
 
-import { IconText, Focusable } from '.'
+import { FocusableComponent } from './atoms'
+import { IconText } from '.'
 
 const style = {
   appearance: 'none',
@@ -13,7 +14,7 @@ const style = {
 }
 
 export const Button = {
-  extend: [Focusable, IconText],
+  extend: [FocusableComponent, IconText],
   tag: 'button',
   props: {
     fontSize: 'A',
