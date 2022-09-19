@@ -150,7 +150,7 @@ export const getSequenceValue = (value = 'A', sequenceProps) => {
   }
 
   // if subsequence is not set but value is applied
-  if (absValue.length === 2) {
+  if (!sequence[absValue] && absValue.length === 2) {
     if (CONFIG.verbose) console.warn(absValue, '- value is not found because `subSequence` is set to false')
     absValue = absValue.slice(0, 1)
   }
@@ -179,10 +179,12 @@ export const getSequenceValuePropertyPair = (value, propertyName, sequenceProps)
   return { [propertyName]: getSequenceValue(value, sequenceProps) }
 }
 
+export const findHeadingLetter = (h1Matches, index) => numToLetterMap[h1Matches - index]
+
 export const findHeadings = propertyNames => {
   const { h1Matches, sequence } = propertyNames
   return new Array(6).fill(null).map((_, i) => {
-    const findLetter = numToLetterMap[h1Matches - i]
+    const findLetter = findHeadingLetter(h1Matches, i)
     return sequence[findLetter]
   })
 }
