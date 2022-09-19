@@ -59,7 +59,7 @@ export const Range = {
 
 const listenProp = (el, prop, def) => {
   const val = el.props && el.props[prop]
-  const r = (isFunction(val) ? val() : val) || (def !== undefined ? def : 50)
+  const r = (isFunction(val) ? val(el, el.state) : val) || (def !== undefined ? def : 50)
   return r
 }
 
@@ -72,7 +72,7 @@ export const RangeWithButtons = {
         el.props && isFunction(el.props.onClick) && el.props.onClick(ev, el, s)
         const input = el.parent.input
         const props = input.props
-        const value = isFunction(props.value) ? props.value() : props.value
+        const value = isFunction(props.value) ? props.value(el, s) : props.value
         input.node.value = value
       }
     }
@@ -107,7 +107,7 @@ export const RangeWithButtons = {
         el.props && isFunction(el.props.onClick) && el.props.onClick(ev, el, s)
         const input = el.parent.input
         const props = input.props
-        const value = isFunction(props.value) ? props.value() : props.value
+        const value = isFunction(props.value) ? props.value(el, s) : props.value
         input.node.value = value
       }
     }
