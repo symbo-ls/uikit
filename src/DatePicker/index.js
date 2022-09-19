@@ -41,9 +41,6 @@ const aside = {
         fontSize: 'Z1'
       },
       text: ({ state }) => state.value
-    },
-    $setCollection: () => {
-      return new Array(30).fill(undefined).map((_, i) => (2022 - i)).reverse()
     }
   }
 
