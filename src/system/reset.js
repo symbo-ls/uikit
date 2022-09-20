@@ -35,10 +35,10 @@ export const applyReset = (reset = {}) => {
 
       ...getTheme('document'),
 
-      fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default,
-
-      ...CONFIG.TYPOGRAPHY.styles
+      fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default
     },
+
+    ...CONFIG.TYPOGRAPHY.styles,
 
     // form elements
     fieldset: {

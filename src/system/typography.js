@@ -49,8 +49,13 @@ export const applyHeadings = (props) => {
     const HEADINGS = findHeadings(props)
     const { styles } = props
     for (const k in HEADINGS) {
-      styles[`h${parseInt(k) + 1}`] = {
-        fontSize: CONFIG.useVariable ? `var(${HEADINGS[k].variable})` : `${HEADINGS[k].scaling}${unit}`
+      const headerName = `h${parseInt(k) + 1}`
+      const headerStyle = styles[headerName]
+      styles[headerName] = {
+        fontSize: CONFIG.useVariable ? `var(${HEADINGS[k].variable})` : `${HEADINGS[k].scaling}${unit}`,
+        margin: headerStyle?.margin || 0,
+        lineHeight: headerStyle?.lineHeight || props.lineHeight,
+        fontWeight: headerStyle?.fontWeight || 900 - (k * 100)
       }
     }
   }
