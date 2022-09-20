@@ -53,9 +53,9 @@ export const applyHeadings = (props) => {
       const headerStyle = styles[headerName]
       styles[headerName] = {
         fontSize: CONFIG.useVariable ? `var(${HEADINGS[k].variable})` : `${HEADINGS[k].scaling}${unit}`,
-        margin: headerStyle?.margin || 0,
-        lineHeight: headerStyle?.lineHeight || props.lineHeight,
-        fontWeight: headerStyle?.fontWeight || 900 - (k * 100)
+        margin: headerStyle ? headerStyle.margin : 0,
+        lineHeight: headerStyle ? headerStyle.lineHeight : props.lineHeight,
+        fontWeight: headerStyle ? headerStyle.fontWeight : 900 - (k * 100)
       }
     }
   }
