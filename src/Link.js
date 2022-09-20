@@ -15,6 +15,6 @@ export const Link = {
   attr: {
     href: element => exec(element.props.href, element) || exec(element.props, element).href,
     target: ({ props }) => props.target,
-    'aria-label': ({ props }) => props.aria.label || props.text
+    'aria-label': ({ props }) => props.aria ? props.aria.label : props.text
   }
 }
