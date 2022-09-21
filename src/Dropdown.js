@@ -1,24 +1,21 @@
 'use strict'
-import { IconText } from '.'
+
+import { Flex, Button } from '.'
 
 export const DropdownList = {
-  tag: 'ul',
+  extend: Flex,
 
   props: {
     padding: '0 Y',
     maxHeight: 'G',
-    style: {
-      listStyleType: 'none'
-    }
-  },
-
-  state: {
-    active: '0'
+    flow: 'column',
+    theme: 'quaternary',
+    overflow: 'hidden auto',
+    style: { listStyleType: 'none' }
   },
 
   childExtend: {
-    tag: 'li',
-    extend: IconText,
+    extend: Button,
 
     props: (el, s) => ({
       active: s.active === el.key,
@@ -29,7 +26,7 @@ export const DropdownList = {
       padding: 'Z2 C Z2 Y2',
       margin: '0',
       gap: 'Y2',
-      theme: el.parent.props.theme + ' .child',
+      theme: 'quaternary .child',
 
       ':hover': {
         style: {
@@ -38,6 +35,7 @@ export const DropdownList = {
       },
 
       icon: {
+        active: s.active === el.key,
         name: 'checkmark',
         opacity: '0.1',
         '.active': { opacity: '1' }
@@ -48,13 +46,6 @@ export const DropdownList = {
         '@light': { border: 'gray11, solid' },
         borderWidth: '1px 0 0'
       }
-    }),
-
-    on: {
-      click: (event, element, state) => {
-        state.update({ active: element.key })
-        console.log(state.active, element.key)
-      }
-    }
+    })
   }
 }
