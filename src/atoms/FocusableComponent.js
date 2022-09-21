@@ -6,10 +6,7 @@ const style = {
   appearance: 'none',
   border: 'none',
   cursor: 'pointer',
-  fontFamily: 'inherit',
-  '& > *': {
-    pointerEvents: 'none'
-  }
+  fontFamily: 'inherit'
 }
 
 export const FocusableComponent = {

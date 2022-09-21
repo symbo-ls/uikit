@@ -3,13 +3,6 @@
 import { FocusableComponent } from './atoms'
 import { IconText } from '.'
 
-const style = {
-  appearance: 'none',
-  border: 'none',
-  cursor: 'pointer',
-  fontFamily: 'inherit'
-}
-
 export const Button = {
   extend: [FocusableComponent, IconText],
   tag: 'button',
@@ -26,7 +19,6 @@ export const Button = {
     padding: 'Z A1',
     fontFamily: 'inherit',
     round: 'C2',
-    style
   },
   attr: {
     type: ({ props }) => props.type
@@ -53,7 +45,5 @@ export const CircleButton = {
 
 export const KangorooButton = {
   extend: Button,
-  childExtend: IconText,
-
-  props: { style }
+  childExtend: IconText
 }
