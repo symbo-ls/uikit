@@ -10,6 +10,7 @@ const isBorderStyle = str =>
 const transformBorder = border => {
   const arr = border.split(', ')
   return arr.map(v => {
+    v = v.trim()
     if (isBorderStyle(v)) return v || 'solid'
     else if (v.slice(-2) === 'px' || v.slice(-2) === 'em') return v // TODO: add map spacing
     else if (getColor(v).length > 2) return getColor(v)
@@ -24,16 +25,16 @@ const transformTextStroke = stroke => ({
   }).join(' ')
 })
 
-const transformShadow = shadow => ({
-  boxShadow: shadow.split(', ').map(v => {
-    if (v !== getColor(v)) return getColor(v)
-    if (v.includes('px')) return v
-
+const transformShadow = shadows => shadows.split('|').map(shadow => {
+  return shadow.split(', ').map(v => {
+    v = v.trim()
+    if (getColor(v).length > 2) return getColor(v)
+    if (v.includes('px') || v.slice(-2) === 'em') return v
     const arr = v.split(' ')
     if (!arr.length) return v
     return arr.map(v => getSpacingByKey(v, 'shadow').shadow).join(' ')
   }).join(' ')
-})
+}).join(',')
 
 const transformBackgroundImage = (backgroundImage, ctx) => ({
   backgroundImage: backgroundImage.split(', ').map(v => {
@@ -86,7 +87,9 @@ export const Theme = {
       borderBottom: transformBorder(props.borderBottom)
     }),
 
-    boxShadow: ({ props }) => props.boxShadow ? transformShadow(props.boxShadow) : null,
+    boxShadow: ({ props }) => props.boxShadow && ({
+      boxShadow: transformShadow(props.boxShadow)
+    }),
 
     opacity: ({ props }) => props.opacity && ({ opacity: props.opacity }),
     visibility: ({ props }) => props.visibility && ({ visibility: props.visibility })

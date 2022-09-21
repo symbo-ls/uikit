@@ -4,7 +4,7 @@ import { getSpacingBasedOnRatio, getSpacingByKey } from '@symbo.ls/scratch'
 
 export const Block = {
   class: {
-    boxSizing: ({ props }) => props.boxSizing ? ({ display: props.boxSizing }) : {
+    boxSizing: ({ props }) => props.boxSizing ? ({ boxSizing: props.boxSizing }) : {
       boxSizing: 'border-box'
     },
 

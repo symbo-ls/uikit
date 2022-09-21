@@ -18,7 +18,7 @@ export const Button = {
     whiteSpace: 'nowrap',
     padding: 'Z A1',
     fontFamily: 'inherit',
-    round: 'C2',
+    round: 'C2'
   },
   attr: {
     type: ({ props }) => props.type
