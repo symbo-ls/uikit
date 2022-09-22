@@ -1,7 +1,7 @@
 'use strict'
 
 import { SPACING } from '../defaultConfig'
-import { applySequenceVars, arrayze, generateSequence, getSequenceValuePropertyPair, merge } from '../utils'
+import { applySequenceVars, arrayze, generateSequence, getSequenceValuePropertyPair, isString, merge } from '../utils'
 
 const runThroughMedia = sequenceProps => {
   for (const prop in sequenceProps) {
@@ -53,25 +53,29 @@ export const getSpacingByKey = (
   const stack = arrayze(value)
   if (!stack) return
 
-  let suffix = ''
-  if (propertyName === 'borderWidth') {
-    propertyName = 'border'
-    suffix = 'Width'
+  if (isString(value) && value.includes('calc')) {
+    return { [propertyName]: value }
   }
-
-  const directions = {
-    2: ['Block', 'Inline'],
-    3: ['BlockStart', 'Inline', 'BlockEnd'],
-    4: ['BlockStart', 'InlineEnd', 'BlockEnd', 'InlineStart']
-  }
-
-  const wrapSequenceValueByDirection = (direction, i) => getSequenceValuePropertyPair(
-    stack[i],
-    propertyName + direction + suffix,
-    sequence
-  )
 
   if (stack.length > 1) {
+    let suffix = ''
+    if (propertyName === 'borderWidth') {
+      propertyName = 'border'
+      suffix = 'Width'
+    }
+
+    const directions = {
+      2: ['Block', 'Inline'],
+      3: ['BlockStart', 'Inline', 'BlockEnd'],
+      4: ['BlockStart', 'InlineEnd', 'BlockEnd', 'InlineStart']
+    }
+
+    const wrapSequenceValueByDirection = (direction, i) => getSequenceValuePropertyPair(
+      stack[i],
+      propertyName + direction + suffix,
+      sequence
+    )
+
     return directions[stack.length].map((dir, key) => wrapSequenceValueByDirection(dir, key))
   }
 

@@ -118,9 +118,7 @@ export const getSequenceValue = (value = 'A', sequenceProps) => {
     useVariable
   } = sequenceProps
 
-  if (isString(value) && value.slice(0, 2) === '--') {
-    return `var(${value})`
-  }
+  if (isString(value) && value.slice(0, 2) === '--') return `var(${value})`
 
   const prefix = `--${toDashCase(sequenceProps.type.replace('.', '-'))}-`
 
@@ -134,6 +132,7 @@ export const getSequenceValue = (value = 'A', sequenceProps) => {
     value === 'fit-content' ||
     value === 'min-content' ||
     value === 'max-content' ||
+    value.includes('calc') ||
     !startsWithDashOrLetter
   ) return value
 
@@ -147,11 +146,16 @@ export const getSequenceValue = (value = 'A', sequenceProps) => {
     absValue = absValue.split('-')[0]
   }
 
+  const varValue = v => `var(${prefix}${v}${mediaName})`
   if (absValue.includes('+')) {
     const args = absValue.split('+')
-    const varValue = v => `var(${prefix}${v}${mediaName})`
     const [first, second] = args
     const joint = `${varValue(first)} + ${varValue(second)}`
+    return isNegative ? `calc((${joint}) * -1)` : `calc(${joint})`
+  } else if (absValue.includes('-')) {
+    const args = absValue.split('-')
+    const [first, second] = args
+    const joint = `${varValue(first)} - ${varValue(second)}`
     return isNegative ? `calc((${joint}) * -1)` : `calc(${joint})`
   }
 
