@@ -7,7 +7,8 @@ const keySetters = {
   '@': (key, props, result, element, isSubtree) => applyMediaProps(key, props, isSubtree ? result : result.media, element),
   ':': (key, props, result, element, isSubtree) => applySelectorProps(key, props, isSubtree ? result : result.selector, element),
   $: (key, props, result, element, isSubtree) => applyCaseProps(key, props, isSubtree ? result : result.case, element),
-  '.': (key, props, result, element, isSubtree) => applyConditionalCaseProps(key, props, isSubtree ? result : result.case, element)
+  '.': (key, props, result, element, isSubtree) => applyConditionalCaseProps(key, props, isSubtree ? result : result.case, element),
+  '!': (key, props, result, element, isSubtree) => applyConditionalFalsyProps(key, props, isSubtree ? result : result.case, element)
 }
 
 const execClass = (key, props, result, element) => {
@@ -82,6 +83,12 @@ const applyConditionalCaseProps = (key, props, result, element) => {
   const isPropTrue = element.props[caseKey]
   if (!isPropTrue) return // remove classname if not here
   return merge(result, convertPropsToClass(props, result, element))
+}
+
+const applyConditionalFalsyProps = (key, props, result, element) => {
+  const caseKey = key.slice(1)
+  const isPropTrue = element.props[caseKey]
+  if (!isPropTrue) return merge(result, convertPropsToClass(props, result, element))
 }
 
 const applyTrueProps = (props, result, element) => merge(result, convertPropsToClass(props, result, element))
