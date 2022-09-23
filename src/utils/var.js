@@ -4,7 +4,7 @@ import { MEDIA, TIMING } from '../defaultConfig'
 import { CONFIG, CSS_VARS } from '../factory'
 import { isObjectLike } from './object'
 
-const ENV = process.env.NODE_ENV // eslint-disable-line no-undef
+const ENV = process.env.NODE_ENV // eslint-disable-line
 
 export const setVariables = (result, key) => {
   // CSS_VARS[result.var] =
