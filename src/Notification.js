@@ -7,15 +7,14 @@ export const Notification = {
 
   props: {
     theme: 'alert',
-    padding: 'Z1 B Z1 A1',
+    padding: 'Z1 B Z A',
     round: 'A A A Y2',
     gap: 'X2',
-    style: { cursor: 'pointer' },
+    cursor: 'pointer',
+    align: 'flex-start center',
 
     icon: {
-      icon: {
-        name: 'info outline'
-      }
+      icon: 'info outline'
     },
 
     article: {
