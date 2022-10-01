@@ -45,6 +45,8 @@ export const Block = {
       }
     },
 
+    direction: ({ props }) => props.direction && ({ direction: props.direction }),
+
     aspectRatio: ({ props }) => props.aspectRatio && ({ aspectRatio: props.aspectRatio }),
 
     borderWidth: ({ props }) => props.borderWidth ? getSpacingBasedOnRatio(props, 'borderWidth') : null,
