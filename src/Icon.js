@@ -14,11 +14,16 @@ export const Icon = {
 
     const iconFromLibrary = ICONS[camelCase] || (ICONS[isArray[0] + isArray[1]]) || ICONS[isArray[0]] || ICONS['noIcon']
 
+    let activeIconName
+    if (props.active) {
+      activeIconName = props['.active'].name || props['.active'].icon
+    }
+
     return {
       width: 'A',
       height: 'A',
       display: 'inline-block',
-      src: iconFromLibrary,
+      src: activeIconName || iconFromLibrary,
       style: { fill: 'currentColor' }
     }
   },
