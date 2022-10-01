@@ -41,7 +41,7 @@ export const getTheme = (value, modifier) => {
       if (!subtheme && !modifier) return getThemeValue(isOurTheme)
       value = [theme, subtheme || modifier]
     }
-  } // else value = [value, modifier]
+  }
 
   if (isObjectLike(value) && value[1]) {
     const themeName = value[0]
@@ -52,8 +52,6 @@ export const getTheme = (value, modifier) => {
     if (helpers && helpers[subThemeName]) return getThemeValue(helpers[subThemeName])
     if (state && state[subThemeName]) return getThemeValue(state[subThemeName])
   } else if (isObject(value)) return setThemeValue(value)
-
-  // if (CONFIG.verbose) console.warn('Can\'t find theme', value)
 }
 
 const setInverseTheme = (theme, variant, value) => {
@@ -221,7 +219,7 @@ const checkForReference = (val, callback) => {
 
 const checkThemeReference = (val) => checkForReference(val, checkThemeReference) // eslint-disable-line
 
-export const getMediaTheme = (val, mod, themeObj) => {
+export const getMediaTheme = (val, mod) => {
   if (isString(val) && val.slice(0, 2) === '--') val = getMediaTheme(val.slice(2))
 
   if (!val || !isString(val)) {
