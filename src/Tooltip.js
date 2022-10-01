@@ -1,9 +1,9 @@
 'use strict'
 
-import { Button, Flex } from './'
+import { Flex } from './'
 
 export const Tooltip = {
-  extend: [Button, Flex],
+  extend: Flex,
   props: {
     background: 'black',
     color: 'white',
@@ -14,8 +14,10 @@ export const Tooltip = {
     round: 'Y2',
     minWidth: 'D2',
     gap: 'X',
+    textAlign: 'center',
 
     title: {
+      fontWeight: 500,
       color: 'gray12',
       text: 'And tooltip is coming'
     },
@@ -27,6 +29,8 @@ export const Tooltip = {
       fontWeight: '400'
     }
   },
+
+  attr: { tooltip: true },
 
   title: {},
   p: {}
