@@ -52,7 +52,48 @@ export const Block = {
     borderWidth: ({ props }) => props.borderWidth ? getSpacingBasedOnRatio(props, 'borderWidth') : null,
 
     padding: ({ props }) => props.padding ? getSpacingBasedOnRatio(props, 'padding') : null,
+    paddingInline: ({ props }) => {
+      if (typeof props.paddingInline !== 'string') return
+      const [paddingInlineStart, paddingInlineEnd] = props.paddingInline.split(' ')
+      return {
+        ...getSpacingByKey(paddingInlineStart, 'paddingInlineStart'),
+        ...getSpacingByKey(paddingInlineEnd || paddingInlineStart, 'paddingInlineEnd')
+      }
+    },
+    paddingBlock: ({ props }) => {
+      if (typeof props.paddingBlock !== 'string') return
+      const [paddingBlockStart, paddingBlockEnd] = props.paddingBlock.split(' ')
+      return {
+        ...getSpacingByKey(paddingBlockStart, 'paddingBlockStart'),
+        ...getSpacingByKey(paddingBlockEnd || paddingBlockStart, 'paddingBlockEnd')
+      }
+    },
+    paddingInlineStart: ({ props }) => props.paddingInlineStart ? getSpacingBasedOnRatio(props, 'paddingInlineStart') : null,
+    paddingInlineEnd: ({ props }) => props.paddingInlineEnd ? getSpacingBasedOnRatio(props, 'paddingInlineEnd') : null,
+    paddingBlockStart: ({ props }) => props.paddingBlockStart ? getSpacingBasedOnRatio(props, 'paddingBlockStart') : null,
+    paddingBlockEnd: ({ props }) => props.paddingBlockEnd ? getSpacingBasedOnRatio(props, 'paddingBlockEnd') : null,
+
     margin: ({ props }) => props.margin ? getSpacingBasedOnRatio(props, 'margin') : null,
+    marginInline: ({ props }) => {
+      if (typeof props.marginInline !== 'string') return
+      const [marginInlineStart, marginInlineEnd] = props.marginInline.split(' ')
+      return {
+        ...getSpacingByKey(marginInlineStart, 'marginInlineStart'),
+        ...getSpacingByKey(marginInlineEnd || marginInlineStart, 'marginInlineEnd')
+      }
+    },
+    marginBlock: ({ props }) => {
+      if (typeof props.marginBlock !== 'string') return
+      const [marginBlockStart, marginBlockEnd] = props.marginBlock.split(' ')
+      return {
+        ...getSpacingByKey(marginBlockStart, 'marginBlockStart'),
+        ...getSpacingByKey(marginBlockEnd || marginBlockStart, 'marginBlockEnd')
+      }
+    },
+    marginInlineStart: ({ props }) => props.marginInlineStart ? getSpacingBasedOnRatio(props, 'marginInlineStart') : null,
+    marginInlineEnd: ({ props }) => props.marginInlineEnd ? getSpacingBasedOnRatio(props, 'marginInlineEnd') : null,
+    marginBlockStart: ({ props }) => props.marginBlockStart ? getSpacingBasedOnRatio(props, 'marginBlockStart') : null,
+    marginBlockEnd: ({ props }) => props.marginBlockEnd ? getSpacingBasedOnRatio(props, 'marginBlockEnd') : null,
 
     gap: ({ props }) => props.gap ? getSpacingBasedOnRatio(props, 'gap') : null,
     gridArea: ({ props }) => props.gridArea && ({ gridArea: props.gridArea }),
