@@ -29,7 +29,7 @@ set({
   timing: {},
   reset: {}
 }, { 
-  /* options */ 
+  // options
 })
 ```
 
