@@ -70,7 +70,7 @@ export const hexToRgba = (hex, alpha = 1) => {
 export const mixTwoRgb = (colorA, colorB, range = 0.5) => {
   const arr = []
   for (let i = 0; i < 3; i++) {
-    arr[i] = Math.round(
+    arr[i] = ~~(
       colorA[i] + (
         (colorB[i] - colorA[i]) * range
       )

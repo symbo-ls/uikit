@@ -38,8 +38,8 @@ const setSequenceValue = (props, sequenceProps) => {
   const { key, variable, value, scaling, index } = props
   sequenceProps.sequence[key] = {
     key,
-    decimal: Math.round(value * 100) / 100,
-    val: Math.round(value),
+    decimal: ~~(value * 100) / 100,
+    val: ~~(value),
     scaling,
     index,
     variable
@@ -55,8 +55,8 @@ export const generateSubSequence = (props, sequenceProps) => {
   const diff = next - value
   const smallscale = diff / 1.618
 
-  const valueRounded = Math.round(value)
-  const nextRounded = Math.round(next)
+  const valueRounded = ~~(value)
+  const nextRounded = ~~(next)
   const diffRounded = nextRounded - valueRounded
 
   let arr = []
@@ -67,7 +67,7 @@ export const generateSubSequence = (props, sequenceProps) => {
   else arr = [first, second]
 
   arr.map((v, k) => {
-    const scaling = Math.round(v / base * 1000) / 1000
+    const scaling = ~~(v / base * 1000) / 1000
     const newVar = variable + (k + 1)
 
     const props = {
@@ -91,7 +91,7 @@ export const generateSequence = (sequenceProps) => {
     const key = range[1] - i
     const letterKey = numToLetterMap[key]
     const value = base * Math.pow(ratio, key)
-    const scaling = Math.round(value / base * 1000) / 1000
+    const scaling = ~~(value / base * 1000) / 1000
     const variable = prefix + letterKey
 
     const props = {
