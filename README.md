@@ -8,7 +8,7 @@ Recevies a configuration and outputs the system of design related properties. It
 
 | option | default | description |
 | --- | --- | --- |
-| `verbose` | `dev: false` / `prod: false` | Output the warning logs in console |
+| `verbose` | `false` || ```javascript { prod: false, dev: true }``` | Output the warning logs in console |
 | `useReset` | `true` | Apply CSS reset to the document |
 | `useVariable` | `true` | Output CSS variables in properties |
 
