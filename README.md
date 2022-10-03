@@ -8,7 +8,7 @@ Recevies a configuration and outputs the system of design related properties. It
 
 | option | default | description |
 | --- | --- | --- |
-| `verbose` | `false` | Output the warning logs in console |
+| `verbose` | `false` | Output the warning logs in console (only in `dev`, `test` enviroment) |
 | `useReset` | `true` | Apply CSS reset to the document |
 | `useVariable` | `true` | Output CSS variables in properties |
 
