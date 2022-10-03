@@ -12,6 +12,8 @@ It recevies a configuration and outputs the design system of all design related 
 | `useReset` | `true` | Apply CSS reset to the document |
 | `useVariable` | `true` | Output CSS variables in properties |
 
+A design system configuration of the following systems:
+
 ```javascript
 import { set } from '@symbo.ls/scratch'
 
@@ -28,6 +30,8 @@ set({
   reset: {}
 })
 ```
+
+Read more at [docs](https://www.docs.symbols.app/design-system)
 
 ### TODO:
 - [ ] Accessibility (WCAG) automated  tests
