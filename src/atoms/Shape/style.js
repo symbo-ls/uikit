@@ -17,22 +17,22 @@ const getComputedBackgroundColor = el => {
   // const propsTheme = getTheme(props.theme)
 
   if (!propsColor) {
-    const computedStyle = window.getComputedStyle(node)
-    // if (props.shapeDirection) {
-    //   console.group(el.parent.parent.parent.key + ' - ' + el.parent.key)
-    //   console.log(propsTheme)
-    //   console.log(getColor(props.borderColor))
-    //   console.log(getColor(props.backgroundColor))
-    //   console.log(getColor(props.background))
-    //   console.log(computedStyle.getPropertyValue('border-color'))
-    //   console.log(computedStyle.getPropertyValue('background'))
-    //   console.log(computedStyle.getPropertyValue('background-color'))
-    //   console.log(el)
-    //   console.groupEnd(el.parent.parent.parent.key + ' - ' + el.parent.key)
-    // }
-    return computedStyle.getPropertyValue('border-color') ||
-      computedStyle.getPropertyValue('background') ||
-      computedStyle.getPropertyValue('background-color')
+    // const computedStyle = window.getComputedStyle(node)
+    // // if (props.shapeDirection) {
+    // //   console.group(el.parent.parent.parent.key + ' - ' + el.parent.key)
+    // //   console.log(propsTheme)
+    // //   console.log(getColor(props.borderColor))
+    // //   console.log(getColor(props.backgroundColor))
+    // //   console.log(getColor(props.background))
+    // //   console.log(computedStyle.getPropertyValue('border-color'))
+    // //   console.log(computedStyle.getPropertyValue('background'))
+    // //   console.log(computedStyle.getPropertyValue('background-color'))
+    // //   console.log(el)
+    // //   console.groupEnd(el.parent.parent.parent.key + ' - ' + el.parent.key)
+    // // }
+    // return computedStyle.getPropertyValue('border-color') ||
+    //   computedStyle.getPropertyValue('background') ||
+    //   computedStyle.getPropertyValue('background-color')
   }
 
   return propsColor
