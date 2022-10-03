@@ -1,4 +1,7 @@
-# Φ / Scratch framework
+# Scratch framework
+
+[![npm version](https://badge.fury.io/js/%40rackai%2Fscratch.svg)](https://badge.fury.io/js/%40rackai%2Fscratch)
+
 Scratch is CSS framework and methodology to build web, mobile and TV applications with one code base. It recevies a configuration and outputs the design system of all design related properties. It also applies reset by default and receives a few options:
 
 
@@ -7,9 +10,6 @@ Scratch is CSS framework and methodology to build web, mobile and TV application
 | `verbose` | `dev: false` / `prod: false` | Output the warning logs in console |
 | `useReset` | `true` | Apply CSS reset to the document |
 | `useVariable` | `true` | Output CSS variables in properties |
-
-
-[![npm version](https://badge.fury.io/js/%40rackai%2Fscratch.svg)](https://badge.fury.io/js/%40rackai%2Fscratch)
 
 ```javascript
 import { set } from '@symbo.ls/scratch'
