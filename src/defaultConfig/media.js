@@ -15,5 +15,7 @@ export const MEDIA = {
   mobileXS: '(max-width: 375px)',
 
   light: '(prefers-color-scheme: light)',
-  dark: '(prefers-color-scheme: dark)'
+  dark: '(prefers-color-scheme: dark)',
+  
+  print: 'print'
 }
