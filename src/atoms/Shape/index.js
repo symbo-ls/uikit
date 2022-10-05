@@ -25,7 +25,7 @@ export const Shape = {
       const { shape, shapeDirection } = props
       if (!shape || !shapeDirection) return
       const shapeDir = SHAPES[shape + 'Direction']
-      return shape ? shapeDir[shapeDirection || 'top'] : null
+      return shape && shapeDir ? shapeDir[shapeDirection || 'left'] : null
     },
     shapeDirectionColor: el => {
       const { props } = el

@@ -2,8 +2,7 @@
 
 export const Flex = {
   props: {
-    display: 'flex',
-    flow: 'row'
+    display: 'flex'
   },
 
   class: {
