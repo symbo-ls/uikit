@@ -99,10 +99,11 @@ export const Block = {
     gridArea: ({ props }) => props.gridArea && ({ gridArea: props.gridArea }),
 
     flex: ({ props }) => props.flex && ({ flex: props.flex }),
+    flexDirection: ({ props }) => props.flexDirection && ({ flexDirection: props.flexDirection }),
     alignItems: ({ props }) => props.alignItems && ({ alignItems: props.alignItems }),
     alignContent: ({ props }) => props.alignContent && ({ alignContent: props.alignContent }),
     justifyContent: ({ props }) => props.justifyContent && ({ justifyContent: props.justifyContent }),
-    flexDirection: ({ props }) => props.flexDirection && ({ flexDirection: props.flexDirection }),
+    justifyItems: ({ props }) => props.justifyItems && ({ justifyItems: props.justifyItems }),
     alignSelf: ({ props }) => props.alignSelf && ({ alignSelf: props.alignSelf }),
     order: ({ props }) => props.order && ({ order: props.order }),
 
