@@ -3,7 +3,7 @@
 import { isString } from '@domql/utils'
 import { getTimingByKey, getTimingFunction } from '@symbo.ls/scratch'
 
-const transformTransition = transition => {
+export const transformTransition = transition => {
   const arr = transition.split(' ')
 
   if (!arr.length) return transition
@@ -18,12 +18,12 @@ const transformTransition = transition => {
   }).join(' ')
 }
 
-const transformDuration = (duration, props, propertyName) => {
+export const transformDuration = (duration, props, propertyName) => {
   if (!isString(duration)) return
   return duration.split(',').map(getTimingByKey).join(',')
 }
 
-const splitTransition = transition => {
+export const splitTransition = transition => {
   const arr = transition.split(',')
   if (!arr.length) return
   return arr.map(transformTransition).join(',')
@@ -56,6 +56,9 @@ export const Timing = {
     }),
     animationTimingFunction: ({ props }) => props.animationTimingFunction && ({
       animationTimingFunction: getTimingFunction(props.animationTimingFunction)
+    }),
+    animationFillMode: ({ props }) => props.animationFillMode && ({
+      animationFillMode: props.animationFillMode
     }),
     animationProperty: ({ props }) => props.animationProperty && ({
       animationProperty: props.animationProperty,

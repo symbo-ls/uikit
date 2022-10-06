@@ -1,7 +1,6 @@
 'use strict'
 
 import { merge, isArray } from '@domql/utils'
-import { CASES as CONFIG_CASES, MEDIA as CONFIG_MEDIA } from '@symbo.ls/scratch'
 
 const keySetters = {
   '@': (key, props, result, element, isSubtree) => applyMediaProps(key, props, isSubtree ? result : result.media, element),
@@ -46,7 +45,8 @@ const convertPropsToClass = (props, result, element) => {
 }
 
 const applyMediaProps = (key, props, result, element) => {
-  const mediaName = CONFIG_MEDIA[key.slice(1)]
+  const { MEDIA } = element.context && element.context.SYSTEM
+  const mediaName = MEDIA[key.slice(1)]
   const generatedClass = convertPropsToClass(props, result, element)
 
   const rootState = element.__root ? element.__root.state : element.state
@@ -72,9 +72,10 @@ const applySelectorProps = (key, props, result, element) => {
 }
 
 const applyCaseProps = (key, props, result, element) => {
+  const { CASES } = element.context && element.context.SYSTEM
   const caseKey = key.slice(1)
   const isPropTrue = element.props[caseKey]
-  if (!CONFIG_CASES[caseKey] && !isPropTrue) return
+  if (!CASES[caseKey] && !isPropTrue) return
   return merge(result, convertPropsToClass(props, result, element))
 }
 
@@ -127,30 +128,30 @@ export const initUpdate = element => {
 
   const { globalTheme } = rootState
 
-  if (!globalTheme) return
+  if (globalTheme) {
+    const CLASS_NAMES = {
+      media: {},
+      selector: {},
+      case: {}
+    }
 
-  const CLASS_NAMES = {
-    media: {},
-    selector: {},
-    case: {}
+    for (const key in props) {
+      const setter = keySetters[key.slice(0, 1)]
+      if (key === 'theme') {
+        props.update({
+          themeModifier: `@${globalTheme}`
+        }, { preventRecursive: true, ignoreInitUpdate: true })
+      } else if (key === 'true') applyTrueProps(props[key], CLASS_NAMES, element)
+
+      if (setter) setter(key, props[key], CLASS_NAMES, element)
+    }
+
+    if (Object.keys(CLASS_NAMES.media).length) {
+      className.media = CLASS_NAMES.media
+    }
+    className.selector = CLASS_NAMES.selector
+    className.case = CLASS_NAMES.case
   }
-
-  for (const key in props) {
-    const setter = keySetters[key.slice(0, 1)]
-    if (key === 'theme') {
-      props.update({
-        themeModifier: `@${globalTheme}`
-      }, { preventRecursive: true, ignoreInitUpdate: true })
-    } else if (key === 'true') applyTrueProps(props[key], CLASS_NAMES, element)
-
-    if (setter) setter(key, props[key], CLASS_NAMES, element)
-  }
-
-  if (Object.keys(CLASS_NAMES.media).length) {
-    className.media = CLASS_NAMES.media
-  }
-  className.selector = CLASS_NAMES.selector
-  className.case = CLASS_NAMES.case
 }
 
 export const Media = {

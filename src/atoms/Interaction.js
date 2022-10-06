@@ -27,6 +27,19 @@ export const Hoverable = {
   }
 }
 
+export const Clickable = {
+  extend: Hoverable,
+  props: {
+    ':active': {
+      opacity: 1,
+      transform: 'scale(1.015)'
+    },
+    '.active': {
+      opacity: 1
+    }
+  }
+}
+
 export const Focusable = {
   props: {
     border: 'none',

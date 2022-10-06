@@ -1,13 +1,12 @@
 'use strict'
 
 import { SVG } from './atoms'
-
-import { ICONS } from '@symbo.ls/scratch'
 import { toCamelCase } from '@symbo.ls/utils'
 
 export const Icon = {
   extend: SVG,
-  props: ({ key, props, parent }) => {
+  props: ({ key, props, parent, context }) => {
+    const { ICONS } = context && context.SYSTEM
     const iconName = props.inheritedString || props.name || props.icon || key
     const camelCase = toCamelCase(iconName)
     const isArray = camelCase.split(/([a-z])([A-Z])/g)
