@@ -16,6 +16,6 @@ export const MEDIA = {
 
   light: '(prefers-color-scheme: light)',
   dark: '(prefers-color-scheme: dark)',
-  
+
   print: 'print'
 }
