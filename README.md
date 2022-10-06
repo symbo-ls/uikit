@@ -1,11 +1,11 @@
-# CLI tool for Symbols
+# Socket
 
 Yarn:
 ```
-symbo-ls fetch
+yarn add smbls
 ```
 
 or via NPM:
 ```
-npx symbo-ls fetch
+npx smbls socket
 ```
