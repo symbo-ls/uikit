@@ -19,3 +19,8 @@ export const Text = {
     fontWeight: ({ props }) => props.fontWeight && ({ fontWeight: props.fontWeight })
   }
 }
+
+export const P = { tag: 'p' }
+export const Span = { tag: 'span' }
+export const Caption = { tag: 'caption' }
+export const Strong = { tag: 'strong' }
