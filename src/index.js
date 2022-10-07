@@ -22,11 +22,11 @@ const { css, injectGlobal } = createEmotion({
   key: 'smbls'
 })
 
-export const init = (config, rcfile) => {
+export const init = (config, RC_FILE) => {
   const defaultConfig = config || CONFIG_DEFAULT || SYMBOLSRC_FILE
 
-  const RC_FILE = isObject(rcfile) ? rcfile : DYNAMIC_JSON
-  const resultConfig = deepMerge(RC_FILE, defaultConfig)
+  const rcfile = isObject(RC_FILE) ? RC_FILE : DYNAMIC_JSON
+  const resultConfig = deepMerge(rcfile, defaultConfig)
 
   const conf = set({ verbose: false, ...resultConfig })
   const FontFace = getFontFaceString(FONT)
