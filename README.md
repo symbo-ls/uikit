@@ -2,10 +2,10 @@
 
 Yarn:
 ```
-symbo-ls fetch
+smbls fetch
 ```
 
 or via NPM:
 ```
-npx symbo-ls fetch
+npx smbls fetch
 ```
