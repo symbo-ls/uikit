@@ -2,9 +2,7 @@
 
 import { exec } from 'child_process'
 import chalk from 'chalk'
-
-import { Command } from 'commander'
-const program = new Command()
+import { program } from './program.js'
 
 program
   .command('init [destination]')

@@ -1,10 +1,8 @@
 class ImportError extends Error {}
 
+import { createRequire } from "module"; // Bring in the ability to create the 'require' method
+const require = createRequire(import.meta.url); // construct the require method
+
 export const loadModule = async (modulePath) => {
-  try {
-    return await import(modulePath)
-  } catch (e) {
-    console.warn('Cant found', modulePath)
-    // throw new ImportError(`Unable to import module ${modulePath}`)
-  }
+  return require(modulePath) // use the require method
 }

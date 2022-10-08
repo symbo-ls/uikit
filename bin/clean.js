@@ -4,8 +4,8 @@ import { sync } from '@symbo.ls/socket'
 import { program } from './program.js'
 
 program
-  .command('sync')
-  .description('Sync with Symbols')
+  .command('clean')
+  .description('Clean Symbols temp files')
   .action(async () => {
     sync()
   })
