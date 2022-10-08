@@ -17,6 +17,12 @@ export const Text = {
   }
 }
 
+export const H1 = { tag: 'h1' }
+export const H2 = { tag: 'h2' }
+export const H3 = { tag: 'h3' }
+export const H4 = { tag: 'h4' }
+export const H5 = { tag: 'h5' }
+export const H6 = { tag: 'h6' }
 export const P = { tag: 'p' }
 export const Caption = { tag: 'caption' }
 export const Strong = {
