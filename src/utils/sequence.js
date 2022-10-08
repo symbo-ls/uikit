@@ -1,7 +1,7 @@
 'use strict'
 
 import { toDashCase } from '@symbo.ls/utils'
-import { SEQUENCE, SPACING, UNIT } from '../defaultConfig'
+import { UNIT } from '../defaultConfig'
 import { CONFIG } from '../factory'
 import { isString } from './object'
 
@@ -83,14 +83,14 @@ export const generateSubSequence = (props, sequenceProps) => {
 }
 
 const switchSequenceOnNegative = (key, base, ratio) => {
-  const values = Object.values(SEQUENCE)
-  const index = values.indexOf(ratio)
-  const diffRatio = ratio / SPACING.ratio
-  const total = values[values.length - 1] - values[0]
-  const avg = total / 2
-  const diff = avg - ratio
-  const scale = total / ratio
-  const finalDiff = avg + avg / diffRatio
+  // const values = Object.values(SEQUENCE)
+  // const index = values.indexOf(ratio)
+  // const diffRatio = ratio / SPACING.ratio
+  // const total = values[values.length - 1] - values[0]
+  // const avg = total / 2
+  // const diff = avg - ratio
+  // const scale = total / ratio
+  // const finalDiff = avg + avg / diffRatio
 
   // if (key < 0) return base * Math.pow(avg, key)
   return base * Math.pow(ratio, key)
