@@ -38,7 +38,8 @@ export const SETTERS = {
   timing: setSameValue,
   icons: setSameValue,
   reset: setSameValue,
-  unit: setSameValue
+  unit: setSameValue,
+  animation: setSameValue
 }
 
 /**

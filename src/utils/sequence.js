@@ -1,7 +1,7 @@
 'use strict'
 
 import { toDashCase } from '@symbo.ls/utils'
-import { UNIT } from '../defaultConfig'
+import { SEQUENCE, SPACING, UNIT } from '../defaultConfig'
 import { CONFIG } from '../factory'
 import { isString } from './object'
 
@@ -82,6 +82,20 @@ export const generateSubSequence = (props, sequenceProps) => {
   })
 }
 
+const switchSequenceOnNegative = (key, base, ratio) => {
+  const values = Object.values(SEQUENCE)
+  const index = values.indexOf(ratio)
+  const diffRatio = ratio / SPACING.ratio
+  const total = values[values.length - 1] - values[0]
+  const avg = total / 2
+  const diff = avg - ratio
+  const scale = total / ratio
+  const finalDiff = avg + avg / diffRatio
+
+  // if (key < 0) return base * Math.pow(avg, key)
+  return base * Math.pow(ratio, key)
+}
+
 export const generateSequence = (sequenceProps) => {
   const { type, base, ratio, range, subSequence } = sequenceProps
   const n = Math.abs(range[0]) + Math.abs(range[1])
@@ -90,8 +104,8 @@ export const generateSequence = (sequenceProps) => {
   for (let i = 0; i <= n; i++) {
     const key = range[1] - i
     const letterKey = numToLetterMap[key]
-    const value = base * Math.pow(ratio, key)
-    const scaling = ~~(value / base * 1000) / 1000
+    const value = switchSequenceOnNegative(key, base, ratio)
+    const scaling = ~~(value / base * 100) / 100
     const variable = prefix + letterKey
 
     const props = {

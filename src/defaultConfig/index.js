@@ -16,5 +16,6 @@ export * from './timing'
 export * from './document'
 export * from './responsive'
 export * from './cases'
+export * from './animation'
 
 export const RESET = {}
