@@ -138,3 +138,5 @@ export const Block = {
     }
   }
 }
+
+export const Span = { tag: 'span' }

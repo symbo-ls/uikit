@@ -3,10 +3,7 @@
 import { getFontSizeByKey, getFontFamily } from '@symbo.ls/scratch'
 
 export const Text = {
-  props: {},
-
   text: ({ props }) => props.text,
-
   class: {
     fontSize: ({ props }) => props.fontSize ? getFontSizeByKey(props.fontSize) : null,
     fontFamily: ({ props }) => props.fontFamily && ({ fontFamily: getFontFamily(props.fontFamily) || props.fontFamily }),
@@ -21,6 +18,8 @@ export const Text = {
 }
 
 export const P = { tag: 'p' }
-export const Span = { tag: 'span' }
 export const Caption = { tag: 'caption' }
-export const Strong = { tag: 'strong' }
+export const Strong = {
+  tag: 'strong',
+  props: { fontWeight: '900' }
+}
