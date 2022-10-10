@@ -1,17 +1,21 @@
 'use strict'
 
+import { isObject } from '@domql/utils'
 import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
 
 import {
   getDefaultOrFirstKey,
-  getFontFaceEach
+  getFontFaceEach,
+  setCustomFontMedia
 } from '../utils'
 
 // const ENV = process.env.NODE_ENV
 
 export const setFont = (val, key) => {
   const CSSvar = `--font-${key}`
-  const fontFace = getFontFaceEach(key, val)
+  const fontFace = isObject(val)
+    ? setCustomFontMedia(key, val.url)
+    : getFontFaceEach(key, val)
   return { var: CSSvar, value: val, fontFace }
 }
 
