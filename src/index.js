@@ -2,6 +2,8 @@
 
 import { COLOR, GRADIENT } from './color'
 import { THEME } from './theme'
+import { TYPOGRAPHY } from './typography'
+import { SPACING } from './spacing'
 import { FONT, FONT_FAMILY } from './font'
 
 export default {
@@ -9,6 +11,8 @@ export default {
   COLOR,
   GRADIENT,
   THEME,
+  TYPOGRAPHY,
+  SPACING,
   FONT,
-  FONT_FAMILY
+  FONT_FAMILY,
 }
