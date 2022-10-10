@@ -1,6 +1,6 @@
 'use strict'
 
-const TYPOGRAPHY = {
+export const TYPOGRAPHY = {
   base: 16,
   ratio: 1.125
 }
