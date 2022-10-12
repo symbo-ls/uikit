@@ -15,4 +15,5 @@ export default {
   SPACING,
   FONT,
   FONT_FAMILY,
+  ICONS: {}
 }
