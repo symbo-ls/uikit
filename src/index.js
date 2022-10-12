@@ -15,14 +15,12 @@ import SYMBOLSRC_FILE from '../.symbolsrc.json'
 
 import DYNAMIC_JSON from './dynamic.json'
 
-import createEmotion from '@emotion/css/create-instance'
+import createEmotion from '@symbo.ls/create-emotion'
 import { setClassname } from 'css-in-props'
 
-const { css, injectGlobal } = createEmotion({
-  key: 'smbls'
-})
+const { css, injectGlobal } = createEmotion
 
-export const init = (config, RC_FILE) => {
+export const init = (config, RC_FILE, options = { emotion: createEmotion }) => {
   const defaultConfig = config || CONFIG_DEFAULT || SYMBOLSRC_FILE
 
   const rcfile = isObject(RC_FILE) ? RC_FILE : DYNAMIC_JSON
