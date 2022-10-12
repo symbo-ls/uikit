@@ -2,6 +2,7 @@
 
 export const Interaction = {
   class: {
+    userSelect: ({ props }) => props.userSelect && ({ userSelect: props.userSelect }),
     pointerEvents: ({ props }) => props.pointerEvents && ({ pointerEvents: props.pointerEvents }),
     cursor: ({ props }) => props.cursor && ({ cursor: props.cursor })
   }
@@ -43,7 +44,7 @@ export const Clickable = {
 export const Focusable = {
   props: {
     border: 'none',
-    outline: 'none',
+    outline: 'solid, 0, blue .3',
     ':focus-visible': {
       opacity: 1,
       outline: 'solid, X, blue .3'

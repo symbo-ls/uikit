@@ -29,16 +29,16 @@ export const Animation = {
     },
 
     animationDuration: ({ props }) => props.animationDuration && ({
-      animationDuration: getTimingByKey(props.animationDuration || 'A').timing
+      animationDuration: getTimingByKey(props.animationDuration).timing
     }),
     animationDelay: ({ props }) => props.animationDelay && ({
-      animationDelay: getTimingByKey(props.animationDelay).timing || '0s'
+      animationDelay: getTimingByKey(props.animationDelay).timing
     }),
     animationTimingFunction: ({ props }) => props.animationTimingFunction && ({
-      animationTimingFunction: getTimingFunction(props.animationTimingFunction || 'ease')
+      animationTimingFunction: getTimingFunction(props.animationTimingFunction)
     }),
     animationFillMode: ({ props }) => props.animationFillMode && ({
-      animationFillMode: props.animationFillMode || 'both'
+      animationFillMode: props.animationFillMode
     }),
     animationPlayState: ({ props }) => props.animationPlayState && ({
       animationPlayState: props.animationPlayState

@@ -135,7 +135,9 @@ export const Block = {
         ...getSpacingByKey(minHeight, 'minHeight'),
         ...getSpacingByKey(maxHeight || minHeight, 'maxHeight')
       }
-    }
+    },
+
+    columns: ({ props }) => props.columns && ({ columns: props.columns })
   }
 }
 
