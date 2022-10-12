@@ -34,6 +34,9 @@ export const Timing = {
     transition: ({ props }) => props.transition && ({
       transition: splitTransition(props.transition)
     }),
+    willChange: ({ props }) => props.willChange && ({
+      willChange: props.willChange
+    }),
     transitionDuration: ({ props }) => props.transitionDuration && ({
       transitionDuration: transformDuration(props.transitionDuration)
     }),
@@ -46,23 +49,6 @@ export const Timing = {
     transitionProperty: ({ props }) => props.transitionProperty && ({
       transitionProperty: props.transitionProperty,
       willChange: props.transitionProperty
-    }),
-
-    animationDuration: ({ props }) => props.animationDuration && ({
-      animationDuration: transformDuration(props.animationDuration)
-    }),
-    animationDelay: ({ props }) => props.animationDelay && ({
-      animationDelay: transformDuration(props.animationDelay)
-    }),
-    animationTimingFunction: ({ props }) => props.animationTimingFunction && ({
-      animationTimingFunction: getTimingFunction(props.animationTimingFunction)
-    }),
-    animationFillMode: ({ props }) => props.animationFillMode && ({
-      animationFillMode: props.animationFillMode
-    }),
-    animationProperty: ({ props }) => props.animationProperty && ({
-      animationProperty: props.animationProperty,
-      willChange: props.animationProperty
     })
   }
 }

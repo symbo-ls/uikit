@@ -51,6 +51,7 @@ export const Focusable = {
   },
 
   attr: {
-    placeholder: ({ props }) => props.placeholder
+    placeholder: ({ props }) => props.placeholder,
+    tabIndex: ({ props }) => props.tabIndex
   }
 }

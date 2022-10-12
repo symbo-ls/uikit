@@ -1,52 +1,53 @@
 'use strict'
 
-import { merge } from '@domql/utils'
-import { getTimingFunction } from '@symbo.ls/scratch'
-import { convertPropsToClass } from './Media'
-import { transformDuration } from './Timing'
+import { getTimingByKey, getTimingFunction } from '@symbo.ls/scratch'
+import { isObject } from '@domql/utils'
+import { convertPropsToClass } from './Media' // eslint-disable-line no-unused-vars
+import createEmotion from '@symbo.ls/create-emotion'
+const { keyframes } = createEmotion
 
-const applyAnimationProps = (key, props, result, element) => {
+const applyAnimationProps = (animation, element) => {
+  if (isObject(animation)) return { animationName: keyframes(animation) }
   const { ANIMATION } = element.context && element.context.SYSTEM
-  const mediaName = ANIMATION[key.slice(1)]
-  const generatedClass = convertPropsToClass(props, result, element)
-
-  const rootState = element.__root ? element.__root.state : element.state
-  const { globalTheme } = rootState
-  const name = key.slice(1)
-  const isTheme = ['dark', 'light'].includes(name)
-  const matchesGlobal = name === globalTheme
-
-  if (globalTheme && isTheme) {
-    if (matchesGlobal) return merge(result, generatedClass)
-    return
-  }
-
-  const mediaKey = `@media screen and ${mediaName}`
-  result[mediaKey] = generatedClass
-  return result[mediaKey]
+  const record = ANIMATION[animation]
+  return keyframes(record)
 }
 
 export const Animation = {
   class: {
-    animation: ({ props }) => props.animation && ({
-      animation: applyAnimationProps(props.animation)
-    }),
+    animation: (el) => el.props.animation && {
+      animationName: applyAnimationProps(el.props.animation, el),
+      animationDuration: getTimingByKey(el.props.animationDuration || 'A').timing,
+      animationDelay: getTimingByKey(el.props.animationDelay).timing || '0s',
+      animationTimingFunction: getTimingFunction(el.props.animationTimingFunction || 'ease'),
+      animationFillMode: el.props.animationFillMode || 'both',
+      animationPlayState: el.props.animationPlayState,
+      animationDirection: el.props.animationDirection
+    },
+    animationName: (el) => el.props.animationName && {
+      animationName: applyAnimationProps(el.props.animationName, el)
+    },
 
     animationDuration: ({ props }) => props.animationDuration && ({
-      animationDuration: transformDuration(props.animationDuration)
+      animationDuration: getTimingByKey(props.animationDuration || 'A').timing
     }),
     animationDelay: ({ props }) => props.animationDelay && ({
-      animationDelay: transformDuration(props.animationDelay)
+      animationDelay: getTimingByKey(props.animationDelay).timing || '0s'
     }),
     animationTimingFunction: ({ props }) => props.animationTimingFunction && ({
-      animationTimingFunction: getTimingFunction(props.animationTimingFunction)
+      animationTimingFunction: getTimingFunction(props.animationTimingFunction || 'ease')
     }),
     animationFillMode: ({ props }) => props.animationFillMode && ({
-      animationFillMode: props.animationFillMode
+      animationFillMode: props.animationFillMode || 'both'
     }),
-    animationProperty: ({ props }) => props.animationProperty && ({
-      animationProperty: props.animationProperty,
-      willChange: props.animationProperty
+    animationPlayState: ({ props }) => props.animationPlayState && ({
+      animationPlayState: props.animationPlayState
+    }),
+    animationIterationCount: ({ props }) => props.animationIterationCount && ({
+      animationIterationCount: props.animationIterationCount || 1
+    }),
+    animationDirection: ({ props }) => props.animationDirection && ({
+      animationDirection: props.animationDirection
     })
   }
 }
