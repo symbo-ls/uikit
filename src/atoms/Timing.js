@@ -20,7 +20,7 @@ export const transformTransition = transition => {
 
 export const transformDuration = (duration, props, propertyName) => {
   if (!isString(duration)) return
-  return duration.split(',').map(getTimingByKey).join(',')
+  return duration.split(',').map(v => getTimingByKey(v).timing || v).join(',')
 }
 
 export const splitTransition = transition => {
