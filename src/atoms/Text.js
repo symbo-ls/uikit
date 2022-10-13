@@ -32,3 +32,5 @@ export const Strong = {
   tag: 'strong',
   props: { fontWeight: '900' }
 }
+export const Underline = { tag: 'u' }
+export const Italic = { tag: 'i' }
