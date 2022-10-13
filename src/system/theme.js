@@ -139,7 +139,7 @@ const keySetters = { // eslint-disable-line
 }
 
 export const setMediaTheme = (val, key, suffix, prefers) => {
-  const theme = {}
+  const theme = { value: val }
 
   if (isObject(val)) {
     for (const param in val) {
