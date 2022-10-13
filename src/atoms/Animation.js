@@ -18,7 +18,7 @@ export const Animation = {
     animation: (el) => el.props.animation && {
       animationName: applyAnimationProps(el.props.animation, el),
       animationDuration: getTimingByKey(el.props.animationDuration || 'A').timing,
-      animationDelay: getTimingByKey(el.props.animationDelay).timing || '0s',
+      animationDelay: getTimingByKey(el.props.animationDelay || '0s').timing,
       animationTimingFunction: getTimingFunction(el.props.animationTimingFunction || 'ease'),
       animationFillMode: el.props.animationFillMode || 'both',
       animationPlayState: el.props.animationPlayState,

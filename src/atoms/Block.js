@@ -142,3 +142,4 @@ export const Block = {
 }
 
 export const Span = { tag: 'span' }
+// export const Article = { tag: 'article' }

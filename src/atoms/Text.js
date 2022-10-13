@@ -13,7 +13,10 @@ export const Text = {
     textTransform: ({ props }) => props.textTransform && ({ textTransform: props.textTransform }),
     whiteSpace: ({ props }) => props.whiteSpace && ({ whiteSpace: props.whiteSpace }),
     textAlign: ({ props }) => props.textAlign && ({ textAlign: props.textAlign }),
-    fontWeight: ({ props }) => props.fontWeight && ({ fontWeight: props.fontWeight })
+    fontWeight: ({ props }) => props.fontWeight && ({
+      fontWeight: props.fontWeight,
+      fontVariationSettings: '"wdth" ' + props.fontWeight
+    })
   }
 }
 
