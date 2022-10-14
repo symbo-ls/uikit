@@ -16,8 +16,8 @@ const DEFAULT_REMOTE_CONFIG_PATH = 'https://raw.githubusercontent.com/symbo-ls/c
 const API_URL = 'https://api.symbols.app/' // eslint-disable-line
 
 const pkg = loadModule(PACKAGE_PATH)
-const rc_file = loadModule(RC_PATH)
-const local_config = loadModule(LOCAL_CONFIG_PATH)
+const rc_file = loadModule(RC_PATH) // eslint-disable-line
+const local_config = loadModule(LOCAL_CONFIG_PATH) // eslint-disable-line
 
 program
   .version(pkg.version)
@@ -28,11 +28,11 @@ program
   .option('--framework', 'Which Symbols to install (domql, react)')
   .action(async (framework) => {
     // const packageName = `@symbo.ls/${mode || 'uikit'}`
-    const packageName = `smbls`
+    const packageName = 'smbls'
     console.log('Adding', chalk.green.bold(packageName))
 
     if (framework === 'domql' || rc_file.framework === 'domql') {
-      exec(`yarn add domql@^1.15.26 --force`, (error, stdout, stderr) => {
+      exec('yarn add domql@^1.15.26 --force', (error, stdout, stderr) => {
         if (error) {
           console.log(`error: ${error.message}`)
           return
