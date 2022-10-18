@@ -85,8 +85,8 @@ export const Range = {
 
 const listenProp = (el, prop, def) => {
   const val = el.props && el.props[prop]
-  const r = (isFunction(val) ? val(el, el.state) : val) || (def !== undefined ? def : 50)
-  return r
+  const r = (isFunction(val) ? val(el, el.state) : val !== undefined ? val : def !== undefined ? def : 50)
+  return r + ''
 }
 
 export const RangeWithButtons = {
