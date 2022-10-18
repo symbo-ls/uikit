@@ -2,41 +2,41 @@
 
 import {
   set,
-  FONT,
   RESET,
   getFontFaceString,
   CONFIG
 } from '@symbo.ls/scratch'
 
-import { deepMerge, isObject } from '@domql/utils'
+import { isObject, deepMerge } from '@domql/utils'
+import { initDOMQLEmotion } from 'domql/packages/emotion'
 
-import CONFIG_DEFAULT from '@symbo.ls/config-default'
-import SYMBOLSRC_FILE from '../.symbolsrc.json'
+import { emotion } from '@symbo.ls/create-emotion'
+import { setClassname } from 'css-in-props'
 
 import DYNAMIC_JSON from './dynamic.json'
 
-import createEmotion from '@symbo.ls/create-emotion'
-import { setClassname } from 'css-in-props'
+const prepareInit = (config = {}, RC_FILE) => {
+  // const defaultConfig = merge(config, CONFIG_DEFAULT)
+  const rcfile = isObject(RC_FILE) ? RC_FILE : DYNAMIC_JSON || {}
+  return deepMerge(config, rcfile)
+}
 
-const { css, injectGlobal } = createEmotion
+export const init = (config, RC_FILE, options = { emotion }) => {
+  initDOMQLEmotion(options.emotion)
 
-export const init = (config, RC_FILE, options = { emotion: createEmotion }) => {
-  const defaultConfig = config || CONFIG_DEFAULT || SYMBOLSRC_FILE
-
-  const rcfile = isObject(RC_FILE) ? RC_FILE : DYNAMIC_JSON
-  const resultConfig = deepMerge(rcfile, defaultConfig)
+  const resultConfig = prepareInit(config)
 
   const conf = set({ verbose: false, ...resultConfig })
-  const FontFace = getFontFaceString(FONT)
+  const FontFace = getFontFaceString(conf.FONT)
 
-  injectGlobal(FontFace)
-  if (conf.useReset) injectGlobal(RESET)
+  options.emotion.injectGlobal(FontFace)
+  if (conf.useReset) options.emotion.injectGlobal(conf.RESET)
 
   return conf
 }
 
-export const updateReset = () => injectGlobal(RESET)
+export const updateReset = (options = { emotion }) => options.emotion.injectGlobal(RESET)
 
-export const setClass = props => setClassname(props, css)
+export const setClass = (props, options = { emotion }) => setClassname(props, options.emotion.css)
 
 export { CONFIG }
