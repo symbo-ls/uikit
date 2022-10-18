@@ -15,7 +15,7 @@ export const Text = {
     textAlign: ({ props }) => props.textAlign && ({ textAlign: props.textAlign }),
     fontWeight: ({ props }) => props.fontWeight && ({
       fontWeight: props.fontWeight,
-      fontVariationSettings: '"wdth" ' + props.fontWeight
+      fontVariationSettings: '"wght" ' + props.fontWeight
     })
   }
 }

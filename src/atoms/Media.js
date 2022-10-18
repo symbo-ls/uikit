@@ -45,7 +45,8 @@ const convertPropsToClass = (props, result, element) => {
 }
 
 const applyMediaProps = (key, props, result, element) => {
-  const { MEDIA } = element.context && element.context.SYSTEM
+  if (!element.context.SYSTEM || !element.context.SYSTEM.MEDIA) { return }
+  const { MEDIA } = element.context.SYSTEM
   const mediaName = MEDIA[key.slice(1)]
   const generatedClass = convertPropsToClass(props, result, element)
 

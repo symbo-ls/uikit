@@ -23,7 +23,10 @@ export const Hoverable = {
       transform: 'scale(1.015)'
     },
     '.active': {
-      opacity: 1
+      opacity: 1,
+      transform: 'scale(1.015)',
+
+      ':hover': { opacity: 1 }
     }
   }
 }

@@ -1,12 +1,38 @@
 'use strict'
 
-import style from './style'
 import { opacify } from '@symbo.ls/scratch'
 import { isFunction } from '@domql/utils'
 
-import { SquareButton } from '..'
+import { SquareButton } from '.'
 
-const theme = {
+const props = {
+  appearance: 'none',
+  width: '100%',
+  height: '2px',
+  outline: 'none',
+  flex: 1,
+
+  style: {
+    appearance: 'none'
+  },
+
+  '::-webkit-slider-thumb': {
+    boxSizing: 'content-box',
+    width: '8px',
+    height: '8px',
+    borderWidth: '2px',
+    borderStyle: 'solid',
+    borderRadius: '100%',
+    opacity: '.8',
+
+    style: {
+      appearance: 'none'
+    }
+  },
+
+  '::-webkit-slider-runnable-track': {
+  },
+
   '@dark': {
     background: 'white 0.2',
 
@@ -27,6 +53,7 @@ const theme = {
       }
     }
   },
+
   '@light': {
     background: 'gray9',
 
@@ -50,8 +77,7 @@ const theme = {
 }
 
 export const Range = {
-  style,
-  props: theme,
+  props,
 
   tag: 'input',
   attr: { type: 'range' }

@@ -3,8 +3,8 @@
 import { getTimingByKey, getTimingFunction } from '@symbo.ls/scratch'
 import { isObject } from '@domql/utils'
 import { convertPropsToClass } from './Media' // eslint-disable-line no-unused-vars
-import createEmotion from '@symbo.ls/create-emotion'
-const { keyframes } = createEmotion
+import { emotion } from '@symbo.ls/create-emotion'
+const { keyframes } = emotion
 
 const applyAnimationProps = (animation, element) => {
   if (isObject(animation)) return { animationName: keyframes(animation) }
