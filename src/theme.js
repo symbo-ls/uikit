@@ -7,30 +7,26 @@ const PRIORITIES = {
   },
 
   secondary: {
-    variants: {
-      light: {
-        color: 'white',
-        background: 'gradient-light'
-      },
-      dark: {
-        color: 'white',
-        background: 'gradient-dark-active'
-      }
+    '@light': {
+      color: 'white',
+      background: 'gradient-light'
+    },
+    '@dark': {
+      color: 'white',
+      background: 'gradient-dark-active'
     }
   }
 }
 
 export const THEME = {
   document: {
-    variants: {
-      light: {
-        color: 'black',
-        background: 'white'
-      },
-      dark: {
-        color: 'white',
-        background: 'black'
-      }
+    '@light': {
+      color: 'black',
+      background: 'white'
+    },
+    '@dark': {
+      color: 'white',
+      background: 'black'
     }
   },
 
