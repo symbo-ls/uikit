@@ -27,6 +27,8 @@ export const applyReset = (reset = {}) => {
       lineHeight: CONFIG.DOCUMENT.lineHeight
     },
 
+    ...CONFIG.TYPOGRAPHY.styles,
+
     body: {
       boxSizing: 'border-box',
       height: '100%',
@@ -35,10 +37,10 @@ export const applyReset = (reset = {}) => {
 
       ...getTheme('document'),
 
-      fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default
-    },
+      fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default,
 
-    ...CONFIG.TYPOGRAPHY.styles,
+      ...CONFIG.TYPOGRAPHY.styles.body
+    },
 
     // form elements
     fieldset: {
