@@ -88,7 +88,7 @@ program
     for (const t in config) {
       const type = config[t]
       console.log(chalk.bold(t))
-      // for (const v in type) console.log('  ', chalk.dim(v))
+      for (const v in type) console.log('  ', chalk.dim(v))
       console.log(Object.keys(type))
     }
   })
