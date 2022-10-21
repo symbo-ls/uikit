@@ -10,7 +10,7 @@ export const Interaction = {
 
 export const Hoverable = {
   props: {
-    transition: 'B',
+    transition: 'B default-bezier',
     transitionProperty: 'opacity, transform',
     opacity: 0.85,
 
