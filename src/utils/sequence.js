@@ -143,6 +143,7 @@ export const getSequenceValue = (value = 'A', sequenceProps) => {
     value === 'none' ||
     value === 'auto' ||
     value === 'unset' ||
+    value === 'inherit' ||
     value === 'fit-content' ||
     value === 'min-content' ||
     value === 'max-content' ||
