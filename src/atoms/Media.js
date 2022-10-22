@@ -143,7 +143,7 @@ export const initUpdate = element => {
       const setter = keySetters[key.slice(0, 1)]
       if (key === 'theme') {
         props.update({
-          themeModifier: `@${globalTheme}`
+          themeModifier: globalTheme
         }, { preventRecursive: true, ignoreInitUpdate: true })
       } else if (key === 'true') applyTrueProps(props[key], CLASS_NAMES, element)
 

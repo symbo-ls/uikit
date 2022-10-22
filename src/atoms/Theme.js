@@ -60,7 +60,7 @@ export const Theme = {
       const { props } = element
       const globalTheme = getSystemTheme(element)
       if (!props.theme) return
-      return getMediaTheme(props.theme, props.themeModifier || globalTheme)
+      return getMediaTheme(props.theme, `@${props.themeModifier || globalTheme}`)
     },
 
     color: (element) => {
