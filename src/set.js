@@ -52,17 +52,13 @@ export const SETTERS = {
 export const setValue = (FACTORY_NAME, value, key) => {
   const factoryName = FACTORY_NAME.toLowerCase()
   const FACTORY = CONFIG[FACTORY_NAME]
-  const result = SETTERS[factoryName](value, key)
 
-  // console.log(CONFIG.verbose)
-  if (CONFIG.verbose && FACTORY[key]) {
-    // console.warn('Replacing ', key, ' as ', FACTORY[key], ' in ', factoryName)
+  if (SETTERS[factoryName]) {
+    const result = SETTERS[factoryName](value, key)
+    FACTORY[key] = result
+    return FACTORY
   }
-
-  FACTORY[key] = result
-  // setVariables(result, key)
-
-  return FACTORY
+  if (CONFIG.verbose) console.warn('Can not find', factoryName, 'method in scratch')
 }
 
 export const setEach = (factoryName, props) => {
@@ -74,11 +70,12 @@ export const setEach = (factoryName, props) => {
 }
 
 export const set = recivedConfig => {
-  const { version, verbose, useVariable, useReset, ...config } = recivedConfig
+  const { version, verbose, useVariable, useReset, globalTheme, ...config } = recivedConfig
 
   if (verbose !== undefined) CONFIG.verbose = verbose
   if (useVariable !== undefined) CONFIG.useVariable = useVariable
   if (useReset !== undefined) CONFIG.useReset = useReset
+  if (globalTheme !== undefined) CONFIG.globalTheme = globalTheme
   if (CONFIG.verbose) console.log(CONFIG)
 
   const keys = Object.keys(config)

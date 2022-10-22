@@ -205,8 +205,6 @@ const findModifierFromArray = (val, modifierArray) => {
 }
 
 const findModifier = (val, modifier) => {
-  // console.log(val)
-  // console.log(modifier)
   if (isArray(modifier)) return findModifierFromArray(val, modifier)
   else if (isString(modifier) && val[modifier]) return val[modifier]
   else return val

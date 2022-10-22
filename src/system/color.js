@@ -64,13 +64,13 @@ export const getColor = (value, key) => {
   } else return CONFIG.useVariable ? `var(${val.var})` : val.value
 }
 
-export const getMediaColor = (value, param) => {
+export const getMediaColor = (value, property, globalTheme = CONFIG.globalTheme) => {
   if (!isString(value)) {
     if (CONFIG.verbose) console.warn(value, '- type for color is not valid')
     return
   }
 
-  if (value.slice(0, 2) === '--') return { [param]: `var(${value})` }
+  if (value.slice(0, 2) === '--') return { [property]: `var(${value})` }
 
   const [name] = isArray(value) ? value : value.split(' ')
 
@@ -78,18 +78,18 @@ export const getMediaColor = (value, param) => {
   const val = COLOR[name] || GRADIENT[name]
 
   const isObj = isObject(val)
-  if (isObj && val.value) return { [param]: getColor(value) }
+  if (isObj && val.value) return { [property]: getColor(value) }
   else if (isObj) {
     const obj = {}
     for (const mediaName in val) {
-      const query = MEDIA[mediaName.slice(1)]
+      const query = MEDIA[globalTheme || mediaName.slice(1)]
       const media = `@media screen and ${query}`
-      obj[media] = { [param]: getColor(value, mediaName) }
+      obj[media] = { [property]: getColor(value, globalTheme || mediaName) }
     }
     return obj
   } else {
     if (CONFIG.verbose) console.warn('Can\'t find color', value)
-    return { [param]: value }
+    return { [property]: value }
   }
 }
 
