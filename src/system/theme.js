@@ -225,12 +225,9 @@ export const getMediaTheme = (val, mod) => {
     return
   }
 
-  console.group(val)
-
   const [name, ...modifier] = isArray(val) ? val : val.split(' ')
   let value = CONFIG.THEME[name]
   if (value && (modifier || mod)) {
-    console.log(value)
     value = findModifier(value, modifier.length ? modifier : mod)
   }
 
