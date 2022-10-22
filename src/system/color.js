@@ -81,10 +81,8 @@ export const getMediaColor = (value, property, globalTheme = CONFIG.globalTheme)
 
   if (isObj && val.value) return { [property]: getColor(value, globalTheme) }
   else if (isObj) {
-    if (globalTheme) {
-      logGroupIf(name === 'packageGradient', name, val, globalTheme)
-      return { [property]: getColor(value, `@${globalTheme}`) }
-    } else {
+    if (globalTheme) return { [property]: getColor(value, `@${globalTheme}`) }
+    else {
       const obj = {}
       for (const mediaName in val) {
         const query = MEDIA[mediaName.slice(1)]
