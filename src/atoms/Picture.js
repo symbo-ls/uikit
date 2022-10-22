@@ -1,6 +1,6 @@
 'use strict'
 
-import { getSystemTheme } from './Theme' // eslint-disable-line no-unused-vars
+import { getSystemTheme } from './Theme'
 
 export const Picture = {
   tag: 'picture',
@@ -11,12 +11,21 @@ export const Picture = {
       media: element => {
         const { props, key, context } = element
         const { MEDIA } = context.SYSTEM
-        // getSystemTheme(element)
-        return MEDIA[(props.media || key).slice(1)]
+        const globalTheme = getSystemTheme(element)
+        const mediaName = (props.media || key).slice(1)
+
+        if (mediaName === globalTheme) return '(min-width: 0px)'
+        else if (mediaName === 'dark' || mediaName === 'light') return '(max-width: 0px)'
+
+        return MEDIA[mediaName]
       },
       srcset: ({ props }) => props.srcset
     }
   },
 
-  Img: ({ props }) => ({ src: props.src })
+  Img: ({ props }) => ({
+    width: 'inherit',
+    height: 'inherit',
+    src: props.src
+  })
 }
