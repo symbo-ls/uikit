@@ -78,7 +78,7 @@ export const getMediaColor = (value, property, globalTheme = CONFIG.globalTheme)
   const val = COLOR[name] || GRADIENT[name]
 
   const isObj = isObject(val)
-  if (isObj && val.value) return { [property]: getColor(value) }
+  if (isObj && val.value) return { [property]: getColor(value, globalTheme) }
   else if (isObj) {
     const obj = {}
     for (const mediaName in val) {

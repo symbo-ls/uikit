@@ -2,7 +2,7 @@
 
 import * as CONFIG from '../defaultConfig'
 import { CSS_VARS } from '../factory'
-import { getTheme } from '.'
+import { getMediaTheme } from '.'
 import { deepMerge, merge, overwriteDeep } from '@domql/utils' // eslint-disable-line no-unused-vars
 
 export const applyReset = (reset = {}) => {
@@ -16,7 +16,10 @@ export const applyReset = (reset = {}) => {
       const configReset = CONFIG.RESET
       const configStyles = CONFIG.TYPOGRAPHY.styles
       configReset[':root'] = CSS_VARS
-      configReset.body = configStyles.body
+      configReset.body = {
+        ...getMediaTheme('document', CONFIG.globalTheme),
+        ...configStyles.body
+      }
       configReset.h1 = configStyles.h1
       configReset.h2 = configStyles.h2
       configReset.h3 = configStyles.h3
@@ -54,9 +57,9 @@ export const applyReset = (reset = {}) => {
         margin: 0,
         fontFamily: CONFIG.DOCUMENT.fontFamily,
 
-        ...getTheme('document'),
-
         fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default,
+
+        ...getMediaTheme('document', CONFIG.globalTheme),
 
         ...CONFIG.TYPOGRAPHY.styles.body
       },
