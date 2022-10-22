@@ -1,23 +1,18 @@
 'use strict'
 
-import * as CONFIG from '../defaultConfig'
-import { CSS_VARS } from '../factory'
+import { CONFIG, CSS_VARS } from '../factory'
 import { getMediaTheme } from '.'
 import { deepMerge, merge, overwriteDeep } from '@domql/utils' // eslint-disable-line no-unused-vars
 
 export const applyReset = (reset = {}) => {
   if (CONFIG.RESET) {
-    // if (CONFIG.RESET[':root']) {
-    //   overwriteDeep(CONFIG.TYPOGRAPHY.styles, CONFIG.RESET)
-    //   console.log(CONFIG.RESET)
-    //   CONFIG.RESET[':root'] = CSS_VARS
-    // }
     if (CONFIG.RESET[':root']) {
       const configReset = CONFIG.RESET
       const configStyles = CONFIG.TYPOGRAPHY.styles
+
       configReset[':root'] = CSS_VARS
       configReset.body = {
-        ...getMediaTheme('document', CONFIG.globalTheme),
+        ...getMediaTheme('document', `@${CONFIG.globalTheme}`),
         ...configStyles.body
       }
       configReset.h1 = configStyles.h1
@@ -59,7 +54,7 @@ export const applyReset = (reset = {}) => {
 
         fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default,
 
-        ...getMediaTheme('document', CONFIG.globalTheme),
+        ...getMediaTheme('document', `@${CONFIG.globalTheme}`),
 
         ...CONFIG.TYPOGRAPHY.styles.body
       },
