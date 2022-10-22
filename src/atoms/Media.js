@@ -51,7 +51,6 @@ const convertPropsToClass = (props, result, element) => {
 
 const applyMediaProps = (key, props, result, element) => {
   const { context } = element
-  console.log(context, element)
   if (!context.SYSTEM || !context.SYSTEM.MEDIA) return
   const globalTheme = getSystemTheme(element)
   const { MEDIA } = context.SYSTEM
