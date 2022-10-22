@@ -1,6 +1,7 @@
 'use strict'
 
 import { merge, isArray } from '@domql/utils'
+import { getSystemTheme } from './Theme'
 
 const keySetters = {
   '@': (key, props, result, element, isSubtree) => applyMediaProps(key, props, isSubtree ? result : result.media, element),
@@ -16,7 +17,11 @@ const execClass = (key, props, result, element) => {
 
   if (typeof classnameExec !== 'function') return
 
-  let classExec = classnameExec({ props, context: element.context })
+  let classExec = classnameExec({
+    props,
+    context: element.context,
+    state: element.state
+  })
   if (isArray(classExec)) {
     classExec = classExec.reduce((a, c) => merge(a, c), {})
   }
@@ -46,9 +51,9 @@ const convertPropsToClass = (props, result, element) => {
 
 const applyMediaProps = (key, props, result, element) => {
   const { context } = element
-  console.log(context, element)
   if (!context.SYSTEM || !context.SYSTEM.MEDIA) return
-  const { globalTheme, MEDIA } = context.SYSTEM
+  const globalTheme = getSystemTheme(element)
+  const { MEDIA } = context.SYSTEM
   const mediaName = MEDIA[key.slice(1)]
   const generatedClass = convertPropsToClass(props, result, element)
 
@@ -113,7 +118,8 @@ const beforeClassAssign = (element, s) => {
 }
 
 export const initUpdate = element => {
-  const { props, context, class: className } = element
+  const { props, class: className } = element
+  const globalTheme = getSystemTheme(element)
 
   const parentProps = element.parent.props
   if (parentProps && parentProps.spacingRatio && parentProps.inheritSpacingRatio) {
@@ -125,8 +131,6 @@ export const initUpdate = element => {
       ignoreInitUpdate: true
     })
   }
-
-  const { globalTheme } = context.SYSTEM
 
   if (globalTheme) {
     const CLASS_NAMES = {

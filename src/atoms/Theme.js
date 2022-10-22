@@ -36,34 +36,60 @@ const transformShadow = shadows => shadows.split('|').map(shadow => {
   }).join(' ')
 }).join(',')
 
-const transformBackgroundImage = (backgroundImage, ctx) => ({
+const transformBackgroundImage = (backgroundImage, ctx, globalTheme) => ({
   backgroundImage: backgroundImage.split(', ').map(v => {
     if (v.includes('url') || v.includes('gradient')) return v
     else if (ctx.SYSTEM.GRADIENT[backgroundImage]) {
-      return getMediaColor(backgroundImage, 'backgroundImage')
+      return getMediaColor(backgroundImage, 'backgroundImage', globalTheme)
     }
     return `url(${v})`
   }).join(' ')
 })
 
+export const getSystemTheme = (element, state) => {
+  const { context } = element
+  const rootState = element.__root ? element.__root.state : element.state
+  return rootState.globalTheme || context.SYSTEM.globalTheme
+}
+
 export const Theme = {
   class: {
     depth: ({ props }) => depth[props.depth],
 
-    theme: ({ props, context }) => {
+    theme: (element) => {
+      const { props } = element
+      const globalTheme = getSystemTheme(element)
       if (!props.theme) return
-      return getMediaTheme(props.theme, props.themeModifier || context.SYSTEM.globalTheme)
+      return getMediaTheme(props.theme, props.themeModifier || globalTheme)
     },
 
-    color: ({ props, context }) => props.color && (
-      getMediaColor(props.color, 'color', context.SYSTEM.globalTheme)
-    ),
-    background: ({ props, context }) => {
-      if (!props.background) return
-      return getMediaColor(props.background, 'background', context.SYSTEM.globalTheme)
+    color: (element) => {
+      const { props } = element
+      const globalTheme = getSystemTheme(element)
+      if (!props.color) return
+      return getMediaColor(props.color, 'color', globalTheme)
     },
-    backgroundColor: ({ props, context }) => (props.backgroundColor) && getMediaColor(props.backgroundColor, 'backgroundColor', context.SYSTEM.globalTheme),
-    backgroundImage: ({ props, context }) => (props.backgroundImage) && transformBackgroundImage(props.backgroundImage, context),
+
+    background: (element) => {
+      const { props } = element
+      const globalTheme = getSystemTheme(element)
+      if (!props.background) return
+      return getMediaColor(props.background, 'background', globalTheme)
+    },
+
+    backgroundColor: (element) => {
+      const { props } = element
+      const globalTheme = getSystemTheme(element)
+      if (!props.backgroundColor) return
+      return getMediaColor(props.backgroundColor, 'backgroundColor', globalTheme)
+    },
+
+    backgroundImage: (element) => {
+      const { props, context } = element
+      const globalTheme = getSystemTheme(element)
+      if (!props.backgroundImage) return
+      return transformBackgroundImage(props.backgroundImage, context, globalTheme)
+    },
     backgroundSize: ({ props }) => props.backgroundSize ? ({ backgroundSize: props.backgroundSize }) : null,
     backgroundPosition: ({ props }) => props.backgroundPosition ? ({ backgroundPosition: props.backgroundPosition }) : null,
 
