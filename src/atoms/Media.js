@@ -16,7 +16,7 @@ const execClass = (key, props, result, element) => {
 
   if (typeof classnameExec !== 'function') return
 
-  let classExec = classnameExec({ props })
+  let classExec = classnameExec({ props, context: element.context })
   if (isArray(classExec)) {
     classExec = classExec.reduce((a, c) => merge(a, c), {})
   }
@@ -45,13 +45,13 @@ const convertPropsToClass = (props, result, element) => {
 }
 
 const applyMediaProps = (key, props, result, element) => {
-  if (!element.context.SYSTEM || !element.context.SYSTEM.MEDIA) { return }
-  const { MEDIA } = element.context.SYSTEM
+  const { context } = element
+  console.log(context, element)
+  if (!context.SYSTEM || !context.SYSTEM.MEDIA) return
+  const { globalTheme, MEDIA } = context.SYSTEM
   const mediaName = MEDIA[key.slice(1)]
   const generatedClass = convertPropsToClass(props, result, element)
 
-  const rootState = element.__root ? element.__root.state : element.state
-  const { globalTheme } = rootState
   const name = key.slice(1)
   const isTheme = ['dark', 'light'].includes(name)
   const matchesGlobal = name === globalTheme
@@ -113,8 +113,7 @@ const beforeClassAssign = (element, s) => {
 }
 
 export const initUpdate = element => {
-  const { props, class: className } = element
-  const rootState = element.__root ? element.__root.state : element.state
+  const { props, context, class: className } = element
 
   const parentProps = element.parent.props
   if (parentProps && parentProps.spacingRatio && parentProps.inheritSpacingRatio) {
@@ -127,7 +126,7 @@ export const initUpdate = element => {
     })
   }
 
-  const { globalTheme } = rootState
+  const { globalTheme } = context.SYSTEM
 
   if (globalTheme) {
     const CLASS_NAMES = {

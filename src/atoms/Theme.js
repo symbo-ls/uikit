@@ -50,14 +50,19 @@ export const Theme = {
   class: {
     depth: ({ props }) => depth[props.depth],
 
-    theme: ({ props, key }) => {
+    theme: ({ props, context }) => {
       if (!props.theme) return
-      return getMediaTheme(props.theme, props.themeModifier)
+      return getMediaTheme(props.theme, props.themeModifier || context.SYSTEM.globalTheme)
     },
 
-    color: ({ props }) => (props.color) && getMediaColor(props.color, 'color'),
-    background: ({ props }) => (props.background) && getMediaColor(props.background, 'background'),
-    backgroundColor: ({ props }) => (props.backgroundColor) && getMediaColor(props.backgroundColor, 'backgroundColor'),
+    color: ({ props, context }) => props.color && (
+      getMediaColor(props.color, 'color', context.SYSTEM.globalTheme)
+    ),
+    background: ({ props, context }) => {
+      if (!props.background) return
+      return getMediaColor(props.background, 'background', context.SYSTEM.globalTheme)
+    },
+    backgroundColor: ({ props, context }) => (props.backgroundColor) && getMediaColor(props.backgroundColor, 'backgroundColor', context.SYSTEM.globalTheme),
     backgroundImage: ({ props, context }) => (props.backgroundImage) && transformBackgroundImage(props.backgroundImage, context),
     backgroundSize: ({ props }) => props.backgroundSize ? ({ backgroundSize: props.backgroundSize }) : null,
     backgroundPosition: ({ props }) => props.backgroundPosition ? ({ backgroundPosition: props.backgroundPosition }) : null,
