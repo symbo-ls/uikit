@@ -1,6 +1,5 @@
 'use strict'
 
-import { logGroupIf } from '@domql/utils'
 import { MEDIA } from '../defaultConfig'
 import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
 
