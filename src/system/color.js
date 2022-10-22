@@ -1,5 +1,6 @@
 'use strict'
 
+import { logGroupIf } from '@domql/utils'
 import { MEDIA } from '../defaultConfig'
 import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
 
@@ -76,17 +77,22 @@ export const getMediaColor = (value, property, globalTheme = CONFIG.globalTheme)
 
   const { COLOR, GRADIENT } = CONFIG
   const val = COLOR[name] || GRADIENT[name]
-
   const isObj = isObject(val)
+
   if (isObj && val.value) return { [property]: getColor(value, globalTheme) }
   else if (isObj) {
-    const obj = {}
-    for (const mediaName in val) {
-      const query = MEDIA[globalTheme || mediaName.slice(1)]
-      const media = `@media screen and ${query}`
-      obj[media] = { [property]: getColor(value, globalTheme || mediaName) }
+    if (globalTheme) {
+      logGroupIf(name === 'packageGradient', name, val, globalTheme)
+      return { [property]: getColor(value, `@${globalTheme}`) }
+    } else {
+      const obj = {}
+      for (const mediaName in val) {
+        const query = MEDIA[mediaName.slice(1)]
+        const media = `@media screen and ${query}`
+        obj[media] = { [property]: getColor(value, mediaName) }
+      }
+      return obj
     }
-    return obj
   } else {
     if (CONFIG.verbose) console.warn('Can\'t find color', value)
     return { [property]: value }
