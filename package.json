@@ -23,6 +23,7 @@
   "dependencies": {
     "@domql/utils": "latest",
     "@symbo.ls/cli": "latest",
+    "@symbo.ls/socket": "latest",
     "@symbo.ls/init": "latest",
     "@symbo.ls/scratch": "latest",
     "@symbo.ls/utils": "latest"
