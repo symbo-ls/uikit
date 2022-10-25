@@ -1,7 +1,5 @@
 'use strict'
 
-import { CSS_VARS } from '../factory' // eslint-disable-line
-
 export * from './sequence'
 export * from './unit'
 export * from './typography'

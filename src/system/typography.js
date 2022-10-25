@@ -1,7 +1,7 @@
 'use strict'
 
-import { MEDIA, TYPOGRAPHY } from '../defaultConfig'
-import { CONFIG } from '../factory'
+import { getActiveConfig } from '../factory'
+
 import {
   applySequenceVars,
   findHeadings,
@@ -11,6 +11,9 @@ import {
 } from '../utils'
 
 export const runThroughMedia = props => {
+  const CONFIG = getActiveConfig()
+  const { TYPOGRAPHY, MEDIA } = CONFIG
+
   for (const prop in props) {
     const mediaProps = props[prop]
     if (prop.slice(0, 1) === '@') {
@@ -44,6 +47,7 @@ export const runThroughMedia = props => {
 }
 
 export const applyHeadings = (props) => {
+  const CONFIG = getActiveConfig()
   if (props.h1Matches) {
     const unit = props.unit
     const HEADINGS = findHeadings(props)
@@ -63,14 +67,21 @@ export const applyHeadings = (props) => {
 }
 
 export const applyTypographySequence = () => {
+  const CONFIG = getActiveConfig()
+  const { TYPOGRAPHY } = CONFIG
+
   generateSequence(TYPOGRAPHY)
   applyHeadings(TYPOGRAPHY)
   applySequenceVars(TYPOGRAPHY)
   runThroughMedia(TYPOGRAPHY)
 }
 
-export const getFontSizeByKey = value => getSequenceValuePropertyPair(
-  value,
-  'fontSize',
-  TYPOGRAPHY
-)
+export const getFontSizeByKey = value => {
+  const CONFIG = getActiveConfig()
+  const { TYPOGRAPHY } = CONFIG
+  return getSequenceValuePropertyPair(
+    value,
+    'fontSize',
+    TYPOGRAPHY
+  )
+}

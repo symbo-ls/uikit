@@ -1,14 +1,16 @@
 'use strict'
 
-import { CONFIG, CSS_VARS } from '../factory'
+import { getActiveConfig } from '../factory'
 import { getMediaTheme } from '.'
-import { deepMerge, merge, overwriteDeep } from '@domql/utils' // eslint-disable-line no-unused-vars
+import { deepMerge, merge } from '@domql/utils' // eslint-disable-line no-unused-vars
 
 export const applyReset = (reset = {}) => {
-  if (CONFIG.RESET) {
-    if (CONFIG.RESET[':root']) {
-      const configReset = CONFIG.RESET
-      const configStyles = CONFIG.TYPOGRAPHY.styles
+  const CONFIG = getActiveConfig()
+  const { CSS_VARS, RESET, TYPOGRAPHY, DOCUMENT } = CONFIG
+  if (RESET) {
+    if (RESET[':root']) {
+      const configReset = RESET
+      const configStyles = TYPOGRAPHY.styles
 
       configReset[':root'] = CSS_VARS
       configReset.body = {
@@ -23,7 +25,7 @@ export const applyReset = (reset = {}) => {
       configReset.h6 = configStyles.h6
     }
 
-    return deepMerge(merge(CONFIG.RESET, reset), {
+    return deepMerge(merge(RESET, reset), {
       ':root': CSS_VARS,
 
       html: {
@@ -38,25 +40,25 @@ export const applyReset = (reset = {}) => {
         transform: 'translate3d(0, 0, 1px)',
         scrollBehavior: 'smooth',
 
-        fontSize: CONFIG.TYPOGRAPHY.browserDefault + 'px',
+        fontSize: TYPOGRAPHY.browserDefault + 'px',
 
-        fontFamily: CONFIG.DOCUMENT.fontFamily,
-        lineHeight: CONFIG.DOCUMENT.lineHeight
+        fontFamily: DOCUMENT.fontFamily,
+        lineHeight: DOCUMENT.lineHeight
       },
 
-      ...CONFIG.TYPOGRAPHY.styles,
+      ...TYPOGRAPHY.styles,
 
       body: {
         boxSizing: 'border-box',
         height: '100%',
         margin: 0,
-        fontFamily: CONFIG.DOCUMENT.fontFamily,
+        fontFamily: DOCUMENT.fontFamily,
 
-        fontSize: CONFIG.TYPOGRAPHY.base / CONFIG.TYPOGRAPHY.browserDefault + CONFIG.UNIT.default,
+        fontSize: TYPOGRAPHY.base / TYPOGRAPHY.browserDefault + CONFIG.UNIT.default,
 
         ...getMediaTheme('document', `@${CONFIG.globalTheme}`),
 
-        ...CONFIG.TYPOGRAPHY.styles.body
+        ...TYPOGRAPHY.styles.body
       },
 
       // form elements
@@ -67,7 +69,7 @@ export const applyReset = (reset = {}) => {
       },
 
       'select, input': {
-        fontFamily: CONFIG.DOCUMENT.fontFamily
+        fontFamily: DOCUMENT.fontFamily
       }
     })
   }

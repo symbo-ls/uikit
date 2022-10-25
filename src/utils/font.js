@@ -1,7 +1,5 @@
 'use strict'
 
-import { isObject } from '@domql/utils'
-
 export const getDefaultOrFirstKey = (LIBRARY, key) => {
   if (LIBRARY[key]) return LIBRARY[key].value
   if (LIBRARY.default) return LIBRARY[LIBRARY.default].value
@@ -38,9 +36,9 @@ export const getFontFace = LIBRARY => {
 }
 
 export const getFontFaceEachString = (name, weights) => {
-  const isObj = isObject(weights)
-  if (isObj) return setCustomFontMedia(name, weights.url)
-  return getFontFaceEach(name, weights).map(setInCustomFontMedia)
+  const isArr = weights[0]
+  if (isArr) return getFontFaceEach(name, weights).map(setInCustomFontMedia)
+  return setCustomFontMedia(name, weights.url)
 }
 
 export const getFontFaceString = LIBRARY => {

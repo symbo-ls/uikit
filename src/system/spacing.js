@@ -1,7 +1,14 @@
 'use strict'
 
-import { SPACING } from '../defaultConfig'
-import { applySequenceVars, arrayze, generateSequence, getSequenceValuePropertyPair, isString, merge } from '../utils'
+import { getActiveConfig } from '../factory'
+import {
+  applySequenceVars,
+  arrayze,
+  generateSequence,
+  getSequenceValuePropertyPair,
+  isString,
+  merge
+} from '../utils'
 
 const runThroughMedia = sequenceProps => {
   for (const prop in sequenceProps) {
@@ -32,12 +39,16 @@ const runThroughMedia = sequenceProps => {
 }
 
 export const applySpacingSequence = () => {
+  const CONFIG = getActiveConfig()
+  const { SPACING } = CONFIG
   generateSequence(SPACING)
   applySequenceVars(SPACING)
   runThroughMedia(SPACING)
 }
 
 const getSequence = (sequenceProps) => {
+  const CONFIG = getActiveConfig()
+  const { SPACING } = CONFIG
   if (!sequenceProps) return SPACING
   const hasGenerated = Object.keys(sequenceProps.sequence).length > 0
   return hasGenerated ? sequenceProps : generateSequence(sequenceProps)
@@ -87,6 +98,9 @@ export const getSpacingByKey = (
 }
 
 export const getSpacingBasedOnRatio = (props, propertyName, val) => {
+  const CONFIG = getActiveConfig()
+  const { SPACING } = CONFIG
+
   const { spacingRatio, unit } = props
   const value = val || props[propertyName]
 

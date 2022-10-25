@@ -1,12 +1,13 @@
 'use strict'
 
-import { MEDIA, TIMING } from '../defaultConfig'
-import { CONFIG, CSS_VARS } from '../factory'
+import { getActiveConfig } from '../factory'
 import { isObjectLike } from './object'
 
 const ENV = process.env.NODE_ENV // eslint-disable-line
 
 export const setVariables = (result, key) => {
+  const CONFIG = getActiveConfig()
+  const { CSS_VARS } = CONFIG
   // CSS_VARS[result.var] =
   if (isObjectLike(result.value)) {
     // console.group(key)
@@ -21,7 +22,10 @@ export const setVariables = (result, key) => {
 }
 
 export const applySequenceVars = (props, mediaName, options = {}) => {
-  const unit = props.unit || CONFIG.UNIT.default
+  const CONFIG = getActiveConfig()
+  const { UNIT, MEDIA, TIMING, CSS_VARS } = CONFIG
+
+  const unit = props.unit || UNIT.default
   const { sequence, scales } = props
 
   for (const key in sequence) {

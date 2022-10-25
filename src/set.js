@@ -1,6 +1,6 @@
 'use strict'
 
-import { CONFIG, CSS_VARS } from './factory' // eslint-disable-line no-unused-vars
+import { FACTORY, getActiveConfig } from './factory' // eslint-disable-line no-unused-vars
 import {
   setColor,
   setGradient,
@@ -50,6 +50,7 @@ export const SETTERS = {
  * @returns {Object} Factory
  */
 export const setValue = (FACTORY_NAME, value, key) => {
+  const CONFIG = getActiveConfig()
   const factoryName = FACTORY_NAME.toLowerCase()
   const FACTORY = CONFIG[FACTORY_NAME]
 
@@ -62,6 +63,7 @@ export const setValue = (FACTORY_NAME, value, key) => {
 }
 
 export const setEach = (factoryName, props) => {
+  const CONFIG = getActiveConfig()
   const FACTORY_NAME = factoryName.toUpperCase()
   const keys = Object.keys(props)
   keys.map(key => setValue(FACTORY_NAME, props[key], key))
@@ -69,8 +71,16 @@ export const setEach = (factoryName, props) => {
   return CONFIG[FACTORY_NAME]
 }
 
-export const set = recivedConfig => {
+const SET_OPTIONS = {}
+
+export const set = (recivedConfig, options = SET_OPTIONS) => {
+  let CONFIG = getActiveConfig()
   const { version, verbose, useVariable, useReset, globalTheme, ...config } = recivedConfig
+
+  if (options.newConfig) {
+    FACTORY['active'] = options.newConfig
+    CONFIG = getActiveConfig(options.newConfig)
+  }
 
   if (verbose !== undefined) CONFIG.verbose = verbose
   if (useVariable !== undefined) CONFIG.useVariable = useVariable

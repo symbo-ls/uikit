@@ -1,8 +1,7 @@
 'use strict'
 
+import { getActiveConfig } from '../factory'
 import { toDashCase } from '@symbo.ls/utils'
-import { UNIT } from '../defaultConfig'
-import { CONFIG } from '../factory'
 import { isString } from './object'
 
 export const numToLetterMap = {
@@ -126,6 +125,9 @@ export const generateSequence = (sequenceProps) => {
 }
 
 export const getSequenceValue = (value = 'A', sequenceProps) => {
+  const CONFIG = getActiveConfig()
+  const { UNIT } = CONFIG
+
   const {
     sequence,
     unit = UNIT.default,

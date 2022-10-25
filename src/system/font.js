@@ -1,9 +1,10 @@
 'use strict'
 
 import { isObject } from '@domql/utils'
-import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
+import { getActiveConfig } from '../factory'
 
 import {
+  arrayze,
   getDefaultOrFirstKey,
   getFontFaceEach,
   setCustomFontMedia
@@ -13,21 +14,25 @@ import {
 
 export const setFont = (val, key) => {
   const CSSvar = `--font-${key}`
-  const fontFace = isObject(val)
-    ? setCustomFontMedia(key, val.url)
-    : getFontFaceEach(key, val)
+  const fontFace = val[0]
+    ? getFontFaceEach(key, val)
+    : setCustomFontMedia(key, val.url)
   return { var: CSSvar, value: val, fontFace }
 }
 
 export const getFontFamily = (key, factory) => {
+  const CONFIG = getActiveConfig()
   const { FONT_FAMILY } = CONFIG
   return getDefaultOrFirstKey(factory || FONT_FAMILY, key)
 }
 
 export const setFontFamily = (val, key) => {
+  const CONFIG = getActiveConfig()
   const { FONT_FAMILY, FONT_FAMILY_TYPES } = CONFIG
-  const { value, type } = val
+  let { value, type } = val
   if (val.isDefault) FONT_FAMILY.default = key
+
+  if (isObject(value)) value = arrayze(value)
 
   const CSSvar = `--font-family-${key}`
   const str = `${value.join(', ')}, ${FONT_FAMILY_TYPES[type]}`

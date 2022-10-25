@@ -1,7 +1,6 @@
 'use strict'
 
-import { MEDIA } from '../defaultConfig'
-import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
+import { getActiveConfig } from '../factory'
 
 import {
   isArray,
@@ -16,6 +15,7 @@ import {
 } from '../utils'
 
 export const getColor = (value, key) => {
+  const CONFIG = getActiveConfig()
   if (!isString(value)) {
     if (CONFIG.verbose) console.warn(value, '- type for color is not valid')
     return
@@ -64,7 +64,9 @@ export const getColor = (value, key) => {
   } else return CONFIG.useVariable ? `var(${val.var})` : val.value
 }
 
-export const getMediaColor = (value, property, globalTheme = CONFIG.globalTheme) => {
+export const getMediaColor = (value, property, globalTheme) => {
+  const CONFIG = getActiveConfig()
+  if (!globalTheme) globalTheme = CONFIG.globalTheme
   if (!isString(value)) {
     if (CONFIG.verbose) console.warn(value, '- type for color is not valid')
     return
@@ -84,7 +86,7 @@ export const getMediaColor = (value, property, globalTheme = CONFIG.globalTheme)
     else {
       const obj = {}
       for (const mediaName in val) {
-        const query = MEDIA[mediaName.slice(1)]
+        const query = CONFIG.MEDIA[mediaName.slice(1)]
         const media = `@media screen and ${query}`
         obj[media] = { [property]: getColor(value, mediaName) }
       }
@@ -97,6 +99,8 @@ export const getMediaColor = (value, property, globalTheme = CONFIG.globalTheme)
 }
 
 export const setColor = (val, key, suffix) => {
+  const CONFIG = getActiveConfig()
+
   if (isString(val) && val.slice(0, 2) === '--') val = getColor(val.slice(2))
 
   if (isArray(val)) {
@@ -118,7 +122,7 @@ export const setColor = (val, key, suffix) => {
   const rgb = `${r}, ${g}, ${b}`
   const value = `rgba(${rgb}, ${alpha})`
 
-  if (CONFIG.useVariable) { CSS_VARS[CSSVar] = value }
+  if (CONFIG.useVariable) { CONFIG.CSS_VARS[CSSVar] = value }
 
   return {
     var: CSSVar,
@@ -129,6 +133,7 @@ export const setColor = (val, key, suffix) => {
 }
 
 export const setGradient = (val, key, suffix) => {
+  const CONFIG = getActiveConfig()
   if (isString(val) && val.slice(0, 2) === '--') val = getColor(val.slice(2))
 
   if (isArray(val)) {
@@ -147,7 +152,7 @@ export const setGradient = (val, key, suffix) => {
   const CSSVar = `--gradient-${key}` + (suffix ? `-${suffix}` : '')
 
   if (CONFIG.useVariable) {
-    CSS_VARS[CSSVar] = val.value || val
+    CONFIG.CSS_VARS[CSSVar] = val.value || val
   }
 
   return {

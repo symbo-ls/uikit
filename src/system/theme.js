@@ -1,7 +1,7 @@
 'use strict'
 
 import { getColor } from './color'
-import { CONFIG, CSS_VARS } from '../factory' // eslint-disable-line
+import { getActiveConfig } from '../factory'
 
 import {
   isObject,
@@ -31,6 +31,7 @@ const getThemeValue = theme => {
 }
 
 export const getTheme = (value, modifier) => {
+  const CONFIG = getActiveConfig()
   if (CONFIG.useVariable) return getMediaTheme(value, modifier)
   const { THEME } = CONFIG
 
@@ -106,6 +107,7 @@ const setMedia = (theme, value) => {
 }
 
 const setHelpers = (theme, value) => {
+  const CONFIG = getActiveConfig()
   const { helpers } = theme
   if (!helpers) return
   const keys = Object.keys(helpers)
@@ -119,6 +121,7 @@ const setHelpers = (theme, value) => {
 }
 
 export const setTheme = (val, key) => {
+  const CONFIG = getActiveConfig()
   if (CONFIG.useVariable) return setMediaTheme(val, key)
 
   const { state, media, helpers } = val
@@ -139,6 +142,8 @@ const keySetters = { // eslint-disable-line
 }
 
 export const setMediaTheme = (val, key, suffix, prefers) => {
+  const CONFIG = getActiveConfig()
+  const { CSS_VARS } = CONFIG
   const theme = { value: val }
 
   if (isObject(val)) {
@@ -182,6 +187,7 @@ export const setMediaTheme = (val, key, suffix, prefers) => {
 }
 
 const recursiveTheme = val => {
+  const CONFIG = getActiveConfig()
   const obj = {}
   for (const param in val) {
     const symb = param.slice(0, 1)
@@ -218,6 +224,7 @@ const checkForReference = (val, callback) => {
 const checkThemeReference = (val) => checkForReference(val, checkThemeReference) // eslint-disable-line
 
 export const getMediaTheme = (val, mod) => {
+  const CONFIG = getActiveConfig()
   if (isString(val) && val.slice(0, 2) === '--') val = getMediaTheme(val.slice(2))
 
   if (!val || !isString(val)) {
