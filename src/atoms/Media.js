@@ -87,14 +87,14 @@ const applyCaseProps = (key, props, result, element) => {
 
 const applyConditionalCaseProps = (key, props, result, element) => {
   const caseKey = key.slice(1)
-  const isPropTrue = element.props[caseKey]
+  const isPropTrue = element.props[caseKey] || element.state[caseKey] === true
   if (!isPropTrue) return // remove classname if not here
   return merge(result, convertPropsToClass(props, result, element))
 }
 
 const applyConditionalFalsyProps = (key, props, result, element) => {
   const caseKey = key.slice(1)
-  const isPropTrue = element.props[caseKey]
+  const isPropTrue = element.props[caseKey] || element.state[caseKey] === true
   if (!isPropTrue) return merge(result, convertPropsToClass(props, result, element))
 }
 
