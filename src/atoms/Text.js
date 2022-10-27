@@ -31,7 +31,7 @@ export const P = { tag: 'p' }
 export const Caption = { tag: 'caption' }
 export const Strong = {
   tag: 'strong',
-  props: { fontWeight: '900' }
+  props: { fontWeight: '700' }
 }
 export const Underline = { tag: 'u' }
 export const Italic = { tag: 'i' }

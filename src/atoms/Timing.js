@@ -9,6 +9,7 @@ export const transformTransition = transition => {
   if (!arr.length) return transition
 
   return arr.map(v => {
+    if (v.slice(0, 2) === '--') return `var(${v})`
     if (v.length < 3 || v.includes('ms')) {
       const mapWithSequence = getTimingByKey(v)
       return mapWithSequence.timing || v

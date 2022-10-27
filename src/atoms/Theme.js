@@ -11,7 +11,8 @@ const transformBorder = border => {
   const arr = border.split(', ')
   return arr.map(v => {
     v = v.trim()
-    if (isBorderStyle(v)) return v || 'solid'
+    if (v.slice(0, 2) === '--') return `var(${v})`
+    else if (isBorderStyle(v)) return v || 'solid'
     else if (v.slice(-2) === 'px' || v.slice(-2) === 'em') return v // TODO: add map spacing
     else if (getColor(v).length > 2) return getColor(v)
     return getSpacingByKey(v, 'border').border
@@ -20,14 +21,16 @@ const transformBorder = border => {
 
 const transformTextStroke = stroke => ({
   WebkitTextStroke: stroke.split(', ').map(v => {
+    if (v.slice(0, 2) === '--') return `var(${v})`
     if (v.includes('px')) return v
     else if (getColor(v)) return getColor(v)
   }).join(' ')
 })
 
-const transformShadow = shadows => shadows.split('|').map(shadow => {
+export const transformShadow = shadows => shadows.split('|').map(shadow => {
   return shadow.split(', ').map(v => {
     v = v.trim()
+    if (v.slice(0, 2) === '--') return `var(${v})`
     if (getColor(v).length > 2) return getColor(v)
     if (v.includes('px') || v.slice(-2) === 'em') return v
     const arr = v.split(' ')
@@ -38,6 +41,7 @@ const transformShadow = shadows => shadows.split('|').map(shadow => {
 
 const transformBackgroundImage = (backgroundImage, ctx, globalTheme) => ({
   backgroundImage: backgroundImage.split(', ').map(v => {
+    if (v.slice(0, 2) === '--') return `var(${v})`
     if (v.includes('url') || v.includes('gradient')) return v
     else if (ctx.SYSTEM.GRADIENT[backgroundImage]) {
       return getMediaColor(backgroundImage, 'backgroundImage', globalTheme)
@@ -120,6 +124,10 @@ export const Theme = {
 
     boxShadow: ({ props }) => props.boxShadow && ({
       boxShadow: transformShadow(props.boxShadow)
+    }),
+
+    textShadow: ({ props }) => props.textShadow && ({
+      textShadow: transformShadow(props.textShadow)
     }),
 
     opacity: ({ props }) => props.opacity && ({ opacity: props.opacity }),
