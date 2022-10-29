@@ -17,6 +17,7 @@ export const Input = {
   },
 
   attr: {
+    name: ({ props }) => props.name,
     placeholder: ({ props }) => props.placeholder,
     value: ({ props }) => props.value,
     disabled: ({ props }) => props.disabled || null,
