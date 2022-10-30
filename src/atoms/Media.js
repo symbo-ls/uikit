@@ -1,11 +1,13 @@
 'use strict'
 
-import { merge, isArray } from '@domql/utils'
+import { merge, isArray, overwrite } from '@domql/utils'
 import { getSystemTheme } from './Theme'
 
 const keySetters = {
   '@': (key, props, result, element, isSubtree) => applyMediaProps(key, props, isSubtree ? result : result.media, element),
   ':': (key, props, result, element, isSubtree) => applySelectorProps(key, props, isSubtree ? result : result.selector, element),
+  '[': (key, props, result, element, isSubtree) => applySelectorProps(key, props, isSubtree ? result : result.selector, element),
+  '&': (key, props, result, element, isSubtree) => applySelectorProps(key, props, isSubtree ? result : result.selector, element),
   $: (key, props, result, element, isSubtree) => applyCaseProps(key, props, isSubtree ? result : result.case, element),
   '.': (key, props, result, element, isSubtree) => applyConditionalCaseProps(key, props, isSubtree ? result : result.case, element),
   '!': (key, props, result, element, isSubtree) => applyConditionalFalsyProps(key, props, isSubtree ? result : result.case, element)
@@ -146,6 +148,7 @@ export const initUpdate = element => {
           themeModifier: globalTheme
         }, { preventRecursive: true, ignoreInitUpdate: true })
       } else if (key === 'true') applyTrueProps(props[key], CLASS_NAMES, element)
+      if (key === 'true') console.log(key)
 
       if (setter) setter(key, props[key], CLASS_NAMES, element)
     }

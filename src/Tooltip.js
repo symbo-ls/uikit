@@ -18,8 +18,8 @@ export const Tooltip = {
 
     title: {
       fontWeight: 500,
-      color: 'gray12',
-      text: 'And tooltip is coming'
+      color: 'gray12'
+      // text: 'And tooltip is coming'
     },
     p: {
       fontSize: 'Z2',
