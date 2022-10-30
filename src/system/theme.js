@@ -8,7 +8,7 @@ import {
   isString,
   isObjectLike,
   isArray
-} from '../utils'
+} from '@domql/utils'
 
 const ENV = process.env.NODE_ENV // eslint-disable-line
 

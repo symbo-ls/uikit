@@ -1,12 +1,13 @@
 'use strict'
 
 import { getActiveConfig } from '../factory'
+
+import { isString } from '@domql/utils'
 import {
   applySequenceVars,
   arrayze,
   generateSequence,
   getSequenceValuePropertyPair,
-  isString,
   merge
 } from '../utils'
 

@@ -1,17 +1,15 @@
 'use strict'
 
 import { getActiveConfig } from '../factory'
+import { isObject, isArray, isString } from '@domql/utils'
 
 import {
-  isArray,
   colorStringToRgbaArray,
-  isString,
   rgbToHSL,
   hexToRgbArray,
   rgbArrayToHex,
   hslToRgb,
-  getColorShade,
-  isObject
+  getColorShade
 } from '../utils'
 
 export const getColor = (value, key) => {

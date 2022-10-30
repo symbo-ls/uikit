@@ -1,8 +1,8 @@
 'use strict'
 
 import { getActiveConfig } from '../factory'
+import { isString } from '@domql/utils'
 import { toDashCase } from '@symbo.ls/utils'
-import { isString } from './object'
 
 export const numToLetterMap = {
   '-6': 'U',
