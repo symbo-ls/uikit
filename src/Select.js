@@ -1,6 +1,9 @@
 'use strict'
 
+import { Focusable } from './atoms'
+
 export const Select = {
+  extend: Focusable,
   tag: 'select',
 
   props: {
