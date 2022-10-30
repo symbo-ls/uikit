@@ -1,6 +1,6 @@
 'use strict'
 
-import { merge, isArray, overwrite } from '@domql/utils'
+import { merge, isArray } from '@domql/utils'
 import { getSystemTheme } from './Theme'
 
 const keySetters = {

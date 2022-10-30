@@ -24,5 +24,10 @@ export const Select = {
       selected: ({ props }) => props.selected,
       disabled: ({ props }) => props.disabled
     }
+  },
+
+  attr: {
+    name: ({ props }) => props.name,
+    disabled: ({ props }) => props.disabled
   }
 }
