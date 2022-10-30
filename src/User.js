@@ -5,12 +5,15 @@ import { Img, Flex } from '.'
 export const User = {
   extend: Img,
   key: 'nikoloza',
-  props: ({ key }) => ({
+  props: {
+    avatarType: 'initials',
     borderRadius: '100%',
     boxSize: 'B',
-    src: `https://avatars.dicebear.com/api/adventurer-neutral/${key}.svg`,
     cursor: 'pointer'
-  })
+  },
+  attr: {
+    src: ({ key, props }) => props.src || `https://avatars.dicebear.com/api/${props.avatarType || 'adventurer-neutral'}/${props.key || key}.svg`
+  }
 }
 
 export const UserBundle = {
