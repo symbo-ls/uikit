@@ -21,12 +21,14 @@
     "reinstall": "rm yarn.lock && rm -rf node_modules/rackai && yarn",
     "bump": "npx np"
   },
+  "peerDependencies": {
+    "@domql/utils": "^2.2.1",
+    "@emotion/css": "^11.10.0",
+    "@symbo.ls/scratch": "^0.3.19"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/preset-env": "^7.19.4",
-    "@domql/utils": "^2.2.1",
-    "@emotion/css": "^11.10.0",
-    "@symbo.ls/scratch": "^0.3.19",
     "babel-eslint": "^10.0.3",
     "emotion": "^10.0.27",
     "np": "^7.2.0",
