@@ -24,11 +24,5 @@ export const Input = {
     readonly: ({ props }) => props.readonly,
     required: ({ props }) => props.required,
     type: ({ props }) => props.type
-  },
-
-  on: {
-    input: ({ key, value, props }) => {
-
-    }
   }
 }
