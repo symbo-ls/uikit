@@ -1,12 +1,12 @@
 'use strict'
 
 import { isArray, isObject } from '@domql/utils'
-import { getColor, mapSpacing, getTheme, SPACING, mapFontSize, getFontFamily, FONT_FAMILY } from '@symbo.ls/scratch'
+import { getColor, getSpacingByKey, getTheme, SPACING, getFontSizeByKey, getFontFamily, FONT_FAMILY } from '@symbo.ls/scratch'
 
 export const mapBasedOnRatio = (props, prop, unit) => {
   const { spacingRatio } = props
   const val = props[prop]
-  // TODO: move this to mapSpacing
+  // TODO: move this to getSpacingByKey
   if (spacingRatio) {
     const params = SPACING[spacingRatio]
 
@@ -22,9 +22,9 @@ export const mapBasedOnRatio = (props, prop, unit) => {
       }
     }
 
-    return mapSpacing(val, prop, params, unit)
+    return getSpacingByKey(val, prop, params, unit)
   }
-  return mapSpacing(val, prop, null, unit)
+  return getSpacingByKey(val, prop, null, unit)
 }
 
 const isBorderStyle = str =>
@@ -179,7 +179,7 @@ export const position = {
 }
 
 export const text = {
-  fontSize: props => props.fontSize ? mapFontSize(props.fontSize) : null,
+  fontSize: props => props.fontSize ? getFontSizeByKey(props.fontSize) : null,
   fontFamily: props => props.fontFamily && ({ fontFamily: getFontFamily(FONT_FAMILY, props.fontFamily) || props.fontFamily }),
   lineHeight: props => props.lineHeight && ({ lineHeight: props.lineHeight }),
   // lineHeight: props => props.lineHeight && mapBasedOnRatio(props, 'lineHeight', null, ''),
@@ -205,8 +205,8 @@ export const registry = {
     if (typeof props.heightRange !== 'string') return
     const [minHeight, maxHeight] = props.heightRange.split(' ')
     return {
-      ...mapSpacing(minHeight, 'minHeight'),
-      ...mapSpacing(maxHeight, 'maxHeight')
+      ...getSpacingByKey(minHeight, 'minHeight'),
+      ...getSpacingByKey(maxHeight, 'maxHeight')
     }
   },
 

@@ -22,10 +22,11 @@
     "bump": "npx np"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "@babel/preset-env": "^7.19.4",
     "@domql/utils": "^2.2.1",
     "@emotion/css": "^11.10.0",
     "@symbo.ls/scratch": "^0.3.19",
-    "@babel/core": "^7.14.6",
     "babel-eslint": "^10.0.3",
     "emotion": "^10.0.27",
     "np": "^7.2.0",
