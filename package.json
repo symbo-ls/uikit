@@ -1,28 +1,42 @@
 {
-  "private": true,
+  "name": "smbls",
+  "description": "UI Library built on Scratch and DOMQL",
+  "private": false,
+  "author": "symbo.ls",
+  "version": "2.6.0",
+  "repository": "https://github.com/symbo-ls/smbls",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "start": "parcel showcase/index.html",
-    "prebuild": "rm -rf dist .parcel-cache",
-    "build": "npx parcel build index.js",
-    "build:all": "lerna exec -- npx parcel build index.js",
-    "test:lint": "npx standard \"packages/**/*.js\"",
-    "test": "echo running all tests is not supported, maybe run: \"yarn test:lint\"",
-    "publish:all": "yarn build:all && lerna publish",
-    "push": "echo push is not yet supported",
-    "push:version": "git add . && git commit -am 'version update' && git push",
-    "clean": "rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log",
-    "clean:all": "lerna exec -- rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log"
+    "build": "parcel build showcase/index.html --public-url .",
+    "deploy": "yarn build && gh-pages -d dist",
+    "clean": "rm yarn.lock && rm -rf node_modules && rm -rf dist && rm -rf .cache",
+    "reinstall": "rm yarn.lock && rm -rf node_modules/rackai && yarn"
+  },
+  "dependencies": {
+    "@domql/utils": "latest",
+    "@symbo.ls/init": "latest",
+    "@symbo.ls/scratch": "latest",
+    "@symbo.ls/utils": "latest",
+    "@symbo.ls/cli": "latest",
+    "@symbo.ls/socket": "latest"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.10",
-    "babel-eslint": "^10.1.0",
-    "lerna": "^5.3.0",
-    "parcel": "^2.7.0",
+    "@babel/core": "^7.11.5",
+    "@emotion/css": "^11.5.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.1.0",
+    "parcel-bundler": "^1.12.4",
     "parcel-plugin-svg-sprite": "^1.4.1",
-    "standard": "^17.0.0"
+    "standard": "^13.1.0"
   },
   "standard": {
     "parser": "babel-eslint"
-  },
-  "browserslist": "> 0.5%, last 2 versions, not dead"
+  }
 }
