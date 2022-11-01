@@ -148,8 +148,6 @@ export const initUpdate = element => {
           themeModifier: globalTheme
         }, { preventRecursive: true, ignoreInitUpdate: true })
       } else if (key === 'true') applyTrueProps(props[key], CLASS_NAMES, element)
-      if (key === 'true') console.log(key)
-
       if (setter) setter(key, props[key], CLASS_NAMES, element)
     }
 
