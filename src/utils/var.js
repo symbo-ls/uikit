@@ -8,14 +8,9 @@ const ENV = process.env.NODE_ENV // eslint-disable-line
 export const setVariables = (result, key) => {
   const CONFIG = getActiveConfig()
   const { CSS_VARS } = CONFIG
-  // CSS_VARS[result.var] =
   if (isObjectLike(result.value)) {
-    // console.group(key)
     // for (const key in result.value) {
-    // console.log(key, result.value[key])
     // }
-    // console.log(result)
-    // console.groupEnd(key)
   } else {
     CSS_VARS[result.var] = result.value
   }
