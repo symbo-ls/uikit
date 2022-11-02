@@ -17,6 +17,9 @@ export const Input = {
   },
 
   attr: {
+    pattern: ({ props }) => props.pattern,
+    minlength: ({ props }) => props.minlength,
+    maxlength: ({ props }) => props.maxlength,
     name: ({ props }) => props.name,
     placeholder: ({ props }) => props.placeholder,
     value: ({ props }) => props.value,
