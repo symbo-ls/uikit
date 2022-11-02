@@ -15,5 +15,8 @@ export default {
   SPACING,
   FONT,
   FONT_FAMILY,
-  ICONS: {}
+  TIMING: {},
+  ICONS: {},
+  MEDIA: {},
+  DEVICES: {}
 }
