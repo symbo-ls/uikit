@@ -7,7 +7,6 @@ import { program } from './program.js'
 program
   .command('init [name]')
   .description('Initialize a repository')
-  .argument('<name>')
   .option('--framework', 'Which Symbols to install (domql, react)')
   .action(async (framework) => {
     const packageName = `@symbo.ls/${framework || 'uikit'}`
