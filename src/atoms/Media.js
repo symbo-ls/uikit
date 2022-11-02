@@ -53,9 +53,9 @@ const convertPropsToClass = (props, result, element) => {
 
 const applyMediaProps = (key, props, result, element) => {
   const { context } = element
-  if (!context.CLIENT_SYSTEM || !context.CLIENT_SYSTEM.MEDIA) return
+  if (!context.SYSTEM || !context.SYSTEM.MEDIA) return
   const globalTheme = getSystemTheme(element)
-  const { MEDIA } = context.CLIENT_SYSTEM
+  const { MEDIA } = context.SYSTEM
   const mediaName = MEDIA[key.slice(1)]
   const generatedClass = convertPropsToClass(props, result, element)
 
@@ -80,7 +80,7 @@ const applySelectorProps = (key, props, result, element) => {
 }
 
 const applyCaseProps = (key, props, result, element) => {
-  const { CASES } = element.context && element.context.CLIENT_SYSTEM
+  const { CASES } = element.context && element.context.SYSTEM
   const caseKey = key.slice(1)
   const isPropTrue = element.props[caseKey]
   if (!CASES[caseKey] && !isPropTrue) return

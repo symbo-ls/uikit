@@ -53,7 +53,7 @@ const transformBackgroundImage = (backgroundImage, ctx, globalTheme) => ({
 export const getSystemTheme = (element, state) => {
   const { context } = element
   const rootState = element.__root ? element.__root.state : element.state
-  return rootState.globalTheme || context.CLIENT_SYSTEM.globalTheme
+  return rootState.globalTheme || context.SYSTEM.globalTheme
 }
 
 export const Theme = {
