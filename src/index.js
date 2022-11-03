@@ -18,5 +18,6 @@ export default {
   TIMING: {},
   ICONS: {},
   MEDIA: {},
-  DEVICES: {}
+  DEVICES: {},
+  CASES: {}
 }
