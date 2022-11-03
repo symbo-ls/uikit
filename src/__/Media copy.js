@@ -83,7 +83,7 @@ const init = (element, s) => {
 }
 
 export const initUpdate = el => {
-  // FORCE CLIENT_STATE UPDATE:
+  // FORCE PROJECT_STATE UPDATE:
   const { props, class: className } = el
   const rootState = el.__root ? el.__root.state : el.state
   // if (el.key !== 'app') return
@@ -96,7 +96,7 @@ export const initUpdate = el => {
         if (rootState.globalTheme === parse) {
           props.theme = getTheme(theme[key])
         } else props.theme = theme
-        className.MEDIA_FORCED_BY_CLIENT_STATE = props.theme
+        className.MEDIA_FORCED_BY_PROJECT_STATE = props.theme
       }
     }
   }

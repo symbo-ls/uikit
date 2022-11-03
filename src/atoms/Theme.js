@@ -43,7 +43,7 @@ const transformBackgroundImage = (backgroundImage, ctx, globalTheme) => ({
   backgroundImage: backgroundImage.split(', ').map(v => {
     if (v.slice(0, 2) === '--') return `var(${v})`
     if (v.includes('url') || v.includes('gradient')) return v
-    else if (ctx.SYSTEM.GRADIENT[backgroundImage]) {
+    else if (ctx.system.GRADIENT[backgroundImage]) {
       return getMediaColor(backgroundImage, 'backgroundImage', globalTheme)
     }
     return `url(${v})`
@@ -53,7 +53,7 @@ const transformBackgroundImage = (backgroundImage, ctx, globalTheme) => ({
 export const getSystemTheme = (element, state) => {
   const { context } = element
   const rootState = element.__root ? element.__root.state : element.state
-  return rootState.globalTheme || context.SYSTEM.globalTheme
+  return rootState.globalTheme || context.system.globalTheme
 }
 
 export const Theme = {

@@ -6,7 +6,7 @@ import { toCamelCase } from '@symbo.ls/utils'
 export const Icon = {
   extend: SVG,
   props: ({ key, props, parent, context }) => {
-    const { ICONS } = context && context.SYSTEM
+    const { ICONS } = context && context.system
     const iconName = props.inheritedString || props.name || props.icon || key
     const camelCase = toCamelCase(iconName)
 
