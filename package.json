@@ -32,8 +32,7 @@
     "@domql/utils": "latest",
     "@symbo.ls/config-default": "latest",
     "@symbo.ls/create-emotion": "latest",
-    "@symbo.ls/scratch": "latest",
-    "css-in-props": "latest"
+    "@symbo.ls/scratch": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",

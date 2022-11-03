@@ -10,7 +10,7 @@ import { isObject, deepMerge } from '@domql/utils'
 import { initDOMQLEmotion } from 'domql/packages/emotion'
 
 import { emotion } from '@symbo.ls/create-emotion'
-import { setClassname } from 'css-in-props'
+// import { setClassname } from 'css-in-props'
 
 import DYNAMIC_JSON from './dynamic.json'
 
@@ -41,6 +41,6 @@ export const updateReset = (options = { emotion }) => {
   options.emotion.injectGlobal(CONFIG.RESET)
 }
 
-export const setClass = (props, options = { emotion }) => setClassname(props, options.emotion.css)
+export const setClass = (props, options = { emotion }) => {}// setClassname(props, options.emotion.css)
 
 export { CONFIG }
