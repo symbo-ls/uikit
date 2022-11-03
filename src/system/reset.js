@@ -25,6 +25,8 @@ export const applyReset = (reset = {}) => {
       configReset.h6 = configStyles.h6
     }
 
+    const { body, ...styles } = TYPOGRAPHY.styles
+
     return deepMerge(merge(RESET, reset), {
       ':root': CSS_VARS,
 
@@ -46,8 +48,6 @@ export const applyReset = (reset = {}) => {
         lineHeight: DOCUMENT.lineHeight
       },
 
-      ...TYPOGRAPHY.styles,
-
       body: {
         boxSizing: 'border-box',
         height: '100%',
@@ -58,7 +58,8 @@ export const applyReset = (reset = {}) => {
 
         ...getMediaTheme('document', `@${CONFIG.globalTheme}`),
 
-        ...TYPOGRAPHY.styles.body
+        ...styles,
+        ...body
       },
 
       // form elements
