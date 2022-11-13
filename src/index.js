@@ -17,21 +17,32 @@ import DYNAMIC_JSON from './dynamic.json'
 const CONFIG = getActiveConfig()
 
 const prepareInit = (config = {}, RC_FILE) => {
-  // const defaultConfig = merge(config, CONFIG_DEFAULT)
   const rcfile = isObject(RC_FILE) ? RC_FILE : DYNAMIC_JSON || {}
   return deepMerge(config, rcfile)
 }
 
-export const init = (config, RC_FILE, options = { emotion, initDOMQLDefine: true }) => {
+const SET_OPTIONS = {
+  emotion,
+  useVariable: true,
+  useReset: true,
+  initDOMQLDefine: true
+}
+
+export const init = (config, RC_FILE, options = SET_OPTIONS) => {
   if (options.initDOMQLDefine) initDOMQLEmotion(options.emotion, options)
 
-  const resultConfig = prepareInit(config)
+  const resultConfig = prepareInit(config, RC_FILE)
 
-  const conf = set({ verbose: false, ...resultConfig }, { newConfig: options.newConfig })
+  const conf = set({
+    verbose: false,
+    useReset: options.useReset,
+    ...resultConfig
+  }, { newConfig: options.newConfig })
+
   const FontFace = getFontFaceString(conf.FONT)
 
   options.emotion.injectGlobal(FontFace)
-  if (conf.useReset) options.emotion.injectGlobal(conf.RESET)
+  if (options.useReset) options.emotion.injectGlobal(conf.RESET)
 
   return conf
 }
