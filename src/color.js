@@ -33,5 +33,12 @@ export const GRADIENT = {
     0deg,
     rgba(255,255,255,0.09) 0%,
     rgba(255,255,255,0.10) 100%
-  )`
+  )`,
+  'gradient-colorful': `linear-gradient(60deg,
+    #00A2E7 0%,
+    #185DF3 31%,
+    #1E54F0 36%,
+    #8B4CCA 69%,
+    #C66894 100%
+  )`,
 }
