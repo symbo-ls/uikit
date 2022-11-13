@@ -9,5 +9,8 @@ const PropsCSS = {
 }
 
 export const Box = {
-  extend: [Shape, Position, Theme, Block, Text, Overflow, Timing, Transform, Media, PropsCSS, Interaction, XYZ, Animation]
+  extend: [Shape, Position, Theme, Block, Text, Overflow, Timing, Transform, Media, PropsCSS, Interaction, XYZ, Animation],
+  attr: {
+    id: ({ props }) => props.id
+  }
 }
