@@ -146,7 +146,7 @@ export const setMediaTheme = (val, key, suffix, prefers) => {
   const { CSS_VARS } = CONFIG
   const theme = { value: val }
 
-  if (isObject(val)) {
+  if (isObjectLike(val)) {
     for (const param in val) {
       const symb = param.slice(0, 1)
       const value = val[param]
@@ -191,7 +191,7 @@ const recursiveTheme = val => {
   const obj = {}
   for (const param in val) {
     const symb = param.slice(0, 1)
-    if (isObject(val[param])) {
+    if (isObjectLike(val[param])) {
       if (symb === '@') {
         const query = CONFIG.MEDIA[param.slice(1)]
         const media = `@media screen and ${query}`
