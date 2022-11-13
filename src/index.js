@@ -9,20 +9,20 @@ import {
 import { isObject, deepMerge } from '@domql/utils'
 import { initDOMQLEmotion } from 'domql/packages/emotion'
 
-import { emotion } from '@symbo.ls/create-emotion'
+import { emotion as defaultEmotion } from '@symbo.ls/create-emotion'
 // import { setClassname } from 'css-in-props'
 
 import DYNAMIC_JSON from './dynamic.json'
 
 const CONFIG = getActiveConfig()
 
-const prepareInit = (config = {}, RC_FILE) => {
+const prepareInit = (config = CONFIG, RC_FILE) => {
   const rcfile = isObject(RC_FILE) ? RC_FILE : DYNAMIC_JSON || {}
   return deepMerge(config, rcfile)
 }
 
 const SET_OPTIONS = {
-  emotion,
+  emotion: defaultEmotion,
   useVariable: true,
   useReset: true,
   initDOMQLDefine: true
@@ -32,6 +32,7 @@ export const init = (config, RC_FILE, options = SET_OPTIONS) => {
   if (options.initDOMQLDefine) initDOMQLEmotion(options.emotion, options)
 
   const resultConfig = prepareInit(config, RC_FILE)
+  const emotion = options.emotion || defaultEmotion
 
   const conf = set({
     verbose: false,
@@ -41,17 +42,25 @@ export const init = (config, RC_FILE, options = SET_OPTIONS) => {
 
   const FontFace = getFontFaceString(conf.FONT)
 
-  options.emotion.injectGlobal(FontFace)
-  if (options.useReset) options.emotion.injectGlobal(conf.RESET)
+  emotion.injectGlobal(FontFace)
+  if (options.useVariable) emotion.injectGlobal({ ':root': conf.CSS_VARS })
+  if (options.useReset) emotion.injectGlobal(conf.RESET)
 
   return conf
 }
 
-export const updateReset = (options = { emotion }) => {
-  const CONFIG = getActiveConfig()
-  options.emotion.injectGlobal(CONFIG.RESET)
+export const updateReset = (config, RC_FILE, options = { emotion: defaultEmotion }) => {
+  const resultConfig = prepareInit(config, RC_FILE)
+  // console.log(resultConfig)
+  const conf = set({
+    verbose: false,
+    ...resultConfig
+  })
+  console.log(conf.CSS_VARS)
+  options.emotion.injectGlobal({ ':root': conf.CSS_VARS })
+  options.emotion.injectGlobal(conf.RESET)
 }
 
-export const setClass = (props, options = { emotion }) => {}// setClassname(props, options.emotion.css)
+export const setClass = (props, options = { emotion: defaultEmotion }) => {}// setClassname(props, options.emotion.css)
 
 export { CONFIG }
