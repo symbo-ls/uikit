@@ -12,7 +12,6 @@ export const applyReset = (reset = {}) => {
       const configReset = RESET
       const configStyles = TYPOGRAPHY.styles
 
-      configReset[':root'] = CSS_VARS
       configReset.body = {
         ...getMediaTheme('document', `@${CONFIG.globalTheme}`),
         ...configStyles.body
@@ -28,8 +27,6 @@ export const applyReset = (reset = {}) => {
     const { body, ...styles } = TYPOGRAPHY.styles
 
     return deepMerge(merge(RESET, reset), {
-      ':root': CSS_VARS,
-
       html: {
         position: 'absolute',
         overflow: 'hidden',
