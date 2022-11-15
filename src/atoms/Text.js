@@ -3,7 +3,10 @@
 import { getFontSizeByKey, getFontFamily } from '@symbo.ls/scratch'
 
 export const Text = {
-  text: ({ props }) => props.text,
+  text: ({ key, props, state }) => {
+    if (props.text === true) return (state && state[key]) || (props && props[key])
+    return props.text
+  },
   class: {
     fontSize: ({ props }) => props.fontSize ? getFontSizeByKey(props.fontSize) : null,
     fontFamily: ({ props }) => props.fontFamily && ({ fontFamily: getFontFamily(props.fontFamily) || props.fontFamily }),

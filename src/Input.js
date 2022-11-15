@@ -13,6 +13,7 @@ export const Input = {
     fontSize: 'A',
     round: 'C',
     lineHeight: 1,
+    fontFamily: 'smbls',
     padding: 'Z A'
   },
 

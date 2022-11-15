@@ -12,6 +12,7 @@ export * from './Icon'
 export * from './Link'
 export * from './IconText'
 export * from './Input'
+export * from './TextArea'
 export * from './Field'
 export * from './Button'
 

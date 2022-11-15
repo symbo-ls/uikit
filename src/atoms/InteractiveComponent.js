@@ -51,10 +51,6 @@ export const Focusable = {
       opacity: 1,
       outline: 'solid, X, blue .3'
     }
-
-    // ':not(:focus-visible):invalid': {
-    //   outline: 'solid, X, red .3'
-    // }
   },
 
   attr: {
