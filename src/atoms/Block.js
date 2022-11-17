@@ -130,7 +130,9 @@ export const Block = {
     },
 
     gridColumn: ({ props }) => props.gridColumn && ({ gridColumn: props.gridColumn }),
+    gridColumnStart: ({ props }) => props.columnStart ? ({ gridColumnStart: props.columnStart }) : null,
     gridRow: ({ props }) => props.gridRow && ({ gridRow: props.gridRow }),
+    gridRowStart: ({ props }) => props.rowStart ? ({ gridRowStart: props.rowStart }) : null,
 
     size: ({ props }) => {
       if (typeof props.heightRange !== 'string') return
