@@ -16,6 +16,8 @@ export * from './TextArea'
 export * from './Field'
 export * from './Button'
 
+export * from './Collection'
+
 // components
 export * from './ButtonSet'
 export * from './User'
