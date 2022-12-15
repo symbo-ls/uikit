@@ -98,7 +98,7 @@ const switchSequenceOnNegative = (key, base, ratio) => {
 export const generateSequence = (sequenceProps) => {
   const { type, base, ratio, range, subSequence } = sequenceProps
   const n = Math.abs(range[0]) + Math.abs(range[1])
-  const prefix = '--' + type.replace('.', '-') + '-'
+  const prefix = '--' + (type && type.replace('.', '-')) + '-'
 
   for (let i = 0; i <= n; i++) {
     const key = range[1] - i
