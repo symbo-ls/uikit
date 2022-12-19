@@ -4,7 +4,7 @@ import { exec } from '@domql/utils'
 import { Focusable } from './atoms'
 
 export const Link = {
-  extend: [Focusable],
+  extend: Focusable,
   tag: 'a',
   props: {
     aria: {},
