@@ -6,6 +6,7 @@ export const User = {
   extend: Img,
   key: 'nikoloza',
   props: {
+    display: 'block',
     avatarType: 'initials',
     borderRadius: '100%',
     boxSize: 'B',

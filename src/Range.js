@@ -96,10 +96,6 @@ export const RangeWithButtons = {
     on: {
       click: (ev, el, s) => {
         el.props && isFunction(el.props.onClick) && el.props.onClick(ev, el, s)
-        const input = el.parent.input
-        const props = input.props
-        const value = isFunction(props.value) ? props.value(el, s) : props.value
-        input.node.value = value
       }
     }
   },
@@ -107,15 +103,14 @@ export const RangeWithButtons = {
     style: { width: '4ch' },
     tag: 'span',
     text: (el, s) => {
-      const value = listenProp(el.parent.input, 'value')
       const unit = listenProp(el.parent.input, 'unit', '')
-      return '' + value + unit
+      return '' + (s.value || 50) + unit
     }
   },
   input: {
     extend: Range,
     attr: {
-      value: (el, s) => listenProp(el, 'value', 50),
+      value: (el, s) => parseFloat(s.value),
       min: (el, s) => listenProp(el, 'min', 0),
       max: (el, s) => listenProp(el, 'max', 100),
       step: (el, s) => listenProp(el, 'step', 1)
@@ -131,10 +126,6 @@ export const RangeWithButtons = {
     on: {
       click: (ev, el, s) => {
         el.props && isFunction(el.props.onClick) && el.props.onClick(ev, el, s)
-        const input = el.parent.input
-        const props = input.props
-        const value = isFunction(props.value) ? props.value(el, s) : props.value
-        input.node.value = value
       }
     }
   }
