@@ -23,8 +23,8 @@
   },
   "peerDependencies": {
     "@domql/utils": "latest",
-    "@symbo.ls/scratch": "latest",
-    "@emotion/css": "^11.10.0"
+    "@emotion/css": "^11.10.0",
+    "@symbo.ls/scratch": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
@@ -38,5 +38,8 @@
   },
   "standard": {
     "parser": "babel-eslint"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.10.5"
   }
 }
