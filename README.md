@@ -2,7 +2,7 @@
 
 UI Library in composition of [Scratch](https://github.com/symbo.ls/scratch) and [DOMQL](https://github.com/symbo.ls/domql)
 
-You can use components on React, Angular, Svelte, Vue, 
+You can use components on React, Angular, Svelte, Vue, Qwik, Solid and HTML.
 
 Check out the [documentation page](https://docs.symbols.app/).
 
