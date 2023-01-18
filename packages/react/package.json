@@ -34,7 +34,13 @@
     "@symbo.ls/react-text": "latest",
     "@symbo.ls/react-tooltip": "latest",
     "@symbo.ls/react-user": "latest",
-    "@symbo.ls/init": "latest"
+    "@symbo.ls/cli": "latest",
+    "@symbo.ls/scratch": "latest",
+    "@symbo.ls/init": "latest",
+    "@symbo.ls/config-default": "latest",
+    "@symbo.ls/sync-client": "latest",
+    "css-in-props": "latest",
+    "domql": "latest"
   },
   "source": "src/index.js"
 }

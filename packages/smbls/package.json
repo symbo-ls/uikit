@@ -10,7 +10,8 @@
     "@symbo.ls/scratch": "latest",
     "@symbo.ls/init": "latest",
     "@symbo.ls/config-default": "latest",
-    "@symbo.ls/sync-client": "latest",
+    "@symbo.ls/socket-ui": "latest",
+    "@symbo.ls/socket": "latest",
     "css-in-props": "latest",
     "domql": "latest"
   },

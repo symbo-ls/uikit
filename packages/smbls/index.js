@@ -1,7 +1,7 @@
 'use strict'
 
-export * from 'domql'
-export * from 'css-in-props'
+export { create } from 'domql'
+export { transformProps } from 'css-in-props'
 export * from '@symbo.ls/init'
 export * from '@symbo.ls/config-default'
 export * from '@symbo.ls/uikit'

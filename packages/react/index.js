@@ -4,15 +4,7 @@ export * from '@symbo.ls/init'
 
 // export * from './styles'
 
-export * from '@symbo.ls/react-responsive'
-export * from '@symbo.ls/react-block'
-export * from '@symbo.ls/react-shape'
-export * from '@symbo.ls/react-flex'
-export * from '@symbo.ls/react-grid'
-export * from '@symbo.ls/react-direction'
-export * from '@symbo.ls/react-position'
-export * from '@symbo.ls/react-overflow'
-export * from '@symbo.ls/react-text'
+export * from '@symbo.ls/atoms'
 
 export * from '@symbo.ls/react-box'
 

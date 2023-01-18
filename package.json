@@ -16,14 +16,18 @@
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "babel-eslint": "^10.1.0",
-    "lerna": "^5.3.0",
     "parcel": "^2.7.0",
     "parcel-plugin-svg-sprite": "^1.4.1",
+    "lerna": "^6.0.1",
     "standard": "^17.0.0"
   },
   "standard": {
     "parser": "babel-eslint"
   },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "version": "0.0.1"
 }
