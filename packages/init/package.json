@@ -1,0 +1,46 @@
+{
+  "name": "@symbo.ls/init",
+  "version": "2.7.5",
+  "license": "MIT",
+  "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
+  "source": "src/index.js",
+  "main": "src/index.js",
+  "targets": {
+    "main": {
+      "context": "browser",
+      "outputFormat": "commonjs",
+      "includeNodeModules": true
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    ".symbolsrc.json",
+    "README.md"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist .parcel-cache",
+    "build": "parcel build src/index.js",
+    "build:watch": "nodemon --exec \"yarn build\" --ignore 'dist/*' --watch ..",
+    "test:lint": "npx standard \"packages/**/*.js\"",
+    "test": "echo running all tests is not supported, maybe run: \"yarn test:lint\"",
+    "push": "echo push is not yet supported",
+    "push:version": "npm version patch && npm publish && git push origin --tags && git push",
+    "clean": "rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log"
+  },
+  "dependencies": {
+    "@domql/utils": "latest",
+    "@symbo.ls/config-default": "latest",
+    "@symbo.ls/create-emotion": "latest",
+    "@symbo.ls/scratch": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "babel-eslint": "^10.1.0",
+    "standard": "^13.1.0"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+}
