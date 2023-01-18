@@ -1,0 +1,10 @@
+{
+  "name": "@symbo.ls/config-default",
+  "version": "2.7.5",
+  "source": "src/index.js",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "jsonify": "npx parcel build src/index.js && node bin/json.js"
+  }
+}
