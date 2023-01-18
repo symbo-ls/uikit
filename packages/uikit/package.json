@@ -1,0 +1,53 @@
+{
+  "name": "@symbo.ls/uikit",
+  "description": "UI Library built on Scratch and DOMQL",
+  "version": "1.1.0",
+  "author": "symbo.ls",
+  "repository": "https://github.com/symbo-ls/smbls",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "react.js"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@symbo.ls/banner": "latest",
+    "@symbo.ls/block": "latest",
+    "@symbo.ls/box": "latest",
+    "@symbo.ls/button": "latest",
+    "@symbo.ls/buttonset": "latest",
+    "@symbo.ls/config-default": "latest",
+    "@symbo.ls/datepicker": "latest",
+    "@symbo.ls/direction": "latest",
+    "@symbo.ls/dropdown": "latest",
+    "@symbo.ls/field": "latest",
+    "@symbo.ls/flex": "latest",
+    "@symbo.ls/grid": "latest",
+    "@symbo.ls/icon": "latest",
+    "@symbo.ls/icon-text": "latest",
+    "@symbo.ls/img": "latest",
+    "@symbo.ls/input": "latest",
+    "@symbo.ls/label": "latest",
+    "@symbo.ls/link": "latest",
+    "@symbo.ls/notification": "latest",
+    "@symbo.ls/overflow": "latest",
+    "@symbo.ls/pills": "latest",
+    "@symbo.ls/position": "latest",
+    "@symbo.ls/react-box": "symbo-ls/react-box",
+    "@symbo.ls/responsive": "latest",
+    "@symbo.ls/scratch-init": "latest",
+    "@symbo.ls/select": "latest",
+    "@symbo.ls/shape": "latest",
+    "@symbo.ls/slider": "latest",
+    "@symbo.ls/svg": "latest",
+    "@symbo.ls/text": "latest",
+    "@symbo.ls/tooltip": "latest",
+    "@symbo.ls/user": "latest",
+    "@symbo.ls/init": "latest"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "gitHead": "54fa6500c697604b3f48ba33a573545d7bff35fa",
+  "source": "src/index.js"
+}
