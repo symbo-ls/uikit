@@ -1,0 +1,37 @@
+{
+  "name": "@symbo.ls/cli",
+  "version": "2.7.5",
+  "description": "Fetch your Symbols configuration",
+  "main": "bin/fetch.js",
+  "author": "Symbols",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "bin": {
+    "smbls": "bin/index.js"
+  },
+  "scripts": {
+    "start": "node bin/index.js",
+    "vpush": "git add . && git commit -am 'version update' && git push",
+    "vpatch": "npm version patch && npm publish"
+  },
+  "dependencies": {
+    "@symbo.ls/init": "latest",
+    "@symbo.ls/socket": "latest",
+    "chalk": "^5.0.0",
+    "commander": "^9.4.1",
+    "node-fetch": "^3.1.0",
+    "v8-compile-cache": "^2.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^7.12.1",
+    "np": "^7.6.0",
+    "standard": "^16.0.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}
