@@ -19,7 +19,7 @@
   "module": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "css-in-props": "0.9.3"
+    "css-in-props": "latest"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
