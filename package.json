@@ -14,14 +14,16 @@
     "clean:all": "lerna exec -- rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log"
   },
   "devDependencies": {
+    "@symbo.ls/cli": "latest",
     "@babel/core": "^7.18.10",
     "babel-eslint": "^10.1.0",
+    "esbuild": "^0.17.3",
+    "lerna": "^6.0.1",
     "parcel": "^2.7.0",
     "parcel-plugin-svg-sprite": "^1.4.1",
-    "lerna": "^6.0.1",
-    "standard": "^17.0.0",
     "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+    "react-dom": ">=16.9.0",
+    "standard": "^17.0.0"
   },
   "standard": {
     "parser": "babel-eslint"
