@@ -37,8 +37,3 @@ node_modules
 .parcel-cache
 dist
 *.DS_Store
-
-.DS_Store
-
-yarn.lock
-.DS_Store
