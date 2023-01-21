@@ -5,21 +5,15 @@ import style from './style'
 import { Icon } from '@symbo.ls/icon'
 
 export const DatePicker = {
-  style,
-
   props: {
     theme: 'lightDark',
     padding: 'A',
     round: 'Z',
-    depth: 16
+    depth: '16'
   },
 
   aside: {
-    childExtends: { tag: 'button' },
-    ...[
-      { text: '2020' },
-      // ...
-    ]
+    childExtends: { tag: 'button' }
   },
 
   main: {
@@ -30,10 +24,6 @@ export const DatePicker = {
       },
       month: {
         childExtends: { tag: 'span' },
-        ...[
-          { text: 'january' },
-          // ...
-        ]
       },
       icon2: {
         extends: Icon,
@@ -44,17 +34,9 @@ export const DatePicker = {
       tag: 'section',
       header: {
         childExtends: { tag: 'span' },
-        ...[
-          { text: 'Mo' },
-          // ...
-        ]
       },
       content: {
         childExtends: { tag: 'button' },
-        ...[
-          { text: '1' },
-          // ...
-        ]
       }
     }
   }

@@ -6,12 +6,6 @@ import { Theme } from '@symbo.ls/theme'
 import { Block } from '@symbo.ls/block'
 import { Text } from '@symbo.ls/text'
 import { Overflow } from '@symbo.ls/overflow'
-import { Timing } from '@symbo.ls/timing'
-import { Transform } from '@symbo.ls/transform'
-import { Media } from '@symbo.ls/media'
-import { Interaction } from '@symbo.ls/interaction'
-import { XYZ } from '@symbo.ls/xyz'
-import { Animation } from '@symbo.ls/animation'
 
 const PropsCSS = {
   class: {
@@ -26,14 +20,7 @@ export const Box = {
     Theme,
     Block,
     Text,
-    Overflow,
-    Timing,
-    Transform,
-    Media,
-    PropsCSS,
-    Interaction,
-    XYZ,
-    Animation
+    Overflow
   ],
   attr: {
     id: ({ props }) => props.id

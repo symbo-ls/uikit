@@ -1,16 +1,10 @@
 'use strict'
 
-import { Shape } from '@symbo.ls/shape'
 import { IconText } from '@symbo.ls/icon-text'
-import { Block } from '@symbo.ls/block'
-import { Direction } from '@symbo.ls/direction'
-
-import style from './style'
 
 export const Button = {
   extends: IconText,
   tag: 'button',
-  style,
   props: {
     type: 'button'
   },
@@ -49,10 +43,6 @@ export const CircleButton = {
 
 export const KangorooButton = {
   tag: 'button',
-  style,
-
   iconText: { extends: IconText },
   child: { extends: IconText }
 }
-
-export default Button

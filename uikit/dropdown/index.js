@@ -5,10 +5,7 @@ import { IconText } from '@symbo.ls/icon-text'
 import { styleRow, styleRowActive, styleDropDown } from './style'
 
 export const DropdownList = {
-  style: styleDropDown,
   tag: 'ul',
-
-  extends: Shape,
 
   state: {
     active: 0

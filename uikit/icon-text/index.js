@@ -7,7 +7,7 @@ export const IconText = {
   props: {
     flexAlign: 'center center',
     display: 'flex',
-    lineHeight: 1
+    lineHeight: '1'
   },
 
   icon: { extends: Icon, if: ({ props }, s) => props.icon },

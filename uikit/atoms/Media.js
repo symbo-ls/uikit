@@ -35,7 +35,7 @@ const execClass = (key, props, result, element) => {
   return classExec
 }
 
-const convertPropsToClass = (props, result, element) => {
+export const convertPropsToClass = (props, result, element) => {
   const propsClassObj = {}
 
   for (const key in props) {

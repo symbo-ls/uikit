@@ -9,13 +9,7 @@
     "@symbo.ls/theme": "latest",
     "@symbo.ls/block": "latest",
     "@symbo.ls/text": "latest",
-    "@symbo.ls/overflow": "latest",
-    "@symbo.ls/timing": "latest",
-    "@symbo.ls/transform": "latest",
-    "@symbo.ls/media": "latest",
-    "@symbo.ls/interaction": "latest",
-    "@symbo.ls/xyz": "latest",
-    "@symbo.ls/animation": "latest"
+    "@symbo.ls/overflow": "latest"
   },
   "source": "src/index.js"
 }
