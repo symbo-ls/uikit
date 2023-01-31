@@ -2,7 +2,7 @@
   "name": "@symbo.ls/uikit",
   "description": "UI Library built on Scratch and DOMQL",
   "author": "symbo.ls",
-  "version": "2.7.17",
+  "version": "2.7.18",
   "repository": "https://github.com/symbo-ls/smbls",
   "main": "src/index.js",
   "files": [
