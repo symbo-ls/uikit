@@ -2,7 +2,6 @@
 
 import { getTimingByKey, getTimingFunction } from '@symbo.ls/scratch'
 import { isObject } from '@domql/utils'
-import { convertPropsToClass } from './Media' // eslint-disable-line no-unused-vars
 import { emotion } from '@symbo.ls/emotion'
 const { keyframes } = emotion
 

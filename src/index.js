@@ -1,8 +1,5 @@
 'use strict'
 
-export * from '@symbo.ls/init'
-export * from '@symbo.ls/socket/client'
-
 // atoms
 export * from './atoms'
 export * from './Box'
