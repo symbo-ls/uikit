@@ -4,7 +4,7 @@ import { Link } from '@symbo.ls/link'
 import { deepMerge } from '@domql/utils'
 import { router } from '@domql/router'
 
-const RouteLink = {
+export const RouteLink = {
   on: {
     click: (event, element, state) => {
       const root = element.lookup('app')

@@ -1,0 +1,16 @@
+{
+  "name": "@symbo.ls/react",
+  "version": "2.9.0",
+  "main": "index.js",
+  "license": "MIT",
+  "gitHead": "6378f05ba88065ef932810a1582f45e0384feafc",
+  "dependencies": {
+    "@symbo.ls/atoms": "latest",
+    "@symbo.ls/convert": "latest",
+    "@symbo.ls/react-box": "latest"
+  },
+  "peerDependencies": {
+    "domql": "latest"
+  },
+  "source": "src/index.js"
+}
