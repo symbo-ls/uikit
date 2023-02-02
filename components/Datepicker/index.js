@@ -3,8 +3,7 @@
 import style from './style'
 
 import { SquareButton, Button } from '@symbo.ls/button'
-import { Flex } from '@symbo.ls/flex'
-import { Grid } from '@symbo.ls/grid'
+import { Flex, Grid } from '@symbo.ls/atoms'
 
 const buttonProps = {
   theme: 'transparent',
