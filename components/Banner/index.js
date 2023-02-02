@@ -1,7 +1,7 @@
 'use strict'
 
 import { Icon } from '@symbo.ls/icon'
-import { UserBundle } from '@symbo.ls/user'
+import { AvatarBundle } from '@symbo.ls/avatar'
 
 import { styleParentMode } from './style'
 
@@ -15,7 +15,7 @@ export const ParentMode = {
   },
   h2: 'Welcome to parent Mode',
   description: {
-    extend: UserBundle,
+    extend: AvatarBundle,
     users: { ...[{}, {}, {}] },
     span: 'You\'ll now be able to chat with tutor privately. No other participants will see the messages.'
   }

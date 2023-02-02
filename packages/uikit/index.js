@@ -14,7 +14,7 @@ export * from '@symbo.ls/field'
 export * from '@symbo.ls/button'
 
 export * from '@symbo.ls/buttonset'
-export * from '@symbo.ls/user'
+export * from '@symbo.ls/avatar'
 export * from '@symbo.ls/banner'
 export * from '@symbo.ls/slider'
 export * from '@symbo.ls/notification'
