@@ -1,11 +1,11 @@
 'use strict'
 
-import { Img, Flex } from '.'
+import { Img, Flex } from '@symbo.ls/atoms'
 
 export const Avatar = {
   extend: Img,
-  key: 'nikoloza',
   props: {
+    key: 'nikoloza',
     display: 'block',
     avatarType: 'initials',
     borderRadius: '100%',
