@@ -1,6 +1,6 @@
 {
   "name": "@symbo.ls/react-box",
-  "version": "1.0.6",
+  "version": "1.1.1",
   "description": "React Box",
   "keywords": [
     "@symbo.ls/react-box"
@@ -27,7 +27,7 @@
   },
   "browserslist": [
     ">0.2%",
-   "not dead",
-   "not op_mini all"
- ]
+    "not dead",
+    "not op_mini all"
+  ]
 }
