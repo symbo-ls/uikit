@@ -13,28 +13,40 @@
   },
   "scripts": {
     "start": "parcel showcase/index.html",
-    "build": "parcel build showcase/index.html --public-url .",
-    "deploy": "yarn build && gh-pages -d dist",
-    "clean": "rm yarn.lock && rm -rf node_modules && rm -rf dist && rm -rf .cache",
-    "reinstall": "rm yarn.lock && rm -rf node_modules/rackai && yarn"
-  },
-  "dependencies": {
-    "@domql/utils": "latest",
-    "@symbo.ls/utils": "latest",
-    "@symbo.ls/scratch": "latest"
+    "prebuild": "rm -rf dist .parcel-cache",
+    "build": "npx parcel build index.js",
+    "build:all": "lerna exec -- npx parcel build index.js",
+    "test:lint": "npx standard \"packages/**/*.js\"",
+    "test": "echo running all tests is not supported, maybe run: \"yarn test:lint\"",
+    "publish:all": "yarn build:all && lerna publish",
+    "push": "echo push is not yet supported",
+    "push:version": "git add . && git commit -am 'version update' && git push",
+    "clean": "rm -rf */start/.cache */start/dist",
+    "clean:dist": "rm -rf dist .cache **/dist **/.cache",
+    "clean:modules": "rm -rf node_modules yarn.lock package-lock.json lerna-debug.log yarn-error.log",
+    "clean:package-modules": "rm -rf packages/*/node_modules **/*/package-lock.json",
+    "clean:all": "yarn clean && yarn clean:dist && yarn clean:modules && yarn clean:package-modules",
+    "reinstall": "yarn clean:all && yarn"
   },
   "peerDependencies": {
     "@emotion/css": "^11.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.5",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.1.0",
-    "parcel-bundler": "^1.12.4",
+    "@babel/core": "^7.18.10",
+    "babel-eslint": "^10.1.0",
+    "esbuild": "^0.17.3",
+    "lerna": "^6.0.1",
+    "parcel": "^2.7.0",
     "parcel-plugin-svg-sprite": "^1.4.1",
     "standard": "^13.1.0"
   },
   "standard": {
     "parser": "babel-eslint"
-  }
+  },
+  "workspaces": [
+    "components/*",
+    "react/*",
+    "packages/*"
+  ],
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
