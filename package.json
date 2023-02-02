@@ -29,6 +29,7 @@
     "parser": "babel-eslint"
   },
   "workspaces": [
+    "components/*",
     "react/*",
     "uikit/*"
   ],
