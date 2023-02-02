@@ -1,6 +1,6 @@
 'use strict'
 
-import { Input } from '@symbo.ls/atoms'
+import { Input } from '@symbo.ls/input'
 
 const props = {
   height: 'E',
