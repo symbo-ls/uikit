@@ -1,16 +1,5 @@
 {
-  "name": "@symbo.ls/uikit",
-  "description": "UI Library built on Scratch and DOMQL",
-  "author": "symbo.ls",
-  "version": "2.7.18",
-  "repository": "https://github.com/symbo-ls/smbls",
-  "main": "src/index.js",
-  "files": [
-    "src"
-  ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
+  "private": true,
   "scripts": {
     "start": "parcel showcase/index.html",
     "prebuild": "rm -rf dist .parcel-cache",
@@ -27,9 +16,6 @@
     "clean:package-modules": "rm -rf packages/*/node_modules **/*/package-lock.json",
     "clean:all": "yarn clean && yarn clean:dist && yarn clean:modules && yarn clean:package-modules",
     "reinstall": "yarn clean:all && yarn"
-  },
-  "peerDependencies": {
-    "@emotion/css": "^11.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
