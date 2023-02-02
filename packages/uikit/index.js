@@ -5,9 +5,7 @@
 export * from '@symbo.ls/atoms'
 export * from '@symbo.ls/box'
 
-export * from '@symbo.ls/svg'
 export * from '@symbo.ls/icon'
-export * from '@symbo.ls/img'
 export * from '@symbo.ls/link'
 export * from '@symbo.ls/input'
 export * from '@symbo.ls/field'
