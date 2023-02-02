@@ -20,13 +20,13 @@ export const Avatar = {
 export const AvatarBundle = {
   extend: Flex,
   childExtend: {
-    extend: User,
-    props: ({ key }) => ({
+    extend: Avatar,
+    props: {
       boxSize: 'B1',
       border: '0.1312em, black .85, solid',
       ':not(:last-child)': {
         margin: '0 -Y2 0 0'
       }
-    })
+    }
   }
 }
