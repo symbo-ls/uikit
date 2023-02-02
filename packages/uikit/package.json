@@ -1,7 +1,7 @@
 {
   "name": "@symbo.ls/uikit",
   "description": "UI Library built on Scratch and DOMQL",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "symbo.ls",
   "repository": "https://github.com/symbo-ls/smbls",
   "main": "index.js",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@symbo.ls/atoms": "latest",
+    "@symbo.ls/avatar": "latest",
     "@symbo.ls/banner": "latest",
     "@symbo.ls/box": "latest",
     "@symbo.ls/button": "latest",
@@ -22,7 +23,6 @@
     "@symbo.ls/dropdown": "latest",
     "@symbo.ls/field": "latest",
     "@symbo.ls/icon": "latest",
-    "@symbo.ls/textarea": "latest",
     "@symbo.ls/img": "latest",
     "@symbo.ls/input": "latest",
     "@symbo.ls/label": "latest",
@@ -31,8 +31,8 @@
     "@symbo.ls/pills": "latest",
     "@symbo.ls/select": "latest",
     "@symbo.ls/slider": "latest",
-    "@symbo.ls/tooltip": "latest",
-    "@symbo.ls/avatar": "latest"
+    "@symbo.ls/textarea": "latest",
+    "@symbo.ls/tooltip": "latest"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "gitHead": "6378f05ba88065ef932810a1582f45e0384feafc",
