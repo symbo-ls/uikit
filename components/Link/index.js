@@ -14,8 +14,9 @@ export const Link = {
   },
   attr: {
     href: element => {
-      const exec = element.context.utils
-      exec(element.props.href, element) || exec(element.props, element).href
+      console.log(element.context)
+      const { exec } = element.context.utils
+      return exec(element.props.href, element) || exec(element.props, element).href
     },
     target: ({ props }) => props.target,
     'aria-label': ({ props }) => props.aria ? props.aria.label : props.text

@@ -1,5 +1,6 @@
 'use strict'
 
+import { toCamelCase } from '@symbo.ls/utils'
 import { Flex, SVG } from '@symbo.ls/atoms'
 
 export const Icon = {
