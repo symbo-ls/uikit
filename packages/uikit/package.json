@@ -1,7 +1,7 @@
 {
   "name": "@symbo.ls/uikit",
   "description": "UI Library built on Scratch and DOMQL",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "author": "symbo.ls",
   "repository": "https://github.com/symbo-ls/smbls",
   "main": "index.js",
@@ -13,6 +13,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
+    "@domql/utils": "latest",
     "@symbo.ls/atoms": "latest",
     "@symbo.ls/avatar": "latest",
     "@symbo.ls/banner": "latest",
@@ -35,7 +36,6 @@
     "@symbo.ls/tooltip": "latest"
   },
   "peerDependencies": {
-    "@domql/utils": "latest",
     "@emotion/css": "^11.5.0",
     "@symbo.ls/scratch": "latest"
   },
