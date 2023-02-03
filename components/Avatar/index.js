@@ -5,7 +5,6 @@ import { Img, Flex } from '@symbo.ls/atoms'
 export const Avatar = {
   extend: Img,
   props: {
-    key: 'nikoloza',
     display: 'block',
     avatarType: 'initials',
     borderRadius: '100%',
