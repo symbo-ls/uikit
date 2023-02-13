@@ -1,7 +1,6 @@
 'use strict'
 
 import { init } from '@symbo.ls/init'
-const useSVGSymbol = file => `<use xlink:href="${file}" />`
 
 // create SVG symbol
 export const Svg = {
@@ -16,15 +15,16 @@ export const Svg = {
   html: ({ key, props, context, ...el }) => {
     const SVG = context.system && context.system.SVG
     const useSvgSprite = props.spriteId || (context.system && context.system.useSvgSprite)
+    const useSVGSymbol = icon => `<use xlink:href="#${icon}" />`
 
     if (!useSvgSprite) return props.src
     
     let spriteId = props.spriteId
-    if (spriteId) return `<use xlink:href="#${spriteId}" />`
+    if (spriteId) return useSVGSymbol(spriteId)
     
     const symbolId = Symbol.for(props.src)
     let SVGKey = SVG[symbolId]
-    if (SVGKey && SVG[SVGKey]) return `<use xlink:href="#${SVGKey}" />`
+    if (SVGKey && SVG[SVGKey]) return useSVGSymbol(SVGKey)
     
     SVGKey = SVG[symbolId] = Math.random()
     const conf = init({ 
@@ -34,6 +34,6 @@ export const Svg = {
       emotion: context.emotion
     })
     
-    return `<use xlink:href="#${SVGKey}" />`
+    return useSVGSymbol(SVGKey)
   }
 }
