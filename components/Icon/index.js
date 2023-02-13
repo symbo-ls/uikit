@@ -19,14 +19,14 @@ export const Icon = {
     if (parent.props.active && parent.props['.active'] && parent.props['.active'].icon) {
       activeIconName = parent.props['.active'].icon.name || parent.props['.active'].icon.icon || parent.props['.active'].icon
     }
-    
+
     let validIconName
     if (ICONS[activeIconName]) validIconName = activeIconName
     if (ICONS[camelCase]) validIconName = camelCase
     else if (ICONS[isArray[0] + isArray[1]]) validIconName = isArray[0] + isArray[1]
     else if (ICONS[isArray[0]]) validIconName = isArray[0]
     else {
-      console.log(`can't find icon:`, iconName, validIconName)
+      if (verbose) console.warn(`can't find icon:`, iconName, validIconName)
       validIconName = 'noIcon'
     }
 
