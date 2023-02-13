@@ -1,12 +1,12 @@
 'use strict'
 
-import { toCamelCase } from '@symbo.ls/utils'
-import { Flex, SVG } from '@symbo.ls/atoms'
+import { Flex, Svg } from '@symbo.ls/atoms'
 
 export const Icon = {
-  extend: SVG,
+  extend: Svg,
   props: ({ key, props, parent, context }) => {
-    const { ICONS } = context && context.system
+    const { ICONS, useIconSprite, verbose } = context && context.system
+    const { toCamelCase } = context && context.utils
     const iconName = props.inheritedString || props.name || props.icon || key
     const camelCase = toCamelCase(iconName)
 
@@ -19,13 +19,24 @@ export const Icon = {
     if (parent.props.active && parent.props['.active'] && parent.props['.active'].icon) {
       activeIconName = parent.props['.active'].icon.name || parent.props['.active'].icon.icon || parent.props['.active'].icon
     }
+    
+    let validIconName
+    if (ICONS[activeIconName]) validIconName = activeIconName
+    if (ICONS[camelCase]) validIconName = camelCase
+    else if (ICONS[isArray[0] + isArray[1]]) validIconName = isArray[0] + isArray[1]
+    else if (ICONS[isArray[0]]) validIconName = isArray[0]
+    else {
+      console.log(`can't find icon:`, iconName, validIconName)
+      validIconName = 'noIcon'
+    }
 
-    const iconFromLibrary = ICONS[activeIconName] || ICONS[camelCase] || (ICONS[isArray[0] + isArray[1]]) || ICONS[isArray[0]] || ICONS['noIcon']
+    const iconFromLibrary = ICONS[validIconName]
 
     return {
       width: 'A',
       height: 'A',
       display: 'inline-block',
+      spriteId: useIconSprite && validIconName,
       src: iconFromLibrary,
       style: { fill: 'currentColor' }
     }

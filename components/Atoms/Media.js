@@ -120,8 +120,8 @@ const beforeClassAssign = (element, s) => {
 }
 
 export const initUpdate = element => {
-  const { props, class: className } = element
-  const globalTheme = getSystemTheme(element)
+  const { props, context, class: className } = element
+  const globalTheme = context.system.globalTheme
 
   const parentProps = element.parent.props
   if (parentProps && parentProps.spacingRatio && parentProps.inheritSpacingRatio) {

@@ -14,6 +14,7 @@ export const Link = {
   },
   attr: {
     href: element => {
+      console.log(element.context)
       const { exec } = element.context.utils
       return exec(element.props.href, element) || exec(element.props, element).href
     },
