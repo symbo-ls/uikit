@@ -7,7 +7,7 @@
   "dependencies": {
     "@domql/utils": "latest",
     "@symbo.ls/create-emotion": "latest",
-    "@symbo.ls/create-init": "latest",
+    "@symbo.ls/init": "latest",
     "@symbo.ls/scratch": "latest"
   },
   "source": "src/index.js"
