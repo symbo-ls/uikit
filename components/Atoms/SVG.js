@@ -18,22 +18,22 @@ export const Svg = {
     const useSVGSymbol = icon => `<use xlink:href="#${icon}" />`
 
     if (!useSvgSprite) return props.src
-    
-    let spriteId = props.spriteId
+
+    const spriteId = props.spriteId
     if (spriteId) return useSVGSymbol(spriteId)
-    
+
     const symbolId = Symbol.for(props.src)
     let SVGKey = SVG[symbolId]
     if (SVGKey && SVG[SVGKey]) return useSVGSymbol(SVGKey)
-    
+
     SVGKey = SVG[symbolId] = Math.random()
-    const conf = init({ 
-      svg: { [SVGKey]: props.src } 
+    init({
+      svg: { [SVGKey]: props.src }
     }, null, {
       document: context.document,
       emotion: context.emotion
     })
-    
+
     return useSVGSymbol(SVGKey)
   }
 }
