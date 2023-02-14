@@ -1,16 +1,27 @@
 'use strict'
 
-import { isNot, isArray, isObject, isObjectLike, diff, deepClone } from '@domql/utils'
+import { isNot, isArray, isObject, isObjectLike, diff, deepCloneExclude } from '@domql/utils'
+
+const EXCLUDE_FOR_DEEPCLONE = [
+  // 'update', 'parse', 'clean', 'create', 'parent',
+  // '__element', '__depends',
+  // '__ref', '__root', '__components', '__extend', '__cached', '__projectSystem',
+  // '__projectState', '__projectComponents', '__projectPages', '__projectFiddles',
+  // 'projectStateUpdate', 'projectSystemUpdate'
+]
 
 export const Collection = {
   define: {
     $setCollection: (param, el, state) => {
       if (!param) return
 
-      let data = isArray(param) ? param : []
-
-      if (isObject(param)) {
-        for (const obj in param) { data.push(param[obj]) }
+      let data;
+      if (isArray(param)) {
+        data = deepCloneExclude(param) // no need to exclude anything here
+      } else {
+        const cloned = deepCloneExclude(param, EXCLUDE_FOR_DEEPCLONE)
+        data = []
+        for (const k in cloned) data.push(param[k])
       }
 
       data = data.map(item => !isObjectLike(item) ? {
@@ -36,7 +47,7 @@ export const Collection = {
         if (el.__stateCollectionCache) {
           const d = diff(param, el.__stateCollectionCache) // eslint-disable-line
         } else {
-          el.__stateCollectionCache = deepClone(param)
+          el.__stateCollectionCache = deepCloneExclude(param, EXCLUDE_FOR_DEEPCLONE)
         }
       }
 
