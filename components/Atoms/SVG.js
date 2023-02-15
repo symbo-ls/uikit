@@ -1,6 +1,6 @@
 'use strict'
 
-import { init } from '@symbo.ls/init'
+// import { init } from '@symbo.ls/init'
 
 // create SVG symbol
 export const Svg = {
@@ -17,7 +17,9 @@ export const Svg = {
     const useSvgSprite = props.spriteId || (context.system && context.system.useSvgSprite)
     const useSVGSymbol = icon => `<use xlink:href="#${icon}" />`
 
-    if (!useSvgSprite) return props.src
+    const { init } = require('@symbo.ls/init')
+
+    if (!useSvgSprite && props.src) return props.src
 
     const spriteId = props.spriteId
     if (spriteId) return useSVGSymbol(spriteId)
