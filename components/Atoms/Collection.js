@@ -33,10 +33,10 @@ export const Collection = {
       if (isNot(param)('array', 'object')) return
 
       if (el.key === 'cnt') {
-        if (el.__stateCollectionCache) {
-          const d = diff(param, el.__stateCollectionCache) // eslint-disable-line
+        if (el.__ref.__stateCollectionCache) {
+          const d = diff(param, el.__ref.__stateCollectionCache) // eslint-disable-line
         } else {
-          el.__stateCollectionCache = deepClone(param)
+          el.__ref.__stateCollectionCache = deepClone(param)
         }
       }
 
