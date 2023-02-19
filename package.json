@@ -10,20 +10,29 @@
     "publish:all": "yarn build:all && lerna publish",
     "push": "echo push is not yet supported",
     "push:version": "git add . && git commit -am 'version update' && git push",
-    "clean": "rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log",
-    "clean:all": "lerna exec -- rm -rf dist node_modules yarn.lock .parcel-cache yarn-error.log"
+    "clean": "rm -rf */start/.cache */start/dist",
+    "clean:dist": "rm -rf dist .cache **/dist **/.cache",
+    "clean:modules": "rm -rf node_modules yarn.lock package-lock.json lerna-debug.log yarn-error.log",
+    "clean:package-modules": "rm -rf packages/*/node_modules **/*/package-lock.json",
+    "clean:all": "yarn clean && yarn clean:dist && yarn clean:modules && yarn clean:package-modules",
+    "reinstall": "yarn clean:all && yarn"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "babel-eslint": "^10.1.0",
-    "lerna": "^5.3.0",
+    "esbuild": "^0.17.3",
+    "lerna": "^6.0.1",
     "parcel": "^2.7.0",
     "parcel-plugin-svg-sprite": "^1.4.1",
-    "standard": "^17.0.0"
+    "standard": "^13.1.0"
   },
   "standard": {
     "parser": "babel-eslint"
   },
-  "browserslist": "> 0.5%, last 2 versions, not dead",
-  "version": "0.0.1"
+  "workspaces": [
+    "components/*",
+    "react/*",
+    "packages/*"
+  ],
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }

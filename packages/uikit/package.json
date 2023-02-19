@@ -1,0 +1,47 @@
+{
+  "name": "@symbo.ls/uikit",
+  "description": "UI Library built on Scratch and DOMQL",
+  "version": "1.2.22",
+  "author": "symbo.ls",
+  "repository": "https://github.com/symbo-ls/smbls",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "react.js"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@domql/utils": "latest",
+    "@symbo.ls/atoms": "latest",
+    "@symbo.ls/avatar": "latest",
+    "@symbo.ls/banner": "latest",
+    "@symbo.ls/box": "latest",
+    "@symbo.ls/button": "latest",
+    "@symbo.ls/buttonset": "latest",
+    "@symbo.ls/datepicker": "latest",
+    "@symbo.ls/dropdown": "latest",
+    "@symbo.ls/field": "latest",
+    "@symbo.ls/input": "latest",
+    "@symbo.ls/label": "latest",
+    "@symbo.ls/link": "latest",
+    "@symbo.ls/notification": "latest",
+    "@symbo.ls/pills": "latest",
+    "@symbo.ls/range": "latest",
+    "@symbo.ls/select": "latest",
+    "@symbo.ls/slider": "latest",
+    "@symbo.ls/textarea": "latest",
+    "@symbo.ls/tooltip": "latest"
+  },
+  "peerDependencies": {
+    "@emotion/css": "^11.5.0",
+    "@symbo.ls/scratch": "latest"
+  },
+  "scripts": {
+    "prepublish": "rm -rf dist && npx esbuild index.js --target=es2020 --format=cjs --bundle --sourcemap=external --outfile=dist/index.cjs.js"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "gitHead": "9bf056378fae3b3bad3f059f28c48998172cf5eb",
+  "source": "src/index.js"
+}
